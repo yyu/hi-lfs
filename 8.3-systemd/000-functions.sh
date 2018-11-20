@@ -2,14 +2,12 @@
 
 export LFS_PARTITION=/dev/sdb
 
-export LFS_VERSION="8.3-rc2"
+export LFS_VERSION="stable-systemd"
 
 ################################################################################
 # 2.5. Creating a File System on the Partition
 #
 _lfs_mkfs() {
-    LFS_PARTITION=$1
-
     # LFS assumes that the root file system (/) is of type ext4.
     # To create an ext4 file system on the LFS partition, run the following:
     mkfs -v -t ext4 $LFS_PARTITION
@@ -176,6 +174,35 @@ EOF
     # limits the risk that old programs are used from the host when the same programs are available in the chapter 5 environment.
 
     source ~/.bash_profile
+}
+
+################################################################################
+# Chapter 5. Constructing a Temporary System
+# 5.2. Toolchain Technical Notes
+
+_lfs_get_name_of_dynamic_linker_() {
+    random_binary=$1
+    readelf -l $random_binary | grep interpreter
+}
+
+_lfs_get_name_of_dynamic_linker() {
+    random_binary=/bin/cp
+    _lfs_get_name_of_dynamic_linker_ $random_binary
+}
+
+################################################################################
+
+_lfs_start_until_user_and_group() {
+    _lfs_mkfs
+    _lfs_mount_fs
+    _lfs_get_packages_and_patches
+    _lfs_setup_tools_directory
+    _lfs_setup_user_and_group
+}
+
+_lfs_continue() {
+    _lfs_setup_env
+    _lfs_get_name_of_dynamic_linker
 }
 
 ################################################################################
