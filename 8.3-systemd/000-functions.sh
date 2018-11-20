@@ -189,6 +189,9 @@ EOF
 
 _lfs_get_target_triplets() {
     set -e
+
+    # Before continuing, be aware of the name of the working platform, often referred to as the target triplet.
+    # A simple way to determine the name of the target triplet is to run the config.guess script that comes with the source for many packages.
     package=binutils
     package_with_version=${package}-2.31.1
     package_file=$package_with_version.tar.xz
@@ -199,8 +202,10 @@ _lfs_get_target_triplets() {
     pushd $target_triplets_work_folder
 
     wget $url
+    # Unpack the Binutils sources and run the script: ./config.guess and note the output.
     tar xJf $package_file
     cd $package_with_version
+    # For example, for a 32-bit Intel processor the output will be i686-pc-linux-gnu. On a 64-bit system it will be x86_64-pc-linux-gnu.
     ./config.guess
 
     popd
@@ -208,8 +213,14 @@ _lfs_get_target_triplets() {
 }
 
 _lfs_get_name_of_dynamic_linker_() {
+    # Also be aware of the name of the platform's dynamic linker, often referred to as the dynamic loader
+    # (not to be confused with the standard linker ld that is part of Binutils).
+    # The dynamic linker provided by Glibc finds and loads the shared libraries needed by a program, prepares the program to run, and then runs it.
+    # The name of the dynamic linker for a 32-bit Intel machine will be ld-linux.so.2 (ld-linux-x86-64.so.2 for 64-bit systems).
     random_binary=$1
+    # A sure-fire way to determine the name of the dynamic linker is to inspect a random binary from the host system by running:
     readelf -l $random_binary | grep interpreter
+    # The authoritative reference covering all platforms is in the shlib-versions file in the root of the Glibc source tree.
 }
 
 _lfs_get_name_of_dynamic_linker() {
