@@ -180,6 +180,26 @@ EOF
 # Chapter 5. Constructing a Temporary System
 # 5.2. Toolchain Technical Notes
 
+_lfs_get_target_triplets() {
+    set -e
+    package=binutils
+    package_with_version=${package}-2.31.1
+    package_file=$package_with_version.tar.xz
+    url=http://ftp.gnu.org/gnu/$package/$package_file
+    target_triplets_work_folder=~/___/target-triplets
+
+    mkdir -pv $target_triplets_work_folder
+    pushd $target_triplets_work_folder
+
+    wget $url
+    tar xJf $package_file
+    cd $package_with_version
+    ./config.guess
+
+    popd
+    set +e
+}
+
 _lfs_get_name_of_dynamic_linker_() {
     random_binary=$1
     readelf -l $random_binary | grep interpreter
