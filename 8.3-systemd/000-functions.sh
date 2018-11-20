@@ -5,6 +5,12 @@ export LFS_PARTITION=/dev/sdb
 export LFS_VERSION="stable-systemd"
 
 ################################################################################
+
+_lfs_refresh_functions() {
+    (su -c 'rm -rf /tmp/hi-lfs && cp -r /media/sf_hi-lfs/ /tmp/hi-lfs && chown -R lfs /tmp/hi-lfs' root) && . /tmp/hi-lfs/8.3-systemd/000-functions.sh
+}
+
+################################################################################
 # 2.5. Creating a File System on the Partition
 #
 _lfs_mkfs() {
@@ -150,6 +156,7 @@ LFS=/mnt/lfs
 LC_ALL=POSIX
 LFS_TGT=$(uname -m)-lfs-linux-gnu
 PATH=/tools/bin:/bin:/usr/bin
+alias ll='ls -lah --color=auto'
 export LFS LC_ALL LFS_TGT PATH
 EOF
     # The set +h command turns off bash's hash function.
