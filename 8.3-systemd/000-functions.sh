@@ -526,7 +526,7 @@ _lfs_toolchain_sanity_check() {
     readelf -l a.out | grep ': /tools'
 
     echo -e "\033[32mIf everything is working correctly, there should be no errors, and the output of the last command will be of the form:\033[0m"
-    echo -e "\033[1;32m[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]\033[0m"
+    echo -e "\033[1;32m      [Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]\033[0m"
 
     # Once all is well, clean up the test files:
     rm -v dummy.c a.out
@@ -597,8 +597,7 @@ _lfs_install_binutils_pass2() {
 
 _lfs_install_gcc_pass2() {
     cd $LFS_SOURCES_DIR
-    tar xf
-    cd
+    cd gcc-8.2.0
 
     # Our first build of GCC has installed a couple of internal system headers.
     # Normally one of them, limits.h, will in turn include the corresponding system limits.h header, in this case, /tools/include/limits.h.
@@ -616,10 +615,10 @@ _lfs_install_gcc_pass2() {
       sed -e 's@/lib\(64\)\?\(32\)\?/ld@/tools&@g' \
           -e 's@/usr@/tools@g' $file.orig > $file
       echo '
-    #undef STANDARD_STARTFILE_PREFIX_1
-    #undef STANDARD_STARTFILE_PREFIX_2
-    #define STANDARD_STARTFILE_PREFIX_1 "/tools/lib/"
-    #define STANDARD_STARTFILE_PREFIX_2 ""' >> $file
+#undef STANDARD_STARTFILE_PREFIX_1
+#undef STANDARD_STARTFILE_PREFIX_2
+#define STANDARD_STARTFILE_PREFIX_1 "/tools/lib/"
+#define STANDARD_STARTFILE_PREFIX_2 ""' >> $file
       touch $file.orig
     done
 
