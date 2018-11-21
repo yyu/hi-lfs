@@ -356,7 +356,7 @@ _lfs_before_chapter5_build() {
 _lfs_get_package_file_name() {
     pack=$1
     source_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-    grep $pack $source_dir/wget-list | sed -e "s/.*\///g" | head -n 1
+    grep "/"$pack"-" $source_dir/wget-list | sed -e "s/.*\///g" | head -n 1
 }
 
 _lfs_get_package_folder_name() {
@@ -831,20 +831,400 @@ _lfs_install_ncurses() {
 }
 
 ################################################################################
-##
-##_lfs_install_() {
-##    package=""
-##
-##    cd $LFS_SOURCES_DIR
-##    tar xf `_lfs_get_package_file_name $pack`
-##    cd `_lfs_get_package_folder_name $pack`
-##
-##    mkdir -v build
-##    cd       build
-##
-##    make
-##    make install
-##}
+# 5.16. Bash-4.4.18
+
+_lfs_install_bash() {
+    package="bash"
+
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+
+    ./configure --prefix=/tools --without-bash-malloc
+
+    make
+    make tests
+    make install
+    ln -sv bash /tools/bin/sh
+}
+
+################################################################################
+# 5.17. Bison-3.0.5
+
+_lfs_install_bison() {
+    package="bison"
+
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+
+    ./configure --prefix=/tools
+
+    make
+    make check
+    make install
+}
+
+################################################################################
+# 5.18. Bzip2-1.0.6
+
+_lfs_install_bzip2() {
+    package="bzip2"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+    make
+    make PREFIX=/tools install
+}
+
+################################################################################
+# 5.19. Coreutils-8.30
+
+_lfs_install_coreutils() {
+    package="coreutils"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+
+    ./configure --prefix=/tools --enable-install-program=hostname
+    make
+    make RUN_EXPENSIVE_TESTS=yes check
+    make install
+}
+
+################################################################################
+# 5.20. Diffutils-3.6
+
+_lfs_install_diffutils() {
+    package="diffutils"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+
+    ./configure --prefix=/tools
+    make
+    make check
+    make install
+}
+
+
+################################################################################
+# 5.21. File-5.34
+
+_lfs_install_file() {
+    package="file"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+
+    ./configure --prefix=/tools
+    make
+    make check
+    make install
+}
+
+################################################################################
+# 5.22. Findutils-4.6.0
+
+_lfs_install_findutils() {
+    package="findutils"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+
+    sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' gl/lib/*.c
+    sed -i '/unistd/a #include <sys/sysmacros.h>' gl/lib/mountlist.c
+    echo "#define _IO_IN_BACKUP 0x100" >> gl/lib/stdio-impl.h
+
+    ./configure --prefix=/tools
+    make
+    make check
+    make install
+}
+
+################################################################################
+# 5.23. Gawk-4.2.1
+
+_lfs_install_gawk() {
+    package="gawk"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+
+    ./configure --prefix=/tools
+    make
+    make check
+    make install
+}
+
+################################################################################
+# 5.24. Gettext-0.19.8.1
+
+# The Gettext package contains utilities for internationalization and localization.
+# These allow programs to be compiled with NLS (Native Language Support),
+# enabling them to output messages in the user's native language.
+
+_lfs_install_gettext() {
+    package="gettext"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+
+    # For our temporary set of tools, we only need to build and install three programs from Gettext.
+
+    cd gettext-tools
+    EMACS="no" ./configure --prefix=/tools --disable-shared
+
+    make -C gnulib-lib
+    make -C intl pluralx.c
+    make -C src msgfmt
+    make -C src msgmerge
+    make -C src xgettext
+
+    cp -v src/{msgfmt,msgmerge,xgettext} /tools/bin
+}
+
+################################################################################
+# 5.25. Grep-3.1
+
+_lfs_install_grep() {
+    package="grep"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+    ./configure --prefix=/tools
+    make
+    make check
+    make install
+}
+
+################################################################################
+# 5.26. Gzip-1.9
+
+_lfs_install_gzip() {
+    package="gzip"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+
+    sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' lib/*.c
+    echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h
+
+    ./configure --prefix=/tools
+    make
+    make check
+    make install
+}
+
+################################################################################
+# 5.27. Make-4.2.1
+
+_lfs_install_make() {
+    package="make"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+
+    #First, work around an error caused by glibc-2.27:
+    sed -i '211,217 d; 219,229 d; 232 d' glob/glob.c
+
+    ./configure --prefix=/tools --without-guile
+    make
+    make check
+    make install
+}
+
+################################################################################
+# 5.28. Patch-2.7.6
+
+_lfs_install_patch() {
+    package="patch"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+    ./configure --prefix=/tools
+    make
+    make check
+    make install
+}
+
+################################################################################
+# 5.29. Perl-5.28.0
+
+_lfs_install_perl() {
+    package="perl"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+
+    sh Configure -des -Dprefix=/tools -Dlibs=-lm -Uloclibpth -Ulocincpth
+    
+    make
+
+    # Although Perl comes with a test suite, it would be better to wait until it is installed in the next chapter.
+    # Only a few of the utilities and libraries need to be installed at this time:
+    cp -v perl cpan/podlators/scripts/pod2man /tools/bin
+    mkdir -pv /tools/lib/perl5/5.28.0
+    cp -Rv lib/* /tools/lib/perl5/5.28.0
+}
+
+################################################################################
+# 5.30. Sed-4.5
+
+_lfs_install_sed() {
+    package="sed"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+    ./configure --prefix=/tools
+    make
+    make check
+    make install
+}
+
+################################################################################
+# 5.31. Tar-1.30
+
+_lfs_install_tar() {
+    package="tar"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+    ./configure --prefix=/tools
+    make
+    make check
+    make install
+}
+
+################################################################################
+# 5.32. Texinfo-6.5
+
+_lfs_install_texinfo() {
+    package="texinfo"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+
+    # As part of the configure process, a test is made that indicates an error for TestXS_la-TestXS.lo.
+    # This is not relevant for LFS and should be ignored.
+    ./configure --prefix=/tools
+
+    make
+    make check
+    make install
+}
+
+################################################################################
+# 5.33. Util-linux-2.32.1
+
+# The Util-linux package contains miscellaneous utility programs.
+
+_lfs_install_util-linux() {
+    package="util-linux"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+
+    ./configure --prefix=/tools                \
+                --without-python               \
+                --disable-makeinstall-chown    \
+                --without-systemdsystemunitdir \
+                --without-ncurses              \
+                PKG_CONFIG=""
+    make
+    make install
+}
+
+################################################################################
+# 5.34. Xz-5.2.4
+
+_lfs_install_xz() {
+    package="xz"
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+    ./configure --prefix=/tools
+    make
+    make check
+    make install
+}
+
+################################################################################
+# 5.35. Stripping
+
+# The steps in this section are optional, but if the LFS partition is rather small,
+# it is beneficial to learn that unnecessary items can be removed.
+
+_lfs_optional_stripping() {
+    strip --strip-debug /tools/lib/*
+    /usr/bin/strip --strip-unneeded /tools/{,s}bin/*
+
+    # To save more, remove the documentation:
+    rm -rf /tools/{,share}/{info,man,doc}
+
+    # Remove unneeded files:
+    find /tools/{lib,libexec} -name \*.la -delete
+
+    # At this point, you should have at least 3 GB of free space in $LFS
+    # that can be used to build and install Glibc and Gcc in the next phase.
+    # If you can build and install Glibc, you can build and install the rest too.
+}
+
+
+################################################################################
+# post-chapter5
+
+_lfs_after_chapter5() {
+    echo -e "\
+        | \033[7;32mNote\033[0m\033[32m__________________________________________________\033[0m
+        | \033[0;32mThe commands in the remainder of this book must be performed
+        | while logged in as user \033[0;1;36mroot \033[0;32mand no longer as user \033[0;9;36mlfs\033[0m.
+        | \033[0;32mAlso, double check that \033[0;1;32m$LFS \033[0;32mis set in root's environment\033[0m.
+        | " | sed -E 's/^ *\| //g'
+
+    if [ `whoami` == "root" ]; then
+        # 5.36. Changing Ownership
+
+        # Currently, the $LFS/tools directory is owned by the user lfs,
+        # a user that exists only on the host system.
+        # If the $LFS/tools directory is kept as is,
+        # the files are owned by a user ID without a corresponding account.
+        # This is dangerous because a user account created later could get this same user ID
+        # and would own the $LFS/tools directory and all the files therein,
+        # thus exposing these files to possible malicious manipulation.
+
+        # To avoid this issue, you could add the lfs user to the new LFS system later
+        # when creating the /etc/passwd file, taking care to assign it the same user and group IDs as on the host system.
+
+        # Better yet, change the ownership of the $LFS/tools directory to user root
+        chown -R root:root $LFS/tools
+
+        echo -e "\
+            | \033[1;7;33mCaution\033[0;1m\033[33m__________________________________________________\033[0m
+            | \033[0;1;33mAlthough the $LFS/tools directory can be deleted once the LFS system has been finished,
+            | it can be retained to build additional LFS systems of the same book version\033[0m.
+            | \033[0;1;33mIf you intend to keep the temporary tools for use in building future LFS systems,
+            | now is the time to back them up\033[0m.
+            | \033[0;1;33mSubsequent commands in chapter 6 will alter the tools currently in place,
+            | rendering them useless for future builds\033[0m.
+            | " | sed -E 's/^ *\| //g'
+    else
+        echo -e "\033[31muser should be \033[0;1;36mroot \033[0;31mbut is \033[0;1;33m`whoami`\033[0m."
+    fi
+}
+
+################################################################################
+# example
+_lfs_install_() {
+    package=""
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $package`
+    cd `_lfs_get_package_folder_name $package`
+    ./configure --prefix=/tools
+    make
+    make check
+    make install
+}
 
 ################################################################################
 
