@@ -352,6 +352,345 @@ _lfs_before_chapter5_build() {
 }
 
 ################################################################################
+# 5.4. Binutils-2.31.1 - Pass 1
+
+# The Binutils package contains a linker, an assembler, and other tools for handling object files.
+
+_lfs_install_binutils_pass1() {
+    cd $LFS_SOURCES_DIR
+    tar xJf binutils-2.31.1.tar.xz
+    cd binutils-2.31.1
+
+    mkdir -v build
+    cd       build
+
+    ../configure --prefix=/tools            \
+                 --with-sysroot=$LFS        \
+                 --with-lib-path=/tools/lib \
+                 --target=$LFS_TGT          \
+                 --disable-nls              \
+                 --disable-werror
+    make
+    case $(uname -m) in
+        x86_64) mkdir -v /tools/lib && ln -sv lib /tools/lib64 ;;
+    esac
+    make install
+}
+
+################################################################################
+# 5.5. GCC-8.2.0 - Pass 1
+
+# The GCC package contains the GNU compiler collection, which includes the C and C++ compilers.
+
+_lfs_install_gcc_pass1() {
+    cd $LFS_SOURCES_DIR
+    tar xf gcc-8.2.0.tar.xz
+    cd gcc-8.2.0
+
+    # GCC now requires the GMP, MPFR and MPC packages.
+    # As these packages may not be included in your host distribution, they will be built with GCC.
+    # Unpack each package into the GCC source directory and rename the resulting directories so the GCC build procedures will automatically use them:
+    tar -xf ../mpfr-4.0.1.tar.xz
+    mv -v mpfr-4.0.1 mpfr
+    tar -xf ../gmp-6.1.2.tar.xz
+    mv -v gmp-6.1.2 gmp
+    tar -xf ../mpc-1.1.0.tar.gz
+    mv -v mpc-1.1.0 mpc
+
+    # The following command will change the location of GCC's default dynamic linker to use the one installed in /tools.
+    # It also removes /usr/include from GCC's include search path. Issue:
+    for file in gcc/config/{linux,i386/linux{,64}}.h
+    do
+        # copy the files gcc/config/linux.h, gcc/config/i386/linux.h, and gcc/config/i368/linux64.h
+        # to a file of the same name but with an added suffix of “.orig”
+        cp -uv $file{,.orig}
+        # the first sed expression prepends “/tools” to every instance of “/lib/ld”, “/lib64/ld” or “/lib32/ld”, while
+        # the second one replaces hard-coded instances of “/usr”
+        sed -e 's@/lib\(64\)\?\(32\)\?/ld@/tools&@g' \
+            -e 's@/usr@/tools@g' $file.orig > $file
+        # add our define statements which alter the default startfile prefix to the end of the file.
+        # Note that the trailing “/” in “/tools/lib/” is required
+        echo '
+#undef STANDARD_STARTFILE_PREFIX_1
+#undef STANDARD_STARTFILE_PREFIX_2
+#define STANDARD_STARTFILE_PREFIX_1 "/tools/lib/"
+#define STANDARD_STARTFILE_PREFIX_2 ""' >> $file
+        # use touch to update the timestamp on the copied files.
+        # When used in conjunction with cp -u, this prevents unexpected changes to the original files in case the commands are inadvertently run twice
+        touch $file.orig
+    done
+
+    # Finally, on x86_64 hosts, set the default directory name for 64-bit libraries to “lib”:
+    case $(uname -m) in
+      x86_64)
+        sed -e '/m64=/s/lib64/lib/' \
+            -i.orig gcc/config/i386/t-linux64
+     ;;
+    esac
+
+    # The GCC documentation recommends building GCC in a dedicated build directory:
+    mkdir -v build
+    cd       build
+
+    ../configure                                       \
+        --target=$LFS_TGT                              \
+        --prefix=/tools                                \
+        --with-glibc-version=2.11                      \
+        --with-sysroot=$LFS                            \
+        --with-newlib                                  \
+        --without-headers                              \
+        --with-local-prefix=/tools                     \
+        --with-native-system-header-dir=/tools/include \
+        --disable-nls                                  \
+        --disable-shared                               \
+        --disable-multilib                             \
+        --disable-decimal-float                        \
+        --disable-threads                              \
+        --disable-libatomic                            \
+        --disable-libgomp                              \
+        --disable-libmpx                               \
+        --disable-libquadmath                          \
+        --disable-libssp                               \
+        --disable-libvtv                               \
+        --disable-libstdcxx                            \
+        --enable-languages=c,c++
+    make
+    make install
+}
+
+################################################################################
+# 5.6. Linux-4.18.5 API Headers
+
+# The Linux API Headers (in linux-4.18.5.tar.xz) expose the kernel's API for use by Glibc.
+
+_lfs_install_linux_api_headers() {
+    cd $LFS_SOURCES_DIR
+    tar xf linux-4.18.5.tar.xz
+    cd linux-4.18.5
+
+    # Make sure there are no stale files embedded in the package:
+    make mrproper
+
+    # Now extract the user-visible kernel headers from the source.
+    # They are placed in an intermediate local directory and copied to the needed location
+    # because the extraction process removes any existing files in the target directory.
+    make INSTALL_HDR_PATH=dest headers_install
+    cp -rv dest/include/* /tools/include
+}
+
+################################################################################
+# 5.7. Glibc-2.28
+
+# The Glibc package contains the main C library.
+# This library provides the basic routines for
+# allocating memory, searching directories,
+# opening and closing files, reading and writing files,
+# string handling, pattern matching, arithmetic, and so on.
+
+# There have been reports that this package may fail when building as a "parallel make". If this occurs, rerun the make command with a "-j1" option.
+
+_lfs_install_glibc() {
+    cd $LFS_SOURCES_DIR
+    tar xf glibc-2.28.tar.xz
+    cd glibc-2.28
+
+    mkdir -v build
+    cd       build
+
+    ../configure                             \
+          --prefix=/tools                    \
+          --host=$LFS_TGT                    \
+          --build=$(../scripts/config.guess) \
+          --enable-kernel=3.2             \
+          --with-headers=/tools/include      \
+          libc_cv_forced_unwind=yes          \
+          libc_cv_c_cleanup=yes
+
+    make
+    make install
+
+    echo -e "\n\033[1;31mit's time for sanity check, run:\033[0m\n"
+    echo -e "\n\033[1;33m_lfs_toolchain_sanity_check\033[0m\n"
+}
+
+################################################################################
+# sanity check
+
+_lfs_toolchain_sanity_check() {
+    cd $LFS_SOURCES_DIR
+
+    # At this point, it is imperative to stop and ensure that the basic functions (compiling and linking)
+    # of the new toolchain are working as expected. To perform a sanity check, run the following commands:
+    echo 'int main(){}' > dummy.c
+    $LFS_TGT-gcc dummy.c
+    readelf -l a.out | grep ': /tools'
+
+    echo -e "\033[32mIf everything is working correctly, there should be no errors, and the output of the last command will be of the form:\033[0m"
+    echo -e "\033[1;32m[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]\033[0m"
+
+    # Once all is well, clean up the test files:
+    rm -v dummy.c a.out
+}
+
+################################################################################
+# 5.8. Libstdc++ from GCC-8.2.0
+
+# Libstdc++ is the standard C++ library.
+# It is needed to compile C++ code (part of GCC is written in C++),
+# but we had to defer its installation when we built gcc-pass1 because it depends on glibc, which was not yet available in /tools.
+
+_lfs_install_libstdcxx_from_gcc() {
+    cd $LFS_SOURCES_DIR
+    cd gcc-8.2.0
+
+    mv -v build build-pass1
+
+    mkdir -v build
+    cd       build
+
+    ../libstdc++-v3/configure           \
+        --host=$LFS_TGT                 \
+        --prefix=/tools                 \
+        --disable-multilib              \
+        --disable-nls                   \
+        --disable-libstdcxx-threads     \
+        --disable-libstdcxx-pch         \
+        --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/8.2.0
+
+    make
+    make install
+}
+
+################################################################################
+# 5.9. Binutils-2.31.1 - Pass 2
+
+_lfs_install_binutils_pass2() {
+    cd $LFS_SOURCES_DIR
+    cd binutils-2.31.1
+
+    mv -v build build-pass1
+
+    mkdir -v build
+    cd       build
+
+    CC=$LFS_TGT-gcc                \
+    AR=$LFS_TGT-ar                 \
+    RANLIB=$LFS_TGT-ranlib         \
+    ../configure                   \
+        --prefix=/tools            \
+        --disable-nls              \
+        --disable-werror           \
+        --with-lib-path=/tools/lib \
+        --with-sysroot
+
+    make
+    make install
+
+    # Now prepare the linker for the “Re-adjusting” phase in the next chapter:
+    make -C ld clean
+    make -C ld LIB_PATH=/usr/lib:/lib
+    cp -v ld/ld-new /tools/bin
+}
+
+################################################################################
+# 5.10. GCC-8.2.0 - Pass 2
+
+_lfs_install_gcc_pass2() {
+    cd $LFS_SOURCES_DIR
+    tar xf
+    cd
+
+    # Our first build of GCC has installed a couple of internal system headers.
+    # Normally one of them, limits.h, will in turn include the corresponding system limits.h header, in this case, /tools/include/limits.h.
+    # However, at the time of the first build of gcc /tools/include/limits.h did not exist,
+    # so the internal header that GCC installed is a partial, self-contained file and does not include the extended features of the system header.
+    # This was adequate for building the temporary libc, but this build of GCC now requires the full internal header.
+    # Create a full version of the internal header using a command that is identical to what the GCC build system does in normal circumstances:
+    cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
+      `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include-fixed/limits.h
+
+    # Once again, change the location of GCC's default dynamic linker to use the one installed in /tools.
+    for file in gcc/config/{linux,i386/linux{,64}}.h
+    do
+      cp -uv $file{,.orig}
+      sed -e 's@/lib\(64\)\?\(32\)\?/ld@/tools&@g' \
+          -e 's@/usr@/tools@g' $file.orig > $file
+      echo '
+    #undef STANDARD_STARTFILE_PREFIX_1
+    #undef STANDARD_STARTFILE_PREFIX_2
+    #define STANDARD_STARTFILE_PREFIX_1 "/tools/lib/"
+    #define STANDARD_STARTFILE_PREFIX_2 ""' >> $file
+      touch $file.orig
+    done
+
+    # If building on x86_64, change the default directory name for 64-bit libraries to “lib”:
+    case $(uname -m) in
+      x86_64)
+        sed -e '/m64=/s/lib64/lib/' \
+            -i.orig gcc/config/i386/t-linux64
+      ;;
+    esac
+
+    # As in the first build of GCC it requires the GMP, MPFR and MPC packages. Unpack the tarballs and move them into the required directory names:
+    tar -xf ../mpfr-4.0.1.tar.xz
+    mv -v mpfr-4.0.1 mpfr
+    tar -xf ../gmp-6.1.2.tar.xz
+    mv -v gmp-6.1.2 gmp
+    tar -xf ../mpc-1.1.0.tar.gz
+    mv -v mpc-1.1.0 mpc
+
+    # Create a separate build directory again:
+    mv -v build build__
+    mkdir -v build
+    cd       build
+
+    # Before starting to build GCC, remember to unset any environment variables that override the default optimization flags.
+    env
+
+    CC=$LFS_TGT-gcc                                    \
+    CXX=$LFS_TGT-g++                                   \
+    AR=$LFS_TGT-ar                                     \
+    RANLIB=$LFS_TGT-ranlib                             \
+    ../configure                                       \
+        --prefix=/tools                                \
+        --with-local-prefix=/tools                     \
+        --with-native-system-header-dir=/tools/include \
+        --enable-languages=c,c++                       \
+        --disable-libstdcxx-pch                        \
+        --disable-multilib                             \
+        --disable-bootstrap                            \
+        --disable-libgomp
+
+    make
+    make install
+
+    # As a finishing touch, create a symlink. Many programs and scripts run cc instead of gcc,
+    # which is used to keep programs generic and therefore usable on all kinds of UNIX systems
+    # where the GNU C compiler is not always installed.
+    # Running cc leaves the system administrator free to decide which C compiler to install:
+    ln -sv gcc /tools/bin/cc
+
+    echo -e "\n\033[1;31mit's time for sanity check, run:\033[0m\n"
+    echo -e "\n\033[1;33m_lfs_toolchain_sanity_check\033[0m\n"
+}
+
+################################################################################
+##
+##_lfs_install_() {
+##    cd $LFS_SOURCES_DIR
+##    tar xf
+##    cd
+##
+##    mv -v build build-pass1
+##
+##    mkdir -v build
+##    cd       build
+##
+##    make
+##    make install
+##}
+
+################################################################################
 
 _lfs_start_until_user_and_group() {
     _lfs_mkfs
