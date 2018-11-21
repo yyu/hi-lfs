@@ -674,6 +674,119 @@ _lfs_install_gcc_pass2() {
 }
 
 ################################################################################
+# 5.11. Tcl-8.6.8
+
+# To support running the test suites for GCC and Binutils and other packages
+
+# Note that the Tcl package used here is a minimal version needed to run the LFS tests.
+# For the full package, see the BLFS Tcl procedures.
+
+_lfs_install_tcl() {
+    cd $LFS_SOURCES_DIR
+    tar xf tcl8.6.8-src.tar.gz
+    cd tcl8.6.8
+
+    cd unix
+    ./configure --prefix=/tools
+
+    make
+
+    # As discussed earlier, running the test suite is not mandatory for the temporary tools here in this chapter
+    # The Tcl test suite may experience failures under certain host conditions that are not fully understood.
+    # Therefore, test suite failures here are not surprising, and are not considered critical.
+    # The TZ=UTC parameter sets the time zone to Coordinated Universal Time (UTC), but only for the duration of the test suite run.
+    # This ensures that the clock tests are exercised correctly.
+    TZ=UTC make test
+
+    make install
+
+    # Make the installed library writable so debugging symbols can be removed later:
+    chmod -v u+w /tools/lib/libtcl8.6.so
+
+    # Install Tcl's headers. The next package, Expect, requires them to build.
+    make install-private-headers
+
+    # Now make a necessary symbolic link:
+    ln -sv tclsh8.6 /tools/bin/tclsh  # error??
+}
+
+################################################################################
+# 5.12. Expect-5.45.4
+
+# The Expect package contains a program for carrying out scripted dialogues with other interactive programs.
+
+_lfs_install_expect() {
+    cd $LFS_SOURCES_DIR
+    tar xf expect5.45.4.tar.gz
+    cd expect5.45.4
+
+    # First, force Expect's configure script to use /bin/stty instead of a /usr/local/bin/stty it may find on the host system.
+    # This will ensure that our test suite tools remain sane for the final builds of our toolchain:
+    cp -v configure{,.orig}
+    sed 's:/usr/local/bin:/bin:' configure.orig > configure
+
+    echo -e "\033[0;1m"
+
+    ./configure --prefix=/tools       \
+                --with-tcl=/tools/lib \
+                --with-tclinclude=/tools/include
+
+    echo -e "\033[0;2m"
+
+    make
+
+    echo -e "\033[0;3m"
+
+    # As discussed earlier, running the test suite is not mandatory for the temporary tools here in this chapter.
+    # Expect test suite is known to experience failures under certain host conditions that are not within our control.
+    # Therefore, test suite failures here are not surprising and are not considered critical.
+    make test
+
+    echo -e "\033[0;4m"
+
+    # SCRIPTS="" prevents installation of the supplementary Expect scripts, which are not needed.
+    make SCRIPTS="" install
+
+    echo -e "\033[0m"
+}
+
+################################################################################
+# 5.13. DejaGNU-1.6.1
+
+# The DejaGNU package contains a framework for testing other programs.
+
+_lfs_install_dejagnu() {
+    cd $LFS_SOURCES_DIR
+    tar xf dejagnu-1.6.1.tar.gz
+    cd dejagnu-1.6.1
+
+    ./configure --prefix=/tools
+
+    make install
+    make check
+}
+
+################################################################################
+# 5.14. M4-1.4.18
+
+# The M4 package contains a macro processor.
+
+_lfs_install_m4() {
+    cd $LFS_SOURCES_DIR
+    tar xf m4-1.4.18.tar.xz
+    cd m4-1.4.18
+
+    # First, make some fixes required by glibc-2.28:
+    sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' lib/*.c
+    echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h
+
+    ./configure --prefix=/tools
+    make
+    make check
+    make install
+}
+
+################################################################################
 ##
 ##_lfs_install_() {
 ##    cd $LFS_SOURCES_DIR
