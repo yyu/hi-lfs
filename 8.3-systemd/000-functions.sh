@@ -228,6 +228,28 @@ _lfs_get_name_of_dynamic_linker() {
     _lfs_get_name_of_dynamic_linker_ $random_binary
 }
 
+_lfs_get_ld_search_order() {
+    # linker's library search order can be obtained from ld by passing it the --verbose flag.
+    for d in `ld --verbose | grep SEARCH`; do
+        echo -e "\033[36m"$d"\033[0m"
+    done
+}
+
+_lfs_show_linked_files_for_dummy_program() {
+    # show all the files successfully opened during the linking.
+    echo 'int main(){}' > dummy.c && gcc dummy.c -Wl,--verbose 2>&1 | grep succeeded
+}
+
+_lfs_show_linker_used_by_gcc() {
+    # find out which standard linker gcc will use
+    gcc -print-prog-name=ld
+}
+
+_lfs_gcc_dummy_program_verbose() {
+    # show detailed information about the preprocessor, compilation, and assembly stages, including gcc's included search paths and their order.
+    echo 'int main(){}' > dummy.c && gcc -v dummy.c
+}
+
 ################################################################################
 
 _lfs_start_until_user_and_group() {
