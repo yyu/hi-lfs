@@ -343,12 +343,34 @@ _lfs_general_compilation_instruction_2() {
         | " | sed -E 's/^ *\| //g'
 }
 
+################################################################################
+
 _lfs_before_chapter5_build() {
     echo -e "\n\033[32mLFS environment variable: \033[1;32m"$LFS"\033[0m\n"
     _lfs_version_check
     echo
     _lfs_general_compilation_instruction_1
     _lfs_general_compilation_instruction_2
+}
+
+_lfs_get_package_file_name() {
+    pack=$1
+    source_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+    grep $pack $source_dir/wget-list | sed -e "s/.*\///g" | head -n 1
+}
+
+_lfs_get_package_folder_name() {
+    pack=$1
+    _lfs_get_package_file_name $pack | sed -E 's/\.tar\..*//g'
+}
+
+_lfs_get_package_filename_foldername_test() {
+    for pack in binutils coreutils; do
+        filename=`_lfs_get_package_file_name $pack`
+        foldername=`_lfs_get_package_folder_name $pack`
+        echo -e "\033[36mtar xJf $filename\033[0m"
+        echo -e "\033[36mcd $foldername\033[0m"
+    done
 }
 
 ################################################################################
@@ -787,13 +809,35 @@ _lfs_install_m4() {
 }
 
 ################################################################################
+# 5.15. Ncurses-6.1
+
+_lfs_install_ncurses() {
+    pack=ncurses
+
+    cd $LFS_SOURCES_DIR
+    tar xf `_lfs_get_package_file_name $pack`
+    cd `_lfs_get_package_folder_name $pack`
+
+    sed -i s/mawk// configure
+
+    ./configure --prefix=/tools \
+                --with-shared   \
+                --without-debug \
+                --without-ada   \
+                --enable-widec  \
+                --enable-overwrite
+    make
+    make install
+}
+
+################################################################################
 ##
 ##_lfs_install_() {
-##    cd $LFS_SOURCES_DIR
-##    tar xf
-##    cd
+##    package=""
 ##
-##    mv -v build build-pass1
+##    cd $LFS_SOURCES_DIR
+##    tar xf `_lfs_get_package_file_name $pack`
+##    cd `_lfs_get_package_folder_name $pack`
 ##
 ##    mkdir -v build
 ##    cd       build
