@@ -11,6 +11,67 @@ _lfs_refresh_functions() {
 }
 
 ################################################################################
+# 2.2. Host System Requirements
+
+# To see whether your host system has all the appropriate versions, and the ability to compile programs
+_lfs_version_check() {
+    # Simple script to list version numbers of critical development tools
+
+    export LC_ALL=C
+    bash --version | head -n1 | cut -d" " -f2-4
+    MYSH=$(readlink -f /bin/sh)
+    echo "/bin/sh -> $MYSH"
+    echo $MYSH | grep -q bash || echo "ERROR: /bin/sh does not point to bash"
+    unset MYSH
+
+    echo -n "Binutils: "; ld --version | head -n1 | cut -d" " -f3-
+    bison --version | head -n1
+
+    if [ -h /usr/bin/yacc ]; then
+      echo "/usr/bin/yacc -> `readlink -f /usr/bin/yacc`";
+    elif [ -x /usr/bin/yacc ]; then
+      echo yacc is `/usr/bin/yacc --version | head -n1`
+    else
+      echo "yacc not found"
+    fi
+
+    bzip2 --version 2>&1 < /dev/null | head -n1 | cut -d" " -f1,6-
+    echo -n "Coreutils: "; chown --version | head -n1 | cut -d")" -f2
+    diff --version | head -n1
+    find --version | head -n1
+    gawk --version | head -n1
+
+    if [ -h /usr/bin/awk ]; then
+      echo "/usr/bin/awk -> `readlink -f /usr/bin/awk`";
+    elif [ -x /usr/bin/awk ]; then
+      echo awk is `/usr/bin/awk --version | head -n1`
+    else
+      echo "awk not found"
+    fi
+
+    gcc --version | head -n1
+    g++ --version | head -n1
+    ldd --version | head -n1 | cut -d" " -f2-  # glibc version
+    grep --version | head -n1
+    gzip --version | head -n1
+    cat /proc/version
+    m4 --version | head -n1
+    make --version | head -n1
+    patch --version | head -n1
+    echo Perl `perl -V:version`
+    sed --version | head -n1
+    tar --version | head -n1
+    makeinfo --version | head -n1
+    xz --version | head -n1
+
+    echo 'int main(){}' > dummy.c && g++ -o dummy dummy.c
+    if [ -x dummy ]
+      then echo "g++ compilation OK";
+      else echo "g++ compilation failed"; fi
+    rm -f dummy.c dummy
+}
+
+################################################################################
 # 2.5. Creating a File System on the Partition
 #
 _lfs_mkfs() {
@@ -248,6 +309,46 @@ _lfs_show_linker_used_by_gcc() {
 _lfs_gcc_dummy_program_verbose() {
     # show detailed information about the preprocessor, compilation, and assembly stages, including gcc's included search paths and their order.
     echo 'int main(){}' > dummy.c && gcc -v dummy.c
+}
+
+################################################################################
+# 5.3. General Compilation Instructions
+
+_lfs_general_compilation_instruction_1() {
+    echo -e "\
+        | \033[7;31mImportant\033[0m\033[31m__________________________________________________\033[0m
+        | \033[31mThe build instructions assume that the Host System Requirements,
+        | including symbolic links, have been set properly\033[0m:
+        | * \033[1;31mbash\033[0;31m is the shell in use\033[0m.
+        | * \033[1;31msh\033[0;31m is a symbolic link to \033[1mbash\033[0m.
+        | * \033[1;31m/usr/bin/awk\033[0;31m is a symbolic link to gawk\033[0m.
+        | * \033[1;31m/usr/bin/yacc\033[0;31m is a symbolic link to \033[1;31mbison\033[0;31m or a small script that executes bison\033[0m.
+        | " | sed -E 's/^ *\| //g'
+}
+
+_lfs_general_compilation_instruction_2() {
+    echo -e "\
+        | \033[7;31mImportant\033[0m\033[31m__________________________________________________\033[0m
+        | 1. \033[0;31mPlace all the sources and patches in a directory that will be accessible
+        |    from the chroot environment such as \033[1;31m/mnt/lfs/sources/\033[0m.
+        |    \033[0;31mDo \033[3mnot \033[0;9;31mput sources in \033[1;31m/mnt/lfs/tools/\033[0m.
+        | 2. \033[0;31mChange to the sources directory\033[0m.
+        | 3. \033[0;31mFor each package\033[0m:
+        |    a. \033[0;31mUsing the \033[1mtar\033[0;31m program, extract the package to be built.
+        |       In Chapter 5, ensure you are the \033[1;3mlfs\033[0;31m user when extracting the package\033[0m.
+        |    b. \033[0;31mChange to the directory created when the package was extracted\033[0m.
+        |    c. \033[0;31mFollow the book's instructions for building the package\033[0m.
+        |    d. \033[0;31mChange back to the sources directory\033[0m.
+        |    e. \033[0;31mDelete the extracted source directory unless instructed otherwise\033[0m.
+        | " | sed -E 's/^ *\| //g'
+}
+
+_lfs_before_chapter5_build() {
+    echo -e "\n\033[32mLFS environment variable: \033[1;32m"$LFS"\033[0m\n"
+    _lfs_version_check
+    echo
+    _lfs_general_compilation_instruction_1
+    _lfs_general_compilation_instruction_2
 }
 
 ################################################################################
