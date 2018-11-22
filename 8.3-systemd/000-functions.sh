@@ -1590,6 +1590,135 @@ _lfs_post_chroot_install_linux_api_headers() {
     cp -rv dest/include/* /usr/include
 }
 
+################################################################################
+# 6.8. Man-pages-4.16
+
+_lfs_post_chroot_install_man-pages() {
+    cd /sources/
+    tar xf man-pages-4.16.tar.xz
+    cd man-pages-4.16
+    make install
+}
+
+################################################################################
+# 6.9. Glibc-2.28
+
+_lfs_post_chroot_install_glibc() {
+    cd /sources/glibc-2.28
+
+    # Some of the Glibc programs use the non-FHS compilant /var/db directory to store their runtime data.
+    # Apply the following patch to make such programs store their runtime data in the FHS-compliant locations:
+    patch -Np1 -i ../glibc-2.28-fhs-1.patch
+
+    # First create a compatibility symlink to avoid references to /tools in our final glibc:
+    ln -sfv /tools/lib/gcc /usr/lib
+
+    # Determine the GCC include directory and create a symlink for LSB compliance.
+    # Additionally, for x86_64, create a compatibility symlink required
+    # for the dynamic loader to function correctly:
+    case $(uname -m) in
+        i?86)    GCC_INCDIR=/usr/lib/gcc/$(uname -m)-pc-linux-gnu/8.2.0/include
+                ln -sfv ld-linux.so.2 /lib/ld-lsb.so.3
+        ;;
+        x86_64) GCC_INCDIR=/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.0/include
+                ln -sfv ../lib/ld-linux-x86-64.so.2 /lib64
+                ln -sfv ../lib/ld-linux-x86-64.so.2 /lib64/ld-lsb-x86-64.so.3
+        ;;
+    esac
+
+    # Remove a file that may be left over from a previous build attempt:
+    rm -f /usr/include/limits.h
+
+    # The Glibc documentation recommends building Glibc in a dedicated build directory:
+    mv -v build build_
+    mkdir -v build
+    cd       build
+
+    # Prepare Glibc for compilation:
+    CC="gcc -isystem $GCC_INCDIR -isystem /usr/include" \
+    ../configure --prefix=/usr                          \
+                 --disable-werror                       \
+                 --enable-kernel=3.2                    \
+                 --enable-stack-protector=strong        \
+                 libc_cv_slibdir=/lib
+    unset GCC_INCDIR
+
+    make
+
+    # In this section, the test suite for Glibc is considered critical. Do not skip it under any circumstance.
+    make check
+    # You may see some test failures.
+    # The Glibc test suite is somewhat dependent on the host system.
+    # This is a list of the most common issues seen for some versions of LFS:
+    # - misc/tst-ttyname is known to fail in the LFS chroot environment.
+    # - inet/tst-idna_name_classify is known to fail in the LFS chroot environment.
+    # - posix/tst-getaddrinfo4 and posix/tst-getaddrinfo5 may fail on some architectures.
+    # - The nss/tst-nss-files-hosts-multi test may fail for reasons that have not been determined.
+    # - The math tests sometimes fail when running on systems where the CPU is
+    #   not a relatively new Intel or AMD processor.
+
+    # Though it is a harmless message, the install stage of Glibc will complain
+    # about the absence of /etc/ld.so.conf. Prevent this warning with:
+    touch /etc/ld.so.conf
+
+    # Fix the generated Makefile to skip an unneeded sanity check that fails in the LFS partial environment:
+    sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile
+
+    # Install the package:
+    make install
+
+    # Install the configuration file and runtime directory for nscd:
+    cp -v ../nscd/nscd.conf /etc/nscd.conf
+    mkdir -pv /var/cache/nscd
+
+    # Install the systemd support files for nscd:
+    install -v -Dm644 ../nscd/nscd.tmpfiles /usr/lib/tmpfiles.d/nscd.conf
+    install -v -Dm644 ../nscd/nscd.service /lib/systemd/system/nscd.service
+
+    # Next, install the locales that can make the system respond in a different language.
+    # None of the locales are required, but if some of them are missing,
+    # the test suites of future packages would skip important testcases.
+    #
+    # Individual locales can be installed using the localedef program.
+    # E.g., the first localedef command below combines the /usr/share/i18n/locales/cs_CZ
+    #       charset-independent locale definition with the /usr/share/i18n/charmaps/UTF-8.gz
+    #       charmap definition and appends the result to the /usr/lib/locale/locale-archive file.
+    # The following instructions will install the minimum set of locales necessary
+    # for the optimal coverage of tests.
+    #
+    # Alternatively, install all locales listed in the glibc-2.28/localedata/SUPPORTED file
+    # (it includes every locale listed above and many more) at once with the following time-consuming command:
+    #     make localedata/install-locales
+    # Then use the localedef command to create and install locales not listed in
+    # the glibc-2.28/localedata/SUPPORTED file in the unlikely case you need them.
+    #
+    # Note:
+    # Glibc now uses libidn2 when resolving internationalized domain names. This is a run time dependency.
+    # If this capability is needed, the instrucions for installing libidn2 are in the BLFS libidn2 page.
+    mkdir -pv /usr/lib/locale
+    localedef -i cs_CZ -f UTF-8 cs_CZ.UTF-8
+    localedef -i de_DE -f ISO-8859-1 de_DE
+    localedef -i de_DE@euro -f ISO-8859-15 de_DE@euro
+    localedef -i de_DE -f UTF-8 de_DE.UTF-8
+    localedef -i en_GB -f UTF-8 en_GB.UTF-8
+    localedef -i en_HK -f ISO-8859-1 en_HK
+    localedef -i en_PH -f ISO-8859-1 en_PH
+    localedef -i en_US -f ISO-8859-1 en_US
+    localedef -i en_US -f UTF-8 en_US.UTF-8
+    localedef -i es_MX -f ISO-8859-1 es_MX
+    localedef -i fa_IR -f UTF-8 fa_IR
+    localedef -i fr_FR -f ISO-8859-1 fr_FR
+    localedef -i fr_FR@euro -f ISO-8859-15 fr_FR@euro
+    localedef -i fr_FR -f UTF-8 fr_FR.UTF-8
+    localedef -i it_IT -f ISO-8859-1 it_IT
+    localedef -i it_IT -f UTF-8 it_IT.UTF-8
+    localedef -i ja_JP -f EUC-JP ja_JP
+    localedef -i ru_RU -f KOI8-R ru_RU.KOI8-R
+    localedef -i ru_RU -f UTF-8 ru_RU.UTF-8
+    localedef -i tr_TR -f UTF-8 tr_TR.UTF-8
+    localedef -i zh_CN -f GB18030 zh_CN.GB18030
+}
+
 
 ################################################################################
 
