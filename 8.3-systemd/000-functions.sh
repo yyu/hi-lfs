@@ -1719,6 +1719,75 @@ _lfs_post_chroot_install_glibc() {
     localedef -i zh_CN -f GB18030 zh_CN.GB18030
 }
 
+_lfs_post_chroot_configure_glibc() {
+    # 6.9.2. Configuring Glibc
+
+    # 6.9.2.1. Adding nsswitch.conf
+    # The /etc/nsswitch.conf file needs to be created because the Glibc defaults do not work well in a networked environment.
+    cat > /etc/nsswitch.conf << "EOF"
+# Begin /etc/nsswitch.conf
+
+passwd: files
+group: files
+shadow: files
+
+hosts: files dns
+networks: files
+
+protocols: files
+services: files
+ethers: files
+rpc: files
+
+# End /etc/nsswitch.conf
+EOF
+
+    # 6.9.2.2. Adding time zone data
+    tar -xf ../../tzdata2018e.tar.gz
+    ZONEINFO=/usr/share/zoneinfo
+    mkdir -pv $ZONEINFO/{posix,right}
+    for tz in etcetera southamerica northamerica europe africa antarctica  \
+              asia australasia backward pacificnew systemv; do
+        zic -L /dev/null   -d $ZONEINFO       -y "sh yearistype.sh" ${tz}
+        zic -L /dev/null   -d $ZONEINFO/posix -y "sh yearistype.sh" ${tz}
+        zic -L leapseconds -d $ZONEINFO/right -y "sh yearistype.sh" ${tz}
+    done
+    cp -v zone.tab zone1970.tab iso3166.tab $ZONEINFO
+    zic -d $ZONEINFO -p America/New_York
+    unset ZONEINFO
+
+    # determine the local time zone is to run the following script:
+    tzselect
+    # After answering a few questions about the location,
+    # the script will output the name of the time zone (e.g., America/Edmonton).
+    # There are also some other possible time zones listed in /usr/share/zoneinfo
+    # such as Canada/Eastern or EST5EDT that are not identified by the script but can be used.
+    # Then create the /etc/localtime file by running:
+    ln -sfv /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+
+    # 6.9.2.3. Configuring the Dynamic Loader
+    # By default, the dynamic loader (/lib/ld-linux.so.2) searches through /lib and /usr/lib
+    # for dynamic libraries that are needed by programs as they are run.
+    # However, if there are libraries in directories other than /lib and /usr/lib,
+    # these need to be added to the /etc/ld.so.conf file in order for the dynamic loader to find them.
+    # Two directories that are commonly known to contain additional libraries are /usr/local/lib and /opt/lib,
+    # so add those directories to the dynamic loader's search path.
+    cat > /etc/ld.so.conf << "EOF"
+# Begin /etc/ld.so.conf
+/usr/local/lib
+/opt/lib
+
+EOF
+    # If desired, the dynamic loader can also search a directory and include the contents of files found there.
+    # Generally the files in this include directory are one line specifying the desired library path.
+    # To add this capability run the following commands:
+    cat >> /etc/ld.so.conf << "EOF"
+# Add an include directory
+include /etc/ld.so.conf.d/*.conf
+
+EOF
+    mkdir -pv /etc/ld.so.conf.d
+}
 
 ################################################################################
 
