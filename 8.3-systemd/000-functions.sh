@@ -17,6 +17,15 @@ ________________________________________________________________________________
     _lfs_sleep
 }
 
+________________________________________there_should_have________________________________________() {
+    echo -e "\033[0;3;36m"$1
+    echo -e "\033[0;1;36m"$2
+    echo -e "\033[0;3;35m"$3
+    echo -e "\033[0;1;35m"$4
+    echo -e "\033[0m"
+    _lfs_sleep
+}
+
 _lfs_refresh_functions() {
     (su -c 'rm -rf /tmp/hi-lfs && cp -r /media/sf_hi-lfs/ /tmp/hi-lfs && chown -R lfs /tmp/hi-lfs' root) && . /tmp/hi-lfs/8.3-systemd/000-functions.sh
 }
@@ -2087,6 +2096,59 @@ EOF
     # now examin \033[0;36mtest_checklib.output
     '
 }
+
+################################################################################
+# 6.16. Binutils-2.31.1
+
+_lfs_post_chroot_install_binutils() {
+    package________name="binutils"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    Verify that the PTYs are working properly inside the chroot environment by performing a simple test:
+    '
+    expect -c "spawn ls"
+    ________________________________________there_should_have________________________________________ '
+    # This command should output the following.' '
+    spawn ls' '
+    # If, instead, the output includes the message below, then the environment is not set up for proper PTY operation.
+    # This issue needs to be resolved before running the test suites for Binutils and GCC:' '
+    The system has no more ptys.\n
+    Ask your system administrator to create more.
+    '
+    ________________________________________________________________________________ '
+    # The Binutils documentation recommends building Binutils in a dedicated build directory:
+    '
+    mv -v build build_
+    mkdir -v build
+    cd       build
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ../configure --prefix=/usr       \
+                 --enable-gold       \
+                 --enable-ld=default \
+                 --enable-plugins    \
+                 --enable-shared     \
+                 --disable-werror    \
+                 --enable-64-bit-bfd \
+                 --with-system-zlib
+    ________________________________________________________________________________ '
+    # make
+    '
+    make tooldir=/usr
+    ________________________________________________________________________________ '
+    # make check
+    # \033[1;33mThe test suite for Binutils in this section is considered critical. Do not skip it under any circumstances.
+    '
+    make -k check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make tooldir=/usr install
+}
+
 
 
 ################################################################################
