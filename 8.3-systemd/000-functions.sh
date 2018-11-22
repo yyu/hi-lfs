@@ -1223,6 +1223,16 @@ _lfs_after_chapter5() {
 _lfs_create_directories_dev_proc_sys_run() {
     # Begin by creating directories onto which the file systems will be mounted:
     mkdir -pv $LFS/{dev,proc,sys,run}
+
+    # [22:37:09]root@lfshost:/media/sf_hi-lfs/8.3-systemd(master)$ ls /mnt/lfs/
+    # lost+found  sources  tools
+    # [22:38:37]root@lfshost:/media/sf_hi-lfs/8.3-systemd(master)$ _lfs_create_directories_dev_proc_sys_run
+    # mkdir: created directory '/mnt/lfs/dev'
+    # mkdir: created directory '/mnt/lfs/proc'
+    # mkdir: created directory '/mnt/lfs/sys'
+    # mkdir: created directory '/mnt/lfs/run'
+    # [22:38:44]root@lfshost:/media/sf_hi-lfs/8.3-systemd(master)$ ls /mnt/lfs/
+    # dev  lost+found  proc  run  sources  sys  tools
 }
 
 _lfs_create_initial_device_nodes() {
@@ -1312,6 +1322,16 @@ _lfs_note_about_chroot() {
         | and enter chroot again before continuing with the installation\033[0m.
         | " | sed -E 's/^ *\| //g'
 }
+
+_lfs_chroot() {
+    _lfs_note_about_chroot
+    _lfs_mount_and_populate_dev
+    _lfs_mount_virtual_kernel_fs
+    _lfs_enter_chroot_env
+}
+
+################################################################################
+# 6.5. Creating Directories
 
 _lfs_create_directories() {
     # time to create some structure in the LFS file system
@@ -1410,8 +1430,133 @@ _lfs_create_directories() {
     mkdir -pv /var/{opt,cache,lib/{color,misc,locate},local}
 }
 
+################################################################################
+# 6.6. Creating Essential Files and Symlinks
 
+_lfs_create_essential_files_and_symlinks() {
+    # Some programs use hard-wired paths to programs which do not exist yet.
+    # In order to satisfy these programs, create a number of symbolic links which will be replaced
+    # by real files throughout the course of this chapter after the software has been installed:
 
+    ln -sv /tools/bin/{bash,cat,dd,echo,ln,pwd,rm,stty} /bin
+    ln -sv /tools/bin/{env,install,perl} /usr/bin
+    ln -sv /tools/lib/libgcc_s.so{,.1} /usr/lib
+    ln -sv /tools/lib/libstdc++.{a,so{,.6}} /usr/lib
+    for lib in blkid lzma mount uuid
+    do
+        ln -sv /tools/lib/lib$lib.so* /usr/lib
+    done
+    ln -svf /tools/include/blkid    /usr/include
+    ln -svf /tools/include/libmount /usr/include
+    ln -svf /tools/include/uuid     /usr/include
+    install -vdm755 /usr/lib/pkgconfig
+    for pc in blkid mount uuid
+    do
+        sed 's@tools@usr@g' /tools/lib/pkgconfig/${pc}.pc \
+            > /usr/lib/pkgconfig/${pc}.pc
+    done
+    ln -sv bash /bin/sh
+
+    # Historically, Linux maintains a list of the mounted file systems in the file /etc/mtab.
+    # Modern kernels maintain this list internally and exposes it to the user via the /proc filesystem.
+    # To satisfy utilities that expect the presence of /etc/mtab, create the following symbolic link:
+    ln -sv /proc/self/mounts /etc/mtab
+
+    # In order for user root to be able to login and for the name “root” to be recognized,
+    # there must be relevant entries in the /etc/passwd and /etc/group files.
+    cat > /etc/passwd << "EOF"
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/dev/null:/bin/false
+daemon:x:6:6:Daemon User:/dev/null:/bin/false
+messagebus:x:18:18:D-Bus Message Daemon User:/var/run/dbus:/bin/false
+systemd-bus-proxy:x:72:72:systemd Bus Proxy:/:/bin/false
+systemd-journal-gateway:x:73:73:systemd Journal Gateway:/:/bin/false
+systemd-journal-remote:x:74:74:systemd Journal Remote:/:/bin/false
+systemd-journal-upload:x:75:75:systemd Journal Upload:/:/bin/false
+systemd-network:x:76:76:systemd Network Management:/:/bin/false
+systemd-resolve:x:77:77:systemd Resolver:/:/bin/false
+systemd-timesync:x:78:78:systemd Time Synchronization:/:/bin/false
+systemd-coredump:x:79:79:systemd Core Dumper:/:/bin/false
+nobody:x:99:99:Unprivileged User:/dev/null:/bin/false
+EOF
+    # The actual password for root (the “x” used here is just a placeholder) will be set later.
+
+    cat > /etc/group << "EOF"
+root:x:0:
+bin:x:1:daemon
+sys:x:2:
+kmem:x:3:
+tape:x:4:
+tty:x:5:
+daemon:x:6:
+floppy:x:7:
+disk:x:8:
+lp:x:9:
+dialout:x:10:
+audio:x:11:
+video:x:12:
+utmp:x:13:
+usb:x:14:
+cdrom:x:15:
+adm:x:16:
+messagebus:x:18:
+systemd-journal:x:23:
+input:x:24:
+mail:x:34:
+kvm:x:61:
+systemd-bus-proxy:x:72:
+systemd-journal-gateway:x:73:
+systemd-journal-remote:x:74:
+systemd-journal-upload:x:75:
+systemd-network:x:76:
+systemd-resolve:x:77:
+systemd-timesync:x:78:
+systemd-coredump:x:79:
+nogroup:x:99:
+users:x:999:
+EOF
+    # The created groups are not part of any standard—they are groups decided on
+    # - in part by the requirements of the Udev configuration in this chapter, and
+    # - in part by common convention employed by a number of existing Linux distributions.
+    #
+    # In addition, some test suites rely on specific users or groups.
+    #
+    # The Linux Standard Base (LSB, available at http://www.linuxbase.org) recommends only that,
+    # besides the group root with a Group ID (GID) of 0, a group bin with a GID of 1 be present.
+    # All other group names and GIDs can be chosen freely by the system administrator since
+    # well-written programs do not depend on GID numbers, but rather use the group's name.
+
+    # The login, agetty, and init programs (and others) use a number of log files to record
+    # information such as who was logged into the system and when.
+    # However, these programs will not write to the log files if they do not already exist.
+    # Initialize the log files and give them proper permissions:
+    touch /var/log/{btmp,lastlog,faillog,wtmp}
+    chgrp -v utmp /var/log/lastlog
+    chmod -v 664  /var/log/lastlog
+    chmod -v 600  /var/log/btmp
+    # The /var/log/wtmp file records all logins and logouts.
+    # The /var/log/lastlog file records when each user last logged in.
+    # The /var/log/faillog file records failed login attempts.
+    # The /var/log/btmp file records the bad login attempts.
+
+    # Note:
+    # The /run/utmp file records the users that are currently logged in.
+    # This file is created dynamically in the boot scripts.
+}
+
+_lfs_remove_I_have_no_name_prompt() {
+    # To remove the “I have no name!” prompt, start a new shell.
+    # Since a full Glibc was installed in Chapter 5 and the /etc/passwd and /etc/group files
+    # have been created, user name and group name resolution will now work:
+    exec /tools/bin/bash --login +h
+    # Note the use of the +h directive. This tells bash not to use its internal path hashing.
+    # Without this directive, bash would remember the paths to binaries it has executed.
+    # To ensure the use of the newly compiled binaries as soon as they are installed,
+    # the +h directive will be used for the duration of this chapter.
+
+    # (lfs chroot) I have no name!:/# exec /tools/bin/bash --login +h
+    # (lfs chroot) root:/# 
+}
 
 ################################################################################
 # example
