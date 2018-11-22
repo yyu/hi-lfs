@@ -26,6 +26,24 @@ ________________________________________there_should_have_______________________
     _lfs_sleep
 }
 
+________________________________________NOTE________________________________________() {
+    color=33
+    echo -e "\033[7;${color}mNote\033[0m\033[${color}m__________________________________________________\033[0m"
+    echo -e "\033[0;${color}m"$1
+    echo -e "\033[0;1;${color}m"$2
+    echo -e "\033[0m"
+    _lfs_sleep
+}
+
+________________________________________IMPORTANT________________________________________() {
+    color=31
+    echo -e "\033[7;${color}mImportant\033[0m\033[${color}m__________________________________________________\033[0m"
+    echo -e "\033[0;${color}m"$1
+    echo -e "\033[0;1;${color}m"$2
+    echo -e "\033[0m"
+    _lfs_sleep
+}
+
 _lfs_refresh_functions() {
     (su -c 'rm -rf /tmp/hi-lfs && cp -r /media/sf_hi-lfs/ /tmp/hi-lfs && chown -R lfs /tmp/hi-lfs' root) && . /tmp/hi-lfs/8.3-systemd/000-functions.sh
 }
@@ -2149,7 +2167,63 @@ _lfs_post_chroot_install_binutils() {
     make tooldir=/usr install
 }
 
+################################################################################
+# 6.17. GMP-6.1.2
 
+_lfs_post_chroot_install_gmp() {
+    package________name="gmp"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________NOTE________________________________________ '
+    If you are building for 32-bit x86, but you have a CPU which is capable of running 64-bit code
+    and you have specified CFLAGS in the environment, the configure script will attempt to configure for 64-bits and fail.
+    Avoid this by invoking the configure command below with' '
+    ABI=32 ./configure ...
+    '
+    ________________________________________NOTE________________________________________ '
+    The default settings of GMP produce libraries optimized for the host processor.
+    If libraries suitable for processors less capable than the host CPU are desired,
+    generic libraries can be created by running the following:' '
+    cp -v configfsf.guess config.guess\n
+    cp -v configfsf.sub   config.sub
+    '
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr    \
+                --enable-cxx     \
+                --disable-static \
+                --docdir=/usr/share/doc/gmp-6.1.2
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    make html
+    ________________________________________IMPORTANT________________________________________ '
+    The test suite for GMP in this section is considered critical.
+    Do not skip it under any circumstances.
+    '
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check 2>&1 | tee gmp-check-log
+    ________________________________________IMPORTANT________________________________________ '
+    The code in gmp is highly optimized for the processor where it is built.
+    Occasionally, the code that detects the processor misidentifies the system capabilities
+    and there will be errors in the tests or other applications using the gmp libraries with the message "Illegal instruction".
+    In this case, gmp should be reconfigured with the option --build=x86_64-unknown-linux-gnu and rebuilt.
+    '
+    ________________________________________________________________________________ '
+    Ensure that all 190 tests in the test suite passed. Check the results by issuing the following command:
+    '
+    awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    make install-html
+}
 
 ################################################################################
 # example
