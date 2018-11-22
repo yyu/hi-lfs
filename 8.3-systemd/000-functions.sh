@@ -6,6 +6,17 @@ export LFS_VERSION="stable-systemd"
 
 ################################################################################
 
+_lfs_sleep() {
+    sleep 3
+}
+
+________________________________________________________________________________() {
+    echo -e "\033[1;3;32m"'________________________________________________________________________________'
+    echo -e $1
+    echo -e '................................................................................'"\033[0m"
+    _lfs_sleep
+}
+
 _lfs_refresh_functions() {
     (su -c 'rm -rf /tmp/hi-lfs && cp -r /media/sf_hi-lfs/ /tmp/hi-lfs && chown -R lfs /tmp/hi-lfs' root) && . /tmp/hi-lfs/8.3-systemd/000-functions.sh
 }
@@ -1943,17 +1954,105 @@ _lfs_post_chroot_install_file() {
 }
 
 ################################################################################
+# 6.13. Readline-7.0
+
+_lfs_post_chroot_install_readline() {
+    package________name="readline"
+
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+
+    ________________________________________________________________________________ '
+    # Reinstalling Readline will cause the old libraries to be moved to <libraryname>.old.
+    # While this is normally not a problem, in some cases it can trigger a linking bug in ldconfig.
+    # This can be avoided by issuing the following two seds:
+    '
+    sed -i '/MV.*old/d' Makefile.in
+    sed -i '/{OLDSUFF}/c:' support/shlib-install
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr    \
+                --disable-static \
+                --docdir=/usr/share/doc/readline-7.0
+    ________________________________________________________________________________ '
+    # make
+    '
+    make SHLIB_LIBS="-L/tools/lib -lncursesw"
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make SHLIB_LIBS="-L/tools/lib -lncurses" install
+    ________________________________________________________________________________ '
+    # Now move the dynamic libraries to a more appropriate location and fix up some permissions and symbolic links:
+    '
+    mv -v /usr/lib/lib{readline,history}.so.* /lib
+    chmod -v u+w /lib/lib{readline,history}.so.*
+    ln -sfv ../../lib/$(readlink /usr/lib/libreadline.so) /usr/lib/libreadline.so
+    ln -sfv ../../lib/$(readlink /usr/lib/libhistory.so ) /usr/lib/libhistory.so
+    ________________________________________________________________________________ '
+    # install the documentation:
+    '
+    install -v -m644 doc/*.{ps,pdf,html,dvi} /usr/share/doc/readline-7.0
+}
+
+################################################################################
+# 6.14. M4-1.4.18
+
+_lfs_post_chroot_install_m4() {
+    package________name="m4"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+
+    ________________________________________________________________________________ '
+    First, make some fixes required by glibc-2.28:
+    '
+    sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' lib/*.c
+    echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+
+################################################################################
 # example
 _lfs_post_chroot_install_() {
-    pack=""
+    package________name=""
     cd /sources/
-    tar xf `ls $pack-*tar*`
-    cd $pack-*[0-9]
-    echo -e "\033[1;7;32m~~~~~~~~~~~~~~~~~~~~\033[0m"; ./configure --prefix=/usr
-    echo -e "\033[1;7;32m--------------------\033[0m"; make
-    echo -e "\033[1;7;32m====================\033[0m"; make check
-    echo -e "\033[1;7;32m++++++++++++++++++++\033[0m"; make install
-    echo -e "\033[1;7;32m####################\033[0m"
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
 }
 
 ################################################################################
