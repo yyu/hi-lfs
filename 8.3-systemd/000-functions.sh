@@ -353,6 +353,44 @@ _lfs_before_chapter5_build() {
     _lfs_general_compilation_instruction_2
 }
 
+_lfs_chapter5_build_all_1() {
+    _lfs_install_binutils_pass1
+    _lfs_install_gcc_pass1
+    _lfs_install_linux_api_headers
+    _lfs_install_glibc
+    _lfs_toolchain_sanity_check
+}
+
+_lfs_chapter5_build_all_2() {
+    _lfs_install_libstdcxx_from_gcc
+    _lfs_install_binutils_pass2
+    _lfs_install_gcc_pass2
+    _lfs_install_tcl
+    _lfs_install_expect
+    _lfs_install_dejagnu
+    _lfs_install_m4
+    _lfs_install_ncurses
+    _lfs_install_bash
+    _lfs_install_bison
+    _lfs_install_bzip2
+    _lfs_install_coreutils
+    _lfs_install_diffutils
+    _lfs_install_file
+    _lfs_install_findutils
+    _lfs_install_gawk
+    _lfs_install_gettext
+    _lfs_install_grep
+    _lfs_install_gzip
+    _lfs_install_make
+    _lfs_install_patch
+    _lfs_install_perl
+    _lfs_install_sed
+    _lfs_install_tar
+    _lfs_install_texinfo
+    _lfs_install_util-linux
+    _lfs_install_xz
+}
+
 _lfs_get_package_file_name() {
     pack=$1
     source_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
@@ -1861,6 +1899,31 @@ _lfs_post_chroot_adjust_toolchain() {
     rm -v dummy.c a.out dummy.log
 }
 
+################################################################################
+# 6.11. Zlib-1.2.11
+
+_lfs_post_chroot_install_zlib() {
+    cd /sources/
+    tar xf zlib-1.2.11.tar.xz
+    cd zlib-1.2.11
+
+    echo -e "\033[1;7;32m~~~~~~~~~~~~~~~~~~~~\033[0m"
+    ./configure --prefix=/usr
+
+    echo -e "\033[1;7;32m--------------------\033[0m"
+    make
+
+    echo -e "\033[1;7;32m====================\033[0m"
+    make check
+
+    echo -e "\033[1;7;32m++++++++++++++++++++\033[0m"
+    make install
+
+    # The shared library needs to be moved to /lib, and as a result the .so file in /usr/lib will need to be recreated:
+    echo -e "\033[1;7;32m####################\033[0m"
+    mv -v /usr/lib/libz.so.* /lib
+    ln -sfv ../../lib/$(readlink /usr/lib/libz.so) /usr/lib/libz.so
+}
 
 ################################################################################
 
