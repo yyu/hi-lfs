@@ -1214,6 +1214,17 @@ _lfs_after_chapter5() {
 }
 
 ################################################################################
+
+# In Chapter 6, the full LFS system is built.
+# The chroot (change root) program is used to enter a virtual environment and
+# start a new shell whose root directory will be set to the LFS partition.
+# This is very similar to rebooting and instructing the kernel to mount the LFS partition as the root partition.
+# The system does not actually reboot, but instead uses chroot because
+# creating a bootable system requires additional work which is not necessary just yet.
+# The major advantage is that “chrooting” allows you to continue using the host system while LFS is being built.
+# While waiting for package compilations to complete, you can continue using your computer as normal.
+
+################################################################################
 # 6.2. Preparing Virtual Kernel File Systems
 
 # Various file systems exported by the kernel are used to communicate to and from the kernel itself.
@@ -1555,21 +1566,30 @@ _lfs_remove_I_have_no_name_prompt() {
     # the +h directive will be used for the duration of this chapter.
 
     # (lfs chroot) I have no name!:/# exec /tools/bin/bash --login +h
-    # (lfs chroot) root:/# 
+    # (lfs chroot) root:/#
 }
 
 ################################################################################
-# example
-_lfs_install_() {
-    package=""
-    cd $LFS_SOURCES_DIR
-    tar xf `_lfs_get_package_file_name $package`
-    cd `_lfs_get_package_folder_name $package`
-    ./configure --prefix=/tools
-    make
-    make check
-    make install
+# 6.7. Linux-4.18.5 API Headers
+
+# The Linux API Headers (in linux-4.18.5.tar.xz) expose the kernel's API for use by Glibc.
+
+_lfs_post_chroot_install_linux_api_headers() {
+    cd /sources/linux-4.18.5
+
+    # Make sure there are no stale files and dependencies lying around from previous activity:
+    make mrproper
+
+    # Now extract the user-visible kernel headers from the source.
+    # They are placed in an intermediate local directory and copied to the needed location
+    # because the extraction process removes any existing files in the target directory.
+    # There are also some hidden files used by the kernel developers and not needed by LFS
+    # that are removed from the intermediate directory.
+    make INSTALL_HDR_PATH=dest headers_install
+    find dest/include \( -name .install -o -name ..install.cmd \) -delete
+    cp -rv dest/include/* /usr/include
 }
+
 
 ################################################################################
 
