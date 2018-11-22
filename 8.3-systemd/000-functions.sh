@@ -1058,7 +1058,7 @@ _lfs_install_perl() {
     cd `_lfs_get_package_folder_name $package`
 
     sh Configure -des -Dprefix=/tools -Dlibs=-lm -Uloclibpth -Ulocincpth
-    
+
     make
 
     # Although Perl comes with a test suite, it would be better to wait until it is installed in the next chapter.
@@ -1312,6 +1312,106 @@ _lfs_note_about_chroot() {
         | and enter chroot again before continuing with the installation\033[0m.
         | " | sed -E 's/^ *\| //g'
 }
+
+_lfs_create_directories() {
+    # time to create some structure in the LFS file system
+
+    mkdir -pv /{bin,boot,etc/{opt,sysconfig},home,lib/firmware,mnt,opt}
+    mkdir -pv /{media/{floppy,cdrom},sbin,srv,var}
+
+    # Directories are, by default, created with permission mode 755,
+    # but this is not desirable for all directories.
+    # two changes are made
+    # - one to the home directory of user root, and
+    # - another to the directories for temporary files.
+
+    # The first mode change ensures that not just anybody can enter the /root
+    # directory—the same as a normal user would do with his or her home directory.
+    install -dv -m 0750 /root
+
+    # The second mode change makes sure that any user can write to the /tmp and /var/tmp directories,
+    # but cannot remove another user's files from them.
+    # The latter is prohibited by the so-called “sticky bit,” the highest bit (1) in the 1777 bit mask.
+    install -dv -m 1777 /tmp /var/tmp
+
+    # (lfs chroot) I have no name!:/# install --help
+    # Usage: install [OPTION]... [-T] SOURCE DEST
+    #   or:  install [OPTION]... SOURCE... DIRECTORY
+    #   or:  install [OPTION]... -t DIRECTORY SOURCE...
+    #   or:  install [OPTION]... -d DIRECTORY...
+    #
+    # This install program copies files (often just compiled) into destination
+    # locations you choose.  If you want to download and install a ready-to-use
+    # package on a GNU/Linux system, you should instead be using a package manager
+    # like yum(1) or apt-get(1).
+    #
+    # In the first three forms, copy SOURCE to DEST or multiple SOURCE(s) to
+    # the existing DIRECTORY, while setting permission modes and owner/group.
+    # In the 4th form, create all components of the given DIRECTORY(ies).
+    #
+    # Mandatory arguments to long options are mandatory for short options too.
+    #       --backup[=CONTROL]  make a backup of each existing destination file
+    #   -b                  like --backup but does not accept an argument
+    #   -c                  (ignored)
+    #   -C, --compare       compare each pair of source and destination files, and
+    #                         in some cases, do not modify the destination at all
+    #   -d, --directory     treat all arguments as directory names; create all
+    #                         components of the specified directories
+    #   -D                  create all leading components of DEST except the last,
+    #                         or all components of --target-directory,
+    #                         then copy SOURCE to DEST
+    #   -g, --group=GROUP   set group ownership, instead of process' current group
+    #   -m, --mode=MODE     set permission mode (as in chmod), instead of rwxr-xr-x
+    #   -o, --owner=OWNER   set ownership (super-user only)
+    #   -p, --preserve-timestamps   apply access/modification times of SOURCE files
+    #                         to corresponding destination files
+    #   -s, --strip         strip symbol tables
+    #       --strip-program=PROGRAM  program used to strip binaries
+    #   -S, --suffix=SUFFIX  override the usual backup suffix
+    #   -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY
+    #   -T, --no-target-directory  treat DEST as a normal file
+    #   -v, --verbose       print the name of each directory as it is created
+    #       --preserve-context  preserve SELinux security context
+    #   -Z                      set SELinux security context of destination
+    #                             file and each created directory to default type
+    #       --context[=CTX]     like -Z, or if CTX is specified then set the
+    #                             SELinux or SMACK security context to CTX
+    #       --help     display this help and exit
+    #       --version  output version information and exit
+    #
+    # The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+    # The version control method may be selected via the --backup option or through
+    # the VERSION_CONTROL environment variable.  Here are the values:
+    #
+    #   none, off       never make backups (even if --backup is given)
+    #   numbered, t     make numbered backups
+    #   existing, nil   numbered if numbered backups exist, simple otherwise
+    #   simple, never   always make simple backups
+    #
+    # GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+    # Report install translation bugs to <https://translationproject.org/team/>
+    # Full documentation at: <https://www.gnu.org/software/coreutils/install>
+    # or available locally via: info '(coreutils) install invocation'
+    # (lfs chroot) I have no name!:/#
+
+    mkdir -pv /usr/{,local/}{bin,include,lib,sbin,src}
+    mkdir -pv /usr/{,local/}share/{color,dict,doc,info,locale,man}
+    mkdir -v  /usr/{,local/}share/{misc,terminfo,zoneinfo}
+    mkdir -v  /usr/libexec
+    mkdir -pv /usr/{,local/}share/man/man{1..8}
+
+    case $(uname -m) in
+      x86_64) mkdir -v /lib64 ;;
+    esac
+
+    mkdir -v /var/{log,mail,spool}
+    ln -sv /run /var/run
+    ln -sv /run/lock /var/lock
+    mkdir -pv /var/{opt,cache,lib/{color,misc,locate},local}
+}
+
+
+
 
 ################################################################################
 # example
