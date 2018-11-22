@@ -26,21 +26,22 @@ ________________________________________there_should_have_______________________
     _lfs_sleep
 }
 
-________________________________________NOTE________________________________________() {
-    color=33
-    echo -e "\033[7;${color}mNote\033[0m\033[${color}m__________________________________________________\033[0m"
-    echo -e "\033[0;${color}m"$1
-    echo -e "\033[0;1;${color}m"$2
+________________________________________HIGHLIGHT________________________________________() {
+    color=$1
+    echo -e "\033[7;${color}m"$2"\033[0m\033[${color}m__________________________________________________\033[0m"
+    echo -e "\033[0;${color}m"$3
+    shift 3
+    echo -e "\033[0;1;${color}m"$@
     echo -e "\033[0m"
     _lfs_sleep
 }
 
+________________________________________NOTE________________________________________() {
+    ________________________________________HIGHLIGHT________________________________________ 33 Note $1 $2
+}
+
 ________________________________________IMPORTANT________________________________________() {
-    color=31
-    echo -e "\033[7;${color}mImportant\033[0m\033[${color}m__________________________________________________\033[0m"
-    echo -e "\033[0;${color}m"$1
-    echo -e "\033[0;1;${color}m"$2
-    echo -e "\033[0m"
+    ________________________________________HIGHLIGHT________________________________________ 31 Important $1 $2
     _lfs_sleep
 }
 
@@ -2223,6 +2224,178 @@ _lfs_post_chroot_install_gmp() {
     '
     make install
     make install-html
+}
+
+################################################################################
+# 6.18. MPFR-4.0.1
+
+_lfs_post_chroot_install_mpfr() {
+    package________name="mpfr"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr        \
+                --disable-static     \
+                --enable-thread-safe \
+                --docdir=/usr/share/doc/mpfr-4.0.1
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    make html
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    make install-html
+}
+
+################################################################################
+# 6.19. MPC-1.1.0
+
+_lfs_post_chroot_install_mpc() {
+    package________name="mpc"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr    \
+                --disable-static \
+                --docdir=/usr/share/doc/mpc-1.1.0
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    make html
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    make install-html
+}
+
+################################################################################
+# 6.20. Shadow-4.6
+
+# The Shadow package contains programs for handling passwords in a secure way.
+
+_lfs_post_chroot_install_shadow() {
+    package________name="shadow"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________NOTE________________________________________ '
+    If you would like to enforce the use of strong passwords, refer to
+    http://www.linuxfromscratch.org/blfs/view/8.3/postlfs/cracklib.html
+    for installing CrackLib prior to building Shadow.
+    Then add --with-libcrack to the configure command below.
+    '
+    ________________________________________________________________________________ '
+    Disable the installation of the groups program and its man pages, as Coreutils provides a better version.
+    Also Prevent the installation of manual pages that were already installed by the man pages package:
+    '
+    sed -i 's/groups$(EXEEXT) //' src/Makefile.in
+    find man -name Makefile.in -exec sed -i 's/groups\.1 / /'   {} \;
+    find man -name Makefile.in -exec sed -i 's/getspnam\.3 / /' {} \;
+    find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;
+    ________________________________________________________________________________ '
+    Instead of using the default crypt method, use the more secure SHA-512 method of password encryption,
+    which also allows passwords longer than 8 characters.
+    It is also necessary to change the obsolete /var/spool/mail location for user mailboxes
+    that Shadow uses by default to the /var/mail location used currently:
+    '
+    sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \
+           -e 's@/var/spool/mail@/var/mail@' etc/login.defs
+    ________________________________________NOTE________________________________________ '
+    If you chose to build Shadow with Cracklib support, run the following:' '
+    sed -i '"'"'s@DICTPATH.*@DICTPATH\t/lib/cracklib/pw_dict@'"'"' etc/login.defs
+    '
+    ________________________________________________________________________________ '
+    Make a minor change to make the first group number generated by useradd 1000:
+    '
+    sed -i 's/1000/999/' etc/useradd
+    ________________________________________________________________________________ '
+    Prepare Shadow for compilation:
+    '
+    ./configure --sysconfdir=/etc --with-group-name-max-length=32
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    Move a misplaced program to its proper location:
+    '
+    mv -v /usr/bin/passwd /bin
+}
+
+_lfs_post_chroot_configure_shadow() {
+    ________________________________________________________________________________ '
+    This package contains utilities to add, modify, and delete users and groups;
+    set and change their passwords; and perform other administrative tasks.
+    For a full explanation of what password shadowing means, see the doc/HOWTO file within the unpacked source tree.
+    If using Shadow support, keep in mind that programs which need to verify passwords
+    (display managers, FTP programs, pop3 daemons, etc.) must be Shadow-compliant.
+    That is, they need to be able to work with shadowed passwords.
+    '
+    ________________________________________________________________________________ '
+    enable shadowed passwords
+    '
+    pwconv
+    ________________________________________________________________________________ '
+    enable shadowed group passwords
+    '
+    grpconv
+    ________________________________________________________________________________ '
+    Shadow'"'"'s stock configuration for the useradd utility has a few caveats that need some explanation.\n
+    - First, the default action for the useradd utility is to create the user and a group of the same name as the user.\n
+      By default the user ID (UID) and group ID (GID) numbers will begin with 1000.\n
+      This means if you dont pass parameters to useradd, each user will be a member of a unique group on the system.\n
+    If this behavior is undesirable, youll need to pass the -g parameter to useradd.\n
+    The default parameters are stored in the /etc/default/useradd file.\n
+    You may need to modify two parameters in this file to suit your particular needs.\n
+    \n
+    '
+    ________________________________________HIGHLIGHT________________________________________ 32 '
+    /etc/default/useradd' 'Parameter Explanations' '
+    \n
+    GROUP=1000\n
+    ----------\n
+    This parameter sets the beginning of the group numbers used in the /etc/group file.\n
+    You can modify it to anything you desire.\n
+    Note that useradd will never reuse a UID or GID.\n
+    If the number identified in this parameter is used, it will use the next available number after this.\n
+    Note also that if you dont have a group 1000 on your system the first time you use useradd without the -g parameter,\n
+    youll get a message displayed on the terminal that says: useradd: unknown GID 1000.\n
+    You may disregard this message and group number 1000 will be used.\n
+    \n
+    CREATE_MAIL_SPOOL=yes\n
+    ---------------------\n
+    This parameter causes useradd to create a mailbox file for the newly created user.\n
+    useradd will make the group ownership of this file to the mail group with 0660 permissions.\n
+    If you would prefer that these mailbox files are not created by useradd, issue the following command:\n
+    '
+    sed -i 's/yes/no/' /etc/default/useradd
+    ________________________________________________________________________________ '
+    # 6.20.3. Setting the root password
+    '
+    passwd root
 }
 
 ################################################################################
