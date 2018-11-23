@@ -1,6 +1,6 @@
 ## source me, don't run me
 
-export LFS_PARTITION=/dev/sdb
+export LFS_PARTITION=~/lfs.img
 
 export LFS_VERSION="stable-systemd"
 
@@ -45,8 +45,8 @@ ________________________________________IMPORTANT_______________________________
     _lfs_sleep
 }
 
-_lfs_refresh_functions() {
-    (su -c 'rm -rf /tmp/hi-lfs && cp -r /media/sf_hi-lfs/ /tmp/hi-lfs && chown -R lfs /tmp/hi-lfs' root) && . /tmp/hi-lfs/8.3-systemd/000-functions.sh
+_lfs_create_disk_image() {
+    fallocate -l 80G $LFS_PARTITION
 }
 
 ################################################################################
