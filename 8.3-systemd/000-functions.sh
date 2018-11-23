@@ -3011,7 +3011,1640 @@ _lfs_post_chroot_install_grep() {
     make install
 }
 
+################################################################################
+# 6.34. Bash-4.4.18
 
+_lfs_post_chroot_install_bash() {
+    package________name="bash"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr                       \
+                --docdir=/usr/share/doc/bash-4.4.18 \
+                --without-bash-malloc               \
+                --with-installed-readline
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    To prepare the tests, ensure that the nobody user can write to the sources tree:
+    '
+    chown -Rv nobody .
+    ________________________________________________________________________________ '
+    Now, run the tests as the nobody user:
+    '
+    su nobody -s /bin/bash -c "PATH=$PATH make tests"
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    mv -vf /usr/bin/bash /bin
+    ________________________________________________________________________________ '
+    Run the newly compiled bash program (replacing the one that is currently being executed):
+    '
+    exec /bin/bash --login +h
+    ________________________________________NOTE________________________________________ '
+    The parameters used make the bash process an interactive login shell and continue to disable hashing so that new programs are found as they become available.
+    '
+}
+
+################################################################################
+# 6.35. Libtool-2.4.6
+
+_lfs_post_chroot_install_libtool() {
+    package________name="libtool"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    The test time for libtool can be reduced significantly on a system with multiple cores.
+    To do this, append TESTSUITEFLAGS=-j<N> to the line below.
+    For instance, using -j4 can reduce the test time by over 60 percent.
+    '
+    make check TESTSUITEFLAGS=-j64
+    ________________________________________NOTE________________________________________ '
+    Five tests are known to fail in the LFS build environment due to a circular dependency,
+    but all tests pass if rechecked after automake is installed.
+    '
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.36. GDBM-1.17
+
+# The GDBM package contains the GNU Database Manager.
+# It is a library of database functions that use extensible hashing and work similar to the standard UNIX dbm.
+# The library provides primitives for storing key/data pairs, searching and retrieving the data by its key and deleting a key along with its data.
+
+_lfs_post_chroot_install_gdbm() {
+    package________name="gdbm"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr \
+                --disable-static \
+                --enable-libgdbm-compat
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.37. Gperf-3.1
+
+_lfs_post_chroot_install_gperf() {
+    package________name="gperf"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr --docdir=/usr/share/doc/gperf-3.1
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    The tests are known to fail if running multiple simultaneous tests (-j option greater than 1).
+    '
+    make -j1 check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.38. Expat-2.2.6
+
+_lfs_post_chroot_install_expat() {
+    package________name="expat"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    First fix a problem with the regression tests in the LFS environment:
+    '
+    sed -i 's|usr/bin/env |bin/|' run.sh.in
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr    \
+                --disable-static \
+                --docdir=/usr/share/doc/expat-2.2.6
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    install the documentation:
+    '
+    install -v -m644 doc/*.{html,png,css} /usr/share/doc/expat-2.2.6
+}
+
+################################################################################
+# 6.39. Inetutils-1.9.4
+
+_lfs_post_chroot_install_inetutils() {
+    package________name="inetutils"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr        \
+                --localstatedir=/var \
+                --disable-logger     \
+                --disable-whois      \
+                --disable-rcp        \
+                --disable-rexec      \
+                --disable-rlogin     \
+                --disable-rsh        \
+                --disable-servers
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________NOTE________________________________________ '
+    One test, libls.sh, may fail in the initial chroot environment but will pass if the test is rerun after the LFS system is complete.
+    One test, ping-localhost.sh, will fail if the host system does not have ipv6 capability.
+    '
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    Move some programs so they are available if /usr is not accessible:
+    '
+    mv -v /usr/bin/{hostname,ping,ping6,traceroute} /bin
+    mv -v /usr/bin/ifconfig /sbin
+}
+
+################################################################################
+# 6.40. Perl-5.28.0
+
+_lfs_post_chroot_install_perl() {
+    package________name="perl"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    First create a basic /etc/hosts file to be referenced in one of Perl'"'"'s configuration files as well as the optional test suite:
+    '
+    echo "127.0.0.1 localhost $(hostname)" > /etc/hosts
+    ________________________________________________________________________________ '
+    This version of Perl now builds the Compress::Raw::Zlib and Compress::Raw::BZip2 modules.
+    By default Perl will use an internal copy of the sources for the build.
+    Issue the following command so that Perl will use the libraries installed on the system:
+    '
+    export BUILD_ZLIB=False
+    export BUILD_BZIP2=0
+    ________________________________________________________________________________ '
+    To have full control over the way Perl is set up, you can remove the “-des” options from the following command and hand-pick the way this package is built.
+    Alternatively, use the command exactly as below to use the defaults that Perl auto-detects:
+    '
+    sh Configure -des -Dprefix=/usr                 \
+                      -Dvendorprefix=/usr           \
+                      -Dman1dir=/usr/share/man/man1 \
+                      -Dman3dir=/usr/share/man/man3 \
+                      -Dpager="/usr/bin/less -isR"  \
+                      -Duseshrplib                  \
+                      -Dusethreads
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make -k check
+    ________________________________________NOTE________________________________________ '
+    One test fails due to using the most recent version of gdbm.
+    '
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    unset BUILD_ZLIB BUILD_BZIP2
+}
+
+################################################################################
+# 6.41. XML::Parser-2.44
+
+_lfs_post_chroot_install_XML-Parser() {
+    package________name="XML-Parser"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    perl Makefile.PL
+    '
+    perl Makefile.PL
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make test
+    '
+    make test
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.42. Intltool-0.51.0
+
+# The Intltool is an internationalization tool used for extracting translatable strings from source files.
+
+_lfs_post_chroot_install_intltool() {
+    package________name="intltool"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    First fix a warning that is caused by perl-5.22 and later:
+    '
+    sed -i 's:\\\${:\\\$\\{:' intltool-update.in
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    install -v -Dm644 doc/I18N-HOWTO /usr/share/doc/intltool-0.51.0/I18N-HOWTO
+}
+
+################################################################################
+# 6.43. Autoconf-2.69
+
+_lfs_post_chroot_install_autoconf() {
+    package________name="autoconf"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    several tests are skipped that use Automake.
+    For full test coverage, Autoconf can be re-tested after Automake has been installed.
+    In addition, two tests fail due to changes in libtool-2.4.3 and later.
+    '
+    make check TESTSUITEFLAGS=-j64
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.44. Automake-1.16.1
+
+_lfs_post_chroot_install_automake() {
+    package________name="automake"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr --docdir=/usr/share/doc/automake-1.16.1
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make -j64 check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.45. Xz-5.2.4
+
+_lfs_post_chroot_install_xz() {
+    package________name="xz"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr    \
+                --disable-static \
+                --docdir=/usr/share/doc/xz-5.2.4
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    mv -v   /usr/bin/{lzma,unlzma,lzcat,xz,unxz,xzcat} /bin
+    mv -v /usr/lib/liblzma.so.* /lib
+    ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so
+}
+
+################################################################################
+# 6.46. Kmod-25
+
+_lfs_post_chroot_install_kmod-25() {
+    package________name="kmod-25"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr          \
+                --bindir=/bin          \
+                --sysconfdir=/etc      \
+                --with-rootlibdir=/lib \
+                --with-xz              \
+                --with-zlib
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    This package does not come with a test suite that can be run in the LFS chroot environment.
+    At a minimum the git program is required and several tests will not run outside of a git repository.
+    '
+    ________________________________________________________________________________ '
+    Install the package, and create symlinks for compatibility with Module-Init-Tools (the package that previously handled Linux kernel modules):
+    '
+    make install
+
+    for target in depmod insmod lsmod modinfo modprobe rmmod; do
+      ln -sfv ../bin/kmod /sbin/$target
+    done
+
+    ln -sfv kmod /bin/lsmod
+}
+
+################################################################################
+# 6.47. Gettext-0.19.8.1
+
+_lfs_post_chroot_install_gettext() {
+    package________name="gettext"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    First, suppress two invocations of test-lock which on some machines can loop forever:
+    '
+    sed -i '/^TESTS =/d' gettext-runtime/tests/Makefile.in &&
+    sed -i 's/test-lock..EXEEXT.//' gettext-tools/gnulib-tests/Makefile.in
+    ________________________________________________________________________________ '
+    Now fix a configuration file:
+    '
+    sed -e '/AppData/{N;N;p;s/\.appdata\./.metainfo./}' \
+    -i gettext-tools/its/appdata.loc
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr    \
+                --disable-static \
+                --docdir=/usr/share/doc/gettext-0.19.8.1
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    chmod -v 0755 /usr/lib/preloadable_libintl.so
+}
+
+################################################################################
+# 6.48. Libelf 0.173
+
+_lfs_post_chroot_install_libelf() {
+    package________name="libelf"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    Install only Libelf:
+    '
+    make -C libelf install
+    install -vm644 config/libelf.pc /usr/lib/pkgconfig
+}
+
+################################################################################
+# 6.49. Libffi-3.2.1
+
+_lfs_post_chroot_install_libffi() {
+    package________name="libffi"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    Modify the Makefile to install headers into the standard /usr/include directory instead of /usr/lib/libffi-3.2.1/include.
+    '
+    sed -e '/^includesdir/ s/$(libdir).*$/$(includedir)/' \
+        -i include/Makefile.in
+    sed -e '/^includedir/ s/=.*$/=@includedir@/' \
+        -e 's/^Cflags: -I${includedir}/Cflags:/' \
+        -i libffi.pc.in
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr --disable-static --with-gcc-arch=native
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.50. OpenSSL-1.1.0i
+
+# The OpenSSL package contains management tools and libraries relating to cryptography.
+# These are useful for providing cryptographic functions to other packages,
+# such as OpenSSH, email applications and web browsers (for accessing HTTPS sites).
+
+_lfs_post_chroot_install_openssl() {
+    package________name="openssl"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./config --prefix=/usr         \
+             --openssldir=/etc/ssl \
+             --libdir=lib          \
+             shared                \
+             zlib-dynamic
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make test
+    One subtest in the test 40-test_rehash.t fails in the lfs chroot environment, but passes when run as a regular user.
+    '
+    make test
+    ________________________________________________________________________________ '
+    # make install
+    '
+    sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
+    make MANSUFFIX=ssl install
+    ________________________________________________________________________________ '
+    install the documentation:
+    '
+    mv -v /usr/share/doc/openssl /usr/share/doc/openssl-1.1.0i
+    cp -vfr doc/* /usr/share/doc/openssl-1.1.0i
+}
+
+################################################################################
+# 6.51. Python-3.7.0
+
+_lfs_post_chroot_install_python() {
+    package________name="python"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr       \
+                --enable-shared     \
+                --with-system-expat \
+                --with-system-ffi   \
+                --with-ensurepip=yes
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________NOTE________________________________________ '
+    The test suite requires TK and and X Windows session and cannot be run until Python 3 is reinstalled in BLFS.
+    '
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    chmod -v 755 /usr/lib/libpython3.7m.so
+    chmod -v 755 /usr/lib/libpython3.so
+    ________________________________________________________________________________ '
+    install the preformatted documentation:
+    '
+    install -v -dm755 /usr/share/doc/python-3.7.0/html 
+
+    tar --strip-components=1  \
+        --no-same-owner       \
+        --no-same-permissions \
+        -C /usr/share/doc/python-3.7.0/html \
+        -xvf ../python-3.7.0-docs-html.tar.bz2
+}
+
+################################################################################
+# 6.52. Ninja-1.8.2
+
+# Ninja is a small build system with a focus on speed.
+
+_lfs_post_chroot_install_ninja() {
+    package________name="ninja"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    When run, ninja normally runs a maximum number of processes in parallel.
+    By default this is the number of cores on the system plus two.
+    In some cases this can overheat a CPU or run a system out of memory.
+    If run from the command line, passing a -jN parameter will limit the number of parallel processes,
+    but some packages embed the execution of ninja and do not pass a -j parameter.
+    Using the optional patch below allows a user to limit the number of parallel processes via an environment variable, NINJAJOBS. For example setting:
+    '
+    export NINJAJOBS=64
+    ________________________________________________________________________________ '
+    If desired, install the patch by running:
+    '
+    patch -Np1 -i ../ninja-1.8.2-add_NINJAJOBS_var-1.patch
+    ________________________________________________________________________________ '
+    Build Ninja with:
+    '
+    python3 configure.py --bootstrap
+    ________________________________________________________________________________ '
+    To test the results, issue:
+    '
+    python3 configure.py
+    ./ninja ninja_test
+    ./ninja_test --gtest_filter=-SubprocessTest.SetWithLots
+    ________________________________________________________________________________ '
+    Install
+    '
+    install -vm755 ninja /usr/bin/
+    install -vDm644 misc/bash-completion /usr/share/bash-completion/completions/ninja
+    install -vDm644 misc/zsh-completion  /usr/share/zsh/site-functions/_ninja
+}
+
+################################################################################
+# 6.53. Meson-0.47.1
+
+# Meson is an open source build system meant to be both extremely fast, and, even more importantly, as user friendly as possible.
+
+_lfs_post_chroot_install_meson() {
+    package________name="meson"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    Compile Meson
+    '
+    python3 setup.py build
+    ________________________________________________________________________________ '
+    install
+    '
+    python3 setup.py install --root=dest
+    cp -rv dest/* /
+}
+
+################################################################################
+# 6.54. Systemd-239
+
+_lfs_post_chroot_install_systemd() {
+    package________name="systemd"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    Create a symlink to work around missing xsltproc:
+    '
+    ln -sf /tools/bin/true /usr/bin/xsltproc
+    ________________________________________________________________________________ '
+    Set up the man pages:
+    '
+    tar -xf ../systemd-man-pages-239.tar.xz
+    ________________________________________________________________________________ '
+    Remove tests that cannot be built in chroot:
+    '
+    sed '166,$ d' -i src/resolve/meson.build
+    ________________________________________________________________________________ '
+    Apply a patch to fix a build failure with glibc-2.28:
+    '
+    patch -Np1 -i ../systemd-239-glibc_statx_fix-1.patch
+    ________________________________________________________________________________ '
+    Remove an unneeded group, render, from the default udev rules:
+    '
+    sed -i 's/GROUP="render", //' rules/50-udev-default.rules.in
+    ________________________________________________________________________________ '
+    Prepare systemd for compilation:
+    '
+    mkdir -p build
+    cd       build
+
+    LANG=en_US.UTF-8                   \
+    meson --prefix=/usr                \
+          --sysconfdir=/etc            \
+          --localstatedir=/var         \
+          -Dblkid=true                 \
+          -Dbuildtype=release          \
+          -Ddefault-dnssec=no          \
+          -Dfirstboot=false            \
+          -Dinstall-tests=false        \
+          -Dkill-path=/bin/kill        \
+          -Dkmod-path=/bin/kmod        \
+          -Dldconfig=false             \
+          -Dmount-path=/bin/mount      \
+          -Drootprefix=                \
+          -Drootlibdir=/lib            \
+          -Dsplit-usr=true             \
+          -Dsulogin-path=/sbin/sulogin \
+          -Dsysusers=false             \
+          -Dumount-path=/bin/umount    \
+          -Db_lto=false                \
+          ..
+    ________________________________________________________________________________ '
+    Compile the package:
+    '
+    LANG=en_US.UTF-8 ninja
+    ________________________________________________________________________________ '
+    Install the package:
+    '
+    LANG=en_US.UTF-8 ninja install
+    ________________________________________________________________________________ '
+    Remove an unnecessary directory:
+    '
+    rm -rfv /usr/lib/rpm
+    rm -f /usr/bin/xsltproc
+    ________________________________________________________________________________ '
+    Create the /etc/machine-id file needed by systemd-journald:
+    '
+    systemd-machine-id-setup
+    ________________________________________________________________________________ '
+    Create the /lib/systemd/systemd-user-sessions script to allow unprivileged user logins without systemd-logind:
+    '
+    cat > /lib/systemd/systemd-user-sessions << "EOF"
+#!/bin/bash
+rm -f /run/nologin
+EOF
+    chmod 755 /lib/systemd/systemd-user-sessions
+}
+
+################################################################################
+# 6.55. Procps-ng-3.3.15
+
+_lfs_post_chroot_install_procps-ng() {
+    package________name="procps-ng"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr                            \
+                --exec-prefix=                           \
+                --libdir=/usr/lib                        \
+                --docdir=/usr/share/doc/procps-ng-3.3.15 \
+                --disable-static                         \
+                --disable-kill                           \
+                --with-systemd
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    The test suite needs some custom modifications for LFS.
+    Remove a test that fails when scripting does not use a tty device and fix two others.
+    To run the test suite, run the following commands:
+    '
+    sed -i -r 's|(pmap_initname)\\\$|\1|' testsuite/pmap.test/pmap.exp
+    sed -i '/set tty/d' testsuite/pkill.test/pkill.exp
+    rm testsuite/pgrep.test/pgrep.exp
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    Finally, move essential libraries to a location that can be found if /usr is not mounted.
+    '
+    mv -v /usr/lib/libprocps.so.* /lib
+    ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so
+}
+
+################################################################################
+# 6.56. E2fsprogs-1.44.3
+
+_lfs_post_chroot_install_e2fsprogs() {
+    package________name="e2fsprogs"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    The E2fsprogs documentation recommends that the package be built in a subdirectory of the source tree:
+    '
+    mkdir -v build
+    cd build
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ../configure --prefix=/usr           \
+                 --bindir=/bin           \
+                 --with-root-prefix=""   \
+                 --enable-elf-shlibs     \
+                 --disable-libblkid      \
+                 --disable-libuuid       \
+                 --disable-uuidd         \
+                 --disable-fsck
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    To set up and run the test suite we need to first link some libraries from /tools/lib to a location where the test programs look.
+    '
+    ln -sfv /tools/lib/lib{blk,uu}id.so.1 lib
+    make LD_LIBRARY_PATH=/tools/lib check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    Install the static libraries and headers:
+    '
+    make install-libs
+    ________________________________________________________________________________ '
+    Make the installed static libraries writable so debugging symbols can be removed later:
+    '
+    chmod -v u+w /usr/lib/{libcom_err,libe2p,libext2fs,libss}.a
+    ________________________________________________________________________________ '
+    This package installs a gzipped .info file but doesnt update the system-wide dir file. Unzip this file and then update the system dir file using the following commands:
+    '
+    gunzip -v /usr/share/info/libext2fs.info.gz
+    install-info --dir-file=/usr/share/info/dir /usr/share/info/libext2fs.info
+    ________________________________________________________________________________ '
+    If desired, create and install some additional documentation by issuing the following commands:
+    '
+    makeinfo -o      doc/com_err.info ../lib/et/com_err.texinfo
+    install -v -m644 doc/com_err.info /usr/share/info
+    install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info
+}
+
+################################################################################
+# 6.57. Coreutils-8.30
+
+_lfs_post_chroot_install_coreutils() {
+    package________name="coreutils"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    POSIX requires that programs from Coreutils recognize character boundaries correctly even in multibyte locales.
+    The following patch fixes this non-compliance and other internationalization-related bugs.
+    '
+    patch -Np1 -i ../coreutils-8.30-i18n-1.patch
+    ________________________________________NOTE________________________________________ '
+    In the past, many bugs were found in this patch.
+    When reporting new bugs to Coreutils maintainers, please check first if they are reproducible without this patch.
+    '
+    ________________________________________________________________________________ '
+    Suppress a test which on some machines can loop forever:
+    '
+    sed -i '/test.lock/s/^/#/' gnulib-tests/gnulib.mk
+    ________________________________________________________________________________ '
+    # configure
+    '
+    autoreconf -fiv
+    FORCE_UNSAFE_CONFIGURE=1 ./configure \
+                --prefix=/usr            \
+                --enable-no-install-program=kill,uptime
+    ________________________________________________________________________________ '
+    # make
+    '
+    FORCE_UNSAFE_CONFIGURE=1 make
+    ________________________________________________________________________________ '
+    Now the test suite is ready to be run. First, run the tests that are meant to be run as user root:
+    '
+    make NON_ROOT_USERNAME=nobody check-root
+    ________________________________________________________________________________ '
+    We are going to run the remainder of the tests as the nobody user.
+    Certain tests, however, require that the user be a member of more than one group.
+    So that these tests are not skipped well add a temporary group and make the user nobody a part of it:
+    '
+    echo "dummy:x:1000:nobody" >> /etc/group
+    ________________________________________________________________________________ '
+    Fix some of the permissions so that the non-root user can compile and run the tests:
+    '
+    chown -Rv nobody . 
+    ________________________________________________________________________________ '
+    Now run the tests. Make sure the PATH in the su environment includes /tools/bin.
+    '
+    su nobody -s /bin/bash \
+              -c "PATH=$PATH make RUN_EXPENSIVE_TESTS=yes check"
+    ________________________________________________________________________________ '
+    The test program test-getlogin is known to fail in a partially built system environment like the chroot environment here,
+    but passes if run at the end of this chapter. The test program tty.sh is also known to fail.
+    Remove the temporary group:
+    '
+    sed -i '/dummy/d' /etc/group
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    Move programs to the locations specified by the FHS:
+    '
+    mv -v /usr/bin/{cat,chgrp,chmod,chown,cp,date,dd,df,echo} /bin
+    mv -v /usr/bin/{false,ln,ls,mkdir,mknod,mv,pwd,rm} /bin
+    mv -v /usr/bin/{rmdir,stty,sync,true,uname} /bin
+    mv -v /usr/bin/chroot /usr/sbin
+    mv -v /usr/share/man/man1/chroot.1 /usr/share/man/man8/chroot.8
+    sed -i s/\"1\"/\"8\"/1 /usr/share/man/man8/chroot.8
+    ________________________________________________________________________________ '
+    Some packages in BLFS and beyond expect the following programs in /bin, so make sure they are placed there:
+    '
+    mv -v /usr/bin/{head,sleep,nice} /bin
+}
+
+################################################################################
+# 6.58. Check-0.12.0
+
+# Check is a unit testing framework for C.
+
+_lfs_post_chroot_install_check() {
+    package________name="check"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    sed -i '1 s/tools/usr/' /usr/bin/checkmk
+}
+
+################################################################################
+# 6.59. Diffutils-3.6
+
+_lfs_post_chroot_install_diffutils() {
+    package________name="diffutils"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.60. Gawk-4.2.1
+
+_lfs_post_chroot_install_gawk() {
+    package________name="gawk"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    First, ensure some unneeded files are not installed:
+    '
+    sed -i 's/extras//' Makefile.in
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    install the documentation:
+    '
+    mkdir -v /usr/share/doc/gawk-4.2.1
+    cp    -v doc/{awkforai.txt,*.{eps,pdf,jpg}} /usr/share/doc/gawk-4.2.1
+}
+
+################################################################################
+# 6.61. Findutils-4.6.0
+
+_lfs_post_chroot_install_() {
+    package________name=""
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    First, suppress a test which on some machines can loop forever:
+    '
+    sed -i 's/test-lock..EXEEXT.//' tests/Makefile.in
+    ________________________________________________________________________________ '
+    Next, make some fixes required by glibc-2.28:
+    '
+    sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' gl/lib/*.c
+    sed -i '/unistd/a #include <sys/sysmacros.h>' gl/lib/mountlist.c
+    echo "#define _IO_IN_BACKUP 0x100" >> gl/lib/stdio-impl.h
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr --localstatedir=/var/lib/locate
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    Some packages in BLFS and beyond expect the find program in /bin, so make sure its placed there:
+    '
+    mv -v /usr/bin/find /bin
+    sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb
+}
+
+################################################################################
+# 6.62. Groff-1.22.3
+
+_lfs_post_chroot_install_groff() {
+    package________name="groff"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    Groff expects the environment variable PAGE to contain the default paper size.
+    For users in the United States, PAGE=letter is appropriate. Elsewhere, PAGE=A4 may be more suitable.
+    While the default paper size is configured during compilation,
+    it can be overridden later by echoing either “A4” or “letter” to the /etc/papersize file.
+    '
+    ________________________________________________________________________________ '
+    # configure
+    '
+    PAGE=letter ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    This package does not support parallel build. Compile the package:
+    '
+    make -j1
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.63. GRUB-2.02
+
+_lfs_post_chroot_install_grub() {
+    package________name="grub"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr          \
+                --sbindir=/sbin        \
+                --sysconfdir=/etc      \
+                --disable-efiemu       \
+                --disable-werror
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.64. Less-530
+
+_lfs_post_chroot_install_less() {
+    package________name="less"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr --sysconfdir=/etc
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.65. Gzip-1.9
+
+_lfs_post_chroot_install_gzip() {
+    package________name="gzip"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    First, make some fixes required by glibc-2.28:
+    '
+    sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' lib/*.c
+    echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    Two tests are known to fail in the LFS environment: help-version and zmore.
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    Move a program that needs to be on the root filesystem:
+    '
+    mv -v /usr/bin/gzip /bin
+}
+
+################################################################################
+# 6.66. IPRoute2-4.18.0
+
+_lfs_post_chroot_install_iproute2() {
+    package________name="iproute2"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    The arpd program included in this package will not be built since it is dependent on Berkeley DB, which is not installed in LFS.
+    However, a directory for arpd and a man page will still be installed.
+    Prevent this by running the commands below.
+    If the arpd binary is needed, instructions for compiling Berkeley DB can be found in the BLFS Book at
+    http://www.linuxfromscratch.org/blfs/view/8.3/server/databases.html#db.
+    '
+    sed -i /ARPD/d Makefile
+    rm -fv man/man8/arpd.8
+    ________________________________________________________________________________ '
+    It is also necessary to disable building two modules that requires http://www.linuxfromscratch.org/blfs/view/8.3/postlfs/iptables.html.
+    '
+    sed -i 's/.m_ipt.o//' tc/Makefile
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make DOCDIR=/usr/share/doc/iproute2-4.18.0 install
+}
+
+################################################################################
+# 6.67. Kbd-2.0.4
+
+_lfs_post_chroot_install_kbd() {
+    package________name="kbd"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    The behaviour of the Backspace and Delete keys is not consistent across the keymaps in the Kbd package.
+    The following patch fixes this issue for i386 keymaps:
+    '
+    patch -Np1 -i ../kbd-2.0.4-backspace-1.patch
+    ________________________________________________________________________________ '
+    After patching, the Backspace key generates the character with code 127, and the Delete key generates a well-known escape sequence.
+    Remove the redundant resizecons program (it requires the defunct svgalib to provide
+    the video mode files - for normal use setfont sizes the console appropriately) together with its manpage.
+    '
+    sed -i 's/\(RESIZECONS_PROGS=\)yes/\1no/g' configure
+    sed -i 's/resizecons.8 //' docs/man/man8/Makefile.in
+    ________________________________________________________________________________ '
+    # configure
+    '
+    PKG_CONFIG_PATH=/tools/lib/pkgconfig ./configure --prefix=/usr --disable-vlock
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________NOTE________________________________________ '
+    For some languages (e.g., Belarusian) the Kbd package doesnt provide a useful keymap where
+    the stock “by” keymap assumes the ISO-8859-5 encoding, and the CP1251 keymap is normally used.
+    Users of such languages have to download working keymaps separately.
+    '
+    ________________________________________________________________________________ '
+    install the documentation:
+    '
+    mkdir -v       /usr/share/doc/kbd-2.0.4
+    cp -R -v docs/doc/* /usr/share/doc/kbd-2.0.4
+}
+
+################################################################################
+# 6.68. Libpipeline-1.5.0
+
+_lfs_post_chroot_install_libpipeline() {
+    package________name="libpipeline"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.69. Make-4.2.1
+
+_lfs_post_chroot_install_make() {
+    package________name="make"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    Again, work around an error caused by glibc-2.27:
+    '
+    sed -i '211,217 d; 219,229 d; 232 d' glob/glob.c
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    The test suite needs to know where supporting perl files are located.
+    We use an environment variable to accomplish this. To test the results, issue:
+    '
+    make PERL5LIB=$PWD/tests/ check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.70. Patch-2.7.6
+
+_lfs_post_chroot_install_patch() {
+    package________name="patch"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.71. D-Bus-1.12.10
+
+_lfs_post_chroot_install_dbus() {
+    package________name="dbus"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+      ./configure --prefix=/usr                       \
+                  --sysconfdir=/etc                   \
+                  --localstatedir=/var                \
+                  --disable-static                    \
+                  --disable-doxygen-docs              \
+                  --disable-xml-docs                  \
+                  --docdir=/usr/share/doc/dbus-1.12.10 \
+                  --with-console-auth-dir=/run/console
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    This package does come with a test suite, but it requires several packages that are not included in LFS.
+    Instructions for running the test suite can be found in the BLFS book at
+    http://www.linuxfromscratch.org/blfs/view/8.3/general/dbus.html.
+    '
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    The shared library needs to be moved to /lib, and as a result the .so file in /usr/lib will need to be recreated:
+    '
+    mv -v /usr/lib/libdbus-1.so.* /lib
+    ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so
+    ________________________________________________________________________________ '
+    Create a symlink, so that D-Bus and systemd can use the same machine-id file:
+    '
+    ln -sfv /etc/machine-id /var/lib/dbus
+}
+
+################################################################################
+# 6.72. Util-linux-2.32.1
+
+_lfs_post_chroot_install_util-linux() {
+    package________name="util-linux"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    Remove the earlier created symlinks:
+    '
+    rm -vf /usr/include/{blkid,libmount,uuid}
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure ADJTIME_PATH=/var/lib/hwclock/adjtime   \
+                --docdir=/usr/share/doc/util-linux-2.32.1 \
+                --disable-chfn-chsh  \
+                --disable-login      \
+                --disable-nologin    \
+                --disable-su         \
+                --disable-setpriv    \
+                --disable-runuser    \
+                --disable-pylibmount \
+                --disable-static     \
+                --without-python
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    If desired, run the test suite as a non-root user:
+    '
+    ________________________________________NOTE________________________________________ '
+    Running the test suite as the root user can be harmful to your system.
+    To run it, the CONFIG_SCSI_DEBUG option for the kernel must be available in the currently running system, and must be built as a module.
+    Building it into the kernel will prevent booting.
+    For complete coverage, other BLFS packages must be installed.
+    If desired, this test can be run after rebooting into the completed LFS system and running:
+    ' '
+    bash tests/run.sh --srcdir=$PWD --builddir=$PWD\n
+    chown -Rv nobody .\n
+    su nobody -s /bin/bash -c "PATH=$PATH make -k check"
+    '
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.73. Man-DB-2.8.4
+
+_lfs_post_chroot_install_man-db() {
+    package________name=man-db""
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr                        \
+                --docdir=/usr/share/doc/man-db-2.8.4 \
+                --sysconfdir=/etc                    \
+                --disable-setuid                     \
+                --enable-cache-owner=bin             \
+                --with-browser=/usr/bin/lynx         \
+                --with-vgrind=/usr/bin/vgrind        \
+                --with-grap=/usr/bin/grap
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.74. Tar-1.30
+
+_lfs_post_chroot_install_tar() {
+    package________name="tar"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    FORCE_UNSAFE_CONFIGURE=1  \
+    ./configure --prefix=/usr \
+                --bindir=/bin
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    make -C doc install-html docdir=/usr/share/doc/tar-1.30
+}
+
+################################################################################
+# 6.75. Texinfo-6.5
+
+_lfs_post_chroot_install_texinfo() {
+    package________name="texinfo"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    Fix a file that creates a lot of failures in the regression checks:
+    '
+    sed -i '5481,5485 s/({/(\\{/' tp/Texinfo/Parser.pm
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr --disable-static
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    Optionally, install the components belonging in a TeX installation:
+    '
+    make TEXMF=/usr/share/texmf install-tex
+    ________________________________________________________________________________ '
+    The Info documentation system uses a plain text file to hold its list of menu entries.
+    The file is located at /usr/share/info/dir.
+    Unfortunately, due to occasional problems in the Makefiles of various packages,
+    it can sometimes get out of sync with the info pages installed on the system.
+    If the /usr/share/info/dir file ever needs to be recreated, the following optional commands will accomplish the task:
+    '
+    pushd /usr/share/info
+    rm -v dir
+    for f in *
+      do install-info $f dir 2>/dev/null
+    done
+    popd
+}
+
+################################################################################
+# 6.76. Vim-8.1
+
+_lfs_post_chroot_install_vim() {
+    package________name="vim"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    First, change the default location of the vimrc configuration file to /etc:
+    '
+    echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make test
+    '
+    LANG=en_US.UTF-8 make -j1 test &> vim-test.log
+    ________________________________________________________________________________ '
+    The test suite outputs a lot of binary data to the screen.
+    This can cause issues with the settings of the current terminal.
+    The problem can be avoided by redirecting the output to a log file as shown above.
+    A successful test will result in the words "ALL DONE" in the log file at completion.
+    '
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    Many users are used to using vi instead of vim.
+    To allow execution of vim when users habitually enter vi,
+    create a symlink for both the binary and the man page in the provided languages:
+    '
+    ln -sv vim /usr/bin/vi
+    for L in  /usr/share/man/{,*/}man1/vim.1; do
+        ln -sv vim.1 $(dirname $L)/vi.1
+    done
+    ________________________________________________________________________________ '
+    By default, Vim documentation is installed in /usr/share/vim.
+    The following symlink allows the documentation to be accessed via /usr/share/doc/vim-8.1,
+    making it consistent with the location of documentation for other packages:
+    '
+    ln -sv ../vim/vim81/doc /usr/share/doc/vim-8.1
+    ________________________________________________________________________________ '
+    If an X Window System is going to be installed on the LFS system, it may be necessary to recompile Vim after installing X.
+    Vim comes with a GUI version of the editor that requires X and some additional libraries to be installed.
+    For more information on this process, refer to the Vim documentation and the Vim installation page in the BLFS book at
+    http://www.linuxfromscratch.org/blfs/view/8.3/postlfs/vim.html.
+    '
+    ________________________________________________________________________________ '
+    By default, vim runs in vi-incompatible mode.
+    This may be new to users who have used other editors in the past.
+    The “nocompatible” setting is included below to highlight the fact that a new behavior is being used.
+    It also reminds those who would change to “compatible” mode that it should be the first setting in the configuration file.
+    This is necessary because it changes other settings, and overrides must come after this setting.
+    Create a default vim configuration file by running the following:
+    '
+    cat > /etc/vimrc << "EOF"
+" Begin /etc/vimrc
+
+" Ensure defaults are set before customizing settings, not after
+source $VIMRUNTIME/defaults.vim
+let skip_defaults_vim=1 
+
+set nocompatible
+set backspace=2
+set mouse=
+syntax on
+if (&term == "xterm") || (&term == "putty")
+  set background=dark
+endif
+
+" End /etc/vimrc
+EOF
+    ________________________________________________________________________________ '
+    Documentation for other available options can be obtained by running the following command:
+    '
+    vim -c ':options'
+}
 
 ################################################################################
 # example
