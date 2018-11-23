@@ -1759,6 +1759,9 @@ _lfs_remove_I_have_no_name_prompt() {
 # The Linux API Headers (in linux-4.18.5.tar.xz) expose the kernel's API for use by Glibc.
 
 _lfs_basic_system_install_linux_api_headers() {
+    ________________________________________________________________________________ '
+    linux_api_headers
+    '
     cd /sources/linux-4.18.5
 
     # Make sure there are no stale files and dependencies lying around from previous activity:
@@ -1778,6 +1781,9 @@ _lfs_basic_system_install_linux_api_headers() {
 # 6.8. Man-pages-4.16
 
 _lfs_basic_system_install_man-pages() {
+    ________________________________________________________________________________ '
+    man
+    '
     cd /sources/
     tar xf man-pages-4.16.tar.xz
     cd man-pages-4.16
@@ -1788,6 +1794,9 @@ _lfs_basic_system_install_man-pages() {
 # 6.9. Glibc-2.28
 
 _lfs_basic_system_install_glibc() {
+    ________________________________________________________________________________ '
+    glibc
+    '
     cd /sources/glibc-2.28
 
     # Some of the Glibc programs use the non-FHS compilant /var/db directory to store their runtime data.
@@ -1904,6 +1913,9 @@ _lfs_basic_system_install_glibc() {
 }
 
 _lfs_basic_system_configure_glibc() {
+    ________________________________________________________________________________ '
+    _lfs_basic_system_configure_glibc
+    '
     # 6.9.2. Configuring Glibc
 
     # 6.9.2.1. Adding nsswitch.conf
@@ -2049,6 +2061,9 @@ _lfs_basic_system_adjust_toolchain() {
 # 6.11. Zlib-1.2.11
 
 _lfs_basic_system_install_zlib() {
+    ________________________________________________________________________________ '
+    zlib
+    '
     cd /sources/
     tar xf zlib-1.2.11.tar.xz
     cd zlib-1.2.11
@@ -2075,6 +2090,9 @@ _lfs_basic_system_install_zlib() {
 # 6.12. File-5.34
 
 _lfs_basic_system_install_file() {
+    ________________________________________________________________________________ '
+    file
+    '
     pack=file
 
     cd /sources/
@@ -2092,6 +2110,9 @@ _lfs_basic_system_install_file() {
 # 6.13. Readline-7.0
 
 _lfs_basic_system_install_readline() {
+    ________________________________________________________________________________ '
+    readline
+    '
     package________name="readline"
 
     cd /sources/
@@ -2136,6 +2157,9 @@ _lfs_basic_system_install_readline() {
 # 6.14. M4-1.4.18
 
 _lfs_basic_system_install_m4() {
+    ________________________________________________________________________________ '
+    m4
+    '
     package________name="m4"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2168,6 +2192,9 @@ _lfs_basic_system_install_m4() {
 # 6.15. Bc-1.07.1
 
 _lfs_basic_system_install_bc() {
+    ________________________________________________________________________________ '
+    bc
+    '
     package________name="bc"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2227,6 +2254,9 @@ EOF
 # 6.16. Binutils-2.31.1
 
 _lfs_basic_system_install_binutils() {
+    ________________________________________________________________________________ '
+    binutils
+    '
     package________name="binutils"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2279,6 +2309,9 @@ _lfs_basic_system_install_binutils() {
 # 6.17. GMP-6.1.2
 
 _lfs_basic_system_install_gmp() {
+    ________________________________________________________________________________ '
+    gmp
+    '
     package________name="gmp"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2337,6 +2370,9 @@ _lfs_basic_system_install_gmp() {
 # 6.18. MPFR-4.0.1
 
 _lfs_basic_system_install_mpfr() {
+    ________________________________________________________________________________ '
+    mpfr
+    '
     package________name="mpfr"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2368,6 +2404,9 @@ _lfs_basic_system_install_mpfr() {
 # 6.19. MPC-1.1.0
 
 _lfs_basic_system_install_mpc() {
+    ________________________________________________________________________________ '
+    mpc
+    '
     package________name="mpc"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2400,6 +2439,9 @@ _lfs_basic_system_install_mpc() {
 # The Shadow package contains programs for handling passwords in a secure way.
 
 _lfs_basic_system_install_shadow() {
+    ________________________________________________________________________________ '
+    shadow
+    '
     package________name="shadow"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2453,6 +2495,9 @@ _lfs_basic_system_install_shadow() {
 }
 
 _lfs_basic_system_configure_shadow() {
+    ________________________________________________________________________________ '
+    _lfs_basic_system_configure_shadow
+    '
     ________________________________________________________________________________ '
     This package contains utilities to add, modify, and delete users and groups;
     set and change their passwords; and perform other administrative tasks.
@@ -2509,6 +2554,9 @@ _lfs_basic_system_configure_shadow() {
 # 6.21. GCC-8.2.0
 
 _lfs_basic_system_install_gcc() {
+    ________________________________________________________________________________ '
+    gcc
+    '
     set +e
 
     package________name="gcc"
@@ -2700,6 +2748,9 @@ _lfs_basic_system_install_gcc() {
 # 6.22. Bzip2-1.0.6
 
 _lfs_basic_system_install_bzip2() {
+    ________________________________________________________________________________ '
+    bzip2
+    '
     package________name="bzip2"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2744,6 +2795,9 @@ _lfs_basic_system_install_bzip2() {
 # 6.23. Pkg-config-0.29.2
 
 _lfs_basic_system_install_pkg-config() {
+    ________________________________________________________________________________ '
+    pkg-config
+    '
     package________name="pkg-config"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2773,6 +2827,9 @@ _lfs_basic_system_install_pkg-config() {
 # 6.24. Ncurses-6.1
 
 _lfs_basic_system_install_ncurses() {
+    ________________________________________________________________________________ '
+    ncurses
+    '
     package________name="ncurses"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2849,6 +2906,9 @@ _lfs_basic_system_install_ncurses() {
 # 6.25. Attr-2.4.48
 
 _lfs_basic_system_install_attr() {
+    ________________________________________________________________________________ '
+    attr
+    '
     package________name="attr"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2884,6 +2944,9 @@ _lfs_basic_system_install_attr() {
 # 6.26. Acl-2.2.53
 
 _lfs_basic_system_install_acl() {
+    ________________________________________________________________________________ '
+    acl
+    '
     package________name="acl"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2915,6 +2978,9 @@ _lfs_basic_system_install_acl() {
 # 6.27. Libcap-2.25
 
 _lfs_basic_system_install_libcap() {
+    ________________________________________________________________________________ '
+    libcap
+    '
     package________name="libcap"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2945,6 +3011,9 @@ _lfs_basic_system_install_libcap() {
 # 6.28. Sed-4.5
 
 _lfs_basic_system_install_sed() {
+    ________________________________________________________________________________ '
+    sed
+    '
     package________name="sed"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2981,6 +3050,9 @@ _lfs_basic_system_install_sed() {
 # The Psmisc package contains programs for displaying information about running processes.
 
 _lfs_basic_system_install_psmisc() {
+    ________________________________________________________________________________ '
+    psmisc
+    '
     package________name="psmisc"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3010,6 +3082,9 @@ _lfs_basic_system_install_psmisc() {
 # The Iana-Etc package provides data for network services and protocols.
 
 _lfs_basic_system_install_iana-etc() {
+    ________________________________________________________________________________ '
+    iana-etc
+    '
     package________name="iana-etc"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3030,6 +3105,9 @@ _lfs_basic_system_install_iana-etc() {
 # 6.31. Bison-3.0.5
 
 _lfs_basic_system_install_bison() {
+    ________________________________________________________________________________ '
+    bison
+    '
     package________name="bison"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3059,6 +3137,9 @@ _lfs_basic_system_install_bison() {
 # The Flex package contains a utility for generating programs that recognize patterns in text.
 
 _lfs_basic_system_install_flex() {
+    ________________________________________________________________________________ '
+    flex
+    '
     package________name="flex"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3096,6 +3177,9 @@ _lfs_basic_system_install_flex() {
 # 6.33. Grep-3.1
 
 _lfs_basic_system_install_grep() {
+    ________________________________________________________________________________ '
+    grep
+    '
     package________name="grep"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3122,6 +3206,9 @@ _lfs_basic_system_install_grep() {
 # 6.34. Bash-4.4.18
 
 _lfs_basic_system_install_bash() {
+    ________________________________________________________________________________ '
+    bash
+    '
     package________name="bash"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3163,6 +3250,9 @@ _lfs_basic_system_install_bash() {
 # 6.35. Libtool-2.4.6
 
 _lfs_basic_system_install_libtool() {
+    ________________________________________________________________________________ '
+    libtool
+    '
     package________name="libtool"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3199,6 +3289,9 @@ _lfs_basic_system_install_libtool() {
 # The library provides primitives for storing key/data pairs, searching and retrieving the data by its key and deleting a key along with its data.
 
 _lfs_basic_system_install_gdbm() {
+    ________________________________________________________________________________ '
+    gdbm
+    '
     package________name="gdbm"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3227,6 +3320,9 @@ _lfs_basic_system_install_gdbm() {
 # 6.37. Gperf-3.1
 
 _lfs_basic_system_install_gperf() {
+    ________________________________________________________________________________ '
+    gperf
+    '
     package________name="gperf"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3253,6 +3349,9 @@ _lfs_basic_system_install_gperf() {
 # 6.38. Expat-2.2.6
 
 _lfs_basic_system_install_expat() {
+    ________________________________________________________________________________ '
+    expat
+    '
     package________name="expat"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3289,6 +3388,9 @@ _lfs_basic_system_install_expat() {
 # 6.39. Inetutils-1.9.4
 
 _lfs_basic_system_install_inetutils() {
+    ________________________________________________________________________________ '
+    inetutils
+    '
     package________name="inetutils"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3332,6 +3434,9 @@ _lfs_basic_system_install_inetutils() {
 # 6.40. Perl-5.28.0
 
 _lfs_basic_system_install_perl() {
+    ________________________________________________________________________________ '
+    perl
+    '
     package________name="perl"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3380,6 +3485,9 @@ _lfs_basic_system_install_perl() {
 # 6.41. XML::Parser-2.44
 
 _lfs_basic_system_install_XML-Parser() {
+    ________________________________________________________________________________ '
+    XML-Parser
+    '
     package________name="XML-Parser"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3408,6 +3516,9 @@ _lfs_basic_system_install_XML-Parser() {
 # The Intltool is an internationalization tool used for extracting translatable strings from source files.
 
 _lfs_basic_system_install_intltool() {
+    ________________________________________________________________________________ '
+    intltool
+    '
     package________name="intltool"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3439,6 +3550,9 @@ _lfs_basic_system_install_intltool() {
 # 6.43. Autoconf-2.69
 
 _lfs_basic_system_install_autoconf() {
+    ________________________________________________________________________________ '
+    autoconf
+    '
     package________name="autoconf"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3468,6 +3582,9 @@ _lfs_basic_system_install_autoconf() {
 # 6.44. Automake-1.16.1
 
 _lfs_basic_system_install_automake() {
+    ________________________________________________________________________________ '
+    automake
+    '
     package________name="automake"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3494,6 +3611,9 @@ _lfs_basic_system_install_automake() {
 # 6.45. Xz-5.2.4
 
 _lfs_basic_system_install_xz() {
+    ________________________________________________________________________________ '
+    xz
+    '
     package________name="xz"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3525,6 +3645,9 @@ _lfs_basic_system_install_xz() {
 # 6.46. Kmod-25
 
 _lfs_basic_system_install_kmod-25() {
+    ________________________________________________________________________________ '
+    kmod25
+    '
     package________name="kmod-25"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3562,6 +3685,9 @@ _lfs_basic_system_install_kmod-25() {
 # 6.47. Gettext-0.19.8.1
 
 _lfs_basic_system_install_gettext() {
+    ________________________________________________________________________________ '
+    gettext
+    '
     package________name="gettext"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3601,6 +3727,9 @@ _lfs_basic_system_install_gettext() {
 # 6.48. Libelf 0.173
 
 _lfs_basic_system_install_libelf() {
+    ________________________________________________________________________________ '
+    libelf
+    '
     package________name="libelf"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3628,6 +3757,9 @@ _lfs_basic_system_install_libelf() {
 # 6.49. Libffi-3.2.1
 
 _lfs_basic_system_install_libffi() {
+    ________________________________________________________________________________ '
+    libffi
+    '
     package________name="libffi"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3666,6 +3798,9 @@ _lfs_basic_system_install_libffi() {
 # such as OpenSSH, email applications and web browsers (for accessing HTTPS sites).
 
 _lfs_basic_system_install_openssl() {
+    ________________________________________________________________________________ '
+    openssl
+    '
     package________name="openssl"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3703,6 +3838,9 @@ _lfs_basic_system_install_openssl() {
 # 6.51. Python-3.7.0
 
 _lfs_basic_system_install_python() {
+    ________________________________________________________________________________ '
+    python
+    '
     package________name="python"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3746,6 +3884,9 @@ _lfs_basic_system_install_python() {
 # Ninja is a small build system with a focus on speed.
 
 _lfs_basic_system_install_ninja() {
+    ________________________________________________________________________________ '
+    ninja
+    '
     package________name="ninja"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3787,6 +3928,9 @@ _lfs_basic_system_install_ninja() {
 # Meson is an open source build system meant to be both extremely fast, and, even more importantly, as user friendly as possible.
 
 _lfs_basic_system_install_meson() {
+    ________________________________________________________________________________ '
+    meson
+    '
     package________name="meson"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3806,6 +3950,9 @@ _lfs_basic_system_install_meson() {
 # 6.54. Systemd-239
 
 _lfs_basic_system_install_systemd() {
+    ________________________________________________________________________________ '
+    systemd
+    '
     package________name="systemd"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3888,6 +4035,9 @@ EOF
 # 6.55. Procps-ng-3.3.15
 
 _lfs_basic_system_install_procps-ng() {
+    ________________________________________________________________________________ '
+    procps-ng
+    '
     package________name="procps-ng"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3930,6 +4080,9 @@ _lfs_basic_system_install_procps-ng() {
 # 6.56. E2fsprogs-1.44.3
 
 _lfs_basic_system_install_e2fsprogs() {
+    ________________________________________________________________________________ '
+    e2fsprogs
+    '
     package________name="e2fsprogs"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3988,6 +4141,9 @@ _lfs_basic_system_install_e2fsprogs() {
 # 6.57. Coreutils-8.30
 
 _lfs_basic_system_install_coreutils() {
+    ________________________________________________________________________________ '
+    coreutils
+    '
     package________name="coreutils"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4066,6 +4222,9 @@ _lfs_basic_system_install_coreutils() {
 # Check is a unit testing framework for C.
 
 _lfs_basic_system_install_check() {
+    ________________________________________________________________________________ '
+    check
+    '
     package________name="check"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4093,6 +4252,9 @@ _lfs_basic_system_install_check() {
 # 6.59. Diffutils-3.6
 
 _lfs_basic_system_install_diffutils() {
+    ________________________________________________________________________________ '
+    diffutils
+    '
     package________name="diffutils"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4119,6 +4281,9 @@ _lfs_basic_system_install_diffutils() {
 # 6.60. Gawk-4.2.1
 
 _lfs_basic_system_install_gawk() {
+    ________________________________________________________________________________ '
+    gawk
+    '
     package________name="gawk"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4154,6 +4319,9 @@ _lfs_basic_system_install_gawk() {
 # 6.61. Findutils-4.6.0
 
 _lfs_basic_system_install_findutils() {
+    ________________________________________________________________________________ '
+    findutils
+    '
     package________name="findutils"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4195,6 +4363,9 @@ _lfs_basic_system_install_findutils() {
 # 6.62. Groff-1.22.3
 
 _lfs_basic_system_install_groff() {
+    ________________________________________________________________________________ '
+    groff
+    '
     package________name="groff"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4223,6 +4394,9 @@ _lfs_basic_system_install_groff() {
 # 6.63. GRUB-2.02
 
 _lfs_basic_system_install_grub() {
+    ________________________________________________________________________________ '
+    grub
+    '
     package________name="grub"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4249,6 +4423,9 @@ _lfs_basic_system_install_grub() {
 # 6.64. Less-530
 
 _lfs_basic_system_install_less() {
+    ________________________________________________________________________________ '
+    less
+    '
     package________name="less"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4271,6 +4448,9 @@ _lfs_basic_system_install_less() {
 # 6.65. Gzip-1.9
 
 _lfs_basic_system_install_gzip() {
+    ________________________________________________________________________________ '
+    gzip
+    '
     package________name="gzip"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4307,6 +4487,9 @@ _lfs_basic_system_install_gzip() {
 # 6.66. IPRoute2-4.18.0
 
 _lfs_basic_system_install_iproute2() {
+    ________________________________________________________________________________ '
+    iproute2
+    '
     package________name="iproute2"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4338,6 +4521,9 @@ _lfs_basic_system_install_iproute2() {
 # 6.67. Kbd-2.0.4
 
 _lfs_basic_system_install_kbd() {
+    ________________________________________________________________________________ '
+    kbd
+    '
     package________name="kbd"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4386,6 +4572,9 @@ _lfs_basic_system_install_kbd() {
 # 6.68. Libpipeline-1.5.0
 
 _lfs_basic_system_install_libpipeline() {
+    ________________________________________________________________________________ '
+    libpipeline
+    '
     package________name="libpipeline"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4412,6 +4601,9 @@ _lfs_basic_system_install_libpipeline() {
 # 6.69. Make-4.2.1
 
 _lfs_basic_system_install_make() {
+    ________________________________________________________________________________ '
+    make
+    '
     package________name="make"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4443,6 +4635,9 @@ _lfs_basic_system_install_make() {
 # 6.70. Patch-2.7.6
 
 _lfs_basic_system_install_patch() {
+    ________________________________________________________________________________ '
+    patch
+    '
     package________name="patch"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4469,6 +4664,9 @@ _lfs_basic_system_install_patch() {
 # 6.71. D-Bus-1.12.10
 
 _lfs_basic_system_install_dbus() {
+    ________________________________________________________________________________ '
+    dbus
+    '
     package________name="dbus"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4515,6 +4713,9 @@ _lfs_basic_system_install_dbus() {
 # Among them are utilities for handling file systems, consoles, partitions, and messages.
 
 _lfs_basic_system_install_util-linux() {
+    ________________________________________________________________________________ '
+    util-linux
+    '
     package________name="util-linux"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4570,6 +4771,9 @@ _lfs_basic_system_install_util-linux() {
 # 6.73. Man-DB-2.8.4
 
 _lfs_basic_system_install_man-db() {
+    ________________________________________________________________________________ '
+    man-db
+    '
     package________name=man-db""
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4603,6 +4807,9 @@ _lfs_basic_system_install_man-db() {
 # 6.74. Tar-1.30
 
 _lfs_basic_system_install_tar() {
+    ________________________________________________________________________________ '
+    tar
+    '
     package________name="tar"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4632,6 +4839,9 @@ _lfs_basic_system_install_tar() {
 # 6.75. Texinfo-6.5
 
 _lfs_basic_system_install_texinfo() {
+    ________________________________________________________________________________ '
+    texinfo
+    '
     package________name="texinfo"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4679,6 +4889,9 @@ _lfs_basic_system_install_texinfo() {
 # 6.76. Vim-8.1
 
 _lfs_basic_system_install_vim() {
+    ________________________________________________________________________________ '
+    vim
+    '
     package________name="vim"
     cd /sources/
     tar xf `ls $package________name-*tar*`
