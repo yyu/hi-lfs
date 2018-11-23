@@ -2721,7 +2721,7 @@ _lfs_post_chroot_install_ncurses() {
     mkdir -v       /usr/share/doc/ncurses-6.1
     cp -v -R doc/* /usr/share/doc/ncurses-6.1
     ________________________________________NOTE________________________________________ '
-    The instructions above don't create non-wide-character Ncurses libraries since no package installed
+    The instructions above don'"'"'t create non-wide-character Ncurses libraries since no package installed
     by compiling from sources would link against them at runtime.
     However, the only known binary-only applications that link against non-wide-character Ncurses libraries require version 5.
     If you must have such libraries because of some binary-only application or to be compliant with LSB,
@@ -2737,6 +2737,74 @@ _lfs_post_chroot_install_ncurses() {
     cp -av lib/lib*.so.5* /usr/lib
     '
 }
+
+################################################################################
+# 6.25. Attr-2.4.48
+
+_lfs_post_chroot_install_attr() {
+    package________name="attr"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr     \
+                --disable-static  \
+                --sysconfdir=/etc \
+                --docdir=/usr/share/doc/attr-2.4.48
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    The shared library needs to be moved to /lib, and as a result the .so
+    file in /usr/lib will need to be recreated:
+    '
+    mv -v /usr/lib/libattr.so.* /lib
+    ln -sfv ../../lib/$(readlink /usr/lib/libattr.so) /usr/lib/libattr.so
+}
+
+################################################################################
+# 6.26. Acl-2.2.53
+
+_lfs_post_chroot_install_acl() {
+    package________name="acl"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr         \
+                --disable-static      \
+                --libexecdir=/usr/lib \
+                --docdir=/usr/share/doc/acl-2.2.53
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    The shared library needs to be moved to /lib, and as a result the .so
+    file in /usr/lib will need to be recreated:
+    '
+    mv -v /usr/lib/libacl.so.* /lib
+    ln -sfv ../../lib/$(readlink /usr/lib/libacl.so) /usr/lib/libacl.so
+}
+
+
 
 ################################################################################
 # example
