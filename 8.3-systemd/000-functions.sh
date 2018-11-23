@@ -1,6 +1,6 @@
 ## source me, don't run me
 
-export LFS_PARTITION=~/lfs.img
+export LFS_PARTITION=/home/ubuntu/lfs.img
 
 export LFS_VERSION="stable-systemd"
 
@@ -46,11 +46,17 @@ ________________________________________IMPORTANT_______________________________
 }
 
 _lfs_create_disk_image() {
-    fallocate -l 80G $LFS_PARTITION
+    fallocate -l 256G $LFS_PARTITION
+    ls -lh $LFS_PARTITION
 }
 
 ################################################################################
 # 2.2. Host System Requirements
+
+_lfs_host_prepare() {
+    sudo apt install -y binutils bison build-essential m4 texinfo
+    sudo ln -sf /bin/bash /bin/sh
+}
 
 # To see whether your host system has all the appropriate versions, and the ability to compile programs
 _lfs_version_check() {
@@ -461,6 +467,9 @@ _lfs_get_package_filename_foldername_test() {
 # The Binutils package contains a linker, an assembler, and other tools for handling object files.
 
 _lfs_temp_system_install_binutils_pass1() {
+    ________________________________________________________________________________ '
+    binutils-2.31.1.tar.xz
+    '
     cd $LFS_SOURCES_DIR
     tar xJf binutils-2.31.1.tar.xz
     cd binutils-2.31.1
@@ -487,6 +496,9 @@ _lfs_temp_system_install_binutils_pass1() {
 # The GCC package contains the GNU compiler collection, which includes the C and C++ compilers.
 
 _lfs_temp_system_install_gcc_pass1() {
+    ________________________________________________________________________________ '
+    gcc-8.2.0.tar.xz
+    '
     cd $LFS_SOURCES_DIR
     tar xf gcc-8.2.0.tar.xz
     cd gcc-8.2.0
@@ -568,6 +580,9 @@ _lfs_temp_system_install_gcc_pass1() {
 # The Linux API Headers (in linux-4.18.5.tar.xz) expose the kernel's API for use by Glibc.
 
 _lfs_temp_system_install_linux_api_headers() {
+    ________________________________________________________________________________ '
+    linux-4.18.5.tar.xz
+    '
     cd $LFS_SOURCES_DIR
     tar xf linux-4.18.5.tar.xz
     cd linux-4.18.5
@@ -594,6 +609,9 @@ _lfs_temp_system_install_linux_api_headers() {
 # There have been reports that this package may fail when building as a "parallel make". If this occurs, rerun the make command with a "-j1" option.
 
 _lfs_temp_system_install_glibc() {
+    ________________________________________________________________________________ '
+    glibc-2.28.tar.xz
+    '
     cd $LFS_SOURCES_DIR
     tar xf glibc-2.28.tar.xz
     cd glibc-2.28
@@ -621,6 +639,9 @@ _lfs_temp_system_install_glibc() {
 # sanity check
 
 _lfs_temp_system_toolchain_sanity_check() {
+    ________________________________________________________________________________ '
+    _lfs_temp_system_toolchain_sanity_check
+    '
     cd $LFS_SOURCES_DIR
 
     # At this point, it is imperative to stop and ensure that the basic functions (compiling and linking)
@@ -644,6 +665,9 @@ _lfs_temp_system_toolchain_sanity_check() {
 # but we had to defer its installation when we built gcc-pass1 because it depends on glibc, which was not yet available in /tools.
 
 _lfs_temp_system_install_libstdcxx_from_gcc() {
+    ________________________________________________________________________________ '
+    _lfs_temp_system_install_libstdcxx_from_gcc
+    '
     cd $LFS_SOURCES_DIR
     cd gcc-8.2.0
 
@@ -669,6 +693,9 @@ _lfs_temp_system_install_libstdcxx_from_gcc() {
 # 5.9. Binutils-2.31.1 - Pass 2
 
 _lfs_temp_system_install_binutils_pass2() {
+    ________________________________________________________________________________ '
+    binutils-2.31.1 pass 2
+    '
     cd $LFS_SOURCES_DIR
     cd binutils-2.31.1
 
@@ -700,6 +727,9 @@ _lfs_temp_system_install_binutils_pass2() {
 # 5.10. GCC-8.2.0 - Pass 2
 
 _lfs_temp_system_install_gcc_pass2() {
+    ________________________________________________________________________________ '
+    gcc-8.2.0 pass 2
+    '
     cd $LFS_SOURCES_DIR
     cd gcc-8.2.0
 
@@ -786,6 +816,9 @@ _lfs_temp_system_install_gcc_pass2() {
 # For the full package, see the BLFS Tcl procedures.
 
 _lfs_temp_system_install_tcl() {
+    ________________________________________________________________________________ '
+    tcl8.6.8-src.tar.gz
+    '
     cd $LFS_SOURCES_DIR
     tar xf tcl8.6.8-src.tar.gz
     cd tcl8.6.8
@@ -820,6 +853,9 @@ _lfs_temp_system_install_tcl() {
 # The Expect package contains a program for carrying out scripted dialogues with other interactive programs.
 
 _lfs_temp_system_install_expect() {
+    ________________________________________________________________________________ '
+    expect5.45.4.tar.gz
+    '
     cd $LFS_SOURCES_DIR
     tar xf expect5.45.4.tar.gz
     cd expect5.45.4
@@ -860,6 +896,9 @@ _lfs_temp_system_install_expect() {
 # The DejaGNU package contains a framework for testing other programs.
 
 _lfs_temp_system_install_dejagnu() {
+    ________________________________________________________________________________ '
+    dejagnu-1.6.1.tar.gz
+    '
     cd $LFS_SOURCES_DIR
     tar xf dejagnu-1.6.1.tar.gz
     cd dejagnu-1.6.1
@@ -876,6 +915,9 @@ _lfs_temp_system_install_dejagnu() {
 # The M4 package contains a macro processor.
 
 _lfs_temp_system_install_m4() {
+    ________________________________________________________________________________ '
+    m4-1.4.18.tar.xz
+    '
     cd $LFS_SOURCES_DIR
     tar xf m4-1.4.18.tar.xz
     cd m4-1.4.18
@@ -894,6 +936,9 @@ _lfs_temp_system_install_m4() {
 # 5.15. Ncurses-6.1
 
 _lfs_temp_system_install_ncurses() {
+    ________________________________________________________________________________ '
+    ncurses
+    '
     pack=ncurses
 
     cd $LFS_SOURCES_DIR
@@ -916,6 +961,9 @@ _lfs_temp_system_install_ncurses() {
 # 5.16. Bash-4.4.18
 
 _lfs_temp_system_install_bash() {
+    ________________________________________________________________________________ '
+    bash
+    '
     package="bash"
 
     cd $LFS_SOURCES_DIR
@@ -934,6 +982,9 @@ _lfs_temp_system_install_bash() {
 # 5.17. Bison-3.0.5
 
 _lfs_temp_system_install_bison() {
+    ________________________________________________________________________________ '
+    bison
+    '
     package="bison"
 
     cd $LFS_SOURCES_DIR
@@ -951,6 +1002,9 @@ _lfs_temp_system_install_bison() {
 # 5.18. Bzip2-1.0.6
 
 _lfs_temp_system_install_bzip2() {
+    ________________________________________________________________________________ '
+    bzip2
+    '
     package="bzip2"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -963,6 +1017,9 @@ _lfs_temp_system_install_bzip2() {
 # 5.19. Coreutils-8.30
 
 _lfs_temp_system_install_coreutils() {
+    ________________________________________________________________________________ '
+    coreutils
+    '
     package="coreutils"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -978,6 +1035,9 @@ _lfs_temp_system_install_coreutils() {
 # 5.20. Diffutils-3.6
 
 _lfs_temp_system_install_diffutils() {
+    ________________________________________________________________________________ '
+    diffutils
+    '
     package="diffutils"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -994,6 +1054,9 @@ _lfs_temp_system_install_diffutils() {
 # 5.21. File-5.34
 
 _lfs_temp_system_install_file() {
+    ________________________________________________________________________________ '
+    file
+    '
     package="file"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1009,6 +1072,9 @@ _lfs_temp_system_install_file() {
 # 5.22. Findutils-4.6.0
 
 _lfs_temp_system_install_findutils() {
+    ________________________________________________________________________________ '
+    findutils
+    '
     package="findutils"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1028,6 +1094,9 @@ _lfs_temp_system_install_findutils() {
 # 5.23. Gawk-4.2.1
 
 _lfs_temp_system_install_gawk() {
+    ________________________________________________________________________________ '
+    gawk
+    '
     package="gawk"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1047,6 +1116,9 @@ _lfs_temp_system_install_gawk() {
 # enabling them to output messages in the user's native language.
 
 _lfs_temp_system_install_gettext() {
+    ________________________________________________________________________________ '
+    gettext
+    '
     package="gettext"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1070,6 +1142,9 @@ _lfs_temp_system_install_gettext() {
 # 5.25. Grep-3.1
 
 _lfs_temp_system_install_grep() {
+    ________________________________________________________________________________ '
+    grep
+    '
     package="grep"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1084,6 +1159,9 @@ _lfs_temp_system_install_grep() {
 # 5.26. Gzip-1.9
 
 _lfs_temp_system_install_gzip() {
+    ________________________________________________________________________________ '
+    gzip
+    '
     package="gzip"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1102,6 +1180,9 @@ _lfs_temp_system_install_gzip() {
 # 5.27. Make-4.2.1
 
 _lfs_temp_system_install_make() {
+    ________________________________________________________________________________ '
+    make
+    '
     package="make"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1120,6 +1201,9 @@ _lfs_temp_system_install_make() {
 # 5.28. Patch-2.7.6
 
 _lfs_temp_system_install_patch() {
+    ________________________________________________________________________________ '
+    patch
+    '
     package="patch"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1134,6 +1218,9 @@ _lfs_temp_system_install_patch() {
 # 5.29. Perl-5.28.0
 
 _lfs_temp_system_install_perl() {
+    ________________________________________________________________________________ '
+    perl
+    '
     package="perl"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1154,6 +1241,9 @@ _lfs_temp_system_install_perl() {
 # 5.30. Sed-4.5
 
 _lfs_temp_system_install_sed() {
+    ________________________________________________________________________________ '
+    sed
+    '
     package="sed"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1168,6 +1258,9 @@ _lfs_temp_system_install_sed() {
 # 5.31. Tar-1.30
 
 _lfs_temp_system_install_tar() {
+    ________________________________________________________________________________ '
+    tar
+    '
     package="tar"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1182,6 +1275,9 @@ _lfs_temp_system_install_tar() {
 # 5.32. Texinfo-6.5
 
 _lfs_temp_system_install_texinfo() {
+    ________________________________________________________________________________ '
+    texinfo
+    '
     package="texinfo"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1202,6 +1298,9 @@ _lfs_temp_system_install_texinfo() {
 # The Util-linux package contains miscellaneous utility programs.
 
 _lfs_temp_system_install_util-linux() {
+    ________________________________________________________________________________ '
+    util-linux
+    '
     package="util-linux"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1221,6 +1320,9 @@ _lfs_temp_system_install_util-linux() {
 # 5.34. Xz-5.2.4
 
 _lfs_temp_system_install_xz() {
+    ________________________________________________________________________________ '
+    xz
+    '
     package="xz"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -4820,6 +4922,7 @@ _lfs_basic_system_install_all() {
 #
 # . 000-functions.sh
 #
+# _lfs_host_prepare
 # _lfs_version_check
 #
 # _lfs_create_disk_image
