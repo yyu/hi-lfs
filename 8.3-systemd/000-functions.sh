@@ -4644,31 +4644,78 @@ EOF
     Documentation for other available options can be obtained by running the following command:
     '
     vim -c ':options'
+    ________________________________________NOTE________________________________________ '
+    By default, Vim only installs spell files for the English language.
+    To install spell files for your preferred language, download the *.spl and optionally,
+    the *.sug files for your language and character encoding from
+    ftp://ftp.vim.org/pub/vim/runtime/spell/ and save them to /usr/share/vim/vim81/spell/.\n
+    \n
+    To use these spell files, some configuration in /etc/vimrc is needed, e.g.:\n
+    \n
+    set spelllang=en,ru\n
+    set spell\n
+    \n
+    For more information, see the appropriate README file located at the URL above.\n
+    '
 }
 
 ################################################################################
-# example
-_lfs_post_chroot_install_() {
-    package________name=""
-    cd /sources/
-    tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+# 6.79. Cleaning Up
+
+_lfs_post_chroot_install_clean_up() {
     ________________________________________________________________________________ '
-    # configure
+Finally, clean up some extra files left around from running tests:
+
+rm -rf /tmp/*
     '
-    ./configure --prefix=/usr
     ________________________________________________________________________________ '
-    # make
+Now log out and reenter the chroot environment with an updated chroot command. From now on, use this updated chroot command any time you need to reenter the chroot environment after exiting:
+
+logout
+
+chroot "$LFS" /usr/bin/env -i          \
+    HOME=/root TERM="$TERM"            \
+    PS1='(lfs chroot) \u:\w\$ '        \
+    PATH=/bin:/usr/bin:/sbin:/usr/sbin \
+    /bin/bash --login
     '
-    make
     ________________________________________________________________________________ '
-    # make check
+    The reason for this is that the programs in /tools are no longer needed.
+    For this reason you can delete the /tools directory if so desired.
     '
-    make check
+    ________________________________________NOTE________________________________________ '
+    Removing /tools will also remove the temporary copies of Tcl, Expect, and DejaGNU which were used for running the toolchain tests.
+    If you need these programs later on, they will need to be recompiled and re-installed.
+    The BLFS book has instructions for this (see http://www.linuxfromscratch.org/blfs/).
+    '
     ________________________________________________________________________________ '
-    # make install
+    If the virtual kernel file systems have been unmounted, either manually or through a reboot,
+    ensure that the virtual kernel file systems are mounted when reentering the chroot.
+    This process was explained in
+    Section 6.2.2, “Mounting and Populating /dev” and
+    Section 6.2.3, “Mounting Virtual Kernel File Systems”.
     '
-    make install
+    ________________________________________________________________________________ '
+    There were several static libraries that were not suppressed earlier in the chapter
+    in order to satisfy the regression tests in several packages.
+    These libraries are from binutils, bzip2, e2fsprogs, flex, libtool, and zlib.
+    If desired, remove them now:
+    '
+    rm -f /usr/lib/lib{bfd,opcodes}.a
+    rm -f /usr/lib/libbz2.a
+    rm -f /usr/lib/lib{com_err,e2p,ext2fs,ss}.a
+    rm -f /usr/lib/libltdl.a
+    rm -f /usr/lib/libfl.a
+    rm -f /usr/lib/libz.a
+    ________________________________________________________________________________ '
+    There are also several files installed in the /usr/lib and /usr/libexec directories with a file name extention of .la.
+    These are "libtool archive" files and generally unneeded on a linux system.
+    None of these are necessary at this point. To remove them, run:
+    '
+    find /usr/lib /usr/libexec -name \*.la -delete
+    ________________________________________________________________________________ '
+    For more information about libtool archive files, see the BLFS section "About Libtool Archive (.la) files".
+    '
 }
 
 ################################################################################
