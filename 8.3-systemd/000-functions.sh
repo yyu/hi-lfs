@@ -2455,7 +2455,7 @@ _lfs_post_chroot_install_gcc() {
     ________________________________________________________________________________ '
     Test the results as a non-privileged user, but do not stop at errors:
     '
-    chown -Rv nobody . 
+    chown -Rv nobody .
     su nobody -s /bin/bash -c "PATH=$PATH make -k check"
     ________________________________________________________________________________ '
     To receive a summary of the test suite results, run:
@@ -2732,7 +2732,7 @@ _lfs_post_chroot_install_ncurses() {
                 --without-normal \
                 --without-debug  \
                 --without-cxx-binding \
-                --with-abi-version=5 
+                --with-abi-version=5
     make sources libs
     cp -av lib/lib*.so.5* /usr/lib
     '
@@ -2972,18 +2972,97 @@ _lfs_post_chroot_install_() {
 }
 
 ################################################################################
-
-_lfs_start_until_user_and_group() {
-    _lfs_mkfs
-    _lfs_mount_fs
-    _lfs_get_packages_and_patches
-    _lfs_setup_tools_directory
-    _lfs_setup_user_and_group
-}
-
-_lfs_continue() {
-    _lfs_setup_env
-    _lfs_get_name_of_dynamic_linker
-}
-
+#
+# on host
+# =======
+#
+# . 000-functions.sh
+#
+# _lfs_version_check
+#
+# export LFS_PARTITION=/path/to/device
+# _lfs_mkfs
+# _lfs_mount_fs
+#
+# _lfs_get_packages_and_patches
+# _lfs_setup_tools_directory
+# _lfs_setup_user_and_group
+#
+# on lfs
+# ------
+#
+# . 000-functions.sh
+#
+# _lfs_setup_env
+#
+# _lfs_get_target_triplets
+# _lfs_get_name_of_dynamic_linker
+# _lfs_get_ld_search_order
+# _lfs_show_linked_files_for_dummy_program
+# _lfs_show_linker_used_by_gcc
+# _lfs_gcc_dummy_program_verbose
+#
+# _lfs_before_chapter5_build
+#
+# _lfs_chapter5_build_all_1
+# _lfs_chapter5_build_all_2
+#
+# sudo bash
+#
+# on host (as root)
+# =================
+#
+# . 000-functions.sh
+#
+# _lfs_after_chapter5
+# _lfs_create_directories_dev_proc_sys_run
+# _lfs_create_initial_device_nodes
+#
+# _lfs_note_about_chroot
+# _lfs_mount_and_populate_dev
+# _lfs_mount_virtual_kernel_fs
+# _lfs_note_about_chroot
+# _lfs_enter_chroot_env
+#
+# on lfs (as root)
+# ----------------
+#
+# . 000-functions.sh
+#
+# _lfs_create_directories
+# _lfs_create_essential_files_and_symlinks
+# _lfs_remove_I_have_no_name_prompt
+#
+# on lfs (as root)
+# ----------------
+#
+# _lfs_post_chroot_install_linux_api_headers
+# _lfs_post_chroot_install_man-pages
+# _lfs_post_chroot_install_glibc
+# _lfs_post_chroot_configure_glibc
+# _lfs_post_chroot_adjust_toolchain
+#
+# _lfs_post_chroot_install_zlib
+# _lfs_post_chroot_install_file
+# _lfs_post_chroot_install_readline
+# _lfs_post_chroot_install_m4
+# _lfs_post_chroot_install_bc
+# _lfs_post_chroot_install_binutils
+# _lfs_post_chroot_install_gmp
+# _lfs_post_chroot_install_mpfr
+# _lfs_post_chroot_install_mpc
+# _lfs_post_chroot_install_shadow
+# _lfs_post_chroot_configure_shadow
+# _lfs_post_chroot_install_gcc
+# _lfs_post_chroot_install_bzip2
+# _lfs_post_chroot_install_pkg-config
+# _lfs_post_chroot_install_ncurses
+# _lfs_post_chroot_install_attr
+# _lfs_post_chroot_install_acl
+# _lfs_post_chroot_install_libcap
+# _lfs_post_chroot_install_sed
+# _lfs_post_chroot_install_psmisc
+# _lfs_post_chroot_install_iana-etc
+# _lfs_post_chroot_install_bison
+#
 ################################################################################
