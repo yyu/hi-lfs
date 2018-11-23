@@ -2590,6 +2590,155 @@ _lfs_post_chroot_install_gcc() {
 }
 
 ################################################################################
+# 6.22. Bzip2-1.0.6
+
+_lfs_post_chroot_install_bzip2() {
+    package________name="bzip2"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    Apply a patch that will install the documentation for this package:
+    '
+    patch -Np1 -i ../bzip2-1.0.6-install_docs-1.patch
+    ________________________________________________________________________________ '
+    The following command ensures installation of symbolic links are relative:
+    '
+    sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
+    ________________________________________________________________________________ '
+    Ensure the man pages are installed into the correct location:
+    '
+    sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
+    ________________________________________________________________________________ '
+    Prepare Bzip2 for compilation with:
+    '
+    make -f Makefile-libbz2_so
+    make clean
+    ________________________________________________________________________________ '
+    Compile and test the package:
+    '
+    make
+    ________________________________________________________________________________ '
+    Install the programs:
+    '
+    make PREFIX=/usr install
+    ________________________________________________________________________________ '
+    Install the shared bzip2 binary into the /bin directory, make some necessary symbolic links, and clean up:
+    '
+    cp -v bzip2-shared /bin/bzip2
+    cp -av libbz2.so* /lib
+    ln -sv ../../lib/libbz2.so.1.0 /usr/lib/libbz2.so
+    rm -v /usr/bin/{bunzip2,bzcat,bzip2}
+    ln -sv bzip2 /bin/bunzip2
+    ln -sv bzip2 /bin/bzcat
+}
+
+################################################################################
+# 6.23. Pkg-config-0.29.2
+
+_lfs_post_chroot_install_pkg-config() {
+    package________name="pkg-config"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr              \
+                --with-internal-glib       \
+                --disable-host-tool        \
+                --docdir=/usr/share/doc/pkg-config-0.29.2
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.24. Ncurses-6.1
+
+_lfs_post_chroot_install_ncurses() {
+    package________name="ncurses"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    Don'"'"'t install a static library that is not handled by configure:
+    '
+    sed -i '/LIBTOOL_INSTALL/d' c++/Makefile.in
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr           \
+                --mandir=/usr/share/man \
+                --with-shared           \
+                --without-debug         \
+                --without-normal        \
+                --enable-pc-files       \
+                --enable-widec
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    Move the shared libraries to the /lib directory, where they are expected to reside:
+    '
+    mv -v /usr/lib/libncursesw.so.6* /lib
+    ________________________________________________________________________________ '
+    Because the libraries have been moved, one symlink points to a non-existent file. Recreate it:
+    '
+    ln -sfv ../../lib/$(readlink /usr/lib/libncursesw.so) /usr/lib/libncursesw.so
+    ________________________________________________________________________________ '
+    Many applications still expect the linker to be able to find non-wide-character Ncurses libraries.
+    Trick such applications into linking with wide-character libraries by means of symlinks and linker scripts:
+    '
+    for lib in ncurses form panel menu ; do
+        rm -vf                    /usr/lib/lib${lib}.so
+        echo "INPUT(-l${lib}w)" > /usr/lib/lib${lib}.so
+        ln -sfv ${lib}w.pc        /usr/lib/pkgconfig/${lib}.pc
+    done
+    ________________________________________________________________________________ '
+    Finally, make sure that old applications that look for -lcurses at build time are still buildable:
+    '
+    rm -vf                     /usr/lib/libcursesw.so
+    echo "INPUT(-lncursesw)" > /usr/lib/libcursesw.so
+    ln -sfv libncurses.so      /usr/lib/libcurses.so
+    ________________________________________________________________________________ '
+    If desired, install the Ncurses documentation:
+    '
+    mkdir -v       /usr/share/doc/ncurses-6.1
+    cp -v -R doc/* /usr/share/doc/ncurses-6.1
+    ________________________________________NOTE________________________________________ '
+    The instructions above don't create non-wide-character Ncurses libraries since no package installed
+    by compiling from sources would link against them at runtime.
+    However, the only known binary-only applications that link against non-wide-character Ncurses libraries require version 5.
+    If you must have such libraries because of some binary-only application or to be compliant with LSB,
+    build the package again with the following commands:' '
+    make distclean
+    ./configure --prefix=/usr    \
+                --with-shared    \
+                --without-normal \
+                --without-debug  \
+                --without-cxx-binding \
+                --with-abi-version=5 
+    make sources libs
+    cp -av lib/lib*.so.5* /usr/lib
+    '
+}
+
+################################################################################
 # example
 _lfs_post_chroot_install_() {
     package________name=""
