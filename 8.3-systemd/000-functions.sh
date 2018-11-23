@@ -2947,6 +2947,73 @@ _lfs_post_chroot_install_bison() {
 }
 
 ################################################################################
+# 6.32. Flex-2.6.4
+
+# The Flex package contains a utility for generating programs that recognize patterns in text.
+
+_lfs_post_chroot_install_flex() {
+    package________name="flex"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    First, fix a problem introduced with glibc-2.26:
+    '
+    sed -i "/math.h/a #include <malloc.h>" src/flexdef.h
+    ________________________________________________________________________________ '
+    The build procedure assumes the help2man program is available to create a man page from the executable --help option.
+    This is not present, so we use an environment variable to skip this process. Now, prepare Flex for compilation:
+    '
+    HELP2MAN=/tools/bin/true \
+    ./configure --prefix=/usr --docdir=/usr/share/doc/flex-2.6.4
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    A few programs do not know about flex yet and try to run its predecessor, lex.
+    To support those programs, create a symbolic link named lex that runs flex in lex emulation mode:
+    '
+    ln -sv flex /usr/bin/lex
+}
+
+################################################################################
+# 6.33. Grep-3.1
+
+_lfs_post_chroot_install_grep() {
+    package________name="grep"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr --bindir=/bin
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make -k check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+
+
+################################################################################
 # example
 _lfs_post_chroot_install_() {
     package________name=""
@@ -2973,14 +3040,14 @@ _lfs_post_chroot_install_() {
 
 ################################################################################
 #
-# on host
-# =======
+# on host (as root)
+# =================
 #
 # . 000-functions.sh
 #
 # _lfs_version_check
 #
-# export LFS_PARTITION=/path/to/device
+# _lfs_create_disk_image
 # _lfs_mkfs
 # _lfs_mount_fs
 #
@@ -2988,12 +3055,14 @@ _lfs_post_chroot_install_() {
 # _lfs_setup_tools_directory
 # _lfs_setup_user_and_group
 #
-# on lfs
+# as lfs
 # ------
 #
 # . 000-functions.sh
 #
 # _lfs_setup_env
+#
+# . 000-functions.sh
 #
 # _lfs_get_target_triplets
 # _lfs_get_name_of_dynamic_linker
@@ -3006,8 +3075,6 @@ _lfs_post_chroot_install_() {
 #
 # _lfs_chapter5_build_all_1
 # _lfs_chapter5_build_all_2
-#
-# sudo bash
 #
 # on host (as root)
 # =================
