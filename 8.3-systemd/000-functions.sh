@@ -2804,7 +2804,147 @@ _lfs_post_chroot_install_acl() {
     ln -sfv ../../lib/$(readlink /usr/lib/libacl.so) /usr/lib/libacl.so
 }
 
+################################################################################
+# 6.27. Libcap-2.25
 
+_lfs_post_chroot_install_libcap() {
+    package________name="libcap"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    Prevent a static library from being installed:
+    '
+    sed -i '/install.*STALIBNAME/d' libcap/Makefile
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    This package does not come with a test suite.
+    Install the package:
+    '
+    make RAISE_SETFCAP=no lib=lib prefix=/usr install
+    chmod -v 755 /usr/lib/libcap.so
+    ________________________________________________________________________________ '
+    The shared library needs to be moved to /lib, and as a result the .so
+    file in /usr/lib will need to be recreated:
+    '
+    mv -v /usr/lib/libcap.so.* /lib
+    ln -sfv ../../lib/$(readlink /usr/lib/libcap.so) /usr/lib/libcap.so
+}
+
+################################################################################
+# 6.28. Sed-4.5
+
+_lfs_post_chroot_install_sed() {
+    package________name="sed"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    First fix an issue in the LFS environment and remove a failing test:
+    '
+    sed -i 's/usr/tools/'                 build-aux/help2man
+    sed -i 's/testsuite.panic-tests.sh//' Makefile.in
+    ________________________________________________________________________________ '
+    Prepare Sed for compilation:
+    '
+    ./configure --prefix=/usr --bindir=/bin
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    make html
+    ________________________________________________________________________________ '
+    # make check
+    '
+    make check
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    install -d -m755           /usr/share/doc/sed-4.5
+    install -m644 doc/sed.html /usr/share/doc/sed-4.5
+}
+
+################################################################################
+# 6.29. Psmisc-23.1
+
+# The Psmisc package contains programs for displaying information about running processes.
+
+_lfs_post_chroot_install_psmisc() {
+    package________name="psmisc"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+    ________________________________________________________________________________ '
+    Finally, move the killall and fuser programs to the location specified by the FHS:
+    '
+    mv -v /usr/bin/fuser   /bin
+    mv -v /usr/bin/killall /bin
+}
+
+################################################################################
+# 6.30. Iana-Etc-2.30
+
+# The Iana-Etc package provides data for network services and protocols.
+
+_lfs_post_chroot_install_iana-etc() {
+    package________name="iana-etc"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # make
+    The following command converts the raw data provided by IANA into the correct formats
+    for the /etc/protocols and /etc/services data files:
+    '
+    make
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
+
+################################################################################
+# 6.31. Bison-3.0.5
+
+_lfs_post_chroot_install_bison() {
+    package________name="bison"
+    cd /sources/
+    tar xf `ls $package________name-*tar*`
+    cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    # configure
+    '
+    ./configure --prefix=/usr --docdir=/usr/share/doc/bison-3.0.5
+    ________________________________________________________________________________ '
+    # make
+    '
+    make
+    ________________________________________NOTE________________________________________ '
+    There is a circular dependency between bison and flex with regard to the checks.
+    If desired, after installing flex in the next section, the bison can be rebuilt
+    and the bison checks can be run with make check.
+    '
+    ________________________________________________________________________________ '
+    # make install
+    '
+    make install
+}
 
 ################################################################################
 # example
