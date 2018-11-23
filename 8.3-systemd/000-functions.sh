@@ -384,7 +384,7 @@ _lfs_general_compilation_instruction_2() {
 
 ################################################################################
 
-_lfs_before_chapter5_build() {
+_lfs_before_temp_system_build() {
     echo -e "\n\033[32mLFS environment variable: \033[1;32m"$LFS"\033[0m\n"
     _lfs_version_check
     echo
@@ -392,42 +392,47 @@ _lfs_before_chapter5_build() {
     _lfs_general_compilation_instruction_2
 }
 
-_lfs_chapter5_build_all_1() {
-    _lfs_install_binutils_pass1
-    _lfs_install_gcc_pass1
-    _lfs_install_linux_api_headers
-    _lfs_install_glibc
-    _lfs_toolchain_sanity_check
+_lfs_temp_system_build_all_1() {
+    _lfs_temp_system_install_binutils_pass1
+    _lfs_temp_system_install_gcc_pass1
+    _lfs_temp_system_install_linux_api_headers
+    _lfs_temp_system_install_glibc
+    _lfs_temp_system_toolchain_sanity_check
 }
 
-_lfs_chapter5_build_all_2() {
-    _lfs_install_libstdcxx_from_gcc
-    _lfs_install_binutils_pass2
-    _lfs_install_gcc_pass2
-    _lfs_install_tcl
-    _lfs_install_expect
-    _lfs_install_dejagnu
-    _lfs_install_m4
-    _lfs_install_ncurses
-    _lfs_install_bash
-    _lfs_install_bison
-    _lfs_install_bzip2
-    _lfs_install_coreutils
-    _lfs_install_diffutils
-    _lfs_install_file
-    _lfs_install_findutils
-    _lfs_install_gawk
-    _lfs_install_gettext
-    _lfs_install_grep
-    _lfs_install_gzip
-    _lfs_install_make
-    _lfs_install_patch
-    _lfs_install_perl
-    _lfs_install_sed
-    _lfs_install_tar
-    _lfs_install_texinfo
-    _lfs_install_util-linux
-    _lfs_install_xz
+_lfs_temp_system_build_all_2() {
+    _lfs_temp_system_install_libstdcxx_from_gcc
+    _lfs_temp_system_install_binutils_pass2
+    _lfs_temp_system_install_gcc_pass2
+    _lfs_temp_system_install_tcl
+    _lfs_temp_system_install_expect
+    _lfs_temp_system_install_dejagnu
+    _lfs_temp_system_install_m4
+    _lfs_temp_system_install_ncurses
+    _lfs_temp_system_install_bash
+    _lfs_temp_system_install_bison
+    _lfs_temp_system_install_bzip2
+    _lfs_temp_system_install_coreutils
+    _lfs_temp_system_install_diffutils
+    _lfs_temp_system_install_file
+    _lfs_temp_system_install_findutils
+    _lfs_temp_system_install_gawk
+    _lfs_temp_system_install_gettext
+    _lfs_temp_system_install_grep
+    _lfs_temp_system_install_gzip
+    _lfs_temp_system_install_make
+    _lfs_temp_system_install_patch
+    _lfs_temp_system_install_perl
+    _lfs_temp_system_install_sed
+    _lfs_temp_system_install_tar
+    _lfs_temp_system_install_texinfo
+    _lfs_temp_system_install_util-linux
+    _lfs_temp_system_install_xz
+}
+
+_lfs_temp_system_build_all() {
+    _lfs_temp_system_build_all_1
+    _lfs_temp_system_build_all_2
 }
 
 _lfs_get_package_file_name() {
@@ -455,7 +460,7 @@ _lfs_get_package_filename_foldername_test() {
 
 # The Binutils package contains a linker, an assembler, and other tools for handling object files.
 
-_lfs_install_binutils_pass1() {
+_lfs_temp_system_install_binutils_pass1() {
     cd $LFS_SOURCES_DIR
     tar xJf binutils-2.31.1.tar.xz
     cd binutils-2.31.1
@@ -481,7 +486,7 @@ _lfs_install_binutils_pass1() {
 
 # The GCC package contains the GNU compiler collection, which includes the C and C++ compilers.
 
-_lfs_install_gcc_pass1() {
+_lfs_temp_system_install_gcc_pass1() {
     cd $LFS_SOURCES_DIR
     tar xf gcc-8.2.0.tar.xz
     cd gcc-8.2.0
@@ -562,7 +567,7 @@ _lfs_install_gcc_pass1() {
 
 # The Linux API Headers (in linux-4.18.5.tar.xz) expose the kernel's API for use by Glibc.
 
-_lfs_install_linux_api_headers() {
+_lfs_temp_system_install_linux_api_headers() {
     cd $LFS_SOURCES_DIR
     tar xf linux-4.18.5.tar.xz
     cd linux-4.18.5
@@ -588,7 +593,7 @@ _lfs_install_linux_api_headers() {
 
 # There have been reports that this package may fail when building as a "parallel make". If this occurs, rerun the make command with a "-j1" option.
 
-_lfs_install_glibc() {
+_lfs_temp_system_install_glibc() {
     cd $LFS_SOURCES_DIR
     tar xf glibc-2.28.tar.xz
     cd glibc-2.28
@@ -609,13 +614,13 @@ _lfs_install_glibc() {
     make install
 
     echo -e "\n\033[1;31mit's time for sanity check, run:\033[0m\n"
-    echo -e "\n\033[1;33m_lfs_toolchain_sanity_check\033[0m\n"
+    echo -e "\n\033[1;33m_lfs_temp_system_toolchain_sanity_check\033[0m\n"
 }
 
 ################################################################################
 # sanity check
 
-_lfs_toolchain_sanity_check() {
+_lfs_temp_system_toolchain_sanity_check() {
     cd $LFS_SOURCES_DIR
 
     # At this point, it is imperative to stop and ensure that the basic functions (compiling and linking)
@@ -638,7 +643,7 @@ _lfs_toolchain_sanity_check() {
 # It is needed to compile C++ code (part of GCC is written in C++),
 # but we had to defer its installation when we built gcc-pass1 because it depends on glibc, which was not yet available in /tools.
 
-_lfs_install_libstdcxx_from_gcc() {
+_lfs_temp_system_install_libstdcxx_from_gcc() {
     cd $LFS_SOURCES_DIR
     cd gcc-8.2.0
 
@@ -663,7 +668,7 @@ _lfs_install_libstdcxx_from_gcc() {
 ################################################################################
 # 5.9. Binutils-2.31.1 - Pass 2
 
-_lfs_install_binutils_pass2() {
+_lfs_temp_system_install_binutils_pass2() {
     cd $LFS_SOURCES_DIR
     cd binutils-2.31.1
 
@@ -694,7 +699,7 @@ _lfs_install_binutils_pass2() {
 ################################################################################
 # 5.10. GCC-8.2.0 - Pass 2
 
-_lfs_install_gcc_pass2() {
+_lfs_temp_system_install_gcc_pass2() {
     cd $LFS_SOURCES_DIR
     cd gcc-8.2.0
 
@@ -769,7 +774,7 @@ _lfs_install_gcc_pass2() {
     ln -sv gcc /tools/bin/cc
 
     echo -e "\n\033[1;31mit's time for sanity check, run:\033[0m\n"
-    echo -e "\n\033[1;33m_lfs_toolchain_sanity_check\033[0m\n"
+    echo -e "\n\033[1;33m_lfs_temp_system_toolchain_sanity_check\033[0m\n"
 }
 
 ################################################################################
@@ -780,7 +785,7 @@ _lfs_install_gcc_pass2() {
 # Note that the Tcl package used here is a minimal version needed to run the LFS tests.
 # For the full package, see the BLFS Tcl procedures.
 
-_lfs_install_tcl() {
+_lfs_temp_system_install_tcl() {
     cd $LFS_SOURCES_DIR
     tar xf tcl8.6.8-src.tar.gz
     cd tcl8.6.8
@@ -814,7 +819,7 @@ _lfs_install_tcl() {
 
 # The Expect package contains a program for carrying out scripted dialogues with other interactive programs.
 
-_lfs_install_expect() {
+_lfs_temp_system_install_expect() {
     cd $LFS_SOURCES_DIR
     tar xf expect5.45.4.tar.gz
     cd expect5.45.4
@@ -854,7 +859,7 @@ _lfs_install_expect() {
 
 # The DejaGNU package contains a framework for testing other programs.
 
-_lfs_install_dejagnu() {
+_lfs_temp_system_install_dejagnu() {
     cd $LFS_SOURCES_DIR
     tar xf dejagnu-1.6.1.tar.gz
     cd dejagnu-1.6.1
@@ -870,7 +875,7 @@ _lfs_install_dejagnu() {
 
 # The M4 package contains a macro processor.
 
-_lfs_install_m4() {
+_lfs_temp_system_install_m4() {
     cd $LFS_SOURCES_DIR
     tar xf m4-1.4.18.tar.xz
     cd m4-1.4.18
@@ -888,7 +893,7 @@ _lfs_install_m4() {
 ################################################################################
 # 5.15. Ncurses-6.1
 
-_lfs_install_ncurses() {
+_lfs_temp_system_install_ncurses() {
     pack=ncurses
 
     cd $LFS_SOURCES_DIR
@@ -910,7 +915,7 @@ _lfs_install_ncurses() {
 ################################################################################
 # 5.16. Bash-4.4.18
 
-_lfs_install_bash() {
+_lfs_temp_system_install_bash() {
     package="bash"
 
     cd $LFS_SOURCES_DIR
@@ -928,7 +933,7 @@ _lfs_install_bash() {
 ################################################################################
 # 5.17. Bison-3.0.5
 
-_lfs_install_bison() {
+_lfs_temp_system_install_bison() {
     package="bison"
 
     cd $LFS_SOURCES_DIR
@@ -945,7 +950,7 @@ _lfs_install_bison() {
 ################################################################################
 # 5.18. Bzip2-1.0.6
 
-_lfs_install_bzip2() {
+_lfs_temp_system_install_bzip2() {
     package="bzip2"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -957,7 +962,7 @@ _lfs_install_bzip2() {
 ################################################################################
 # 5.19. Coreutils-8.30
 
-_lfs_install_coreutils() {
+_lfs_temp_system_install_coreutils() {
     package="coreutils"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -972,7 +977,7 @@ _lfs_install_coreutils() {
 ################################################################################
 # 5.20. Diffutils-3.6
 
-_lfs_install_diffutils() {
+_lfs_temp_system_install_diffutils() {
     package="diffutils"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -988,7 +993,7 @@ _lfs_install_diffutils() {
 ################################################################################
 # 5.21. File-5.34
 
-_lfs_install_file() {
+_lfs_temp_system_install_file() {
     package="file"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1003,7 +1008,7 @@ _lfs_install_file() {
 ################################################################################
 # 5.22. Findutils-4.6.0
 
-_lfs_install_findutils() {
+_lfs_temp_system_install_findutils() {
     package="findutils"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1022,7 +1027,7 @@ _lfs_install_findutils() {
 ################################################################################
 # 5.23. Gawk-4.2.1
 
-_lfs_install_gawk() {
+_lfs_temp_system_install_gawk() {
     package="gawk"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1041,7 +1046,7 @@ _lfs_install_gawk() {
 # These allow programs to be compiled with NLS (Native Language Support),
 # enabling them to output messages in the user's native language.
 
-_lfs_install_gettext() {
+_lfs_temp_system_install_gettext() {
     package="gettext"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1064,7 +1069,7 @@ _lfs_install_gettext() {
 ################################################################################
 # 5.25. Grep-3.1
 
-_lfs_install_grep() {
+_lfs_temp_system_install_grep() {
     package="grep"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1078,7 +1083,7 @@ _lfs_install_grep() {
 ################################################################################
 # 5.26. Gzip-1.9
 
-_lfs_install_gzip() {
+_lfs_temp_system_install_gzip() {
     package="gzip"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1096,7 +1101,7 @@ _lfs_install_gzip() {
 ################################################################################
 # 5.27. Make-4.2.1
 
-_lfs_install_make() {
+_lfs_temp_system_install_make() {
     package="make"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1114,7 +1119,7 @@ _lfs_install_make() {
 ################################################################################
 # 5.28. Patch-2.7.6
 
-_lfs_install_patch() {
+_lfs_temp_system_install_patch() {
     package="patch"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1128,7 +1133,7 @@ _lfs_install_patch() {
 ################################################################################
 # 5.29. Perl-5.28.0
 
-_lfs_install_perl() {
+_lfs_temp_system_install_perl() {
     package="perl"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1148,7 +1153,7 @@ _lfs_install_perl() {
 ################################################################################
 # 5.30. Sed-4.5
 
-_lfs_install_sed() {
+_lfs_temp_system_install_sed() {
     package="sed"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1162,7 +1167,7 @@ _lfs_install_sed() {
 ################################################################################
 # 5.31. Tar-1.30
 
-_lfs_install_tar() {
+_lfs_temp_system_install_tar() {
     package="tar"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1176,7 +1181,7 @@ _lfs_install_tar() {
 ################################################################################
 # 5.32. Texinfo-6.5
 
-_lfs_install_texinfo() {
+_lfs_temp_system_install_texinfo() {
     package="texinfo"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1196,7 +1201,7 @@ _lfs_install_texinfo() {
 
 # The Util-linux package contains miscellaneous utility programs.
 
-_lfs_install_util-linux() {
+_lfs_temp_system_install_util-linux() {
     package="util-linux"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1215,7 +1220,7 @@ _lfs_install_util-linux() {
 ################################################################################
 # 5.34. Xz-5.2.4
 
-_lfs_install_xz() {
+_lfs_temp_system_install_xz() {
     package="xz"
     cd $LFS_SOURCES_DIR
     tar xf `_lfs_get_package_file_name $package`
@@ -1251,7 +1256,7 @@ _lfs_optional_stripping() {
 ################################################################################
 # post-chapter5
 
-_lfs_after_chapter5() {
+_lfs_after_temp_system() {
     echo -e "\
         | \033[7;32mNote\033[0m\033[32m__________________________________________________\033[0m
         | \033[0;32mThe commands in the remainder of this book must be performed
@@ -1368,7 +1373,7 @@ _lfs_mount_virtual_kernel_fs() {
 
 # It is time to enter the chroot environment to begin building and installing the final LFS system.
 
-_lfs_enter_chroot_env() {
+_lfs_basic_system_enter_chroot_env() {
     # As user root, run the following command to enter the realm that is,
     # at the moment, populated with only the temporary tools:
 
@@ -1399,7 +1404,7 @@ _lfs_enter_chroot_env() {
     # This is normal because the /etc/passwd file has not been created yet.
 }
 
-_lfs_note_about_chroot() {
+_lfs_basic_system_chroot_note() {
     echo -e "\
         | \033[1;7;33mNote\033[0;1m\033[33m__________________________________________________\033[0m
         | \033[1;33mIt is important that all the commands throughout the remainder of this chapter
@@ -1411,11 +1416,11 @@ _lfs_note_about_chroot() {
         | " | sed -E 's/^ *\| //g'
 }
 
-_lfs_chroot() {
-    _lfs_note_about_chroot
+_lfs_basic_system_chroot() {
+    _lfs_basic_system_chroot_note
     _lfs_mount_and_populate_dev
     _lfs_mount_virtual_kernel_fs
-    _lfs_enter_chroot_env
+    _lfs_basic_system_enter_chroot_env
 }
 
 ################################################################################
@@ -1651,7 +1656,7 @@ _lfs_remove_I_have_no_name_prompt() {
 
 # The Linux API Headers (in linux-4.18.5.tar.xz) expose the kernel's API for use by Glibc.
 
-_lfs_post_chroot_install_linux_api_headers() {
+_lfs_basic_system_install_linux_api_headers() {
     cd /sources/linux-4.18.5
 
     # Make sure there are no stale files and dependencies lying around from previous activity:
@@ -1670,7 +1675,7 @@ _lfs_post_chroot_install_linux_api_headers() {
 ################################################################################
 # 6.8. Man-pages-4.16
 
-_lfs_post_chroot_install_man-pages() {
+_lfs_basic_system_install_man-pages() {
     cd /sources/
     tar xf man-pages-4.16.tar.xz
     cd man-pages-4.16
@@ -1680,7 +1685,7 @@ _lfs_post_chroot_install_man-pages() {
 ################################################################################
 # 6.9. Glibc-2.28
 
-_lfs_post_chroot_install_glibc() {
+_lfs_basic_system_install_glibc() {
     cd /sources/glibc-2.28
 
     # Some of the Glibc programs use the non-FHS compilant /var/db directory to store their runtime data.
@@ -1796,7 +1801,7 @@ _lfs_post_chroot_install_glibc() {
     localedef -i zh_CN -f GB18030 zh_CN.GB18030
 }
 
-_lfs_post_chroot_configure_glibc() {
+_lfs_basic_system_configure_glibc() {
     # 6.9.2. Configuring Glibc
 
     # 6.9.2.1. Adding nsswitch.conf
@@ -1869,7 +1874,7 @@ EOF
 ################################################################################
 # 6.10. Adjusting the Toolchain
 
-_lfs_post_chroot_adjust_toolchain() {
+_lfs_basic_system_adjust_toolchain() {
     # Now that the final C libraries have been installed, it is time to adjust the toolchain so that it will link any newly compiled program against these new libraries.
 
     # First, backup the /tools linker, and replace it with the adjusted linker we made in chapter 5.
@@ -1941,7 +1946,7 @@ _lfs_post_chroot_adjust_toolchain() {
 ################################################################################
 # 6.11. Zlib-1.2.11
 
-_lfs_post_chroot_install_zlib() {
+_lfs_basic_system_install_zlib() {
     cd /sources/
     tar xf zlib-1.2.11.tar.xz
     cd zlib-1.2.11
@@ -1967,7 +1972,7 @@ _lfs_post_chroot_install_zlib() {
 ################################################################################
 # 6.12. File-5.34
 
-_lfs_post_chroot_install_file() {
+_lfs_basic_system_install_file() {
     pack=file
 
     cd /sources/
@@ -1984,7 +1989,7 @@ _lfs_post_chroot_install_file() {
 ################################################################################
 # 6.13. Readline-7.0
 
-_lfs_post_chroot_install_readline() {
+_lfs_basic_system_install_readline() {
     package________name="readline"
 
     cd /sources/
@@ -2028,7 +2033,7 @@ _lfs_post_chroot_install_readline() {
 ################################################################################
 # 6.14. M4-1.4.18
 
-_lfs_post_chroot_install_m4() {
+_lfs_basic_system_install_m4() {
     package________name="m4"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2060,7 +2065,7 @@ _lfs_post_chroot_install_m4() {
 ################################################################################
 # 6.15. Bc-1.07.1
 
-_lfs_post_chroot_install_bc() {
+_lfs_basic_system_install_bc() {
     package________name="bc"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2119,7 +2124,7 @@ EOF
 ################################################################################
 # 6.16. Binutils-2.31.1
 
-_lfs_post_chroot_install_binutils() {
+_lfs_basic_system_install_binutils() {
     package________name="binutils"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2171,7 +2176,7 @@ _lfs_post_chroot_install_binutils() {
 ################################################################################
 # 6.17. GMP-6.1.2
 
-_lfs_post_chroot_install_gmp() {
+_lfs_basic_system_install_gmp() {
     package________name="gmp"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2229,7 +2234,7 @@ _lfs_post_chroot_install_gmp() {
 ################################################################################
 # 6.18. MPFR-4.0.1
 
-_lfs_post_chroot_install_mpfr() {
+_lfs_basic_system_install_mpfr() {
     package________name="mpfr"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2260,7 +2265,7 @@ _lfs_post_chroot_install_mpfr() {
 ################################################################################
 # 6.19. MPC-1.1.0
 
-_lfs_post_chroot_install_mpc() {
+_lfs_basic_system_install_mpc() {
     package________name="mpc"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2292,7 +2297,7 @@ _lfs_post_chroot_install_mpc() {
 
 # The Shadow package contains programs for handling passwords in a secure way.
 
-_lfs_post_chroot_install_shadow() {
+_lfs_basic_system_install_shadow() {
     package________name="shadow"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2345,7 +2350,7 @@ _lfs_post_chroot_install_shadow() {
     mv -v /usr/bin/passwd /bin
 }
 
-_lfs_post_chroot_configure_shadow() {
+_lfs_basic_system_configure_shadow() {
     ________________________________________________________________________________ '
     This package contains utilities to add, modify, and delete users and groups;
     set and change their passwords; and perform other administrative tasks.
@@ -2401,7 +2406,7 @@ _lfs_post_chroot_configure_shadow() {
 ################################################################################
 # 6.21. GCC-8.2.0
 
-_lfs_post_chroot_install_gcc() {
+_lfs_basic_system_install_gcc() {
     set +e
 
     package________name="gcc"
@@ -2592,7 +2597,7 @@ _lfs_post_chroot_install_gcc() {
 ################################################################################
 # 6.22. Bzip2-1.0.6
 
-_lfs_post_chroot_install_bzip2() {
+_lfs_basic_system_install_bzip2() {
     package________name="bzip2"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2636,7 +2641,7 @@ _lfs_post_chroot_install_bzip2() {
 ################################################################################
 # 6.23. Pkg-config-0.29.2
 
-_lfs_post_chroot_install_pkg-config() {
+_lfs_basic_system_install_pkg-config() {
     package________name="pkg-config"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2665,7 +2670,7 @@ _lfs_post_chroot_install_pkg-config() {
 ################################################################################
 # 6.24. Ncurses-6.1
 
-_lfs_post_chroot_install_ncurses() {
+_lfs_basic_system_install_ncurses() {
     package________name="ncurses"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2741,7 +2746,7 @@ _lfs_post_chroot_install_ncurses() {
 ################################################################################
 # 6.25. Attr-2.4.48
 
-_lfs_post_chroot_install_attr() {
+_lfs_basic_system_install_attr() {
     package________name="attr"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2776,7 +2781,7 @@ _lfs_post_chroot_install_attr() {
 ################################################################################
 # 6.26. Acl-2.2.53
 
-_lfs_post_chroot_install_acl() {
+_lfs_basic_system_install_acl() {
     package________name="acl"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2807,7 +2812,7 @@ _lfs_post_chroot_install_acl() {
 ################################################################################
 # 6.27. Libcap-2.25
 
-_lfs_post_chroot_install_libcap() {
+_lfs_basic_system_install_libcap() {
     package________name="libcap"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2837,7 +2842,7 @@ _lfs_post_chroot_install_libcap() {
 ################################################################################
 # 6.28. Sed-4.5
 
-_lfs_post_chroot_install_sed() {
+_lfs_basic_system_install_sed() {
     package________name="sed"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2873,7 +2878,7 @@ _lfs_post_chroot_install_sed() {
 
 # The Psmisc package contains programs for displaying information about running processes.
 
-_lfs_post_chroot_install_psmisc() {
+_lfs_basic_system_install_psmisc() {
     package________name="psmisc"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2902,7 +2907,7 @@ _lfs_post_chroot_install_psmisc() {
 
 # The Iana-Etc package provides data for network services and protocols.
 
-_lfs_post_chroot_install_iana-etc() {
+_lfs_basic_system_install_iana-etc() {
     package________name="iana-etc"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2922,7 +2927,7 @@ _lfs_post_chroot_install_iana-etc() {
 ################################################################################
 # 6.31. Bison-3.0.5
 
-_lfs_post_chroot_install_bison() {
+_lfs_basic_system_install_bison() {
     package________name="bison"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2951,7 +2956,7 @@ _lfs_post_chroot_install_bison() {
 
 # The Flex package contains a utility for generating programs that recognize patterns in text.
 
-_lfs_post_chroot_install_flex() {
+_lfs_basic_system_install_flex() {
     package________name="flex"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -2988,7 +2993,7 @@ _lfs_post_chroot_install_flex() {
 ################################################################################
 # 6.33. Grep-3.1
 
-_lfs_post_chroot_install_grep() {
+_lfs_basic_system_install_grep() {
     package________name="grep"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3014,7 +3019,7 @@ _lfs_post_chroot_install_grep() {
 ################################################################################
 # 6.34. Bash-4.4.18
 
-_lfs_post_chroot_install_bash() {
+_lfs_basic_system_install_bash() {
     package________name="bash"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3055,7 +3060,7 @@ _lfs_post_chroot_install_bash() {
 ################################################################################
 # 6.35. Libtool-2.4.6
 
-_lfs_post_chroot_install_libtool() {
+_lfs_basic_system_install_libtool() {
     package________name="libtool"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3091,7 +3096,7 @@ _lfs_post_chroot_install_libtool() {
 # It is a library of database functions that use extensible hashing and work similar to the standard UNIX dbm.
 # The library provides primitives for storing key/data pairs, searching and retrieving the data by its key and deleting a key along with its data.
 
-_lfs_post_chroot_install_gdbm() {
+_lfs_basic_system_install_gdbm() {
     package________name="gdbm"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3119,7 +3124,7 @@ _lfs_post_chroot_install_gdbm() {
 ################################################################################
 # 6.37. Gperf-3.1
 
-_lfs_post_chroot_install_gperf() {
+_lfs_basic_system_install_gperf() {
     package________name="gperf"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3145,7 +3150,7 @@ _lfs_post_chroot_install_gperf() {
 ################################################################################
 # 6.38. Expat-2.2.6
 
-_lfs_post_chroot_install_expat() {
+_lfs_basic_system_install_expat() {
     package________name="expat"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3181,7 +3186,7 @@ _lfs_post_chroot_install_expat() {
 ################################################################################
 # 6.39. Inetutils-1.9.4
 
-_lfs_post_chroot_install_inetutils() {
+_lfs_basic_system_install_inetutils() {
     package________name="inetutils"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3224,7 +3229,7 @@ _lfs_post_chroot_install_inetutils() {
 ################################################################################
 # 6.40. Perl-5.28.0
 
-_lfs_post_chroot_install_perl() {
+_lfs_basic_system_install_perl() {
     package________name="perl"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3272,7 +3277,7 @@ _lfs_post_chroot_install_perl() {
 ################################################################################
 # 6.41. XML::Parser-2.44
 
-_lfs_post_chroot_install_XML-Parser() {
+_lfs_basic_system_install_XML-Parser() {
     package________name="XML-Parser"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3300,7 +3305,7 @@ _lfs_post_chroot_install_XML-Parser() {
 
 # The Intltool is an internationalization tool used for extracting translatable strings from source files.
 
-_lfs_post_chroot_install_intltool() {
+_lfs_basic_system_install_intltool() {
     package________name="intltool"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3331,7 +3336,7 @@ _lfs_post_chroot_install_intltool() {
 ################################################################################
 # 6.43. Autoconf-2.69
 
-_lfs_post_chroot_install_autoconf() {
+_lfs_basic_system_install_autoconf() {
     package________name="autoconf"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3360,7 +3365,7 @@ _lfs_post_chroot_install_autoconf() {
 ################################################################################
 # 6.44. Automake-1.16.1
 
-_lfs_post_chroot_install_automake() {
+_lfs_basic_system_install_automake() {
     package________name="automake"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3386,7 +3391,7 @@ _lfs_post_chroot_install_automake() {
 ################################################################################
 # 6.45. Xz-5.2.4
 
-_lfs_post_chroot_install_xz() {
+_lfs_basic_system_install_xz() {
     package________name="xz"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3417,7 +3422,7 @@ _lfs_post_chroot_install_xz() {
 ################################################################################
 # 6.46. Kmod-25
 
-_lfs_post_chroot_install_kmod-25() {
+_lfs_basic_system_install_kmod-25() {
     package________name="kmod-25"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3454,7 +3459,7 @@ _lfs_post_chroot_install_kmod-25() {
 ################################################################################
 # 6.47. Gettext-0.19.8.1
 
-_lfs_post_chroot_install_gettext() {
+_lfs_basic_system_install_gettext() {
     package________name="gettext"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3493,7 +3498,7 @@ _lfs_post_chroot_install_gettext() {
 ################################################################################
 # 6.48. Libelf 0.173
 
-_lfs_post_chroot_install_libelf() {
+_lfs_basic_system_install_libelf() {
     package________name="libelf"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3520,7 +3525,7 @@ _lfs_post_chroot_install_libelf() {
 ################################################################################
 # 6.49. Libffi-3.2.1
 
-_lfs_post_chroot_install_libffi() {
+_lfs_basic_system_install_libffi() {
     package________name="libffi"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3558,7 +3563,7 @@ _lfs_post_chroot_install_libffi() {
 # These are useful for providing cryptographic functions to other packages,
 # such as OpenSSH, email applications and web browsers (for accessing HTTPS sites).
 
-_lfs_post_chroot_install_openssl() {
+_lfs_basic_system_install_openssl() {
     package________name="openssl"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3595,7 +3600,7 @@ _lfs_post_chroot_install_openssl() {
 ################################################################################
 # 6.51. Python-3.7.0
 
-_lfs_post_chroot_install_python() {
+_lfs_basic_system_install_python() {
     package________name="python"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3638,7 +3643,7 @@ _lfs_post_chroot_install_python() {
 
 # Ninja is a small build system with a focus on speed.
 
-_lfs_post_chroot_install_ninja() {
+_lfs_basic_system_install_ninja() {
     package________name="ninja"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3679,7 +3684,7 @@ _lfs_post_chroot_install_ninja() {
 
 # Meson is an open source build system meant to be both extremely fast, and, even more importantly, as user friendly as possible.
 
-_lfs_post_chroot_install_meson() {
+_lfs_basic_system_install_meson() {
     package________name="meson"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3698,7 +3703,7 @@ _lfs_post_chroot_install_meson() {
 ################################################################################
 # 6.54. Systemd-239
 
-_lfs_post_chroot_install_systemd() {
+_lfs_basic_system_install_systemd() {
     package________name="systemd"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3780,7 +3785,7 @@ EOF
 ################################################################################
 # 6.55. Procps-ng-3.3.15
 
-_lfs_post_chroot_install_procps-ng() {
+_lfs_basic_system_install_procps-ng() {
     package________name="procps-ng"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3822,7 +3827,7 @@ _lfs_post_chroot_install_procps-ng() {
 ################################################################################
 # 6.56. E2fsprogs-1.44.3
 
-_lfs_post_chroot_install_e2fsprogs() {
+_lfs_basic_system_install_e2fsprogs() {
     package________name="e2fsprogs"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3880,7 +3885,7 @@ _lfs_post_chroot_install_e2fsprogs() {
 ################################################################################
 # 6.57. Coreutils-8.30
 
-_lfs_post_chroot_install_coreutils() {
+_lfs_basic_system_install_coreutils() {
     package________name="coreutils"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3958,7 +3963,7 @@ _lfs_post_chroot_install_coreutils() {
 
 # Check is a unit testing framework for C.
 
-_lfs_post_chroot_install_check() {
+_lfs_basic_system_install_check() {
     package________name="check"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -3985,7 +3990,7 @@ _lfs_post_chroot_install_check() {
 ################################################################################
 # 6.59. Diffutils-3.6
 
-_lfs_post_chroot_install_diffutils() {
+_lfs_basic_system_install_diffutils() {
     package________name="diffutils"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4011,7 +4016,7 @@ _lfs_post_chroot_install_diffutils() {
 ################################################################################
 # 6.60. Gawk-4.2.1
 
-_lfs_post_chroot_install_gawk() {
+_lfs_basic_system_install_gawk() {
     package________name="gawk"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4046,8 +4051,8 @@ _lfs_post_chroot_install_gawk() {
 ################################################################################
 # 6.61. Findutils-4.6.0
 
-_lfs_post_chroot_install_() {
-    package________name=""
+_lfs_basic_system_install_findutils() {
+    package________name="findutils"
     cd /sources/
     tar xf `ls $package________name-*tar*`
     cd $package________name-*[0-9]
@@ -4087,7 +4092,7 @@ _lfs_post_chroot_install_() {
 ################################################################################
 # 6.62. Groff-1.22.3
 
-_lfs_post_chroot_install_groff() {
+_lfs_basic_system_install_groff() {
     package________name="groff"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4115,7 +4120,7 @@ _lfs_post_chroot_install_groff() {
 ################################################################################
 # 6.63. GRUB-2.02
 
-_lfs_post_chroot_install_grub() {
+_lfs_basic_system_install_grub() {
     package________name="grub"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4141,7 +4146,7 @@ _lfs_post_chroot_install_grub() {
 ################################################################################
 # 6.64. Less-530
 
-_lfs_post_chroot_install_less() {
+_lfs_basic_system_install_less() {
     package________name="less"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4163,7 +4168,7 @@ _lfs_post_chroot_install_less() {
 ################################################################################
 # 6.65. Gzip-1.9
 
-_lfs_post_chroot_install_gzip() {
+_lfs_basic_system_install_gzip() {
     package________name="gzip"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4199,7 +4204,7 @@ _lfs_post_chroot_install_gzip() {
 ################################################################################
 # 6.66. IPRoute2-4.18.0
 
-_lfs_post_chroot_install_iproute2() {
+_lfs_basic_system_install_iproute2() {
     package________name="iproute2"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4230,7 +4235,7 @@ _lfs_post_chroot_install_iproute2() {
 ################################################################################
 # 6.67. Kbd-2.0.4
 
-_lfs_post_chroot_install_kbd() {
+_lfs_basic_system_install_kbd() {
     package________name="kbd"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4278,7 +4283,7 @@ _lfs_post_chroot_install_kbd() {
 ################################################################################
 # 6.68. Libpipeline-1.5.0
 
-_lfs_post_chroot_install_libpipeline() {
+_lfs_basic_system_install_libpipeline() {
     package________name="libpipeline"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4304,7 +4309,7 @@ _lfs_post_chroot_install_libpipeline() {
 ################################################################################
 # 6.69. Make-4.2.1
 
-_lfs_post_chroot_install_make() {
+_lfs_basic_system_install_make() {
     package________name="make"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4335,7 +4340,7 @@ _lfs_post_chroot_install_make() {
 ################################################################################
 # 6.70. Patch-2.7.6
 
-_lfs_post_chroot_install_patch() {
+_lfs_basic_system_install_patch() {
     package________name="patch"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4361,7 +4366,7 @@ _lfs_post_chroot_install_patch() {
 ################################################################################
 # 6.71. D-Bus-1.12.10
 
-_lfs_post_chroot_install_dbus() {
+_lfs_basic_system_install_dbus() {
     package________name="dbus"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4404,11 +4409,19 @@ _lfs_post_chroot_install_dbus() {
 ################################################################################
 # 6.72. Util-linux-2.32.1
 
-_lfs_post_chroot_install_util-linux() {
+# The Util-linux package contains miscellaneous utility programs.
+# Among them are utilities for handling file systems, consoles, partitions, and messages.
+
+_lfs_basic_system_install_util-linux() {
     package________name="util-linux"
     cd /sources/
     tar xf `ls $package________name-*tar*`
     cd $package________name-*[0-9]
+    ________________________________________________________________________________ '
+    The FHS recommends using the /var/lib/hwclock directory instead of the usual /etc directory as the location for the adjtime file.
+    First create a directory to enable storage for the hwclock program:
+    '
+    mkdir -pv /var/lib/hwclock
     ________________________________________________________________________________ '
     Remove the earlier created symlinks:
     '
@@ -4434,6 +4447,8 @@ _lfs_post_chroot_install_util-linux() {
     ________________________________________________________________________________ '
     If desired, run the test suite as a non-root user:
     '
+    chown -Rv nobody .\n
+    su nobody -s /bin/bash -c "PATH=$PATH make -k check"
     ________________________________________NOTE________________________________________ '
     Running the test suite as the root user can be harmful to your system.
     To run it, the CONFIG_SCSI_DEBUG option for the kernel must be available in the currently running system, and must be built as a module.
@@ -4442,8 +4457,6 @@ _lfs_post_chroot_install_util-linux() {
     If desired, this test can be run after rebooting into the completed LFS system and running:
     ' '
     bash tests/run.sh --srcdir=$PWD --builddir=$PWD\n
-    chown -Rv nobody .\n
-    su nobody -s /bin/bash -c "PATH=$PATH make -k check"
     '
     ________________________________________________________________________________ '
     # make install
@@ -4454,7 +4467,7 @@ _lfs_post_chroot_install_util-linux() {
 ################################################################################
 # 6.73. Man-DB-2.8.4
 
-_lfs_post_chroot_install_man-db() {
+_lfs_basic_system_install_man-db() {
     package________name=man-db""
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4487,7 +4500,7 @@ _lfs_post_chroot_install_man-db() {
 ################################################################################
 # 6.74. Tar-1.30
 
-_lfs_post_chroot_install_tar() {
+_lfs_basic_system_install_tar() {
     package________name="tar"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4516,7 +4529,7 @@ _lfs_post_chroot_install_tar() {
 ################################################################################
 # 6.75. Texinfo-6.5
 
-_lfs_post_chroot_install_texinfo() {
+_lfs_basic_system_install_texinfo() {
     package________name="texinfo"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4563,7 +4576,7 @@ _lfs_post_chroot_install_texinfo() {
 ################################################################################
 # 6.76. Vim-8.1
 
-_lfs_post_chroot_install_vim() {
+_lfs_basic_system_install_vim() {
     package________name="vim"
     cd /sources/
     tar xf `ls $package________name-*tar*`
@@ -4660,25 +4673,31 @@ EOF
 }
 
 ################################################################################
+
+# From now on, use this updated chroot command any time you need to reenter the chroot environment after exiting.
+
+_lfs_chroot() {
+    chroot "$LFS" /usr/bin/env -i          \
+        HOME=/root TERM="$TERM"            \
+        PS1='(lfs chroot) \u:\w\$ '        \
+        PATH=/bin:/usr/bin:/sbin:/usr/sbin \
+        /bin/bash --login
+}
+
+################################################################################
 # 6.79. Cleaning Up
 
-_lfs_post_chroot_install_clean_up() {
+_lfs_basic_system_install_clean_up() {
     ________________________________________________________________________________ '
-Finally, clean up some extra files left around from running tests:
-
-rm -rf /tmp/*
+    Finally, clean up some extra files left around from running tests:
     '
+    rm -rf /tmp/*
     ________________________________________________________________________________ '
-Now log out and reenter the chroot environment with an updated chroot command. From now on, use this updated chroot command any time you need to reenter the chroot environment after exiting:
-
-logout
-
-chroot "$LFS" /usr/bin/env -i          \
-    HOME=/root TERM="$TERM"            \
-    PS1='(lfs chroot) \u:\w\$ '        \
-    PATH=/bin:/usr/bin:/sbin:/usr/sbin \
-    /bin/bash --login
+    Now log out and reenter the chroot environment with an updated chroot command.
+    From now on, use this updated chroot command any time you need to reenter the chroot environment after exiting:
     '
+    logout
+    _lfs_chroot
     ________________________________________________________________________________ '
     The reason for this is that the programs in /tools are no longer needed.
     For this reason you can delete the /tools directory if so desired.
@@ -4718,6 +4737,82 @@ chroot "$LFS" /usr/bin/env -i          \
     '
 }
 
+_lfs_basic_system_install_all() {
+    _lfs_basic_system_install_linux_api_headers
+    _lfs_basic_system_install_man-pages
+    _lfs_basic_system_install_glibc
+    _lfs_basic_system_configure_glibc
+    _lfs_basic_system_adjust_toolchain
+    sleep 30
+    _lfs_basic_system_install_zlib
+    _lfs_basic_system_install_file
+    _lfs_basic_system_install_readline
+    _lfs_basic_system_install_m4
+    _lfs_basic_system_install_bc
+    _lfs_basic_system_install_binutils
+    _lfs_basic_system_install_gmp
+    _lfs_basic_system_install_mpfr
+    _lfs_basic_system_install_mpc
+    _lfs_basic_system_install_shadow
+    _lfs_basic_system_configure_shadow
+    _lfs_basic_system_install_gcc
+    _lfs_basic_system_install_bzip2
+    _lfs_basic_system_install_pkg-config
+    _lfs_basic_system_install_ncurses
+    _lfs_basic_system_install_attr
+    _lfs_basic_system_install_acl
+    _lfs_basic_system_install_libcap
+    _lfs_basic_system_install_sed
+    _lfs_basic_system_install_psmisc
+    _lfs_basic_system_install_iana-etc
+    _lfs_basic_system_install_bison
+    _lfs_basic_system_install_flex
+    _lfs_basic_system_install_grep
+    _lfs_basic_system_install_bash
+    _lfs_basic_system_install_libtool
+    _lfs_basic_system_install_gdbm
+    _lfs_basic_system_install_gperf
+    _lfs_basic_system_install_expat
+    _lfs_basic_system_install_inetutils
+    _lfs_basic_system_install_perl
+    _lfs_basic_system_install_XML-Parser
+    _lfs_basic_system_install_intltool
+    _lfs_basic_system_install_autoconf
+    _lfs_basic_system_install_automake
+    _lfs_basic_system_install_xz
+    _lfs_basic_system_install_kmod-25
+    _lfs_basic_system_install_gettext
+    _lfs_basic_system_install_libelf
+    _lfs_basic_system_install_libffi
+    _lfs_basic_system_install_openssl
+    _lfs_basic_system_install_python
+    _lfs_basic_system_install_ninja
+    _lfs_basic_system_install_meson
+    _lfs_basic_system_install_systemd
+    _lfs_basic_system_install_procps-ng
+    _lfs_basic_system_install_e2fsprogs
+    _lfs_basic_system_install_coreutils
+    _lfs_basic_system_install_check
+    _lfs_basic_system_install_diffutils
+    _lfs_basic_system_install_gawk
+    _lfs_basic_system_install_findutils
+    _lfs_basic_system_install_groff
+    _lfs_basic_system_install_grub
+    _lfs_basic_system_install_less
+    _lfs_basic_system_install_gzip
+    _lfs_basic_system_install_iproute2
+    _lfs_basic_system_install_kbd
+    _lfs_basic_system_install_libpipeline
+    _lfs_basic_system_install_make
+    _lfs_basic_system_install_patch
+    _lfs_basic_system_install_dbus
+    _lfs_basic_system_install_util-linux
+    _lfs_basic_system_install_man-db
+    _lfs_basic_system_install_tar
+    _lfs_basic_system_install_texinfo
+    _lfs_basic_system_install_vim
+}
+
 ################################################################################
 #
 # on host (as root)
@@ -4751,25 +4846,25 @@ chroot "$LFS" /usr/bin/env -i          \
 # _lfs_show_linker_used_by_gcc
 # _lfs_gcc_dummy_program_verbose
 #
-# _lfs_before_chapter5_build
+# _lfs_before_temp_system_build
 #
-# _lfs_chapter5_build_all_1
-# _lfs_chapter5_build_all_2
+# _lfs_temp_system_build_all_1
+# _lfs_temp_system_build_all_2
 #
 # on host (as root)
 # =================
 #
 # . 000-functions.sh
 #
-# _lfs_after_chapter5
+# _lfs_after_temp_system
 # _lfs_create_directories_dev_proc_sys_run
 # _lfs_create_initial_device_nodes
 #
-# _lfs_note_about_chroot
-# _lfs_mount_and_populate_dev
-# _lfs_mount_virtual_kernel_fs
-# _lfs_note_about_chroot
-# _lfs_enter_chroot_env
+# _lfs_basic_system_chroot
+#     _lfs_basic_system_chroot_note
+#     _lfs_mount_and_populate_dev
+#     _lfs_mount_virtual_kernel_fs
+#     _lfs_basic_system_enter_chroot_env
 #
 # on lfs (as root)
 # ----------------
@@ -4783,33 +4878,79 @@ chroot "$LFS" /usr/bin/env -i          \
 # on lfs (as root)
 # ----------------
 #
-# _lfs_post_chroot_install_linux_api_headers
-# _lfs_post_chroot_install_man-pages
-# _lfs_post_chroot_install_glibc
-# _lfs_post_chroot_configure_glibc
-# _lfs_post_chroot_adjust_toolchain
+# _lfs_basic_system_install_all
+#     _lfs_basic_system_install_linux_api_headers
+#     _lfs_basic_system_install_man-pages
+#     _lfs_basic_system_install_glibc
+#     _lfs_basic_system_configure_glibc
+#     _lfs_basic_system_adjust_toolchain
 #
-# _lfs_post_chroot_install_zlib
-# _lfs_post_chroot_install_file
-# _lfs_post_chroot_install_readline
-# _lfs_post_chroot_install_m4
-# _lfs_post_chroot_install_bc
-# _lfs_post_chroot_install_binutils
-# _lfs_post_chroot_install_gmp
-# _lfs_post_chroot_install_mpfr
-# _lfs_post_chroot_install_mpc
-# _lfs_post_chroot_install_shadow
-# _lfs_post_chroot_configure_shadow
-# _lfs_post_chroot_install_gcc
-# _lfs_post_chroot_install_bzip2
-# _lfs_post_chroot_install_pkg-config
-# _lfs_post_chroot_install_ncurses
-# _lfs_post_chroot_install_attr
-# _lfs_post_chroot_install_acl
-# _lfs_post_chroot_install_libcap
-# _lfs_post_chroot_install_sed
-# _lfs_post_chroot_install_psmisc
-# _lfs_post_chroot_install_iana-etc
-# _lfs_post_chroot_install_bison
+#     _lfs_basic_system_install_zlib
+#     _lfs_basic_system_install_file
+#     _lfs_basic_system_install_readline
+#     _lfs_basic_system_install_m4
+#     _lfs_basic_system_install_bc
+#     _lfs_basic_system_install_binutils
+#     _lfs_basic_system_install_gmp
+#     _lfs_basic_system_install_mpfr
+#     _lfs_basic_system_install_mpc
+#     _lfs_basic_system_install_shadow
+#     _lfs_basic_system_configure_shadow
+#     _lfs_basic_system_install_gcc
+#     _lfs_basic_system_install_bzip2
+#     _lfs_basic_system_install_pkg-config
+#     _lfs_basic_system_install_ncurses
+#     _lfs_basic_system_install_attr
+#     _lfs_basic_system_install_acl
+#     _lfs_basic_system_install_libcap
+#     _lfs_basic_system_install_sed
+#     _lfs_basic_system_install_psmisc
+#     _lfs_basic_system_install_iana-etc
+#     _lfs_basic_system_install_bison
+#     _lfs_basic_system_install_flex
+#     _lfs_basic_system_install_grep
+#     _lfs_basic_system_install_bash
+#     _lfs_basic_system_install_libtool
+#     _lfs_basic_system_install_gdbm
+#     _lfs_basic_system_install_gperf
+#     _lfs_basic_system_install_expat
+#     _lfs_basic_system_install_inetutils
+#     _lfs_basic_system_install_perl
+#     _lfs_basic_system_install_XML-Parser
+#     _lfs_basic_system_install_intltool
+#     _lfs_basic_system_install_autoconf
+#     _lfs_basic_system_install_automake
+#     _lfs_basic_system_install_xz
+#     _lfs_basic_system_install_kmod-25
+#     _lfs_basic_system_install_gettext
+#     _lfs_basic_system_install_libelf
+#     _lfs_basic_system_install_libffi
+#     _lfs_basic_system_install_openssl
+#     _lfs_basic_system_install_python
+#     _lfs_basic_system_install_ninja
+#     _lfs_basic_system_install_meson
+#     _lfs_basic_system_install_systemd
+#     _lfs_basic_system_install_procps-ng
+#     _lfs_basic_system_install_e2fsprogs
+#     _lfs_basic_system_install_coreutils
+#     _lfs_basic_system_install_check
+#     _lfs_basic_system_install_diffutils
+#     _lfs_basic_system_install_gawk
+#     _lfs_basic_system_install_findutils
+#     _lfs_basic_system_install_groff
+#     _lfs_basic_system_install_grub
+#     _lfs_basic_system_install_less
+#     _lfs_basic_system_install_gzip
+#     _lfs_basic_system_install_iproute2
+#     _lfs_basic_system_install_kbd
+#     _lfs_basic_system_install_libpipeline
+#     _lfs_basic_system_install_make
+#     _lfs_basic_system_install_patch
+#     _lfs_basic_system_install_dbus
+#     _lfs_basic_system_install_util-linux
+#     _lfs_basic_system_install_man-db
+#     _lfs_basic_system_install_tar
+#     _lfs_basic_system_install_texinfo
+#     _lfs_basic_system_install_vim
 #
 ################################################################################
