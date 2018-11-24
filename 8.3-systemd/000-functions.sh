@@ -4026,6 +4026,13 @@ _lfs_basic_system_install_systemd() {
     Remove an unneeded group, render, from the default udev rules:
     '
     sed -i 's/GROUP="render", //' rules/50-udev-default.rules.in
+
+    ________________________________________________________________________________ '
+    [2018-11-24] otherwise there is error:
+    systemd error: result of ‘1 << 31’ requires 33 bits to represent, but ‘int’ only has 32 bits [-Werror=shift-overflow=]
+    '
+    sed -i '/error=shift-overflow/d' meson.build
+
     ________________________________________________________________________________ '
     Prepare systemd for compilation:
     '
