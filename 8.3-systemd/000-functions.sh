@@ -1801,16 +1801,13 @@ _lfs_basic_system_install_man-pages() {
 ################################################################################
 # 6.9. Glibc-2.28
 
-_lfs_basic_system_install_glibc() {
-    ________________________________________________________________________________ '
-    glibc (24 SBU; 2.8 GB)
-    '
-    cd /sources/glibc-2.28
-
+_lfs_basic_system_install_glibc_patch() {
     # Some of the Glibc programs use the non-FHS compilant /var/db directory to store their runtime data.
     # Apply the following patch to make such programs store their runtime data in the FHS-compliant locations:
     patch -Np1 -i ../glibc-2.28-fhs-1.patch
+}
 
+_lfs_basic_system_install_glibc_symlink() {
     # First create a compatibility symlink to avoid references to /tools in our final glibc:
     ln -sfv /tools/lib/gcc /usr/lib
 
@@ -1826,7 +1823,9 @@ _lfs_basic_system_install_glibc() {
                 ln -sfv ../lib/ld-linux-x86-64.so.2 /lib64/ld-lsb-x86-64.so.3
         ;;
     esac
+}
 
+_lfs_basic_system_install_glibc_before_configure() {
     # Remove a file that may be left over from a previous build attempt:
     rm -f /usr/include/limits.h
 
@@ -1834,7 +1833,9 @@ _lfs_basic_system_install_glibc() {
     mv -v build build_
     mkdir -v build
     cd       build
+}
 
+_lfs_basic_system_install_glibc_configure() {
     # Prepare Glibc for compilation:
     CC="gcc -isystem $GCC_INCDIR -isystem /usr/include" \
     ../configure --prefix=/usr                          \
@@ -1843,9 +1844,9 @@ _lfs_basic_system_install_glibc() {
                  --enable-stack-protector=strong        \
                  libc_cv_slibdir=/lib
     unset GCC_INCDIR
+}
 
-    make
-
+_lfs_basic_system_install_glibc_test() {
     # In this section, the test suite for Glibc is considered critical. Do not skip it under any circumstance.
     make check
     # You may see some test failures.
@@ -1864,10 +1865,9 @@ _lfs_basic_system_install_glibc() {
 
     # Fix the generated Makefile to skip an unneeded sanity check that fails in the LFS partial environment:
     sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile
+}
 
-    # Install the package:
-    make install
-
+_lfs_basic_system_install_glibc_post_install() {
     # Install the configuration file and runtime directory for nscd:
     cp -v ../nscd/nscd.conf /etc/nscd.conf
     mkdir -pv /var/cache/nscd
@@ -1918,6 +1918,29 @@ _lfs_basic_system_install_glibc() {
     localedef -i ru_RU -f UTF-8 ru_RU.UTF-8
     localedef -i tr_TR -f UTF-8 tr_TR.UTF-8
     localedef -i zh_CN -f GB18030 zh_CN.GB18030
+}
+
+_lfs_basic_system_install_glibc() {
+    ________________________________________________________________________________ '
+    glibc (24 SBU; 2.8 GB)
+    '
+    cd /sources/glibc-2.28
+
+    _lfs_basic_system_install_glibc_patch
+
+    _lfs_basic_system_install_glibc_symlink
+
+    _lfs_basic_system_install_glibc_before_configure
+
+    _lfs_basic_system_install_glibc_configure
+
+    make
+
+    _lfs_basic_system_install_glibc_test
+
+    make install
+
+    _lfs_basic_system_install_glibc_post_install
 }
 
 _lfs_basic_system_configure_glibc() {
