@@ -3316,7 +3316,7 @@ _lfs_basic_system_install_libtool() {
     To do this, append TESTSUITEFLAGS=-j<N> to the line below.
     For instance, using -j4 can reduce the test time by over 60 percent.
     '
-    make check TESTSUITEFLAGS=-j64
+    make check TESTSUITEFLAGS=-j4
     ________________________________________NOTE________________________________________ '
     Five tests are known to fail in the LFS build environment due to a circular dependency,
     but all tests pass if rechecked after automake is installed.
@@ -3618,7 +3618,7 @@ _lfs_basic_system_install_autoconf() {
     For full test coverage, Autoconf can be re-tested after Automake has been installed.
     In addition, two tests fail due to changes in libtool-2.4.3 and later.
     '
-    make check TESTSUITEFLAGS=-j64
+    make check TESTSUITEFLAGS=-j4
     ________________________________________________________________________________ '
     # make install
     '
@@ -3647,7 +3647,7 @@ _lfs_basic_system_install_automake() {
     ________________________________________________________________________________ '
     # make check
     '
-    make -j64 check
+    make -j4 check
     ________________________________________________________________________________ '
     # make install
     '
@@ -3850,10 +3850,10 @@ _lfs_basic_system_install_openssl() {
     ________________________________________________________________________________ '
     openssl (1.7 SBU; 75 MB)
     '
-    package________name="openssl"
+    #package________name="openssl"
     cd /sources/
-    tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]/
+    tar xf openssl-1.1.0i.tar.gz
+    cd openssl-1.1.0i
     ________________________________________________________________________________ '
     # configure
     '
@@ -3890,7 +3890,7 @@ _lfs_basic_system_install_python() {
     ________________________________________________________________________________ '
     python (1.3 SBU; 390 MB)
     '
-    package________name="python"
+    package________name="Python"
     cd /sources/
     tar xf `ls $package________name-*tar*`
     cd $package________name-*[0-9]/
@@ -4002,10 +4002,10 @@ _lfs_basic_system_install_systemd() {
     ________________________________________________________________________________ '
     systemd (1.1 SBU; 297 MB)
     '
-    package________name="systemd"
+    #package________name="systemd"
     cd /sources/
-    tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]/
+    tar xf systemd-239.tar.gz
+    cd systemd-239
     ________________________________________________________________________________ '
     Create a symlink to work around missing xsltproc:
     '
@@ -5456,6 +5456,9 @@ _lfs_basic_system_install_all_4() {
     _lfs_basic_system_install_python
     _lfs_basic_system_install_ninja
     _lfs_basic_system_install_meson
+}
+
+_lfs_basic_system_install_all_5() {
     _lfs_basic_system_install_systemd
     _lfs_basic_system_install_procps-ng
     _lfs_basic_system_install_e2fsprogs
