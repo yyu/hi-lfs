@@ -5093,61 +5093,64 @@ _lfs_basic_system_install_clean_up() {
 ################################################################################
 # 7.2. General Network Configuration
 
-________________________________________TEXT________________________________________ '
-# 7.2.1. Network Interface Configuration Files
-' '
-# Starting with version 209, systemd ships a network configuration daemon called systemd-networkd for basic network configuration.
-#                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~        ^^^^^^^^^^^^^^^^
-# Additionally, since version 213, DNS name resolution can be handled by systemd-resolved in place of a static /etc/resolv.conf file.
-#                                  ~~~~~~~~~~~~~~~~~~~                   ^^^^^^^^^^^^^^^^                      ................
-# Both services are enabled by default.
-#
-# Configuration files for
-#                         systemd-networkd (and systemd-resolved)
-# can be placed in
-#                         /usr/lib/systemd/network (higher priority) or /etc/systemd/network.
-#
-# There are three types of configuration files:
-#     .link       see systemd-link(5)
-#     .netdev     see systemd-netdev(5)
-#     .network    see systemd-network(5)
-'
 
-________________________________________TEXT________________________________________ '
-7.2.1.1. Network Device Naming
-' '
-Udev normally assigns network card interface names based on system physical characteristics such as enp2s1.
-If you are not sure what your interface name is, you can always run ip link after you have booted your system.
+_lfs_network_interface_configure_narrative() {
+    ________________________________________TEXT________________________________________ '
+    # 7.2.1. Network Interface Configuration Files
+    ' '
+    # Starting with version 209, systemd ships a network configuration daemon called systemd-networkd for basic network configuration.
+    #                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~        ^^^^^^^^^^^^^^^^
+    # Additionally, since version 213, DNS name resolution can be handled by systemd-resolved in place of a static /etc/resolv.conf file.
+    #                                  ~~~~~~~~~~~~~~~~~~~                   ^^^^^^^^^^^^^^^^                      ................
+    # Both services are enabled by default.
+    #
+    # Configuration files for
+    #                         systemd-networkd (and systemd-resolved)
+    # can be placed in
+    #                         /usr/lib/systemd/network (higher priority) or /etc/systemd/network.
+    #
+    # There are three types of configuration files:
+    #     .link       see systemd-link(5)
+    #     .netdev     see systemd-netdev(5)
+    #     .network    see systemd-network(5)
+    '
 
-For most systems, there is only one network interface for each type of connection.
-For example, the classic interface name for a wired connection is eth0.
-A wireless connection will usually have the name \033[1;32mwifi0 \033[0;37mor \033[1;32mwlan0\033[0;37m.
-'
+    ________________________________________TEXT________________________________________ '
+    7.2.1.1. Network Device Naming
+    ' '
+    Udev normally assigns network card interface names based on system physical characteristics such as enp2s1.
+    If you are not sure what your interface name is, you can always run ip link after you have booted your system.
 
-________________________________________TEXT________________________________________ '
-7.2.1.2. Static IP Configuration
-' '
-The command below creates a basic configuration file for a Static IP setup (using both systemd-networkd and systemd-resolved):
-\033[36m
-cat > /etc/systemd/network/10-eth-static.network << "EOF"
-[Match]
-Name=<network-device-name>
+    For most systems, there is only one network interface for each type of connection.
+    For example, the classic interface name for a wired connection is eth0.
+    A wireless connection will usually have the name \033[1;32mwifi0 \033[0;37mor \033[1;32mwlan0\033[0;37m.
+    '
 
-[Network]
-Address=192.168.0.2/24
-Gateway=192.168.0.1
-DNS=192.168.0.1
-Domains=<Your Domain Name>
-EOF
-\033[0m\033[1;33m
-Multiple DNS entries can be added if you have more than one DNS server.
-Do not include DNS or Domains entries if you intend to use a static /etc/resolv.conf file.
-'
+    ________________________________________TEXT________________________________________ '
+    7.2.1.2. Static IP Configuration
+    ' '
+    The command below creates a basic configuration file for a Static IP setup (using both systemd-networkd and systemd-resolved):
+    \033[36m
+    cat > /etc/systemd/network/10-eth-static.network << "EOF"
+    [Match]
+    Name=<network-device-name>
 
-________________________________________TEXT________________________________________ '
-7.2.1.3. DHCP Configuration' '
-The command below creates a basic configuration file for an IPv4 DHCP setup:
-'
+    [Network]
+    Address=192.168.0.2/24
+    Gateway=192.168.0.1
+    DNS=192.168.0.1
+    Domains=<Your Domain Name>
+    EOF
+    \033[0m\033[1;33m
+    Multiple DNS entries can be added if you have more than one DNS server.
+    Do not include DNS or Domains entries if you intend to use a static /etc/resolv.conf file.
+    '
+
+    ________________________________________TEXT________________________________________ '
+    7.2.1.3. DHCP Configuration' '
+    The command below creates a basic configuration file for an IPv4 DHCP setup:
+    '
+}
 
 _lfs_configure_dhcp() {
     cat > /etc/systemd/network/10-eth-dhcp.network << "EOF"
@@ -5162,59 +5165,159 @@ UseDomains=true
 EOF
 }
 
-________________________________________TEXT________________________________________ '
-DNS' '
-7.2.2. /etc/resolv.conf
+_lfs_configure_dns() {
+    ________________________________________TEXT________________________________________ '
+    DNS' '
+    7.2.2. /etc/resolv.conf
 
-IP addresses of the DNS servers are placed in /etc/resolv.conf
-'
+    IP addresses of the DNS servers are placed in /etc/resolv.conf
+    '
 
-________________________________________NOTE________________________________________ '
-when not to use /etc/resolv.conf' '
-If using another means to configure your network interfaces (ex: ppp, network-manager, etc.),
-or if using any type of local resolver (ex: bind, dnsmasq, etc.),
-or any other software that generates an /etc/resolv.conf (ex: resolvconf),
-the systemd-resolved service should not be used.
-'
+    ________________________________________NOTE________________________________________ '
+    when not to use /etc/resolv.conf' '
+    If using another means to configure your network interfaces (ex: ppp, network-manager, etc.),
+    or if using any type of local resolver (ex: bind, dnsmasq, etc.),
+    or any other software that generates an /etc/resolv.conf (ex: resolvconf),
+    the systemd-resolved service should not be used.
+    '
 
-________________________________________TEXT________________________________________ '
-7.2.2.1. resolv.conf generated by systemd-resolved
-' '
-When using systemd-resolved for DNS configuration, it creates the file
-\033[1;33m/run/systemd/resolve/resolv.conf\033[0;37m.
-\033[32m
-Create a symlink in /etc to use the generated file:
-\033[1;32m
-ln -sfv /run/systemd/resolve/resolv.conf /etc/resolv.conf
-'
+    ________________________________________TEXT________________________________________ '
+    7.2.2.1. resolv.conf generated by systemd-resolved
+    ' '
+    When using systemd-resolved for DNS configuration, it creates the file
+    \033[1;33m/run/systemd/resolve/resolv.conf\033[0;37m.
+    \033[32m
+    Create a symlink in /etc to use the generated file:
+    \033[1;32m
+    ln -sfv /run/systemd/resolve/resolv.conf /etc/resolv.conf
+    '
 
-________________________________________TEXT________________________________________ '
-7.2.2.2. Static resolv.conf
-' '
-If a static /etc/resolv.conf is desired, create it by running the following command:
-\033[1;32m
-cat > /etc/resolv.conf << "EOF"
-# Begin /etc/resolv.conf
+    ________________________________________TEXT________________________________________ '
+    7.2.2.2. Static resolv.conf
+    ' '
+    If a static /etc/resolv.conf is desired, create it by running the following command:
+    \033[1;32m
+    cat > /etc/resolv.conf << "EOF"
+    # Begin /etc/resolv.conf
 
-domain <Your Domain Name>
-nameserver <IP address of your primary nameserver>
-nameserver <IP address of your secondary nameserver>
+    domain <Your Domain Name>
+    nameserver <IP address of your primary nameserver>
+    nameserver <IP address of your secondary nameserver>
 
-# End /etc/resolv.conf
+    # End /etc/resolv.conf
+    EOF
+    \033[0;33m
+    The domain statement can be omitted or replaced with a search statement.
+    See the man page for resolv.conf for more details.
+
+    The IP address may also be a router on the local network.
+    '
+
+    ________________________________________NOTE________________________________________ '
+    The Google Public IPv4 DNS addresses are' '
+    8.8.8.8 and 8.8.4.4 for IPv4, and
+    2001:4860:4860::8888 and 2001:4860:4860::8844 for IPv6.
+    '
+}
+
+_lfs_configure_hostname() {
+    ________________________________________NOTE________________________________________ '
+    7.2.3. Configuring the system hostname
+    ' '
+    During the boot process, the file /etc/hostname is used for establishing the system s hostname.
+    '
+
+    ________________________________________________________________________________ '
+    Create the /etc/hostname file and enter a hostname by running:
+    '
+    echo "WhyWhyLFS" > /etc/hostname
+
+    ________________________________________NOTE________________________________________ '
+    echo "<lfs>" > /etc/hostname ' '
+    <lfs> needs to be replaced with the name given to the computer.
+
+    Do not enter the FQDN here. That information is put in the /etc/hosts file.
+    '
+}
+
+_lfs_configure_etc_hosts() {
+    ________________________________________________________________________________ '
+    7.2.4. Customizing the /etc/hosts File
+    ' '
+    Decide on a fully-qualified domain name (FQDN), and possible aliases for use in the /etc/hosts file.
+    If using static addresses, youll also need to decide on an IP address. The syntax for a hosts file entry is:
+
+    IP_address myhost.example.org aliases
+    Unless the computer is to be visible to the Internet (i.e., there is a registered domain
+    and a valid block of assigned IP addresses—most users do not have this), make sure that
+    the IP address is in the private network IP address range. Valid ranges are:
+
+    Private Network Address Range      Normal Prefix
+    10.0.0.1 - 10.255.255.254           8
+    172.x.0.1 - 172.x.255.254           16
+    192.168.y.1 - 192.168.y.254         24
+
+    x can be any number in the range 16-31. y can be any number in the range 0-255.
+
+    A valid private IP address could be 192.168.1.1.
+    A valid FQDN for this IP could be lfs.example.org.
+
+    Even if not using a network card, a valid FQDN is still required.
+    This is necessary for certain programs to operate correctly.
+
+    If using DHCP, DHCPv6, IPv6 Autoconfiguration, or if a network card is not going to be configured,
+    create the /etc/hosts file by running the following command:
+    \033[1;33m
+    cat > /etc/hosts << "EOF"
+    # Begin /etc/hosts
+
+    127.0.0.1 localhost
+    127.0.1.1 <FQDN> <HOSTNAME>
+    ::1       localhost ip6-localhost ip6-loopback
+    ff02::1   ip6-allnodes
+    ff02::2   ip6-allrouters
+
+    # End /etc/hosts
+    EOF
+    '
+
+    cat > /etc/hosts << "EOF"
+# Begin /etc/hosts
+
+127.0.0.1 localhost
+::1       localhost ip6-localhost ip6-loopback
+ff02::1   ip6-allnodes
+ff02::2   ip6-allrouters
+
+# End /etc/hosts
 EOF
-\033[0;33m
-The domain statement can be omitted or replaced with a search statement.
-See the man page for resolv.conf for more details.
 
-The IP address may also be a router on the local network.
-'
+    ________________________________________________________________________________ '
+    The ::1 entry is the IPv6 counterpart of 127.0.0.1 and represents the IPv6 loopback interface.
+    127.0.1.1 is a loopback entry reserved specifically for the FQDN.
 
-________________________________________NOTE________________________________________ '
-The Google Public IPv4 DNS addresses are' '
-8.8.8.8 and 8.8.4.4 for IPv4, and
-2001:4860:4860::8888 and 2001:4860:4860::8844 for IPv6.
-'
+    If using a static address, create the /etc/hosts file by running this command instead:
 
+    \033[1;33m
+    cat > /etc/hosts << "EOF"
+    # Begin /etc/hosts
+
+    127.0.0.1 localhost
+    127.0.1.1 <FQDN> <HOSTNAME>
+    <192.168.0.2> <FQDN> <HOSTNAME> [alias1] [alias2] ...
+    ::1       localhost ip6-localhost ip6-loopback
+    ff02::1   ip6-allnodes
+    ff02::2   ip6-allrouters
+
+    # End /etc/hosts
+    EOF
+    '
+    ________________________________________________________________________________ '
+    The <192.168.0.2>, <FQDN>, and <HOSTNAME> values need to be changed for specific uses or requirements
+    (if assigned an IP address by a network/system administrator and the machine will be connected to an existing network).
+    The optional alias name(s) can be omitted.
+    '
+}
 
 ################################################################################
 
