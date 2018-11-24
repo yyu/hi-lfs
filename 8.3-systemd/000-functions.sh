@@ -1,10 +1,12 @@
 ## source me, don't run me
 
 export LFS_PARTITION=/home/ubuntu/lfs.img
+#export LFS_PARTITION=/dev/sdb
 
 export LFS_VERSION="stable-systemd"
 
 export LOG=/home/ubuntu/lfs.log
+#export LOG=/home/lfs/lfs.log
 
 ################################################################################
 
@@ -174,6 +176,10 @@ _lfs_get_packages_and_patches() {
         md5sum -c md5sums
         popd
     fi
+
+    # http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz is down, use a different one:
+    # https://ftp.gnu.org/gnu/mpfr/mpfr-4.0.1.tar.xz
+    sed -E 's#^.*mpfr.*$#https://ftp.gnu.org/gnu/mpfr/mpfr-4.0.1.tar.xz#' -i $LFS_SOURCES_DIR/wget-list
 
     # In addition to the above required patches, there exist a number of optional patches created by the LFS community.
     # These optional patches solve minor problems or enable functionality that is not enabled by default.
