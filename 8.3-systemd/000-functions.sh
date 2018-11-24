@@ -5,8 +5,8 @@ export LFS_PARTITION=/home/ubuntu/lfs.img
 
 export LFS_VERSION="stable-systemd"
 
-export LOG=/home/ubuntu/lfs.log
-#export LOG=/home/lfs/lfs.log
+#export LOG=/home/ubuntu/lfs.log
+export LOG=/opt/lfs/lfs.log
 
 ################################################################################
 
@@ -41,12 +41,11 @@ ________________________________________HIGHLIGHT_______________________________
 }
 
 ________________________________________NOTE________________________________________() {
-    ________________________________________HIGHLIGHT________________________________________ 33 Note $1 $2
+    ________________________________________HIGHLIGHT________________________________________ 33 Note "$1" "$2"
 }
 
 ________________________________________IMPORTANT________________________________________() {
-    ________________________________________HIGHLIGHT________________________________________ 31 Important $1 $2
-    _lfs_sleep
+    ________________________________________HIGHLIGHT________________________________________ 31 Important "$1" "$2"
 }
 
 _lfs_create_disk_image() {
@@ -166,20 +165,21 @@ _lfs_get_packages_and_patches() {
     chmod -v a+wt $LFS_SOURCES_DIR
 
     if [ ! -f $LFS_SOURCES_DIR/wget-list ]; then
-        for f in wget-list md5sums; do
-            wget http://www.linuxfromscratch.org/lfs/downloads/$LFS_VERSION/$f -O $LFS_SOURCES_DIR/$f
-        done
+        wget http://www.linuxfromscratch.org/lfs/downloads/$LFS_VERSION/wget-list -O $LFS_SOURCES_DIR/wget-list
+
+        # http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz is down, use a different one:
+        # https://ftp.gnu.org/gnu/mpfr/mpfr-4.0.1.tar.xz
+        sed -E 's#^.*mpfr.*$#https://ftp.gnu.org/gnu/mpfr/mpfr-4.0.1.tar.xz#' \
+            -i $LFS_SOURCES_DIR/wget-list
 
         wget --input-file=$LFS_SOURCES_DIR/wget-list --continue --directory-prefix=$LFS_SOURCES_DIR
+
+        wget http://www.linuxfromscratch.org/lfs/downloads/$LFS_VERSION/md5sums -O $LFS_SOURCES_DIR/md5sums
 
         pushd $LFS_SOURCES_DIR
         md5sum -c md5sums
         popd
     fi
-
-    # http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz is down, use a different one:
-    # https://ftp.gnu.org/gnu/mpfr/mpfr-4.0.1.tar.xz
-    sed -E 's#^.*mpfr.*$#https://ftp.gnu.org/gnu/mpfr/mpfr-4.0.1.tar.xz#' -i $LFS_SOURCES_DIR/wget-list
 
     # In addition to the above required patches, there exist a number of optional patches created by the LFS community.
     # These optional patches solve minor problems or enable functionality that is not enabled by default.
@@ -1493,6 +1493,8 @@ _lfs_basic_system_enter_chroot_env() {
         PS1='(lfs chroot) \u:\w\$ ' \
         PATH=/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin \
         /tools/bin/bash --login +h
+
+#chroot "$LFS" /tools/bin/env -i HOME=/root TERM="$TERM" PS1='(lfs chroot) \u:\w\$ ' PATH=/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin /tools/bin/bash --login +h
 
     # The -i option given to the env command will clear all variables of the chroot environment.
     # After that, only the HOME, TERM, PS1, and PATH variables are set again.
@@ -5060,7 +5062,7 @@ _lfs_basic_system_install_clean_up() {
     '
 }
 
-_lfs_basic_system_install_all() {
+_lfs_basic_system_install_all_1() {
     _lfs_basic_system_install_linux_api_headers
     _lfs_basic_system_install_man-pages
     _lfs_basic_system_install_glibc
@@ -5092,6 +5094,9 @@ _lfs_basic_system_install_all() {
     _lfs_basic_system_install_flex
     _lfs_basic_system_install_grep
     _lfs_basic_system_install_bash
+}
+
+_lfs_basic_system_install_all_2() {
     _lfs_basic_system_install_libtool
     _lfs_basic_system_install_gdbm
     _lfs_basic_system_install_gperf
@@ -5172,8 +5177,9 @@ _lfs_basic_system_install_all() {
 #
 # _lfs_before_temp_system_build
 #
-# _lfs_temp_system_build_all_1
-# _lfs_temp_system_build_all_2
+# _lfs_temp_system_build_all
+#     _lfs_temp_system_build_all_1
+#     _lfs_temp_system_build_all_2
 #
 # on host (as root)
 # =================
