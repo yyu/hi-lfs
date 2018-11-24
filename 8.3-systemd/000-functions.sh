@@ -5,8 +5,9 @@ export LFS_PARTITION=/home/ubuntu/lfs.img
 
 export LFS_VERSION="stable-systemd"
 
-#export LOG=/home/ubuntu/lfs.log
-export LOG=/opt/lfs/lfs.log
+#export LFS_LOG=/home/ubuntu/lfs.log
+export LFS_LOG_DIR=/opt/lfs
+export LFS_LOG=$LFS_LOG_DIR/lfs.log
 
 ################################################################################
 
@@ -15,35 +16,35 @@ _lfs_sleep() {
 }
 
 ________________________________________________________________________________() {
-    echo -e "\033[1;3;32m"'________________________________________________________________________________' | tee -a $LOG
-    echo -e "$1" | tee -a $LOG
-    echo -e '................................................................................'"\033[0m" | tee -a $LOG
+    echo -e "\033[1;3;32m"'________________________________________________________________________________' | tee -a $LFS_LOG
+    echo -e "$1" | tee -a $LFS_LOG
+    echo -e '................................................................................'"\033[0m" | tee -a $LFS_LOG
     _lfs_sleep
 }
 
 ________________________________________there_should_have________________________________________() {
-    echo -e "\033[0;3;36m$1" | tee -a $LOG
-    echo -e "\033[0;1;36m$2" | tee -a $LOG
-    echo -e "\033[0;3;35m$3" | tee -a $LOG
-    echo -e "\033[0;1;35m$4" | tee -a $LOG
-    echo -e "\033[0m" | tee -a $LOG
+    echo -e "\033[0;3;36m$1" | tee -a $LFS_LOG
+    echo -e "\033[0;1;36m$2" | tee -a $LFS_LOG
+    echo -e "\033[0;3;35m$3" | tee -a $LFS_LOG
+    echo -e "\033[0;1;35m$4" | tee -a $LFS_LOG
+    echo -e "\033[0m" | tee -a $LFS_LOG
     _lfs_sleep
 }
 
 ________________________________________TEXT________________________________________() {
     color=34
-    echo -e "\033[7;${color}m$1\033[0m\033[${color}m__________________________________________________\033[0m" | tee -a $LOG
-    echo -e "\033[0;${color}m$2" | tee -a $LOG
-    echo -e "\033[0m" | tee -a $LOG
+    echo -e "\033[7;${color}m$1\033[0m\033[${color}m__________________________________________________\033[0m" | tee -a $LFS_LOG
+    echo -e "\033[0;${color}m$2" | tee -a $LFS_LOG
+    echo -e "\033[0m" | tee -a $LFS_LOG
 }
 
 ________________________________________HIGHLIGHT________________________________________() {
     color=$1
-    echo -e "\033[7;${color}m$2\033[0m\033[${color}m__________________________________________________\033[0m" | tee -a $LOG
-    echo -e "\033[0;${color}m$3" | tee -a $LOG
+    echo -e "\033[7;${color}m$2\033[0m\033[${color}m__________________________________________________\033[0m" | tee -a $LFS_LOG
+    echo -e "\033[0;${color}m$3" | tee -a $LFS_LOG
     shift 3
-    echo -e "\033[0;1;${color}m$@" | tee -a $LOG
-    echo -e "\033[0m" | tee -a $LOG
+    echo -e "\033[0;1;${color}m$@" | tee -a $LFS_LOG
+    echo -e "\033[0m" | tee -a $LFS_LOG
     _lfs_sleep
 }
 
@@ -66,6 +67,7 @@ _lfs_create_disk_image() {
 _lfs_host_prepare() {
     sudo apt install -y binutils bison build-essential m4 texinfo
     sudo ln -sf /bin/bash /bin/sh
+    mkdir -pv $LFS_LOG_DIR
 }
 
 # To see whether your host system has all the appropriate versions, and the ability to compile programs
@@ -260,6 +262,7 @@ _lfs_setup_user_and_group() {
 # 4.4. Setting Up the Environment
 
 _lfs_setup_env() {
+    mkdir -pv $LFS_LOG_DIR
 
     # While logged in as user lfs, issue the following command to create a new .bash_profile
     # which replaces the running shell with a new one with a completely empty environment, except for the HOME, TERM, and PS1 variables
@@ -1372,6 +1375,8 @@ _lfs_optional_stripping() {
 # post-chapter5
 
 _lfs_after_temp_system() {
+    mkdir -pv $LFS_LOG_DIR
+
     echo -e "\
         | \033[7;32mNote\033[0m\033[32m__________________________________________________\033[0m
         | \033[0;32mThe commands in the remainder of this book must be performed
@@ -1544,6 +1549,8 @@ _lfs_basic_system_chroot() {
 # 6.5. Creating Directories
 
 _lfs_create_directories() {
+    mkdir -pv $LFS_LOG_DIR
+
     # time to create some structure in the LFS file system
 
     mkdir -pv /{bin,boot,etc/{opt,sysconfig},home,lib/firmware,mnt,opt}
@@ -2135,7 +2142,7 @@ _lfs_basic_system_install_file() {
 
     cd /sources/
     tar xf `ls $pack-*z*`
-    cd $pack-*[0-9]
+    cd $pack-*[0-9]/
 
     echo -e "\033[1;7;32m~~~~~~~~~~~~~~~~~~~~\033[0m"; ./configure --prefix=/usr
     echo -e "\033[1;7;32m--------------------\033[0m"; make
@@ -2155,7 +2162,7 @@ _lfs_basic_system_install_readline() {
 
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
 
     ________________________________________________________________________________ '
     # Reinstalling Readline will cause the old libraries to be moved to <libraryname>.old.
@@ -2201,7 +2208,7 @@ _lfs_basic_system_install_m4() {
     package________name="m4"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
 
     ________________________________________________________________________________ '
     First, make some fixes required by glibc-2.28:
@@ -2236,7 +2243,7 @@ _lfs_basic_system_install_bc() {
     package________name="bc"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
 
     ________________________________________________________________________________ '
     # First, change an internal script to use sed instead of ed:
@@ -2298,7 +2305,7 @@ _lfs_basic_system_install_binutils() {
     package________name="binutils"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     Verify that the PTYs are working properly inside the chroot environment by performing a simple test:
     '
@@ -2353,7 +2360,7 @@ _lfs_basic_system_install_gmp() {
     package________name="gmp"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________NOTE________________________________________ '
     If you are building for 32-bit x86, but you have a CPU which is capable of running 64-bit code
     and you have specified CFLAGS in the environment, the configure script will attempt to configure for 64-bits and fail.
@@ -2414,7 +2421,7 @@ _lfs_basic_system_install_mpfr() {
     package________name="mpfr"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -2448,7 +2455,7 @@ _lfs_basic_system_install_mpc() {
     package________name="mpc"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -2483,7 +2490,7 @@ _lfs_basic_system_install_shadow() {
     package________name="shadow"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________NOTE________________________________________ '
     If you would like to enforce the use of strong passwords, refer to
     http://www.linuxfromscratch.org/blfs/view/8.3/postlfs/cracklib.html
@@ -2600,7 +2607,7 @@ _lfs_basic_system_install_gcc() {
     package________name="gcc"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     If building on x86_64, change the default directory name for 64-bit libraries to “lib”:
     '
@@ -2791,8 +2798,9 @@ _lfs_basic_system_install_bzip2() {
     '
     package________name="bzip2"
     cd /sources/
+    rm -rf $package________name-*[0-9]/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     Apply a patch that will install the documentation for this package:
     '
@@ -2823,10 +2831,10 @@ _lfs_basic_system_install_bzip2() {
     '
     cp -v bzip2-shared /bin/bzip2
     cp -av libbz2.so* /lib
-    ln -sv ../../lib/libbz2.so.1.0 /usr/lib/libbz2.so
+    ln -sfv ../../lib/libbz2.so.1.0 /usr/lib/libbz2.so
     rm -v /usr/bin/{bunzip2,bzcat,bzip2}
-    ln -sv bzip2 /bin/bunzip2
-    ln -sv bzip2 /bin/bzcat
+    ln -sfv bzip2 /bin/bunzip2
+    ln -sfv bzip2 /bin/bzcat
 }
 
 ################################################################################
@@ -2839,7 +2847,7 @@ _lfs_basic_system_install_pkg-config() {
     package________name="pkg-config"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -2871,7 +2879,7 @@ _lfs_basic_system_install_ncurses() {
     package________name="ncurses"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     Don'"'"'t install a static library that is not handled by configure:
     '
@@ -2950,7 +2958,7 @@ _lfs_basic_system_install_attr() {
     package________name="attr"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -2988,7 +2996,7 @@ _lfs_basic_system_install_acl() {
     package________name="acl"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -3022,7 +3030,7 @@ _lfs_basic_system_install_libcap() {
     package________name="libcap"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     Prevent a static library from being installed:
     '
@@ -3055,7 +3063,7 @@ _lfs_basic_system_install_sed() {
     package________name="sed"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     First fix an issue in the LFS environment and remove a failing test:
     '
@@ -3094,7 +3102,7 @@ _lfs_basic_system_install_psmisc() {
     package________name="psmisc"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -3126,7 +3134,7 @@ _lfs_basic_system_install_iana-etc() {
     package________name="iana-etc"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # make
     The following command converts the raw data provided by IANA into the correct formats
@@ -3149,7 +3157,7 @@ _lfs_basic_system_install_bison() {
     package________name="bison"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -3181,7 +3189,7 @@ _lfs_basic_system_install_flex() {
     package________name="flex"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     First, fix a problem introduced with glibc-2.26:
     '
@@ -3221,7 +3229,7 @@ _lfs_basic_system_install_grep() {
     package________name="grep"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -3250,7 +3258,7 @@ _lfs_basic_system_install_bash() {
     package________name="bash"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -3294,7 +3302,7 @@ _lfs_basic_system_install_libtool() {
     package________name="libtool"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -3333,7 +3341,7 @@ _lfs_basic_system_install_gdbm() {
     package________name="gdbm"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -3364,7 +3372,7 @@ _lfs_basic_system_install_gperf() {
     package________name="gperf"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -3393,7 +3401,7 @@ _lfs_basic_system_install_expat() {
     package________name="expat"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     First fix a problem with the regression tests in the LFS environment:
     '
@@ -3432,7 +3440,7 @@ _lfs_basic_system_install_inetutils() {
     package________name="inetutils"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -3477,8 +3485,9 @@ _lfs_basic_system_install_perl() {
     '
     package________name="perl"
     cd /sources/
+    rm -rf $package________name-*[0-9]/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     First create a basic /etc/hosts file to be referenced in one of Perl'"'"'s configuration files as well as the optional test suite:
     '
@@ -3529,7 +3538,7 @@ _lfs_basic_system_install_XML-Parser() {
     package________name="XML-Parser"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     perl Makefile.PL
     '
@@ -3560,7 +3569,7 @@ _lfs_basic_system_install_intltool() {
     package________name="intltool"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     First fix a warning that is caused by perl-5.22 and later:
     '
@@ -3594,7 +3603,7 @@ _lfs_basic_system_install_autoconf() {
     package________name="autoconf"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -3626,7 +3635,7 @@ _lfs_basic_system_install_automake() {
     package________name="automake"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -3655,7 +3664,7 @@ _lfs_basic_system_install_xz() {
     package________name="xz"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -3688,8 +3697,8 @@ _lfs_basic_system_install_kmod-25() {
     '
     package________name="kmod-25"
     cd /sources/
-    tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    tar xf `ls $package________name*tar*`
+    cd $package________name
     ________________________________________________________________________________ '
     # configure
     '
@@ -3728,8 +3737,9 @@ _lfs_basic_system_install_gettext() {
     '
     package________name="gettext"
     cd /sources/
+    rm -rf $package________name-*[0-9]/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     First, suppress two invocations of test-lock which on some machines can loop forever:
     '
@@ -3768,10 +3778,11 @@ _lfs_basic_system_install_libelf() {
     ________________________________________________________________________________ '
     libelf (1 SBU; 91 MB)
     '
-    package________name="libelf"
+    package________name="elfutils"
     cd /sources/
+    rm -rf $package________name-*[0-9]/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -3801,7 +3812,7 @@ _lfs_basic_system_install_libffi() {
     package________name="libffi"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     Modify the Makefile to install headers into the standard /usr/include directory instead of /usr/lib/libffi-3.2.1/include.
     '
@@ -3842,7 +3853,7 @@ _lfs_basic_system_install_openssl() {
     package________name="openssl"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -3882,7 +3893,7 @@ _lfs_basic_system_install_python() {
     package________name="python"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -3928,7 +3939,7 @@ _lfs_basic_system_install_ninja() {
     package________name="ninja"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     When run, ninja normally runs a maximum number of processes in parallel.
     By default this is the number of cores on the system plus two.
@@ -3972,7 +3983,7 @@ _lfs_basic_system_install_meson() {
     package________name="meson"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     Compile Meson
     '
@@ -3994,7 +4005,7 @@ _lfs_basic_system_install_systemd() {
     package________name="systemd"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     Create a symlink to work around missing xsltproc:
     '
@@ -4079,7 +4090,7 @@ _lfs_basic_system_install_procps-ng() {
     package________name="procps-ng"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -4124,7 +4135,7 @@ _lfs_basic_system_install_e2fsprogs() {
     package________name="e2fsprogs"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     The E2fsprogs documentation recommends that the package be built in a subdirectory of the source tree:
     '
@@ -4185,7 +4196,7 @@ _lfs_basic_system_install_coreutils() {
     package________name="coreutils"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     POSIX requires that programs from Coreutils recognize character boundaries correctly even in multibyte locales.
     The following patch fixes this non-compliance and other internationalization-related bugs.
@@ -4266,7 +4277,7 @@ _lfs_basic_system_install_check() {
     package________name="check"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -4296,7 +4307,7 @@ _lfs_basic_system_install_diffutils() {
     package________name="diffutils"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -4325,7 +4336,7 @@ _lfs_basic_system_install_gawk() {
     package________name="gawk"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     First, ensure some unneeded files are not installed:
     '
@@ -4363,7 +4374,7 @@ _lfs_basic_system_install_findutils() {
     package________name="findutils"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     First, suppress a test which on some machines can loop forever:
     '
@@ -4407,7 +4418,7 @@ _lfs_basic_system_install_groff() {
     package________name="groff"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     Groff expects the environment variable PAGE to contain the default paper size.
     For users in the United States, PAGE=letter is appropriate. Elsewhere, PAGE=A4 may be more suitable.
@@ -4438,7 +4449,7 @@ _lfs_basic_system_install_grub() {
     package________name="grub"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -4467,7 +4478,7 @@ _lfs_basic_system_install_less() {
     package________name="less"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -4492,7 +4503,7 @@ _lfs_basic_system_install_gzip() {
     package________name="gzip"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     First, make some fixes required by glibc-2.28:
     '
@@ -4531,7 +4542,7 @@ _lfs_basic_system_install_iproute2() {
     package________name="iproute2"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     The arpd program included in this package will not be built since it is dependent on Berkeley DB, which is not installed in LFS.
     However, a directory for arpd and a man page will still be installed.
@@ -4565,7 +4576,7 @@ _lfs_basic_system_install_kbd() {
     package________name="kbd"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     The behaviour of the Backspace and Delete keys is not consistent across the keymaps in the Kbd package.
     The following patch fixes this issue for i386 keymaps:
@@ -4616,7 +4627,7 @@ _lfs_basic_system_install_libpipeline() {
     package________name="libpipeline"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -4645,7 +4656,7 @@ _lfs_basic_system_install_make() {
     package________name="make"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     Again, work around an error caused by glibc-2.27:
     '
@@ -4679,7 +4690,7 @@ _lfs_basic_system_install_patch() {
     package________name="patch"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -4708,7 +4719,7 @@ _lfs_basic_system_install_dbus() {
     package________name="dbus"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -4757,7 +4768,7 @@ _lfs_basic_system_install_util-linux() {
     package________name="util-linux"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     The FHS recommends using the /var/lib/hwclock directory instead of the usual /etc directory as the location for the adjtime file.
     First create a directory to enable storage for the hwclock program:
@@ -4815,7 +4826,7 @@ _lfs_basic_system_install_man-db() {
     package________name=man-db""
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -4851,7 +4862,7 @@ _lfs_basic_system_install_tar() {
     package________name="tar"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     # configure
     '
@@ -4883,7 +4894,7 @@ _lfs_basic_system_install_texinfo() {
     package________name="texinfo"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd $package________name-*[0-9]/
     ________________________________________________________________________________ '
     Fix a file that creates a lot of failures in the regression checks:
     '
@@ -5321,7 +5332,69 @@ EOF
 
 ################################################################################
 
+_lfs_configure_system_clock() {
+
+    ________________________________________________________________________________ '
+    7.5. Configuring the system clock
+
+    This section discusses how to configure the systemd-timedated system service, which configures system clock and timezone.
+
+    If you cannot remember whether or not the hardware clock is set to UTC, find out by running the hwclock --localtime --show command.
+    This will display what the current time is according to the hardware clock.
+    If this time matches whatever your watch says, then the hardware clock is set to local time.
+    If the output from hwclock is not local time, chances are it is set to UTC time.
+    Verify this by adding or subtracting the proper amount of hours for the timezone to the time shown by hwclock.
+    For example, if you are currently in the MST timezone, which is also known as GMT -0700, add seven hours to the local time.
+
+    systemd-timedated reads /etc/adjtime, and depending on the contents of the file, it sets the clock to either UTC or local time.
+
+    Create the /etc/adjtime file with the following contents if your hardware clock is set to local time:
+
+    cat > /etc/adjtime << "EOF"
+    0.0 0 0.0
+    0
+    LOCAL
+    EOF
+    If /etc/adjtime isnt present at first boot, systemd-timedated will assume that hardware clock is set to UTC and adjust the file according to that.
+
+    You can also use the timedatectl utility to tell systemd-timedated if your hardware clock is set to UTC or local time:
+
+    timedatectl set-local-rtc 1
+    timedatectl can also be used to change system time and time zone.
+
+    To change your current system time, issue:
+
+    timedatectl set-time YYYY-MM-DD HH:MM:SS
+    Hardware clock will also be updated accordingly.
+
+    To change your current time zone, issue:
+
+    timedatectl set-timezone TIMEZONE
+    You can get a list of available time zones by running:
+
+    timedatectl list-timezones
+    Note
+    Please note that the timedatectl command can be used only on a system booted with systemd.
+
+    7.5.1. Network Time Synchronization
+    Starting with version 213, systemd ships a daemon called systemd-timesyncd which can be used to synchronize the system time with remote NTP servers.
+
+    The daemon is not intended as a replacement for the well established NTP daemon, but as a client only implementation of the SNTP protocol which can be used for less advanced tasks and on resource limited systems.
+
+    Starting with systemd version 216, the systemd-timesyncd daemon is enabled by default. If you want to disable it, issue the following command:
+
+    systemctl disable systemd-timesyncd
+    The /etc/systemd/timesyncd.conf file can be used to change the NTP servers that systemd-timesyncd synchronizes with.
+
+    Please note that when system clock is set to Local Time, systemd-timesyncd wont update hardware clock.
+    '
+
+}
+
+################################################################################
+
 _lfs_basic_system_install_all_1() {
+    mkdir -pv $LFS_LOG_DIR
     _lfs_basic_system_install_linux_api_headers
     _lfs_basic_system_install_man-pages
     _lfs_basic_system_install_glibc
@@ -5330,6 +5403,7 @@ _lfs_basic_system_install_all_1() {
 }
 
 _lfs_basic_system_install_all_2() {
+    mkdir -pv $LFS_LOG_DIR
     _lfs_basic_system_install_zlib
     _lfs_basic_system_install_file
     _lfs_basic_system_install_readline
@@ -5345,6 +5419,7 @@ _lfs_basic_system_install_all_2() {
 }
 
 _lfs_basic_system_install_all_3() {
+    mkdir -pv $LFS_LOG_DIR
     _lfs_basic_system_install_bzip2
     _lfs_basic_system_install_pkg-config
     _lfs_basic_system_install_ncurses
@@ -5361,6 +5436,7 @@ _lfs_basic_system_install_all_3() {
 }
 
 _lfs_basic_system_install_all_4() {
+    mkdir -pv $LFS_LOG_DIR
     _lfs_basic_system_install_libtool
     _lfs_basic_system_install_gdbm
     _lfs_basic_system_install_gperf
