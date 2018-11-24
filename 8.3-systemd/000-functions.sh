@@ -16,26 +16,33 @@ _lfs_sleep() {
 
 ________________________________________________________________________________() {
     echo -e "\033[1;3;32m"'________________________________________________________________________________' | tee -a $LOG
-    echo -e $1 | tee -a $LOG
+    echo -e "$1" | tee -a $LOG
     echo -e '................................................................................'"\033[0m" | tee -a $LOG
     _lfs_sleep
 }
 
 ________________________________________there_should_have________________________________________() {
-    echo -e "\033[0;3;36m"$1 | tee -a $LOG
-    echo -e "\033[0;1;36m"$2 | tee -a $LOG
-    echo -e "\033[0;3;35m"$3 | tee -a $LOG
-    echo -e "\033[0;1;35m"$4 | tee -a $LOG
+    echo -e "\033[0;3;36m$1" | tee -a $LOG
+    echo -e "\033[0;1;36m$2" | tee -a $LOG
+    echo -e "\033[0;3;35m$3" | tee -a $LOG
+    echo -e "\033[0;1;35m$4" | tee -a $LOG
     echo -e "\033[0m" | tee -a $LOG
     _lfs_sleep
 }
 
+________________________________________TEXT________________________________________() {
+    color=34
+    echo -e "\033[7;${color}m$1\033[0m\033[${color}m__________________________________________________\033[0m" | tee -a $LOG
+    echo -e "\033[0;${color}m$2" | tee -a $LOG
+    echo -e "\033[0m" | tee -a $LOG
+}
+
 ________________________________________HIGHLIGHT________________________________________() {
     color=$1
-    echo -e "\033[7;${color}m"$2"\033[0m\033[${color}m__________________________________________________\033[0m" | tee -a $LOG
-    echo -e "\033[0;${color}m"$3 | tee -a $LOG
+    echo -e "\033[7;${color}m$2\033[0m\033[${color}m__________________________________________________\033[0m" | tee -a $LOG
+    echo -e "\033[0;${color}m$3" | tee -a $LOG
     shift 3
-    echo -e "\033[0;1;${color}m"$@ | tee -a $LOG
+    echo -e "\033[0;1;${color}m$@" | tee -a $LOG
     echo -e "\033[0m" | tee -a $LOG
     _lfs_sleep
 }
@@ -5083,6 +5090,134 @@ _lfs_basic_system_install_clean_up() {
     '
 }
 
+################################################################################
+# 7.2. General Network Configuration
+
+________________________________________TEXT________________________________________ '
+# 7.2.1. Network Interface Configuration Files
+' '
+# Starting with version 209, systemd ships a network configuration daemon called systemd-networkd for basic network configuration.
+#                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~        ^^^^^^^^^^^^^^^^
+# Additionally, since version 213, DNS name resolution can be handled by systemd-resolved in place of a static /etc/resolv.conf file.
+#                                  ~~~~~~~~~~~~~~~~~~~                   ^^^^^^^^^^^^^^^^                      ................
+# Both services are enabled by default.
+#
+# Configuration files for
+#                         systemd-networkd (and systemd-resolved)
+# can be placed in
+#                         /usr/lib/systemd/network (higher priority) or /etc/systemd/network.
+#
+# There are three types of configuration files:
+#     .link       see systemd-link(5)
+#     .netdev     see systemd-netdev(5)
+#     .network    see systemd-network(5)
+'
+
+________________________________________TEXT________________________________________ '
+7.2.1.1. Network Device Naming
+' '
+Udev normally assigns network card interface names based on system physical characteristics such as enp2s1.
+If you are not sure what your interface name is, you can always run ip link after you have booted your system.
+
+For most systems, there is only one network interface for each type of connection.
+For example, the classic interface name for a wired connection is eth0.
+A wireless connection will usually have the name \033[1;32mwifi0 \033[0;37mor \033[1;32mwlan0\033[0;37m.
+'
+
+________________________________________TEXT________________________________________ '
+7.2.1.2. Static IP Configuration
+' '
+The command below creates a basic configuration file for a Static IP setup (using both systemd-networkd and systemd-resolved):
+\033[36m
+cat > /etc/systemd/network/10-eth-static.network << "EOF"
+[Match]
+Name=<network-device-name>
+
+[Network]
+Address=192.168.0.2/24
+Gateway=192.168.0.1
+DNS=192.168.0.1
+Domains=<Your Domain Name>
+EOF
+\033[0m\033[1;33m
+Multiple DNS entries can be added if you have more than one DNS server.
+Do not include DNS or Domains entries if you intend to use a static /etc/resolv.conf file.
+'
+
+________________________________________TEXT________________________________________ '
+7.2.1.3. DHCP Configuration' '
+The command below creates a basic configuration file for an IPv4 DHCP setup:
+'
+
+_lfs_configure_dhcp() {
+    cat > /etc/systemd/network/10-eth-dhcp.network << "EOF"
+[Match]
+Name=<network-device-name>
+
+[Network]
+DHCP=ipv4
+
+[DHCP]
+UseDomains=true
+EOF
+}
+
+________________________________________TEXT________________________________________ '
+DNS' '
+7.2.2. /etc/resolv.conf
+
+IP addresses of the DNS servers are placed in /etc/resolv.conf
+'
+
+________________________________________NOTE________________________________________ '
+when not to use /etc/resolv.conf' '
+If using another means to configure your network interfaces (ex: ppp, network-manager, etc.),
+or if using any type of local resolver (ex: bind, dnsmasq, etc.),
+or any other software that generates an /etc/resolv.conf (ex: resolvconf),
+the systemd-resolved service should not be used.
+'
+
+________________________________________TEXT________________________________________ '
+7.2.2.1. resolv.conf generated by systemd-resolved
+' '
+When using systemd-resolved for DNS configuration, it creates the file
+\033[1;33m/run/systemd/resolve/resolv.conf\033[0;37m.
+\033[32m
+Create a symlink in /etc to use the generated file:
+\033[1;32m
+ln -sfv /run/systemd/resolve/resolv.conf /etc/resolv.conf
+'
+
+________________________________________TEXT________________________________________ '
+7.2.2.2. Static resolv.conf
+' '
+If a static /etc/resolv.conf is desired, create it by running the following command:
+\033[1;32m
+cat > /etc/resolv.conf << "EOF"
+# Begin /etc/resolv.conf
+
+domain <Your Domain Name>
+nameserver <IP address of your primary nameserver>
+nameserver <IP address of your secondary nameserver>
+
+# End /etc/resolv.conf
+EOF
+\033[0;33m
+The domain statement can be omitted or replaced with a search statement.
+See the man page for resolv.conf for more details.
+
+The IP address may also be a router on the local network.
+'
+
+________________________________________NOTE________________________________________ '
+The Google Public IPv4 DNS addresses are' '
+8.8.8.8 and 8.8.4.4 for IPv4, and
+2001:4860:4860::8888 and 2001:4860:4860::8844 for IPv6.
+'
+
+
+################################################################################
+
 _lfs_basic_system_install_all_1() {
     _lfs_basic_system_install_linux_api_headers
     _lfs_basic_system_install_man-pages
@@ -5104,6 +5239,9 @@ _lfs_basic_system_install_all_2() {
     _lfs_basic_system_install_shadow
     _lfs_basic_system_configure_shadow
     _lfs_basic_system_install_gcc
+}
+
+_lfs_basic_system_install_all_3() {
     _lfs_basic_system_install_bzip2
     _lfs_basic_system_install_pkg-config
     _lfs_basic_system_install_ncurses
@@ -5119,7 +5257,7 @@ _lfs_basic_system_install_all_2() {
     _lfs_basic_system_install_bash
 }
 
-_lfs_basic_system_install_all_3() {
+_lfs_basic_system_install_all_4() {
     _lfs_basic_system_install_libtool
     _lfs_basic_system_install_gdbm
     _lfs_basic_system_install_gperf
@@ -5200,10 +5338,9 @@ _lfs_basic_system_install_all_3() {
 #
 # _lfs_before_temp_system_build
 #
-# _lfs_temp_system_build_all
-#     _lfs_temp_system_build_all_1
-#     _lfs_temp_system_build_all_2
-#     _lfs_temp_system_build_all_3
+# _lfs_temp_system_build_all_1
+# _lfs_temp_system_build_all_2
+# _lfs_temp_system_build_all_3
 #
 # on host (as root)
 # =================
@@ -5214,11 +5351,10 @@ _lfs_basic_system_install_all_3() {
 # _lfs_create_directories_dev_proc_sys_run
 # _lfs_create_initial_device_nodes
 #
-# _lfs_basic_system_chroot
-#     _lfs_basic_system_chroot_note
-#     _lfs_mount_and_populate_dev
-#     _lfs_mount_virtual_kernel_fs
-#     _lfs_basic_system_enter_chroot_env
+# _lfs_basic_system_chroot_note
+# _lfs_mount_and_populate_dev
+# _lfs_mount_virtual_kernel_fs
+# _lfs_basic_system_enter_chroot_env
 #
 # on lfs (as root)
 # ----------------
@@ -5232,79 +5368,9 @@ _lfs_basic_system_install_all_3() {
 # on lfs (as root)
 # ----------------
 #
-# _lfs_basic_system_install_all
-#     _lfs_basic_system_install_linux_api_headers
-#     _lfs_basic_system_install_man-pages
-#     _lfs_basic_system_install_glibc
-#     _lfs_basic_system_configure_glibc
-#     _lfs_basic_system_adjust_toolchain
-#
-#     _lfs_basic_system_install_zlib
-#     _lfs_basic_system_install_file
-#     _lfs_basic_system_install_readline
-#     _lfs_basic_system_install_m4
-#     _lfs_basic_system_install_bc
-#     _lfs_basic_system_install_binutils
-#     _lfs_basic_system_install_gmp
-#     _lfs_basic_system_install_mpfr
-#     _lfs_basic_system_install_mpc
-#     _lfs_basic_system_install_shadow
-#     _lfs_basic_system_configure_shadow
-#     _lfs_basic_system_install_gcc
-#     _lfs_basic_system_install_bzip2
-#     _lfs_basic_system_install_pkg-config
-#     _lfs_basic_system_install_ncurses
-#     _lfs_basic_system_install_attr
-#     _lfs_basic_system_install_acl
-#     _lfs_basic_system_install_libcap
-#     _lfs_basic_system_install_sed
-#     _lfs_basic_system_install_psmisc
-#     _lfs_basic_system_install_iana-etc
-#     _lfs_basic_system_install_bison
-#     _lfs_basic_system_install_flex
-#     _lfs_basic_system_install_grep
-#     _lfs_basic_system_install_bash
-#     _lfs_basic_system_install_libtool
-#     _lfs_basic_system_install_gdbm
-#     _lfs_basic_system_install_gperf
-#     _lfs_basic_system_install_expat
-#     _lfs_basic_system_install_inetutils
-#     _lfs_basic_system_install_perl
-#     _lfs_basic_system_install_XML-Parser
-#     _lfs_basic_system_install_intltool
-#     _lfs_basic_system_install_autoconf
-#     _lfs_basic_system_install_automake
-#     _lfs_basic_system_install_xz
-#     _lfs_basic_system_install_kmod-25
-#     _lfs_basic_system_install_gettext
-#     _lfs_basic_system_install_libelf
-#     _lfs_basic_system_install_libffi
-#     _lfs_basic_system_install_openssl
-#     _lfs_basic_system_install_python
-#     _lfs_basic_system_install_ninja
-#     _lfs_basic_system_install_meson
-#     _lfs_basic_system_install_systemd
-#     _lfs_basic_system_install_procps-ng
-#     _lfs_basic_system_install_e2fsprogs
-#     _lfs_basic_system_install_coreutils
-#     _lfs_basic_system_install_check
-#     _lfs_basic_system_install_diffutils
-#     _lfs_basic_system_install_gawk
-#     _lfs_basic_system_install_findutils
-#     _lfs_basic_system_install_groff
-#     _lfs_basic_system_install_grub
-#     _lfs_basic_system_install_less
-#     _lfs_basic_system_install_gzip
-#     _lfs_basic_system_install_iproute2
-#     _lfs_basic_system_install_kbd
-#     _lfs_basic_system_install_libpipeline
-#     _lfs_basic_system_install_make
-#     _lfs_basic_system_install_patch
-#     _lfs_basic_system_install_dbus
-#     _lfs_basic_system_install_util-linux
-#     _lfs_basic_system_install_man-db
-#     _lfs_basic_system_install_tar
-#     _lfs_basic_system_install_texinfo
-#     _lfs_basic_system_install_vim
+# _lfs_basic_system_install_all_1
+# _lfs_basic_system_install_all_2
+# _lfs_basic_system_install_all_3
+# _lfs_basic_system_install_all_4
 #
 ################################################################################
