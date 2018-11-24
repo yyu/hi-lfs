@@ -418,6 +418,9 @@ _lfs_temp_system_build_all_2() {
     _lfs_temp_system_install_libstdcxx_from_gcc
     _lfs_temp_system_install_binutils_pass2
     _lfs_temp_system_install_gcc_pass2
+}
+
+_lfs_temp_system_build_all_3() {
     _lfs_temp_system_install_tcl
     _lfs_temp_system_install_expect
     _lfs_temp_system_install_dejagnu
@@ -442,11 +445,6 @@ _lfs_temp_system_build_all_2() {
     _lfs_temp_system_install_texinfo
     _lfs_temp_system_install_util-linux
     _lfs_temp_system_install_xz
-}
-
-_lfs_temp_system_build_all() {
-    _lfs_temp_system_build_all_1
-    _lfs_temp_system_build_all_2
 }
 
 _lfs_get_package_file_name() {
@@ -476,7 +474,7 @@ _lfs_get_package_filename_foldername_test() {
 
 _lfs_temp_system_install_binutils_pass1() {
     ________________________________________________________________________________ '
-    binutils-2.31.1.tar.xz
+    binutils-2.31.1.tar.xz (1 SBU; 576 MB)
     '
     cd $LFS_SOURCES_DIR
     tar xJf binutils-2.31.1.tar.xz
@@ -505,7 +503,7 @@ _lfs_temp_system_install_binutils_pass1() {
 
 _lfs_temp_system_install_gcc_pass1() {
     ________________________________________________________________________________ '
-    gcc-8.2.0.tar.xz
+    gcc-8.2.0.tar.xz (14.3 SBU; 2.2 GB)
     '
     cd $LFS_SOURCES_DIR
     tar xf gcc-8.2.0.tar.xz
@@ -589,7 +587,7 @@ _lfs_temp_system_install_gcc_pass1() {
 
 _lfs_temp_system_install_linux_api_headers() {
     ________________________________________________________________________________ '
-    linux-4.18.5.tar.xz
+    linux-4.18.5.tar.xz (0.1 SBU; 910 MB)
     '
     cd $LFS_SOURCES_DIR
     tar xf linux-4.18.5.tar.xz
@@ -618,7 +616,7 @@ _lfs_temp_system_install_linux_api_headers() {
 
 _lfs_temp_system_install_glibc() {
     ________________________________________________________________________________ '
-    glibc-2.28.tar.xz
+    glibc-2.28.tar.xz (4.7 SBU; 882 MB)
     '
     cd $LFS_SOURCES_DIR
     tar xf glibc-2.28.tar.xz
@@ -674,7 +672,7 @@ _lfs_temp_system_toolchain_sanity_check() {
 
 _lfs_temp_system_install_libstdcxx_from_gcc() {
     ________________________________________________________________________________ '
-    _lfs_temp_system_install_libstdcxx_from_gcc
+    # 5.8. Libstdc++ from GCC-8.2.0 (0.5 SBU; 803 MB)
     '
     cd $LFS_SOURCES_DIR
     cd gcc-8.2.0
@@ -702,7 +700,7 @@ _lfs_temp_system_install_libstdcxx_from_gcc() {
 
 _lfs_temp_system_install_binutils_pass2() {
     ________________________________________________________________________________ '
-    binutils-2.31.1 pass 2
+    binutils-2.31.1 pass 2 (1.1 SBU; 593 MB)
     '
     cd $LFS_SOURCES_DIR
     cd binutils-2.31.1
@@ -736,7 +734,7 @@ _lfs_temp_system_install_binutils_pass2() {
 
 _lfs_temp_system_install_gcc_pass2() {
     ________________________________________________________________________________ '
-    gcc-8.2.0 pass 2
+    gcc-8.2.0 pass 2 (11 SBU; 3.4 GB)
     '
     cd $LFS_SOURCES_DIR
     cd gcc-8.2.0
@@ -825,7 +823,7 @@ _lfs_temp_system_install_gcc_pass2() {
 
 _lfs_temp_system_install_tcl() {
     ________________________________________________________________________________ '
-    tcl8.6.8-src.tar.gz
+    tcl8.6.8-src.tar.gz (0.9 SBU; 66 MB)
     '
     cd $LFS_SOURCES_DIR
     tar xf tcl8.6.8-src.tar.gz
@@ -862,7 +860,7 @@ _lfs_temp_system_install_tcl() {
 
 _lfs_temp_system_install_expect() {
     ________________________________________________________________________________ '
-    expect5.45.4.tar.gz
+    expect5.45.4.tar.gz (0.1 SBU; 3.9 MB)
     '
     cd $LFS_SOURCES_DIR
     tar xf expect5.45.4.tar.gz
@@ -905,7 +903,7 @@ _lfs_temp_system_install_expect() {
 
 _lfs_temp_system_install_dejagnu() {
     ________________________________________________________________________________ '
-    dejagnu-1.6.1.tar.gz
+    dejagnu-1.6.1.tar.gz (<0.1 SBU; 3.2 MB)
     '
     cd $LFS_SOURCES_DIR
     tar xf dejagnu-1.6.1.tar.gz
@@ -924,7 +922,7 @@ _lfs_temp_system_install_dejagnu() {
 
 _lfs_temp_system_install_m4() {
     ________________________________________________________________________________ '
-    m4-1.4.18.tar.xz
+    m4-1.4.18.tar.xz (0.2 SBU; 20 MB)
     '
     cd $LFS_SOURCES_DIR
     tar xf m4-1.4.18.tar.xz
@@ -945,7 +943,7 @@ _lfs_temp_system_install_m4() {
 
 _lfs_temp_system_install_ncurses() {
     ________________________________________________________________________________ '
-    ncurses
+    ncurses (0.6 SBU; 41 MB)
     '
     pack=ncurses
 
@@ -970,7 +968,7 @@ _lfs_temp_system_install_ncurses() {
 
 _lfs_temp_system_install_bash() {
     ________________________________________________________________________________ '
-    bash
+    bash (0.4 SBU; 63 MB)
     '
     package="bash"
 
@@ -991,7 +989,7 @@ _lfs_temp_system_install_bash() {
 
 _lfs_temp_system_install_bison() {
     ________________________________________________________________________________ '
-    bison
+    bison (0.3 SBU; 35 MB)
     '
     package="bison"
 
@@ -1011,7 +1009,7 @@ _lfs_temp_system_install_bison() {
 
 _lfs_temp_system_install_bzip2() {
     ________________________________________________________________________________ '
-    bzip2
+    bzip2 (<0.1 SBU; 5.5 MB)
     '
     package="bzip2"
     cd $LFS_SOURCES_DIR
@@ -1026,7 +1024,7 @@ _lfs_temp_system_install_bzip2() {
 
 _lfs_temp_system_install_coreutils() {
     ________________________________________________________________________________ '
-    coreutils
+    coreutils (0.7 SBU; 147 MB)
     '
     package="coreutils"
     cd $LFS_SOURCES_DIR
@@ -1044,7 +1042,7 @@ _lfs_temp_system_install_coreutils() {
 
 _lfs_temp_system_install_diffutils() {
     ________________________________________________________________________________ '
-    diffutils
+    diffutils (0.2 SBU; 23 MB)
     '
     package="diffutils"
     cd $LFS_SOURCES_DIR
@@ -1063,7 +1061,7 @@ _lfs_temp_system_install_diffutils() {
 
 _lfs_temp_system_install_file() {
     ________________________________________________________________________________ '
-    file
+    file (0.1 SBU; 18 MB)
     '
     package="file"
     cd $LFS_SOURCES_DIR
@@ -1081,7 +1079,7 @@ _lfs_temp_system_install_file() {
 
 _lfs_temp_system_install_findutils() {
     ________________________________________________________________________________ '
-    findutils
+    findutils (0.3 SBU; 36 MB)
     '
     package="findutils"
     cd $LFS_SOURCES_DIR
@@ -1103,7 +1101,7 @@ _lfs_temp_system_install_findutils() {
 
 _lfs_temp_system_install_gawk() {
     ________________________________________________________________________________ '
-    gawk
+    gawk (0.2 SBU; 43 MB)
     '
     package="gawk"
     cd $LFS_SOURCES_DIR
@@ -1125,7 +1123,7 @@ _lfs_temp_system_install_gawk() {
 
 _lfs_temp_system_install_gettext() {
     ________________________________________________________________________________ '
-    gettext
+    gettext (0.9 SBU; 173 MB)
     '
     package="gettext"
     cd $LFS_SOURCES_DIR
@@ -1151,7 +1149,7 @@ _lfs_temp_system_install_gettext() {
 
 _lfs_temp_system_install_grep() {
     ________________________________________________________________________________ '
-    grep
+    grep (0.2 SBU; 20 MB)
     '
     package="grep"
     cd $LFS_SOURCES_DIR
@@ -1168,7 +1166,7 @@ _lfs_temp_system_install_grep() {
 
 _lfs_temp_system_install_gzip() {
     ________________________________________________________________________________ '
-    gzip
+    gzip (0.1 SBU; 10 MB)
     '
     package="gzip"
     cd $LFS_SOURCES_DIR
@@ -1189,7 +1187,7 @@ _lfs_temp_system_install_gzip() {
 
 _lfs_temp_system_install_make() {
     ________________________________________________________________________________ '
-    make
+    make (0.1 SBU; 13 MB)
     '
     package="make"
     cd $LFS_SOURCES_DIR
@@ -1210,7 +1208,7 @@ _lfs_temp_system_install_make() {
 
 _lfs_temp_system_install_patch() {
     ________________________________________________________________________________ '
-    patch
+    patch (0.2 SBU; 12 MB)
     '
     package="patch"
     cd $LFS_SOURCES_DIR
@@ -1227,7 +1225,7 @@ _lfs_temp_system_install_patch() {
 
 _lfs_temp_system_install_perl() {
     ________________________________________________________________________________ '
-    perl
+    perl (1.5 SBU; 275 MB)
     '
     package="perl"
     cd $LFS_SOURCES_DIR
@@ -1250,7 +1248,7 @@ _lfs_temp_system_install_perl() {
 
 _lfs_temp_system_install_sed() {
     ________________________________________________________________________________ '
-    sed
+    sed (0.2 SBU; 17 MB)
     '
     package="sed"
     cd $LFS_SOURCES_DIR
@@ -1267,7 +1265,7 @@ _lfs_temp_system_install_sed() {
 
 _lfs_temp_system_install_tar() {
     ________________________________________________________________________________ '
-    tar
+    tar (0.4 SBU; 36 MB)
     '
     package="tar"
     cd $LFS_SOURCES_DIR
@@ -1284,7 +1282,7 @@ _lfs_temp_system_install_tar() {
 
 _lfs_temp_system_install_texinfo() {
     ________________________________________________________________________________ '
-    texinfo
+    texinfo (0.2 SBU; 100 MB)
     '
     package="texinfo"
     cd $LFS_SOURCES_DIR
@@ -1307,7 +1305,7 @@ _lfs_temp_system_install_texinfo() {
 
 _lfs_temp_system_install_util-linux() {
     ________________________________________________________________________________ '
-    util-linux
+    util-linux (1 SBU; 140 MB)
     '
     package="util-linux"
     cd $LFS_SOURCES_DIR
@@ -1329,7 +1327,7 @@ _lfs_temp_system_install_util-linux() {
 
 _lfs_temp_system_install_xz() {
     ________________________________________________________________________________ '
-    xz
+    xz (0.2 SBU; 18 MB)
     '
     package="xz"
     cd $LFS_SOURCES_DIR
@@ -1770,7 +1768,7 @@ _lfs_remove_I_have_no_name_prompt() {
 
 _lfs_basic_system_install_linux_api_headers() {
     ________________________________________________________________________________ '
-    linux_api_headers
+    linux_api_headers (<0.1 SBU; 924 MB)
     '
     cd /sources/linux-4.18.5
 
@@ -1792,7 +1790,7 @@ _lfs_basic_system_install_linux_api_headers() {
 
 _lfs_basic_system_install_man-pages() {
     ________________________________________________________________________________ '
-    man
+    man-pages (<0.1 SBU; 28 MB)
     '
     cd /sources/
     tar xf man-pages-4.16.tar.xz
@@ -1805,7 +1803,7 @@ _lfs_basic_system_install_man-pages() {
 
 _lfs_basic_system_install_glibc() {
     ________________________________________________________________________________ '
-    glibc
+    glibc (24 SBU; 2.8 GB)
     '
     cd /sources/glibc-2.28
 
@@ -2072,7 +2070,7 @@ _lfs_basic_system_adjust_toolchain() {
 
 _lfs_basic_system_install_zlib() {
     ________________________________________________________________________________ '
-    zlib
+    zlib (<0.1 SBU; 4.4 MB)
     '
     cd /sources/
     tar xf zlib-1.2.11.tar.xz
@@ -2101,7 +2099,7 @@ _lfs_basic_system_install_zlib() {
 
 _lfs_basic_system_install_file() {
     ________________________________________________________________________________ '
-    file
+    file (0.1 SBU; 18 MB)
     '
     pack=file
 
@@ -2121,7 +2119,7 @@ _lfs_basic_system_install_file() {
 
 _lfs_basic_system_install_readline() {
     ________________________________________________________________________________ '
-    readline
+    readline (0.1 SBU; 18 MB)
     '
     package________name="readline"
 
@@ -2168,7 +2166,7 @@ _lfs_basic_system_install_readline() {
 
 _lfs_basic_system_install_m4() {
     ________________________________________________________________________________ '
-    m4
+    m4 (0.4 SBU; 33 MB)
     '
     package________name="m4"
     cd /sources/
@@ -2203,7 +2201,7 @@ _lfs_basic_system_install_m4() {
 
 _lfs_basic_system_install_bc() {
     ________________________________________________________________________________ '
-    bc
+    bc (0.1 SBU; 4.1 MB)
     '
     package________name="bc"
     cd /sources/
@@ -2265,7 +2263,7 @@ EOF
 
 _lfs_basic_system_install_binutils() {
     ________________________________________________________________________________ '
-    binutils
+    binutils (6.6 SBU; 4.9 GB)
     '
     package________name="binutils"
     cd /sources/
@@ -2320,7 +2318,7 @@ _lfs_basic_system_install_binutils() {
 
 _lfs_basic_system_install_gmp() {
     ________________________________________________________________________________ '
-    gmp
+    gmp (1.3 SBU; 61 MB)
     '
     package________name="gmp"
     cd /sources/
@@ -2381,7 +2379,7 @@ _lfs_basic_system_install_gmp() {
 
 _lfs_basic_system_install_mpfr() {
     ________________________________________________________________________________ '
-    mpfr
+    mpfr (1.1 SBU; 36 MB)
     '
     package________name="mpfr"
     cd /sources/
@@ -2415,7 +2413,7 @@ _lfs_basic_system_install_mpfr() {
 
 _lfs_basic_system_install_mpc() {
     ________________________________________________________________________________ '
-    mpc
+    mpc (0.3 SBU; 22 MB)
     '
     package________name="mpc"
     cd /sources/
@@ -2450,7 +2448,7 @@ _lfs_basic_system_install_mpc() {
 
 _lfs_basic_system_install_shadow() {
     ________________________________________________________________________________ '
-    shadow
+    shadow (0.2 SBU; 46 MB)
     '
     package________name="shadow"
     cd /sources/
@@ -2565,7 +2563,7 @@ _lfs_basic_system_configure_shadow() {
 
 _lfs_basic_system_install_gcc() {
     ________________________________________________________________________________ '
-    gcc
+    gcc (92 SBU; 4 GB)
     '
     set +e
 
@@ -2759,7 +2757,7 @@ _lfs_basic_system_install_gcc() {
 
 _lfs_basic_system_install_bzip2() {
     ________________________________________________________________________________ '
-    bzip2
+    bzip2 (<0.1 SBU; 2.3 MB)
     '
     package________name="bzip2"
     cd /sources/
@@ -2806,7 +2804,7 @@ _lfs_basic_system_install_bzip2() {
 
 _lfs_basic_system_install_pkg-config() {
     ________________________________________________________________________________ '
-    pkg-config
+    pkg-config (0.4 SBU; 30 MB)
     '
     package________name="pkg-config"
     cd /sources/
@@ -2838,7 +2836,7 @@ _lfs_basic_system_install_pkg-config() {
 
 _lfs_basic_system_install_ncurses() {
     ________________________________________________________________________________ '
-    ncurses
+    ncurses (0.4 SBU; 42 MB)
     '
     package________name="ncurses"
     cd /sources/
@@ -2917,7 +2915,7 @@ _lfs_basic_system_install_ncurses() {
 
 _lfs_basic_system_install_attr() {
     ________________________________________________________________________________ '
-    attr
+    attr (<0.1 SBU; 4.2 MB)
     '
     package________name="attr"
     cd /sources/
@@ -2955,7 +2953,7 @@ _lfs_basic_system_install_attr() {
 
 _lfs_basic_system_install_acl() {
     ________________________________________________________________________________ '
-    acl
+    acl (<0.1 SBU; 6.4 MB)
     '
     package________name="acl"
     cd /sources/
@@ -2989,7 +2987,7 @@ _lfs_basic_system_install_acl() {
 
 _lfs_basic_system_install_libcap() {
     ________________________________________________________________________________ '
-    libcap
+    libcap (<0.1 SBU; 1.4 MB)
     '
     package________name="libcap"
     cd /sources/
@@ -3022,7 +3020,7 @@ _lfs_basic_system_install_libcap() {
 
 _lfs_basic_system_install_sed() {
     ________________________________________________________________________________ '
-    sed
+    sed (0.5 SBU; 30 MB)
     '
     package________name="sed"
     cd /sources/
@@ -3061,7 +3059,7 @@ _lfs_basic_system_install_sed() {
 
 _lfs_basic_system_install_psmisc() {
     ________________________________________________________________________________ '
-    psmisc
+    psmisc (<0.1 SBU; 4.3 MB)
     '
     package________name="psmisc"
     cd /sources/
@@ -3093,7 +3091,7 @@ _lfs_basic_system_install_psmisc() {
 
 _lfs_basic_system_install_iana-etc() {
     ________________________________________________________________________________ '
-    iana-etc
+    iana-etc (<0.1 SBU; 2.3 MB)
     '
     package________name="iana-etc"
     cd /sources/
@@ -3116,7 +3114,7 @@ _lfs_basic_system_install_iana-etc() {
 
 _lfs_basic_system_install_bison() {
     ________________________________________________________________________________ '
-    bison
+    bison (0.3 SBU; 35 MB)
     '
     package________name="bison"
     cd /sources/
@@ -3148,7 +3146,7 @@ _lfs_basic_system_install_bison() {
 
 _lfs_basic_system_install_flex() {
     ________________________________________________________________________________ '
-    flex
+    flex (0.4 SBU; 35 MB)
     '
     package________name="flex"
     cd /sources/
@@ -3188,7 +3186,7 @@ _lfs_basic_system_install_flex() {
 
 _lfs_basic_system_install_grep() {
     ________________________________________________________________________________ '
-    grep
+    grep (0.4 SBU; 31 MB)
     '
     package________name="grep"
     cd /sources/
@@ -3217,7 +3215,7 @@ _lfs_basic_system_install_grep() {
 
 _lfs_basic_system_install_bash() {
     ________________________________________________________________________________ '
-    bash
+    bash (2.1 SBU; 58 MB)
     '
     package________name="bash"
     cd /sources/
@@ -3261,7 +3259,7 @@ _lfs_basic_system_install_bash() {
 
 _lfs_basic_system_install_libtool() {
     ________________________________________________________________________________ '
-    libtool
+    libtool (1.9 SBU; 43 MB)
     '
     package________name="libtool"
     cd /sources/
@@ -3300,7 +3298,7 @@ _lfs_basic_system_install_libtool() {
 
 _lfs_basic_system_install_gdbm() {
     ________________________________________________________________________________ '
-    gdbm
+    gdbm (0.1 SBU; 11 MB)
     '
     package________name="gdbm"
     cd /sources/
@@ -3331,7 +3329,7 @@ _lfs_basic_system_install_gdbm() {
 
 _lfs_basic_system_install_gperf() {
     ________________________________________________________________________________ '
-    gperf
+    gperf (<0.1 SBU; 6.3 MB)
     '
     package________name="gperf"
     cd /sources/
@@ -3360,7 +3358,7 @@ _lfs_basic_system_install_gperf() {
 
 _lfs_basic_system_install_expat() {
     ________________________________________________________________________________ '
-    expat
+    expat (0.1 SBU; 11 MB)
     '
     package________name="expat"
     cd /sources/
@@ -3399,7 +3397,7 @@ _lfs_basic_system_install_expat() {
 
 _lfs_basic_system_install_inetutils() {
     ________________________________________________________________________________ '
-    inetutils
+    inetutils (0.4 SBU; 29 MB)
     '
     package________name="inetutils"
     cd /sources/
@@ -3445,7 +3443,7 @@ _lfs_basic_system_install_inetutils() {
 
 _lfs_basic_system_install_perl() {
     ________________________________________________________________________________ '
-    perl
+    perl (9.1 SBU; 274 MB)
     '
     package________name="perl"
     cd /sources/
@@ -3496,7 +3494,7 @@ _lfs_basic_system_install_perl() {
 
 _lfs_basic_system_install_XML-Parser() {
     ________________________________________________________________________________ '
-    XML-Parser
+    XML-Parser (<0.1 SBU; 2.1 MB)
     '
     package________name="XML-Parser"
     cd /sources/
@@ -3527,7 +3525,7 @@ _lfs_basic_system_install_XML-Parser() {
 
 _lfs_basic_system_install_intltool() {
     ________________________________________________________________________________ '
-    intltool
+    intltool (<0.1 SBU; 1.5 MB)
     '
     package________name="intltool"
     cd /sources/
@@ -3561,7 +3559,7 @@ _lfs_basic_system_install_intltool() {
 
 _lfs_basic_system_install_autoconf() {
     ________________________________________________________________________________ '
-    autoconf
+    autoconf (3.5 SBU; 17.3 MB)
     '
     package________name="autoconf"
     cd /sources/
@@ -3593,7 +3591,7 @@ _lfs_basic_system_install_autoconf() {
 
 _lfs_basic_system_install_automake() {
     ________________________________________________________________________________ '
-    automake
+    automake (8.9 SBU; 107 MB)
     '
     package________name="automake"
     cd /sources/
@@ -3622,7 +3620,7 @@ _lfs_basic_system_install_automake() {
 
 _lfs_basic_system_install_xz() {
     ________________________________________________________________________________ '
-    xz
+    xz (0.2 SBU; 16 MB)
     '
     package________name="xz"
     cd /sources/
@@ -3656,7 +3654,7 @@ _lfs_basic_system_install_xz() {
 
 _lfs_basic_system_install_kmod-25() {
     ________________________________________________________________________________ '
-    kmod25
+    kmod25 (0.1 SBU; 13 MB)
     '
     package________name="kmod-25"
     cd /sources/
@@ -3696,7 +3694,7 @@ _lfs_basic_system_install_kmod-25() {
 
 _lfs_basic_system_install_gettext() {
     ________________________________________________________________________________ '
-    gettext
+    gettext (2.6 SBU; 210 MB)
     '
     package________name="gettext"
     cd /sources/
@@ -3738,7 +3736,7 @@ _lfs_basic_system_install_gettext() {
 
 _lfs_basic_system_install_libelf() {
     ________________________________________________________________________________ '
-    libelf
+    libelf (1 SBU; 91 MB)
     '
     package________name="libelf"
     cd /sources/
@@ -3768,7 +3766,7 @@ _lfs_basic_system_install_libelf() {
 
 _lfs_basic_system_install_libffi() {
     ________________________________________________________________________________ '
-    libffi
+    libffi (0.4 SBU; 7.6 MB)
     '
     package________name="libffi"
     cd /sources/
@@ -3809,7 +3807,7 @@ _lfs_basic_system_install_libffi() {
 
 _lfs_basic_system_install_openssl() {
     ________________________________________________________________________________ '
-    openssl
+    openssl (1.7 SBU; 75 MB)
     '
     package________name="openssl"
     cd /sources/
@@ -3849,7 +3847,7 @@ _lfs_basic_system_install_openssl() {
 
 _lfs_basic_system_install_python() {
     ________________________________________________________________________________ '
-    python
+    python (1.3 SBU; 390 MB)
     '
     package________name="python"
     cd /sources/
@@ -3879,7 +3877,7 @@ _lfs_basic_system_install_python() {
     ________________________________________________________________________________ '
     install the preformatted documentation:
     '
-    install -v -dm755 /usr/share/doc/python-3.7.0/html 
+    install -v -dm755 /usr/share/doc/python-3.7.0/html
 
     tar --strip-components=1  \
         --no-same-owner       \
@@ -3895,7 +3893,7 @@ _lfs_basic_system_install_python() {
 
 _lfs_basic_system_install_ninja() {
     ________________________________________________________________________________ '
-    ninja
+    ninja (0.2 SBU; 83 MB)
     '
     package________name="ninja"
     cd /sources/
@@ -3939,7 +3937,7 @@ _lfs_basic_system_install_ninja() {
 
 _lfs_basic_system_install_meson() {
     ________________________________________________________________________________ '
-    meson
+    meson (<0.1 SBU; 21 MB)
     '
     package________name="meson"
     cd /sources/
@@ -3961,7 +3959,7 @@ _lfs_basic_system_install_meson() {
 
 _lfs_basic_system_install_systemd() {
     ________________________________________________________________________________ '
-    systemd
+    systemd (1.1 SBU; 297 MB)
     '
     package________name="systemd"
     cd /sources/
@@ -4046,7 +4044,7 @@ EOF
 
 _lfs_basic_system_install_procps-ng() {
     ________________________________________________________________________________ '
-    procps-ng
+    procps-ng (0.1 SBU; 17 MB)
     '
     package________name="procps-ng"
     cd /sources/
@@ -4091,7 +4089,7 @@ _lfs_basic_system_install_procps-ng() {
 
 _lfs_basic_system_install_e2fsprogs() {
     ________________________________________________________________________________ '
-    e2fsprogs
+    e2fsprogs (1.6 SBU; 96 MB)
     '
     package________name="e2fsprogs"
     cd /sources/
@@ -4152,7 +4150,7 @@ _lfs_basic_system_install_e2fsprogs() {
 
 _lfs_basic_system_install_coreutils() {
     ________________________________________________________________________________ '
-    coreutils
+    coreutils (3.3 SBU; 190 MB)
     '
     package________name="coreutils"
     cd /sources/
@@ -4195,7 +4193,7 @@ _lfs_basic_system_install_coreutils() {
     ________________________________________________________________________________ '
     Fix some of the permissions so that the non-root user can compile and run the tests:
     '
-    chown -Rv nobody . 
+    chown -Rv nobody .
     ________________________________________________________________________________ '
     Now run the tests. Make sure the PATH in the su environment includes /tools/bin.
     '
@@ -4233,7 +4231,7 @@ _lfs_basic_system_install_coreutils() {
 
 _lfs_basic_system_install_check() {
     ________________________________________________________________________________ '
-    check
+    check (3.8 SBU; 12 MB)
     '
     package________name="check"
     cd /sources/
@@ -4263,7 +4261,7 @@ _lfs_basic_system_install_check() {
 
 _lfs_basic_system_install_diffutils() {
     ________________________________________________________________________________ '
-    diffutils
+    diffutils (0.4 SBU; 33 MB)
     '
     package________name="diffutils"
     cd /sources/
@@ -4292,7 +4290,7 @@ _lfs_basic_system_install_diffutils() {
 
 _lfs_basic_system_install_gawk() {
     ________________________________________________________________________________ '
-    gawk
+    gawk (0.4 SBU; 44 MB)
     '
     package________name="gawk"
     cd /sources/
@@ -4330,7 +4328,7 @@ _lfs_basic_system_install_gawk() {
 
 _lfs_basic_system_install_findutils() {
     ________________________________________________________________________________ '
-    findutils
+    findutils (0.7 SBU; 51 MB)
     '
     package________name="findutils"
     cd /sources/
@@ -4374,7 +4372,7 @@ _lfs_basic_system_install_findutils() {
 
 _lfs_basic_system_install_groff() {
     ________________________________________________________________________________ '
-    groff
+    groff (0.5 SBU; 90 MB)
     '
     package________name="groff"
     cd /sources/
@@ -4405,7 +4403,7 @@ _lfs_basic_system_install_groff() {
 
 _lfs_basic_system_install_grub() {
     ________________________________________________________________________________ '
-    grub
+    grub (0.8 SBU; 147 MB)
     '
     package________name="grub"
     cd /sources/
@@ -4434,7 +4432,7 @@ _lfs_basic_system_install_grub() {
 
 _lfs_basic_system_install_less() {
     ________________________________________________________________________________ '
-    less
+    less (<0.1 SBU; 3.9 MB)
     '
     package________name="less"
     cd /sources/
@@ -4459,7 +4457,7 @@ _lfs_basic_system_install_less() {
 
 _lfs_basic_system_install_gzip() {
     ________________________________________________________________________________ '
-    gzip
+    gzip (0.1 SBU; 20 MB)
     '
     package________name="gzip"
     cd /sources/
@@ -4498,7 +4496,7 @@ _lfs_basic_system_install_gzip() {
 
 _lfs_basic_system_install_iproute2() {
     ________________________________________________________________________________ '
-    iproute2
+    iproute2 (0.2 SBU; 13 MB)
     '
     package________name="iproute2"
     cd /sources/
@@ -4532,7 +4530,7 @@ _lfs_basic_system_install_iproute2() {
 
 _lfs_basic_system_install_kbd() {
     ________________________________________________________________________________ '
-    kbd
+    kbd (0.1 SBU; 30 MB)
     '
     package________name="kbd"
     cd /sources/
@@ -4583,7 +4581,7 @@ _lfs_basic_system_install_kbd() {
 
 _lfs_basic_system_install_libpipeline() {
     ________________________________________________________________________________ '
-    libpipeline
+    libpipeline (0.1 SBU; 8.2 MB)
     '
     package________name="libpipeline"
     cd /sources/
@@ -4612,7 +4610,7 @@ _lfs_basic_system_install_libpipeline() {
 
 _lfs_basic_system_install_make() {
     ________________________________________________________________________________ '
-    make
+    make (0.6 SBU; 13 MB)
     '
     package________name="make"
     cd /sources/
@@ -4646,7 +4644,7 @@ _lfs_basic_system_install_make() {
 
 _lfs_basic_system_install_patch() {
     ________________________________________________________________________________ '
-    patch
+    patch (0.2 SBU; 13 MB)
     '
     package________name="patch"
     cd /sources/
@@ -4675,7 +4673,7 @@ _lfs_basic_system_install_patch() {
 
 _lfs_basic_system_install_dbus() {
     ________________________________________________________________________________ '
-    dbus
+    dbus (0.2 SBU; 18 MB)
     '
     package________name="dbus"
     cd /sources/
@@ -4724,7 +4722,7 @@ _lfs_basic_system_install_dbus() {
 
 _lfs_basic_system_install_util-linux() {
     ________________________________________________________________________________ '
-    util-linux
+    util-linux (1.1 SBU; 200 MB)
     '
     package________name="util-linux"
     cd /sources/
@@ -4760,7 +4758,7 @@ _lfs_basic_system_install_util-linux() {
     ________________________________________________________________________________ '
     If desired, run the test suite as a non-root user:
     '
-    chown -Rv nobody .\n
+    chown -Rv nobody .
     su nobody -s /bin/bash -c "PATH=$PATH make -k check"
     ________________________________________NOTE________________________________________ '
     Running the test suite as the root user can be harmful to your system.
@@ -4782,7 +4780,7 @@ _lfs_basic_system_install_util-linux() {
 
 _lfs_basic_system_install_man-db() {
     ________________________________________________________________________________ '
-    man-db
+    man-db (0.2 SBU; 33 MB)
     '
     package________name=man-db""
     cd /sources/
@@ -4818,7 +4816,7 @@ _lfs_basic_system_install_man-db() {
 
 _lfs_basic_system_install_tar() {
     ________________________________________________________________________________ '
-    tar
+    tar (2.8 SBU; 44 MB)
     '
     package________name="tar"
     cd /sources/
@@ -4850,7 +4848,7 @@ _lfs_basic_system_install_tar() {
 
 _lfs_basic_system_install_texinfo() {
     ________________________________________________________________________________ '
-    texinfo
+    texinfo (1.1 SBU; 129 MB)
     '
     package________name="texinfo"
     cd /sources/
@@ -4900,12 +4898,12 @@ _lfs_basic_system_install_texinfo() {
 
 _lfs_basic_system_install_vim() {
     ________________________________________________________________________________ '
-    vim
+    vim (1.6 SBU; 169 MB)
     '
     package________name="vim"
     cd /sources/
     tar xf `ls $package________name-*tar*`
-    cd $package________name-*[0-9]
+    cd vim81
     ________________________________________________________________________________ '
     First, change the default location of the vimrc configuration file to /etc:
     '
@@ -4966,7 +4964,7 @@ _lfs_basic_system_install_vim() {
 
 " Ensure defaults are set before customizing settings, not after
 source $VIMRUNTIME/defaults.vim
-let skip_defaults_vim=1 
+let skip_defaults_vim=1
 
 set nocompatible
 set backspace=2
@@ -5068,7 +5066,9 @@ _lfs_basic_system_install_all_1() {
     _lfs_basic_system_install_glibc
     _lfs_basic_system_configure_glibc
     _lfs_basic_system_adjust_toolchain
-    sleep 30
+}
+
+_lfs_basic_system_install_all_2() {
     _lfs_basic_system_install_zlib
     _lfs_basic_system_install_file
     _lfs_basic_system_install_readline
@@ -5096,7 +5096,7 @@ _lfs_basic_system_install_all_1() {
     _lfs_basic_system_install_bash
 }
 
-_lfs_basic_system_install_all_2() {
+_lfs_basic_system_install_all_3() {
     _lfs_basic_system_install_libtool
     _lfs_basic_system_install_gdbm
     _lfs_basic_system_install_gperf
@@ -5180,6 +5180,7 @@ _lfs_basic_system_install_all_2() {
 # _lfs_temp_system_build_all
 #     _lfs_temp_system_build_all_1
 #     _lfs_temp_system_build_all_2
+#     _lfs_temp_system_build_all_3
 #
 # on host (as root)
 # =================
