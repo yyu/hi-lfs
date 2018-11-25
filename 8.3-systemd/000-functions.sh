@@ -5053,12 +5053,13 @@ _lfs_chroot() {
         PS1='(lfs chroot) \u:\w\$ '        \
         PATH=/bin:/usr/bin:/sbin:/usr/sbin \
         /bin/bash --login
+#chroot "$LFS" /usr/bin/env -i HOME=/root TERM="$TERM" PS1='(lfs chroot) \u:\w\$ ' PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash --login
 }
 
 ################################################################################
 # 6.79. Cleaning Up
 
-_lfs_basic_system_install_clean_up() {
+_lfs_basic_system_install_clean_up_1() {
     ________________________________________________________________________________ '
     Finally, clean up some extra files left around from running tests:
     '
@@ -5068,7 +5069,13 @@ _lfs_basic_system_install_clean_up() {
     From now on, use this updated chroot command any time you need to reenter the chroot environment after exiting:
     '
     logout
+}
+
+_lfs_basic_system_install_clean_up_2() {
     _lfs_chroot
+}
+
+_lfs_basic_system_install_clean_up_3() {
     ________________________________________________________________________________ '
     The reason for this is that the programs in /tools are no longer needed.
     For this reason you can delete the /tools directory if so desired.
@@ -5339,20 +5346,27 @@ EOF
 
 ################################################################################
 
-_lfs_configure_system_clock() {
+_lfs_is_hardware_clock_set_to_utc() {
+    hwclock --localtime --show
+}
 
+_lfs_configure_system_clock() {
     ________________________________________________________________________________ '
     7.5. Configuring the system clock
 
     This section discusses how to configure the systemd-timedated system service, which configures system clock and timezone.
+    '
 
+    ________________________________________________________________________________ '
     If you cannot remember whether or not the hardware clock is set to UTC, find out by running the hwclock --localtime --show command.
     This will display what the current time is according to the hardware clock.
     If this time matches whatever your watch says, then the hardware clock is set to local time.
     If the output from hwclock is not local time, chances are it is set to UTC time.
     Verify this by adding or subtracting the proper amount of hours for the timezone to the time shown by hwclock.
     For example, if you are currently in the MST timezone, which is also known as GMT -0700, add seven hours to the local time.
-
+    '
+    _lfs_is_hardware_clock_set_to_utc
+    ________________________________________________________________________________ '
     systemd-timedated reads /etc/adjtime, and depending on the contents of the file, it sets the clock to either UTC or local time.
 
     Create the /etc/adjtime file with the following contents if your hardware clock is set to local time:
@@ -5362,7 +5376,8 @@ _lfs_configure_system_clock() {
     0
     LOCAL
     EOF
-    If /etc/adjtime isnt present at first boot, systemd-timedated will assume that hardware clock is set to UTC and adjust the file according to that.
+    If /etc/adjtime isnt present at first boot,
+    systemd-timedated will assume that hardware clock is set to UTC and adjust the file according to that.
 
     You can also use the timedatectl utility to tell systemd-timedated if your hardware clock is set to UTC or local time:
 
@@ -5384,18 +5399,337 @@ _lfs_configure_system_clock() {
     Please note that the timedatectl command can be used only on a system booted with systemd.
 
     7.5.1. Network Time Synchronization
-    Starting with version 213, systemd ships a daemon called systemd-timesyncd which can be used to synchronize the system time with remote NTP servers.
+    Starting with version 213, systemd ships a daemon called systemd-timesyncd
+    which can be used to synchronize the system time with remote NTP servers.
 
-    The daemon is not intended as a replacement for the well established NTP daemon, but as a client only implementation of the SNTP protocol which can be used for less advanced tasks and on resource limited systems.
+    The daemon is not intended as a replacement for the well established NTP daemon,
+    but as a client only implementation of the SNTP protocol
+    which can be used for less advanced tasks and on resource limited systems.
 
-    Starting with systemd version 216, the systemd-timesyncd daemon is enabled by default. If you want to disable it, issue the following command:
+    Starting with systemd version 216, the systemd-timesyncd daemon is enabled by default.
+    If you want to disable it, issue the following command:
 
     systemctl disable systemd-timesyncd
     The /etc/systemd/timesyncd.conf file can be used to change the NTP servers that systemd-timesyncd synchronizes with.
 
     Please note that when system clock is set to Local Time, systemd-timesyncd wont update hardware clock.
     '
+}
 
+_lfs_configure_linux_console() {
+    ________________________________________________________________________________ '
+    7.6. Configuring the Linux Console
+    This section discusses how to configure the systemd-vconsole-setup system service,
+    which configures the virtual console font and console keymap.
+
+    The systemd-vconsole-setup service reads the /etc/vconsole.conf file for configuration information.
+    Decide which keymap and screen font will be used.
+    Various language-specific HOWTOs can also help with this, see http://www.tldp.org/HOWTO/HOWTO-INDEX/other-lang.html.
+    Examine localectl list-keymaps output for a list of valid console keymaps.
+    Look in /usr/share/consolefonts directory for valid screen fonts.
+
+    The /etc/vconsole.conf file should contain lines of the form: VARIABLE="value". The following variables are recognized:
+
+    KEYMAP
+    This variable specifies the key mapping table for the keyboard. If unset, it defaults to us.
+
+    KEYMAP_TOGGLE
+    This variable can be used to configure a second toggle keymap and is unset by default.
+
+    FONT
+    This variable specifies the font used by the virtual console.
+
+    FONT_MAP
+    This variable specifies the console map to be used.
+
+    FONT_UNIMAP
+    This variable specifies the Unicode font map.
+
+    An example for a German keyboard and console is given below:
+
+    cat > /etc/vconsole.conf << "EOF"
+    KEYMAP=de-latin1
+    FONT=Lat2-Terminus16
+    EOF
+    You can change KEYMAP value at runtime by using the localectl utility:
+
+    localectl set-keymap MAP
+    Note
+    Please note that the localectl command can be used only on a system booted with systemd.
+
+    You can also use localectl utility with the corresponding parameters to change X11 keyboard layout, model, variant and options:
+
+    localectl set-x11-keymap LAYOUT [MODEL] [VARIANT] [OPTIONS]
+    To list possible values for localectl set-x11-keymap parameters, run localectl with parameters listed below:
+
+    list-x11-keymap-models
+    Show known X11 keyboard mapping models.
+
+    list-x11-keymap-layouts
+    Show known X11 keyboard mapping layouts.
+
+    list-x11-keymap-variants
+    Show known X11 keyboard mapping variants.
+
+    list-x11-keymap-options
+    Show known X11 keyboard mapping options.
+
+    Note
+    Using any of the parameters listed above requires the XKeyboard Config package from BLFS.
+    '
+}
+
+_lfs_configure_system_locale() {
+________________________________________________________________________________ '
+    7.7. Configuring the System Locale
+    \033[1;31m
+    skipped...
+    \033[0m
+    '
+}
+
+_lfs_create_etc_inputrc() {
+    ________________________________________________________________________________ '
+    7.8. Creating the /etc/inputrc File
+
+    The inputrc file is the configuration file for the Readline library,
+    which provides editing capabilities while the user is entering a line from the terminal.
+    It works by tranlating keyboard inputs into specific actions.
+    Readline is used by Bash and most other shells as well as many other applications.
+
+    Most people do not need user-specific functionality so the command below
+    creates a global /etc/inputrc used by everyone who logs in.
+    If you later decide you need to override the defaults on a per-user basis,
+    you can create a .inputrc file in the user s home directory with the modified mappings.
+
+    For more information on how to edit the inputrc file,
+    see info bash under the Readline Init File section.
+    info readline is also a good source of information.
+
+    Below is a generic global inputrc along with comments to explain what the various options do.
+    Note that comments cannot be on the same line as commands.
+    Create the file using the following command:
+    '
+    cat > /etc/inputrc << "EOF"
+# Begin /etc/inputrc
+# Modified by Chris Lynn <roryo@roryo.dynup.net>
+
+# Allow the command prompt to wrap to the next line
+set horizontal-scroll-mode Off
+
+# Enable 8bit input
+set meta-flag On
+set input-meta On
+
+# Turns off 8th bit stripping
+set convert-meta Off
+
+# Keep the 8th bit for display
+set output-meta On
+
+# none, visible or audible
+set bell-style none
+
+# All of the following map the escape sequence of the value
+# contained in the 1st argument to the readline specific functions
+"\eOd": backward-word
+"\eOc": forward-word
+
+# for linux console
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+"\e[5~": beginning-of-history
+"\e[6~": end-of-history
+"\e[3~": delete-char
+"\e[2~": quoted-insert
+
+# for xterm
+"\eOH": beginning-of-line
+"\eOF": end-of-line
+
+# for Konsole
+"\e[H": beginning-of-line
+"\e[F": end-of-line
+
+# End /etc/inputrc
+EOF
+}
+
+_lfs_create_etc_shells() {
+    ________________________________________________________________________________ '
+    7.9. Creating the /etc/shells File
+
+    The shells file contains a list of login shells on the system.
+    Applications use this file to determine whether a shell is valid.
+    For each shell a single line should be present, consisting of the shell s path,
+    relative to the root of the directory structure (/).
+
+    For example, this file is consulted by chsh to determine whether an
+    unprivileged user may change the login shell for her own account.
+    If the command name is not listed, the user will be denied of change.
+
+    It is a requirement for applications such as GDM which does not populate the face browser
+    if it cant find /etc/shells, or FTP daemons which traditionally disallow access to users
+    with shells not included in this file.
+    '
+    cat > /etc/shells << "EOF"
+# Begin /etc/shells
+
+/bin/sh
+/bin/bash
+
+# End /etc/shells
+EOF
+}
+
+_lfs_configure_and_use_systemd() {
+    ________________________________________________________________________________ '
+    7.10. Systemd Usage and Configuration
+
+    7.10.1. Basic Configuration
+
+    The /etc/systemd/system.conf file contains a set of options to control basic systemd operations.
+    The default file has all entries commented out with the default settings indicated.
+    This file is where the log level may be changed as well as some basic logging settings.
+
+    \033[0;32mSee the \033[0;1;32msystemd-system.conf(5)\033[0;32m manual page for details on each configuration option.
+    '
+    ________________________________________________________________________________ '
+    7.10.2. Disabling Screen Clearing at Boot Time
+
+    The normal behavior for systemd is to clear the screen at the end of the boot sequence.
+    If desired, this behavior may be changed by running the following command:
+    '
+    mkdir -pv /etc/systemd/system/getty@tty1.service.d
+    cat > /etc/systemd/system/getty@tty1.service.d/noclear.conf << EOF
+[Service]
+TTYVTDisallocate=no
+EOF
+    ________________________________________________________________________________ '
+    The boot messages can always be reviewed by using the journalctl -b command as the root user.
+
+    7.10.3. Disabling tmpfs for /tmp
+    By default, /tmp is created as a tmpfs. If this is not desired, it can be overridden by the following:
+    \033[1;33m
+    ln -sfv /dev/null /etc/systemd/system/tmp.mount
+    '
+    ________________________________________________________________________________ '
+    Alternatively, if a a separate partition for /tmp is desired, specify that partition in an /etc/fstab entry.
+    '
+    ________________________________________NOTE________________________________________ '
+    Warning' '
+    Do not create the symbolic link above if a separate partition is used for /tmp.
+    This will prvent the root file system (/) from being remounted r/w and make the system unusable when booted.
+    '
+    ________________________________________________________________________________ '
+    7.10.4. Configuring Automatic File Creation and Deletion
+
+    There are several services that create or delete files or directories:
+
+    * systemd-tmpfiles-clean.service
+    * systemd-tmpfiles-setup-dev.service
+    * systemd-tmpfiles-setup.service
+
+    The system location for the configuration files is /usr/lib/tmpfiles.d/*.conf.
+    The local configuration files are in /etc/tmpfiles.d.
+    Files in /etc/tmpfiles.d override files with the same name in /usr/lib/tmpfiles.d.
+    See tmpfiles.d(5) manual page for file format details.
+
+    Note that the syntax for the /usr/lib/tmpfiles.d/*.conf files can be confusing.
+    For example, the default deletion of files in the /tmp directory is located in /usr/lib/tmpfiles.d/tmp.conf with the line:
+    \033[1;33m
+    q /tmp 1777 root root 10d
+    '
+    ________________________________________________________________________________ '
+    The type field, q, discusses creating a subvolume with quotas which is really only applicable to btrfs filesystems.
+    It references type v which in turn references type d (directory).
+    This then creates the specified directory if is is not present and adjusts the permissions and ownership as specified.
+    Contents of the directory will be subject to time based cleanup if the age argument is specified.
+
+    If the default parameters are not desired, then the file should be copied to /etc/tmpfiles.d and edited as desired.
+    For example:
+    \033[1;33m
+    mkdir -p /etc/tempfiles.d
+    cp /usr/lib/tmpfiles.d/tmp.conf /etc/tempfiles.d
+    '
+    ________________________________________________________________________________ '
+    7.10.5. Overriding Default Services Behavior
+
+    The parameter of a unit can be overriden by creating a directory and a configuration file in /etc/systemd/system.
+    For example:
+    \033[1;33m
+    mkdir -pv /etc/systemd/system/foobar.service.d
+
+    cat > /etc/systemd/system/foobar.service.d/foobar.conf << EOF
+    [Service]
+    Restart=always
+    RestartSec=30
+    EOF
+    '
+    ________________________________________________________________________________ '
+    See systemd.unit(5) manual page for more information.
+    After creating the configuration file, run
+        systemctl daemon-reload
+    and
+        systemctl restart foobar
+    to activate the changes to a service.
+
+    7.10.6. Debugging the Boot Sequence
+
+    Rather than plain shell scripts used in SysVinit or BSD style init systems,
+    systemd uses a unified format for different types of startup files (or units).
+    The command systemctl is used to enable, disable, control state, and obtain status of unit files.
+    Here are some examples of frequently used commands:
+
+    * systemctl list-units -t <service> [--all]: lists loaded unit files of type service.
+    * systemctl list-units -t <target> [--all]: lists loaded unit files of type target.
+    * systemctl show -p Wants <multi-user.target>: shows all units that depend on the multi-user target.
+      Targets are special unit files that are anogalous to runlevels under SysVinit.
+    * systemctl status <servicename.service>: shows the status of the servicename service.
+      The .service extension can be omitted if there are no other unit files with the same name,
+      such as .socket files (which create a listening socket that provides similar functionality to inetd/xinetd).
+
+    7.10.7. Working with the Systemd Journal
+
+    Logging on a system booted with systemd is handled with systemd-journald (by default),
+    rather than a typical unix syslog daemon.
+    You can also add a normal syslog daemon and have both work side by side if desired.
+    The systemd-journald program stores journal entries in a binary format rather than a plain text log file.
+    To assist with parsing the file, the command journalctl is provided. Here are some examples of frequently used commands:
+
+    * journalctl -r: shows all contents of the journal in reverse chronological order.
+    * journalctl -u UNIT: shows the journal entries associated with the specified UNIT file.
+    * journalctl -b[=ID] -r: shows the journal entries since last successful boot (or for boot ID) in reverse chronological order.
+    * journalctl -f: povides functionality similar to tail -f (follow).
+
+    7.10.8. Long Running Processes
+
+    Beginning with systemd-230, all user processes are killed when a user session is ended,
+    even if nohup is used, or the process uses the daemon() or setsid() functions.
+    This is a deliberate change from a historically permissive environment to a more restrictive one.
+    The new behavior may cause issues if you depend on long running programs (e.g., screen or tmux)
+    to remain active after ending your user session.
+    There are three ways to enable lingering processes to remain after a user session is ended.
+
+    * Enable process lingering for only selected users:
+      Normal users have permission to enable process lingering with the command loginctl enable-linger for their own user.
+      System administrators can use the same command with a user argument to enable for a user.
+      That user can then use the systemd-run command to start long running processes.
+      For example: systemd-run --scope --user /usr/bin/screen.
+      If you enable lingering for your user, the user@.service will remain even after all login sessions are closed,
+      and will automatically start at system boot. This has the advantage of explicitly allowing
+      and disallowing processes to run after the user session has ended,
+      but breaks backwards compatibility with tools like nohup and utilities that use deamon().
+
+    * Enable system-wide process lingering:
+      You can set KillUserProcesses=no in /etc/logind.conf to enable process lingering globally for all users.
+      This has the benefit of leaving the old method available to all users at the expense of explicit control.
+
+    * Disable at build-time:
+      You can enable lingering by default while building systemd by adding
+      the switch --without-kill-user-processes to the configure command for systemd.
+      This completely disables the ability of systemd to kill user processes at session end.
+    '
 }
 
 ################################################################################
