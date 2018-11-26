@@ -1,7 +1,53 @@
 ## source me, don't run me
 
+#####################
+# virtualbox config #
+#####################
+#---------------------------------------------------------------------------------------------------
+# General  System  Display  Storage  Audio  Network  Ports  Shared Folders  User Interface
+# ^^^^^^^
+#    Name: LFS2018Thanksgiving
+#    Type: Linux
+# Version: Other Linux (64-bit)
+#
+#---------------------------------------------------------------------------------------------------
+# General  System  Display  Storage  Audio  Network  Ports  Shared Folders  User Interface
+#          ^^^^^^
+# Base Memory: 4096 MB
+#         Boot Order: [v] Floppy
+#                     [v] Optical
+#                     [v] Hard Disk
+#                     [ ] Network
+#            Chipset: PIIX3
+#    Pointing Device: USB Tablet
+#  Extended Features: [v] Enable I/O APIC
+#                     [ ] Enable EFI (special OSes only)
+#                     [v] Hardware Clock in UTC
+#
+#---------------------------------------------------------------------------------------------------
+# General  System  Display  Storage  Audio  Network  Ports  Shared Folders  User Interface
+#                           ^^^^^^^
+# Storage Devices -----  | Attributes -------------------------
+# +-------------------+  |        Name: SATA
+# | Controller: SATA  |  |        Type: AHCI
+# | +-- lfs.vdi       |  |  Port Count: 1
+# |                   |  |              [ ] Use Host I/O Cache
+# +-------------------+  |
+#
+#---------------------------------------------------------------------------------------------------
+# General  System  Display  Storage  Audio  Network  Ports  Shared Folders  User Interface
+#                                           ^^^^^^^
+# [v] Enable Network Adapter
+#             Attached to: NAT
+#                Advanced
+#            Adapter Type: Intel PRO/1000 MT Desktop (82540EM)
+#        Promiscuous Mode: Deny
+#             MAC Address: 080027398583
+#                          [v] Cable Connected
+#---------------------------------------------------------------------------------------------------
+
 export LFS_PARTITION=/home/ubuntu/lfs.img
-#export LFS_PARTITION=/dev/sdb
+#export LFS_PARTITION=/dev/sdc1
 
 export LFS_VERSION="stable-systemd"
 
@@ -5757,9 +5803,9 @@ _lfs_make_lfs_bootable_create_etc_fstab() {
 
 # file system   mount-point  type  options   dump  fsck
 #                                                  order
-/dev/sdb        /            ext4  defaults  1     1
-/swapfile       none         swap
-#/dev/<yyy>     swap         swap  pri=1     0     0
+/dev/sda1       /            ext4  defaults  1     1
+/dev/sda6       swap         swap  pri=1     0     0
+#/swapfile      none         swap
 
 # End /etc/fstab
 EOF
@@ -5983,11 +6029,11 @@ _lfs_grub() {
     Using the current lfs partition will also work, but configuration for multiple systems is more difficult.
 
     Using the above information, determine the appropriate designator for the root partition (or boot partition, if a separate one is used).
-    For the following example, it is assumed that the root (or separate boot) partition is \033[1;31msdb2\033[0;37m.
+    For the following example, it is assumed that the root (or separate boot) partition is \033[1;31msdc1\033[0;37m.
     '
     ________________________________________________________________________________ '
     Install the GRUB files into /boot/grub and set up the boot track:
-    grub-install /dev/sdb
+    grub-install /dev/sdc
     '
     ________________________________________IMPORTANT________________________________________ '
     Warning' '
@@ -5995,7 +6041,7 @@ _lfs_grub() {
     Do not run the command if this is not desired,
     for example, if using a third party boot manager to manage the Master Boot Record (MBR).
     '
-    grub-install /dev/sdb
+    grub-install /dev/sdc
     ________________________________________________________________________________ '
     8.4.4. Creating the GRUB Configuration File
 
@@ -6007,12 +6053,32 @@ set default=0
 set timeout=5
 
 insmod ext2
-set root=(hd1,2)
+set root=(hd0,1)
 
 menuentry "GNU/Linux, Linux 4.18.5-lfs-8.3-systemd" {
-        linux   /boot/vmlinuz-4.18.5-lfs-8.3-systemd root=/dev/sdb2 ro
+        linux   /boot/vmlinuz-4.18.5-lfs-8.3-systemd root=/dev/sda1 ro
 }
 EOF
+    ________________________________________NOTE________________________________________ '
+    I got an "VFS unable to mount root fs on unknown-block(0 0)" error and it turned out
+    that was because I was using a SCSI storage device controller in my virtualbox config.
+
+    The problem went away after I changed it to SATA.
+
+    Analysis:
+
+    I got my clue from https://wiki.gentoo.org/wiki/Knowledge_Base:Unable_to_mount_root_fs :
+    The panic informs that the Linux kernel is unable to:
+    * Detect the controller for the hard disk (a likely candidate if the message says unknown-block(0,0));
+    * Detect the partition because it does not have support for the partition type (less likely, but still possible);
+    * Mount the partition because it does not know how to access the file system
+      (a likely candidate if the message gives a non-zero figure in the first number set, such as unknown-block(2,0));
+    * Detect the partition because the wrong device was passed in the boot loader configuration.
+
+    see also:
+    * https://www.linuxquestions.org/questions/linux-from-scratch-13/chapter-8-kernel-config-853146/
+    '
+
     ________________________________________NOTE________________________________________ '
     From GRUB s perspective, the kernel files are relative to the partition used.
     If you used a separate /boot partition, remove /boot from the above linux line.
