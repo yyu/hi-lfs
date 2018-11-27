@@ -46,7 +46,7 @@
 #                          [v] Cable Connected
 #---------------------------------------------------------------------------------------------------
 
-export LFS_PARTITION=/home/ubuntu/lfs.img
+export LFS_PARTITION=/home/ubuntu/___/lfs.img
 #export LFS_PARTITION=/dev/sdc1
 
 export LFS_VERSION="stable-systemd"
@@ -362,6 +362,62 @@ _lfs_get_target_triplets() {
 
     # Before continuing, be aware of the name of the working platform, often referred to as the target triplet.
     # A simple way to determine the name of the target triplet is to run the config.guess script that comes with the source for many packages.
+
+    # Some key technical points of how the Chapter 5 build method works:
+    #
+    # * Slightly adjusting the name of the working platform, by changing the "vendor" field target triplet by way of the LFS_TGT variable,
+    #   ensures that the first build of Binutils and GCC produces a compatible cross-linker and cross-compiler.
+    #   Instead of producing binaries for another architecture, the cross-linker and cross-compiler will produce binaries compatible with the current hardware.
+    #
+    # * The temporary libraries are cross-compiled.
+    #   Because a cross-compiler by its nature cannot rely on anything from its host system,
+    #   this method removes potential contamination of the target system by lessening the chance
+    #   of headers or libraries from the host being incorporated into the new tools.
+    #   Cross-compilation also allows for the possibility of building both 32-bit and 64-bit libraries on 64-bit capable hardware.
+    #
+    # * Careful manipulation of the GCC source tells the compiler which target dynamic linker will be used.
+
+    # per https://www.gnu.org/software/autoconf/manual/autoconf-2.65/html_node/Specifying-Target-Triplets.html
+    # "target triplet" has the form: ‘cpu-vendor-os’, where os can be ‘system’ or ‘kernel-system’
+    #
+    # examples:
+    #     x86_64-pc-linux-gnu
+    #     ====== == ===== ===
+    #       |    |    |    '-- system
+    #       |    |    '------- kernel
+    #       |    '------------ vender
+    #       '----------------- cpu
+    #
+    # chapter5 changes the "vendor" field to "lfs" and the target triplet is x86_64-lfs-linux-gnu
+
+    #
+    # Binutils is installed first because
+    #     the "configure runs" of both GCC and Glibc perform various feature tests on the assembler and linker
+    #     to determine which software features to enable or disable.
+    # This is more important than one might first realize.
+    # An incorrectly configured GCC or Glibc can result in a subtly broken toolchain,
+    # where the impact of such breakage might not show up until near the end of the build of an entire distribution.
+    # A test suite failure will usually highlight this error before too much additional work is performed.
+
+    # Binutils installs its assembler and linker in two locations,
+    #     /tools/bin
+    # and
+    #     /tools/$LFS_TGT/bin
+    # . The tools in one location are hard linked to the other.
+
+    # An important facet of the linker is its library search order.
+    # Detailed information can be obtained from ld by passing it the --verbose flag.
+    #
+    # For example, an
+    #     ld --verbose | grep SEARCH
+    # will illustrate the current search paths and their order.
+    #
+    # It shows "which files are linked by ld" by compiling a dummy program and passing the --verbose switch to the linker.
+    #           ============================     -------------------------     ------------------------------------------
+    # For example,
+    #     gcc dummy.c -Wl,--verbose 2>&1 | grep succeeded
+    # will show all the files successfully opened during the linking.
+
     package=binutils
     package_with_version=${package}-2.31.1
     package_file=$package_with_version.tar.xz
@@ -3665,6 +3721,11 @@ _lfs_basic_system_install_autoconf() {
     In addition, two tests fail due to changes in libtool-2.4.3 and later.
     '
     make check TESTSUITEFLAGS=-j4
+    ________________________________________NOTE________________________________________ '
+    several tests are skipped that use Automake.
+    For full test coverage, Autoconf can be re-tested after Automake has been installed.' '
+    In addition, two tests fail due to changes in libtool-2.4.3 and later.
+    '
     ________________________________________________________________________________ '
     # make install
     '
@@ -6283,12 +6344,12 @@ _lfs_basic_system_install_all_5() {
 #
 # . 000-functions.sh
 #
-# _lfs_get_target_triplets
-# _lfs_get_name_of_dynamic_linker
-# _lfs_get_ld_search_order
-# _lfs_show_linked_files_for_dummy_program
-# _lfs_show_linker_used_by_gcc
-# _lfs_gcc_dummy_program_verbose
+# # _lfs_get_target_triplets
+# # _lfs_get_name_of_dynamic_linker
+# # _lfs_get_ld_search_order
+# # _lfs_show_linked_files_for_dummy_program
+# # _lfs_show_linker_used_by_gcc
+# # _lfs_gcc_dummy_program_verbose
 #
 # _lfs_before_temp_system_build
 #
@@ -6322,9 +6383,15 @@ _lfs_basic_system_install_all_5() {
 # on lfs (as root)
 # ----------------
 #
+# . 000-functions.sh
+#
 # _lfs_basic_system_install_all_1
 # _lfs_basic_system_install_all_2
 # _lfs_basic_system_install_all_3
+#
+# . 000-functions.sh
+#
 # _lfs_basic_system_install_all_4
+# _lfs_basic_system_install_all_5
 #
 ################################################################################
