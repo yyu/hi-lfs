@@ -1,0 +1,33 @@
+Thu Jun 12 20:43:23 CDT 2014
+
+KB: 1189340	/mnt/clfs
+
+GNU C Library (GNU libc) stable release version 2.19, by Roland McGrath et al.
+Copyright (C) 2014 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+Compiled by GNU CC version 4.8.3.
+Compiled on a Linux 3.14.5 system on 2014-06-12.
+Available extensions:
+	crypt add-on version 2.1 by Michael Glad and others
+	GNU Libidn by Simon Josefsson
+	Native POSIX Threads Library by Ulrich Drepper et al
+	BIND-8.2.3-T5B
+libc ABIs: UNIQUE IFUNC
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/libc/bugs.html>.
+Using built-in specs.
+COLLECT_GCC=/tools/bin/gcc
+COLLECT_LTO_WRAPPER=/mnt/clfs/tools/bin/../libexec/gcc/i686-pc-linux-gnu/4.8.3/lto-wrapper
+Target: i686-pc-linux-gnu
+Configured with: ../gcc-4.8.3/configure --prefix=/tools --build=i686-cross-linux-gnu --host=i686-pc-linux-gnu --target=i686-pc-linux-gnu --with-local-prefix=/tools --enable-long-long --enable-c99 --enable-shared --enable-threads=posix --disable-multilib --disable-nls --enable-__cxa_atexit --enable-languages=c,c++ --disable-libstdcxx-pch --with-system-zlib --with-native-system-header-dir=/tools/include --disable-libssp --enable-checking=release --enable-libstdcxx-time
+Thread model: posix
+gcc version 4.8.3 (GCC) 
+
+
+Totalseconds: 0
+
+
+KB: 1189340	/mnt/clfs
+

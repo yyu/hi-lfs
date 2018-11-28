@@ -1,0 +1,230 @@
+Sun Jun 29 15:10:58 CDT 2014
+
+KB: 2059372	/mnt/clfs
+
+patching file lib/malloc.c
+patching file lib/nonstd.c
+patching file ybin/yabootconfig
+Hunk #1 succeeded at 158 (offset -2 lines).
+Hunk #2 succeeded at 209 (offset -2 lines).
+patching file ybin/ofpath
+'Makefile' -> 'Makefile.orig'
+make[1]: Entering directory '/mnt/clfs/sources/yaboot-1.3.17'
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -D__ASSEMBLY__  -c -o second/crt0.o second/crt0.S
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o second/yaboot.o second/yaboot.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -D__ASSEMBLY__  -c -o second/cache.o second/cache.S
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o second/prom.o second/prom.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o second/file.o second/file.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o second/partition.o second/partition.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o second/fs.o second/fs.c
+second/yaboot.c: In function 'setup_display':
+second/yaboot.c:1510:13: warning: variable 'result' set but not used [-Wunused-but-set-variable]
+      int i, result;
+             ^
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o second/cfg.o second/cfg.c
+second/file.c: In function 'open_file':
+second/file.c:662:28: warning: argument to 'sizeof' in 'memset' call is the same pointer type 'struct boot_file_t *' as the destination; expected 'struct boot_file_t' or an explicit length [-Wsizeof-pointer-memaccess]
+      memset(file, 0, sizeof(struct boot_file_t*));
+                            ^
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -D__ASSEMBLY__  -c -o second/setjmp.o second/setjmp.S
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o second/cmdline.o second/cmdline.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o second/fs_of.o second/fs_of.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o second/fs_ext2.o second/fs_ext2.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o second/fs_iso.o second/fs_iso.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o second/fs_swap.o second/fs_swap.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o second/iso_util.o second/iso_util.c
+second/fs_swap.c: In function 'swap_open':
+second/fs_swap.c:90:15: warning: unused variable 'rc' [-Wunused-variable]
+           int rc = prom_readblocks(file->of_device, blk, BLKCOUNT, buffer);
+               ^
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o lib/nonstd.o lib/nonstd.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o lib/nosys.o lib/nosys.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -D__ASSEMBLY__  -c -o lib/string.o lib/string.S
+lib/nonstd.c: In function 'exit':
+lib/nonstd.c:102:1: warning: 'noreturn' function does return [enabled by default]
+ }
+ ^
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o lib/strtol.o lib/strtol.c
+second/yaboot.c: In function 'yaboot_text_ui':
+second/yaboot.c:1321:9: warning: 'ph' may be used uninitialized in this function [-Wmaybe-uninitialized]
+      if (ph)
+         ^
+second/yaboot.c:1198:23: note: 'ph' was declared here
+      Elf32_Phdr  *p, *ph;
+                       ^
+second/yaboot.c:1453:9: warning: 'ph' may be used uninitialized in this function [-Wmaybe-uninitialized]
+      if (ph)
+         ^
+second/yaboot.c:1331:23: note: 'ph' was declared here
+      Elf64_Phdr  *p, *ph;
+                       ^
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o lib/vsprintf.o lib/vsprintf.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o lib/ctype.o lib/ctype.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o lib/malloc.o lib/malloc.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o lib/strstr.o lib/strstr.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o second/md5.o second/md5.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o second/fs_xfs.o second/fs_xfs.c
+powerpc-unknown-linux-gnu-gcc -Os -m32  -nostdinc -Wall -isystem `powerpc-unknown-linux-gnu-gcc -m32 -print-file-name=include` -fsigned-char -DVERSION="\"1.3.17\"" -DTEXTADDR=0x100000 -DDEBUG=0 -DMALLOCADDR= -DMALLOCSIZE=0x100000 -DKERNELADDR=0x00000000 -fdiagnostics-show-option -I ./include -fno-strict-aliasing -DCONFIG_COLOR_TEXT -DCONFIG_SET_COLORMAP -DUSE_MD5_PASSWORDS -DCONFIG_FS_XFS -DCONFIG_FS_REISERFS -c -o second/fs_reiserfs.o second/fs_reiserfs.c
+powerpc-unknown-linux-gnu-gcc -Os  -Wall -I/usr/include -fdiagnostics-show-option -o util/addnote util/addnote.c
+In file included from ./include/byteorder.h:4:0,
+                 from ./include/reiserfs/reiserfs.h:3,
+                 from second/fs_reiserfs.c:33:
+second/fs_reiserfs.c: In function 'block_read':
+./include/swab.h:12:5: warning: operation on '*journal_table' may be undefined [-Wsequence-point]
+   (((__u32)(x) & (__u32)0x00ff0000UL) >>  8) | \
+     ^
+./include/byteorder.h:8:26: note: in expansion of macro 'swab32'
+ # define le32_to_cpu(x)  swab32((x))
+                          ^
+second/fs_reiserfs.c:221:17: note: in expansion of macro 'le32_to_cpu'
+         j_len = le32_to_cpu((*journal_table)++);
+                 ^
+./include/swab.h:12:5: warning: operation on '*journal_table' may be undefined [-Wsequence-point]
+   (((__u32)(x) & (__u32)0x00ff0000UL) >>  8) | \
+     ^
+./include/byteorder.h:8:26: note: in expansion of macro 'swab32'
+ # define le32_to_cpu(x)  swab32((x))
+                          ^
+second/fs_reiserfs.c:221:17: note: in expansion of macro 'le32_to_cpu'
+         j_len = le32_to_cpu((*journal_table)++);
+                 ^
+./include/swab.h:12:5: warning: operation on '*journal_table' may be undefined [-Wsequence-point]
+   (((__u32)(x) & (__u32)0x00ff0000UL) >>  8) | \
+     ^
+./include/byteorder.h:8:26: note: in expansion of macro 'swab32'
+ # define le32_to_cpu(x)  swab32((x))
+                          ^
+second/fs_reiserfs.c:221:17: note: in expansion of macro 'le32_to_cpu'
+         j_len = le32_to_cpu((*journal_table)++);
+                 ^
+second/fs_reiserfs.c:224:38: warning: operation on 'journal_table' may be undefined [-Wsequence-point]
+       if ( le32_to_cpu(*journal_table++) == blockNr )
+                                      ^
+./include/swab.h:12:13: note: in definition of macro 'swab32'
+   (((__u32)(x) & (__u32)0x00ff0000UL) >>  8) | \
+             ^
+second/fs_reiserfs.c:224:12: note: in expansion of macro 'le32_to_cpu'
+       if ( le32_to_cpu(*journal_table++) == blockNr )
+            ^
+second/fs_reiserfs.c:224:38: warning: operation on 'journal_table' may be undefined [-Wsequence-point]
+       if ( le32_to_cpu(*journal_table++) == blockNr )
+                                      ^
+./include/swab.h:12:13: note: in definition of macro 'swab32'
+   (((__u32)(x) & (__u32)0x00ff0000UL) >>  8) | \
+             ^
+second/fs_reiserfs.c:224:12: note: in expansion of macro 'le32_to_cpu'
+       if ( le32_to_cpu(*journal_table++) == blockNr )
+            ^
+second/fs_reiserfs.c:224:38: warning: operation on 'journal_table' may be undefined [-Wsequence-point]
+       if ( le32_to_cpu(*journal_table++) == blockNr )
+                                      ^
+./include/swab.h:12:13: note: in definition of macro 'swab32'
+   (((__u32)(x) & (__u32)0x00ff0000UL) >>  8) | \
+             ^
+second/fs_reiserfs.c:224:12: note: in expansion of macro 'le32_to_cpu'
+       if ( le32_to_cpu(*journal_table++) == blockNr )
+            ^
+second/fs_reiserfs.c:243:42: warning: operation on 'i' may be undefined [-Wsequence-point]
+       if ( le32_to_cpu(desc.j_realblock[i++]) == blockNr )
+                                          ^
+./include/swab.h:12:13: note: in definition of macro 'swab32'
+   (((__u32)(x) & (__u32)0x00ff0000UL) >>  8) | \
+             ^
+second/fs_reiserfs.c:243:12: note: in expansion of macro 'le32_to_cpu'
+       if ( le32_to_cpu(desc.j_realblock[i++]) == blockNr )
+            ^
+second/fs_reiserfs.c:243:42: warning: operation on 'i' may be undefined [-Wsequence-point]
+       if ( le32_to_cpu(desc.j_realblock[i++]) == blockNr )
+                                          ^
+./include/swab.h:12:13: note: in definition of macro 'swab32'
+   (((__u32)(x) & (__u32)0x00ff0000UL) >>  8) | \
+             ^
+second/fs_reiserfs.c:243:12: note: in expansion of macro 'le32_to_cpu'
+       if ( le32_to_cpu(desc.j_realblock[i++]) == blockNr )
+            ^
+second/fs_reiserfs.c:243:42: warning: operation on 'i' may be undefined [-Wsequence-point]
+       if ( le32_to_cpu(desc.j_realblock[i++]) == blockNr )
+                                          ^
+./include/swab.h:12:13: note: in definition of macro 'swab32'
+   (((__u32)(x) & (__u32)0x00ff0000UL) >>  8) | \
+             ^
+second/fs_reiserfs.c:243:12: note: in expansion of macro 'le32_to_cpu'
+       if ( le32_to_cpu(desc.j_realblock[i++]) == blockNr )
+            ^
+second/fs_reiserfs.c:255:42: warning: operation on 'i' may be undefined [-Wsequence-point]
+     if ( le32_to_cpu(commit.j_realblock[i++ - JOURNAL_TRANS_HALF]) == blockNr )
+                                          ^
+./include/swab.h:12:13: note: in definition of macro 'swab32'
+   (((__u32)(x) & (__u32)0x00ff0000UL) >>  8) | \
+             ^
+second/fs_reiserfs.c:255:10: note: in expansion of macro 'le32_to_cpu'
+     if ( le32_to_cpu(commit.j_realblock[i++ - JOURNAL_TRANS_HALF]) == blockNr )
+          ^
+second/fs_reiserfs.c:255:42: warning: operation on 'i' may be undefined [-Wsequence-point]
+     if ( le32_to_cpu(commit.j_realblock[i++ - JOURNAL_TRANS_HALF]) == blockNr )
+                                          ^
+./include/swab.h:12:13: note: in definition of macro 'swab32'
+   (((__u32)(x) & (__u32)0x00ff0000UL) >>  8) | \
+             ^
+second/fs_reiserfs.c:255:10: note: in expansion of macro 'le32_to_cpu'
+     if ( le32_to_cpu(commit.j_realblock[i++ - JOURNAL_TRANS_HALF]) == blockNr )
+          ^
+second/fs_reiserfs.c:255:42: warning: operation on 'i' may be undefined [-Wsequence-point]
+     if ( le32_to_cpu(commit.j_realblock[i++ - JOURNAL_TRANS_HALF]) == blockNr )
+                                          ^
+./include/swab.h:12:13: note: in definition of macro 'swab32'
+   (((__u32)(x) & (__u32)0x00ff0000UL) >>  8) | \
+             ^
+second/fs_reiserfs.c:255:10: note: in expansion of macro 'le32_to_cpu'
+     if ( le32_to_cpu(commit.j_realblock[i++ - JOURNAL_TRANS_HALF]) == blockNr )
+          ^
+ln -sf ybin ybin/mkofboot
+powerpc-unknown-linux-gnu-ld -Ttext 0x100000 -Bstatic -melf32ppclinux second/crt0.o second/yaboot.o second/cache.o second/prom.o second/file.o second/partition.o second/fs.o second/cfg.o second/setjmp.o second/cmdline.o second/fs_of.o second/fs_ext2.o second/fs_iso.o second/fs_swap.o second/iso_util.o lib/nonstd.o lib/nosys.o lib/string.o lib/strtol.o lib/vsprintf.o lib/ctype.o lib/malloc.o lib/strstr.o second/md5.o second/fs_xfs.o second/fs_reiserfs.o -lext2fs `powerpc-unknown-linux-gnu-gcc -m32 -print-libgcc-file-name` -o second/yaboot
+chmod -x second/yaboot
+make[1]: Leaving directory '/mnt/clfs/sources/yaboot-1.3.17'
+make[1]: Entering directory '/mnt/clfs/sources/yaboot-1.3.17'
+powerpc-unknown-linux-gnu-ld -Ttext 0x100000 -Bstatic -melf32ppclinux second/crt0.o second/yaboot.o second/cache.o second/prom.o second/file.o second/partition.o second/fs.o second/cfg.o second/setjmp.o second/cmdline.o second/fs_of.o second/fs_ext2.o second/fs_iso.o second/fs_swap.o second/iso_util.o lib/nonstd.o lib/nosys.o lib/string.o lib/strtol.o lib/vsprintf.o lib/ctype.o lib/malloc.o lib/strstr.o second/md5.o second/fs_xfs.o second/fs_reiserfs.o -lext2fs `powerpc-unknown-linux-gnu-gcc -m32 -print-libgcc-file-name` -o second/yaboot
+chmod -x second/yaboot
+powerpc-unknown-linux-gnu-gcc -Os  -Wall -I/usr/include -fdiagnostics-show-option -o util/addnote util/addnote.c
+ln -sf ybin ybin/mkofboot
+powerpc-unknown-linux-gnu-strip second/yaboot
+powerpc-unknown-linux-gnu-strip --remove-section=.comment second/yaboot
+powerpc-unknown-linux-gnu-strip util/addnote
+powerpc-unknown-linux-gnu-strip --remove-section=.comment --remove-section=.note util/addnote
+install -d  -m 0755 /tools/etc/
+install -d  -m 0755 /tools//sbin/
+install -d  -m 0755 /tools//lib
+install -d  -m 0755 /tools//lib/yaboot
+install -d  -m 0755 /tools//man/man5/
+install -d  -m 0755 /tools//man/man8/
+install  -m 0644 second/yaboot /tools//lib/yaboot
+install  -m 0755 util/addnote /tools//lib/yaboot/addnote
+install  -m 0644 first/ofboot /tools//lib/yaboot/ofboot
+install  -m 0755 ybin/ofpath /tools//sbin/ofpath
+install  -m 0755 ybin/ybin /tools//sbin/ybin
+install  -m 0755 ybin/yabootconfig /tools//sbin/yabootconfig
+rm -f /tools//sbin/mkofboot
+ln -s ybin /tools//sbin/mkofboot
+install  -m 0644 man/bootstrap.8.gz /tools//man/man8/bootstrap.8.gz
+install  -m 0644 man/mkofboot.8.gz /tools//man/man8/mkofboot.8.gz
+install  -m 0644 man/ofpath.8.gz /tools//man/man8/ofpath.8.gz
+install  -m 0644 man/yaboot.8.gz /tools//man/man8/yaboot.8.gz
+install  -m 0644 man/yabootconfig.8.gz /tools//man/man8/yabootconfig.8.gz
+install  -m 0644 man/ybin.8.gz /tools//man/man8/ybin.8.gz
+install  -m 0644 man/yaboot.conf.5.gz /tools//man/man5/yaboot.conf.5.gz
+install  -m 0644 etc/yaboot.conf /tools/etc/yaboot.conf
+
+Installation successful.
+
+An example /etc/yaboot.conf has been installed (unless /etc/yaboot.conf already existed)
+You may either alter that file to match your system, or alternatively run yabootconfig
+yabootconfig will generate a simple and valid /etc/yaboot.conf for your system
+
+make[1]: Leaving directory '/mnt/clfs/sources/yaboot-1.3.17'
+
+
+Totalseconds: 1
+
+
+KB: 2061248	/mnt/clfs
+

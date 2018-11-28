@@ -1,0 +1,117 @@
+Sat Jun 28 18:56:01 CDT 2014
+
+KB: 2676692	/
+
+Warning: prerequisite LWP 0 not found.
+Checking if your kit is complete...
+Looks good
+Generating a Unix-style Makefile
+Writing Makefile for XML::Parser::Expat
+Writing MYMETA.yml and MYMETA.json
+Generating a Unix-style Makefile
+Writing Makefile for XML::Parser
+Writing MYMETA.yml and MYMETA.json
+make[1]: Entering directory '/sources/XML-Parser-2.42_01'
+make[2]: Entering directory '/sources/XML-Parser-2.42_01/Expat'
+/usr/bin/perl-32 /usr/lib/perl5/5.20.0/ExtUtils/xsubpp -noprototypes -typemap /usr/lib/perl5/5.20.0/ExtUtils/typemap -typemap typemap  Expat.xs > Expat.xsc && mv Expat.xsc Expat.c
+cp Parser/Style/Stream.pm blib/lib/XML/Parser/Style/Stream.pm
+cp Parser/Encodings/iso-8859-7.enc blib/lib/XML/Parser/Encodings/iso-8859-7.enc
+cp Parser/Encodings/iso-8859-9.enc blib/lib/XML/Parser/Encodings/iso-8859-9.enc
+cp Parser/Encodings/windows-1250.enc blib/lib/XML/Parser/Encodings/windows-1250.enc
+cp Parser/Encodings/windows-1252.enc blib/lib/XML/Parser/Encodings/windows-1252.enc
+cp Parser/Style/Objects.pm blib/lib/XML/Parser/Style/Objects.pm
+cp Parser/Encodings/x-sjis-unicode.enc blib/lib/XML/Parser/Encodings/x-sjis-unicode.enc
+cp Parser/Encodings/x-euc-jp-jisx0221.enc blib/lib/XML/Parser/Encodings/x-euc-jp-jisx0221.enc
+cp Parser/Encodings/koi8-r.enc blib/lib/XML/Parser/Encodings/koi8-r.enc
+cp Parser/Encodings/windows-1255.enc blib/lib/XML/Parser/Encodings/windows-1255.enc
+cp Parser/Encodings/README blib/lib/XML/Parser/Encodings/README
+cp Parser.pm blib/lib/XML/Parser.pm
+cp Parser/Encodings/x-sjis-jisx0221.enc blib/lib/XML/Parser/Encodings/x-sjis-jisx0221.enc
+cp Parser/Style/Subs.pm blib/lib/XML/Parser/Style/Subs.pm
+cp Parser/Encodings/iso-8859-3.enc blib/lib/XML/Parser/Encodings/iso-8859-3.enc
+cp Parser/Encodings/euc-kr.enc blib/lib/XML/Parser/Encodings/euc-kr.enc
+cp Parser/Encodings/iso-8859-8.enc blib/lib/XML/Parser/Encodings/iso-8859-8.enc
+cp Parser/Encodings/x-sjis-jdk117.enc blib/lib/XML/Parser/Encodings/x-sjis-jdk117.enc
+cp Parser/Encodings/big5.enc blib/lib/XML/Parser/Encodings/big5.enc
+cp Parser/Encodings/iso-8859-5.enc blib/lib/XML/Parser/Encodings/iso-8859-5.enc
+cp Parser/Encodings/x-sjis-cp932.enc blib/lib/XML/Parser/Encodings/x-sjis-cp932.enc
+cp Parser/LWPExternEnt.pl blib/lib/XML/Parser/LWPExternEnt.pl
+cp Parser/Encodings/Japanese_Encodings.msg blib/lib/XML/Parser/Encodings/Japanese_Encodings.msg
+cp Parser/Style/Tree.pm blib/lib/XML/Parser/Style/Tree.pm
+cp Parser/Encodings/windows-1251.enc blib/lib/XML/Parser/Encodings/windows-1251.enc
+cp Parser/Encodings/x-euc-jp-unicode.enc blib/lib/XML/Parser/Encodings/x-euc-jp-unicode.enc
+cp Parser/Style/Debug.pm blib/lib/XML/Parser/Style/Debug.pm
+cp Parser/Encodings/ibm866.enc blib/lib/XML/Parser/Encodings/ibm866.enc
+cp Parser/Encodings/iso-8859-4.enc blib/lib/XML/Parser/Encodings/iso-8859-4.enc
+cp Parser/Encodings/iso-8859-2.enc blib/lib/XML/Parser/Encodings/iso-8859-2.enc
+Running Mkbootstrap for XML::Parser::Expat ()
+chmod 644 Expat.bs
+cp Expat.pm ../blib/lib/XML/Parser/Expat.pm
+gcc -m32 -c   -D_REENTRANT -D_GNU_SOURCE -fwrapv -fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -O2   -DVERSION=\"2.42_01\" -DXS_VERSION=\"2.42_01\" -fPIC "-I/usr/lib/perl5/5.20.0/x86_64-linux-thread-multi/CORE"   Expat.c
+rm -f ../blib/arch/auto/XML/Parser/Expat/Expat.so
+LD_RUN_PATH="/usr/lib" gcc -m32  -shared -O2 -L/usr/local/lib -fstack-protector Expat.o  -o ../blib/arch/auto/XML/Parser/Expat/Expat.so 	\
+   -lexpat  	\
+  
+chmod 755 ../blib/arch/auto/XML/Parser/Expat/Expat.so
+/usr/bin/perl-32 -MExtUtils::Command::MM -e 'cp_nonempty' -- Expat.bs ../blib/arch/auto/XML/Parser/Expat/Expat.bs 644
+Manifying ../blib/man3/XML::Parser::Expat.3
+make[2]: Leaving directory '/sources/XML-Parser-2.42_01/Expat'
+Manifying blib/man3/XML::Parser.3
+Manifying blib/man3/XML::Parser::Style::Debug.3
+Manifying blib/man3/XML::Parser::Style::Objects.3
+Manifying blib/man3/XML::Parser::Style::Stream.3
+Manifying blib/man3/XML::Parser::Style::Subs.3
+Manifying blib/man3/XML::Parser::Style::Tree.3
+make[1]: Leaving directory '/sources/XML-Parser-2.42_01'
+make[1]: Entering directory '/sources/XML-Parser-2.42_01'
+make[2]: Entering directory '/sources/XML-Parser-2.42_01/Expat'
+make[2]: Leaving directory '/sources/XML-Parser-2.42_01/Expat'
+Files found in blib/arch: installing files in blib/lib into architecture dependent library tree
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/auto/XML/Parser/Expat/Expat.so
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser.pm
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/LWPExternEnt.pl
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Expat.pm
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/x-euc-jp-unicode.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/x-sjis-unicode.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/iso-8859-4.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/koi8-r.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/windows-1252.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/iso-8859-9.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/big5.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/iso-8859-5.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/windows-1251.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/euc-kr.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/x-euc-jp-jisx0221.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/iso-8859-2.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/x-sjis-cp932.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/iso-8859-8.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/windows-1255.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/x-sjis-jdk117.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/iso-8859-3.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/ibm866.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/iso-8859-7.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/windows-1250.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/Japanese_Encodings.msg
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/README
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Encodings/x-sjis-jisx0221.enc
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Style/Objects.pm
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Style/Stream.pm
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Style/Debug.pm
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Style/Subs.pm
+Installing /usr/lib/perl5/site_perl/5.20.0/x86_64-linux-thread-multi/XML/Parser/Style/Tree.pm
+Installing /usr/share/man/man3/XML::Parser::Expat.3
+Installing /usr/share/man/man3/XML::Parser::Style::Tree.3
+Installing /usr/share/man/man3/XML::Parser.3
+Installing /usr/share/man/man3/XML::Parser::Style::Stream.3
+Installing /usr/share/man/man3/XML::Parser::Style::Debug.3
+Installing /usr/share/man/man3/XML::Parser::Style::Objects.3
+Installing /usr/share/man/man3/XML::Parser::Style::Subs.3
+Appending installation info to /usr/lib/perl5/5.20.0/x86_64-linux-thread-multi/perllocal.pod
+make[1]: Leaving directory '/sources/XML-Parser-2.42_01'
+
+
+Totalseconds: 2
+
+
+KB: 2679060	/
+

@@ -1,0 +1,69 @@
+Mon Jun 30 19:35:53 CDT 2014
+make[2]: Entering directory '/sources/libpipeline-1.3.0'
+Making check in gnulib/lib
+make[3]: Entering directory '/sources/libpipeline-1.3.0/gnulib/lib'
+make  check-recursive
+make[4]: Entering directory '/sources/libpipeline-1.3.0/gnulib/lib'
+make[5]: Entering directory '/sources/libpipeline-1.3.0/gnulib/lib'
+make[5]: Nothing to be done for 'check-am'.
+make[5]: Leaving directory '/sources/libpipeline-1.3.0/gnulib/lib'
+make[4]: Leaving directory '/sources/libpipeline-1.3.0/gnulib/lib'
+make[3]: Leaving directory '/sources/libpipeline-1.3.0/gnulib/lib'
+Making check in lib
+make[3]: Entering directory '/sources/libpipeline-1.3.0/lib'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/sources/libpipeline-1.3.0/lib'
+Making check in man
+make[3]: Entering directory '/sources/libpipeline-1.3.0/man'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/sources/libpipeline-1.3.0/man'
+Making check in tests
+make[3]: Entering directory '/sources/libpipeline-1.3.0/tests'
+make  basic argstr exec inspect pump redirect reading_long_line
+make[4]: Entering directory '/sources/libpipeline-1.3.0/tests'
+  CC       basic.o
+  CC       common.o
+  CCLD     basic
+  CC       argstr.o
+  CCLD     argstr
+  CC       exec.o
+  CCLD     exec
+  CC       inspect.o
+  CCLD     inspect
+  CC       pump.o
+  CCLD     pump
+  CC       redirect.o
+  CCLD     redirect
+  CC       reading_long_line.o
+  CCLD     reading_long_line
+make[4]: Leaving directory '/sources/libpipeline-1.3.0/tests'
+make  check-TESTS
+make[4]: Entering directory '/sources/libpipeline-1.3.0/tests'
+make[5]: Entering directory '/sources/libpipeline-1.3.0/tests'
+PASS: basic
+PASS: argstr
+PASS: exec
+PASS: inspect
+PASS: pump
+PASS: redirect
+PASS: reading_long_line
+make[6]: Entering directory '/sources/libpipeline-1.3.0/tests'
+make[6]: Nothing to be done for 'all'.
+make[6]: Leaving directory '/sources/libpipeline-1.3.0/tests'
+============================================================================
+Testsuite summary for libpipeline 1.3.0
+============================================================================
+# TOTAL: 7
+# PASS:  7
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[5]: Leaving directory '/sources/libpipeline-1.3.0/tests'
+make[4]: Leaving directory '/sources/libpipeline-1.3.0/tests'
+make[3]: Leaving directory '/sources/libpipeline-1.3.0/tests'
+make[3]: Entering directory '/sources/libpipeline-1.3.0'
+make[3]: Leaving directory '/sources/libpipeline-1.3.0'
+make[2]: Leaving directory '/sources/libpipeline-1.3.0'

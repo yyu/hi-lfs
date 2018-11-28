@@ -1,0 +1,33 @@
+Mon Jun 30 21:28:53 CDT 2014
+
+KB: 3076468	/
+
+patching file Makefile
+patching file nvsetenv.8
+patching file nvsetenv.c
+patching file nvsetvol.8
+patching file nvsetvol.c
+patching file nwnvsetenv.c
+make[2]: Entering directory '/sources/pmac-utils'
+gcc -Wall -Wstrict-prototypes  -O2 -fsigned-char -D_GNU_SOURCE  -o nvsetenv nvsetenv.c nwnvsetenv.c
+nwnvsetenv.c:13:0: warning: "__USE_GNU" redefined [enabled by default]
+ #define __USE_GNU // need strnlen
+ ^
+In file included from /usr/include/stdio.h:27:0,
+                 from nwnvsetenv.c:10:
+/usr/include/features.h:332:0: note: this is the location of the previous definition
+ # define __USE_GNU 1
+ ^
+gcc -Wall -Wstrict-prototypes  -O2 -fsigned-char -D_GNU_SOURCE  -o nvsetvol nvsetvol.c
+make[2]: Leaving directory '/sources/pmac-utils'
+'nvsetenv' -> '/usr/sbin/nvsetenv'
+'nvsetvol' -> '/usr/sbin/nvsetvol'
+'nvsetenv.8' -> '/usr/share/man/man8/nvsetenv.8'
+'nvsetvol.8' -> '/usr/share/man/man8/nvsetvol.8'
+
+
+Totalseconds: 1
+
+
+KB: 3076672	/
+

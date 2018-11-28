@@ -1,0 +1,1231 @@
+Sat Jun 14 14:14:36 CDT 2014
+
+KB: 1230460	/mnt/clfs
+
+patching file arrayfunc.c
+patching file bashline.c
+patching file externs.h
+patching file jobs.c
+patching file lib/glob/glob.c
+patching file lib/glob/gmisc.c
+patching file lib/readline/display.c
+patching file lib/readline/readline.c
+patching file lib/readline/readline.c.orig
+patching file lib/sh/shquote.c
+patching file parse.y
+patching file patchlevel.h
+patching file pcomplete.c
+patching file subst.c
+patching file test.c
+patching file trap.c
+patching file variables.c
+patching file y.tab.c
+configure: loading cache config.cache
+checking build system type... x86_64-cross-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+
+Beginning configuration for bash-4.3-release for x86_64-unknown-linux-gnu
+
+checking for x86_64-unknown-linux-gnu-gcc... x86_64-unknown-linux-gnu-gcc -m64
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether x86_64-unknown-linux-gnu-gcc -m64 accepts -g... yes
+checking for x86_64-unknown-linux-gnu-gcc -m64 option to accept ISO C89... none needed
+checking for strerror in -lcposix... no
+checking how to run the C preprocessor... x86_64-unknown-linux-gnu-gcc -m64 -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+configure: cross-compiling for x86_64-unknown-linux-gnu is not supported
+checking whether x86_64-unknown-linux-gnu-gcc -m64 needs -traditional... no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for x86_64-unknown-linux-gnu-ar... x86_64-unknown-linux-gnu-ar
+checking for x86_64-unknown-linux-gnu-ranlib... x86_64-unknown-linux-gnu-ranlib
+checking for bison... bison -y
+checking whether make sets $(MAKE)... yes
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking whether byte ordering is bigendian... no
+checking for preprocessor stringizing operator... yes
+checking for long double with more range or precision than double... yes
+checking for function prototypes... yes
+checking whether char is unsigned... no
+checking for working volatile... yes
+checking for C/C++ restrict keyword... __restrict
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for off_t... yes
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... yes
+checking for sys/time.h... yes
+checking for getpagesize... yes
+checking for working mmap... (cached) yes
+checking whether we are using the GNU C Library 2.1 or newer... yes
+checking whether integer division by zero raises SIGFPE... (cached) yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unsigned long long... yes
+checking for inttypes.h... yes
+checking whether the inttypes.h PRIxNN macros are broken... no
+checking for ld used by GCC... x86_64-unknown-linux-gnu-ld
+checking if the linker (x86_64-unknown-linux-gnu-ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking argz.h usability... yes
+checking argz.h presence... yes
+checking for argz.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking nl_types.h usability... yes
+checking nl_types.h presence... yes
+checking for nl_types.h... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for feof_unlocked... yes
+checking for fgets_unlocked... yes
+checking for getc_unlocked... yes
+checking for getcwd... yes
+checking for getegid... yes
+checking for geteuid... yes
+checking for getgid... yes
+checking for getuid... yes
+checking for mempcpy... yes
+checking for munmap... yes
+checking for putenv... yes
+checking for setenv... yes
+checking for setlocale... yes
+checking for localeconv... yes
+checking for stpcpy... yes
+checking for strcasecmp... yes
+checking for strdup... yes
+checking for strtoul... yes
+checking for tsearch... yes
+checking for __argz_count... yes
+checking for __argz_stringify... yes
+checking for __argz_next... yes
+checking for __fsetlocking... yes
+checking for iconv... yes
+checking for iconv declaration... 
+         extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+checking for nl_langinfo and CODESET... yes
+checking for LC_MESSAGES... yes
+checking for bison... bison
+checking version of bison... 2.5, ok
+checking whether NLS is requested... yes
+checking whether included gettext is requested... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether time.h and sys/time.h may both be included... yes
+checking for inttypes.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking varargs.h usability... no
+checking varargs.h presence... no
+checking for varargs.h... no
+checking for limits.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for locale.h... (cached) yes
+checking termcap.h usability... yes
+checking termcap.h presence... yes
+checking for termcap.h... yes
+checking termio.h usability... yes
+checking termio.h presence... yes
+checking for termio.h... yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking stdbool.h usability... yes
+checking stdbool.h presence... yes
+checking for stdbool.h... yes
+checking for stddef.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking pwd.h usability... yes
+checking pwd.h presence... yes
+checking for pwd.h... yes
+checking grp.h usability... yes
+checking grp.h presence... yes
+checking for grp.h... yes
+checking for strings.h... (cached) yes
+checking regex.h usability... yes
+checking regex.h presence... yes
+checking for regex.h... yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking ulimit.h usability... yes
+checking ulimit.h presence... yes
+checking for ulimit.h... yes
+checking sys/pte.h usability... no
+checking sys/pte.h presence... no
+checking for sys/pte.h... no
+checking sys/stream.h usability... no
+checking sys/stream.h presence... no
+checking for sys/stream.h... no
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking for sys/param.h... (cached) yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking for sys/stat.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking sys/times.h usability... yes
+checking sys/times.h presence... yes
+checking for sys/times.h... yes
+checking for sys/types.h... (cached) yes
+checking sys/wait.h usability... yes
+checking sys/wait.h presence... yes
+checking for sys/wait.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking for sys/ptem.h... no
+checking for working alloca.h... (cached) yes
+checking for alloca... (cached) yes
+checking whether getpgrp requires zero arguments... yes
+checking for vprintf... yes
+checking for _doprnt... no
+checking for working strcoll... (cached) yes
+checking return type of signal handlers... void
+checking for __setostype... no
+checking for wait3... yes
+checking for mkfifo... yes
+checking for dup2... yes
+checking for eaccess... yes
+checking for fcntl... yes
+checking for getdtablesize... yes
+checking for getgroups... yes
+checking for gethostname... yes
+checking for getpagesize... (cached) yes
+checking for getpeername... yes
+checking for getrlimit... yes
+checking for getrusage... yes
+checking for gettimeofday... yes
+checking for kill... yes
+checking for killpg... yes
+checking for lstat... yes
+checking for readlink... yes
+checking for sbrk... yes
+checking for select... yes
+checking for setdtablesize... no
+checking for setitimer... yes
+checking for tcgetpgrp... yes
+checking for uname... yes
+checking for ulimit... yes
+checking for waitpid... yes
+checking for rename... yes
+checking for bcopy... yes
+checking for bzero... yes
+checking for confstr... yes
+checking for faccessat... yes
+checking for fnmatch... yes
+checking for getaddrinfo... yes
+checking for gethostbyname... yes
+checking for getservbyname... yes
+checking for getservent... yes
+checking for inet_aton... yes
+checking for imaxdiv... yes
+checking for memmove... yes
+checking for pathconf... yes
+checking for putenv... (cached) yes
+checking for raise... yes
+checking for regcomp... yes
+checking for regexec... yes
+checking for setenv... (cached) yes
+checking for setlinebuf... yes
+checking for setlocale... (cached) yes
+checking for setvbuf... yes
+checking for siginterrupt... yes
+checking for strchr... yes
+checking for sysconf... yes
+checking for syslog... yes
+checking for tcgetattr... yes
+checking for times... yes
+checking for ttyname... yes
+checking for tzset... yes
+checking for unsetenv... yes
+checking for vasprintf... yes
+checking for asprintf... yes
+checking for isascii... yes
+checking for isblank... yes
+checking for isgraph... yes
+checking for isprint... yes
+checking for isspace... yes
+checking for isxdigit... yes
+checking for getpwent... yes
+checking for getpwnam... yes
+checking for getpwuid... yes
+checking for getcwd... (cached) yes
+checking for memset... yes
+checking for strcasecmp... (cached) yes
+checking for strcasestr... yes
+checking for strerror... yes
+checking for strftime... yes
+checking for strnlen... yes
+checking for strpbrk... yes
+checking for strstr... yes
+checking for strtod... yes
+checking for strtol... yes
+checking for strtoul... (cached) yes
+checking for strtoll... yes
+checking for strtoull... yes
+checking for strtoimax... yes
+checking for strtoumax... yes
+checking for dprintf... yes
+checking for strchrnul... yes
+checking for strdup... (cached) yes
+checking whether AUDIT_USER_TTY is declared... yes
+checking whether confstr is declared... yes
+checking whether printf is declared... yes
+checking whether sbrk is declared... yes
+checking whether setregid is declared... yes
+checking whether strcpy is declared... yes
+checking whether strsignal is declared... yes
+checking whether strtold is declared... yes
+checking for broken strtold... no
+checking for declaration of strtoimax... yes
+checking for declaration of strtol... yes
+checking for declaration of strtoll... yes
+checking for declaration of strtoul... yes
+checking for declaration of strtoull... yes
+checking for declaration of strtoumax... yes
+checking for alarm... yes
+checking for fpurge... no
+checking for __fpurge... yes
+checking for snprintf... yes
+checking for vsnprintf... yes
+checking for working mktime... (cached) yes
+checking for argz.h... (cached) yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for malloc.h... (cached) yes
+checking stdio_ext.h usability... yes
+checking stdio_ext.h presence... yes
+checking for stdio_ext.h... yes
+checking for getpagesize... (cached) yes
+checking for working mmap... (cached) yes
+checking for __argz_count... (cached) yes
+checking for __argz_next... (cached) yes
+checking for __argz_stringify... (cached) yes
+checking for dcgettext... yes
+checking for mempcpy... (cached) yes
+checking for munmap... (cached) yes
+checking for stpcpy... (cached) yes
+checking for strcspn... yes
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking for mbrlen... yes
+checking for mbscasecmp... no
+checking for mbscmp... no
+checking for mbsnrtowcs... yes
+checking for mbsrtowcs... yes
+checking for mbschr... no
+checking for wcrtomb... yes
+checking for wcscoll... yes
+checking for wcsdup... yes
+checking for wcwidth... yes
+checking for wctype... yes
+checking for wcswidth... yes
+checking whether mbrtowc and mbstate_t are properly declared... yes
+checking for iswlower... yes
+checking for iswupper... yes
+checking for towlower... yes
+checking for towupper... yes
+checking for iswctype... yes
+checking for nl_langinfo and CODESET... yes
+checking for wchar_t in wchar.h... yes
+checking for wctype_t in wctype.h... yes
+checking for wint_t in wctype.h... yes
+checking for wcwidth broken with unicode combining characters... no
+checking for locale_charset... no
+checking for dlopen in -ldl... yes
+checking for dlopen... yes
+checking for dlclose... yes
+checking for dlsym... yes
+checking whether sys_siglist is declared... yes
+checking for uid_t in sys/types.h... yes
+checking type of array argument to getgroups... gid_t
+checking for off_t... (cached) yes
+checking for mode_t... yes
+checking for uid_t in sys/types.h... (cached) yes
+checking for pid_t... yes
+checking for size_t... (cached) yes
+checking for ssize_t... yes
+checking for time_t... yes
+checking for long long... long long
+checking for unsigned long long... unsigned long long
+checking return type of signal handlers... (cached) void
+checking for sig_atomic_t in signal.h... yes
+checking size of char... 1
+checking size of short... 2
+checking size of int... 4
+checking size of long... 8
+checking size of char *... 8
+checking size of double... 8
+checking size of long long... 8
+checking for u_int... yes
+checking for u_long... yes
+checking for bits16_t... no
+checking for u_bits16_t... no
+checking for bits32_t... no
+checking for u_bits32_t... no
+checking for bits64_t... no
+checking for ptrdiff_t... yes
+checking whether stat file-mode macros are broken... no
+checking whether #! works in shell scripts... yes
+checking whether the ctype macros accept non-ascii characters... configure: WARNING: cannot check ctype macros if cross compiling -- defaulting to no
+no
+checking if dup2 fails to clear the close-on-exec flag... configure: WARNING: cannot check dup2 if cross compiling -- defaulting to no
+no
+checking whether pgrps need synchronization... configure: WARNING: cannot check pgrp synchronization if cross compiling -- defaulting to no
+no
+checking for type of signal functions... posix
+checking for sys_errlist and sys_nerr... yes
+checking for sys_siglist in system C library... configure: WARNING: cannot check for sys_siglist if cross compiling -- defaulting to no
+no
+checking for _sys_siglist in signal.h or unistd.h... yes
+checking for _sys_siglist in system C library... (cached) yes
+checking whether signal handlers are of type void... yes
+checking for clock_t... yes
+checking for sigset_t... yes
+checking for sig_atomic_t... yes
+checking for quad_t... yes
+checking for intmax_t... yes
+checking for uintmax_t... yes
+checking for socklen_t... yes
+checking for size and type of struct rlimit fields... rlim_t
+checking size of intmax_t... 8
+checking for struct termios.c_line... yes
+checking for struct termio.c_line... yes
+checking for struct dirent.d_ino... yes
+checking for struct dirent.d_fileno... yes
+checking for struct dirent.d_namlen... no
+checking for struct winsize in sys/ioctl.h and termios.h... sys/ioctl.h
+checking for struct timeval in sys/time.h and time.h... yes
+checking for struct stat.st_blocks... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct tm.tm_zone... yes
+checking for struct timezone in sys/time.h and time.h... yes
+checking for offset of exit status in return status from wait... configure: WARNING: cannot check WEXITSTATUS offset if cross compiling -- defaulting to 0
+0
+checking for struct timespec in <time.h>... yes
+checking for struct stat.st_atim.tv_nsec... yes
+checking whether struct stat.st_atim is of type struct timespec... yes
+checking for the existence of strsignal... yes
+checking if opendir() opens non-directories... configure: WARNING: cannot check opendir if cross compiling -- defaulting to no
+no
+checking whether ulimit can substitute for getdtablesize... (cached) yes
+checking whether fpurge is declared... no
+checking to see if getenv can be redefined... configure: WARNING: cannot check getenv redefinition if cross compiling -- defaulting to yes
+yes
+checking if getcwd() will dynamically allocate memory with 0 size... (cached) yes
+checking for presence of POSIX-style sigsetjmp/siglongjmp... (cached) present
+checking whether or not strcoll and strcmp differ... configure: WARNING: cannot check strcoll if cross compiling -- defaulting to no
+no
+checking for standard-conformant snprintf... configure: WARNING: cannot check standard snprintf if cross-compiling
+yes
+checking for standard-conformant vsnprintf... configure: WARNING: cannot check standard vsnprintf if cross-compiling
+yes
+checking for standard-conformant putenv declaration... yes
+checking for standard-conformant unsetenv declaration... yes
+checking for printf floating point output in hex notation... (cached) yes
+checking if signal handlers must be reinstalled when invoked... configure: WARNING: cannot check signal handling if cross compiling -- defaulting to no
+no
+checking for presence of necessary job control definitions... (cached) present
+checking for presence of named pipes... (cached) present
+checking whether termios.h defines TIOCGWINSZ... no
+checking whether sys/ioctl.h defines TIOCGWINSZ... yes
+checking for TIOCSTAT in sys/ioctl.h... no
+checking for FIONREAD in sys/ioctl.h... yes
+checking whether WCONTINUED flag to waitpid is unavailable or available but broken... configure: WARNING: cannot check WCONTINUED if cross compiling -- defaulting to no
+no
+checking for speed_t in sys/types.h... no
+checking whether getpw functions are declared in pwd.h... yes
+checking for unusable real-time signals due to large values... (cached) no
+checking for tgetent... no
+checking for tgetent in -ltermcap... no
+checking for tgetent in -ltinfo... no
+checking for tgetent in -lcurses... yes
+checking which library has the termcap functions... using libcurses
+checking whether /dev/fd is available... standard
+checking whether /dev/stdin stdout stderr are available... present
+checking for default mail directory... /var/mail
+checking shared object configuration for loadable builtins... supported
+configure: updating cache config.cache
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating builtins/Makefile
+config.status: creating lib/readline/Makefile
+config.status: creating lib/glob/Makefile
+config.status: creating lib/intl/Makefile
+config.status: creating lib/malloc/Makefile
+config.status: creating lib/sh/Makefile
+config.status: creating lib/termcap/Makefile
+config.status: creating lib/tilde/Makefile
+config.status: creating doc/Makefile
+config.status: creating support/Makefile
+config.status: creating po/Makefile.in
+config.status: creating examples/loadables/Makefile
+config.status: creating examples/loadables/perl/Makefile
+config.status: creating config.h
+config.status: executing default-1 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: executing default commands
+make[1]: Entering directory `/mnt/clfs/sources/bash-4.3'
+rm -f mksyntax
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -DCROSS_COMPILING -rdynamic -g -DCROSS_COMPILING -o mksyntax ./mksyntax.c 
+rm -f make_cmd.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c make_cmd.c
+rm -f mksignames.o
+rm -f buildsignames.o
+rm -f input.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -DCROSS_COMPILING -DBUILDTOOL -c ./support/mksignames.c
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -DCROSS_COMPILING -DBUILDTOOL -o buildsignames.o -c ./support/signames.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c input.c
+rm -f unwind_prot.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c unwind_prot.c
+rm -f pathexp.o
+make[2]: Entering directory `/mnt/clfs/sources/bash-4.3/builtins'
+rm -f mkbuiltins.o
+rm -f test.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -DCROSS_COMPILING mkbuiltins.c
+rm -f alias.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c pathexp.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c test.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c alias.c
+rm -f array.o
+rm -f arrayfunc.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c array.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c arrayfunc.c
+rm -f assoc.o
+rm -f braces.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c assoc.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c braces.c
+rm -f bracecomp.o
+rm -f bashhist.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c bracecomp.c
+gcc -rdynamic -g -DCROSS_COMPILING -o mkbuiltins mkbuiltins.o 
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c bashhist.c
+rm -f bashline.o
+rm -f list.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c bashline.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c list.c
+rm -f stringlib.o
+rm -f locale.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c stringlib.c
+rm -f findcmd.o
+./mkbuiltins -externfile builtext.h -structfile builtins.c \
+	    -noproduction -D .   ./alias.def ./bind.def ./break.def ./builtin.def ./caller.def ./cd.def ./colon.def ./command.def ./declare.def ./echo.def ./enable.def ./eval.def ./getopts.def ./exec.def ./exit.def ./fc.def ./fg_bg.def ./hash.def ./help.def ./history.def ./jobs.def ./kill.def ./let.def ./read.def ./return.def ./set.def ./setattr.def ./shift.def ./source.def ./suspend.def ./test.def ./times.def ./trap.def ./type.def ./ulimit.def ./umask.def ./wait.def ./reserved.def ./pushd.def ./shopt.def ./printf.def ./complete.def ./mapfile.def
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c locale.c
+make[2]: Leaving directory `/mnt/clfs/sources/bash-4.3/builtins'
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c findcmd.c
+rm -f redir.o
+rm -f pcomplete.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c redir.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c pcomplete.c
+rm -f pcomplib.o
+rm -f xmalloc.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c pcomplib.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c xmalloc.c
+rm -f signames.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c ./support/signames.c
+rm -f syntax.c
+rm -f shell.o
+./mksyntax -o syntax.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c shell.c
+rm -f eval.o
+pcomplete.c: In function 'pcomp_filename_completion_function':
+rm -f y.tab.o
+pcomplete.c:781:9: warning: passing argument 1 of 'sh_contains_quotes' discards 'const' qualifier from pointer target type [enabled by default]
+         sh_contains_quotes (text)) /* guess */
+         ^
+In file included from shell.h:42:0,
+                 from pcomplete.c:46:
+externs.h:327:12: note: expected 'char *' but argument is of type 'const char *'
+ extern int sh_contains_quotes __P((char *));
+            ^
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c eval.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c y.tab.c
+rm -f general.o
+rm -f print_cmd.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c general.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c print_cmd.c
+rm -f dispose_cmd.o
+rm -f execute_cmd.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c dispose_cmd.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c execute_cmd.c
+rm -f copy_cmd.o
+rm -f error.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c copy_cmd.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c error.c
+rm -f expr.o
+rm -f flags.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c expr.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c flags.c
+rm -f jobs.o
+rm -f subst.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c jobs.c
+rm -f hashcmd.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c subst.c
+expr.c:210:17: warning: conflicting types for built-in function 'exp2' [enabled by default]
+ static intmax_t exp2 __P((void));
+                 ^
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c hashcmd.c
+rm -f hashlib.o
+rm -f mailcheck.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c hashlib.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c mailcheck.c
+rm -f mksignames
+rm -f sig.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -DCROSS_COMPILING -rdynamic -g -DCROSS_COMPILING -o mksignames mksignames.o buildsignames.o 
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c sig.c
+rm -f syntax.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c syntax.c
+/bin/sh ./support/mkversion.sh -b -S . -s release -d 4.3 -o newversion.h \
+		&& mv newversion.h version.h
+rm -f lsignames.h
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -DCROSS_COMPILING -DBUILDTOOL -c -o buildversion.o ./version.c
+./mksignames lsignames.h
+rm -f variables.o
+rm -f version.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c variables.c
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c version.c
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -DCROSS_COMPILING -rdynamic -g -DCROSS_COMPILING -o bashversion ./support/bashversion.c buildversion.o 
+if cmp -s lsignames.h signames.h ; then :; else rm -f signames.h ; cp lsignames.h signames.h ; fi
+make[2]: Entering directory `/mnt/clfs/sources/bash-4.3/builtins'
+rm -f builtins.o
+rm -f trap.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 builtins.c
+rm -f alias.o
+rm -f bind.o
+x86_64-unknown-linux-gnu-gcc -m64  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"x86_64"' -DCONF_OSTYPE='"linux-gnu"' -DCONF_MACHTYPE='"x86_64-unknown-linux-gnu"' -DCONF_VENDOR='"unknown"' -DLOCALEDIR='"/tools/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib   -g -O2 -c trap.c
+./mkbuiltins -D . alias.def
+./mkbuiltins -D . bind.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 alias.c || ( rm -f alias.c ; exit 1 )
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 bind.c || ( rm -f bind.c ; exit 1 )
+rm -f break.o
+rm -f builtin.o
+./mkbuiltins -D . break.def
+./mkbuiltins -D . builtin.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 break.c || ( rm -f break.c ; exit 1 )
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 builtin.c || ( rm -f builtin.c ; exit 1 )
+rm -f caller.o
+rm -f cd.o
+rm -f bind.c
+
+./mkbuiltins -D . caller.def
+./mkbuiltins -D . cd.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 caller.c || ( rm -f caller.c ; exit 1 )
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 cd.c || ( rm -f cd.c ; exit 1 )
+rm -f colon.o
+	  ***********************************************************
+rm -f command.o
+./mkbuiltins -D . colon.def
+./mkbuiltins -D . command.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 colon.c || ( rm -f colon.c ; exit 1 )
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 command.c || ( rm -f command.c ; exit 1 )
+rm -f builtin.c
+rm -f break.c
+rm -f common.o
+rm -f declare.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 common.c
+./mkbuiltins -D . declare.def
+	  *                                                         *
+rm -f colon.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 declare.c || ( rm -f declare.c ; exit 1 )
+	  * GNU bash, version 4.3.18(1)-release (x86_64-unknown-linux-gnu)
+rm -f alias.c
+	  *                                                         *
+	  ***********************************************************
+
+rm -f caller.c
+making lib/sh/libsh.a in ./lib/sh
+making lib/glob/libglob.a in ./lib/glob
+make[2]: Entering directory `/mnt/clfs/sources/bash-4.3/lib/glob'
+rm -f glob.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../.. -I../../include -I../../lib  -g -O2 glob.c
+rm -f command.c
+make[2]: Entering directory `/mnt/clfs/sources/bash-4.3/lib/sh'
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   clktck.c
+rm -f echo.o
+rm -f strmatch.o
+rm -f smatch.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../.. -I../../include -I../../lib  -g -O2 strmatch.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../.. -I../../include -I../../lib  -g -O2 smatch.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   clock.c
+./mkbuiltins -D . echo.def
+rm -f xmbsrtowcs.o
+making lib/readline/libreadline.a in ./lib/readline
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 echo.c || ( rm -f echo.c ; exit 1 )
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../.. -I../../include -I../../lib  -g -O2 xmbsrtowcs.c
+make[2]: Entering directory `/mnt/clfs/sources/bash-4.3/lib/readline'
+rm -f readline.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 readline.c
+rm -f gmisc.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../.. -I../../include -I../../lib  -g -O2 gmisc.c
+rm -f cd.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   getenv.c
+rm -f vi_mode.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 vi_mode.c
+rm -f funmap.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 funmap.c
+making lib/tilde/libtilde.a in ./lib/tilde
+make[2]: Entering directory `/mnt/clfs/sources/bash-4.3/lib/tilde'
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../.. -I../../include -I../../lib  -g -O2 tilde.c
+rm -f echo.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   oslib.c
+rm -f keymaps.o
+rm -f enable.o
+./mkbuiltins -D . enable.def
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 keymaps.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 enable.c || ( rm -f enable.c ; exit 1 )
+rm -f libtilde.a
+x86_64-unknown-linux-gnu-ar cr libtilde.a tilde.o
+test -n "x86_64-unknown-linux-gnu-ranlib" && x86_64-unknown-linux-gnu-ranlib libtilde.a
+rm -f declare.c
+rm -f eval.o
+./mkbuiltins -D . eval.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 eval.c || ( rm -f eval.c ; exit 1 )
+rm -f evalfile.o
+rm -f parens.o
+make[2]: Leaving directory `/mnt/clfs/sources/bash-4.3/lib/tilde'
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   setlinebuf.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   strnlen.c
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 parens.c
+rm -f evalstring.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 evalfile.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 evalstring.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   itos.c
+rm -f search.o
+rm -f eval.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   zread.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   zwrite.c
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 search.c
+rm -f rltty.o
+evalstring.c: In function 'parse_and_execute':
+evalstring.c:208:3: warning: passing argument 1 of 'sigemptyset' discards 'volatile' qualifier from pointer target type [enabled by default]
+   sigemptyset (&pe_sigmask);
+   ^
+In file included from evalstring.c:31:0:
+/mnt/clfs/tools/include/signal.h:215:12: note: expected 'struct sigset_t *' but argument is of type 'volatile struct sigset_t *'
+ extern int sigemptyset (sigset_t *__set) __THROW __nonnull ((1));
+            ^
+evalstring.c:209:3: warning: passing argument 3 of 'sigprocmask' discards 'volatile' qualifier from pointer target type [enabled by default]
+   sigprocmask (SIG_BLOCK, (sigset_t *)NULL, &pe_sigmask);
+   ^
+In file included from evalstring.c:31:0:
+/mnt/clfs/tools/include/signal.h:248:12: note: expected 'struct sigset_t * __restrict__' but argument is of type 'volatile struct sigset_t *'
+ extern int sigprocmask (int __how, const sigset_t *__restrict __set,
+            ^
+evalstring.c:288:5: warning: passing argument 2 of 'sigprocmask' discards 'volatile' qualifier from pointer target type [enabled by default]
+     sigprocmask (SIG_SETMASK, &pe_sigmask, (sigset_t *)NULL);
+     ^
+In file included from evalstring.c:31:0:
+/mnt/clfs/tools/include/signal.h:248:12: note: expected 'const struct sigset_t * __restrict__' but argument is of type 'volatile struct sigset_t *'
+ extern int sigprocmask (int __how, const sigset_t *__restrict __set,
+            ^
+evalstring.c: In function 'parse_string':
+evalstring.c:433:3: warning: passing argument 1 of 'sigemptyset' discards 'volatile' qualifier from pointer target type [enabled by default]
+   sigemptyset (&ps_sigmask);
+   ^
+In file included from evalstring.c:31:0:
+/mnt/clfs/tools/include/signal.h:215:12: note: expected 'struct sigset_t *' but argument is of type 'volatile struct sigset_t *'
+ extern int sigemptyset (sigset_t *__set) __THROW __nonnull ((1));
+            ^
+evalstring.c:434:3: warning: passing argument 3 of 'sigprocmask' discards 'volatile' qualifier from pointer target type [enabled by default]
+   sigprocmask (SIG_BLOCK, (sigset_t *)NULL, &ps_sigmask);
+   ^
+In file included from evalstring.c:31:0:
+/mnt/clfs/tools/include/signal.h:248:12: note: expected 'struct sigset_t * __restrict__' but argument is of type 'volatile struct sigset_t *'
+ extern int sigprocmask (int __how, const sigset_t *__restrict __set,
+            ^
+evalstring.c:486:8: warning: passing argument 2 of 'sigprocmask' discards 'volatile' qualifier from pointer target type [enabled by default]
+        sigprocmask (SIG_SETMASK, &ps_sigmask, (sigset_t *)NULL);
+        ^
+In file included from evalstring.c:31:0:
+/mnt/clfs/tools/include/signal.h:248:12: note: expected 'const struct sigset_t * __restrict__' but argument is of type 'volatile struct sigset_t *'
+ extern int sigprocmask (int __how, const sigset_t *__restrict __set,
+            ^
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   shtty.c
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 rltty.c
+rm -f enable.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   shmatch.c
+rm -f complete.o
+rm -f exec.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   eaccess.c
+./mkbuiltins -D . exec.def
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 complete.c
+rm -f bind.o
+rm -f exit.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 bind.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   netconn.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 exec.c || ( rm -f exec.c ; exit 1 )
+rm -f isearch.o
+./mkbuiltins -D . exit.def
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 isearch.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   netopen.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   timeval.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 exit.c || ( rm -f exit.c ; exit 1 )
+rm -f display.o
+rm -f fc.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 display.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   makepath.c
+./mkbuiltins -D . fc.def
+rm -f exec.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 fc.c || ( rm -f fc.c ; exit 1 )
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   pathcanon.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   pathphys.c
+rm -f signals.o
+rm -f fg_bg.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 signals.c
+./mkbuiltins -D . fg_bg.def
+rm -f -f libglob.a
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 fg_bg.c || ( rm -f fg_bg.c ; exit 1 )
+x86_64-unknown-linux-gnu-ar cr libglob.a glob.o strmatch.o smatch.o xmbsrtowcs.o gmisc.o
+test -n "x86_64-unknown-linux-gnu-ranlib" && x86_64-unknown-linux-gnu-ranlib libglob.a
+make[2]: Leaving directory `/mnt/clfs/sources/bash-4.3/lib/glob'
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   tmpfile.c
+rm -f hash.o
+rm -f exit.c
+./mkbuiltins -D . hash.def
+rm -f util.o
+rm -f help.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   stringlist.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 hash.c || ( rm -f hash.c ; exit 1 )
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 util.c
+./mkbuiltins -D . help.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 help.c || ( rm -f help.c ; exit 1 )
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   stringvec.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   spell.c
+rm -f fg_bg.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   shquote.c
+rm -f history.o
+./mkbuiltins -D . history.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 history.c || ( rm -f history.c ; exit 1 )
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   strtrans.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   snprintf.c
+rm -f kill.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 kill.c
+rm -f hash.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   mailstat.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   fmtulong.c
+rm -f undo.o
+rm -f history.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   fmtullong.c
+rm -f fc.c
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 undo.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   fmtumax.c
+rm -f jobs.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   zcatfd.c
+./mkbuiltins -D . jobs.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 jobs.c || ( rm -f jobs.c ; exit 1 )
+rm -f kill.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   zmapfd.c
+./mkbuiltins -D . kill.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 kill.c || ( rm -f kill.c ; exit 1 )
+rm -f let.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   winsize.c
+./mkbuiltins -D . let.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 let.c || ( rm -f let.c ; exit 1 )
+rm -f mapfile.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   wcsdup.c
+./mkbuiltins -D . mapfile.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 mapfile.c || ( rm -f mapfile.c ; exit 1 )
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   fpurge.c
+rm -f pushd.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   zgetline.c
+rm -f macro.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   mbscmp.c
+rm -f let.c
+rm -f input.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 macro.c
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 input.c
+rm -f help.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   uconvert.c
+rm -f kill.c
+./mkbuiltins -D . pushd.def
+rm -f callback.o
+rm -f read.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 pushd.c || ( rm -f pushd.c ; exit 1 )
+./mkbuiltins -D . read.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   ufuncs.c
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 callback.c
+rm -f jobs.c
+rm -f terminal.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   casemod.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 read.c || ( rm -f read.c ; exit 1 )
+rm -f return.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 terminal.c
+rm -f mapfile.c
+./mkbuiltins -D . return.def
+rm -f text.o
+rm -f set.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 text.c
+rm -f nls.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 return.c || ( rm -f return.c ; exit 1 )
+rm -f misc.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 nls.c
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 misc.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   input_avail.c
+./mkbuiltins -D . set.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 set.c || ( rm -f set.c ; exit 1 )
+rm -f setattr.o
+./mkbuiltins -D . setattr.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 setattr.c || ( rm -f setattr.c ; exit 1 )
+rm -f history.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   mbscasecmp.c
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 history.c
+rm -f histexpand.o
+rm -f pushd.c
+rm -f histfile.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   fnxform.c
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 histexpand.c
+rm -f return.c
+rm -f shift.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 histfile.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   unicode.c
+rm -f setattr.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   shmbchar.c
+./mkbuiltins -D . shift.def
+rm -f histsearch.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 histsearch.c
+rm -f shell.o
+rm -f source.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 shell.c
+rm -f read.c
+rm -f savestring.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   wcsnwidth.c
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 savestring.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 shift.c || ( rm -f shift.c ; exit 1 )
+rm -f mbutil.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 mbutil.c
+./mkbuiltins -D . source.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -I. -I../.. -I../.. -I../../lib -I../../include -I.  -DHAVE_CONFIG_H -DSHELL  -g -O2   mbschr.c
+rm -f suspend.o
+rm -f tilde.o
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 -DREADLINE_LIBRARY -c ./tilde.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 source.c || ( rm -f source.c ; exit 1 )
+./mkbuiltins -D . suspend.def
+rm -f shift.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 suspend.c || ( rm -f suspend.c ; exit 1 )
+rm -f test.o
+./mkbuiltins -D . test.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 test.c || ( rm -f test.c ; exit 1 )
+rm -f times.o
+./mkbuiltins -D . times.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 times.c || ( rm -f times.c ; exit 1 )
+rm -f set.c
+rm -f colors.o
+rm -f parse-colors.o
+rm -f trap.o
+./mkbuiltins -D . trap.def
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 colors.c
+rm -f type.o
+rm -f test.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 trap.c || ( rm -f trap.c ; exit 1 )
+./mkbuiltins -D . type.def
+gcc  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -DCROSS_COMPILING -rdynamic -g -DCROSS_COMPILING -o psize.aux ./psize.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 type.c || ( rm -f type.c ; exit 1 )
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 parse-colors.c
+rm -f xmalloc.o
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 xmalloc.c
+rm -f xfree.o
+rm -f compat.o
+rm -f libsh.a
+rm -f times.c
+x86_64-unknown-linux-gnu-ar cr libsh.a clktck.o clock.o getenv.o oslib.o setlinebuf.o strnlen.o itos.o zread.o zwrite.o shtty.o shmatch.o eaccess.o netconn.o netopen.o timeval.o makepath.o pathcanon.o pathphys.o tmpfile.o stringlist.o stringvec.o spell.o shquote.o strtrans.o snprintf.o mailstat.o fmtulong.o fmtullong.o fmtumax.o zcatfd.o zmapfd.o winsize.o wcsdup.o fpurge.o zgetline.o mbscmp.o uconvert.o ufuncs.o casemod.o input_avail.o mbscasecmp.o fnxform.o unicode.o shmbchar.o wcsnwidth.o mbschr.o
+test -n "x86_64-unknown-linux-gnu-ranlib" && x86_64-unknown-linux-gnu-ranlib libsh.a
+make[2]: Leaving directory `/mnt/clfs/sources/bash-4.3/lib/sh'
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 xfree.c
+rm -f suspend.c
+x86_64-unknown-linux-gnu-gcc -m64 -c -DHAVE_CONFIG_H -DSHELL   -I. -I/mnt/clfs/sources/bash-4.3 -I../.. -I../../lib  -g -O2 compat.c
+rm -f umask.o
+rm -f source.c
+rm -f wait.o
+./mkbuiltins -D . umask.def
+rm -f getopts.o
+./mkbuiltins -D . wait.def
+./mkbuiltins -D . getopts.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 umask.c || ( rm -f umask.c ; exit 1 )
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 wait.c || ( rm -f wait.c ; exit 1 )
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 getopts.c || ( rm -f getopts.c ; exit 1 )
+rm -f shopt.o
+rm -f printf.o
+./mkbuiltins -D . shopt.def
+rm -f getopt.o
+./mkbuiltins -D . printf.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 shopt.c || ( rm -f shopt.c ; exit 1 )
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 getopt.c
+rm -f trap.c
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 printf.c || ( rm -f printf.c ; exit 1 )
+rm -f bashgetopt.o
+rm -f complete.o
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 bashgetopt.c
+./mkbuiltins -D . complete.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 complete.c || ( rm -f complete.c ; exit 1 )
+rm -f type.c
+rm -f wait.c
+/bin/sh ./psize.sh > pipesize.h
+rm -f getopts.c
+rm -f umask.c
+rm -f complete.c
+rm -f shopt.c
+rm -f libreadline.a
+x86_64-unknown-linux-gnu-ar cr libreadline.a readline.o vi_mode.o funmap.o keymaps.o parens.o search.o rltty.o complete.o bind.o isearch.o display.o signals.o util.o kill.o undo.o macro.o input.o callback.o terminal.o text.o nls.o misc.o history.o histexpand.o histfile.o histsearch.o shell.o savestring.o mbutil.o tilde.o colors.o parse-colors.o xmalloc.o xfree.o compat.o 
+test -n "x86_64-unknown-linux-gnu-ranlib" && x86_64-unknown-linux-gnu-ranlib libreadline.a
+make[2]: Leaving directory `/mnt/clfs/sources/bash-4.3/lib/readline'
+making lib/readline/libhistory.a in ./lib/readline
+make[2]: Entering directory `/mnt/clfs/sources/bash-4.3/lib/readline'
+rm -f libhistory.a
+x86_64-unknown-linux-gnu-ar cr libhistory.a history.o histexpand.o histfile.o histsearch.o shell.o savestring.o mbutil.o xmalloc.o xfree.o
+test -n "x86_64-unknown-linux-gnu-ranlib" && x86_64-unknown-linux-gnu-ranlib libhistory.a
+make[2]: Leaving directory `/mnt/clfs/sources/bash-4.3/lib/readline'
+rm -f printf.c
+rm -f ulimit.o
+./mkbuiltins -D . ulimit.def
+x86_64-unknown-linux-gnu-gcc -m64 -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I.    -g -O2 ulimit.c || ( rm -f ulimit.c ; exit 1 )
+rm -f ulimit.c
+rm -f libbuiltins.a
+x86_64-unknown-linux-gnu-ar cr libbuiltins.a builtins.o alias.o bind.o break.o builtin.o caller.o cd.o colon.o command.o common.o declare.o echo.o enable.o eval.o evalfile.o evalstring.o exec.o exit.o fc.o fg_bg.o hash.o help.o history.o jobs.o kill.o let.o mapfile.o pushd.o read.o return.o set.o setattr.o shift.o source.o suspend.o test.o times.o trap.o type.o ulimit.o umask.o wait.o getopts.o shopt.o printf.o getopt.o bashgetopt.o complete.o
+x86_64-unknown-linux-gnu-ranlib libbuiltins.a
+make[2]: Leaving directory `/mnt/clfs/sources/bash-4.3/builtins'
+rm -f bash
+x86_64-unknown-linux-gnu-gcc -m64 -L./builtins -L./lib/readline -L./lib/readline -L./lib/glob -L./lib/tilde  -L./lib/sh  -rdynamic  -g -O2 -o bash shell.o eval.o y.tab.o general.o make_cmd.o print_cmd.o  dispose_cmd.o execute_cmd.o variables.o copy_cmd.o error.o expr.o flags.o jobs.o subst.o hashcmd.o hashlib.o mailcheck.o trap.o input.o unwind_prot.o pathexp.o sig.o test.o version.o alias.o array.o arrayfunc.o assoc.o braces.o bracecomp.o bashhist.o bashline.o  list.o stringlib.o locale.o findcmd.o redir.o pcomplete.o pcomplib.o syntax.o xmalloc.o signames.o -lbuiltins -lglob -lsh -lreadline -lhistory -lcurses -ltilde     -ldl 
+ls -l bash
+-rwxr-xr-x 1 clfs clfs 3546764 Jun 14 14:15 bash
+x86_64-unknown-linux-gnu-size bash
+   text	   data	    bss	    dec	    hex	filename
+ 942820	  35896	  24216	1002932	  f4db4	bash
+make[1]: Leaving directory `/mnt/clfs/sources/bash-4.3'
+make[1]: Entering directory `/mnt/clfs/sources/bash-4.3'
+
+	  ***********************************************************
+	  *                                                         *
+	  * GNU bash, version 4.3.18(1)-release (x86_64-unknown-linux-gnu)
+	  *                                                         *
+	  ***********************************************************
+
+mkdir -p -- /tools/share/doc/bash
+( cd ./po/ ; make -w DESTDIR= installdirs )
+make[2]: Entering directory `/mnt/clfs/sources/bash-4.3/po'
+/bin/sh /mnt/clfs/sources/bash-4.3/./support/mkinstalldirs /tools/share
+mkdir -p -- /tools/share/locale/en@quot/LC_MESSAGES
+mkdir -p -- /tools/share/locale/en@boldquot/LC_MESSAGES
+mkdir -p -- /tools/share/locale/af/LC_MESSAGES
+mkdir -p -- /tools/share/locale/et/LC_MESSAGES
+mkdir -p -- /tools/share/locale/ga/LC_MESSAGES
+mkdir -p -- /tools/share/locale/ro/LC_MESSAGES
+mkdir -p -- /tools/share/locale/sr/LC_MESSAGES
+if test "bash" = "gettext-tools"; then \
+	  /bin/sh /mnt/clfs/sources/bash-4.3/./support/mkinstalldirs /tools/share/gettext/po; \
+	else \
+	  : ; \
+	fi
+make[2]: Leaving directory `/mnt/clfs/sources/bash-4.3/po'
+/usr/bin/install -c -m 0755 bash /tools/bin/bash
+/usr/bin/install -c -m 0555 bashbug /tools/bin/bashbug
+/usr/bin/install -c -m 644 ./CHANGES ./COMPAT ./NEWS ./POSIX ./RBASH ./README /tools/share/doc/bash
+( cd ./doc ; make -w \
+		man1dir=/tools/share/man/man1 man1ext=.1 \
+		man3dir=/tools/share/man/man3 man3ext=.3 \
+		infodir=/tools/share/info htmldir=/tools/share/doc/bash DESTDIR= install )
+make[2]: Entering directory `/mnt/clfs/sources/bash-4.3/doc'
+/bin/sh ../support/mkinstalldirs /tools/share/man/man1
+/bin/sh ../support/mkinstalldirs /tools/share/info
+/bin/sh ../support/mkinstalldirs /tools/share/doc/bash
+if test -n "/tools/share/doc/bash" ; then \
+		/bin/sh ../support/mkinstalldirs /tools/share/doc/bash ; \
+	fi
+/bin/sh ./infopost.sh < ./bashref.info > bash.info ; \
+
+/usr/bin/install -c -m 644 ./bash.1 /tools/share/man/man1/bash.1
+/usr/bin/install -c -m 644 ./bashbug.1 /tools/share/man/man1/bashbug.1
+/usr/bin/install -c -m 644 ./FAQ ./INTRO /tools/share/doc/bash
+if test -f bash.info; then d=.; else d=.; fi; \
+	  /usr/bin/install -c -m 644 $d/bash.info /tools/share/info/bash.info
+if /bin/sh -c 'install-info --version' >/dev/null 2>&1; then \
+		install-info --dir-file=/tools/share/info/dir /tools/share/info/bash.info; \
+	else true; fi
+This is not dpkg install-info anymore, but GNU install-info
+See the man page for ginstall-info for command line arguments
+if test -n "/tools/share/doc/bash" ; then \
+		/usr/bin/install -c -m 644 ./bash.html /tools/share/doc/bash ; \
+		/usr/bin/install -c -m 644 ./bashref.html /tools/share/doc/bash ; \
+	fi
+make[2]: Leaving directory `/mnt/clfs/sources/bash-4.3/doc'
+( cd ./builtins ; make -w DESTDIR= install )
+make[2]: Entering directory `/mnt/clfs/sources/bash-4.3/builtins'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/mnt/clfs/sources/bash-4.3/builtins'
+( cd ./po/ ; make -w DESTDIR= install )
+make[2]: Entering directory `/mnt/clfs/sources/bash-4.3/po'
+test -z "en@quot.gmo en@boldquot.gmo af.gmo bg.gmo ca.gmo cs.gmo da.gmo de.gmo el.gmo eo.gmo es.gmo et.gmo fi.gmo fr.gmo ga.gmo gl.gmo hr.gmo hu.gmo id.gmo it.gmo ja.gmo lt.gmo nl.gmo pl.gmo pt_BR.gmo ro.gmo ru.gmo sk.gmo sl.gmo sr.gmo sv.gmo tr.gmo uk.gmo vi.gmo zh_CN.gmo zh_TW.gmo" || make en@quot.gmo en@boldquot.gmo af.gmo bg.gmo ca.gmo cs.gmo da.gmo de.gmo el.gmo eo.gmo es.gmo et.gmo fi.gmo fr.gmo ga.gmo gl.gmo hr.gmo hu.gmo id.gmo it.gmo ja.gmo lt.gmo nl.gmo pl.gmo pt_BR.gmo ro.gmo ru.gmo sk.gmo sl.gmo sr.gmo sv.gmo tr.gmo uk.gmo vi.gmo zh_CN.gmo zh_TW.gmo
+make[3]: Entering directory `/mnt/clfs/sources/bash-4.3/po'
+make[3]: `en@quot.gmo' is up to date.
+make[3]: `en@boldquot.gmo' is up to date.
+make[3]: `af.gmo' is up to date.
+make[3]: `bg.gmo' is up to date.
+make[3]: `ca.gmo' is up to date.
+make[3]: `cs.gmo' is up to date.
+make[3]: `da.gmo' is up to date.
+make[3]: `de.gmo' is up to date.
+make[3]: `el.gmo' is up to date.
+make[3]: `eo.gmo' is up to date.
+make[3]: `es.gmo' is up to date.
+make[3]: `et.gmo' is up to date.
+make[3]: `fi.gmo' is up to date.
+make[3]: `fr.gmo' is up to date.
+make[3]: `ga.gmo' is up to date.
+make[3]: `gl.gmo' is up to date.
+make[3]: `hr.gmo' is up to date.
+make[3]: `hu.gmo' is up to date.
+make[3]: `id.gmo' is up to date.
+make[3]: `it.gmo' is up to date.
+make[3]: `ja.gmo' is up to date.
+make[3]: `lt.gmo' is up to date.
+make[3]: `nl.gmo' is up to date.
+make[3]: `pl.gmo' is up to date.
+make[3]: `pt_BR.gmo' is up to date.
+make[3]: `ro.gmo' is up to date.
+make[3]: `ru.gmo' is up to date.
+make[3]: `sk.gmo' is up to date.
+make[3]: `sl.gmo' is up to date.
+make[3]: `sr.gmo' is up to date.
+make[3]: `sv.gmo' is up to date.
+make[3]: `tr.gmo' is up to date.
+make[3]: `uk.gmo' is up to date.
+make[3]: `vi.gmo' is up to date.
+make[3]: `zh_CN.gmo' is up to date.
+make[3]: `zh_TW.gmo' is up to date.
+make[3]: Leaving directory `/mnt/clfs/sources/bash-4.3/po'
+touch stamp-po
+/bin/sh /mnt/clfs/sources/bash-4.3/./support/mkinstalldirs /tools/share
+installing en@quot.gmo as /tools/share/locale/en@quot/LC_MESSAGES/bash.mo
+installing en@boldquot.gmo as /tools/share/locale/en@boldquot/LC_MESSAGES/bash.mo
+installing af.gmo as /tools/share/locale/af/LC_MESSAGES/bash.mo
+installing bg.gmo as /tools/share/locale/bg/LC_MESSAGES/bash.mo
+installing ca.gmo as /tools/share/locale/ca/LC_MESSAGES/bash.mo
+installing cs.gmo as /tools/share/locale/cs/LC_MESSAGES/bash.mo
+installing da.gmo as /tools/share/locale/da/LC_MESSAGES/bash.mo
+installing de.gmo as /tools/share/locale/de/LC_MESSAGES/bash.mo
+installing el.gmo as /tools/share/locale/el/LC_MESSAGES/bash.mo
+installing eo.gmo as /tools/share/locale/eo/LC_MESSAGES/bash.mo
+installing es.gmo as /tools/share/locale/es/LC_MESSAGES/bash.mo
+installing et.gmo as /tools/share/locale/et/LC_MESSAGES/bash.mo
+installing fi.gmo as /tools/share/locale/fi/LC_MESSAGES/bash.mo
+installing fr.gmo as /tools/share/locale/fr/LC_MESSAGES/bash.mo
+installing ga.gmo as /tools/share/locale/ga/LC_MESSAGES/bash.mo
+installing gl.gmo as /tools/share/locale/gl/LC_MESSAGES/bash.mo
+installing hr.gmo as /tools/share/locale/hr/LC_MESSAGES/bash.mo
+installing hu.gmo as /tools/share/locale/hu/LC_MESSAGES/bash.mo
+installing id.gmo as /tools/share/locale/id/LC_MESSAGES/bash.mo
+installing it.gmo as /tools/share/locale/it/LC_MESSAGES/bash.mo
+installing ja.gmo as /tools/share/locale/ja/LC_MESSAGES/bash.mo
+installing lt.gmo as /tools/share/locale/lt/LC_MESSAGES/bash.mo
+installing nl.gmo as /tools/share/locale/nl/LC_MESSAGES/bash.mo
+installing pl.gmo as /tools/share/locale/pl/LC_MESSAGES/bash.mo
+installing pt_BR.gmo as /tools/share/locale/pt_BR/LC_MESSAGES/bash.mo
+installing ro.gmo as /tools/share/locale/ro/LC_MESSAGES/bash.mo
+installing ru.gmo as /tools/share/locale/ru/LC_MESSAGES/bash.mo
+installing sk.gmo as /tools/share/locale/sk/LC_MESSAGES/bash.mo
+installing sl.gmo as /tools/share/locale/sl/LC_MESSAGES/bash.mo
+installing sr.gmo as /tools/share/locale/sr/LC_MESSAGES/bash.mo
+installing sv.gmo as /tools/share/locale/sv/LC_MESSAGES/bash.mo
+installing tr.gmo as /tools/share/locale/tr/LC_MESSAGES/bash.mo
+installing uk.gmo as /tools/share/locale/uk/LC_MESSAGES/bash.mo
+installing vi.gmo as /tools/share/locale/vi/LC_MESSAGES/bash.mo
+installing zh_CN.gmo as /tools/share/locale/zh_CN/LC_MESSAGES/bash.mo
+installing zh_TW.gmo as /tools/share/locale/zh_TW/LC_MESSAGES/bash.mo
+if test "bash" = "gettext-tools"; then \
+	  /bin/sh /mnt/clfs/sources/bash-4.3/./support/mkinstalldirs /tools/share/gettext/po; \
+	  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+	    /usr/bin/install -c -m 644 ./$file \
+			    /tools/share/gettext/po/$file; \
+	  done; \
+	  for file in Makevars; do \
+	    rm -f /tools/share/gettext/po/$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+make[2]: Leaving directory `/mnt/clfs/sources/bash-4.3/po'
+make[1]: Leaving directory `/mnt/clfs/sources/bash-4.3'
+
+
+Totalseconds: 25
+
+
+KB: 1285124	/mnt/clfs
+

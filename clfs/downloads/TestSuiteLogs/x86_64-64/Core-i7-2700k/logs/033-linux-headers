@@ -1,0 +1,136 @@
+Sat Jun 14 13:57:30 CDT 2014
+
+KB: 344040	/mnt/clfs
+
+make[1]: Entering directory `/mnt/clfs/sources/linux-3.14.5'
+make[1]: Leaving directory `/mnt/clfs/sources/linux-3.14.5'
+make[1]: Entering directory `/mnt/clfs/sources/linux-3.14.5'
+  CHK     include/generated/uapi/linux/version.h
+  UPD     include/generated/uapi/linux/version.h
+  HOSTCC  scripts/basic/fixdep
+  WRAP    arch/x86/include/generated/asm/clkdev.h
+  SYSHDR  arch/x86/syscalls/../include/generated/uapi/asm/unistd_32.h
+  SYSHDR  arch/x86/syscalls/../include/generated/uapi/asm/unistd_64.h
+  SYSHDR  arch/x86/syscalls/../include/generated/uapi/asm/unistd_x32.h
+  SYSTBL  arch/x86/syscalls/../include/generated/asm/syscalls_32.h
+  HOSTCC  arch/x86/tools/relocs_32.o
+  HOSTCC  arch/x86/tools/relocs_64.o
+  HOSTCC  arch/x86/tools/relocs_common.o
+  HOSTLD  arch/x86/tools/relocs
+  HOSTCC  scripts/unifdef
+  INSTALL include/asm-generic (35 files)
+  INSTALL include/mtd (5 files)
+  INSTALL include/rdma (6 files)
+  INSTALL include/sound (11 files)
+  INSTALL include/uapi (0 file)
+  INSTALL include/drm (18 files)
+  INSTALL include/scsi (3 files)
+  INSTALL include/video (3 files)
+  INSTALL include/scsi/fc (4 files)
+  INSTALL include/xen (4 files)
+  INSTALL include/linux/can (5 files)
+  INSTALL include/linux/caif (2 files)
+  INSTALL include/linux/byteorder (2 files)
+  INSTALL include/linux/dvb (8 files)
+  INSTALL include/linux/hdlc (1 file)
+  INSTALL include/linux/hsi (1 file)
+  INSTALL include/linux/isdn (1 file)
+  INSTALL include/linux/mmc (1 file)
+  INSTALL include/linux/netfilter/ipset (4 files)
+  INSTALL include/linux/netfilter_arp (2 files)
+  INSTALL include/linux/netfilter (85 files)
+  INSTALL include/linux/netfilter_bridge (18 files)
+  INSTALL include/linux/netfilter_ipv4 (10 files)
+  INSTALL include/linux/netfilter_ipv6 (12 files)
+  INSTALL include/linux/nfsd (5 files)
+  INSTALL include/linux/spi (1 file)
+  INSTALL include/linux/raid (2 files)
+  INSTALL include/linux/tc_act (8 files)
+  INSTALL include/linux/tc_ematch (4 files)
+  INSTALL include/linux/sunrpc (1 file)
+  INSTALL include/linux/usb (10 files)
+  INSTALL include/linux (392 files)
+  INSTALL include/linux/wimax (1 file)
+  INSTALL include/asm (64 files)
+  CHECK   include/asm-generic (35 files)
+  CHECK   include/mtd (5 files)
+  CHECK   include/drm (18 files)
+  CHECK   include/rdma (6 files)
+  CHECK   include/scsi (3 files)
+  CHECK   include/sound (11 files)
+  CHECK   include/uapi (0 files)
+  CHECK   include/video (3 files)
+  CHECK   include/scsi/fc (4 files)
+  CHECK   include/xen (4 files)
+  CHECK   include/linux/can (5 files)
+  CHECK   include/linux/byteorder (2 files)
+  CHECK   include/linux/dvb (8 files)
+  CHECK   include/linux/caif (2 files)
+  CHECK   include/linux/hdlc (1 files)
+  CHECK   include/linux/hsi (1 files)
+  CHECK   include/linux/isdn (1 files)
+  CHECK   include/linux/mmc (1 files)
+  CHECK   include/linux/netfilter_arp (2 files)
+  CHECK   include/linux/netfilter (85 files)
+  CHECK   include/linux/netfilter/ipset (4 files)
+  CHECK   include/linux/netfilter_bridge (18 files)
+  CHECK   include/linux/netfilter_ipv4 (10 files)
+  CHECK   include/linux/netfilter_ipv6 (12 files)
+  CHECK   include/linux/spi (1 files)
+  CHECK   include/linux/nfsd (5 files)
+  CHECK   include/linux/tc_act (8 files)
+  CHECK   include/linux/sunrpc (1 files)
+  CHECK   include/linux/tc_ematch (4 files)
+  CHECK   include/linux/raid (2 files)
+  CHECK   include/linux/usb (10 files)
+  CHECK   include/linux/wimax (1 files)
+  CHECK   include/linux (392 files)
+/mnt/clfs/sources/linux-3.14.5/usr/include/linux/kexec.h:50: userspace cannot reference function or variable defined in the kernel
+  CHECK   include/asm (64 files)
+make[1]: Leaving directory `/mnt/clfs/sources/linux-3.14.5'
+make[1]: Entering directory `/mnt/clfs/sources/linux-3.14.5'
+  CHK     include/generated/uapi/linux/version.h
+make[2]: Nothing to be done for `all'.
+make[2]: Nothing to be done for `relocs'.
+  INSTALL include/asm-generic (35 files)
+  INSTALL include/drm (18 files)
+  INSTALL include/mtd (5 files)
+  INSTALL include/rdma (6 files)
+  INSTALL include/uapi (0 file)
+  INSTALL include/scsi (3 files)
+  INSTALL include/video (3 files)
+  INSTALL include/sound (11 files)
+  INSTALL include/xen (4 files)
+  INSTALL include/scsi/fc (4 files)
+  INSTALL include/linux/hdlc (1 file)
+  INSTALL include/linux/can (5 files)
+  INSTALL include/linux/hsi (1 file)
+  INSTALL include/linux/byteorder (2 files)
+  INSTALL include/linux/dvb (8 files)
+  INSTALL include/linux/caif (2 files)
+  INSTALL include/linux/isdn (1 file)
+  INSTALL include/linux/mmc (1 file)
+  INSTALL include/linux/netfilter/ipset (4 files)
+  INSTALL include/linux/netfilter (85 files)
+  INSTALL include/linux/netfilter_arp (2 files)
+  INSTALL include/linux/netfilter_bridge (18 files)
+  INSTALL include/linux/netfilter_ipv4 (10 files)
+  INSTALL include/linux/nfsd (5 files)
+  INSTALL include/linux/netfilter_ipv6 (12 files)
+  INSTALL include/linux/raid (2 files)
+  INSTALL include/linux/spi (1 file)
+  INSTALL include/linux/sunrpc (1 file)
+  INSTALL include/linux/tc_act (8 files)
+  INSTALL include/linux/tc_ematch (4 files)
+  INSTALL include/linux/usb (10 files)
+  INSTALL include/linux (392 files)
+  INSTALL include/linux/wimax (1 file)
+  INSTALL include/asm (64 files)
+make[1]: Leaving directory `/mnt/clfs/sources/linux-3.14.5'
+
+
+Totalseconds: 13
+
+
+KB: 985488	/mnt/clfs
+

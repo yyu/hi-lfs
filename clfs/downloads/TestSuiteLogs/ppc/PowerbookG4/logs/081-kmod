@@ -1,0 +1,315 @@
+Sun Jun 29 15:05:10 CDT 2014
+
+KB: 2024628	/mnt/clfs
+
+'libkmod/libkmod.c' -> 'libkmod/libkmod.c.orig'
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for powerpc-unknown-linux-gnu-strip... powerpc-unknown-linux-gnu-strip
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking how to create a pax tar archive... gnutar
+checking for style of include used by make... GNU
+checking for powerpc-unknown-linux-gnu-gcc... powerpc-unknown-linux-gnu-gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether powerpc-unknown-linux-gnu-gcc accepts -g... yes
+checking for powerpc-unknown-linux-gnu-gcc option to accept ISO C89... none needed
+checking whether powerpc-unknown-linux-gnu-gcc understands -c and -o together... yes
+checking dependency style of powerpc-unknown-linux-gnu-gcc... gcc3
+checking for powerpc-unknown-linux-gnu-gcc option to accept ISO C99... -std=gnu99
+checking for powerpc-unknown-linux-gnu-gcc -std=gnu99 option to accept ISO Standard C... (cached) -std=gnu99
+checking how to run the C preprocessor... powerpc-unknown-linux-gnu-gcc -std=gnu99 -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking whether make supports nested variables... (cached) yes
+checking build system type... i686-cross-linux-gnu
+checking host system type... powerpc-unknown-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by powerpc-unknown-linux-gnu-gcc -std=gnu99... powerpc-unknown-linux-gnu-ld
+checking if the linker (powerpc-unknown-linux-gnu-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /cross-tools/bin/powerpc-unknown-linux-gnu-nm -B
+checking the name lister (/cross-tools/bin/powerpc-unknown-linux-gnu-nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert i686-cross-linux-gnu file names to powerpc-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert i686-cross-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for powerpc-unknown-linux-gnu-ld option to reload object files... -r
+checking for powerpc-unknown-linux-gnu-objdump... powerpc-unknown-linux-gnu-objdump
+checking how to recognize dependent libraries... pass_all
+checking for powerpc-unknown-linux-gnu-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for powerpc-unknown-linux-gnu-ar... powerpc-unknown-linux-gnu-ar
+checking for archiver @FILE support... @
+checking for powerpc-unknown-linux-gnu-strip... (cached) powerpc-unknown-linux-gnu-strip
+checking for powerpc-unknown-linux-gnu-ranlib... powerpc-unknown-linux-gnu-ranlib
+checking command to parse /cross-tools/bin/powerpc-unknown-linux-gnu-nm -B output from powerpc-unknown-linux-gnu-gcc -std=gnu99 object... ok
+checking for sysroot... no
+checking for powerpc-unknown-linux-gnu-mt... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports -fno-rtti -fno-exceptions... no
+checking for powerpc-unknown-linux-gnu-gcc -std=gnu99 option to produce PIC... -fPIC -DPIC
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 PIC flag -fPIC -DPIC works... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 static flag -static works... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports -c -o file.o... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports -c -o file.o... (cached) yes
+checking whether the powerpc-unknown-linux-gnu-gcc -std=gnu99 linker (powerpc-unknown-linux-gnu-ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking for powerpc-unknown-linux-gnu-gcc... (cached) powerpc-unknown-linux-gnu-gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether powerpc-unknown-linux-gnu-gcc accepts -g... (cached) yes
+checking for powerpc-unknown-linux-gnu-gcc option to accept ISO C89... (cached) none needed
+checking whether powerpc-unknown-linux-gnu-gcc understands -c and -o together... (cached) yes
+checking dependency style of powerpc-unknown-linux-gnu-gcc... (cached) gcc3
+checking for powerpc-unknown-linux-gnu-gcc option to accept ISO C99... (cached) -std=gnu99
+checking whether powerpc-unknown-linux-gnu-gcc -std=gnu99 needs -traditional... no
+checking whether byte ordering is bigendian... yes
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking for powerpc-unknown-linux-gnu-pkg-config... /cross-tools/bin/powerpc-unknown-linux-gnu-pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for xsltproc... /bin/xsltproc
+checking for __xstat... yes
+checking for __secure_getenv... no
+checking for secure_getenv... yes
+checking for finit_module... no
+checking for struct stat.st_mtim... yes
+checking whether strndupa is declared... yes
+checking for linux/module.h... no
+checking whether _Static_assert() is supported... yes
+checking for liblzma... yes
+checking for zlib... yes
+checking for gtk-doc... no
+configure: WARNING:
+  You will not be able to create source packages with 'make dist'
+  because gtk-doc >= 1.14 is not found.
+checking for gtkdoc-check... no
+checking for gtkdoc-check... no
+checking for gtkdoc-rebase... no
+checking for gtkdoc-mkpdf... no
+checking whether to build gtk-doc documentation... no
+checking for GTKDOC_DEPS... no
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -pipe in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -DANOTHER_BRICK_IN_THE in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wall in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -W in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wextra in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wno-inline in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wvla in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wundef in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wformat=2 in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wlogical-op in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wsign-compare in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wformat-security in envvar CFLAGS... no
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wmissing-include-dirs in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wformat-nonliteral in envvar CFLAGS... no
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wold-style-definition in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wpointer-arith in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Winit-self in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wdeclaration-after-statement in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wfloat-equal in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wmissing-prototypes in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wstrict-prototypes in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wredundant-decls in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wmissing-declarations in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wmissing-noreturn in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wshadow in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wendif-labels in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wstrict-aliasing=3 in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wwrite-strings in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wno-long-long in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wno-overlength-strings in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wno-unused-parameter in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wno-missing-field-initializers in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wno-unused-result in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wnested-externs in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wchar-subscripts in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wtype-limits in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wuninitialized in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -fno-common in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -fdiagnostics-show-option in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -fdiagnostics-color=auto in envvar CFLAGS... no
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -fvisibility=hidden in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -ffunction-sections in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -fdata-sections in envvar CFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wl,--as-needed in envvar LDFLAGS... yes
+checking if powerpc-unknown-linux-gnu-gcc -std=gnu99 supports flag -Wl,--gc-sections in envvar LDFLAGS... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating man/Makefile
+config.status: creating libkmod/docs/Makefile
+config.status: creating libkmod/docs/version.xml
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+	kmod 18
+	=======
+
+	prefix:			/tools
+	sysconfdir:		${prefix}/etc
+	libdir:			${exec_prefix}/lib
+	rootlibdir:		${exec_prefix}/lib
+	includedir:		${prefix}/include
+	bindir:			${exec_prefix}/bin
+	Bash completions dir:   ${datarootdir}/bash-completion/completions
+
+	compiler:		powerpc-unknown-linux-gnu-gcc -std=gnu99
+	cflags:			 -pipe -DANOTHER_BRICK_IN_THE -Wall -W -Wextra -Wno-inline -Wvla -Wundef -Wformat=2 -Wlogical-op -Wsign-compare -Wmissing-include-dirs -Wold-style-definition -Wpointer-arith -Winit-self -Wdeclaration-after-statement -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wredundant-decls -Wmissing-declarations -Wmissing-noreturn -Wshadow -Wendif-labels -Wstrict-aliasing=3 -Wwrite-strings -Wno-long-long -Wno-overlength-strings -Wno-unused-parameter -Wno-missing-field-initializers -Wno-unused-result -Wnested-externs -Wchar-subscripts -Wtype-limits -Wuninitialized -fno-common -fdiagnostics-show-option -fvisibility=hidden -ffunction-sections -fdata-sections -g -O2
+	ldflags:		 -Wl,--as-needed -Wl,--gc-sections 
+
+	tools:			yes
+	python bindings:	no
+	logging:		yes
+	compression:		xz=yes  zlib=yes
+	debug:			no
+	doc:			no
+	man:			yes
+
+make[1]: Entering directory '/mnt/clfs/sources/kmod-18'
+make --no-print-directory all-recursive
+Making all in .
+  GEN      libkmod/libkmod.pc
+  CC       libkmod/libkmod-list.lo
+  CC       libkmod/libkmod-config.lo
+  CC       libkmod/libkmod-index.lo
+  CC       libkmod/libkmod-module.lo
+  CC       libkmod/libkmod-file.lo
+  CC       libkmod/libkmod.lo
+  CC       libkmod/libkmod-elf.lo
+  CC       libkmod/libkmod-signature.lo
+  CC       libkmod/libkmod-hash.lo
+  CC       libkmod/libkmod-array.lo
+  CC       libkmod/libkmod-util.lo
+  CC       tools/kmod.o
+  CC       tools/lsmod.o
+  CC       tools/rmmod.o
+  CC       tools/insmod.o
+  CC       tools/modinfo.o
+  CC       tools/modprobe.o
+  CC       tools/depmod.o
+  CC       tools/log.o
+  CC       tools/static-nodes.o
+  CCLD     libkmod/libkmod-util.la
+  CCLD     libkmod/libkmod.la
+  CCLD     libkmod/libkmod-internal.la
+  CCLD     tools/kmod
+  GEN      tools/insmod
+  GEN      tools/rmmod
+  GEN      tools/lsmod
+  GEN      tools/modprobe
+  GEN      tools/depmod
+  GEN      tools/modinfo
+Making all in libkmod/docs
+make[3]: Nothing to be done for 'all'.
+Making all in man
+make[3]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/clfs/sources/kmod-18'
+make[1]: Entering directory '/mnt/clfs/sources/kmod-18'
+Making install in .
+ /bin/mkdir -p '/tools/lib'
+ /bin/sh ./libtool   --mode=install /bin/install -c   libkmod/libkmod.la '/tools/lib'
+libtool: install: /bin/install -c libkmod/.libs/libkmod.so.2.2.8 /tools/lib/libkmod.so.2.2.8
+libtool: install: (cd /tools/lib && { ln -s -f libkmod.so.2.2.8 libkmod.so.2 || { rm -f libkmod.so.2 && ln -s libkmod.so.2.2.8 libkmod.so.2; }; })
+libtool: install: (cd /tools/lib && { ln -s -f libkmod.so.2.2.8 libkmod.so || { rm -f libkmod.so && ln -s libkmod.so.2.2.8 libkmod.so; }; })
+libtool: install: /bin/install -c libkmod/.libs/libkmod.lai /tools/lib/libkmod.la
+libtool: finish: PATH="/cross-tools/bin:/bin:/usr/bin:/sbin" ldconfig -n /tools/lib
+ldconfig: /tools/lib/libisl.so.10.2.2-gdb.py is not an ELF file - it has the wrong magic bytes at the start.
+
+ldconfig: /tools/lib/libstdc++.so.6.0.19-gdb.py is not an ELF file - it has the wrong magic bytes at the start.
+
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /tools/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /bin/mkdir -p '/tools/bin'
+  /bin/sh ./libtool   --mode=install /bin/install -c tools/kmod '/tools/bin'
+libtool: install: /bin/install -c tools/kmod /tools/bin/kmod
+make --no-print-directory install-exec-hook
+if test "/tools/lib" != "/tools/lib"; then \
+	/bin/mkdir -p /tools/lib && \
+	so_img_name=$(readlink /tools/lib/libkmod.so) && \
+	so_img_rel_target_prefix=$(echo /tools/lib | sed 's,\(^/\|\)[^/][^/]*,..,g') && \
+	ln -sf $so_img_rel_target_prefix/tools/lib/$so_img_name /tools/lib/libkmod.so && \
+	mv /tools/lib/libkmod.so.* /tools/lib; \
+fi
+ /bin/mkdir -p '/tools/share/bash-completion/completions'
+ /bin/install -c -m 644 shell-completion/bash/kmod '/tools/share/bash-completion/completions'
+ /bin/mkdir -p '/tools/include'
+ /bin/install -c -m 644 libkmod/libkmod.h '/tools/include'
+ /bin/mkdir -p '/tools/lib/pkgconfig'
+ /bin/install -c -m 644 libkmod/libkmod.pc '/tools/lib/pkgconfig'
+Making install in libkmod/docs
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+Making install in man
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/tools/share/man/man5'
+ /bin/install -c -m 644 depmod.d.5 modprobe.d.5 modules.dep.5 modules.dep.bin.5 '/tools/share/man/man5'
+ /bin/mkdir -p '/tools/share/man/man8'
+ /bin/install -c -m 644 depmod.8 insmod.8 lsmod.8 rmmod.8 modprobe.8 modinfo.8 '/tools/share/man/man8'
+make[1]: Leaving directory '/mnt/clfs/sources/kmod-18'
+'/tools/bin/lsmod' -> 'kmod'
+'/tools/sbin/depmod' -> '../bin/kmod'
+'/tools/sbin/insmod' -> '../bin/kmod'
+'/tools/sbin/modprobe' -> '../bin/kmod'
+'/tools/sbin/modinfo' -> '../bin/kmod'
+'/tools/sbin/rmmod' -> '../bin/kmod'
+
+
+Totalseconds: 4
+
+
+KB: 2045040	/mnt/clfs
+

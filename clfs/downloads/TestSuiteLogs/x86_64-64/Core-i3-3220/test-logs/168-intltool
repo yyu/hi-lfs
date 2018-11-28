@@ -1,0 +1,71 @@
+Sun Aug 31 06:09:10 EDT 2014
+make[1]: Entering directory '/sources/intltool-0.50.2'
+Making check in tests
+make[2]: Entering directory '/sources/intltool-0.50.2/tests'
+Making check in cases
+make[3]: Entering directory '/sources/intltool-0.50.2/tests/cases'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/sources/intltool-0.50.2/tests/cases'
+Making check in results
+make[3]: Entering directory '/sources/intltool-0.50.2/tests/results'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/sources/intltool-0.50.2/tests/results'
+make[3]: Entering directory '/sources/intltool-0.50.2/tests'
+make  check-TESTS
+make[4]: Entering directory '/sources/intltool-0.50.2/tests'
+cp selftest.pl selftest && chmod +x selftest
+Running self test of the intltool module
+
+ 1. Extract messages from simple desktop file:                       [OK]
+ 2. Merge translations into a Bonobo UI style file:                  [OK]
+ 3. Extract messages from a multi-line XML file:                     [OK]
+ 4. Merge translations into a multi-line XML file:                   [OK]
+ 5. Extract messages with unusual characters in the XML tag:         [OK]
+ 6. Merge translations into a pong style XML file:                   [OK]
+ 7. Extract messages from a glade style XML file:                    [OK]
+ 8. Merge translations into a dia sheet style XML file:              [OK]
+ 9. Merge translations into a dia sheet style XML file [broken XML]: [OK]
+10. Merge translations that include escaped .po strings:             [OK]
+11. Merge translations into a .keys file:                            [OK]
+12. Extract messages from a glade 2.0 style XML file:                [OK]
+13. Extract messages from an rfc822 style file:                      [OK]
+14. Merge translations into an rfc822 style file:                    [OK]
+15. Extract messages from a gconf schema style file:                 [OK]
+16. Merge translations into a gconf schema  style file:              [OK]
+17. Extract messages from a xml file using the xml:space attribute:  [OK]
+18. Merge messages into xml file using the xml:space attribute:      [OK]
+19. Merge translations into multiple files:                          [OK]
+20. Extract comments for translators from XML file:                  [OK]
+21. Merge into file with CDATA sections:                             [OK]
+22. Merge into XML file with deep translation/attribute nesting:     [OK]
+23. Ignore empty strings from XML file                               [OK]
+24. Extract messages from a xml file using inherited xml:space:      [OK]
+25. Merge messages into xml file using inherited xml:space:          [OK]
+26. Merge non-well-formed translations into xml file:                [OK]
+27. Extract UTF-8 encoded messages/comments from xml file:           [OK]
+28. Extract iso-8859-1 encoded messages/comments from xml file:      [OK]
+29. Extract messages from a quoted style file:                       [OK]
+30. Merge translations into multiple quoted style files:             [OK]
+31. Extract comments for translators from a .desktop.in file:        [OK]
+32. Merge translations from a .desktop.in file:                      [OK]
+33. Decode XML entities in the right order when extracting:          [OK]
+34. Merge XML translations, decoding entities in the right order:    [OK]
+35. Extract messages from an XML file with msgctxts:                 [OK]
+36. Merge translations into an XML file with msgctxts:               [OK]
+37. Extract messages from an GtkBuilder XML file with msgctxts:      [OK]
+38. Extract messages from an GSettings gschema XML file:             [OK]
+PASS: selftest
+=============
+1 test passed
+=============
+make[4]: Leaving directory '/sources/intltool-0.50.2/tests'
+make[3]: Leaving directory '/sources/intltool-0.50.2/tests'
+make[2]: Leaving directory '/sources/intltool-0.50.2/tests'
+Making check in doc
+make[2]: Entering directory '/sources/intltool-0.50.2/doc'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/sources/intltool-0.50.2/doc'
+make[2]: Entering directory '/sources/intltool-0.50.2'
+make[2]: Nothing to be done for 'check-am'.
+make[2]: Leaving directory '/sources/intltool-0.50.2'
+make[1]: Leaving directory '/sources/intltool-0.50.2'

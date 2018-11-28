@@ -1,0 +1,117 @@
+Sat Jun 14 16:34:00 CDT 2014
+make[1]: Entering directory '/sources/systemd-213'
+make --no-print-directory check-recursive
+Making check in .
+make --no-print-directory  test/sys
+  GEN      test/sys
+make --no-print-directory check-TESTS
+PASS: test/rules-test.sh
+PASS: test-job-type
+PASS: test-env-replace
+PASS: test-strbuf
+./build-aux/test-driver: line 107:  8517 Aborted                 "$@" > $log_file 2>&1
+PASS: test-path-util
+FAIL: test-strv
+PASS: test-utf8
+PASS: test-strxcpyx
+PASS: test-ring
+PASS: test-ellipsize
+PASS: test-unit-name
+PASS: test-util
+PASS: test-unit-file
+PASS: test-tmpfiles
+PASS: test-date
+./build-aux/test-driver: line 107:  8583 Aborted                 "$@" > $log_file 2>&1
+FAIL: test-sched-prio
+PASS: test-replace-var
+PASS: test-sleep
+PASS: test-strip-tab-ansi
+PASS: test-prioq
+PASS: test-fileio
+PASS: test-calendarspec
+PASS: test-time
+PASS: test-device-nodes
+PASS: test-tables
+PASS: test-cgroup-util
+PASS: test-list
+PASS: test-xml
+PASS: test-architecture
+PASS: test-bus-signature
+SKIP: test-bus-kernel-bloom
+PASS: test-bus-match
+PASS: test-bus-marshal
+PASS: test-bus-server
+SKIP: test-bus-kernel-benchmark
+SKIP: test-bus-kernel
+SKIP: test-bus-zero-copy
+PASS: test-bus-introspect
+SKIP: test-bus-memfd
+./build-aux/test-driver: line 107:  8743 Aborted                 "$@" > $log_file 2>&1
+FAIL: test-rtnl
+./build-aux/test-driver: line 107:  8747 Aborted                 "$@" > $log_file 2>&1
+FAIL: test-bus-creds
+PASS: test-bus-objects
+SKIP: test-bus-chat
+PASS: test-bus-error
+PASS: test-id128
+PASS: test-resolve
+SKIP: test-journal
+PASS: test-dhcp-client
+PASS: test-journal-syslog
+PASS: test-dhcp-option
+SKIP: test-journal-stream
+PASS: test-journal-init
+SKIP: test-journal-verify
+PASS: test-journal-match
+PASS: test-catalog
+SKIP: test-journal-interleaving
+PASS: test-mmap-cache
+./build-aux/test-driver: line 107:  8867 Aborted                 "$@" > $log_file 2>&1
+FAIL: test-journal-flush
+PASS: test-network
+PASS: test-login-tables
+PASS: test-machine-tables
+PASS: test-login-shared
+PASS: test-namespace
+PASS: test-hashmap
+PASS: test-libudev-sym
+PASS: test-libsystemd-sym
+PASS: test-event
+PASS: test-ipv4ll
+PASS: test-journal-send
+make --no-print-directory all-recursive
+Making all in .
+Making all in po
+make[8]: Nothing to be done for 'all'.
+============================================================================
+Testsuite summary for systemd 213
+============================================================================
+# TOTAL: 69
+# PASS:  54
+# SKIP:  10
+# XFAIL: 0
+# FAIL:  5
+# XPASS: 0
+# ERROR: 0
+============================================================================
+See ./test-suite.log
+Please report to http://bugs.freedesktop.org/enter_bug.cgi?product=systemd
+============================================================================
+Makefile:15151: recipe for target 'test-suite.log' failed
+make[5]: *** [test-suite.log] Error 1
+Makefile:15257: recipe for target 'check-TESTS' failed
+make[4]: *** [check-TESTS] Error 2
+Makefile:15990: recipe for target 'check-am' failed
+make[3]: *** [check-am] Error 2
+Making check in po
+INTLTOOL_EXTRACT="/usr/bin/intltool-extract" XGETTEXT="/usr/bin/xgettext" srcdir=. /usr/bin/intltool-update --gettext-package systemd --pot
+rm -f missing notexist
+srcdir=. /usr/bin/intltool-update -m
+if [ -r missing -o -r notexist ]; then \
+  exit 1; \
+fi
+Makefile:15037: recipe for target 'check-recursive' failed
+make[2]: *** [check-recursive] Error 1
+Makefile:15993: recipe for target 'check' failed
+make[1]: *** [check] Error 2
+make[1]: Leaving directory '/sources/systemd-213'

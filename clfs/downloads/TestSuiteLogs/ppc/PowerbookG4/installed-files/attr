@@ -1,0 +1,51 @@
+/lib/libattr.so.1	16	root:root	777	libattr.so.1.1.0
+/lib/libattr.so.1.1.0	59045	root:root	755	
+/usr/bin/attr	19855	root:root	755	
+/usr/bin/getfattr	54241	root:root	755	
+/usr/bin/setfattr	40424	root:root	755	
+/usr/include/attr/attributes.h	7242	root:root	644	
+/usr/include/attr/error_context.h	1555	root:root	644	
+/usr/include/attr/libattr.h	1388	root:root	644	
+/usr/include/attr/xattr.h	2313	root:root	644	
+/usr/lib/libattr.a	78186	root:root	644	
+/usr/lib/libattr.la	911	root:root	644	
+/usr/lib/libattr.so	22	root:root	777	../../lib/libattr.so.1
+/usr/share/doc/attr-2.4.47/CHANGES.gz	5039	root:root	644	
+/usr/share/doc/attr-2.4.47/COPYING	18312	root:root	644	
+/usr/share/doc/attr-2.4.47/COPYING.LGPL	26763	root:root	644	
+/usr/share/doc/attr-2.4.47/PORTING	3221	root:root	644	
+/usr/share/doc/attr-2.4.47/README	422	root:root	644	
+/usr/share/locale/cs/LC_MESSAGES/attr.mo	6394	root:root	644	
+/usr/share/locale/de/LC_MESSAGES/attr.mo	5459	root:root	644	
+/usr/share/locale/es/LC_MESSAGES/attr.mo	6170	root:root	644	
+/usr/share/locale/fr/LC_MESSAGES/attr.mo	5804	root:root	644	
+/usr/share/locale/gl/LC_MESSAGES/attr.mo	6177	root:root	644	
+/usr/share/locale/nl/LC_MESSAGES/attr.mo	5498	root:root	644	
+/usr/share/locale/pl/LC_MESSAGES/attr.mo	6290	root:root	644	
+/usr/share/locale/sv/LC_MESSAGES/attr.mo	5320	root:root	644	
+/usr/share/man/man1/attr.1	5835	root:root	644	
+/usr/share/man/man1/getfattr.1	4311	root:root	644	
+/usr/share/man/man1/setfattr.1	3460	root:root	644	
+/usr/share/man/man2/fgetxattr.2	10	root:root	777	getxattr.2
+/usr/share/man/man2/flistxattr.2	11	root:root	777	listxattr.2
+/usr/share/man/man2/fremovexattr.2	13	root:root	777	removexattr.2
+/usr/share/man/man2/fsetxattr.2	10	root:root	777	setxattr.2
+/usr/share/man/man2/getxattr.2	4133	root:root	644	
+/usr/share/man/man2/lgetxattr.2	10	root:root	777	getxattr.2
+/usr/share/man/man2/listxattr.2	4367	root:root	644	
+/usr/share/man/man2/llistxattr.2	11	root:root	777	listxattr.2
+/usr/share/man/man2/lremovexattr.2	13	root:root	777	removexattr.2
+/usr/share/man/man2/lsetxattr.2	10	root:root	777	setxattr.2
+/usr/share/man/man2/removexattr.2	3224	root:root	644	
+/usr/share/man/man2/setxattr.2	4241	root:root	644	
+/usr/share/man/man3/attr_get.3	4684	root:root	644	
+/usr/share/man/man3/attr_getf.3	10	root:root	777	attr_get.3
+/usr/share/man/man3/attr_list.3	6513	root:root	644	
+/usr/share/man/man3/attr_listf.3	11	root:root	777	attr_list.3
+/usr/share/man/man3/attr_multi.3	7347	root:root	644	
+/usr/share/man/man3/attr_multif.3	12	root:root	777	attr_multi.3
+/usr/share/man/man3/attr_remove.3	3707	root:root	644	
+/usr/share/man/man3/attr_removef.3	13	root:root	777	attr_remove.3
+/usr/share/man/man3/attr_set.3	5835	root:root	644	
+/usr/share/man/man3/attr_setf.3	10	root:root	777	attr_set.3
+/usr/share/man/man5/attr.5	6709	root:root	644	

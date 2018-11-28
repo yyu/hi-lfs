@@ -1,0 +1,66 @@
+Sat Jun 28 18:56:34 CDT 2014
+make[1]: Entering directory '/sources/patch-2.7.1'
+  GEN    public-submodule-commit
+make  check-recursive
+make[2]: Entering directory '/sources/patch-2.7.1'
+Making check in lib
+make[3]: Entering directory '/sources/patch-2.7.1/lib'
+make  check-am
+make[4]: Entering directory '/sources/patch-2.7.1/lib'
+make[4]: Nothing to be done for 'check-am'.
+make[4]: Leaving directory '/sources/patch-2.7.1/lib'
+make[3]: Leaving directory '/sources/patch-2.7.1/lib'
+Making check in src
+make[3]: Entering directory '/sources/patch-2.7.1/src'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/sources/patch-2.7.1/src'
+Making check in tests
+make[3]: Entering directory '/sources/patch-2.7.1/tests'
+make  check-TESTS
+make[4]: Entering directory '/sources/patch-2.7.1/tests'
+make[5]: Entering directory '/sources/patch-2.7.1/tests'
+PASS: corrupt-reject-files
+PASS: create-directory
+PASS: filename-choice
+PASS: fifo
+XFAIL: dash-o-append
+PASS: asymmetric-hunks
+PASS: empty-files
+PASS: criss-cross
+PASS: file-modes
+PASS: concat-git-diff
+PASS: git-binary-diff
+PASS: inname
+PASS: bad-filenames
+PASS: global-reject-files
+PASS: mangled-numbers-abort
+PASS: mixed-patch-types
+PASS: munged-context-format
+PASS: line-numbers
+PASS: no-newline-triggers-assert
+PASS: copy-rename
+PASS: preserve-c-function-names
+SKIP: read-only-files
+PASS: backup-prefix-suffix
+PASS: quoted-filenames
+PASS: remember-reject-files
+PASS: unmodified-files
+PASS: create-delete
+PASS: need-filename
+PASS: preserve-mode-and-timestamp
+PASS: crlf-handling
+PASS: remember-backup-files
+PASS: reject-format
+PASS: symlinks
+PASS: merge
+=====================================================
+All 33 tests behaved as expected (1 expected failure)
+(1 test was not run)
+=====================================================
+make[5]: Leaving directory '/sources/patch-2.7.1/tests'
+make[4]: Leaving directory '/sources/patch-2.7.1/tests'
+make[3]: Leaving directory '/sources/patch-2.7.1/tests'
+make[3]: Entering directory '/sources/patch-2.7.1'
+make[3]: Leaving directory '/sources/patch-2.7.1'
+make[2]: Leaving directory '/sources/patch-2.7.1'
+make[1]: Leaving directory '/sources/patch-2.7.1'

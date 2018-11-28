@@ -1,0 +1,221 @@
+Sat Jun 14 16:44:08 CDT 2014
+make[1]: Entering directory '/sources/grub-2.00'
+make  check-recursive
+make[2]: Entering directory '/sources/grub-2.00'
+Making check in grub-core/gnulib
+make[3]: Entering directory '/sources/grub-2.00/grub-core/gnulib'
+make  check-recursive
+make[4]: Entering directory '/sources/grub-2.00/grub-core/gnulib'
+make[5]: Entering directory '/sources/grub-2.00/grub-core/gnulib'
+make[5]: Nothing to be done for 'check-am'.
+make[5]: Leaving directory '/sources/grub-2.00/grub-core/gnulib'
+make[4]: Leaving directory '/sources/grub-2.00/grub-core/gnulib'
+make[3]: Leaving directory '/sources/grub-2.00/grub-core/gnulib'
+Making check in .
+make[3]: Entering directory '/sources/grub-2.00'
+make   example_unit_test              printf_test              cmp_test              example_scripted_test              example_grub_script_test              grub_script_echo1              grub_script_leading_whitespace              grub_script_echo_keywords              grub_script_vars1              grub_script_for1              grub_script_while1              grub_script_if              grub_script_blanklines              grub_script_final_semicolon              grub_script_dollar              grub_script_comments              grub_script_functions              grub_script_break              grub_script_continue              grub_script_shift              grub_script_blockarg              grub_script_setparams              grub_script_return              grub_cmd_regexp              grub_script_expansion              grub_script_not              partmap_test              grub_cmd_echo              grub_script_gettext              grub_script_strcmp            
+make[4]: Entering directory '/sources/grub-2.00'
+gcc -DHAVE_CONFIG_H -I.  -Wall -W -I./include -DGRUB_UTIL=1 -DGRUB_LIBDIR=\"/usr/lib/grub\" -DLOCALEDIR=\"/usr/share/locale\" -DGRUB_FILE=\"grub-core/kern/list.c\" -I. -I. -I. -I. -I./include -I./include -I./grub-core/gnulib -I./grub-core/gnulib   -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations   -MT grub-core/kern/example_unit_test-list.o -MD -MP -MF grub-core/kern/.deps-util/example_unit_test-list.Tpo -c -o grub-core/kern/example_unit_test-list.o `test -f 'grub-core/kern/list.c' || echo './'`grub-core/kern/list.c
+gcc -DHAVE_CONFIG_H -I.  -Wall -W -I./include -DGRUB_UTIL=1 -DGRUB_LIBDIR=\"/usr/lib/grub\" -DLOCALEDIR=\"/usr/share/locale\" -DGRUB_FILE=\"grub-core/kern/misc.c\" -I. -I. -I. -I. -I./include -I./include -I./grub-core/gnulib -I./grub-core/gnulib   -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations   -MT grub-core/kern/example_unit_test-misc.o -MD -MP -MF grub-core/kern/.deps-util/example_unit_test-misc.Tpo -c -o grub-core/kern/example_unit_test-misc.o `test -f 'grub-core/kern/misc.c' || echo './'`grub-core/kern/misc.c
+gcc -DHAVE_CONFIG_H -I.  -Wall -W -I./include -DGRUB_UTIL=1 -DGRUB_LIBDIR=\"/usr/lib/grub\" -DLOCALEDIR=\"/usr/share/locale\" -DGRUB_FILE=\"tests/printf_unit_test.c\" -I. -I. -I. -I. -I./include -I./include -I./grub-core/gnulib -I./grub-core/gnulib   -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations   -MT tests/printf_test-printf_unit_test.o -MD -MP -MF tests/.deps-util/printf_test-printf_unit_test.Tpo -c -o tests/printf_test-printf_unit_test.o `test -f 'tests/printf_unit_test.c' || echo './'`tests/printf_unit_test.c
+gcc -DHAVE_CONFIG_H -I.  -Wall -W -I./include -DGRUB_UTIL=1 -DGRUB_LIBDIR=\"/usr/lib/grub\" -DLOCALEDIR=\"/usr/share/locale\" -DGRUB_FILE=\"tests/lib/unit_test.c\" -I. -I. -I. -I. -I./include -I./include -I./grub-core/gnulib -I./grub-core/gnulib   -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations   -MT tests/lib/printf_test-unit_test.o -MD -MP -MF tests/lib/.deps-util/printf_test-unit_test.Tpo -c -o tests/lib/printf_test-unit_test.o `test -f 'tests/lib/unit_test.c' || echo './'`tests/lib/unit_test.c
+gcc -DHAVE_CONFIG_H -I.  -Wall -W -I./include -DGRUB_UTIL=1 -DGRUB_LIBDIR=\"/usr/lib/grub\" -DLOCALEDIR=\"/usr/share/locale\" -DGRUB_FILE=\"grub-core/kern/list.c\" -I. -I. -I. -I. -I./include -I./include -I./grub-core/gnulib -I./grub-core/gnulib   -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations   -MT grub-core/kern/printf_test-list.o -MD -MP -MF grub-core/kern/.deps-util/printf_test-list.Tpo -c -o grub-core/kern/printf_test-list.o `test -f 'grub-core/kern/list.c' || echo './'`grub-core/kern/list.c
+gcc -DHAVE_CONFIG_H -I.  -Wall -W -I./include -DGRUB_UTIL=1 -DGRUB_LIBDIR=\"/usr/lib/grub\" -DLOCALEDIR=\"/usr/share/locale\" -DGRUB_FILE=\"grub-core/kern/misc.c\" -I. -I. -I. -I. -I./include -I./include -I./grub-core/gnulib -I./grub-core/gnulib   -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations   -MT grub-core/kern/printf_test-misc.o -MD -MP -MF grub-core/kern/.deps-util/printf_test-misc.Tpo -c -o grub-core/kern/printf_test-misc.o `test -f 'grub-core/kern/misc.c' || echo './'`grub-core/kern/misc.c
+gcc -DHAVE_CONFIG_H -I.  -Wall -W -I./include -DGRUB_UTIL=1 -DGRUB_LIBDIR=\"/usr/lib/grub\" -DLOCALEDIR=\"/usr/share/locale\" -DGRUB_FILE=\"grub-core/tests/lib/test.c\" -I. -I. -I. -I. -I./include -I./include -I./grub-core/gnulib -I./grub-core/gnulib   -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations   -MT grub-core/tests/lib/printf_test-test.o -MD -MP -MF grub-core/tests/lib/.deps-util/printf_test-test.Tpo -c -o grub-core/tests/lib/printf_test-test.o `test -f 'grub-core/tests/lib/test.c' || echo './'`grub-core/tests/lib/test.c
+gcc -DHAVE_CONFIG_H -I.  -Wall -W -I./include -DGRUB_UTIL=1 -DGRUB_LIBDIR=\"/usr/lib/grub\" -DLOCALEDIR=\"/usr/share/locale\" -DGRUB_FILE=\"tests/cmp_unit_test.c\" -I. -I. -I. -I. -I./include -I./include -I./grub-core/gnulib -I./grub-core/gnulib   -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations   -MT tests/cmp_test-cmp_unit_test.o -MD -MP -MF tests/.deps-util/cmp_test-cmp_unit_test.Tpo -c -o tests/cmp_test-cmp_unit_test.o `test -f 'tests/cmp_unit_test.c' || echo './'`tests/cmp_unit_test.c
+gcc -DHAVE_CONFIG_H -I.  -Wall -W -I./include -DGRUB_UTIL=1 -DGRUB_LIBDIR=\"/usr/lib/grub\" -DLOCALEDIR=\"/usr/share/locale\" -DGRUB_FILE=\"tests/lib/unit_test.c\" -I. -I. -I. -I. -I./include -I./include -I./grub-core/gnulib -I./grub-core/gnulib   -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations   -MT tests/lib/cmp_test-unit_test.o -MD -MP -MF tests/lib/.deps-util/cmp_test-unit_test.Tpo -c -o tests/lib/cmp_test-unit_test.o `test -f 'tests/lib/unit_test.c' || echo './'`tests/lib/unit_test.c
+gcc -DHAVE_CONFIG_H -I.  -Wall -W -I./include -DGRUB_UTIL=1 -DGRUB_LIBDIR=\"/usr/lib/grub\" -DLOCALEDIR=\"/usr/share/locale\" -DGRUB_FILE=\"grub-core/kern/list.c\" -I. -I. -I. -I. -I./include -I./include -I./grub-core/gnulib -I./grub-core/gnulib   -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations   -MT grub-core/kern/cmp_test-list.o -MD -MP -MF grub-core/kern/.deps-util/cmp_test-list.Tpo -c -o grub-core/kern/cmp_test-list.o `test -f 'grub-core/kern/list.c' || echo './'`grub-core/kern/list.c
+gcc -DHAVE_CONFIG_H -I.  -Wall -W -I./include -DGRUB_UTIL=1 -DGRUB_LIBDIR=\"/usr/lib/grub\" -DLOCALEDIR=\"/usr/share/locale\" -DGRUB_FILE=\"grub-core/kern/misc.c\" -I. -I. -I. -I. -I./include -I./include -I./grub-core/gnulib -I./grub-core/gnulib   -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations   -MT grub-core/kern/cmp_test-misc.o -MD -MP -MF grub-core/kern/.deps-util/cmp_test-misc.Tpo -c -o grub-core/kern/cmp_test-misc.o `test -f 'grub-core/kern/misc.c' || echo './'`grub-core/kern/misc.c
+gcc -DHAVE_CONFIG_H -I.  -Wall -W -I./include -DGRUB_UTIL=1 -DGRUB_LIBDIR=\"/usr/lib/grub\" -DLOCALEDIR=\"/usr/share/locale\" -DGRUB_FILE=\"grub-core/tests/lib/test.c\" -I. -I. -I. -I. -I./include -I./include -I./grub-core/gnulib -I./grub-core/gnulib   -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations   -MT grub-core/tests/lib/cmp_test-test.o -MD -MP -MF grub-core/tests/lib/.deps-util/cmp_test-test.Tpo -c -o grub-core/tests/lib/cmp_test-test.o `test -f 'grub-core/tests/lib/test.c' || echo './'`grub-core/tests/lib/test.c
+./config.status --file=example_scripted_test:tests/example_scripted_test.in
+./config.status --file=example_grub_script_test:tests/example_grub_script_test.in
+./config.status --file=grub_script_echo1:tests/grub_script_echo1.in
+mv -f grub-core/kern/.deps-util/example_unit_test-list.Tpo grub-core/kern/.deps-util/example_unit_test-list.Po
+./config.status --file=grub_script_leading_whitespace:tests/grub_script_leading_whitespace.in
+mv -f grub-core/kern/.deps-util/printf_test-list.Tpo grub-core/kern/.deps-util/printf_test-list.Po
+./config.status --file=grub_script_echo_keywords:tests/grub_script_echo_keywords.in
+mv -f tests/lib/.deps-util/printf_test-unit_test.Tpo tests/lib/.deps-util/printf_test-unit_test.Po
+./config.status --file=grub_script_vars1:tests/grub_script_vars1.in
+mv -f grub-core/tests/lib/.deps-util/printf_test-test.Tpo grub-core/tests/lib/.deps-util/printf_test-test.Po
+mv -f tests/lib/.deps-util/cmp_test-unit_test.Tpo tests/lib/.deps-util/cmp_test-unit_test.Po
+./config.status --file=grub_script_for1:tests/grub_script_for1.in
+mv -f tests/.deps-util/printf_test-printf_unit_test.Tpo tests/.deps-util/printf_test-printf_unit_test.Po
+./config.status --file=grub_script_while1:tests/grub_script_while1.in
+mv -f grub-core/kern/.deps-util/cmp_test-list.Tpo grub-core/kern/.deps-util/cmp_test-list.Po
+./config.status --file=grub_script_if:tests/grub_script_if.in
+mv -f grub-core/tests/lib/.deps-util/cmp_test-test.Tpo grub-core/tests/lib/.deps-util/cmp_test-test.Po
+config.status: creating example_scripted_test
+./config.status --file=grub_script_blanklines:tests/grub_script_blanklines.in
+./config.status --file=grub_script_final_semicolon:tests/grub_script_final_semicolon.in
+mv -f grub-core/kern/.deps-util/example_unit_test-misc.Tpo grub-core/kern/.deps-util/example_unit_test-misc.Po
+./config.status --file=grub_script_dollar:tests/grub_script_dollar.in
+config.status: creating grub_script_echo_keywords
+chmod a+x example_scripted_test
+./config.status --file=grub_script_comments:tests/grub_script_comments.in
+mv -f grub-core/kern/.deps-util/printf_test-misc.Tpo grub-core/kern/.deps-util/printf_test-misc.Po
+mv -f grub-core/kern/.deps-util/cmp_test-misc.Tpo grub-core/kern/.deps-util/cmp_test-misc.Po
+./config.status --file=grub_script_functions:tests/grub_script_functions.in
+./config.status --file=grub_script_break:tests/grub_script_break.in
+mv -f tests/.deps-util/cmp_test-cmp_unit_test.Tpo tests/.deps-util/cmp_test-cmp_unit_test.Po
+./config.status --file=grub_script_continue:tests/grub_script_continue.in
+chmod a+x grub_script_echo_keywords
+./config.status --file=grub_script_shift:tests/grub_script_shift.in
+config.status: creating grub_script_leading_whitespace
+config.status: creating grub_script_while1
+config.status: creating grub_script_echo1
+chmod a+x grub_script_leading_whitespace
+./config.status --file=grub_script_blockarg:tests/grub_script_blockarg.in
+config.status: creating grub_script_if
+chmod a+x grub_script_while1
+./config.status --file=grub_script_setparams:tests/grub_script_setparams.in
+chmod a+x grub_script_echo1
+./config.status --file=grub_script_return:tests/grub_script_return.in
+config.status: creating grub_script_for1
+config.status: creating grub_script_blanklines
+config.status: creating grub_script_vars1
+config.status: creating grub_script_final_semicolon
+chmod a+x grub_script_if
+config.status: creating grub_script_dollar
+./config.status --file=grub_cmd_regexp:tests/grub_cmd_regexp.in
+config.status: creating example_grub_script_test
+chmod a+x grub_script_for1
+chmod a+x grub_script_blanklines
+./config.status --file=grub_script_expansion:tests/grub_script_expansion.in
+./config.status --file=grub_script_not:tests/grub_script_not.in
+chmod a+x grub_script_final_semicolon
+config.status: creating grub_script_comments
+./config.status --file=partmap_test:tests/partmap_test.in
+chmod a+x grub_script_vars1
+./config.status --file=grub_cmd_echo:tests/grub_cmd_echo.in
+config.status: creating grub_script_break
+chmod a+x grub_script_dollar
+chmod a+x example_grub_script_test
+./config.status --file=grub_script_gettext:tests/grub_script_gettext.in
+./config.status --file=grub_script_strcmp:tests/grub_script_strcmp.in
+config.status: creating grub_script_functions
+config.status: creating grub_script_continue
+chmod a+x grub_script_comments
+config.status: creating grub_script_shift
+gcc -DHAVE_CONFIG_H -I.  -Wall -W -I./include -DGRUB_UTIL=1 -DGRUB_LIBDIR=\"/usr/lib/grub\" -DLOCALEDIR=\"/usr/share/locale\" -DGRUB_FILE=\"tests/example_unit_test.c\" -I. -I. -I. -I. -I./include -I./include -I./grub-core/gnulib -I./grub-core/gnulib   -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations   -MT tests/example_unit_test-example_unit_test.o -MD -MP -MF tests/.deps-util/example_unit_test-example_unit_test.Tpo -c -o tests/example_unit_test-example_unit_test.o `test -f 'tests/example_unit_test.c' || echo './'`tests/example_unit_test.c
+chmod a+x grub_script_functions
+gcc -DHAVE_CONFIG_H -I.  -Wall -W -I./include -DGRUB_UTIL=1 -DGRUB_LIBDIR=\"/usr/lib/grub\" -DLOCALEDIR=\"/usr/share/locale\" -DGRUB_FILE=\"tests/lib/unit_test.c\" -I. -I. -I. -I. -I./include -I./include -I./grub-core/gnulib -I./grub-core/gnulib   -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations   -MT tests/lib/example_unit_test-unit_test.o -MD -MP -MF tests/lib/.deps-util/example_unit_test-unit_test.Tpo -c -o tests/lib/example_unit_test-unit_test.o `test -f 'tests/lib/unit_test.c' || echo './'`tests/lib/unit_test.c
+chmod a+x grub_script_break
+gcc -DHAVE_CONFIG_H -I.  -Wall -W -I./include -DGRUB_UTIL=1 -DGRUB_LIBDIR=\"/usr/lib/grub\" -DLOCALEDIR=\"/usr/share/locale\" -DGRUB_FILE=\"grub-core/tests/lib/test.c\" -I. -I. -I. -I. -I./include -I./include -I./grub-core/gnulib -I./grub-core/gnulib   -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations   -MT grub-core/tests/lib/example_unit_test-test.o -MD -MP -MF grub-core/tests/lib/.deps-util/example_unit_test-test.Tpo -c -o grub-core/tests/lib/example_unit_test-test.o `test -f 'grub-core/tests/lib/test.c' || echo './'`grub-core/tests/lib/test.c
+chmod a+x grub_script_continue
+gcc -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations       -o printf_test tests/printf_test-printf_unit_test.o tests/lib/printf_test-unit_test.o grub-core/kern/printf_test-list.o grub-core/kern/printf_test-misc.o grub-core/tests/lib/printf_test-test.o  libgrubmods.a libgrubgcry.a libgrubkern.a grub-core/gnulib/libgnu.a      
+chmod a+x grub_script_shift
+gcc -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations       -o cmp_test tests/cmp_test-cmp_unit_test.o tests/lib/cmp_test-unit_test.o grub-core/kern/cmp_test-list.o grub-core/kern/cmp_test-misc.o grub-core/tests/lib/cmp_test-test.o  libgrubmods.a libgrubgcry.a libgrubkern.a grub-core/gnulib/libgnu.a      
+config.status: creating grub_script_blockarg
+config.status: creating grub_script_setparams
+mv -f tests/.deps-util/example_unit_test-example_unit_test.Tpo tests/.deps-util/example_unit_test-example_unit_test.Po
+chmod a+x grub_script_blockarg
+chmod a+x grub_script_setparams
+config.status: creating grub_script_return
+mv -f tests/lib/.deps-util/example_unit_test-unit_test.Tpo tests/lib/.deps-util/example_unit_test-unit_test.Po
+mv -f grub-core/tests/lib/.deps-util/example_unit_test-test.Tpo grub-core/tests/lib/.deps-util/example_unit_test-test.Po
+config.status: creating grub_script_strcmp
+chmod a+x grub_script_return
+gcc -Wall -W -Wshadow -Wold-style-definition -Wpointer-arith -Wundef -Wextra -Waddress -Wattributes -Wcast-align -Wchar-subscripts -Wcomment -Wdeprecated-declarations -Wdisabled-optimization -Wdiv-by-zero -Wempty-body -Wendif-labels -Wfloat-equal -Wformat-extra-args -Wformat-security -Wformat-y2k -Wimplicit -Wimplicit-function-declaration -Wimplicit-int -Winit-self -Wint-to-pointer-cast -Winvalid-pch -Wmain -Wmissing-braces -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-noreturn -Wmultichar -Wnonnull -Woverflow -Wparentheses -Wpointer-arith -Wpointer-to-int-cast -Wreturn-type -Wsequence-point -Wshadow -Wsign-compare -Wstrict-aliasing -Wswitch -Wtrigraphs -Wundef -Wunknown-pragmas -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value  -Wunused-variable -Wvariadic-macros -Wvolatile-register-var -Wwrite-strings -Wnested-externs -Wstrict-prototypes -Wpointer-sign -Wno-undef -Wno-sign-compare -Wno-unused -Wno-unused-parameter -Wno-redundant-decls -Wno-unreachable-code -Wno-conversion -Wno-old-style-definition -Wno-unsafe-loop-optimizations       -o example_unit_test tests/example_unit_test-example_unit_test.o tests/lib/example_unit_test-unit_test.o grub-core/kern/example_unit_test-list.o grub-core/kern/example_unit_test-misc.o grub-core/tests/lib/example_unit_test-test.o  libgrubmods.a libgrubgcry.a libgrubkern.a grub-core/gnulib/libgnu.a      
+config.status: creating grub_script_not
+config.status: creating grub_script_expansion
+config.status: creating partmap_test
+config.status: creating grub_cmd_echo
+chmod a+x grub_script_strcmp
+chmod a+x grub_script_expansion
+chmod a+x grub_script_not
+config.status: creating grub_script_gettext
+config.status: creating grub_cmd_regexp
+chmod a+x partmap_test
+chmod a+x grub_cmd_echo
+chmod a+x grub_script_gettext
+chmod a+x grub_cmd_regexp
+make[4]: Leaving directory '/sources/grub-2.00'
+make  check-TESTS
+make[4]: Entering directory '/sources/grub-2.00'
+example_unit_test:
+example_unit_test: PASS
+PASS: example_unit_test
+printf_unit_test:
+printf_unit_test: PASS
+PASS: printf_test
+cmp_test:
+cmp_test: PASS
+PASS: cmp_test
+PASS: example_scripted_test
+FAIL: example_grub_script_test
+FAIL: grub_script_echo1
+FAIL: grub_script_leading_whitespace
+FAIL: grub_script_echo_keywords
+FAIL: grub_script_vars1
+FAIL: grub_script_for1
+FAIL: grub_script_while1
+FAIL: grub_script_if
+PASS: grub_script_blanklines
+PASS: grub_script_final_semicolon
+PASS: grub_script_dollar
+FAIL: grub_script_comments
+FAIL: grub_script_functions
+FAIL: grub_script_break
+FAIL: grub_script_continue
+FAIL: grub_script_shift
+[] != [{ true }]
+FAIL: grub_script_blockarg
+FAIL: grub_script_setparams
+FAIL: grub_script_return
+FAIL: grub_cmd_regexp
+FAIL: grub_script_expansion
+FAIL: grub_script_not
+Checking MSDOS partition types...
+1+0 records in
+1+0 records out
+./partmap_test: line 82: parted: command not found
+FAIL: partmap_test
+FAIL: grub_cmd_echo
+FAIL: grub_script_gettext
+FAIL: grub_script_strcmp
+=================================
+23 of 30 tests failed
+Please report to bug-grub@gnu.org
+=================================
+Makefile:20442: recipe for target 'check-TESTS' failed
+make[4]: *** [check-TESTS] Error 1
+make[4]: Leaving directory '/sources/grub-2.00'
+Makefile:20735: recipe for target 'check-am' failed
+make[3]: *** [check-am] Error 2
+make[3]: Leaving directory '/sources/grub-2.00'
+Making check in grub-core
+make[3]: Entering directory '/sources/grub-2.00/grub-core'
+make  check-am
+make[4]: Entering directory '/sources/grub-2.00/grub-core'
+make   
+make[5]: Entering directory '/sources/grub-2.00/grub-core'
+make  all-am
+make[6]: Entering directory '/sources/grub-2.00/grub-core'
+make[6]: Nothing to be done for 'all-am'.
+make[6]: Leaving directory '/sources/grub-2.00/grub-core'
+make[5]: Leaving directory '/sources/grub-2.00/grub-core'
+make  check-TESTS
+make[5]: Entering directory '/sources/grub-2.00/grub-core'
+==================
+All 0 tests passed
+==================
+make[5]: Leaving directory '/sources/grub-2.00/grub-core'
+make[4]: Leaving directory '/sources/grub-2.00/grub-core'
+make[3]: Leaving directory '/sources/grub-2.00/grub-core'
+Making check in po
+make[3]: Entering directory '/sources/grub-2.00/po'
+make[3]: Leaving directory '/sources/grub-2.00/po'
+Making check in docs
+make[3]: Entering directory '/sources/grub-2.00/docs'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/sources/grub-2.00/docs'
+Making check in util/bash-completion.d
+make[3]: Entering directory '/sources/grub-2.00/util/bash-completion.d'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/sources/grub-2.00/util/bash-completion.d'
+Makefile:20313: recipe for target 'check-recursive' failed
+make[2]: *** [check-recursive] Error 1
+make[2]: Leaving directory '/sources/grub-2.00'
+Makefile:20738: recipe for target 'check' failed
+make[1]: *** [check] Error 2
+make[1]: Leaving directory '/sources/grub-2.00'

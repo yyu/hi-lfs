@@ -1,0 +1,642 @@
+Sun Jun 29 15:05:26 CDT 2014
+
+KB: 2035660	/mnt/clfs
+
+checking for powerpc-unknown-linux-gnu-gcc... powerpc-unknown-linux-gnu-gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether powerpc-unknown-linux-gnu-gcc accepts -g... yes
+checking for powerpc-unknown-linux-gnu-gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... powerpc-unknown-linux-gnu-gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for powerpc-unknown-linux-gnu-strip... powerpc-unknown-linux-gnu-strip
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for style of include used by make... GNU
+checking whether make supports nested variables... yes
+checking dependency style of powerpc-unknown-linux-gnu-gcc... gcc3
+checking whether make supports nested variables... (cached) yes
+checking build system type... i686-cross-linux-gnu
+checking host system type... powerpc-unknown-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by powerpc-unknown-linux-gnu-gcc... powerpc-unknown-linux-gnu-ld
+checking if the linker (powerpc-unknown-linux-gnu-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /cross-tools/bin/powerpc-unknown-linux-gnu-nm -B
+checking the name lister (/cross-tools/bin/powerpc-unknown-linux-gnu-nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert i686-cross-linux-gnu file names to powerpc-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert i686-cross-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for powerpc-unknown-linux-gnu-ld option to reload object files... -r
+checking for powerpc-unknown-linux-gnu-objdump... powerpc-unknown-linux-gnu-objdump
+checking how to recognize dependent libraries... pass_all
+checking for powerpc-unknown-linux-gnu-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for powerpc-unknown-linux-gnu-ar... powerpc-unknown-linux-gnu-ar
+checking for archiver @FILE support... @
+checking for powerpc-unknown-linux-gnu-strip... (cached) powerpc-unknown-linux-gnu-strip
+checking for powerpc-unknown-linux-gnu-ranlib... powerpc-unknown-linux-gnu-ranlib
+checking command to parse /cross-tools/bin/powerpc-unknown-linux-gnu-nm -B output from powerpc-unknown-linux-gnu-gcc object... ok
+checking for sysroot... no
+checking for powerpc-unknown-linux-gnu-mt... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if powerpc-unknown-linux-gnu-gcc supports -fno-rtti -fno-exceptions... no
+checking for powerpc-unknown-linux-gnu-gcc option to produce PIC... -fPIC -DPIC
+checking if powerpc-unknown-linux-gnu-gcc PIC flag -fPIC -DPIC works... yes
+checking if powerpc-unknown-linux-gnu-gcc static flag -static works... yes
+checking if powerpc-unknown-linux-gnu-gcc supports -c -o file.o... yes
+checking if powerpc-unknown-linux-gnu-gcc supports -c -o file.o... (cached) yes
+checking whether the powerpc-unknown-linux-gnu-gcc linker (powerpc-unknown-linux-gnu-ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking whether ln -s works... yes
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking for grep that handles long lines and -e... (cached) /bin/grep
+checking for gawk... (cached) gawk
+checking for powerpc-unknown-linux-gnu-gcc option to accept ISO C99... -std=gnu99
+checking whether we are using the GNU C++ compiler... yes
+checking whether powerpc-unknown-linux-gnu-g++ accepts -g... yes
+checking dependency style of powerpc-unknown-linux-gnu-g++... gcc3
+checking how to run the C++ preprocessor... powerpc-unknown-linux-gnu-g++ -E
+checking for ld used by powerpc-unknown-linux-gnu-g++... powerpc-unknown-linux-gnu-ld
+checking if the linker (powerpc-unknown-linux-gnu-ld) is GNU ld... yes
+checking whether the powerpc-unknown-linux-gnu-g++ linker (powerpc-unknown-linux-gnu-ld) supports shared libraries... yes
+checking for powerpc-unknown-linux-gnu-g++ option to produce PIC... -fPIC -DPIC
+checking if powerpc-unknown-linux-gnu-g++ PIC flag -fPIC -DPIC works... yes
+checking if powerpc-unknown-linux-gnu-g++ static flag -static works... yes
+checking if powerpc-unknown-linux-gnu-g++ supports -c -o file.o... yes
+checking if powerpc-unknown-linux-gnu-g++ supports -c -o file.o... (cached) yes
+checking whether the powerpc-unknown-linux-gnu-g++ linker (powerpc-unknown-linux-gnu-ld) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking how to run the C preprocessor... powerpc-unknown-linux-gnu-gcc -E
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for m4... /cross-tools/bin/m4
+checking for xsltproc... /bin/xsltproc
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for inttypes.h... (cached) yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/mount.h usability... yes
+checking sys/mount.h presence... yes
+checking for sys/mount.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/statvfs.h usability... yes
+checking sys/statvfs.h presence... yes
+checking for sys/statvfs.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/vfs.h usability... yes
+checking sys/vfs.h presence... yes
+checking for sys/vfs.h... yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking for unistd.h... (cached) yes
+checking mtd/mtd-user.h usability... yes
+checking mtd/mtd-user.h presence... yes
+checking for mtd/mtd-user.h... yes
+checking for uid_t in sys/types.h... yes
+checking for inline... inline
+checking for mode_t... yes
+checking for pid_t... yes
+checking for struct stat.st_rdev... yes
+checking whether gettid is declared... no
+checking whether name_to_handle_at is declared... yes
+checking whether accept4 is declared... yes
+checking whether mkostemp is declared... no
+checking size of pid_t... 4
+checking size of uid_t... 4
+checking size of gid_t... 4
+checking size of time_t... 4
+checking size of rlim_t... 8
+checking for unistd.h... (cached) yes
+checking for working chown... no
+checking vfork.h usability... no
+checking vfork.h presence... no
+checking for vfork.h... no
+checking for fork... yes
+checking for vfork... yes
+checking for working fork... cross
+configure: WARNING: result yes guessed because of cross compilation
+checking for working vfork... (cached) yes
+checking for _LARGEFILE_SOURCE value needed for large files... no
+checking type of array argument to getgroups... gid_t
+checking for size_t... yes
+checking for getgroups... yes
+checking for working getgroups... no
+checking whether lstat correctly handles trailing slash... no
+checking whether sys/types.h defines makedev... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for getpagesize... yes
+checking for working mmap... no
+checking for alarm... yes
+checking for dup2... yes
+checking for ftruncate... yes
+checking for localtime_r... yes
+checking for mempcpy... yes
+checking for mkdir... yes
+checking for munmap... yes
+checking for nl_langinfo... yes
+checking for rmdir... yes
+checking for setlocale... yes
+checking for socket... yes
+checking for stpcpy... yes
+checking for uname... yes
+checking for library containing clock_gettime... none required
+checking for library containing sqrt... -lm
+checking for powerpc-unknown-linux-gnu-pkg-config... /cross-tools/bin/powerpc-unknown-linux-gnu-pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for gobject-introspection... no (disabled, use --enable-introspection to enable)
+checking for BLKID... yes
+checking for SELINUX... no
+checking whether unshare is declared... yes
+checking for gtkdoc-check... no
+checking for gtkdoc-rebase... no
+checking for gtkdoc-mkpdf... no
+checking whether to build gtk-doc documentation... no
+checking for local Docbook stylesheets... yes
+checking for main in -lkmod... yes
+checking for KMOD... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating docs/Makefile
+config.status: creating docs/gudev/Makefile
+config.status: creating docs/gudev/version.xml
+config.status: creating docs/libudev/Makefile
+config.status: creating docs/libudev/version.xml
+config.status: creating hwdb/Makefile
+config.status: creating man/Makefile
+config.status: creating rules/Makefile
+config.status: creating rule_generator/Makefile
+config.status: creating rule_generator/write_cd_rules
+config.status: creating rule_generator/write_net_rules
+config.status: creating src/Makefile
+config.status: creating src/accelerometer/Makefile
+config.status: creating src/ata_id/Makefile
+config.status: creating src/cdrom_id/Makefile
+config.status: creating src/collect/Makefile
+config.status: creating src/mtd_probe/Makefile
+config.status: creating src/scsi_id/Makefile
+config.status: creating src/v4l_id/Makefile
+config.status: creating src/gudev/Makefile
+config.status: creating src/gudev/gudev-1.0.pc
+config.status: creating src/libudev/Makefile
+config.status: creating src/libudev/libudev.pc
+config.status: creating src/udev/Makefile
+config.status: creating src/udev/udev.pc
+config.status: creating test/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+        prefix:                  /tools
+        exec_prefix:             ${prefix}
+        sysconfdir:              ${prefix}/etc
+        datadir:                 ${datarootdir}
+        includedir:              ${prefix}/include
+        libdir:                  ${exec_prefix}/lib
+
+        rootprefix:              ${prefix}
+        rootlibdir:              ${exec_prefix}/lib
+        udevlibexecdir:          ${prefix}/lib/udev
+        datarootdir:             ${prefix}/share
+
+        udevconfdir:             ${prefix}/etc/udev
+        udevconffile:            ${prefix}/etc/udev/udev.conf
+        udevhwdbdir:             ${prefix}/etc/udev/hwdb.d
+        udevhwdbbin:             ${prefix}/etc/udev/hwdb.bin
+        udevkeymapdir:           ${prefix}/lib/udev/keymaps
+        udevkeymapforceredir:    ${prefix}/lib/udev/keymaps/force-release
+        udevrulesdir:            ${prefix}/lib/udev/rules.d
+
+        pkgconfiglibdir:         ${exec_prefix}/lib/pkgconfig
+        sharepkgconfigdir        ${datarootdir}/pkgconfig
+
+        libgudev_includedir      ${prefix}/include/gudev-1.0/gudev
+
+        girdir                   ${datarootdir}/gir-1.0
+        typelibsdir              ${exec_prefix}/lib/girepository-1.0
+
+make[1]: Entering directory '/mnt/clfs/sources/eudev-1.7'
+make  all-recursive
+make[2]: Entering directory '/mnt/clfs/sources/eudev-1.7'
+Making all in src
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/src'
+Making all in libudev
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/libudev'
+  CC       libudev.lo
+  CC       libudev-device.lo
+  CC       libudev-list.lo
+  CC       libudev-util.lo
+  CC       libudev-monitor.lo
+  CC       libudev-enumerate.lo
+  CC       libudev-queue.lo
+  CC       libudev-hwdb.lo
+  CC       cgroup-util.lo
+  CC       conf-files.lo
+  CC       device-nodes.lo
+  CC       exit-status.lo
+  CC       fileio.lo
+  CC       hashmap.lo
+  CC       log.lo
+  CC       MurmurHash2.lo
+  CC       path-util.lo
+  CC       set.lo
+  CC       siphash24.lo
+  CC       strbuf.lo
+  CC       strv.lo
+  CC       strxcpyx.lo
+  CC       time-util.lo
+  CC       util.lo
+  CC       utf8.lo
+  CC       libudev-device-private.lo
+  CCLD     libudev.la
+  CCLD     libudev-private.la
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/libudev'
+Making all in udev
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/udev'
+make  all-am
+make[5]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/udev'
+  CC       libudev_core_la-udev-event.lo
+  CC       libudev_core_la-udev-builtin-btrfs.lo
+  CC       libudev_core_la-udev-rules.lo
+  CC       libudev_core_la-udev-node.lo
+  CC       libudev_core_la-udev-builtin.lo
+  CC       libudev_core_la-udev-watch.lo
+  CC       libudev_core_la-udev-ctrl.lo
+  CC       libudev_core_la-udev-builtin-firmware.lo
+  CC       libudev_core_la-udev-builtin-hwdb.lo
+  CC       libudev_core_la-udev-builtin-input_id.lo
+  CC       libudev_core_la-udev-builtin-net_id.lo
+  CC       libudev_core_la-udev-builtin-path_id.lo
+  CC       libudev_core_la-udev-builtin-usb_id.lo
+  CC       libudev_core_la-dev-setup.lo
+  CC       libudev_core_la-label.lo
+  CC       libudev_core_la-mkdir.lo
+  CC       libudev_core_la-smack-util.lo
+  CC       libudev_core_la-udev-builtin-blkid.lo
+  CC       libudev_core_la-udev-builtin-kmod.lo
+  CC       udevadm.o
+  CC       udevadm-info.o
+  CC       udevadm-control.o
+  CC       udevadm-monitor.o
+  CC       udevadm-hwdb.o
+  CC       udevadm-settle.o
+  CC       udevadm-trigger.o
+  CC       udevadm-test.o
+  CC       udevadm-test-builtin.o
+  CC       udevd.o
+  CCLD     libudev-core.la
+copying selected object files to avoid basename conflicts...
+  CCLD     udevadm
+  CCLD     udevd
+make[5]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/udev'
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/udev'
+Making all in accelerometer
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/accelerometer'
+  CC       accelerometer.o
+  CCLD     accelerometer
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/accelerometer'
+Making all in ata_id
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/ata_id'
+  CC       ata_id.o
+  CCLD     ata_id
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/ata_id'
+Making all in cdrom_id
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/cdrom_id'
+  CC       cdrom_id.o
+  CCLD     cdrom_id
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/cdrom_id'
+Making all in collect
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/collect'
+  CC       collect.o
+  CCLD     collect
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/collect'
+Making all in mtd_probe
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/mtd_probe'
+  CC       mtd_probe.o
+  CC       probe_smartmedia.o
+  CCLD     mtd_probe
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/mtd_probe'
+Making all in scsi_id
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/scsi_id'
+  CC       scsi_id.o
+  CC       scsi_serial.o
+  CCLD     scsi_id
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/scsi_id'
+Making all in v4l_id
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/v4l_id'
+  CC       v4l_id.o
+  CCLD     v4l_id
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/v4l_id'
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src'
+Making all in rules
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/rules'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/rules'
+Making all in hwdb
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/hwdb'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/hwdb'
+Making all in docs
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/docs'
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/docs'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/docs'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/docs'
+Making all in test
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/test'
+  CC       test_libudev-test-libudev.o
+  CC       test_udev-test-udev.o
+  CC       test_utf8-test-utf8.o
+  CC       test_device_nodes-test-device-nodes.o
+  CCLD     test-device_nodes
+  CCLD     test-utf8
+  CCLD     test-udev
+  CCLD     test-libudev
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/test'
+Making all in man
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/man'
+/bin/xsltproc -o udev.7 --nonet --stringparam man.output.quietly 1 --stringparam funcsynopsis.style ansi --stringparam man.th.extra1.suppress 1 --stringparam man.authors.section.enabled 0 --stringparam man.copyright.section.enabled 0 http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl udev.xml
+/bin/xsltproc -o udevd.8 --nonet --stringparam man.output.quietly 1 --stringparam funcsynopsis.style ansi --stringparam man.th.extra1.suppress 1 --stringparam man.authors.section.enabled 0 --stringparam man.copyright.section.enabled 0 http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl udevd.xml
+/bin/xsltproc -o udevadm.8 --nonet --stringparam man.output.quietly 1 --stringparam funcsynopsis.style ansi --stringparam man.th.extra1.suppress 1 --stringparam man.authors.section.enabled 0 --stringparam man.copyright.section.enabled 0 http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl udevadm.xml
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/man'
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7'
+make[2]: Leaving directory '/mnt/clfs/sources/eudev-1.7'
+make[1]: Leaving directory '/mnt/clfs/sources/eudev-1.7'
+make[1]: Entering directory '/mnt/clfs/sources/eudev-1.7'
+Making install in src
+make[2]: Entering directory '/mnt/clfs/sources/eudev-1.7/src'
+Making install in libudev
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/libudev'
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/libudev'
+ /bin/mkdir -p '/tools/lib'
+ /bin/sh ../../libtool   --mode=install /bin/install -c   libudev.la '/tools/lib'
+libtool: install: /bin/install -c .libs/libudev.so.1.4.0 /tools/lib/libudev.so.1.4.0
+libtool: install: (cd /tools/lib && { ln -s -f libudev.so.1.4.0 libudev.so.1 || { rm -f libudev.so.1 && ln -s libudev.so.1.4.0 libudev.so.1; }; })
+libtool: install: (cd /tools/lib && { ln -s -f libudev.so.1.4.0 libudev.so || { rm -f libudev.so && ln -s libudev.so.1.4.0 libudev.so; }; })
+libtool: install: /bin/install -c .libs/libudev.lai /tools/lib/libudev.la
+libtool: install: /bin/install -c .libs/libudev.a /tools/lib/libudev.a
+libtool: install: chmod 644 /tools/lib/libudev.a
+libtool: install: powerpc-unknown-linux-gnu-ranlib /tools/lib/libudev.a
+libtool: finish: PATH="/cross-tools/bin:/bin:/usr/bin:/sbin" ldconfig -n /tools/lib
+ldconfig: /tools/lib/libisl.so.10.2.2-gdb.py is not an ELF file - it has the wrong magic bytes at the start.
+
+ldconfig: /tools/lib/libstdc++.so.6.0.19-gdb.py is not an ELF file - it has the wrong magic bytes at the start.
+
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /tools/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[5]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/libudev'
+libname=libudev.so && 	if test "/tools/lib" != "/tools/lib"; then /bin/mkdir -p /tools/lib && so_img_name=$(readlink /tools/lib/$libname) && so_img_rel_target_prefix=$(echo /tools/lib | sed 's,\(^/\|\)[^/][^/]*,..,g') && ln -s -f $so_img_rel_target_prefix/tools/lib/$so_img_name /tools/lib/$libname && mv /tools/lib/$libname.* /tools/lib; fi
+make[5]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/libudev'
+ /bin/mkdir -p '/tools/include'
+ /bin/install -c -m 644 libudev.h '/tools/include'
+ /bin/mkdir -p '/tools/lib/pkgconfig'
+ /bin/install -c -m 644 libudev.pc '/tools/lib/pkgconfig'
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/libudev'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/libudev'
+Making install in udev
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/udev'
+make  install-am
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/udev'
+make[5]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/udev'
+ /bin/mkdir -p '/tools/bin'
+  /bin/sh ../../libtool   --mode=install /bin/install -c udevadm '/tools/bin'
+libtool: install: /bin/install -c .libs/udevadm /tools/bin/udevadm
+ /bin/mkdir -p '/tools/sbin'
+  /bin/sh ../../libtool   --mode=install /bin/install -c udevd '/tools/sbin'
+libtool: install: /bin/install -c .libs/udevd /tools/sbin/udevd
+make  install-exec-hook
+make[6]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/udev'
+if test "/tools/bin" != "/tools/sbin"; then \
+	ln -s -n -f /tools/bin/udevadm /tools/sbin/udevadm; \
+fi
+make[6]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/udev'
+ /bin/mkdir -p '/tools/etc/udev'
+ /bin/install -c -m 644 udev.conf '/tools/etc/udev'
+ /bin/mkdir -p '/tools/include'
+ /bin/install -c -m 644 udev.h '/tools/include'
+ /bin/mkdir -p '/tools/share/pkgconfig'
+ /bin/install -c -m 644 udev.pc '/tools/share/pkgconfig'
+make[5]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/udev'
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/udev'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/udev'
+Making install in accelerometer
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/accelerometer'
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/accelerometer'
+ /bin/mkdir -p '/tools/lib/udev'
+  /bin/sh ../../libtool   --mode=install /bin/install -c accelerometer '/tools/lib/udev'
+libtool: install: /bin/install -c .libs/accelerometer /tools/lib/udev/accelerometer
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/accelerometer'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/accelerometer'
+Making install in ata_id
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/ata_id'
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/ata_id'
+ /bin/mkdir -p '/tools/lib/udev'
+  /bin/sh ../../libtool   --mode=install /bin/install -c ata_id '/tools/lib/udev'
+libtool: install: /bin/install -c .libs/ata_id /tools/lib/udev/ata_id
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/ata_id'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/ata_id'
+Making install in cdrom_id
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/cdrom_id'
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/cdrom_id'
+ /bin/mkdir -p '/tools/lib/udev'
+  /bin/sh ../../libtool   --mode=install /bin/install -c cdrom_id '/tools/lib/udev'
+libtool: install: /bin/install -c .libs/cdrom_id /tools/lib/udev/cdrom_id
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/cdrom_id'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/cdrom_id'
+Making install in collect
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/collect'
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/collect'
+ /bin/mkdir -p '/tools/lib/udev'
+  /bin/sh ../../libtool   --mode=install /bin/install -c collect '/tools/lib/udev'
+libtool: install: /bin/install -c .libs/collect /tools/lib/udev/collect
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/collect'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/collect'
+Making install in mtd_probe
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/mtd_probe'
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/mtd_probe'
+ /bin/mkdir -p '/tools/lib/udev'
+  /bin/sh ../../libtool   --mode=install /bin/install -c mtd_probe '/tools/lib/udev'
+libtool: install: /bin/install -c mtd_probe /tools/lib/udev/mtd_probe
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/mtd_probe'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/mtd_probe'
+Making install in scsi_id
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/scsi_id'
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/scsi_id'
+ /bin/mkdir -p '/tools/lib/udev'
+  /bin/sh ../../libtool   --mode=install /bin/install -c scsi_id '/tools/lib/udev'
+libtool: install: /bin/install -c .libs/scsi_id /tools/lib/udev/scsi_id
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/scsi_id'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/scsi_id'
+Making install in v4l_id
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/v4l_id'
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src/v4l_id'
+ /bin/mkdir -p '/tools/lib/udev'
+  /bin/sh ../../libtool   --mode=install /bin/install -c v4l_id '/tools/lib/udev'
+libtool: install: /bin/install -c .libs/v4l_id /tools/lib/udev/v4l_id
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/v4l_id'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src/v4l_id'
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/src'
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/src'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src'
+make[2]: Leaving directory '/mnt/clfs/sources/eudev-1.7/src'
+Making install in rules
+make[2]: Entering directory '/mnt/clfs/sources/eudev-1.7/rules'
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/rules'
+make[3]: Nothing to be done for 'install-exec-am'.
+/bin/mkdir -p /tools/etc/udev/rules.d
+ /bin/mkdir -p '/tools/lib/udev/rules.d'
+ /bin/install -c -m 644 42-usb-hid-pm.rules 50-udev-default.rules 60-cdrom_id.rules 60-drm.rules 60-persistent-alsa.rules 60-persistent-input.rules 60-persistent-serial.rules 60-persistent-storage-tape.rules 60-persistent-v4l.rules 61-accelerometer.rules 64-btrfs.rules 75-net-description.rules 75-probe_mtd.rules 75-tty-description.rules 78-sound-card.rules 95-udev-late.rules 80-net-name-slot.rules 50-firmware.rules 60-persistent-storage.rules 80-drivers.rules '/tools/lib/udev/rules.d'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/rules'
+make[2]: Leaving directory '/mnt/clfs/sources/eudev-1.7/rules'
+Making install in hwdb
+make[2]: Entering directory '/mnt/clfs/sources/eudev-1.7/hwdb'
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/hwdb'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/tools/etc/udev/hwdb.d'
+ /bin/install -c -m 644 20-OUI.hwdb 20-acpi-vendor.hwdb 20-bluetooth-vendor-product.hwdb 20-pci-classes.hwdb 20-pci-vendor-model.hwdb 20-sdio-classes.hwdb 20-sdio-vendor-model.hwdb 20-usb-classes.hwdb 20-usb-vendor-model.hwdb '/tools/etc/udev/hwdb.d'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/hwdb'
+make[2]: Leaving directory '/mnt/clfs/sources/eudev-1.7/hwdb'
+Making install in docs
+make[2]: Entering directory '/mnt/clfs/sources/eudev-1.7/docs'
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/docs'
+make[4]: Entering directory '/mnt/clfs/sources/eudev-1.7/docs'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/mnt/clfs/sources/eudev-1.7/docs'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/docs'
+make[2]: Leaving directory '/mnt/clfs/sources/eudev-1.7/docs'
+Making install in test
+make[2]: Entering directory '/mnt/clfs/sources/eudev-1.7/test'
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/test'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/test'
+make[2]: Leaving directory '/mnt/clfs/sources/eudev-1.7/test'
+Making install in man
+make[2]: Entering directory '/mnt/clfs/sources/eudev-1.7/man'
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7/man'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/tools/share/man/man7'
+ /bin/install -c -m 644 udev.7 '/tools/share/man/man7'
+ /bin/mkdir -p '/tools/share/man/man8'
+ /bin/install -c -m 644 udevd.8 udevadm.8 '/tools/share/man/man8'
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7/man'
+make[2]: Leaving directory '/mnt/clfs/sources/eudev-1.7/man'
+make[2]: Entering directory '/mnt/clfs/sources/eudev-1.7'
+make[3]: Entering directory '/mnt/clfs/sources/eudev-1.7'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/clfs/sources/eudev-1.7'
+make[2]: Leaving directory '/mnt/clfs/sources/eudev-1.7'
+make[1]: Leaving directory '/mnt/clfs/sources/eudev-1.7'
+install: creating directory '/tools/lib/firmware'
+
+
+Totalseconds: 11
+
+
+KB: 2061676	/mnt/clfs
+

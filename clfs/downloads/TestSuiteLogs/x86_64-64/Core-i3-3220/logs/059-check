@@ -1,0 +1,575 @@
+Sun Aug 31 01:05:18 EDT 2014
+
+KB: 1228032	/mnt/lfs
+
+checking for x86_64-unknown-linux-gnu-gcc... x86_64-unknown-linux-gnu-gcc -m64
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether x86_64-unknown-linux-gnu-gcc -m64 accepts -g... yes
+checking for x86_64-unknown-linux-gnu-gcc -m64 option to accept ISO C89... none needed
+checking how to run the C preprocessor... x86_64-unknown-linux-gnu-gcc -m64 -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for x86_64-unknown-linux-gnu-strip... x86_64-unknown-linux-gnu-strip
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for style of include used by make... GNU
+checking dependency style of x86_64-unknown-linux-gnu-gcc -m64... gcc3
+checking whether make supports nested variables... yes
+Subunit support will enable automatically.
+checking for a sed that does not truncate output... /bin/sed
+checking for gawk... (cached) gawk
+checking for x86_64-unknown-linux-gnu-gcc... (cached) x86_64-unknown-linux-gnu-gcc -m64
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether x86_64-unknown-linux-gnu-gcc -m64 accepts -g... (cached) yes
+checking for x86_64-unknown-linux-gnu-gcc -m64 option to accept ISO C89... (cached) none needed
+checking whether x86_64-unknown-linux-gnu-gcc -m64 and cc understand -c and -o together... yes
+checking whether ln -s works... yes
+checking for x86_64-unknown-linux-gnu-ar... x86_64-unknown-linux-gnu-ar
+checking the archiver (x86_64-unknown-linux-gnu-ar) interface... ar
+checking build system type... x86_64-cross-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by x86_64-unknown-linux-gnu-gcc -m64... x86_64-unknown-linux-gnu-ld
+checking if the linker (x86_64-unknown-linux-gnu-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /cross-tools/bin/x86_64-unknown-linux-gnu-nm -B
+checking the name lister (/cross-tools/bin/x86_64-unknown-linux-gnu-nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-cross-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-cross-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for x86_64-unknown-linux-gnu-ld option to reload object files... -r
+checking for x86_64-unknown-linux-gnu-objdump... x86_64-unknown-linux-gnu-objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-unknown-linux-gnu-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for x86_64-unknown-linux-gnu-ar... (cached) x86_64-unknown-linux-gnu-ar
+checking for archiver @FILE support... @
+checking for x86_64-unknown-linux-gnu-strip... (cached) x86_64-unknown-linux-gnu-strip
+checking for x86_64-unknown-linux-gnu-ranlib... x86_64-unknown-linux-gnu-ranlib
+checking command to parse /cross-tools/bin/x86_64-unknown-linux-gnu-nm -B output from x86_64-unknown-linux-gnu-gcc -m64 object... ok
+checking for sysroot... no
+checking for x86_64-unknown-linux-gnu-mt... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if x86_64-unknown-linux-gnu-gcc -m64 supports -fno-rtti -fno-exceptions... no
+checking for x86_64-unknown-linux-gnu-gcc -m64 option to produce PIC... -fPIC -DPIC
+checking if x86_64-unknown-linux-gnu-gcc -m64 PIC flag -fPIC -DPIC works... yes
+checking if x86_64-unknown-linux-gnu-gcc -m64 static flag -static works... yes
+checking if x86_64-unknown-linux-gnu-gcc -m64 supports -c -o file.o... yes
+checking if x86_64-unknown-linux-gnu-gcc -m64 supports -c -o file.o... (cached) yes
+checking whether the x86_64-unknown-linux-gnu-gcc -m64 linker (x86_64-unknown-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking whether the C compiler accepts the -Wextra flag... yes
+checking whether the C compiler accepts the -Wstrict-prototypes flag... yes
+checking whether the C compiler accepts the -Wmissing-prototypes flag... yes
+checking whether the C compiler accepts the -Wwrite-strings flag... yes
+checking whether the C compiler accepts the -Wno-variadic-macros flag... yes
+checking whether the C compiler accepts the -Wimport flag... yes
+checking whether the C compiler accepts the -Wfatal-errors flag... yes
+checking whether the C compiler accepts the -Wformat=2 flag... yes
+checking whether the C compiler accepts the -Winit-self flag... yes
+checking whether the C compiler accepts the -Wmissing-include-dirs flag... yes
+checking whether the C compiler accepts the -Wswitch-default flag... yes
+checking whether the C compiler accepts the -Wunknown-pragmas flag... yes
+checking whether the C compiler accepts the -qlanglvl=stdc99 flag... no
+checking for gcov... gcov
+checking for lcov... no
+checking for genhtml... no
+checking for tex... no
+configure: WARNING: tex not installed: cannot rebuild HTML documentation.
+checking for the pthreads library -lpthreads... no
+checking whether pthreads work without any flags... no
+checking whether pthreads work with -Kthread... no
+checking whether pthreads work with -kthread... no
+checking for the pthreads library -llthread... no
+checking whether pthreads work with -pthread... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking if more special flags are required for pthreads... no
+checking for floor in -lm... yes
+checking for clock_gettime, timer_create, timer_settime, timer_delete in -lrt... yes
+checking for struct timespec.tv_sec... yes
+checking for struct timespec.tv_nsec... yes
+checking for struct itimerspec.it_interval... yes
+checking for struct itimerspec.it_value... yes
+checking for ANSI C header files... (cached) yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking for stdint types... stdint.h (shortcircuit)
+make use of stdint.h in check_stdint.h (assuming C99 compatible system)
+checking for x86_64-unknown-linux-gnu-pkg-config... /cross-tools/bin/x86_64-unknown-linux-gnu-pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for an ANSI C-conforming const... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking for long long int... yes
+checking for intmax_t... yes
+checking for unsigned long long int... yes
+checking for uintmax_t... yes
+checking for uint32_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking size of int... 4
+checking size of short... 2
+checking size of long... 8
+checking for clockid_t... yes
+checking for timer_t... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... no
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible realloc... no
+checking for time.h... yes
+checking for stdarg.h... yes
+checking for varargs.h... no
+checking for timer_create... yes
+checking if timer_create is supported on the system... autodetect
+checking for timer_create... (cached) yes
+checking for timer_settime... yes
+checking for timer_delete... yes
+checking whether timer_create is declared... no
+checking whether timer_settime is declared... no
+checking whether timer_delete is declared... no
+checking for alarm... yes
+checking for clock_gettime... yes
+checking for gettimeofday... yes
+checking for localtime_r... yes
+checking for strdup... yes
+checking for strsignal... yes
+checking whether alarm is declared... yes
+checking whether clock_gettime is declared... no
+checking whether gettimeofday is declared... no
+checking whether localtime_r is declared... no
+checking whether strdup is declared... yes
+checking whether strsignal is declared... yes
+checking whether setenv is declared... yes
+checking for setitimer... yes
+checking for fork... yes
+checking for sigaction... yes
+checking for vsnprintf... yes
+checking whether vsnprintf is C99 compliant... no
+checking for inttypes.h... (cached) yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking for stddef.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for struct lconv.decimal_point... yes
+checking for struct lconv.thousands_sep... yes
+checking for long double... yes
+checking for long long int... (cached) yes
+checking for unsigned long long int... (cached) yes
+checking for size_t... (cached) yes
+checking for intmax_t... (cached) yes
+checking for uintmax_t... (cached) yes
+checking for uintptr_t... yes
+checking for ptrdiff_t... yes
+checking for localeconv... yes
+checking for an ANSI C-conforming const... (cached) yes
+checking for snprintf... yes
+checking whether snprintf is C99 compliant... no
+checking for vasprintf... yes
+checking for asprintf... yes
+checking for gawk... /usr/bin/gawk
+configure: creating ./config.status
+config.status: creating checkmk/checkmk
+config.status: creating check.pc
+config.status: creating Makefile
+config.status: creating checkmk/Makefile
+config.status: creating doc/Makefile
+config.status: creating lib/Makefile
+config.status: creating src/check.h
+config.status: creating src/Makefile
+config.status: creating tests/Makefile
+config.status: creating tests/test_vars
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing check_stdint.h commands
+config.status: creating check_stdint.h : _CHECK_CHECK_STDINT_H
+config.status: executing checkmk-x commands
+
+==========================================
+Summary of Check options:
+
+fork mode ............................ yes
+high resolution timer replacement .... no
+snprintf replacement ................. yes
+subunit support....................... no
+timeout unit tests ................... yes
+==========================================
+make[1]: Entering directory '/mnt/lfs/sources/check-0.9.13'
+make  all-recursive
+make[2]: Entering directory '/mnt/lfs/sources/check-0.9.13'
+Making all in lib
+make[3]: Entering directory '/mnt/lfs/sources/check-0.9.13/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT libcompat.lo -MD -MP -MF .deps/libcompat.Tpo -c -o libcompat.lo libcompat.c
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT libcompat.lo -MD -MP -MF .deps/libcompat.Tpo -c libcompat.c  -fPIC -DPIC -o .libs/libcompat.o
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT libcompat.lo -MD -MP -MF .deps/libcompat.Tpo -c libcompat.c -o libcompat.o >/dev/null 2>&1
+mv -f .deps/libcompat.Tpo .deps/libcompat.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT malloc.lo -MD -MP -MF .deps/malloc.Tpo -c -o malloc.lo malloc.c
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT malloc.lo -MD -MP -MF .deps/malloc.Tpo -c malloc.c  -fPIC -DPIC -o .libs/malloc.o
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT malloc.lo -MD -MP -MF .deps/malloc.Tpo -c malloc.c -o malloc.o >/dev/null 2>&1
+mv -f .deps/malloc.Tpo .deps/malloc.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT realloc.lo -MD -MP -MF .deps/realloc.Tpo -c -o realloc.lo realloc.c
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT realloc.lo -MD -MP -MF .deps/realloc.Tpo -c realloc.c  -fPIC -DPIC -o .libs/realloc.o
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT realloc.lo -MD -MP -MF .deps/realloc.Tpo -c realloc.c -o realloc.o >/dev/null 2>&1
+mv -f .deps/realloc.Tpo .deps/realloc.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..     -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT snprintf.lo -MD -MP -MF .deps/snprintf.Tpo -c -o snprintf.lo snprintf.c
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT snprintf.lo -MD -MP -MF .deps/snprintf.Tpo -c snprintf.c  -fPIC -DPIC -o .libs/snprintf.o
+snprintf.c:526:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ extern int errno;
+ ^
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT snprintf.lo -MD -MP -MF .deps/snprintf.Tpo -c snprintf.c -o snprintf.o >/dev/null 2>&1
+mv -f .deps/snprintf.Tpo .deps/snprintf.Plo
+/bin/sh ../libtool  --tag=CC   --mode=link x86_64-unknown-linux-gnu-gcc -m64  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -no-undefined  -o libcompat.la  libcompat.lo malloc.lo realloc.lo snprintf.lo  -lrt -lm 
+libtool: link: x86_64-unknown-linux-gnu-ar cru .libs/libcompat.a .libs/libcompat.o .libs/malloc.o .libs/realloc.o .libs/snprintf.o 
+libtool: link: x86_64-unknown-linux-gnu-ranlib .libs/libcompat.a
+libtool: link: ( cd ".libs" && rm -f "libcompat.la" && ln -s "../libcompat.la" "libcompat.la" )
+make[3]: Leaving directory '/mnt/lfs/sources/check-0.9.13/lib'
+Making all in src
+make[3]: Entering directory '/mnt/lfs/sources/check-0.9.13/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..    -pthread  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check.lo -MD -MP -MF .deps/check.Tpo -c -o check.lo check.c
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check.lo -MD -MP -MF .deps/check.Tpo -c check.c  -fPIC -DPIC -o .libs/check.o
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check.lo -MD -MP -MF .deps/check.Tpo -c check.c -o check.o >/dev/null 2>&1
+mv -f .deps/check.Tpo .deps/check.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..    -pthread  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_error.lo -MD -MP -MF .deps/check_error.Tpo -c -o check_error.lo check_error.c
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_error.lo -MD -MP -MF .deps/check_error.Tpo -c check_error.c  -fPIC -DPIC -o .libs/check_error.o
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_error.lo -MD -MP -MF .deps/check_error.Tpo -c check_error.c -o check_error.o >/dev/null 2>&1
+mv -f .deps/check_error.Tpo .deps/check_error.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..    -pthread  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_list.lo -MD -MP -MF .deps/check_list.Tpo -c -o check_list.lo check_list.c
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_list.lo -MD -MP -MF .deps/check_list.Tpo -c check_list.c  -fPIC -DPIC -o .libs/check_list.o
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_list.lo -MD -MP -MF .deps/check_list.Tpo -c check_list.c -o check_list.o >/dev/null 2>&1
+mv -f .deps/check_list.Tpo .deps/check_list.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..    -pthread  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_log.lo -MD -MP -MF .deps/check_log.Tpo -c -o check_log.lo check_log.c
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_log.lo -MD -MP -MF .deps/check_log.Tpo -c check_log.c  -fPIC -DPIC -o .libs/check_log.o
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_log.lo -MD -MP -MF .deps/check_log.Tpo -c check_log.c -o check_log.o >/dev/null 2>&1
+mv -f .deps/check_log.Tpo .deps/check_log.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..    -pthread  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_msg.lo -MD -MP -MF .deps/check_msg.Tpo -c -o check_msg.lo check_msg.c
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_msg.lo -MD -MP -MF .deps/check_msg.Tpo -c check_msg.c  -fPIC -DPIC -o .libs/check_msg.o
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_msg.lo -MD -MP -MF .deps/check_msg.Tpo -c check_msg.c -o check_msg.o >/dev/null 2>&1
+mv -f .deps/check_msg.Tpo .deps/check_msg.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..    -pthread  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_pack.lo -MD -MP -MF .deps/check_pack.Tpo -c -o check_pack.lo check_pack.c
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_pack.lo -MD -MP -MF .deps/check_pack.Tpo -c check_pack.c  -fPIC -DPIC -o .libs/check_pack.o
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_pack.lo -MD -MP -MF .deps/check_pack.Tpo -c check_pack.c -o check_pack.o >/dev/null 2>&1
+mv -f .deps/check_pack.Tpo .deps/check_pack.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..    -pthread  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_print.lo -MD -MP -MF .deps/check_print.Tpo -c -o check_print.lo check_print.c
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_print.lo -MD -MP -MF .deps/check_print.Tpo -c check_print.c  -fPIC -DPIC -o .libs/check_print.o
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_print.lo -MD -MP -MF .deps/check_print.Tpo -c check_print.c -o check_print.o >/dev/null 2>&1
+mv -f .deps/check_print.Tpo .deps/check_print.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..    -pthread  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_run.lo -MD -MP -MF .deps/check_run.Tpo -c -o check_run.lo check_run.c
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_run.lo -MD -MP -MF .deps/check_run.Tpo -c check_run.c  -fPIC -DPIC -o .libs/check_run.o
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_run.lo -MD -MP -MF .deps/check_run.Tpo -c check_run.c -o check_run.o >/dev/null 2>&1
+mv -f .deps/check_run.Tpo .deps/check_run.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..    -pthread  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_str.lo -MD -MP -MF .deps/check_str.Tpo -c -o check_str.lo check_str.c
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_str.lo -MD -MP -MF .deps/check_str.Tpo -c check_str.c  -fPIC -DPIC -o .libs/check_str.o
+libtool: compile:  x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I.. -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_str.lo -MD -MP -MF .deps/check_str.Tpo -c check_str.c -o check_str.o >/dev/null 2>&1
+mv -f .deps/check_str.Tpo .deps/check_str.Plo
+/bin/sed -n -e 's/^..*CK_EXPORT[[:space:]][[:space:]]*\([[:alnum:]_][[:alnum:]_]*\)..*$/\1/p' ../src/check.h.in > exported.sym
+/bin/sh ../libtool  --tag=CC   --mode=link x86_64-unknown-linux-gnu-gcc -m64 -pthread  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -no-undefined -export-symbols exported.sym  -o libcheck.la -rpath /tools/lib check.lo check_error.lo check_list.lo check_log.lo check_msg.lo check_pack.lo check_print.lo check_run.lo check_str.lo   ../lib/libcompat.la -lrt -lm 
+libtool: link: echo "{ global:" > .libs/libcheck.ver
+libtool: link:  cat exported.sym | sed -e "s/\(.*\)/\1;/" >> .libs/libcheck.ver
+libtool: link:  echo "local: *; };" >> .libs/libcheck.ver
+libtool: link:  x86_64-unknown-linux-gnu-gcc -m64 -shared  -fPIC -DPIC  .libs/check.o .libs/check_error.o .libs/check_list.o .libs/check_log.o .libs/check_msg.o .libs/check_pack.o .libs/check_print.o .libs/check_run.o .libs/check_str.o  -Wl,--whole-archive ../lib/.libs/libcompat.a -Wl,--no-whole-archive  -lrt -lm  -m64 -pthread -O2   -pthread -Wl,-soname -Wl,libcheck.so.0 -Wl,-version-script -Wl,.libs/libcheck.ver -o .libs/libcheck.so.0.0.0
+.libs/check_msg.o: In function `open_tmp_file':
+/mnt/lfs/sources/check-0.9.13/src/check_msg.c:238: warning: the use of `tempnam' is dangerous, better use `mkstemp'
+libtool: link: (cd ".libs" && rm -f "libcheck.so.0" && ln -s "libcheck.so.0.0.0" "libcheck.so.0")
+libtool: link: (cd ".libs" && rm -f "libcheck.so" && ln -s "libcheck.so.0.0.0" "libcheck.so")
+libtool: link: (cd .libs/libcheck.lax/libcompat.a && x86_64-unknown-linux-gnu-ar x "/mnt/lfs/sources/check-0.9.13/src/../lib/.libs/libcompat.a")
+libtool: link: x86_64-unknown-linux-gnu-ar cru .libs/libcheck.a  check.o check_error.o check_list.o check_log.o check_msg.o check_pack.o check_print.o check_run.o check_str.o  .libs/libcheck.lax/libcompat.a/libcompat.o .libs/libcheck.lax/libcompat.a/malloc.o .libs/libcheck.lax/libcompat.a/realloc.o .libs/libcheck.lax/libcompat.a/snprintf.o 
+libtool: link: x86_64-unknown-linux-gnu-ranlib .libs/libcheck.a
+libtool: link: rm -fr .libs/libcheck.lax
+libtool: link: ( cd ".libs" && rm -f "libcheck.la" && ln -s "../libcheck.la" "libcheck.la" )
+/bin/sh ../libtool  --tag=CC   --mode=link x86_64-unknown-linux-gnu-gcc -m64 -pthread  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -no-undefined  -o libcheckinternal.la  check.lo check_error.lo check_list.lo check_log.lo check_msg.lo check_pack.lo check_print.lo check_run.lo check_str.lo   ../lib/libcompat.la -lrt -lm 
+libtool: link: (cd .libs/libcheckinternal.lax/libcompat.a && x86_64-unknown-linux-gnu-ar x "/mnt/lfs/sources/check-0.9.13/src/../lib/.libs/libcompat.a")
+libtool: link: x86_64-unknown-linux-gnu-ar cru .libs/libcheckinternal.a .libs/check.o .libs/check_error.o .libs/check_list.o .libs/check_log.o .libs/check_msg.o .libs/check_pack.o .libs/check_print.o .libs/check_run.o .libs/check_str.o   .libs/libcheckinternal.lax/libcompat.a/libcompat.o .libs/libcheckinternal.lax/libcompat.a/malloc.o .libs/libcheckinternal.lax/libcompat.a/realloc.o .libs/libcheckinternal.lax/libcompat.a/snprintf.o 
+libtool: link: x86_64-unknown-linux-gnu-ranlib .libs/libcheckinternal.a
+libtool: link: rm -fr .libs/libcheckinternal.lax
+libtool: link: ( cd ".libs" && rm -f "libcheckinternal.la" && ln -s "../libcheckinternal.la" "libcheckinternal.la" )
+make[3]: Leaving directory '/mnt/lfs/sources/check-0.9.13/src'
+Making all in doc
+make[3]: Entering directory '/mnt/lfs/sources/check-0.9.13/doc'
+cd ../doc/example; \
+diff -U 100 src/money.1.h src/money.2.h > /mnt/lfs/sources/check-0.9.13/doc/money.1-2.h.diff || test $? -eq 1; \
+cd -;
+/mnt/lfs/sources/check-0.9.13/doc
+cd ../doc/example; \
+diff -U 100 src/money.1.c src/money.3.c > /mnt/lfs/sources/check-0.9.13/doc/money.1-3.c.diff || test $? -eq 1; \
+cd -;
+/mnt/lfs/sources/check-0.9.13/doc
+cd ../doc/example; \
+diff -U 100 src/money.3.c src/money.4.c > /mnt/lfs/sources/check-0.9.13/doc/money.3-4.c.diff || test $? -eq 1; \
+cd -;
+/mnt/lfs/sources/check-0.9.13/doc
+cd ../doc/example; \
+diff -U 100 src/money.4.c src/money.5.c > /mnt/lfs/sources/check-0.9.13/doc/money.4-5.c.diff || test $? -eq 1; \
+cd -;
+/mnt/lfs/sources/check-0.9.13/doc
+cd ../doc/example; \
+diff -U 100 src/money.5.c src/money.6.c > /mnt/lfs/sources/check-0.9.13/doc/money.5-6.c.diff || test $? -eq 1; \
+cd -;
+/mnt/lfs/sources/check-0.9.13/doc
+cd ../doc/example; \
+diff -U 100 tests/check_money.1.c tests/check_money.2.c > /mnt/lfs/sources/check-0.9.13/doc/check_money.1-2.c.diff || test $? -eq 1; \
+cd -;
+/mnt/lfs/sources/check-0.9.13/doc
+cd ../doc/example; \
+diff -U 100 tests/check_money.2.c tests/check_money.3.c > /mnt/lfs/sources/check-0.9.13/doc/check_money.2-3.c.diff || test $? -eq 1; \
+cd -;
+/mnt/lfs/sources/check-0.9.13/doc
+cd ../doc/example; \
+diff -U 100 tests/check_money.3.c tests/check_money.6.c > /mnt/lfs/sources/check-0.9.13/doc/check_money.3-6.c.diff || test $? -eq 1; \
+cd -;
+/mnt/lfs/sources/check-0.9.13/doc
+cd ../doc/example; \
+diff -U 100 tests/check_money.6.c tests/check_money.7.c > /mnt/lfs/sources/check-0.9.13/doc/check_money.6-7.c.diff || test $? -eq 1; \
+cd -;
+/mnt/lfs/sources/check-0.9.13/doc
+make[3]: Leaving directory '/mnt/lfs/sources/check-0.9.13/doc'
+Making all in .
+make[3]: Entering directory '/mnt/lfs/sources/check-0.9.13'
+make[3]: Leaving directory '/mnt/lfs/sources/check-0.9.13'
+Making all in checkmk
+make[3]: Entering directory '/mnt/lfs/sources/check-0.9.13/checkmk'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/mnt/lfs/sources/check-0.9.13/checkmk'
+Making all in tests
+make[3]: Entering directory '/mnt/lfs/sources/check-0.9.13/tests'
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check_export-check_check_sub.o -MD -MP -MF .deps/check_check_export-check_check_sub.Tpo -c -o check_check_export-check_check_sub.o `test -f 'check_check_sub.c' || echo './'`check_check_sub.c
+check_check_sub.c:808:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void exit_handler();
+ ^
+check_check_sub.c:809:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void exit_handler ()
+      ^
+mv -f .deps/check_check_export-check_check_sub.Tpo .deps/check_check_export-check_check_sub.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check_export-check_check_master.o -MD -MP -MF .deps/check_check_export-check_check_master.Tpo -c -o check_check_export-check_check_master.o `test -f 'check_check_master.c' || echo './'`check_check_master.c
+mv -f .deps/check_check_export-check_check_master.Tpo .deps/check_check_export-check_check_master.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check_export-check_check_log.o -MD -MP -MF .deps/check_check_export-check_check_log.Tpo -c -o check_check_export-check_check_log.o `test -f 'check_check_log.c' || echo './'`check_check_log.c
+mv -f .deps/check_check_export-check_check_log.Tpo .deps/check_check_export-check_check_log.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check_export-check_check_fork.o -MD -MP -MF .deps/check_check_export-check_check_fork.Tpo -c -o check_check_export-check_check_fork.o `test -f 'check_check_fork.c' || echo './'`check_check_fork.c
+mv -f .deps/check_check_export-check_check_fork.Tpo .deps/check_check_export-check_check_fork.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check_export-check_check_export_main.o -MD -MP -MF .deps/check_check_export-check_check_export_main.Tpo -c -o check_check_export-check_check_export_main.o `test -f 'check_check_export_main.c' || echo './'`check_check_export_main.c
+mv -f .deps/check_check_export-check_check_export_main.Tpo .deps/check_check_export-check_check_export_main.Po
+/bin/sh ../libtool  --tag=CC   --mode=link x86_64-unknown-linux-gnu-gcc -m64  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas   -o check_check_export check_check_export-check_check_sub.o check_check_export-check_check_master.o check_check_export-check_check_log.o check_check_export-check_check_fork.o check_check_export-check_check_export_main.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: x86_64-unknown-linux-gnu-gcc -m64 -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -o .libs/check_check_export check_check_export-check_check_sub.o check_check_export-check_check_master.o check_check_export-check_check_log.o check_check_export-check_check_fork.o check_check_export-check_check_export_main.o  ../src/.libs/libcheck.so ../lib/.libs/libcompat.a -lrt -lm -pthread -Wl,-rpath -Wl,/tools/lib
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check-check_list.o -MD -MP -MF .deps/check_check-check_list.Tpo -c -o check_check-check_list.o `test -f 'check_list.c' || echo './'`check_list.c
+mv -f .deps/check_check-check_list.Tpo .deps/check_check-check_list.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check-check_check_sub.o -MD -MP -MF .deps/check_check-check_check_sub.Tpo -c -o check_check-check_check_sub.o `test -f 'check_check_sub.c' || echo './'`check_check_sub.c
+check_check_sub.c:808:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void exit_handler();
+ ^
+check_check_sub.c:809:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void exit_handler ()
+      ^
+mv -f .deps/check_check-check_check_sub.Tpo .deps/check_check-check_check_sub.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check-check_check_master.o -MD -MP -MF .deps/check_check-check_check_master.Tpo -c -o check_check-check_check_master.o `test -f 'check_check_master.c' || echo './'`check_check_master.c
+mv -f .deps/check_check-check_check_master.Tpo .deps/check_check-check_check_master.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check-check_check_msg.o -MD -MP -MF .deps/check_check-check_check_msg.Tpo -c -o check_check-check_check_msg.o `test -f 'check_check_msg.c' || echo './'`check_check_msg.c
+mv -f .deps/check_check-check_check_msg.Tpo .deps/check_check-check_check_msg.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check-check_check_log.o -MD -MP -MF .deps/check_check-check_check_log.Tpo -c -o check_check-check_check_log.o `test -f 'check_check_log.c' || echo './'`check_check_log.c
+mv -f .deps/check_check-check_check_log.Tpo .deps/check_check-check_check_log.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check-check_check_log_internal.o -MD -MP -MF .deps/check_check-check_check_log_internal.Tpo -c -o check_check-check_check_log_internal.o `test -f 'check_check_log_internal.c' || echo './'`check_check_log_internal.c
+mv -f .deps/check_check-check_check_log_internal.Tpo .deps/check_check-check_check_log_internal.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check-check_check_limit.o -MD -MP -MF .deps/check_check-check_check_limit.Tpo -c -o check_check-check_check_limit.o `test -f 'check_check_limit.c' || echo './'`check_check_limit.c
+mv -f .deps/check_check-check_check_limit.Tpo .deps/check_check-check_check_limit.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check-check_check_fork.o -MD -MP -MF .deps/check_check-check_check_fork.Tpo -c -o check_check-check_check_fork.o `test -f 'check_check_fork.c' || echo './'`check_check_fork.c
+mv -f .deps/check_check-check_check_fork.Tpo .deps/check_check-check_check_fork.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check-check_check_fixture.o -MD -MP -MF .deps/check_check-check_check_fixture.Tpo -c -o check_check-check_check_fixture.o `test -f 'check_check_fixture.c' || echo './'`check_check_fixture.c
+mv -f .deps/check_check-check_check_fixture.Tpo .deps/check_check-check_check_fixture.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check-check_check_pack.o -MD -MP -MF .deps/check_check-check_check_pack.Tpo -c -o check_check-check_check_pack.o `test -f 'check_check_pack.c' || echo './'`check_check_pack.c
+mv -f .deps/check_check-check_check_pack.Tpo .deps/check_check-check_check_pack.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check-check_check_exit.o -MD -MP -MF .deps/check_check-check_check_exit.Tpo -c -o check_check-check_check_exit.o `test -f 'check_check_exit.c' || echo './'`check_check_exit.c
+mv -f .deps/check_check-check_check_exit.Tpo .deps/check_check-check_check_exit.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check-check_check_selective.o -MD -MP -MF .deps/check_check-check_check_selective.Tpo -c -o check_check-check_check_selective.o `test -f 'check_check_selective.c' || echo './'`check_check_selective.c
+mv -f .deps/check_check-check_check_selective.Tpo .deps/check_check-check_check_selective.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_check-check_check_main.o -MD -MP -MF .deps/check_check-check_check_main.Tpo -c -o check_check-check_check_main.o `test -f 'check_check_main.c' || echo './'`check_check_main.c
+mv -f .deps/check_check-check_check_main.Tpo .deps/check_check-check_check_main.Po
+/bin/sh ../libtool  --tag=CC   --mode=link x86_64-unknown-linux-gnu-gcc -m64  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas   -o check_check check_check-check_list.o check_check-check_check_sub.o check_check-check_check_master.o check_check-check_check_msg.o check_check-check_check_log.o check_check-check_check_log_internal.o check_check-check_check_limit.o check_check-check_check_fork.o check_check-check_check_fixture.o check_check-check_check_pack.o check_check-check_check_exit.o check_check-check_check_selective.o check_check-check_check_main.o ../src/libcheckinternal.la ../lib/libcompat.la -lrt -lm 
+libtool: link: x86_64-unknown-linux-gnu-gcc -m64 -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -o check_check check_check-check_list.o check_check-check_check_sub.o check_check-check_check_master.o check_check-check_check_msg.o check_check-check_check_log.o check_check-check_check_log_internal.o check_check-check_check_limit.o check_check-check_check_fork.o check_check-check_check_fixture.o check_check-check_check_pack.o check_check-check_check_exit.o check_check-check_check_selective.o check_check-check_check_main.o  ../src/.libs/libcheckinternal.a ../lib/.libs/libcompat.a -lrt -lm -pthread
+../src/.libs/libcheckinternal.a(check_msg.o): In function `open_tmp_file':
+/mnt/lfs/sources/check-0.9.13/src/check_msg.c:238: warning: the use of `tempnam' is dangerous, better use `mkstemp'
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_stress.o -MD -MP -MF .deps/check_stress.Tpo -c -o check_stress.o check_stress.c
+mv -f .deps/check_stress.Tpo .deps/check_stress.Po
+/bin/sh ../libtool  --tag=CC   --mode=link x86_64-unknown-linux-gnu-gcc -m64  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas   -o check_stress check_stress.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: x86_64-unknown-linux-gnu-gcc -m64 -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -o .libs/check_stress check_stress.o  ../src/.libs/libcheck.so ../lib/.libs/libcompat.a -lrt -lm -pthread -Wl,-rpath -Wl,/tools/lib
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src  -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_thread_stress-check_thread_stress.o -MD -MP -MF .deps/check_thread_stress-check_thread_stress.Tpo -c -o check_thread_stress-check_thread_stress.o `test -f 'check_thread_stress.c' || echo './'`check_thread_stress.c
+mv -f .deps/check_thread_stress-check_thread_stress.Tpo .deps/check_thread_stress-check_thread_stress.Po
+/bin/sh ../libtool  --tag=CC   --mode=link x86_64-unknown-linux-gnu-gcc -m64 -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas   -o check_thread_stress check_thread_stress-check_thread_stress.o ../src/libcheck.la ../lib/libcompat.la  -lrt -lm 
+libtool: link: x86_64-unknown-linux-gnu-gcc -m64 -pthread -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -o .libs/check_thread_stress check_thread_stress-check_thread_stress.o  ../src/.libs/libcheck.so ../lib/.libs/libcompat.a -lrt -lm -pthread -Wl,-rpath -Wl,/tools/lib
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_nofork.o -MD -MP -MF .deps/check_nofork.Tpo -c -o check_nofork.o check_nofork.c
+mv -f .deps/check_nofork.Tpo .deps/check_nofork.Po
+/bin/sh ../libtool  --tag=CC   --mode=link x86_64-unknown-linux-gnu-gcc -m64  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas   -o check_nofork check_nofork.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: x86_64-unknown-linux-gnu-gcc -m64 -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -o .libs/check_nofork check_nofork.o  ../src/.libs/libcheck.so ../lib/.libs/libcompat.a -lrt -lm -pthread -Wl,-rpath -Wl,/tools/lib
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src  -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_mem_leaks-check_mem_leaks.o -MD -MP -MF .deps/check_mem_leaks-check_mem_leaks.Tpo -c -o check_mem_leaks-check_mem_leaks.o `test -f 'check_mem_leaks.c' || echo './'`check_mem_leaks.c
+mv -f .deps/check_mem_leaks-check_mem_leaks.Tpo .deps/check_mem_leaks-check_mem_leaks.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src  -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_mem_leaks-check_check_log.o -MD -MP -MF .deps/check_mem_leaks-check_check_log.Tpo -c -o check_mem_leaks-check_check_log.o `test -f 'check_check_log.c' || echo './'`check_check_log.c
+mv -f .deps/check_mem_leaks-check_check_log.Tpo .deps/check_mem_leaks-check_check_log.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src  -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_mem_leaks-check_check_fork.o -MD -MP -MF .deps/check_mem_leaks-check_check_fork.Tpo -c -o check_mem_leaks-check_check_fork.o `test -f 'check_check_fork.c' || echo './'`check_check_fork.c
+mv -f .deps/check_mem_leaks-check_check_fork.Tpo .deps/check_mem_leaks-check_check_fork.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src  -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_mem_leaks-check_check_exit.o -MD -MP -MF .deps/check_mem_leaks-check_check_exit.Tpo -c -o check_mem_leaks-check_check_exit.o `test -f 'check_check_exit.c' || echo './'`check_check_exit.c
+mv -f .deps/check_mem_leaks-check_check_exit.Tpo .deps/check_mem_leaks-check_check_exit.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src  -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_mem_leaks-check_check_selective.o -MD -MP -MF .deps/check_mem_leaks-check_check_selective.Tpo -c -o check_mem_leaks-check_check_selective.o `test -f 'check_check_selective.c' || echo './'`check_check_selective.c
+mv -f .deps/check_mem_leaks-check_check_selective.Tpo .deps/check_mem_leaks-check_check_selective.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src  -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_mem_leaks-check_check_sub.o -MD -MP -MF .deps/check_mem_leaks-check_check_sub.Tpo -c -o check_mem_leaks-check_check_sub.o `test -f 'check_check_sub.c' || echo './'`check_check_sub.c
+check_check_sub.c:808:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void exit_handler();
+ ^
+check_check_sub.c:809:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void exit_handler ()
+      ^
+mv -f .deps/check_mem_leaks-check_check_sub.Tpo .deps/check_mem_leaks-check_check_sub.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src  -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT check_mem_leaks-check_check_master.o -MD -MP -MF .deps/check_mem_leaks-check_check_master.Tpo -c -o check_mem_leaks-check_check_master.o `test -f 'check_check_master.c' || echo './'`check_check_master.c
+mv -f .deps/check_mem_leaks-check_check_master.Tpo .deps/check_mem_leaks-check_check_master.Po
+/bin/sh ../libtool  --tag=CC   --mode=link x86_64-unknown-linux-gnu-gcc -m64 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas   -o check_mem_leaks check_mem_leaks-check_mem_leaks.o check_mem_leaks-check_check_log.o check_mem_leaks-check_check_fork.o check_mem_leaks-check_check_exit.o check_mem_leaks-check_check_selective.o check_mem_leaks-check_check_sub.o check_mem_leaks-check_check_master.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: x86_64-unknown-linux-gnu-gcc -m64 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -o .libs/check_mem_leaks check_mem_leaks-check_mem_leaks.o check_mem_leaks-check_check_log.o check_mem_leaks-check_check_fork.o check_mem_leaks-check_check_exit.o check_mem_leaks-check_check_selective.o check_mem_leaks-check_check_sub.o check_mem_leaks-check_check_master.o  ../src/.libs/libcheck.so ../lib/.libs/libcompat.a -lrt -lm -pthread -Wl,-rpath -Wl,/tools/lib
+x86_64-unknown-linux-gnu-gcc -m64 -DHAVE_CONFIG_H -I. -I..  -I../src -I../src   -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -MT ex_output.o -MD -MP -MF .deps/ex_output.Tpo -c -o ex_output.o ex_output.c
+mv -f .deps/ex_output.Tpo .deps/ex_output.Po
+/bin/sh ../libtool  --tag=CC   --mode=link x86_64-unknown-linux-gnu-gcc -m64  -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas   -o ex_output ex_output.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: x86_64-unknown-linux-gnu-gcc -m64 -g -O2 -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -o .libs/ex_output ex_output.o  ../src/.libs/libcheck.so ../lib/.libs/libcompat.a -lrt -lm -pthread -Wl,-rpath -Wl,/tools/lib
+make[3]: Leaving directory '/mnt/lfs/sources/check-0.9.13/tests'
+make[2]: Leaving directory '/mnt/lfs/sources/check-0.9.13'
+make[1]: Leaving directory '/mnt/lfs/sources/check-0.9.13'
+make[1]: Entering directory '/mnt/lfs/sources/check-0.9.13'
+Making install in lib
+make[2]: Entering directory '/mnt/lfs/sources/check-0.9.13/lib'
+make[3]: Entering directory '/mnt/lfs/sources/check-0.9.13/lib'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/lfs/sources/check-0.9.13/lib'
+make[2]: Leaving directory '/mnt/lfs/sources/check-0.9.13/lib'
+Making install in src
+make[2]: Entering directory '/mnt/lfs/sources/check-0.9.13/src'
+make[3]: Entering directory '/mnt/lfs/sources/check-0.9.13/src'
+test -z "/tools/lib" || /bin/mkdir -p "/tools/lib"
+ /bin/sh ../libtool   --mode=install /usr/bin/install -c   libcheck.la '/tools/lib'
+libtool: install: /usr/bin/install -c .libs/libcheck.so.0.0.0 /tools/lib/libcheck.so.0.0.0
+libtool: install: (cd /tools/lib && { ln -s -f libcheck.so.0.0.0 libcheck.so.0 || { rm -f libcheck.so.0 && ln -s libcheck.so.0.0.0 libcheck.so.0; }; })
+libtool: install: (cd /tools/lib && { ln -s -f libcheck.so.0.0.0 libcheck.so || { rm -f libcheck.so && ln -s libcheck.so.0.0.0 libcheck.so; }; })
+libtool: install: /usr/bin/install -c .libs/libcheck.lai /tools/lib/libcheck.la
+libtool: install: /usr/bin/install -c .libs/libcheck.a /tools/lib/libcheck.a
+libtool: install: chmod 644 /tools/lib/libcheck.a
+libtool: install: x86_64-unknown-linux-gnu-ranlib /tools/lib/libcheck.a
+libtool: finish: PATH="/cross-tools/bin:/bin:/usr/bin:/sbin" ldconfig -n /tools/lib
+ldconfig: /tools/lib/libisl.so.10.2.2-gdb.py is not an ELF file - it has the wrong magic bytes at the start.
+
+ldconfig: /tools/lib/libstdc++.so.6.0.19-gdb.py is not an ELF file - it has the wrong magic bytes at the start.
+
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /tools/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+test -z "/tools/include" || /bin/mkdir -p "/tools/include"
+ /usr/bin/install -c -m 644 check.h '/tools/include'
+make[3]: Leaving directory '/mnt/lfs/sources/check-0.9.13/src'
+make[2]: Leaving directory '/mnt/lfs/sources/check-0.9.13/src'
+Making install in doc
+make[2]: Entering directory '/mnt/lfs/sources/check-0.9.13/doc'
+make[3]: Entering directory '/mnt/lfs/sources/check-0.9.13/doc'
+make[3]: Nothing to be done for 'install-exec-am'.
+test -z "/tools/share/doc/check/example" || /bin/mkdir -p "/tools/share/doc/check/example"
+ /usr/bin/install -c -m 644 example/Makefile.am example/README example/configure.ac '/tools/share/doc/check/example'
+test -z "/tools/share/doc/check/example/src" || /bin/mkdir -p "/tools/share/doc/check/example/src"
+ /usr/bin/install -c -m 644 example/src/Makefile.am example/src/main.c example/src/money.c example/src/money.h example/src/money.1.h example/src/money.2.h example/src/money.1.c example/src/money.3.c example/src/money.4.c example/src/money.5.c example/src/money.6.c '/tools/share/doc/check/example/src'
+test -z "/tools/share/doc/check/example/tests" || /bin/mkdir -p "/tools/share/doc/check/example/tests"
+ /usr/bin/install -c -m 644 example/tests/Makefile.am example/tests/check_money.c example/tests/check_money.1.c example/tests/check_money.2.c example/tests/check_money.3.c example/tests/check_money.6.c example/tests/check_money.7.c '/tools/share/doc/check/example/tests'
+test -z "/tools/share/info" || /bin/mkdir -p "/tools/share/info"
+ /usr/bin/install -c -m 644 ./check.info '/tools/share/info'
+ install-info --info-dir='/tools/share/info' '/tools/share/info/check.info'
+make[3]: Leaving directory '/mnt/lfs/sources/check-0.9.13/doc'
+make[2]: Leaving directory '/mnt/lfs/sources/check-0.9.13/doc'
+Making install in .
+make[2]: Entering directory '/mnt/lfs/sources/check-0.9.13'
+make[3]: Entering directory '/mnt/lfs/sources/check-0.9.13'
+make[3]: Nothing to be done for 'install-exec-am'.
+test -z "/tools/share/doc/check" || /bin/mkdir -p "/tools/share/doc/check"
+ /usr/bin/install -c -m 644 SVNChangeLog ChangeLog ChangeLogOld NEWS README COPYING.LESSER '/tools/share/doc/check'
+test -z "/tools/include" || /bin/mkdir -p "/tools/include"
+ /usr/bin/install -c -m 644 check_stdint.h '/tools/include'
+test -z "/tools/share/aclocal" || /bin/mkdir -p "/tools/share/aclocal"
+ /usr/bin/install -c -m 644 check.m4 '/tools/share/aclocal'
+test -z "/tools/lib/pkgconfig" || /bin/mkdir -p "/tools/lib/pkgconfig"
+ /usr/bin/install -c -m 644 check.pc '/tools/lib/pkgconfig'
+make[3]: Leaving directory '/mnt/lfs/sources/check-0.9.13'
+make[2]: Leaving directory '/mnt/lfs/sources/check-0.9.13'
+Making install in checkmk
+make[2]: Entering directory '/mnt/lfs/sources/check-0.9.13/checkmk'
+make[3]: Entering directory '/mnt/lfs/sources/check-0.9.13/checkmk'
+test -z "/tools/bin" || /bin/mkdir -p "/tools/bin"
+ /usr/bin/install -c checkmk '/tools/bin'
+test -z "/tools/share/man/man1" || /bin/mkdir -p "/tools/share/man/man1"
+ /usr/bin/install -c -m 644 doc/checkmk.1 '/tools/share/man/man1'
+make[3]: Leaving directory '/mnt/lfs/sources/check-0.9.13/checkmk'
+make[2]: Leaving directory '/mnt/lfs/sources/check-0.9.13/checkmk'
+Making install in tests
+make[2]: Entering directory '/mnt/lfs/sources/check-0.9.13/tests'
+make[3]: Entering directory '/mnt/lfs/sources/check-0.9.13/tests'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/lfs/sources/check-0.9.13/tests'
+make[2]: Leaving directory '/mnt/lfs/sources/check-0.9.13/tests'
+make[1]: Leaving directory '/mnt/lfs/sources/check-0.9.13'
+
+
+Totalseconds: 12
+
+
+KB: 1238716	/mnt/lfs
+

@@ -1,0 +1,143 @@
+Mon Jun 30 19:19:45 CDT 2014
+
+KB: 2893524	/
+
+checking whether make sets $(MAKE)... yes
+configure: creating ./config.status
+config.status: creating Makefile
+=== configuring in lib (/sources/gperf-3.0.4/lib)
+configure: running /bin/sh ./configure '--prefix=/usr'  '--docdir=/usr/share/doc/gperf-3.0.4' --cache-file=/dev/null --srcdir=.
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... gcc -E
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ranlib... ranlib
+checking for a BSD compatible install... /usr/bin/install -c
+configure: creating ./config.status
+config.status: creating Makefile
+=== configuring in src (/sources/gperf-3.0.4/src)
+configure: running /bin/sh ./configure '--prefix=/usr'  '--docdir=/usr/share/doc/gperf-3.0.4' --cache-file=/dev/null --srcdir=.
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... gcc -E
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for a BSD compatible install... /usr/bin/install -c
+checking for stack-allocated variable-size arrays... yes
+checking for rand in -lm... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+=== configuring in tests (/sources/gperf-3.0.4/tests)
+configure: running /bin/sh ./configure '--prefix=/usr'  '--docdir=/usr/share/doc/gperf-3.0.4' --cache-file=/dev/null --srcdir=.
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... gcc -E
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking how to run the C++ preprocessor... g++ -E
+configure: creating ./config.status
+config.status: creating Makefile
+=== configuring in doc (/sources/gperf-3.0.4/doc)
+configure: running /bin/sh ./configure '--prefix=/usr'  '--docdir=/usr/share/doc/gperf-3.0.4' --cache-file=/dev/null --srcdir=.
+checking whether make sets $(MAKE)... yes
+checking for a BSD compatible install... /usr/bin/install -c
+configure: creating ./config.status
+config.status: creating Makefile
+make[2]: Entering directory '/sources/gperf-3.0.4'
+cd lib; make all
+make[3]: Entering directory '/sources/gperf-3.0.4/lib'
+gcc -g -O2 -I. -c ./getopt.c
+gcc -g -O2 -I. -c ./getopt1.c
+g++ -g -O2 -I. -c ./getline.cc
+g++ -g -O2 -I. -c ./hash.cc
+rm -f libgp.a
+ar rc libgp.a getopt.o getopt1.o getline.o hash.o
+ranlib libgp.a
+make[3]: Leaving directory '/sources/gperf-3.0.4/lib'
+cd src; make all
+make[3]: Entering directory '/sources/gperf-3.0.4/src'
+g++ -g -O2 -I. -I./../lib -c ./version.cc
+g++ -g -O2 -I. -I./../lib -c ./positions.cc
+g++ -g -O2 -I. -I./../lib -c ./options.cc
+g++ -g -O2 -I. -I./../lib -c ./keyword.cc
+g++ -g -O2 -I. -I./../lib -c ./keyword-list.cc
+g++ -g -O2 -I. -I./../lib -c ./input.cc
+g++ -g -O2 -I. -I./../lib -c ./bool-array.cc
+g++ -g -O2 -I. -I./../lib -c ./hash-table.cc
+g++ -g -O2 -I. -I./../lib -c ./search.cc
+g++ -g -O2 -I. -I./../lib -c ./output.cc
+g++ -g -O2 -I. -I./../lib -c ./main.cc
+g++ -g -O2  -o gperf version.o positions.o options.o keyword.o keyword-list.o input.o bool-array.o hash-table.o search.o output.o main.o ../lib/libgp.a -lm
+make[3]: Leaving directory '/sources/gperf-3.0.4/src'
+cd tests; make all
+make[3]: Entering directory '/sources/gperf-3.0.4/tests'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/sources/gperf-3.0.4/tests'
+cd doc; make all
+make[3]: Entering directory '/sources/gperf-3.0.4/doc'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/sources/gperf-3.0.4/doc'
+make[2]: Leaving directory '/sources/gperf-3.0.4'
+make[2]: Entering directory '/sources/gperf-3.0.4'
+cd lib; make install
+make[3]: Entering directory '/sources/gperf-3.0.4/lib'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/sources/gperf-3.0.4/lib'
+cd src; make install
+make[3]: Entering directory '/sources/gperf-3.0.4/src'
+/bin/sh ./../mkinstalldirs /usr/bin
+/usr/bin/install -c gperf /usr/bin/gperf
+make[3]: Leaving directory '/sources/gperf-3.0.4/src'
+cd tests; make install
+make[3]: Entering directory '/sources/gperf-3.0.4/tests'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/sources/gperf-3.0.4/tests'
+cd doc; make install
+make[3]: Entering directory '/sources/gperf-3.0.4/doc'
+/bin/sh ./../mkinstalldirs /usr/share/info
+/usr/bin/install -c -m 644 ./gperf.info /usr/share/info/gperf.info
+/bin/sh ./../mkinstalldirs /usr/share/man/man1
+/usr/bin/install -c -m 644 ./gperf.1 /usr/share/man/man1/gperf.1
+/bin/sh ./../mkinstalldirs /usr/share/doc/gperf-3.0.4
+mkdir /usr/share/doc/gperf-3.0.4
+/usr/bin/install -c -m 644 ./gperf.html /usr/share/doc/gperf-3.0.4/gperf.html
+make[3]: Leaving directory '/sources/gperf-3.0.4/doc'
+make[2]: Leaving directory '/sources/gperf-3.0.4'
+
+
+Totalseconds: 30
+
+
+KB: 2898684	/
+

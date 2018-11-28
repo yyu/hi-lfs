@@ -1,0 +1,89 @@
+Sun Jun 29 15:10:59 CDT 2014
+
+KB: 2059716	/mnt/clfs
+
+mkdir: created directory ‘/mnt/clfs/bin’
+mkdir: created directory ‘/mnt/clfs/boot’
+mkdir: created directory ‘/mnt/clfs/dev’
+mkdir: created directory ‘/mnt/clfs/etc’
+mkdir: created directory ‘/mnt/clfs/etc/opt’
+mkdir: created directory ‘/mnt/clfs/opt’
+mkdir: created directory ‘/mnt/clfs/home’
+mkdir: created directory ‘/mnt/clfs/lib’
+mkdir: created directory ‘/mnt/clfs/lib/firmware’
+mkdir: created directory ‘/mnt/clfs/mnt’
+mkdir: created directory ‘/mnt/clfs/proc’
+mkdir: created directory ‘/mnt/clfs/media’
+mkdir: created directory ‘/mnt/clfs/media/floppy’
+mkdir: created directory ‘/mnt/clfs/media/cdrom’
+mkdir: created directory ‘/mnt/clfs/run/’
+mkdir: created directory ‘/mnt/clfs/run/shm’
+mkdir: created directory ‘/mnt/clfs/sbin’
+mkdir: created directory ‘/mnt/clfs/srv’
+mkdir: created directory ‘/mnt/clfs/sys’
+mkdir: created directory ‘/mnt/clfs/var’
+mkdir: created directory ‘/mnt/clfs/var/lock’
+mkdir: created directory ‘/mnt/clfs/var/log’
+mkdir: created directory ‘/mnt/clfs/var/mail’
+mkdir: created directory ‘/mnt/clfs/var/spool’
+mkdir: created directory ‘/mnt/clfs/var/opt’
+mkdir: created directory ‘/mnt/clfs/var/cache’
+mkdir: created directory ‘/mnt/clfs/var/lib’
+mkdir: created directory ‘/mnt/clfs/var/lib/misc’
+mkdir: created directory ‘/mnt/clfs/var/lib/locate’
+mkdir: created directory ‘/mnt/clfs/var/local’
+install: creating directory ‘/mnt/clfs/root’
+install: creating directory ‘/mnt/clfs/var/tmp’
+install: creating directory ‘/mnt/clfs/tmp’
+‘/mnt/clfs/var/run’ -> ‘../run’
+mkdir: created directory ‘/mnt/clfs/usr’
+mkdir: created directory ‘/mnt/clfs/usr/bin’
+mkdir: created directory ‘/mnt/clfs/usr/include’
+mkdir: created directory ‘/mnt/clfs/usr/lib’
+mkdir: created directory ‘/mnt/clfs/usr/sbin’
+mkdir: created directory ‘/mnt/clfs/usr/src’
+mkdir: created directory ‘/mnt/clfs/usr/local’
+mkdir: created directory ‘/mnt/clfs/usr/local/bin’
+mkdir: created directory ‘/mnt/clfs/usr/local/include’
+mkdir: created directory ‘/mnt/clfs/usr/local/lib’
+mkdir: created directory ‘/mnt/clfs/usr/local/sbin’
+mkdir: created directory ‘/mnt/clfs/usr/local/src’
+mkdir: created directory ‘/mnt/clfs/usr/share’
+mkdir: created directory ‘/mnt/clfs/usr/share/doc’
+mkdir: created directory ‘/mnt/clfs/usr/share/info’
+mkdir: created directory ‘/mnt/clfs/usr/share/locale’
+mkdir: created directory ‘/mnt/clfs/usr/share/man’
+mkdir: created directory ‘/mnt/clfs/usr/local/share’
+mkdir: created directory ‘/mnt/clfs/usr/local/share/doc’
+mkdir: created directory ‘/mnt/clfs/usr/local/share/info’
+mkdir: created directory ‘/mnt/clfs/usr/local/share/locale’
+mkdir: created directory ‘/mnt/clfs/usr/local/share/man’
+mkdir: created directory ‘/mnt/clfs/usr/share/misc’
+mkdir: created directory ‘/mnt/clfs/usr/share/terminfo’
+mkdir: created directory ‘/mnt/clfs/usr/share/zoneinfo’
+mkdir: created directory ‘/mnt/clfs/usr/local/share/misc’
+mkdir: created directory ‘/mnt/clfs/usr/local/share/terminfo’
+mkdir: created directory ‘/mnt/clfs/usr/local/share/zoneinfo’
+mkdir: created directory ‘/mnt/clfs/usr/share/man/man1’
+mkdir: created directory ‘/mnt/clfs/usr/share/man/man2’
+mkdir: created directory ‘/mnt/clfs/usr/share/man/man3’
+mkdir: created directory ‘/mnt/clfs/usr/share/man/man4’
+mkdir: created directory ‘/mnt/clfs/usr/share/man/man5’
+mkdir: created directory ‘/mnt/clfs/usr/share/man/man6’
+mkdir: created directory ‘/mnt/clfs/usr/share/man/man7’
+mkdir: created directory ‘/mnt/clfs/usr/share/man/man8’
+mkdir: created directory ‘/mnt/clfs/usr/local/share/man/man1’
+mkdir: created directory ‘/mnt/clfs/usr/local/share/man/man2’
+mkdir: created directory ‘/mnt/clfs/usr/local/share/man/man3’
+mkdir: created directory ‘/mnt/clfs/usr/local/share/man/man4’
+mkdir: created directory ‘/mnt/clfs/usr/local/share/man/man5’
+mkdir: created directory ‘/mnt/clfs/usr/local/share/man/man6’
+mkdir: created directory ‘/mnt/clfs/usr/local/share/man/man7’
+mkdir: created directory ‘/mnt/clfs/usr/local/share/man/man8’
+
+
+Totalseconds: 0
+
+
+KB: 2060024	/mnt/clfs
+

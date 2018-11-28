@@ -1,0 +1,47 @@
+Sun Jun 29 15:04:51 CDT 2014
+
+KB: 2015892	/mnt/clfs
+
+make[1]: Entering directory '/mnt/clfs/sources/boot-scripts-cross-lfs-3.0-20140521'
+install -d -m 755 /tools/etc/rc.d/rc{0,1,2,3,4,5,6,sysinit}.d
+install -d -m 755 /tools/etc/rc.d/init.d
+install -d -m 755 /tools/etc/sysconfig
+install -d -m 755 /tools/etc/sysconfig/network-devices/services
+install -m 754 clfs/init.d/checkfs       		/tools/etc/rc.d/init.d/
+install -m 754 clfs/init.d/cleanfs       		/tools/etc/rc.d/init.d/
+install -m 644 clfs/init.d/functions /tools/etc/rc.d/init.d/functions
+install -m 754 clfs/init.d/halt          		/tools/etc/rc.d/init.d/
+install -m 754 clfs/init.d/localnet      		/tools/etc/rc.d/init.d/
+install -m 754 clfs/init.d/mountfs       		/tools/etc/rc.d/init.d/
+install -m 754 clfs/init.d/mountkernfs   		/tools/etc/rc.d/init.d/
+install -m 754 clfs/init.d/rc            		/tools/etc/rc.d/init.d/
+install -m 754 clfs/init.d/reboot        		/tools/etc/rc.d/init.d/
+install -m 754 clfs/init.d/sendsignals   		/tools/etc/rc.d/init.d/
+install -m 754 clfs/init.d/setclock      		/tools/etc/rc.d/init.d/
+install -m 754 clfs/init.d/swap          		/tools/etc/rc.d/init.d/
+install -m 754 clfs/init.d/udev          		/tools/etc/rc.d/init.d/
+ln -sf ../init.d/sendsignals /tools/etc/rc.d/rc0.d/S60sendsignals
+ln -sf ../init.d/mountfs     /tools/etc/rc.d/rc0.d/S70mountfs
+ln -sf ../init.d/swap        /tools/etc/rc.d/rc0.d/S80swap
+ln -sf ../init.d/halt        /tools/etc/rc.d/rc0.d/S99halt
+ln -sf ../init.d/sendsignals /tools/etc/rc.d/rc6.d/S60sendsignals
+ln -sf ../init.d/mountfs     /tools/etc/rc.d/rc6.d/S70mountfs
+ln -sf ../init.d/swap        /tools/etc/rc.d/rc6.d/S80swap
+ln -sf ../init.d/reboot      /tools/etc/rc.d/rc6.d/S99reboot
+ln -sf ../init.d/mountkernfs /tools/etc/rc.d/rcsysinit.d/S00mountkernfs
+ln -sf ../init.d/udev        /tools/etc/rc.d/rcsysinit.d/S10udev
+ln -sf ../init.d/checkfs     /tools/etc/rc.d/rcsysinit.d/S20checkfs
+ln -sf ../init.d/mountfs     /tools/etc/rc.d/rcsysinit.d/S30mountfs
+ln -sf ../init.d/swap        /tools/etc/rc.d/rcsysinit.d/S40swap
+ln -sf ../init.d/cleanfs     /tools/etc/rc.d/rcsysinit.d/S50cleanfs
+ln -sf ../init.d/setclock    /tools/etc/rc.d/rcsysinit.d/S60setclock
+if [ ! -f /tools/etc/sysconfig/rc          ]; then install -m 644 clfs/sysconfig/rc          /tools/etc/sysconfig/; fi
+if [ ! -f /tools/etc/sysconfig/createfiles ]; then install -m 644 clfs/sysconfig/createfiles /tools/etc/sysconfig/; fi
+make[1]: Leaving directory '/mnt/clfs/sources/boot-scripts-cross-lfs-3.0-20140521'
+
+
+Totalseconds: 0
+
+
+KB: 2016224	/mnt/clfs
+

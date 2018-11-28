@@ -1,0 +1,26 @@
+/etc/ld.so.cache	4472	root:root	644	
+/lib/libz.so.1	13	root:root	777	libz.so.1.2.8
+/lib/libz.so.1.2.8	109398	root:root	755	
+/usr/include/zconf.h	15472	root:root	644	
+/usr/include/zlib.h	87883	root:root	644	
+/usr/lib/libz.a	141870	root:root	644	
+/usr/lib/libz.so	23	root:root	777	../../lib/libz.so.1.2.8
+/usr/lib/pkgconfig/zlib.pc	252	root:root	644	
+/usr/share/doc/zlib-1.2.8/algorithm.txt	9335	root:root	644	
+/usr/share/doc/zlib-1.2.8/examples/README.examples	1817	root:root	644	
+/usr/share/doc/zlib-1.2.8/examples/enough.c	24338	root:root	644	
+/usr/share/doc/zlib-1.2.8/examples/fitblk.c	8594	root:root	644	
+/usr/share/doc/zlib-1.2.8/examples/gun.c	25942	root:root	644	
+/usr/share/doc/zlib-1.2.8/examples/gzappend.c	16977	root:root	644	
+/usr/share/doc/zlib-1.2.8/examples/gzjoin.c	14132	root:root	644	
+/usr/share/doc/zlib-1.2.8/examples/gzlog.c	41467	root:root	644	
+/usr/share/doc/zlib-1.2.8/examples/gzlog.h	4557	root:root	644	
+/usr/share/doc/zlib-1.2.8/examples/zlib_how.html	29824	root:root	644	
+/usr/share/doc/zlib-1.2.8/examples/zpipe.c	6323	root:root	644	
+/usr/share/doc/zlib-1.2.8/examples/zran.c	15438	root:root	644	
+/usr/share/doc/zlib-1.2.8/rfc1950.txt	20502	root:root	644	
+/usr/share/doc/zlib-1.2.8/rfc1951.txt	36944	root:root	644	
+/usr/share/doc/zlib-1.2.8/rfc1952.txt	25037	root:root	644	
+/usr/share/doc/zlib-1.2.8/txtvsbin.txt	5193	root:root	644	
+/usr/share/man/man3/zlib.3	4236	root:root	644	
+/var/cache/ldconfig/aux-cache	2105	root:root	600	

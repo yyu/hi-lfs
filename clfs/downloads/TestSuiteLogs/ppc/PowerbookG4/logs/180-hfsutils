@@ -1,0 +1,358 @@
+Mon Jun 30 21:24:17 CDT 2014
+
+KB: 3070440	/
+
+patching file libhfs/os/unix.c
+patching file tclhfs.c
+creating cache ./config.cache
+checking whether make sets ${MAKE}... yes
+checking for gcc... gcc
+checking whether the C compiler (gcc  ) works... yes
+checking whether the C compiler (gcc  ) is a cross-compiler... no
+checking whether we are using GNU C... yes
+checking whether gcc accepts -g... yes
+checking for a BSD compatible install... /usr/bin/install -c
+checking for ranlib... ranlib
+checking how to run the C preprocessor... gcc -E
+checking whether gcc needs -traditional... no
+checking for ANSI C header files... yes
+checking for unistd.h... yes
+checking for fcntl.h... yes
+checking for termios.h... yes
+checking for sys/ioctl.h... yes
+checking for uid_t in sys/types.h... yes
+checking for size_t... yes
+checking for working const... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strstr... yes
+checking for strtol... yes
+checking for setreuid... yes
+checking for sys_errlist... yes
+updating cache ./config.cache
+creating ./config.status
+creating hfsck/Makefile
+creating linux/Makefile
+creating Makefile
+creating config.h
+configuring in libhfs
+running /bin/sh ./configure  --prefix=/usr --mandir=/usr/share/man --cache-file=.././config.cache --srcdir=.
+loading cache .././config.cache
+checking whether make sets ${MAKE}... (cached) yes
+checking for gcc... (cached) gcc
+checking whether the C compiler (gcc  ) works... yes
+checking whether the C compiler (gcc  ) is a cross-compiler... no
+checking whether we are using GNU C... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for a BSD compatible install... (cached) /usr/bin/install -c
+checking for ranlib... (cached) ranlib
+checking whether ln -s works... yes
+checking how to run the C preprocessor... (cached) gcc -E
+checking whether gcc needs -traditional... (cached) no
+checking for ANSI C header files... (cached) yes
+checking for unistd.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for size_t... (cached) yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for working const... (cached) yes
+checking for 8-bit clean memcmp... yes
+checking for mktime... yes
+updating cache .././config.cache
+creating ./config.status
+creating Makefile
+creating config.h
+configuring in librsrc
+running /bin/sh ./configure  --prefix=/usr --mandir=/usr/share/man --cache-file=.././config.cache --srcdir=.
+loading cache .././config.cache
+checking whether make sets ${MAKE}... (cached) yes
+checking for gcc... (cached) gcc
+checking whether the C compiler (gcc  ) works... yes
+checking whether the C compiler (gcc  ) is a cross-compiler... no
+checking whether we are using GNU C... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for a BSD compatible install... (cached) /usr/bin/install -c
+checking for ranlib... (cached) ranlib
+checking how to run the C preprocessor... (cached) gcc -E
+checking whether gcc needs -traditional... (cached) no
+checking for ANSI C header files... (cached) yes
+checking for unistd.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for size_t... (cached) yes
+checking whether struct tm is in sys/time.h or time.h... (cached) time.h
+checking for working const... (cached) yes
+checking for mktime... (cached) yes
+creating ./config.status
+creating Makefile
+creating config.h
+make[2]: Entering directory '/sources/hfsutils-3.2.6'
+cd libhfs && make
+make[3]: Entering directory '/sources/hfsutils-3.2.6/libhfs'
+rm -f os.c
+ln -s os/unix.c os.c
+gcc -g -O2  -DHAVE_CONFIG_H   -c -o os.o os.c
+gcc -g -O2  -DHAVE_CONFIG_H   -c -o data.o data.c
+gcc -g -O2  -DHAVE_CONFIG_H   -c -o block.o block.c
+block.c: In function 'flushchain':
+block.c:245:7: warning: passing argument 3 of 'b_writepb' from incompatible pointer type [enabled by default]
+       blist[0]->data, 1) == -1)
+       ^
+In file included from block.c:32:0:
+block.h:27:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writepb(hfsvol *, unsigned long, const block *, unsigned int);
+     ^
+block.c:255:7: warning: passing argument 3 of 'b_writepb' from incompatible pointer type [enabled by default]
+       if (b_writepb(vol, vol->vstart + blist[0]->bnum, buffer, len) == -1)
+       ^
+In file included from block.c:32:0:
+block.h:27:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writepb(hfsvol *, unsigned long, const block *, unsigned int);
+     ^
+gcc -g -O2  -DHAVE_CONFIG_H   -c -o low.o low.c
+low.c: In function 'l_putddr':
+low.c:97:3: warning: passing argument 3 of 'b_writepb' from incompatible pointer type [enabled by default]
+   if (b_writepb(vol, 0, &b, 1) == -1)
+   ^
+In file included from low.c:33:0:
+block.h:27:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writepb(hfsvol *, unsigned long, const block *, unsigned int);
+     ^
+low.c: In function 'l_putpmentry':
+low.c:203:3: warning: passing argument 3 of 'b_writepb' from incompatible pointer type [enabled by default]
+   if (b_writepb(vol, bnum, &b, 1) == -1)
+   ^
+In file included from low.c:33:0:
+block.h:27:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writepb(hfsvol *, unsigned long, const block *, unsigned int);
+     ^
+low.c: In function 'l_putbb':
+low.c:302:3: warning: passing argument 3 of 'b_writelb' from incompatible pointer type [enabled by default]
+   if (b_writelb(vol, 0, &b) == -1)
+   ^
+In file included from low.c:33:0:
+block.h:30:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writelb(hfsvol *, unsigned long, const block *);
+     ^
+low.c:310:3: warning: passing argument 3 of 'b_writelb' from incompatible pointer type [enabled by default]
+   if (b_writelb(vol, 1, &b) == -1)
+   ^
+In file included from low.c:33:0:
+block.h:30:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writelb(hfsvol *, unsigned long, const block *);
+     ^
+low.c: In function 'l_putmdb':
+low.c:462:3: warning: passing argument 3 of 'b_writelb' from incompatible pointer type [enabled by default]
+   if (b_writelb(vol, 2, &b) == -1 ||
+   ^
+In file included from low.c:33:0:
+block.h:30:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writelb(hfsvol *, unsigned long, const block *);
+     ^
+low.c:463:7: warning: passing argument 3 of 'b_writelb' from incompatible pointer type [enabled by default]
+       (backup && b_writelb(vol, vol->vlen - 2, &b) == -1))
+       ^
+In file included from low.c:33:0:
+block.h:30:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writelb(hfsvol *, unsigned long, const block *);
+     ^
+gcc -g -O2  -DHAVE_CONFIG_H   -c -o medium.o medium.c
+medium.c: In function 'm_zeropm':
+medium.c:140:4: warning: passing argument 3 of 'b_writepb' from incompatible pointer type [enabled by default]
+    if (b_writepb(vol, i, &b, 1) == -1)
+    ^
+In file included from medium.c:31:0:
+block.h:27:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writepb(hfsvol *, unsigned long, const block *, unsigned int);
+     ^
+medium.c: In function 'm_zerobb':
+medium.c:310:3: warning: passing argument 3 of 'b_writelb' from incompatible pointer type [enabled by default]
+   if (b_writelb(vol, 0, &b) == -1 ||
+   ^
+In file included from medium.c:31:0:
+block.h:30:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writelb(hfsvol *, unsigned long, const block *);
+     ^
+medium.c:311:7: warning: passing argument 3 of 'b_writelb' from incompatible pointer type [enabled by default]
+       b_writelb(vol, 1, &b) == -1)
+       ^
+In file included from medium.c:31:0:
+block.h:30:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writelb(hfsvol *, unsigned long, const block *);
+     ^
+gcc -g -O2  -DHAVE_CONFIG_H   -c -o file.o file.c
+file.c: In function 'f_addextent':
+file.c:273:4: warning: passing argument 2 of 'r_packextrec' from incompatible pointer type [enabled by default]
+    r_packextrec(&key, &file->ext, record, &reclen);
+    ^
+In file included from file.c:32:0:
+record.h:42:6: note: expected 'const struct ExtDescriptor (*)[3]' but argument is of type 'struct ExtDescriptor (*)[3]'
+ void r_packextrec(const ExtKeyRec *, const ExtDataRec *,
+      ^
+file.c:290:8: warning: passing argument 1 of 'v_putextrec' from incompatible pointer type [enabled by default]
+        v_putextrec(&file->ext, &n) == -1)
+        ^
+In file included from file.c:33:0:
+volume.h:52:5: note: expected 'const struct ExtDescriptor (*)[3]' but argument is of type 'struct ExtDescriptor (*)[3]'
+ int v_putextrec(const ExtDataRec *, node *);
+     ^
+file.c: In function 'f_trunc':
+file.c:458:8: warning: passing argument 1 of 'v_putextrec' from incompatible pointer type [enabled by default]
+        if (v_putextrec(&file->ext, &n) == -1)
+        ^
+In file included from file.c:33:0:
+volume.h:52:5: note: expected 'const struct ExtDescriptor (*)[3]' but argument is of type 'struct ExtDescriptor (*)[3]'
+ int v_putextrec(const ExtDataRec *, node *);
+     ^
+gcc -g -O2  -DHAVE_CONFIG_H   -c -o btree.o btree.c
+gcc -g -O2  -DHAVE_CONFIG_H   -c -o node.o node.c
+gcc -g -O2  -DHAVE_CONFIG_H   -c -o record.o record.c
+gcc -g -O2  -DHAVE_CONFIG_H   -c -o volume.o volume.c
+volume.c: In function 'v_writevbm':
+volume.c:412:11: warning: assignment from incompatible pointer type [enabled by default]
+   for (bp = vol->vbm; vbmsz--; ++bp)
+           ^
+volume.c: In function 'v_allocblocks':
+volume.c:717:6: warning: passing argument 4 of 'b_writeab' from incompatible pointer type [enabled by default]
+      b_writeab(vol, pt, i, &b);
+      ^
+In file included from volume.c:34:0:
+block.h:33:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writeab(hfsvol *, unsigned int, unsigned int, const block *);
+     ^
+volume.c: In function 'v_scavenge':
+volume.c:1074:3: warning: passing argument 2 of 'markexts' from incompatible pointer type [enabled by default]
+   markexts(vbm, &vol->mdb.drXTExtRec);
+   ^
+volume.c:1030:6: note: expected 'const struct ExtDescriptor (*)[3]' but argument is of type 'struct ExtDescriptor (*)[3]'
+ void markexts(block *vbm, const ExtDataRec *exts)
+      ^
+volume.c:1075:3: warning: passing argument 2 of 'markexts' from incompatible pointer type [enabled by default]
+   markexts(vbm, &vol->mdb.drCTExtRec);
+   ^
+volume.c:1030:6: note: expected 'const struct ExtDescriptor (*)[3]' but argument is of type 'struct ExtDescriptor (*)[3]'
+ void markexts(block *vbm, const ExtDataRec *exts)
+      ^
+volume.c:1107:4: warning: passing argument 2 of 'markexts' from incompatible pointer type [enabled by default]
+    markexts(vbm, &data);
+    ^
+volume.c:1030:6: note: expected 'const struct ExtDescriptor (*)[3]' but argument is of type 'struct ExtDescriptor (*)[3]'
+ void markexts(block *vbm, const ExtDataRec *exts)
+      ^
+volume.c:1144:8: warning: passing argument 2 of 'markexts' from incompatible pointer type [enabled by default]
+        markexts(vbm, &data.u.fil.filExtRec);
+        ^
+volume.c:1030:6: note: expected 'const struct ExtDescriptor (*)[3]' but argument is of type 'struct ExtDescriptor (*)[3]'
+ void markexts(block *vbm, const ExtDataRec *exts)
+      ^
+volume.c:1145:8: warning: passing argument 2 of 'markexts' from incompatible pointer type [enabled by default]
+        markexts(vbm, &data.u.fil.filRExtRec);
+        ^
+volume.c:1030:6: note: expected 'const struct ExtDescriptor (*)[3]' but argument is of type 'struct ExtDescriptor (*)[3]'
+ void markexts(block *vbm, const ExtDataRec *exts)
+      ^
+gcc -g -O2  -DHAVE_CONFIG_H   -c -o hfs.o hfs.c
+hfs.c: In function 'hfs_format':
+hfs.c:1783:7: warning: passing argument 2 of 'r_packextrec' from incompatible pointer type [enabled by default]
+       r_packextrec(&key, extrec, record, &reclen);
+       ^
+In file included from hfs.c:38:0:
+record.h:42:6: note: expected 'const struct ExtDescriptor (*)[3]' but argument is of type 'struct ExtDescriptor (*)[3]'
+ void r_packextrec(const ExtKeyRec *, const ExtDataRec *,
+      ^
+hfs.c:1815:2: warning: passing argument 3 of 'b_writelb' from incompatible pointer type [enabled by default]
+  b_writelb(&vol, bnum, &b);
+  ^
+In file included from hfs.c:33:0:
+block.h:30:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writelb(hfsvol *, unsigned long, const block *);
+     ^
+hfs.c:1820:2: warning: passing argument 3 of 'b_writelb' from incompatible pointer type [enabled by default]
+  b_writelb(&vol, bnum, &b);
+  ^
+In file included from hfs.c:33:0:
+block.h:30:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writelb(hfsvol *, unsigned long, const block *);
+     ^
+hfs.c:1826:2: warning: passing argument 3 of 'b_writelb' from incompatible pointer type [enabled by default]
+  b_writelb(&vol, bnum, &b);
+  ^
+In file included from hfs.c:33:0:
+block.h:30:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writelb(hfsvol *, unsigned long, const block *);
+     ^
+hfs.c:1830:7: warning: passing argument 3 of 'b_writelb' from incompatible pointer type [enabled by default]
+       b_writelb(&vol, vol.vlen - 1, &b);
+       ^
+In file included from hfs.c:33:0:
+block.h:30:5: note: expected 'const byte (*)[512]' but argument is of type 'byte (*)[512]'
+ int b_writelb(hfsvol *, unsigned long, const block *);
+     ^
+gcc -g -O2  -DHAVE_CONFIG_H   -c -o version.o version.c
+ar rc libhfs.a os.o data.o block.o low.o medium.o file.o btree.o node.o record.o volume.o hfs.o version.o 
+ranlib libhfs.a
+make[3]: Leaving directory '/sources/hfsutils-3.2.6/libhfs'
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o hfsutil.o hfsutil.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o hcwd.o hcwd.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o hattrib.o hattrib.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o hcd.o hcd.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o hcopy.o hcopy.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o hdel.o hdel.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o hformat.o hformat.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o hls.o hls.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o hmkdir.o hmkdir.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o hmount.o hmount.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o hpwd.o hpwd.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o hrename.o hrename.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o hrmdir.o hrmdir.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o humount.o humount.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o hvol.o hvol.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o crc.o crc.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o binhex.o binhex.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o copyin.o copyin.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o copyout.o copyout.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o charset.o charset.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o darray.o darray.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o dlist.o dlist.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o dstring.o dstring.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o glob.o glob.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o suid.o suid.c
+gcc -g -O2 -Ilibhfs   -DHAVE_CONFIG_H   -c -o version.o version.c
+gcc -Llibhfs hfsutil.o hcwd.o   \
+	hattrib.o hcd.o hcopy.o hdel.o hformat.o hls.o hmkdir.o hmount.o hpwd.o hrename.o hrmdir.o humount.o hvol.o crc.o binhex.o copyin.o copyout.o charset.o darray.o dlist.o dstring.o glob.o suid.o version.o  \
+	-lhfs   -o hfsutil
+ln -f hfsutil hattrib
+ln -f hfsutil hcd
+ln -f hfsutil hcopy
+ln -f hfsutil hdel
+ln -f hfsutil hdir
+ln -f hfsutil hformat
+ln -f hfsutil hls
+ln -f hfsutil hmkdir
+ln -f hfsutil hmount
+ln -f hfsutil hpwd
+ln -f hfsutil hrename
+ln -f hfsutil hrmdir
+ln -f hfsutil humount
+ln -f hfsutil hvol
+make[2]: Leaving directory '/sources/hfsutils-3.2.6'
+make[2]: Entering directory '/sources/hfsutils-3.2.6'
+cd libhfs && make
+make[3]: Entering directory '/sources/hfsutils-3.2.6/libhfs'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/sources/hfsutils-3.2.6/libhfs'
+/usr/bin/install -c -m 755 hfsutil "/usr/bin/."
+for file in hattrib hcd hcopy hdel hdir hformat hls hmkdir hmount hpwd hrename hrmdir humount hvol; do  \
+	ln -f "/usr/bin/hfsutil" "/usr/bin/$file";  \
+done
+rm -f "/usr/bin/hfsutil"
+for file in hfsutils.1 hattrib.1 hcd.1 hcopy.1 hdel.1 hdir.1 hformat.1 hls.1 hmkdir.1 hmount.1 hpwd.1 hrename.1 hrmdir.1 humount.1 hvol.1; do  \
+	/usr/bin/install -c -m 644 doc/man/$file  \
+	"/usr/share/man/man1/`basename $file .1`.1";  \
+done
+make[2]: Leaving directory '/sources/hfsutils-3.2.6'
+
+
+Totalseconds: 25
+
+
+KB: 3073820	/
+

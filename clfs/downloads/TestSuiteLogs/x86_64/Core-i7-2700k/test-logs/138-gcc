@@ -1,0 +1,2826 @@
+Sat Jun 28 17:51:45 UTC 2014
+make[1]: Entering directory '/sources/gcc-build'
+make[2]: Entering directory '/sources/gcc-build'
+make[3]: Entering directory '/sources/gcc-build/fixincludes'
+autogen -T ../../gcc-4.8.3/fixincludes/check.tpl ../../gcc-4.8.3/fixincludes/inclhack.def
+make[3]: autogen: Command not found
+Makefile:176: recipe for target 'check' failed
+make[3]: *** [check] Error 127
+make[3]: Leaving directory '/sources/gcc-build/fixincludes'
+Makefile:3394: recipe for target 'check-fixincludes' failed
+make[2]: *** [check-fixincludes] Error 2
+make[3]: Entering directory '/sources/gcc-build/gcc'
+make[3]: Entering directory '/sources/gcc-build/intl'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/sources/gcc-build/intl'
+make[3]: Entering directory '/sources/gcc-build/libbacktrace'
+true  DO=all multi-do # make
+make  btest
+make[4]: Entering directory '/sources/gcc-build/libbacktrace'
+gcc -isystem /usr/include -m64 -DHAVE_CONFIG_H -I. -I../../gcc-4.8.3/libbacktrace  -I ../../gcc-4.8.3/libbacktrace/../include -I ../../gcc-4.8.3/libbacktrace/../libgcc -I ../libgcc  -funwind-tables -frandom-seed=btest-btest.o -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual  -g -O -g -O2 -c -o btest-btest.o `test -f 'btest.c' || echo '../../gcc-4.8.3/libbacktrace/'`btest.c
+make[3]: Entering directory '/sources/gcc-build/libcpp'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/sources/gcc-build/libcpp'
+make[3]: Entering directory '/sources/gcc-build/libdecnumber'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/sources/gcc-build/libdecnumber'
+make[3]: Entering directory '/sources/gcc-build/libiberty'
+make[3]: Entering directory '/sources/gcc-build/lto-plugin'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/sources/gcc-build/lto-plugin'
+make[3]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3'
+make[4]: Entering directory '/sources/gcc-build/libiberty/testsuite'
+gcc -isystem /usr/include -m64 -DHAVE_CONFIG_H -g -O2 -I.. -I../../../gcc-4.8.3/libiberty/testsuite/../../include  -o test-demangle \
+	../../../gcc-4.8.3/libiberty/testsuite/test-demangle.c ../libiberty.a
+gcc -isystem /usr/include -m64 -DHAVE_CONFIG_H -g -O2 -I.. -I../../../gcc-4.8.3/libiberty/testsuite/../../include  -DHAVE_CONFIG_H -I.. -o test-pexecute \
+	../../../gcc-4.8.3/libiberty/testsuite/test-pexecute.c ../libiberty.a
+gcc -isystem /usr/include -m64 -DHAVE_CONFIG_H -g -O2 -I.. -I../../../gcc-4.8.3/libiberty/testsuite/../../include  -DHAVE_CONFIG_H -I.. -o test-expandargv \
+	../../../gcc-4.8.3/libiberty/testsuite/test-expandargv.c ../libiberty.a
+Making check in include
+make[3]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libmudflap'
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include'
+Making check in testsuite
+make[4]: Nothing to be done for 'check'.
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include'
+make[3]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libsanitizer'
+Making check in libsupc++
+make[3]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libssp'
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libmudflap/testsuite'
+make  check-DEJAGNU
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/libsupc++'
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libmudflap/testsuite'
+Making a new site.exp file...
+make[4]: Nothing to be done for 'check'.
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/libsupc++'
+Making check in src
+make "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CFLAGS=-g -O2" "CXXFLAGS=-g -O2 -D_GNU_SOURCE" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "JC1FLAGS=" "LDFLAGS=" "LIBCFLAGS=-g -O2" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000 --split-size=5000000 " "PICFLAG=" "PICFLAG_FOR_TARGET=" "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "prefix=/usr" "includedir=/usr/include" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "CC=/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "CXX=/sources/gcc-build/./gcc/xg++ -B/sources/gcc-build/./gcc/ -nostdinc++ -nostdinc++ -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include -I/sources/gcc-4.8.3/libstdc++-v3/libsupc++ -I/sources/gcc-4.8.3/libstdc++-v3/include/backward -I/sources/gcc-4.8.3/libstdc++-v3/testsuite/util -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src/.libs -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "LD=/sources/gcc-build/./gcc/collect-ld" "LIBCFLAGS=-g -O2" "NM=/sources/gcc-build/./gcc/nm" "PICFLAG=" "RANLIB=ranlib" "DESTDIR=" DO=all multi-do # make
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src'
+Making check in interception
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libsanitizer/interception'
+make[4]: Nothing to be done for 'check'.
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libsanitizer/interception'
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libssp'
+Making check in sanitizer_common
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libsanitizer/sanitizer_common'
+Making check in c++98
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src/c++98'
+if [ -z "32" ]; then \
+  true; \
+else \
+  rootpre=`${PWDCMD-pwd}`/; export rootpre; \
+  srcrootpre=`cd ../../../gcc-4.8.3/libssp; ${PWDCMD-pwd}`/; export srcrootpre; \
+  lib=`echo "${rootpre}" | sed -e 's,^.*/\([^/][^/]*\)/$,\1,'`; \
+  compiler="/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   "; \
+  for i in `${compiler} --print-multi-lib 2>/dev/null`; do \
+    dir=`echo $i | sed -e 's/;.*$//'`; \
+    if [ "${dir}" = "." ]; then \
+      true; \
+    else \
+      if [ -d ../${dir}/${lib} ]; then \
+	flags=`echo $i | sed -e 's/^[^;]*;//' -e 's/@/ -/g'`; \
+	if (cd ../${dir}/${lib}; make  \
+			CFLAGS="-g -O2 ${flags}" \
+			CCASFLAGS=" ${flags}" \
+			FCFLAGS=" ${flags}" \
+			FFLAGS=" ${flags}" \
+			ADAFLAGS=" ${flags}" \
+			prefix="/usr" \
+			exec_prefix="/usr" \
+			GCJFLAGS=" ${flags}" \
+			GOCFLAGS="-O2 -g ${flags}" \
+			CXXFLAGS="-g -O2 -D_GNU_SOURCE ${flags}" \
+			LIBCFLAGS="-g -O2 ${flags}" \
+			LIBCXXFLAGS="-g -O2 -D_GNU_SOURCE -fno-implicit-templates ${flags}" \
+			LDFLAGS=" ${flags}" \
+			MULTIFLAGS="${flags}" \
+			DESTDIR="" \
+			INSTALL="/tools/bin/install -c" \
+			INSTALL_DATA="/tools/bin/install -c -m 644" \
+			INSTALL_PROGRAM="/tools/bin/install -c" \
+			INSTALL_SCRIPT="/tools/bin/install -c" \
+			all); then \
+	  true; \
+	else \
+	  exit 1; \
+	fi; \
+      else true; \
+      fi; \
+    fi; \
+  done; \
+fi
+make[3]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libquadmath'
+make[5]: Nothing to be done for 'check'.
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src/c++98'
+Making check in c++11
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../../gcc-4.8.3/libmudflap/testsuite && pwd`; export srcdir; \
+EXPECT=`if [ -f ../../expect/expect ] ; then echo ../../expect/expect ; else echo expect ; fi`; export EXPECT; \
+runtest=`if [ -f ../../../../gcc-4.8.3/libmudflap/testsuite/../../dejagnu/runtest ] ; then echo ../../../../gcc-4.8.3/libmudflap/testsuite/../../dejagnu/runtest ; else echo runtest ;  fi`; \
+if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+  exit_status=0; l='libmudflap'; for tool in $l; do \
+    if $runtest  --tool $tool --srcdir $srcdir ; \
+    then :; else exit_status=1; fi; \
+  done; \
+else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+fi; \
+exit $exit_status
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src/c++11'
+make[4]: Nothing to be done for 'check'.
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libsanitizer/sanitizer_common'
+Making check in asan
+make[5]: Nothing to be done for 'check'.
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src/c++11'
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libsanitizer/asan'
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src'
+make[5]: Nothing to be done for 'check-am'.
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src'
+make[3]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libgomp'
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src'
+Making check in doc
+make[4]: Nothing to be done for 'check'.
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libsanitizer/asan'
+Making check in tsan
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/doc'
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libsanitizer/tsan'
+make "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CFLAGS=-g -O2" "CXXFLAGS=-g -O2 -D_GNU_SOURCE" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "JC1FLAGS=" "LDFLAGS=" "LIBCFLAGS=-g -O2" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000 --split-size=5000000 -I ../../../gcc-4.8.3/libquadmath/../gcc/doc/include" "PICFLAG=" "PICFLAG_FOR_TARGET=" "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "prefix=/usr" "includedir=/usr/include" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "CC=/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "CXX=/sources/gcc-build/./gcc/xg++ -B/sources/gcc-build/./gcc/ -nostdinc++ -nostdinc++ -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include -I/sources/gcc-4.8.3/libstdc++-v3/libsupc++ -I/sources/gcc-4.8.3/libstdc++-v3/include/backward -I/sources/gcc-4.8.3/libstdc++-v3/testsuite/util -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src/.libs -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "LD=/sources/gcc-build/./gcc/collect-ld" "LIBCFLAGS=-g -O2" "NM=/sources/gcc-build/./gcc/nm" "PICFLAG=" "RANLIB=ranlib" "DESTDIR=" DO=all multi-do # make
+make[4]: Nothing to be done for 'check'.
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/doc'
+Making check in po
+Making check in testsuite
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/po'
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libgomp/testsuite'
+/bin/sh /sources/gcc-4.8.3/libstdc++-v3/../mkinstalldirs /sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/po/share/locale
+mkdir -p -- /sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/po/share/locale
+catalogs='de.mo fr.mo'; \
+for cat in $catalogs; do \
+  cat=`basename $cat`; \
+  lang=`echo $cat | sed 's/\.mo$//'`; \
+  install_dir=/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/po/share/locale/$lang/LC_MESSAGES; \
+  /bin/sh /sources/gcc-4.8.3/libstdc++-v3/../mkinstalldirs $install_dir; \
+  /tools/bin/install -c -m 644 $cat $install_dir/libstdc++.mo; \
+done
+make[3]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libatomic'
+make[4]: Nothing to be done for 'check'.
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libssp'
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libsanitizer/tsan'
+make  check-DEJAGNU
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libsanitizer'
+make "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CFLAGS=-g -O2" "CXXFLAGS=-g -O2 -D_GNU_SOURCE" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "JC1FLAGS=" "LDFLAGS=" "LIBCFLAGS=-g -O2" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000 --split-size=5000000  " "PICFLAG=" "PICFLAG_FOR_TARGET=" "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "prefix=/usr" "includedir=/usr/include" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "LD=/sources/gcc-build/./gcc/collect-ld" "LIBCFLAGS=-g -O2" "NM=/sources/gcc-build/./gcc/nm" "PICFLAG=" "RANLIB=ranlib" "DESTDIR=" DO=all multi-do # make
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libgomp/testsuite'
+make "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CFLAGS=-g -O2  -m32" "CXXFLAGS=-g -O2 -D_GNU_SOURCE  -m32" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "JC1FLAGS=" "LDFLAGS=-m32" "LIBCFLAGS=-g -O2  -m32" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000 " "PICFLAG=" "PICFLAG_FOR_TARGET=" "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "prefix=/usr" "includedir=/usr/include" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "CC=/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include  -m32" "CXX=/sources/gcc-build/./gcc/xg++ -B/sources/gcc-build/./gcc/ -nostdinc++ -nostdinc++ -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include -I/sources/gcc-4.8.3/libstdc++-v3/libsupc++ -I/sources/gcc-4.8.3/libstdc++-v3/include/backward -I/sources/gcc-4.8.3/libstdc++-v3/testsuite/util -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src/.libs -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "LD=/sources/gcc-build/./gcc/collect-ld -m elf_x86_64 -m elf_i386" "LIBCFLAGS=-g -O2  -m32" "NM=/sources/gcc-build/./gcc/nm" "PICFLAG=" "RANLIB=ranlib" "DESTDIR=" all-am
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libquadmath'
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libsanitizer'
+if [ -z "32" ]; then \
+  true; \
+else \
+  rootpre=`${PWDCMD-pwd}`/; export rootpre; \
+  srcrootpre=`cd ../../../gcc-4.8.3/libsanitizer; ${PWDCMD-pwd}`/; export srcrootpre; \
+  lib=`echo "${rootpre}" | sed -e 's,^.*/\([^/][^/]*\)/$,\1,'`; \
+  compiler="/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   "; \
+  for i in `${compiler} --print-multi-lib 2>/dev/null`; do \
+    dir=`echo $i | sed -e 's/;.*$//'`; \
+    if [ "${dir}" = "." ]; then \
+      true; \
+    else \
+      if [ -d ../${dir}/${lib} ]; then \
+	flags=`echo $i | sed -e 's/^[^;]*;//' -e 's/@/ -/g'`; \
+	if (cd ../${dir}/${lib}; make  \
+			CFLAGS="-g -O2 ${flags}" \
+			CCASFLAGS="-g -O2 ${flags}" \
+			FCFLAGS=" ${flags}" \
+			FFLAGS=" ${flags}" \
+			ADAFLAGS=" ${flags}" \
+			prefix="/usr" \
+			exec_prefix="/usr" \
+			GCJFLAGS=" ${flags}" \
+			GOCFLAGS="-O2 -g ${flags}" \
+			CXXFLAGS="-g -O2 -D_GNU_SOURCE ${flags}" \
+			LIBCFLAGS="-g -O2 ${flags}" \
+			LIBCXXFLAGS="-g -O2 -D_GNU_SOURCE -fno-implicit-templates ${flags}" \
+			LDFLAGS=" ${flags}" \
+			MULTIFLAGS="${flags}" \
+			DESTDIR="" \
+			INSTALL="/tools/bin/install -c" \
+			INSTALL_DATA="/tools/bin/install -c -m 644" \
+			INSTALL_PROGRAM="/tools/bin/install -c" \
+			INSTALL_SCRIPT="/tools/bin/install -c" \
+			all); then \
+	  true; \
+	else \
+	  exit 1; \
+	fi; \
+      else true; \
+      fi; \
+    fi; \
+  done; \
+fi
+make[6]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libssp'
+Making a new site.exp file...
+make[3]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libitm'
+true "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CFLAGS=-g -O2  -m32" "CXXFLAGS=-g -O2 -D_GNU_SOURCE  -m32" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "JC1FLAGS=" "LDFLAGS=-m32" "LIBCFLAGS=-g -O2  -m32" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000  " "PICFLAG=" "PICFLAG_FOR_TARGET=" "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "prefix=/usr" "includedir=/usr/include" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "CC=/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include  -m32" "CXX=/sources/gcc-build/./gcc/xg++ -B/sources/gcc-build/./gcc/ -nostdinc++ -nostdinc++ -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include -I/sources/gcc-4.8.3/libstdc++-v3/libsupc++ -I/sources/gcc-4.8.3/libstdc++-v3/include/backward -I/sources/gcc-4.8.3/libstdc++-v3/testsuite/util -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src/.libs -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "LD=/sources/gcc-build/./gcc/collect-ld -m elf_x86_64 -m elf_i386" "LIBCFLAGS=-g -O2  -m32" "NM=/sources/gcc-build/./gcc/nm" "PICFLAG=" "RANLIB=ranlib" "DESTDIR=" DO=all multi-do # make
+make[6]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libssp'
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libssp'
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libssp'
+make[3]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libssp'
+mkdir -p -- /sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/po/share/locale/de/LC_MESSAGES
+Making check in testsuite
+Making check in testsuite
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libatomic/testsuite'
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libitm/testsuite'
+make  check-DEJAGNU
+make  check-DEJAGNU
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libitm/testsuite'
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libatomic/testsuite'
+Making a new site.exp file...
+if [ -z "32" ]; then \
+  true; \
+else \
+  rootpre=`${PWDCMD-pwd}`/; export rootpre; \
+  srcrootpre=`cd ../../../gcc-4.8.3/libquadmath; ${PWDCMD-pwd}`/; export srcrootpre; \
+  lib=`echo "${rootpre}" | sed -e 's,^.*/\([^/][^/]*\)/$,\1,'`; \
+  compiler="/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   "; \
+  for i in `${compiler} --print-multi-lib 2>/dev/null`; do \
+    dir=`echo $i | sed -e 's/;.*$//'`; \
+    if [ "${dir}" = "." ]; then \
+      true; \
+    else \
+      if [ -d ../${dir}/${lib} ]; then \
+	flags=`echo $i | sed -e 's/^[^;]*;//' -e 's/@/ -/g'`; \
+	if (cd ../${dir}/${lib}; make "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CFLAGS=-g -O2" "CXXFLAGS=-g -O2 -D_GNU_SOURCE" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "JC1FLAGS=" "LDFLAGS=" "LIBCFLAGS=-g -O2" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000 --split-size=5000000 -I ../../../gcc-4.8.3/libquadmath/../gcc/doc/include -I ../../../gcc-4.8.3/libquadmath/../gcc/doc/include" "PICFLAG=" "PICFLAG_FOR_TARGET=" "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "prefix=/usr" "includedir=/usr/include" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "CC=/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "CXX=/sources/gcc-build/./gcc/xg++ -B/sources/gcc-build/./gcc/ -nostdinc++ -nostdinc++ -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include -I/sources/gcc-4.8.3/libstdc++-v3/libsupc++ -I/sources/gcc-4.8.3/libstdc++-v3/include/backward -I/sources/gcc-4.8.3/libstdc++-v3/testsuite/util -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src/.libs -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "LD=/sources/gcc-build/./gcc/collect-ld" "LIBCFLAGS=-g -O2" "NM=/sources/gcc-build/./gcc/nm" "PICFLAG=" "RANLIB=ranlib" "DESTDIR=" \
+			CFLAGS="-g -O2 ${flags}" \
+			CCASFLAGS=" ${flags}" \
+			FCFLAGS=" ${flags}" \
+			FFLAGS=" ${flags}" \
+			ADAFLAGS=" ${flags}" \
+			prefix="/usr" \
+			exec_prefix="/usr" \
+			GCJFLAGS=" ${flags}" \
+			GOCFLAGS="-O2 -g ${flags}" \
+			CXXFLAGS="-g -O2 -D_GNU_SOURCE ${flags}" \
+			LIBCFLAGS="-g -O2 ${flags}" \
+			LIBCXXFLAGS="-g -O2 -D_GNU_SOURCE -fno-implicit-templates ${flags}" \
+			LDFLAGS=" ${flags}" \
+			MULTIFLAGS="${flags}" \
+			DESTDIR="" \
+			INSTALL="/tools/bin/install -c" \
+			INSTALL_DATA="/tools/bin/install -c -m 644" \
+			INSTALL_PROGRAM="/tools/bin/install -c" \
+			INSTALL_SCRIPT="/tools/bin/install -c" \
+			all); then \
+	  true; \
+	else \
+	  exit 1; \
+	fi; \
+      else true; \
+      fi; \
+    fi; \
+  done; \
+fi
+Making a new site.exp file...
+make[6]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libsanitizer'
+mkdir -p -- /sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/po/share/locale/fr/LC_MESSAGES
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/po'
+Making check in testsuite
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/testsuite'
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../../gcc-4.8.3/libgomp/testsuite && pwd`; export srcdir; \
+EXPECT=expect; export EXPECT; \
+runtest=runtest; \
+if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+  exit_status=0; l='libgomp'; for tool in $l; do \
+    if $runtest  --tool $tool --srcdir $srcdir ; \
+    then :; else exit_status=1; fi; \
+  done; \
+else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+fi; \
+exit $exit_status
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libquadmath'
+Making all in interception
+make[7]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libsanitizer/interception'
+make  check-DEJAGNU
+make[7]: Nothing to be done for 'all'.
+make[7]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libsanitizer/interception'
+Making all in sanitizer_common
+./test-expandargv
+make[7]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libsanitizer/sanitizer_common'
+PASS: test-expandargv-0.
+PASS: test-expandargv-1.
+PASS: test-expandargv-2.
+PASS: test-expandargv-3.
+PASS: test-expandargv-4.
+PASS: test-expandargv-5.
+PASS: test-expandargv-6.
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/testsuite'
+/bin/sh ./libtool --tag=CC   --mode=link gcc -isystem /usr/include -m64 -funwind-tables -frandom-seed=btest -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual  -g -O -g -O2  -Wl,-rpath-link,/usr/lib64:/lib64:/usr/lib:/lib -o btest btest-btest.o libbacktrace.la 
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../../gcc-4.8.3/libatomic/testsuite && pwd`; export srcdir; \
+EXPECT=expect; export EXPECT; \
+runtest=runtest; \
+if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+  exit_status=0; l='libatomic'; for tool in $l; do \
+    if $runtest  --tool $tool --srcdir $srcdir ; \
+    then :; else exit_status=1; fi; \
+  done; \
+else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+fi; \
+exit $exit_status
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../../gcc-4.8.3/libitm/testsuite && pwd`; export srcdir; \
+EXPECT=expect; export EXPECT; \
+runtest=runtest; \
+if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+  exit_status=0; l='libitm'; for tool in $l; do \
+    if $runtest  --tool $tool --srcdir $srcdir ; \
+    then :; else exit_status=1; fi; \
+  done; \
+else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+fi; \
+exit $exit_status
+make[7]: Nothing to be done for 'all'.
+make[7]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libsanitizer/sanitizer_common'
+Making all in asan
+make[7]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libsanitizer/asan'
+make "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CFLAGS=-g -O2  -m32" "CXXFLAGS=-g -O2 -D_GNU_SOURCE  -m32" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "JC1FLAGS=" "LDFLAGS=-m32" "LIBCFLAGS=-g -O2  -m32" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000 --split-size=5000000 -I ../../../gcc-4.8.3/libquadmath/../gcc/doc/include -I ../../../gcc-4.8.3/libquadmath/../gcc/doc/include -I ../../../../gcc-4.8.3/libquadmath/../gcc/doc/include" "PICFLAG=" "PICFLAG_FOR_TARGET=" "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "prefix=/usr" "includedir=/usr/include" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "CC=/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "CXX=/sources/gcc-build/./gcc/xg++ -B/sources/gcc-build/./gcc/ -nostdinc++ -nostdinc++ -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include -I/sources/gcc-4.8.3/libstdc++-v3/libsupc++ -I/sources/gcc-4.8.3/libstdc++-v3/include/backward -I/sources/gcc-4.8.3/libstdc++-v3/testsuite/util -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src/.libs -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "LD=/sources/gcc-build/./gcc/collect-ld" "LIBCFLAGS=-g -O2  -m32" "NM=/sources/gcc-build/./gcc/nm" "PICFLAG=" "RANLIB=ranlib" "DESTDIR=" all-am
+Making a new site.exp file...
+./test-demangle < ../../../gcc-4.8.3/libiberty/testsuite/demangle-expected
+make[6]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libquadmath'
+WARNING: Couldn't find the global config file.
+./test-demangle: 882 tests, 0 failures
+make[7]: Nothing to be done for 'all'.
+make[7]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libsanitizer/asan'
+make[7]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libsanitizer'
+true "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CFLAGS=-g -O2  -m32" "CXXFLAGS=-g -O2 -D_GNU_SOURCE  -m32" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "JC1FLAGS=" "LDFLAGS=-m32" "LIBCFLAGS=-g -O2  -m32" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000 --split-size=5000000  " "PICFLAG=" "PICFLAG_FOR_TARGET=" "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "prefix=/usr" "includedir=/usr/include" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "LD=/sources/gcc-build/./gcc/collect-ld -m elf_x86_64 -m elf_i386" "LIBCFLAGS=-g -O2  -m32" "NM=/sources/gcc-build/./gcc/nm" "PICFLAG=" "RANLIB=ranlib" "DESTDIR=" DO=all multi-do # make
+make[7]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libsanitizer'
+make[6]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libsanitizer'
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libsanitizer'
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libsanitizer'
+make[3]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libsanitizer'
+Test Run By root on Sat Jun 28 18:04:24 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== libmudflap tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/libmudflap/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/libmudflap/testsuite/libmudflap.c/cfrags.exp ...
+AR="ar"; export AR; \
+RANLIB="ranlib"; export RANLIB; \
+if [ -z "" ] \
+    && [ "-j" = "-j" ]; then \
+  make  check-DEJAGNUnormal0 check-DEJAGNUnormal1 check-DEJAGNUnormal2 check-DEJAGNUnormal3 check-DEJAGNUnormal4 check-DEJAGNUnormal5 check-DEJAGNUnormal6 check-DEJAGNUnormal7 check-DEJAGNUnormal8 check-DEJAGNUnormal9; \
+  for idx in 0 1 2 3 4 5 6 7 8 9; do \
+    mv -f normal$idx/libstdc++.sum normal$idx/libstdc++.sum.sep; \
+    mv -f normal$idx/libstdc++.log normal$idx/libstdc++.log.sep; \
+  done; \
+  mv -f libstdc++.sum libstdc++.sum.sep; \
+  mv -f libstdc++.log libstdc++.log.sep; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh \
+    libstdc++.sum.sep normal[0-9]/libstdc++.sum.sep > libstdc++.sum; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh -L \
+    libstdc++.log.sep normal[0-9]/libstdc++.log.sep > libstdc++.log; \
+  exit 0; \
+fi; \
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../../gcc-4.8.3/libstdc++-v3/testsuite && pwd`; export srcdir; \
+EXPECT=expect; export EXPECT; \
+runtest=runtest; \
+if [ -z "$runtest" ]; then runtest=runtest; fi; \
+tool=libstdc++; \
+dirs=; \
+case "" in \
+  normal0) \
+    if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+      $runtest  --tool $tool --srcdir $srcdir \
+		 abi.exp prettyprinters.exp; \
+    else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+    fi; \
+    dirs="`cd $srcdir; echo [013-9][0-9]_*/*`";; \
+  normal1) \
+    dirs="`cd $srcdir; echo [ab]* de* [ep]*/*`";; \
+  normal2) \
+    dirs="`cd $srcdir; echo 2[01]_*/*`";; \
+  normal3) \
+    dirs="`cd $srcdir; echo 22_*/*`";; \
+  normal4) \
+    dirs="`cd $srcdir; echo 23_*/[a-km-tw-z]*`";; \
+  normal5) \
+    dirs="`cd $srcdir; echo 23_*/[luv]*`";; \
+  normal6) \
+    dirs="`cd $srcdir; echo 2[459]_*/*`";; \
+  normal7) \
+    dirs="`cd $srcdir; echo 2[68]_*/*`";; \
+  normal8) \
+    dirs="`cd $srcdir; echo 27_*/*`";; \
+  normal9) \
+    dirs="`cd $srcdir; echo t*/*`";; \
+esac; \
+if [ -n "" ]; then cd ""; fi; \
+if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+  if [ -n "$dirs" ]; then \
+    $runtest  --tool $tool --srcdir $srcdir \
+	     \
+	    "conformance.exp=`echo $dirs | sed 's/ /* /g;s/$/*/'`"; \
+  else \
+    $runtest  --tool $tool --srcdir $srcdir \
+	    ; \
+  fi; \
+else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+fi
+true "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CFLAGS=-g -O2  -m32" "CXXFLAGS=-g -O2 -D_GNU_SOURCE  -m32" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "JC1FLAGS=" "LDFLAGS=-m32" "LIBCFLAGS=-g -O2  -m32" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000 --split-size=5000000 -I ../../../gcc-4.8.3/libquadmath/../gcc/doc/include -I ../../../gcc-4.8.3/libquadmath/../gcc/doc/include -I ../../../../gcc-4.8.3/libquadmath/../gcc/doc/include -I ../../../../gcc-4.8.3/libquadmath/../gcc/doc/include" "PICFLAG=" "PICFLAG_FOR_TARGET=" "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "prefix=/usr" "includedir=/usr/include" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "CC=/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "CXX=/sources/gcc-build/./gcc/xg++ -B/sources/gcc-build/./gcc/ -nostdinc++ -nostdinc++ -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include -I/sources/gcc-4.8.3/libstdc++-v3/libsupc++ -I/sources/gcc-4.8.3/libstdc++-v3/include/backward -I/sources/gcc-4.8.3/libstdc++-v3/testsuite/util -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src/.libs -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "LD=/sources/gcc-build/./gcc/collect-ld" "LIBCFLAGS=-g -O2  -m32" "NM=/sources/gcc-build/./gcc/nm" "PICFLAG=" "RANLIB=ranlib" "DESTDIR=" DO=all multi-do # make
+make[6]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/testsuite'
+WARNING: Couldn't find the global config file.
+make[6]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libquadmath'
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libquadmath'
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libquadmath'
+test -d normal0 || mkdir normal0
+make[3]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libquadmath'
+test -d normal1 || mkdir normal1
+test -d normal2 || mkdir normal2
+test -d normal3 || mkdir normal3
+test -d normal4 || mkdir normal4
+test -d normal5 || mkdir normal5
+test -d normal6 || mkdir normal6
+test -d normal7 || mkdir normal7
+objdir=`${PWDCMD-pwd}`/normal1; \
+sed -e "s|^set srcdir .*$|set srcdir $srcdir|" \
+    -e "s|^set objdir .*$|set objdir $objdir|" \
+    site.exp > normal1/site.exp.tmp
+objdir=`${PWDCMD-pwd}`/normal3; \
+sed -e "s|^set srcdir .*$|set srcdir $srcdir|" \
+    -e "s|^set objdir .*$|set objdir $objdir|" \
+    site.exp > normal3/site.exp.tmp
+objdir=`${PWDCMD-pwd}`/normal7; \
+sed -e "s|^set srcdir .*$|set srcdir $srcdir|" \
+    -e "s|^set objdir .*$|set objdir $objdir|" \
+    site.exp > normal7/site.exp.tmp
+objdir=`${PWDCMD-pwd}`/normal6; \
+sed -e "s|^set srcdir .*$|set srcdir $srcdir|" \
+    -e "s|^set objdir .*$|set objdir $objdir|" \
+    site.exp > normal6/site.exp.tmp
+objdir=`${PWDCMD-pwd}`/normal0; \
+sed -e "s|^set srcdir .*$|set srcdir $srcdir|" \
+    -e "s|^set objdir .*$|set objdir $objdir|" \
+    site.exp > normal0/site.exp.tmp
+objdir=`${PWDCMD-pwd}`/normal2; \
+sed -e "s|^set srcdir .*$|set srcdir $srcdir|" \
+    -e "s|^set objdir .*$|set objdir $objdir|" \
+    site.exp > normal2/site.exp.tmp
+WARNING: Couldn't find the global config file.
+test -d normal8 || mkdir normal8
+test -d normal9 || mkdir normal9
+AR="ar"; export AR; \
+RANLIB="ranlib"; export RANLIB; \
+if [ -z "normal3" ] \
+    && [ "-j" = "-j" ]; then \
+  make  check-DEJAGNUnormal0 check-DEJAGNUnormal1 check-DEJAGNUnormal2 check-DEJAGNUnormal3 check-DEJAGNUnormal4 check-DEJAGNUnormal5 check-DEJAGNUnormal6 check-DEJAGNUnormal7 check-DEJAGNUnormal8 check-DEJAGNUnormal9; \
+  for idx in 0 1 2 3 4 5 6 7 8 9; do \
+    mv -f normal$idx/libstdc++.sum normal$idx/libstdc++.sum.sep; \
+    mv -f normal$idx/libstdc++.log normal$idx/libstdc++.log.sep; \
+  done; \
+  mv -f libstdc++.sum libstdc++.sum.sep; \
+  mv -f libstdc++.log libstdc++.log.sep; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh \
+    libstdc++.sum.sep normal[0-9]/libstdc++.sum.sep > libstdc++.sum; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh -L \
+    libstdc++.log.sep normal[0-9]/libstdc++.log.sep > libstdc++.log; \
+  exit 0; \
+fi; \
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../../gcc-4.8.3/libstdc++-v3/testsuite && pwd`; export srcdir; \
+EXPECT=expect; export EXPECT; \
+runtest=runtest; \
+if [ -z "$runtest" ]; then runtest=runtest; fi; \
+tool=libstdc++; \
+dirs=; \
+case "normal3" in \
+  normal0) \
+    if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+      $runtest  --tool $tool --srcdir $srcdir \
+		 abi.exp prettyprinters.exp; \
+    else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+    fi; \
+    dirs="`cd $srcdir; echo [013-9][0-9]_*/*`";; \
+  normal1) \
+    dirs="`cd $srcdir; echo [ab]* de* [ep]*/*`";; \
+  normal2) \
+    dirs="`cd $srcdir; echo 2[01]_*/*`";; \
+  normal3) \
+    dirs="`cd $srcdir; echo 22_*/*`";; \
+  normal4) \
+    dirs="`cd $srcdir; echo 23_*/[a-km-tw-z]*`";; \
+  normal5) \
+    dirs="`cd $srcdir; echo 23_*/[luv]*`";; \
+  normal6) \
+    dirs="`cd $srcdir; echo 2[459]_*/*`";; \
+  normal7) \
+    dirs="`cd $srcdir; echo 2[68]_*/*`";; \
+  normal8) \
+    dirs="`cd $srcdir; echo 27_*/*`";; \
+  normal9) \
+    dirs="`cd $srcdir; echo t*/*`";; \
+esac; \
+if [ -n "normal3" ]; then cd "normal3"; fi; \
+if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+  if [ -n "$dirs" ]; then \
+    $runtest  --tool $tool --srcdir $srcdir \
+	     \
+	    "conformance.exp=`echo $dirs | sed 's/ /* /g;s/$/*/'`"; \
+  else \
+    $runtest  --tool $tool --srcdir $srcdir \
+	    ; \
+  fi; \
+else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+fi
+AR="ar"; export AR; \
+RANLIB="ranlib"; export RANLIB; \
+if [ -z "normal6" ] \
+    && [ "-j" = "-j" ]; then \
+  make  check-DEJAGNUnormal0 check-DEJAGNUnormal1 check-DEJAGNUnormal2 check-DEJAGNUnormal3 check-DEJAGNUnormal4 check-DEJAGNUnormal5 check-DEJAGNUnormal6 check-DEJAGNUnormal7 check-DEJAGNUnormal8 check-DEJAGNUnormal9; \
+  for idx in 0 1 2 3 4 5 6 7 8 9; do \
+    mv -f normal$idx/libstdc++.sum normal$idx/libstdc++.sum.sep; \
+    mv -f normal$idx/libstdc++.log normal$idx/libstdc++.log.sep; \
+  done; \
+  mv -f libstdc++.sum libstdc++.sum.sep; \
+  mv -f libstdc++.log libstdc++.log.sep; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh \
+    libstdc++.sum.sep normal[0-9]/libstdc++.sum.sep > libstdc++.sum; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh -L \
+    libstdc++.log.sep normal[0-9]/libstdc++.log.sep > libstdc++.log; \
+  exit 0; \
+fi; \
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../../gcc-4.8.3/libstdc++-v3/testsuite && pwd`; export srcdir; \
+EXPECT=expect; export EXPECT; \
+runtest=runtest; \
+if [ -z "$runtest" ]; then runtest=runtest; fi; \
+tool=libstdc++; \
+dirs=; \
+case "normal6" in \
+  normal0) \
+    if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+      $runtest  --tool $tool --srcdir $srcdir \
+		 abi.exp prettyprinters.exp; \
+    else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+    fi; \
+    dirs="`cd $srcdir; echo [013-9][0-9]_*/*`";; \
+  normal1) \
+    dirs="`cd $srcdir; echo [ab]* de* [ep]*/*`";; \
+  normal2) \
+    dirs="`cd $srcdir; echo 2[01]_*/*`";; \
+  normal3) \
+    dirs="`cd $srcdir; echo 22_*/*`";; \
+  normal4) \
+    dirs="`cd $srcdir; echo 23_*/[a-km-tw-z]*`";; \
+  normal5) \
+    dirs="`cd $srcdir; echo 23_*/[luv]*`";; \
+  normal6) \
+    dirs="`cd $srcdir; echo 2[459]_*/*`";; \
+  normal7) \
+    dirs="`cd $srcdir; echo 2[68]_*/*`";; \
+  normal8) \
+    dirs="`cd $srcdir; echo 27_*/*`";; \
+  normal9) \
+    dirs="`cd $srcdir; echo t*/*`";; \
+esac; \
+if [ -n "normal6" ]; then cd "normal6"; fi; \
+if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+  if [ -n "$dirs" ]; then \
+    $runtest  --tool $tool --srcdir $srcdir \
+	     \
+	    "conformance.exp=`echo $dirs | sed 's/ /* /g;s/$/*/'`"; \
+  else \
+    $runtest  --tool $tool --srcdir $srcdir \
+	    ; \
+  fi; \
+else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+fi
+AR="ar"; export AR; \
+RANLIB="ranlib"; export RANLIB; \
+if [ -z "normal7" ] \
+    && [ "-j" = "-j" ]; then \
+  make  check-DEJAGNUnormal0 check-DEJAGNUnormal1 check-DEJAGNUnormal2 check-DEJAGNUnormal3 check-DEJAGNUnormal4 check-DEJAGNUnormal5 check-DEJAGNUnormal6 check-DEJAGNUnormal7 check-DEJAGNUnormal8 check-DEJAGNUnormal9; \
+  for idx in 0 1 2 3 4 5 6 7 8 9; do \
+    mv -f normal$idx/libstdc++.sum normal$idx/libstdc++.sum.sep; \
+    mv -f normal$idx/libstdc++.log normal$idx/libstdc++.log.sep; \
+  done; \
+  mv -f libstdc++.sum libstdc++.sum.sep; \
+  mv -f libstdc++.log libstdc++.log.sep; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh \
+    libstdc++.sum.sep normal[0-9]/libstdc++.sum.sep > libstdc++.sum; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh -L \
+    libstdc++.log.sep normal[0-9]/libstdc++.log.sep > libstdc++.log; \
+  exit 0; \
+fi; \
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../../gcc-4.8.3/libstdc++-v3/testsuite && pwd`; export srcdir; \
+EXPECT=expect; export EXPECT; \
+runtest=runtest; \
+if [ -z "$runtest" ]; then runtest=runtest; fi; \
+tool=libstdc++; \
+dirs=; \
+case "normal7" in \
+  normal0) \
+    if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+      $runtest  --tool $tool --srcdir $srcdir \
+		 abi.exp prettyprinters.exp; \
+    else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+    fi; \
+    dirs="`cd $srcdir; echo [013-9][0-9]_*/*`";; \
+  normal1) \
+    dirs="`cd $srcdir; echo [ab]* de* [ep]*/*`";; \
+  normal2) \
+    dirs="`cd $srcdir; echo 2[01]_*/*`";; \
+  normal3) \
+    dirs="`cd $srcdir; echo 22_*/*`";; \
+  normal4) \
+    dirs="`cd $srcdir; echo 23_*/[a-km-tw-z]*`";; \
+  normal5) \
+    dirs="`cd $srcdir; echo 23_*/[luv]*`";; \
+  normal6) \
+    dirs="`cd $srcdir; echo 2[459]_*/*`";; \
+  normal7) \
+    dirs="`cd $srcdir; echo 2[68]_*/*`";; \
+  normal8) \
+    dirs="`cd $srcdir; echo 27_*/*`";; \
+  normal9) \
+    dirs="`cd $srcdir; echo t*/*`";; \
+esac; \
+if [ -n "normal7" ]; then cd "normal7"; fi; \
+if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+  if [ -n "$dirs" ]; then \
+    $runtest  --tool $tool --srcdir $srcdir \
+	     \
+	    "conformance.exp=`echo $dirs | sed 's/ /* /g;s/$/*/'`"; \
+  else \
+    $runtest  --tool $tool --srcdir $srcdir \
+	    ; \
+  fi; \
+else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+fi
+objdir=`${PWDCMD-pwd}`/normal9; \
+sed -e "s|^set srcdir .*$|set srcdir $srcdir|" \
+    -e "s|^set objdir .*$|set objdir $objdir|" \
+    site.exp > normal9/site.exp.tmp
+objdir=`${PWDCMD-pwd}`/normal8; \
+sed -e "s|^set srcdir .*$|set srcdir $srcdir|" \
+    -e "s|^set objdir .*$|set objdir $objdir|" \
+    site.exp > normal8/site.exp.tmp
+objdir=`${PWDCMD-pwd}`/normal5; \
+sed -e "s|^set srcdir .*$|set srcdir $srcdir|" \
+    -e "s|^set objdir .*$|set objdir $objdir|" \
+    site.exp > normal5/site.exp.tmp
+objdir=`${PWDCMD-pwd}`/normal4; \
+sed -e "s|^set srcdir .*$|set srcdir $srcdir|" \
+    -e "s|^set objdir .*$|set objdir $objdir|" \
+    site.exp > normal4/site.exp.tmp
+AR="ar"; export AR; \
+RANLIB="ranlib"; export RANLIB; \
+if [ -z "normal0" ] \
+    && [ "-j" = "-j" ]; then \
+  make  check-DEJAGNUnormal0 check-DEJAGNUnormal1 check-DEJAGNUnormal2 check-DEJAGNUnormal3 check-DEJAGNUnormal4 check-DEJAGNUnormal5 check-DEJAGNUnormal6 check-DEJAGNUnormal7 check-DEJAGNUnormal8 check-DEJAGNUnormal9; \
+  for idx in 0 1 2 3 4 5 6 7 8 9; do \
+    mv -f normal$idx/libstdc++.sum normal$idx/libstdc++.sum.sep; \
+    mv -f normal$idx/libstdc++.log normal$idx/libstdc++.log.sep; \
+  done; \
+  mv -f libstdc++.sum libstdc++.sum.sep; \
+  mv -f libstdc++.log libstdc++.log.sep; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh \
+    libstdc++.sum.sep normal[0-9]/libstdc++.sum.sep > libstdc++.sum; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh -L \
+    libstdc++.log.sep normal[0-9]/libstdc++.log.sep > libstdc++.log; \
+  exit 0; \
+fi; \
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../../gcc-4.8.3/libstdc++-v3/testsuite && pwd`; export srcdir; \
+EXPECT=expect; export EXPECT; \
+runtest=runtest; \
+if [ -z "$runtest" ]; then runtest=runtest; fi; \
+tool=libstdc++; \
+dirs=; \
+case "normal0" in \
+  normal0) \
+    if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+      $runtest  --tool $tool --srcdir $srcdir \
+		 abi.exp prettyprinters.exp; \
+    else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+    fi; \
+    dirs="`cd $srcdir; echo [013-9][0-9]_*/*`";; \
+  normal1) \
+    dirs="`cd $srcdir; echo [ab]* de* [ep]*/*`";; \
+  normal2) \
+    dirs="`cd $srcdir; echo 2[01]_*/*`";; \
+  normal3) \
+    dirs="`cd $srcdir; echo 22_*/*`";; \
+  normal4) \
+    dirs="`cd $srcdir; echo 23_*/[a-km-tw-z]*`";; \
+  normal5) \
+    dirs="`cd $srcdir; echo 23_*/[luv]*`";; \
+  normal6) \
+    dirs="`cd $srcdir; echo 2[459]_*/*`";; \
+  normal7) \
+    dirs="`cd $srcdir; echo 2[68]_*/*`";; \
+  normal8) \
+    dirs="`cd $srcdir; echo 27_*/*`";; \
+  normal9) \
+    dirs="`cd $srcdir; echo t*/*`";; \
+esac; \
+if [ -n "normal0" ]; then cd "normal0"; fi; \
+if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+  if [ -n "$dirs" ]; then \
+    $runtest  --tool $tool --srcdir $srcdir \
+	     \
+	    "conformance.exp=`echo $dirs | sed 's/ /* /g;s/$/*/'`"; \
+  else \
+    $runtest  --tool $tool --srcdir $srcdir \
+	    ; \
+  fi; \
+else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+fi
+Test Run By root on Sat Jun 28 18:04:24 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== libgomp tests ===
+
+libtool: link: gcc -isystem /usr/include -m64 -funwind-tables -frandom-seed=btest -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -g -O -g -O2 -Wl,-rpath-link -Wl,/usr/lib64:/lib64:/usr/lib:/lib -o btest btest-btest.o  ./.libs/libbacktrace.a
+AR="ar"; export AR; \
+RANLIB="ranlib"; export RANLIB; \
+if [ -z "normal2" ] \
+    && [ "-j" = "-j" ]; then \
+  make  check-DEJAGNUnormal0 check-DEJAGNUnormal1 check-DEJAGNUnormal2 check-DEJAGNUnormal3 check-DEJAGNUnormal4 check-DEJAGNUnormal5 check-DEJAGNUnormal6 check-DEJAGNUnormal7 check-DEJAGNUnormal8 check-DEJAGNUnormal9; \
+  for idx in 0 1 2 3 4 5 6 7 8 9; do \
+    mv -f normal$idx/libstdc++.sum normal$idx/libstdc++.sum.sep; \
+    mv -f normal$idx/libstdc++.log normal$idx/libstdc++.log.sep; \
+  done; \
+  mv -f libstdc++.sum libstdc++.sum.sep; \
+  mv -f libstdc++.log libstdc++.log.sep; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh \
+    libstdc++.sum.sep normal[0-9]/libstdc++.sum.sep > libstdc++.sum; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh -L \
+    libstdc++.log.sep normal[0-9]/libstdc++.log.sep > libstdc++.log; \
+  exit 0; \
+fi; \
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../../gcc-4.8.3/libstdc++-v3/testsuite && pwd`; export srcdir; \
+EXPECT=expect; export EXPECT; \
+runtest=runtest; \
+if [ -z "$runtest" ]; then runtest=runtest; fi; \
+tool=libstdc++; \
+dirs=; \
+case "normal2" in \
+  normal0) \
+    if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+      $runtest  --tool $tool --srcdir $srcdir \
+		 abi.exp prettyprinters.exp; \
+    else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+    fi; \
+    dirs="`cd $srcdir; echo [013-9][0-9]_*/*`";; \
+  normal1) \
+    dirs="`cd $srcdir; echo [ab]* de* [ep]*/*`";; \
+  normal2) \
+    dirs="`cd $srcdir; echo 2[01]_*/*`";; \
+  normal3) \
+    dirs="`cd $srcdir; echo 22_*/*`";; \
+  normal4) \
+    dirs="`cd $srcdir; echo 23_*/[a-km-tw-z]*`";; \
+  normal5) \
+    dirs="`cd $srcdir; echo 23_*/[luv]*`";; \
+  normal6) \
+    dirs="`cd $srcdir; echo 2[459]_*/*`";; \
+  normal7) \
+    dirs="`cd $srcdir; echo 2[68]_*/*`";; \
+  normal8) \
+    dirs="`cd $srcdir; echo 27_*/*`";; \
+  normal9) \
+    dirs="`cd $srcdir; echo t*/*`";; \
+esac; \
+if [ -n "normal2" ]; then cd "normal2"; fi; \
+if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+  if [ -n "$dirs" ]; then \
+    $runtest  --tool $tool --srcdir $srcdir \
+	     \
+	    "conformance.exp=`echo $dirs | sed 's/ /* /g;s/$/*/'`"; \
+  else \
+    $runtest  --tool $tool --srcdir $srcdir \
+	    ; \
+  fi; \
+else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+fi
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+AR="ar"; export AR; \
+RANLIB="ranlib"; export RANLIB; \
+if [ -z "normal9" ] \
+    && [ "-j" = "-j" ]; then \
+  make  check-DEJAGNUnormal0 check-DEJAGNUnormal1 check-DEJAGNUnormal2 check-DEJAGNUnormal3 check-DEJAGNUnormal4 check-DEJAGNUnormal5 check-DEJAGNUnormal6 check-DEJAGNUnormal7 check-DEJAGNUnormal8 check-DEJAGNUnormal9; \
+  for idx in 0 1 2 3 4 5 6 7 8 9; do \
+    mv -f normal$idx/libstdc++.sum normal$idx/libstdc++.sum.sep; \
+    mv -f normal$idx/libstdc++.log normal$idx/libstdc++.log.sep; \
+  done; \
+  mv -f libstdc++.sum libstdc++.sum.sep; \
+  mv -f libstdc++.log libstdc++.log.sep; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh \
+    libstdc++.sum.sep normal[0-9]/libstdc++.sum.sep > libstdc++.sum; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh -L \
+    libstdc++.log.sep normal[0-9]/libstdc++.log.sep > libstdc++.log; \
+  exit 0; \
+fi; \
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../../gcc-4.8.3/libstdc++-v3/testsuite && pwd`; export srcdir; \
+EXPECT=expect; export EXPECT; \
+runtest=runtest; \
+if [ -z "$runtest" ]; then runtest=runtest; fi; \
+tool=libstdc++; \
+dirs=; \
+case "normal9" in \
+  normal0) \
+    if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+      $runtest  --tool $tool --srcdir $srcdir \
+		 abi.exp prettyprinters.exp; \
+    else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+    fi; \
+    dirs="`cd $srcdir; echo [013-9][0-9]_*/*`";; \
+  normal1) \
+    dirs="`cd $srcdir; echo [ab]* de* [ep]*/*`";; \
+  normal2) \
+    dirs="`cd $srcdir; echo 2[01]_*/*`";; \
+  normal3) \
+    dirs="`cd $srcdir; echo 22_*/*`";; \
+  normal4) \
+    dirs="`cd $srcdir; echo 23_*/[a-km-tw-z]*`";; \
+  normal5) \
+    dirs="`cd $srcdir; echo 23_*/[luv]*`";; \
+  normal6) \
+    dirs="`cd $srcdir; echo 2[459]_*/*`";; \
+  normal7) \
+    dirs="`cd $srcdir; echo 2[68]_*/*`";; \
+  normal8) \
+    dirs="`cd $srcdir; echo 27_*/*`";; \
+  normal9) \
+    dirs="`cd $srcdir; echo t*/*`";; \
+esac; \
+if [ -n "normal9" ]; then cd "normal9"; fi; \
+if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+  if [ -n "$dirs" ]; then \
+    $runtest  --tool $tool --srcdir $srcdir \
+	     \
+	    "conformance.exp=`echo $dirs | sed 's/ /* /g;s/$/*/'`"; \
+  else \
+    $runtest  --tool $tool --srcdir $srcdir \
+	    ; \
+  fi; \
+else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+fi
+Using /sources/gcc-4.8.3/libgomp/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/libgomp/testsuite/libgomp.c/c.exp ...
+AR="ar"; export AR; \
+RANLIB="ranlib"; export RANLIB; \
+if [ -z "normal1" ] \
+    && [ "-j" = "-j" ]; then \
+  make  check-DEJAGNUnormal0 check-DEJAGNUnormal1 check-DEJAGNUnormal2 check-DEJAGNUnormal3 check-DEJAGNUnormal4 check-DEJAGNUnormal5 check-DEJAGNUnormal6 check-DEJAGNUnormal7 check-DEJAGNUnormal8 check-DEJAGNUnormal9; \
+  for idx in 0 1 2 3 4 5 6 7 8 9; do \
+    mv -f normal$idx/libstdc++.sum normal$idx/libstdc++.sum.sep; \
+    mv -f normal$idx/libstdc++.log normal$idx/libstdc++.log.sep; \
+  done; \
+  mv -f libstdc++.sum libstdc++.sum.sep; \
+  mv -f libstdc++.log libstdc++.log.sep; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh \
+    libstdc++.sum.sep normal[0-9]/libstdc++.sum.sep > libstdc++.sum; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh -L \
+    libstdc++.log.sep normal[0-9]/libstdc++.log.sep > libstdc++.log; \
+  exit 0; \
+fi; \
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../../gcc-4.8.3/libstdc++-v3/testsuite && pwd`; export srcdir; \
+EXPECT=expect; export EXPECT; \
+runtest=runtest; \
+if [ -z "$runtest" ]; then runtest=runtest; fi; \
+tool=libstdc++; \
+dirs=; \
+case "normal1" in \
+  normal0) \
+    if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+      $runtest  --tool $tool --srcdir $srcdir \
+		 abi.exp prettyprinters.exp; \
+    else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+    fi; \
+    dirs="`cd $srcdir; echo [013-9][0-9]_*/*`";; \
+  normal1) \
+    dirs="`cd $srcdir; echo [ab]* de* [ep]*/*`";; \
+  normal2) \
+    dirs="`cd $srcdir; echo 2[01]_*/*`";; \
+  normal3) \
+    dirs="`cd $srcdir; echo 22_*/*`";; \
+  normal4) \
+    dirs="`cd $srcdir; echo 23_*/[a-km-tw-z]*`";; \
+  normal5) \
+    dirs="`cd $srcdir; echo 23_*/[luv]*`";; \
+  normal6) \
+    dirs="`cd $srcdir; echo 2[459]_*/*`";; \
+  normal7) \
+    dirs="`cd $srcdir; echo 2[68]_*/*`";; \
+  normal8) \
+    dirs="`cd $srcdir; echo 27_*/*`";; \
+  normal9) \
+    dirs="`cd $srcdir; echo t*/*`";; \
+esac; \
+if [ -n "normal1" ]; then cd "normal1"; fi; \
+if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+  if [ -n "$dirs" ]; then \
+    $runtest  --tool $tool --srcdir $srcdir \
+	     \
+	    "conformance.exp=`echo $dirs | sed 's/ /* /g;s/$/*/'`"; \
+  else \
+    $runtest  --tool $tool --srcdir $srcdir \
+	    ; \
+  fi; \
+else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+fi
+./test-pexecute
+AR="ar"; export AR; \
+RANLIB="ranlib"; export RANLIB; \
+if [ -z "normal5" ] \
+    && [ "-j" = "-j" ]; then \
+  make  check-DEJAGNUnormal0 check-DEJAGNUnormal1 check-DEJAGNUnormal2 check-DEJAGNUnormal3 check-DEJAGNUnormal4 check-DEJAGNUnormal5 check-DEJAGNUnormal6 check-DEJAGNUnormal7 check-DEJAGNUnormal8 check-DEJAGNUnormal9; \
+  for idx in 0 1 2 3 4 5 6 7 8 9; do \
+    mv -f normal$idx/libstdc++.sum normal$idx/libstdc++.sum.sep; \
+    mv -f normal$idx/libstdc++.log normal$idx/libstdc++.log.sep; \
+  done; \
+  mv -f libstdc++.sum libstdc++.sum.sep; \
+  mv -f libstdc++.log libstdc++.log.sep; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh \
+    libstdc++.sum.sep normal[0-9]/libstdc++.sum.sep > libstdc++.sum; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh -L \
+    libstdc++.log.sep normal[0-9]/libstdc++.log.sep > libstdc++.log; \
+  exit 0; \
+fi; \
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../../gcc-4.8.3/libstdc++-v3/testsuite && pwd`; export srcdir; \
+EXPECT=expect; export EXPECT; \
+runtest=runtest; \
+if [ -z "$runtest" ]; then runtest=runtest; fi; \
+tool=libstdc++; \
+dirs=; \
+case "normal5" in \
+  normal0) \
+    if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+      $runtest  --tool $tool --srcdir $srcdir \
+		 abi.exp prettyprinters.exp; \
+    else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+    fi; \
+    dirs="`cd $srcdir; echo [013-9][0-9]_*/*`";; \
+  normal1) \
+    dirs="`cd $srcdir; echo [ab]* de* [ep]*/*`";; \
+  normal2) \
+    dirs="`cd $srcdir; echo 2[01]_*/*`";; \
+  normal3) \
+    dirs="`cd $srcdir; echo 22_*/*`";; \
+  normal4) \
+    dirs="`cd $srcdir; echo 23_*/[a-km-tw-z]*`";; \
+  normal5) \
+    dirs="`cd $srcdir; echo 23_*/[luv]*`";; \
+  normal6) \
+    dirs="`cd $srcdir; echo 2[459]_*/*`";; \
+  normal7) \
+    dirs="`cd $srcdir; echo 2[68]_*/*`";; \
+  normal8) \
+    dirs="`cd $srcdir; echo 27_*/*`";; \
+  normal9) \
+    dirs="`cd $srcdir; echo t*/*`";; \
+esac; \
+if [ -n "normal5" ]; then cd "normal5"; fi; \
+if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+  if [ -n "$dirs" ]; then \
+    $runtest  --tool $tool --srcdir $srcdir \
+	     \
+	    "conformance.exp=`echo $dirs | sed 's/ /* /g;s/$/*/'`"; \
+  else \
+    $runtest  --tool $tool --srcdir $srcdir \
+	    ; \
+  fi; \
+else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+fi
+Test Run By root on Sat Jun 28 18:04:24 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== libatomic tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/libatomic/testsuite/config/default.exp as tool-and-target-specific interface file.
+make[4]: Leaving directory '/sources/gcc-build/libbacktrace'
+make  check-TESTS
+Running /sources/gcc-4.8.3/libatomic/testsuite/libatomic.c/c.exp ...
+WARNING: Couldn't find the global config file.
+make[4]: Entering directory '/sources/gcc-build/libbacktrace'
+make[4]: Leaving directory '/sources/gcc-build/libiberty/testsuite'
+make[3]: Leaving directory '/sources/gcc-build/libiberty'
+AR="ar"; export AR; \
+RANLIB="ranlib"; export RANLIB; \
+if [ -z "normal8" ] \
+    && [ "-j" = "-j" ]; then \
+  make  check-DEJAGNUnormal0 check-DEJAGNUnormal1 check-DEJAGNUnormal2 check-DEJAGNUnormal3 check-DEJAGNUnormal4 check-DEJAGNUnormal5 check-DEJAGNUnormal6 check-DEJAGNUnormal7 check-DEJAGNUnormal8 check-DEJAGNUnormal9; \
+  for idx in 0 1 2 3 4 5 6 7 8 9; do \
+    mv -f normal$idx/libstdc++.sum normal$idx/libstdc++.sum.sep; \
+    mv -f normal$idx/libstdc++.log normal$idx/libstdc++.log.sep; \
+  done; \
+  mv -f libstdc++.sum libstdc++.sum.sep; \
+  mv -f libstdc++.log libstdc++.log.sep; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh \
+    libstdc++.sum.sep normal[0-9]/libstdc++.sum.sep > libstdc++.sum; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh -L \
+    libstdc++.log.sep normal[0-9]/libstdc++.log.sep > libstdc++.log; \
+  exit 0; \
+fi; \
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../../gcc-4.8.3/libstdc++-v3/testsuite && pwd`; export srcdir; \
+EXPECT=expect; export EXPECT; \
+runtest=runtest; \
+if [ -z "$runtest" ]; then runtest=runtest; fi; \
+tool=libstdc++; \
+dirs=; \
+case "normal8" in \
+  normal0) \
+    if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+      $runtest  --tool $tool --srcdir $srcdir \
+		 abi.exp prettyprinters.exp; \
+    else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+    fi; \
+    dirs="`cd $srcdir; echo [013-9][0-9]_*/*`";; \
+  normal1) \
+    dirs="`cd $srcdir; echo [ab]* de* [ep]*/*`";; \
+  normal2) \
+    dirs="`cd $srcdir; echo 2[01]_*/*`";; \
+  normal3) \
+    dirs="`cd $srcdir; echo 22_*/*`";; \
+  normal4) \
+    dirs="`cd $srcdir; echo 23_*/[a-km-tw-z]*`";; \
+  normal5) \
+    dirs="`cd $srcdir; echo 23_*/[luv]*`";; \
+  normal6) \
+    dirs="`cd $srcdir; echo 2[459]_*/*`";; \
+  normal7) \
+    dirs="`cd $srcdir; echo 2[68]_*/*`";; \
+  normal8) \
+    dirs="`cd $srcdir; echo 27_*/*`";; \
+  normal9) \
+    dirs="`cd $srcdir; echo t*/*`";; \
+esac; \
+if [ -n "normal8" ]; then cd "normal8"; fi; \
+if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+  if [ -n "$dirs" ]; then \
+    $runtest  --tool $tool --srcdir $srcdir \
+	     \
+	    "conformance.exp=`echo $dirs | sed 's/ /* /g;s/$/*/'`"; \
+  else \
+    $runtest  --tool $tool --srcdir $srcdir \
+	    ; \
+  fi; \
+else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+fi
+PASS: backtrace_full noinline
+PASS: backtrace_full inline
+PASS: backtrace_simple noinline
+PASS: backtrace_simple inline
+PASS: btest
+=============
+1 test passed
+=============
+make[4]: Leaving directory '/sources/gcc-build/libbacktrace'
+make[3]: Leaving directory '/sources/gcc-build/libbacktrace'
+Making a new config file...
+Test Run By root on Sat Jun 28 18:04:24 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== libitm tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/libitm/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/libitm/testsuite/libitm.c/c.exp ...
+WARNING: Couldn't find the global config file.
+WARNING: Couldn't find the global config file.
+WARNING: Couldn't find the global config file.
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:04:24 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== libstdc++ tests ===
+
+Test Run By root on Sat Jun 28 18:04:24 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== libstdc++ tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/libstdc++-v3/testsuite/config/default.exp as tool-and-target-specific interface file.
+Using /sources/gcc-4.8.3/libstdc++-v3/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/libstdc++-v3/testsuite/libstdc++-dg/conformance.exp ...
+Running /sources/gcc-4.8.3/libstdc++-v3/testsuite/libstdc++-abi/abi.exp ...
+Test Run By root on Sat Jun 28 18:04:24 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== libstdc++ tests ===
+
+Schedule of variations:
+WARNING: Couldn't find the global config file.
+    unix
+
+Running target unix
+Test Run By root on Sat Jun 28 18:04:24 2014
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== libstdc++ tests ===
+
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+WARNING: Couldn't find the global config file.
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/libstdc++-v3/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/libstdc++-v3/testsuite/libstdc++-dg/conformance.exp ...
+Using /sources/gcc-4.8.3/libstdc++-v3/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/libstdc++-v3/testsuite/libstdc++-dg/conformance.exp ...
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:04:24 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== libstdc++ tests ===
+
+WARNING: Couldn't find the global config file.
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/libstdc++-v3/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/libstdc++-v3/testsuite/libstdc++-dg/conformance.exp ...
+Test Run By root on Sat Jun 28 18:04:24 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== libstdc++ tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/libstdc++-v3/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/libstdc++-v3/testsuite/libstdc++-dg/conformance.exp ...
+Test Run By root on Sat Jun 28 18:04:24 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== libstdc++ tests ===
+
+Test Run By root on Sat Jun 28 18:04:24 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== libstdc++ tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/libstdc++-v3/testsuite/config/default.exp as tool-and-target-specific interface file.
+Using /sources/gcc-4.8.3/libstdc++-v3/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/libstdc++-v3/testsuite/libstdc++-dg/conformance.exp ...
+echo "set tmpdir /sources/gcc-build/gcc/testsuite" >> ./site.tmp
+Running /sources/gcc-4.8.3/libstdc++-v3/testsuite/libstdc++-dg/conformance.exp ...
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:04:24 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== libstdc++ tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/libstdc++-v3/testsuite/config/default.exp as tool-and-target-specific interface file.
+make[4]: Entering directory '/sources/gcc-build/gcc'
+make[4]: Entering directory '/sources/gcc-build/gcc'
+Running /sources/gcc-4.8.3/libstdc++-v3/testsuite/libstdc++-dg/conformance.exp ...
+test -d plugin || mkdir plugin
+test -d testsuite || mkdir testsuite
+test -d plugin || mkdir plugin
+test -d testsuite/gcc || mkdir testsuite/gcc
+test -d testsuite || mkdir testsuite
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/gcc; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/gcc|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "" ] ; then \
+  runtestflags=""; \
+elif [ -n "execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]*,dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]*,compile.exp=compile/2* compile.exp=compile/\[9pP\]*,builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp,ieee.exp vect.exp,unsorted.exp guality.exp struct-layout-1.exp,stackalign.exp aarch64.exp,alpha.exp,arm.exp,avr.exp,bfin.exp,cris.exp,epiphany.exp,frv.exp,i386.exp,ia64.exp,m68k.exp,microblaze.exp,mips.exp,powerpc.exp,rx.exp,s390.exp,sh.exp,sparc.exp,spu.exp,tic6x.exp,xstormy16.exp" ] ; then \
+  parts="`echo ' execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]* dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]* compile.exp=compile/2* compile.exp=compile/\[9pP\]* builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp ieee.exp vect.exp unsorted.exp guality.exp struct-layout-1.exp stackalign.exp aarch64.exp alpha.exp arm.exp avr.exp bfin.exp cris.exp epiphany.exp frv.exp i386.exp ia64.exp m68k.exp microblaze.exp mips.exp powerpc.exp rx.exp s390.exp sh.exp sparc.exp spu.exp tic6x.exp xstormy16.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/gcc* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool gcc  $runtestflags)
+test -d testsuite/g++ || mkdir testsuite/g++
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/g++; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/g++|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "" ] ; then \
+  runtestflags=""; \
+elif [ -n "old-deja.exp dg.exp dg-torture.exp" ] ; then \
+  parts="`echo ' old-deja.exp dg.exp dg-torture.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/g++* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool g++  $runtestflags)
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:04:25 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== g++ tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/asan/asan.exp ...
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:04:26 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== gcc tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/asan/asan.exp ...
+Running /sources/gcc-4.8.3/libitm/testsuite/libitm.c++/c++.exp ...
+
+		=== libitm Summary ===
+
+# of expected passes		26
+# of expected failures		3
+# of unsupported tests		1
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libitm/testsuite'
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libitm/testsuite'
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libitm'
+make  DO=all multi-do # make
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libitm'
+if [ -z "32" ]; then \
+  true; \
+else \
+  rootpre=`${PWDCMD-pwd}`/; export rootpre; \
+  srcrootpre=`cd ../../../gcc-4.8.3/libitm; ${PWDCMD-pwd}`/; export srcrootpre; \
+  lib=`echo "${rootpre}" | sed -e 's,^.*/\([^/][^/]*\)/$,\1,'`; \
+  compiler="/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   "; \
+  for i in `${compiler} --print-multi-lib 2>/dev/null`; do \
+    dir=`echo $i | sed -e 's/;.*$//'`; \
+    if [ "${dir}" = "." ]; then \
+      true; \
+    else \
+      if [ -d ../${dir}/${lib} ]; then \
+	flags=`echo $i | sed -e 's/^[^;]*;//' -e 's/@/ -/g'`; \
+	if (cd ../${dir}/${lib}; make  \
+			CFLAGS="-g -O2 ${flags}" \
+			CCASFLAGS="-g -O2 ${flags}" \
+			FCFLAGS=" ${flags}" \
+			FFLAGS=" ${flags}" \
+			ADAFLAGS=" ${flags}" \
+			prefix="/usr" \
+			exec_prefix="/usr" \
+			GCJFLAGS=" ${flags}" \
+			GOCFLAGS="-O2 -g ${flags}" \
+			CXXFLAGS="-g -O2 -D_GNU_SOURCE ${flags}" \
+			LIBCFLAGS="-g -O2 ${flags}" \
+			LIBCXXFLAGS="-g -O2 -D_GNU_SOURCE -fno-implicit-templates ${flags}" \
+			LDFLAGS=" ${flags}" \
+			MULTIFLAGS="${flags}" \
+			DESTDIR="" \
+			INSTALL="/tools/bin/install -c" \
+			INSTALL_DATA="/tools/bin/install -c -m 644" \
+			INSTALL_PROGRAM="/tools/bin/install -c" \
+			INSTALL_SCRIPT="/tools/bin/install -c" \
+			all); then \
+	  true; \
+	else \
+	  exit 1; \
+	fi; \
+      else true; \
+      fi; \
+    fi; \
+  done; \
+fi
+make[6]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libitm'
+make  all-recursive
+make[7]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libitm'
+Making all in testsuite
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libitm/testsuite'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libitm/testsuite'
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libitm'
+true  DO=all multi-do # make
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libitm'
+make[7]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libitm'
+make[6]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libitm'
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libitm'
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libitm'
+make[3]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libitm'
+test -d plugin || mkdir plugin
+test -d testsuite || mkdir testsuite
+test -d testsuite/gcc1 || mkdir testsuite/gcc1
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/gcc1; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/gcc1|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "1" ] ; then \
+  runtestflags="execute.exp=execute/2*"; \
+elif [ -n "execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]*,dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]*,compile.exp=compile/2* compile.exp=compile/\[9pP\]*,builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp,ieee.exp vect.exp,unsorted.exp guality.exp struct-layout-1.exp,stackalign.exp aarch64.exp,alpha.exp,arm.exp,avr.exp,bfin.exp,cris.exp,epiphany.exp,frv.exp,i386.exp,ia64.exp,m68k.exp,microblaze.exp,mips.exp,powerpc.exp,rx.exp,s390.exp,sh.exp,sparc.exp,spu.exp,tic6x.exp,xstormy16.exp" ] ; then \
+  parts="`echo ' execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]* dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]* compile.exp=compile/2* compile.exp=compile/\[9pP\]* builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp ieee.exp vect.exp unsorted.exp guality.exp struct-layout-1.exp stackalign.exp aarch64.exp alpha.exp arm.exp avr.exp bfin.exp cris.exp epiphany.exp frv.exp i386.exp ia64.exp m68k.exp microblaze.exp mips.exp powerpc.exp rx.exp s390.exp sh.exp sparc.exp spu.exp tic6x.exp xstormy16.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/gcc* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool gcc  $runtestflags)
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:04:28 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== gcc tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.c-torture/execute/execute.exp ...
+
+		=== libatomic Summary ===
+
+# of expected passes		54
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libatomic/testsuite'
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libatomic/testsuite'
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libatomic'
+make  DO=all multi-do # make
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libatomic'
+if [ -z "32" ]; then \
+  true; \
+else \
+  rootpre=`${PWDCMD-pwd}`/; export rootpre; \
+  srcrootpre=`cd ../../../gcc-4.8.3/libatomic; ${PWDCMD-pwd}`/; export srcrootpre; \
+  lib=`echo "${rootpre}" | sed -e 's,^.*/\([^/][^/]*\)/$,\1,'`; \
+  compiler="/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   "; \
+  for i in `${compiler} --print-multi-lib 2>/dev/null`; do \
+    dir=`echo $i | sed -e 's/;.*$//'`; \
+    if [ "${dir}" = "." ]; then \
+      true; \
+    else \
+      if [ -d ../${dir}/${lib} ]; then \
+	flags=`echo $i | sed -e 's/^[^;]*;//' -e 's/@/ -/g'`; \
+	if (cd ../${dir}/${lib}; make  \
+			CFLAGS="-g -O2 ${flags}" \
+			CCASFLAGS="-g -O2 ${flags}" \
+			FCFLAGS=" ${flags}" \
+			FFLAGS=" ${flags}" \
+			ADAFLAGS=" ${flags}" \
+			prefix="/usr" \
+			exec_prefix="/usr" \
+			GCJFLAGS=" ${flags}" \
+			GOCFLAGS="-O2 -g ${flags}" \
+			CXXFLAGS="-g -O2 -D_GNU_SOURCE ${flags}" \
+			LIBCFLAGS="-g -O2 ${flags}" \
+			LIBCXXFLAGS="-g -O2 -D_GNU_SOURCE -fno-implicit-templates ${flags}" \
+			LDFLAGS=" ${flags}" \
+			MULTIFLAGS="${flags}" \
+			DESTDIR="" \
+			INSTALL="/tools/bin/install -c" \
+			INSTALL_DATA="/tools/bin/install -c -m 644" \
+			INSTALL_PROGRAM="/tools/bin/install -c" \
+			INSTALL_SCRIPT="/tools/bin/install -c" \
+			all); then \
+	  true; \
+	else \
+	  exit 1; \
+	fi; \
+      else true; \
+      fi; \
+    fi; \
+  done; \
+fi
+make[6]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libatomic'
+make  all-recursive
+make[7]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libatomic'
+Making all in testsuite
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libatomic/testsuite'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libatomic/testsuite'
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libatomic'
+true  DO=all multi-do # make
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libatomic'
+make[7]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libatomic'
+make[6]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libatomic'
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libatomic'
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libatomic'
+make[3]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libatomic'
+test -d plugin || mkdir plugin
+test -d testsuite || mkdir testsuite
+test -d testsuite/gcc2 || mkdir testsuite/gcc2
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/gcc2; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/gcc2|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "2" ] ; then \
+  runtestflags="execute.exp=execute/\[013-9a-fA-F\]*"; \
+elif [ -n "execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]*,dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]*,compile.exp=compile/2* compile.exp=compile/\[9pP\]*,builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp,ieee.exp vect.exp,unsorted.exp guality.exp struct-layout-1.exp,stackalign.exp aarch64.exp,alpha.exp,arm.exp,avr.exp,bfin.exp,cris.exp,epiphany.exp,frv.exp,i386.exp,ia64.exp,m68k.exp,microblaze.exp,mips.exp,powerpc.exp,rx.exp,s390.exp,sh.exp,sparc.exp,spu.exp,tic6x.exp,xstormy16.exp" ] ; then \
+  parts="`echo ' execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]* dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]* compile.exp=compile/2* compile.exp=compile/\[9pP\]* builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp ieee.exp vect.exp unsorted.exp guality.exp struct-layout-1.exp stackalign.exp aarch64.exp alpha.exp arm.exp avr.exp bfin.exp cris.exp epiphany.exp frv.exp i386.exp ia64.exp m68k.exp microblaze.exp mips.exp powerpc.exp rx.exp s390.exp sh.exp sparc.exp spu.exp tic6x.exp xstormy16.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/gcc* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool gcc  $runtestflags)
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:04:31 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== gcc tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.c-torture/execute/execute.exp ...
+Running /sources/gcc-4.8.3/libstdc++-v3/testsuite/libstdc++-prettyprinters/prettyprinters.exp ...
+
+		=== libstdc++ Summary ===
+
+# of expected passes		1
+# of unsupported tests		1
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:04:41 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== libstdc++ tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/libstdc++-v3/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/libstdc++-v3/testsuite/libstdc++-dg/conformance.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/autopar/autopar.exp ...
+Running /sources/gcc-4.8.3/libgomp/testsuite/libgomp.c++/c++.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/charset/charset.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/compat/compat.exp ...
+Running /sources/gcc-4.8.3/libmudflap/testsuite/libmudflap.c/externs.exp ...
+Running /sources/gcc-4.8.3/libmudflap/testsuite/libmudflap.c++/c++frags.exp ...
+FAIL: libmudflap.c++/pass41-frag.cxx ( -O) execution test
+FAIL: libmudflap.c++/pass41-frag.cxx (-O2) execution test
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/cpp/cpp.exp ...
+FAIL: libmudflap.c++/pass41-frag.cxx (-O3) execution test
+Running /sources/gcc-4.8.3/libmudflap/testsuite/libmudflap.c++/ctors.exp ...
+Running /sources/gcc-4.8.3/libmudflap/testsuite/libmudflap.cth/cthfrags.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/cpp/trad/trad.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/debug/debug.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/bprob/bprob.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/charset/charset.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/compat/compat.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/compat/struct-layout-1.exp ...
+Running /sources/gcc-4.8.3/libgomp/testsuite/libgomp.fortran/fortran.exp ...
+No libgfortran library found, will not execute fortran tests
+Running /sources/gcc-4.8.3/libgomp/testsuite/libgomp.graphite/graphite.exp ...
+FAIL: libgomp.graphite/bounds.c scan-tree-dump-times graphite "0 loops carried no dependency" 1
+FAIL: libgomp.graphite/force-parallel-4.c execution test
+FAIL: libgomp.graphite/force-parallel-4.c scan-tree-dump-times graphite "2 loops carried no dependency" 1
+FAIL: libgomp.graphite/force-parallel-6.c scan-tree-dump-times graphite "1 loops carried no dependency" 1
+
+		=== libstdc++ Summary ===
+
+# of expected passes		938
+test -d plugin || mkdir plugin
+test -d testsuite || mkdir testsuite
+test -d testsuite/gcc3 || mkdir testsuite/gcc3
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/gcc3; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/gcc3|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "3" ] ; then \
+  runtestflags="execute.exp=execute/\[pP\]* dg.exp"; \
+elif [ -n "execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]*,dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]*,compile.exp=compile/2* compile.exp=compile/\[9pP\]*,builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp,ieee.exp vect.exp,unsorted.exp guality.exp struct-layout-1.exp,stackalign.exp aarch64.exp,alpha.exp,arm.exp,avr.exp,bfin.exp,cris.exp,epiphany.exp,frv.exp,i386.exp,ia64.exp,m68k.exp,microblaze.exp,mips.exp,powerpc.exp,rx.exp,s390.exp,sh.exp,sparc.exp,spu.exp,tic6x.exp,xstormy16.exp" ] ; then \
+  parts="`echo ' execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]* dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]* compile.exp=compile/2* compile.exp=compile/\[9pP\]* builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp ieee.exp vect.exp unsorted.exp guality.exp struct-layout-1.exp stackalign.exp aarch64.exp alpha.exp arm.exp avr.exp bfin.exp cris.exp epiphany.exp frv.exp i386.exp ia64.exp m68k.exp microblaze.exp mips.exp powerpc.exp rx.exp s390.exp sh.exp sparc.exp spu.exp tic6x.exp xstormy16.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/gcc* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool gcc  $runtestflags)
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:08:32 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== gcc tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.c-torture/execute/execute.exp ...
+FAIL: libgomp.graphite/pr41118.c scan-tree-dump-times optimized "loopfn" 0
+
+		=== libgomp Summary ===
+
+# of expected passes		1361
+# of unexpected failures	5
+Makefile:264: recipe for target 'check-DEJAGNU' failed
+make[5]: *** [check-DEJAGNU] Error 1
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libgomp/testsuite'
+Makefile:301: recipe for target 'check-am' failed
+make[4]: *** [check-am] Error 2
+make[4]: Target 'check' not remade because of errors.
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libgomp/testsuite'
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libgomp'
+make  DO=all multi-do # make
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libgomp'
+if [ -z "32" ]; then \
+  true; \
+else \
+  rootpre=`${PWDCMD-pwd}`/; export rootpre; \
+  srcrootpre=`cd ../../../gcc-4.8.3/libgomp; ${PWDCMD-pwd}`/; export srcrootpre; \
+  lib=`echo "${rootpre}" | sed -e 's,^.*/\([^/][^/]*\)/$,\1,'`; \
+  compiler="/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   "; \
+  for i in `${compiler} --print-multi-lib 2>/dev/null`; do \
+    dir=`echo $i | sed -e 's/;.*$//'`; \
+    if [ "${dir}" = "." ]; then \
+      true; \
+    else \
+      if [ -d ../${dir}/${lib} ]; then \
+	flags=`echo $i | sed -e 's/^[^;]*;//' -e 's/@/ -/g'`; \
+	if (cd ../${dir}/${lib}; make  \
+			CFLAGS="-g -O2 ${flags}" \
+			CCASFLAGS=" ${flags}" \
+			FCFLAGS="-L. -Wall -L../libgfortran ${flags}" \
+			FFLAGS=" ${flags}" \
+			ADAFLAGS=" ${flags}" \
+			prefix="/usr" \
+			exec_prefix="/usr" \
+			GCJFLAGS=" ${flags}" \
+			GOCFLAGS="-O2 -g ${flags}" \
+			CXXFLAGS="-g -O2 -D_GNU_SOURCE ${flags}" \
+			LIBCFLAGS="-g -O2 ${flags}" \
+			LIBCXXFLAGS="-g -O2 -D_GNU_SOURCE -fno-implicit-templates ${flags}" \
+			LDFLAGS=" ${flags}" \
+			MULTIFLAGS="${flags}" \
+			DESTDIR="" \
+			INSTALL="/tools/bin/install -c" \
+			INSTALL_DATA="/tools/bin/install -c -m 644" \
+			INSTALL_PROGRAM="/tools/bin/install -c" \
+			INSTALL_SCRIPT="/tools/bin/install -c" \
+			all); then \
+	  true; \
+	else \
+	  exit 1; \
+	fi; \
+      else true; \
+      fi; \
+    fi; \
+  done; \
+fi
+make[6]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libgomp'
+make  all-recursive
+make[7]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libgomp'
+Making all in testsuite
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libgomp/testsuite'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libgomp/testsuite'
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libgomp'
+true  DO=all multi-do # make
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libgomp'
+make[7]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libgomp'
+make[6]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libgomp'
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libgomp'
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libgomp'
+Makefile:718: recipe for target 'check-recursive' failed
+make[3]: *** [check-recursive] Error 1
+make[3]: Target 'check' not remade because of errors.
+make[3]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libgomp'
+Makefile:17373: recipe for target 'check-target-libgomp' failed
+make[2]: *** [check-target-libgomp] Error 2
+test -d plugin || mkdir plugin
+test -d testsuite || mkdir testsuite
+test -d testsuite/gcc4 || mkdir testsuite/gcc4
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/gcc4; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/gcc4|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "4" ] ; then \
+  runtestflags="execute.exp=execute/\[g-oq-zG-OQ-Z\]* compile.exp=compile/2*"; \
+elif [ -n "execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]*,dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]*,compile.exp=compile/2* compile.exp=compile/\[9pP\]*,builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp,ieee.exp vect.exp,unsorted.exp guality.exp struct-layout-1.exp,stackalign.exp aarch64.exp,alpha.exp,arm.exp,avr.exp,bfin.exp,cris.exp,epiphany.exp,frv.exp,i386.exp,ia64.exp,m68k.exp,microblaze.exp,mips.exp,powerpc.exp,rx.exp,s390.exp,sh.exp,sparc.exp,spu.exp,tic6x.exp,xstormy16.exp" ] ; then \
+  parts="`echo ' execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]* dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]* compile.exp=compile/2* compile.exp=compile/\[9pP\]* builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp ieee.exp vect.exp unsorted.exp guality.exp struct-layout-1.exp stackalign.exp aarch64.exp alpha.exp arm.exp avr.exp bfin.exp cris.exp epiphany.exp frv.exp i386.exp ia64.exp m68k.exp microblaze.exp mips.exp powerpc.exp rx.exp s390.exp sh.exp sparc.exp spu.exp tic6x.exp xstormy16.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/gcc* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool gcc  $runtestflags)
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:08:33 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== gcc tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.c-torture/compile/compile.exp ...
+
+		=== libmudflap Summary ===
+
+# of expected passes		1433
+# of unexpected failures	3
+Makefile:243: recipe for target 'check-DEJAGNU' failed
+make[5]: *** [check-DEJAGNU] Error 1
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libmudflap/testsuite'
+Makefile:280: recipe for target 'check-am' failed
+make[4]: *** [check-am] Error 2
+make[4]: Target 'check' not remade because of errors.
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libmudflap/testsuite'
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libmudflap'
+make "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CFLAGS=-g -O2" "CXXFLAGS=-g -O2 -D_GNU_SOURCE" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "JC1FLAGS=" "LDFLAGS=" "LIBCFLAGS=-g -O2" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000 --split-size=5000000  " "PICFLAG=" "PICFLAG_FOR_TARGET=" "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "prefix=/usr" "includedir=/usr/include" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "CC=/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "CXX=/sources/gcc-build/./gcc/xg++ -B/sources/gcc-build/./gcc/ -nostdinc++ -nostdinc++ -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include -I/sources/gcc-4.8.3/libstdc++-v3/libsupc++ -I/sources/gcc-4.8.3/libstdc++-v3/include/backward -I/sources/gcc-4.8.3/libstdc++-v3/testsuite/util -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src/.libs -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "LD=/sources/gcc-build/./gcc/collect-ld" "LIBCFLAGS=-g -O2" "NM=/sources/gcc-build/./gcc/nm" "PICFLAG=" "RANLIB=ranlib" "DESTDIR=" DO=all multi-do # make
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libmudflap'
+if [ -z "32" ]; then \
+  true; \
+else \
+  rootpre=`${PWDCMD-pwd}`/; export rootpre; \
+  srcrootpre=`cd ../../../gcc-4.8.3/libmudflap; ${PWDCMD-pwd}`/; export srcrootpre; \
+  lib=`echo "${rootpre}" | sed -e 's,^.*/\([^/][^/]*\)/$,\1,'`; \
+  compiler="/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   "; \
+  for i in `${compiler} --print-multi-lib 2>/dev/null`; do \
+    dir=`echo $i | sed -e 's/;.*$//'`; \
+    if [ "${dir}" = "." ]; then \
+      true; \
+    else \
+      if [ -d ../${dir}/${lib} ]; then \
+	flags=`echo $i | sed -e 's/^[^;]*;//' -e 's/@/ -/g'`; \
+	if (cd ../${dir}/${lib}; make  \
+			CFLAGS="-g -O2 ${flags}" \
+			CCASFLAGS=" ${flags}" \
+			FCFLAGS=" ${flags}" \
+			FFLAGS=" ${flags}" \
+			ADAFLAGS=" ${flags}" \
+			prefix="/usr" \
+			exec_prefix="/usr" \
+			GCJFLAGS=" ${flags}" \
+			GOCFLAGS="-O2 -g ${flags}" \
+			CXXFLAGS="-g -O2 -D_GNU_SOURCE ${flags}" \
+			LIBCFLAGS="-g -O2 ${flags}" \
+			LIBCXXFLAGS="-g -O2 -D_GNU_SOURCE -fno-implicit-templates ${flags}" \
+			LDFLAGS=" ${flags}" \
+			MULTIFLAGS="${flags}" \
+			DESTDIR="" \
+			INSTALL="/tools/bin/install -c" \
+			INSTALL_DATA="/tools/bin/install -c -m 644" \
+			INSTALL_PROGRAM="/tools/bin/install -c" \
+			INSTALL_SCRIPT="/tools/bin/install -c" \
+			all); then \
+	  true; \
+	else \
+	  exit 1; \
+	fi; \
+      else true; \
+      fi; \
+    fi; \
+  done; \
+fi
+make[6]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libmudflap'
+make "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CFLAGS=-g -O2  -m32" "CXXFLAGS=-g -O2 -D_GNU_SOURCE  -m32" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "JC1FLAGS=" "LDFLAGS=-m32" "LIBCFLAGS=-g -O2  -m32" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000 " "PICFLAG=" "PICFLAG_FOR_TARGET=" "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "prefix=/usr" "includedir=/usr/lib64/gcc-lib/x86_64-unknown-linux-gnu/include" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "CC=/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include  -m32" "CXX=/sources/gcc-build/./gcc/xg++ -B/sources/gcc-build/./gcc/ -nostdinc++ -nostdinc++ -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include -I/sources/gcc-4.8.3/libstdc++-v3/libsupc++ -I/sources/gcc-4.8.3/libstdc++-v3/include/backward -I/sources/gcc-4.8.3/libstdc++-v3/testsuite/util -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src/.libs -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "LD=/sources/gcc-build/./gcc/collect-ld -m elf_x86_64 -m elf_i386" "LIBCFLAGS=-g -O2  -m32" "NM=/sources/gcc-build/./gcc/nm" "PICFLAG=" "RANLIB=ranlib" "DESTDIR=" all-recursive
+make[7]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libmudflap'
+Making all in testsuite
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libmudflap/testsuite'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libmudflap/testsuite'
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libmudflap'
+true "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CFLAGS=-g -O2  -m32" "CXXFLAGS=-g -O2 -D_GNU_SOURCE  -m32" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "JC1FLAGS=" "LDFLAGS=-m32" "LIBCFLAGS=-g -O2  -m32" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000   " "PICFLAG=" "PICFLAG_FOR_TARGET=" "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "prefix=/usr" "includedir=/usr/lib64/gcc-lib/x86_64-unknown-linux-gnu/include" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "CC=/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include  -m32" "CXX=/sources/gcc-build/./gcc/xg++ -B/sources/gcc-build/./gcc/ -nostdinc++ -nostdinc++ -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu -I/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/include -I/sources/gcc-4.8.3/libstdc++-v3/libsupc++ -I/sources/gcc-4.8.3/libstdc++-v3/include/backward -I/sources/gcc-4.8.3/libstdc++-v3/testsuite/util -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src -L/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/src/.libs -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   " "LD=/sources/gcc-build/./gcc/collect-ld -m elf_x86_64 -m elf_i386" "LIBCFLAGS=-g -O2  -m32" "NM=/sources/gcc-build/./gcc/nm" "PICFLAG=" "RANLIB=ranlib" "DESTDIR=" DO=all multi-do # make
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libmudflap'
+make[7]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libmudflap'
+make[6]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libmudflap'
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libmudflap'
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libmudflap'
+Makefile:559: recipe for target 'check-recursive' failed
+make[3]: *** [check-recursive] Error 1
+make[3]: Target 'check' not remade because of errors.
+make[3]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libmudflap'
+Makefile:12834: recipe for target 'check-target-libmudflap' failed
+make[2]: *** [check-target-libmudflap] Error 2
+test -d plugin || mkdir plugin
+test -d testsuite || mkdir testsuite
+test -d testsuite/gcc5 || mkdir testsuite/gcc5
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/gcc5; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/gcc5|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "5" ] ; then \
+  runtestflags="compile.exp=compile/\[9pP\]* builtins.exp"; \
+elif [ -n "execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]*,dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]*,compile.exp=compile/2* compile.exp=compile/\[9pP\]*,builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp,ieee.exp vect.exp,unsorted.exp guality.exp struct-layout-1.exp,stackalign.exp aarch64.exp,alpha.exp,arm.exp,avr.exp,bfin.exp,cris.exp,epiphany.exp,frv.exp,i386.exp,ia64.exp,m68k.exp,microblaze.exp,mips.exp,powerpc.exp,rx.exp,s390.exp,sh.exp,sparc.exp,spu.exp,tic6x.exp,xstormy16.exp" ] ; then \
+  parts="`echo ' execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]* dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]* compile.exp=compile/2* compile.exp=compile/\[9pP\]* builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp ieee.exp vect.exp unsorted.exp guality.exp struct-layout-1.exp stackalign.exp aarch64.exp alpha.exp arm.exp avr.exp bfin.exp cris.exp epiphany.exp frv.exp i386.exp ia64.exp m68k.exp microblaze.exp mips.exp powerpc.exp rx.exp s390.exp sh.exp sparc.exp spu.exp tic6x.exp xstormy16.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/gcc* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool gcc  $runtestflags)
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:09:04 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== gcc tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.c-torture/compile/compile.exp ...
+
+		=== libstdc++ Summary ===
+
+# of expected passes		821
+# of expected failures		1
+# of unsupported tests		6
+AR="ar"; export AR; \
+RANLIB="ranlib"; export RANLIB; \
+if [ -z "normal4" ] \
+    && [ "-j" = "-j" ]; then \
+  make  check-DEJAGNUnormal0 check-DEJAGNUnormal1 check-DEJAGNUnormal2 check-DEJAGNUnormal3 check-DEJAGNUnormal4 check-DEJAGNUnormal5 check-DEJAGNUnormal6 check-DEJAGNUnormal7 check-DEJAGNUnormal8 check-DEJAGNUnormal9; \
+  for idx in 0 1 2 3 4 5 6 7 8 9; do \
+    mv -f normal$idx/libstdc++.sum normal$idx/libstdc++.sum.sep; \
+    mv -f normal$idx/libstdc++.log normal$idx/libstdc++.log.sep; \
+  done; \
+  mv -f libstdc++.sum libstdc++.sum.sep; \
+  mv -f libstdc++.log libstdc++.log.sep; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh \
+    libstdc++.sum.sep normal[0-9]/libstdc++.sum.sep > libstdc++.sum; \
+  /bin/sh ../../../../gcc-4.8.3/libstdc++-v3/testsuite/../../contrib/dg-extract-results.sh -L \
+    libstdc++.log.sep normal[0-9]/libstdc++.log.sep > libstdc++.log; \
+  exit 0; \
+fi; \
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../../gcc-4.8.3/libstdc++-v3/testsuite && pwd`; export srcdir; \
+EXPECT=expect; export EXPECT; \
+runtest=runtest; \
+if [ -z "$runtest" ]; then runtest=runtest; fi; \
+tool=libstdc++; \
+dirs=; \
+case "normal4" in \
+  normal0) \
+    if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+      $runtest  --tool $tool --srcdir $srcdir \
+		 abi.exp prettyprinters.exp; \
+    else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+    fi; \
+    dirs="`cd $srcdir; echo [013-9][0-9]_*/*`";; \
+  normal1) \
+    dirs="`cd $srcdir; echo [ab]* de* [ep]*/*`";; \
+  normal2) \
+    dirs="`cd $srcdir; echo 2[01]_*/*`";; \
+  normal3) \
+    dirs="`cd $srcdir; echo 22_*/*`";; \
+  normal4) \
+    dirs="`cd $srcdir; echo 23_*/[a-km-tw-z]*`";; \
+  normal5) \
+    dirs="`cd $srcdir; echo 23_*/[luv]*`";; \
+  normal6) \
+    dirs="`cd $srcdir; echo 2[459]_*/*`";; \
+  normal7) \
+    dirs="`cd $srcdir; echo 2[68]_*/*`";; \
+  normal8) \
+    dirs="`cd $srcdir; echo 27_*/*`";; \
+  normal9) \
+    dirs="`cd $srcdir; echo t*/*`";; \
+esac; \
+if [ -n "normal4" ]; then cd "normal4"; fi; \
+if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+  if [ -n "$dirs" ]; then \
+    $runtest  --tool $tool --srcdir $srcdir \
+	     \
+	    "conformance.exp=`echo $dirs | sed 's/ /* /g;s/$/*/'`"; \
+  else \
+    $runtest  --tool $tool --srcdir $srcdir \
+	    ; \
+  fi; \
+else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+fi
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:09:13 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== libstdc++ tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/libstdc++-v3/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/libstdc++-v3/testsuite/libstdc++-dg/conformance.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/debug/dwarf2/dwarf2.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/debug/debug.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/dfp/dfp.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/fixed-point/fixed-point.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/format/format.exp ...
+
+		=== libstdc++ Summary ===
+
+# of expected passes		1256
+# of expected failures		2
+# of unsupported tests		4
+test -d plugin || mkdir plugin
+test -d testsuite || mkdir testsuite
+test -d testsuite/g++1 || mkdir testsuite/g++1
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/g++1; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/g++1|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "1" ] ; then \
+  runtestflags="old-deja.exp"; \
+elif [ -n "old-deja.exp dg.exp dg-torture.exp" ] ; then \
+  parts="`echo ' old-deja.exp dg.exp dg-torture.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/g++* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool g++  $runtestflags)
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:10:17 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== g++ tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.old-deja/old-deja.exp ...
+
+		=== libstdc++ Summary ===
+
+# of expected passes		667
+test -d plugin || mkdir plugin
+test -d testsuite || mkdir testsuite
+test -d testsuite/g++2 || mkdir testsuite/g++2
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/g++2; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/g++2|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "2" ] ; then \
+  runtestflags="dg.exp"; \
+elif [ -n "old-deja.exp dg.exp dg-torture.exp" ] ; then \
+  parts="`echo ' old-deja.exp dg.exp dg-torture.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/g++* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool g++  $runtestflags)
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:10:22 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== g++ tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/dg.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/gomp/gomp.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/graphite/graphite.exp ...
+
+		=== libstdc++ Summary ===
+
+# of expected passes		600
+# of expected failures		16
+# of unsupported tests		110
+test -d plugin || mkdir plugin
+test -d testsuite || mkdir testsuite
+test -d testsuite/g++3 || mkdir testsuite/g++3
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/g++3; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/g++3|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "3" ] ; then \
+  runtestflags="dg-torture.exp"; \
+elif [ -n "old-deja.exp dg.exp dg-torture.exp" ] ; then \
+  parts="`echo ' old-deja.exp dg.exp dg-torture.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/g++* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool g++  $runtestflags)
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:10:39 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== g++ tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/torture/dg-torture.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/ipa/ipa.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/lto/lto.exp ...
+
+		=== libstdc++ Summary ===
+
+# of expected passes		1034
+# of unsupported tests		7
+test -d plugin || mkdir plugin
+test -d testsuite || mkdir testsuite
+test -d testsuite/gcc6 || mkdir testsuite/gcc6
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/gcc6; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/gcc6|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "6" ] ; then \
+  runtestflags="compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]*"; \
+elif [ -n "execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]*,dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]*,compile.exp=compile/2* compile.exp=compile/\[9pP\]*,builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp,ieee.exp vect.exp,unsorted.exp guality.exp struct-layout-1.exp,stackalign.exp aarch64.exp,alpha.exp,arm.exp,avr.exp,bfin.exp,cris.exp,epiphany.exp,frv.exp,i386.exp,ia64.exp,m68k.exp,microblaze.exp,mips.exp,powerpc.exp,rx.exp,s390.exp,sh.exp,sparc.exp,spu.exp,tic6x.exp,xstormy16.exp" ] ; then \
+  parts="`echo ' execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]* dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]* compile.exp=compile/2* compile.exp=compile/\[9pP\]* builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp ieee.exp vect.exp unsorted.exp guality.exp struct-layout-1.exp stackalign.exp aarch64.exp alpha.exp arm.exp avr.exp bfin.exp cris.exp epiphany.exp frv.exp i386.exp ia64.exp m68k.exp microblaze.exp mips.exp powerpc.exp rx.exp s390.exp sh.exp sparc.exp spu.exp tic6x.exp xstormy16.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/gcc* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool gcc  $runtestflags)
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:11:22 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== gcc tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.c-torture/compile/compile.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/debug/dwarf2/dwarf2.exp ...
+
+		=== libstdc++ Summary ===
+
+# of expected passes		775
+# of expected failures		10
+# of unsupported tests		4
+test -d plugin || mkdir plugin
+test -d testsuite || mkdir testsuite
+test -d testsuite/gcc7 || mkdir testsuite/gcc7
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/gcc7; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/gcc7|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "7" ] ; then \
+  runtestflags="dg-torture.exp ieee.exp"; \
+elif [ -n "execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]*,dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]*,compile.exp=compile/2* compile.exp=compile/\[9pP\]*,builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp,ieee.exp vect.exp,unsorted.exp guality.exp struct-layout-1.exp,stackalign.exp aarch64.exp,alpha.exp,arm.exp,avr.exp,bfin.exp,cris.exp,epiphany.exp,frv.exp,i386.exp,ia64.exp,m68k.exp,microblaze.exp,mips.exp,powerpc.exp,rx.exp,s390.exp,sh.exp,sparc.exp,spu.exp,tic6x.exp,xstormy16.exp" ] ; then \
+  parts="`echo ' execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]* dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]* compile.exp=compile/2* compile.exp=compile/\[9pP\]* builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp ieee.exp vect.exp unsorted.exp guality.exp struct-layout-1.exp stackalign.exp aarch64.exp alpha.exp arm.exp avr.exp bfin.exp cris.exp epiphany.exp frv.exp i386.exp ia64.exp m68k.exp microblaze.exp mips.exp powerpc.exp rx.exp s390.exp sh.exp sparc.exp spu.exp tic6x.exp xstormy16.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/gcc* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool gcc  $runtestflags)
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:11:52 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== gcc tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.c-torture/execute/ieee/ieee.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/dfp/dfp.exp ...
+
+		=== libstdc++ Summary ===
+
+# of expected passes		1575
+# of expected failures		4
+test -d plugin || mkdir plugin
+test -d testsuite || mkdir testsuite
+test -d testsuite/gcc8 || mkdir testsuite/gcc8
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/gcc8; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/gcc8|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "8" ] ; then \
+  runtestflags="vect.exp unsorted.exp"; \
+elif [ -n "execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]*,dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]*,compile.exp=compile/2* compile.exp=compile/\[9pP\]*,builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp,ieee.exp vect.exp,unsorted.exp guality.exp struct-layout-1.exp,stackalign.exp aarch64.exp,alpha.exp,arm.exp,avr.exp,bfin.exp,cris.exp,epiphany.exp,frv.exp,i386.exp,ia64.exp,m68k.exp,microblaze.exp,mips.exp,powerpc.exp,rx.exp,s390.exp,sh.exp,sparc.exp,spu.exp,tic6x.exp,xstormy16.exp" ] ; then \
+  parts="`echo ' execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]* dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]* compile.exp=compile/2* compile.exp=compile/\[9pP\]* builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp ieee.exp vect.exp unsorted.exp guality.exp struct-layout-1.exp stackalign.exp aarch64.exp alpha.exp arm.exp avr.exp bfin.exp cris.exp epiphany.exp frv.exp i386.exp ia64.exp m68k.exp microblaze.exp mips.exp powerpc.exp rx.exp s390.exp sh.exp sparc.exp spu.exp tic6x.exp xstormy16.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/gcc* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool gcc  $runtestflags)
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:12:20 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== gcc tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.c-torture/unsorted/unsorted.exp ...
+
+		=== libstdc++ Summary ===
+
+# of expected passes		966
+# of unsupported tests		12
+test -d plugin || mkdir plugin
+test -d testsuite || mkdir testsuite
+test -d testsuite/gcc9 || mkdir testsuite/gcc9
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/gcc9; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/gcc9|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "9" ] ; then \
+  runtestflags="guality.exp"; \
+elif [ -n "execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]*,dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]*,compile.exp=compile/2* compile.exp=compile/\[9pP\]*,builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp,ieee.exp vect.exp,unsorted.exp guality.exp struct-layout-1.exp,stackalign.exp aarch64.exp,alpha.exp,arm.exp,avr.exp,bfin.exp,cris.exp,epiphany.exp,frv.exp,i386.exp,ia64.exp,m68k.exp,microblaze.exp,mips.exp,powerpc.exp,rx.exp,s390.exp,sh.exp,sparc.exp,spu.exp,tic6x.exp,xstormy16.exp" ] ; then \
+  parts="`echo ' execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]* dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]* compile.exp=compile/2* compile.exp=compile/\[9pP\]* builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp ieee.exp vect.exp unsorted.exp guality.exp struct-layout-1.exp stackalign.exp aarch64.exp alpha.exp arm.exp avr.exp bfin.exp cris.exp epiphany.exp frv.exp i386.exp ia64.exp m68k.exp microblaze.exp mips.exp powerpc.exp rx.exp s390.exp sh.exp sparc.exp spu.exp tic6x.exp xstormy16.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/gcc* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool gcc  $runtestflags)
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:12:23 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== gcc tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/guality/guality.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/gcov/gcov.exp ...
+
+		=== gcc Summary ===
+
+/sources/gcc-build/gcc/xgcc  version 4.8.3 (GCC) 
+
+test -d plugin || mkdir plugin
+test -d testsuite || mkdir testsuite
+test -d testsuite/gcc10 || mkdir testsuite/gcc10
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/gcc10; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/gcc10|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "10" ] ; then \
+  runtestflags="struct-layout-1.exp stackalign.exp"; \
+elif [ -n "execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]*,dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]*,compile.exp=compile/2* compile.exp=compile/\[9pP\]*,builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp,ieee.exp vect.exp,unsorted.exp guality.exp struct-layout-1.exp,stackalign.exp aarch64.exp,alpha.exp,arm.exp,avr.exp,bfin.exp,cris.exp,epiphany.exp,frv.exp,i386.exp,ia64.exp,m68k.exp,microblaze.exp,mips.exp,powerpc.exp,rx.exp,s390.exp,sh.exp,sparc.exp,spu.exp,tic6x.exp,xstormy16.exp" ] ; then \
+  parts="`echo ' execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]* dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]* compile.exp=compile/2* compile.exp=compile/\[9pP\]* builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp ieee.exp vect.exp unsorted.exp guality.exp struct-layout-1.exp stackalign.exp aarch64.exp alpha.exp arm.exp avr.exp bfin.exp cris.exp epiphany.exp frv.exp i386.exp ia64.exp m68k.exp microblaze.exp mips.exp powerpc.exp rx.exp s390.exp sh.exp sparc.exp spu.exp tic6x.exp xstormy16.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/gcc* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool gcc  $runtestflags)
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:12:32 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== gcc tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/compat/struct-layout-1.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/gomp/gomp.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/graphite/graphite.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/guality/guality.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/lto/lto.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/noncompile/noncompile.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/torture/dg-torture.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/pch/pch.exp ...
+
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/torture/stackalign/stackalign.exp ...
+
+		=== gcc Summary ===
+
+# of expected passes		784
+# of unsupported tests		48
+/sources/gcc-build/gcc/xgcc  version 4.8.3 (GCC) 
+
+test -d plugin || mkdir plugin
+test -d testsuite || mkdir testsuite
+test -d testsuite/gcc11 || mkdir testsuite/gcc11
+(rootme=`${PWDCMD-pwd}`; export rootme; \
+srcdir=`cd ../../gcc-4.8.3/gcc; ${PWDCMD-pwd}` ; export srcdir ; \
+cd testsuite/gcc11; \
+rm -f tmp-site.exp; \
+sed '/set tmpdir/ s|testsuite$|testsuite/gcc11|' \
+	< ../../site.exp > tmp-site.exp; \
+/bin/sh ${srcdir}/../move-if-change tmp-site.exp site.exp; \
+EXPECT=`if [ -f ${rootme}/../expect/expect ] ; then echo ${rootme}/../expect/expect ; else echo expect ; fi` ; export EXPECT ; \
+if [ -f ${rootme}/../expect/expect ] ; then  \
+   TCL_LIBRARY=`cd .. ; cd ${srcdir}/../tcl/library ; ${PWDCMD-pwd}` ; \
+    export TCL_LIBRARY ; fi ; \
+runtestflags= ; \
+if [ -n "11" ] ; then \
+  runtestflags="aarch64.exp alpha.exp arm.exp avr.exp bfin.exp cris.exp epiphany.exp frv.exp i386.exp ia64.exp m68k.exp microblaze.exp mips.exp powerpc.exp rx.exp s390.exp sh.exp sparc.exp spu.exp tic6x.exp xstormy16.exp"; \
+elif [ -n "execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]*,dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]*,compile.exp=compile/2* compile.exp=compile/\[9pP\]*,builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp,ieee.exp vect.exp,unsorted.exp guality.exp struct-layout-1.exp,stackalign.exp aarch64.exp,alpha.exp,arm.exp,avr.exp,bfin.exp,cris.exp,epiphany.exp,frv.exp,i386.exp,ia64.exp,m68k.exp,microblaze.exp,mips.exp,powerpc.exp,rx.exp,s390.exp,sh.exp,sparc.exp,spu.exp,tic6x.exp,xstormy16.exp" ] ; then \
+  parts="`echo ' execute.exp=execute/2* execute.exp=execute/\[013-9a-fA-F\]* execute.exp=execute/\[pP\]* dg.exp execute.exp=execute/\[g-oq-zG-OQ-Z\]* compile.exp=compile/2* compile.exp=compile/\[9pP\]* builtins.exp compile.exp=compile/\[013-8a-oq-zA-OQ-Z\]* dg-torture.exp ieee.exp vect.exp unsorted.exp guality.exp struct-layout-1.exp stackalign.exp aarch64.exp alpha.exp arm.exp avr.exp bfin.exp cris.exp epiphany.exp frv.exp i386.exp ia64.exp m68k.exp microblaze.exp mips.exp powerpc.exp rx.exp s390.exp sh.exp sparc.exp spu.exp tic6x.exp xstormy16.exp ' \
+	  | sed 's/=[^ ]* / /g'`"; \
+  for part in `find $srcdir/testsuite/gcc* -name \*.exp` ; do \
+    part=`basename $part` ; \
+    case " $parts $runtestflags " in \
+      *" $part "*) ;; \
+      *) runtestflags="$runtestflags $part" ;; \
+    esac ; \
+  done ; \
+fi ; \
+`if [ -f ${srcdir}/../dejagnu/runtest ] ; then echo ${srcdir}/../dejagnu/runtest ; else echo runtest; fi` --tool gcc  $runtestflags)
+WARNING: Couldn't find the global config file.
+Test Run By root on Sat Jun 28 18:13:57 2014
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== gcc tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /tools/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /tools/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /sources/gcc-4.8.3/gcc/testsuite/config/default.exp as tool-and-target-specific interface file.
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/aarch64/aarch64.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/alpha/alpha.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/arm/arm.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/avr/avr.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/bfin/bfin.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/cris/cris.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/epiphany/epiphany.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/frv/frv.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/i386/i386.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.c-torture/execute/execute.exp ...
+
+		=== libstdc++ Summary ===
+
+# of expected passes		640
+# of expected failures		12
+# of unsupported tests		77
+make[6]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/testsuite'
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/testsuite'
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/testsuite'
+Making check in python
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/python'
+make[4]: Nothing to be done for 'check'.
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3/python'
+make[4]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3'
+make "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CC_FOR_TARGET=/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/" "CFLAGS=-g -O2" "CXXFLAGS=-g -O2 -D_GNU_SOURCE" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "LDFLAGS=" "LIBCFLAGS=-g -O2" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000 --split-size=5000000  " "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "includedir=/usr/include" "prefix=/usr" "tooldir=/usr/x86_64-unknown-linux-gnu" "gxx_include_dir=/usr/include/c++/4.8.3" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "LD=/sources/gcc-build/./gcc/collect-ld" "RANLIB=ranlib" "NM=/sources/gcc-build/./gcc/nm" "NM_FOR_BUILD=" "NM_FOR_TARGET=nm" "DESTDIR=" "WERROR=" DO=all multi-do # make
+make[5]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3'
+if [ -z "32" ]; then \
+  true; \
+else \
+  rootpre=`${PWDCMD-pwd}`/; export rootpre; \
+  srcrootpre=`cd ../../../gcc-4.8.3/libstdc++-v3; ${PWDCMD-pwd}`/; export srcrootpre; \
+  lib=`echo "${rootpre}" | sed -e 's,^.*/\([^/][^/]*\)/$,\1,'`; \
+  compiler="/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/ -B/usr/x86_64-unknown-linux-gnu/bin/ -B/usr/x86_64-unknown-linux-gnu/lib/ -isystem /usr/x86_64-unknown-linux-gnu/include -isystem /usr/x86_64-unknown-linux-gnu/sys-include   "; \
+  for i in `${compiler} --print-multi-lib 2>/dev/null`; do \
+    dir=`echo $i | sed -e 's/;.*$//'`; \
+    if [ "${dir}" = "." ]; then \
+      true; \
+    else \
+      if [ -d ../${dir}/${lib} ]; then \
+	flags=`echo $i | sed -e 's/^[^;]*;//' -e 's/@/ -/g'`; \
+	if (cd ../${dir}/${lib}; make "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CC_FOR_TARGET=/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/" "CFLAGS=-g -O2" "CXXFLAGS=-g -O2 -D_GNU_SOURCE" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "LDFLAGS=" "LIBCFLAGS=-g -O2" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000 --split-size=5000000   " "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "includedir=/usr/include" "prefix=/usr" "tooldir=/usr/x86_64-unknown-linux-gnu" "gxx_include_dir=/usr/include/c++/4.8.3" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "LD=/sources/gcc-build/./gcc/collect-ld" "RANLIB=ranlib" "NM=/sources/gcc-build/./gcc/nm" "NM_FOR_BUILD=" "NM_FOR_TARGET=nm" "DESTDIR=" "WERROR=" \
+			CFLAGS="-g -O2 ${flags}" \
+			CCASFLAGS=" ${flags}" \
+			FCFLAGS=" ${flags}" \
+			FFLAGS=" ${flags}" \
+			ADAFLAGS=" ${flags}" \
+			prefix="/usr" \
+			exec_prefix="/usr" \
+			GCJFLAGS=" ${flags}" \
+			GOCFLAGS="-O2 -g ${flags}" \
+			CXXFLAGS="-g -O2 -D_GNU_SOURCE ${flags}" \
+			LIBCFLAGS="-g -O2 ${flags}" \
+			LIBCXXFLAGS="-g -O2 -D_GNU_SOURCE -fno-implicit-templates ${flags}" \
+			LDFLAGS=" ${flags}" \
+			MULTIFLAGS="${flags}" \
+			DESTDIR="" \
+			INSTALL="/tools/bin/install -c" \
+			INSTALL_DATA="/tools/bin/install -c -m 644" \
+			INSTALL_PROGRAM="/tools/bin/install -c" \
+			INSTALL_SCRIPT="/tools/bin/install -c" \
+			all); then \
+	  true; \
+	else \
+	  exit 1; \
+	fi; \
+      else true; \
+      fi; \
+    fi; \
+  done; \
+fi
+make[6]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3'
+make "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CC_FOR_TARGET=/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/" "CFLAGS=-g -O2  -m32" "CXXFLAGS=-g -O2 -D_GNU_SOURCE  -m32" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "LDFLAGS=-m32" "LIBCFLAGS=-g -O2  -m32" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000 --split-size=5000000    " "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "includedir=/usr/include" "prefix=/usr" "tooldir=/usr/x86_64-unknown-linux-gnu" "gxx_include_dir=/usr/include/c++/4.8.3" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "LD=/sources/gcc-build/./gcc/collect-ld" "RANLIB=ranlib" "NM=/sources/gcc-build/./gcc/nm" "NM_FOR_BUILD=" "NM_FOR_TARGET=nm" "DESTDIR=" "WERROR=" all-recursive
+make[7]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3'
+Making all in include
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/include'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/include'
+Making all in libsupc++
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/libsupc++'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/libsupc++'
+Making all in src
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/src'
+Making all in c++98
+make[9]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/src/c++98'
+make[9]: Nothing to be done for 'all'.
+make[9]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/src/c++98'
+Making all in c++11
+make[9]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/src/c++11'
+make[9]: Nothing to be done for 'all'.
+make[9]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/src/c++11'
+make[9]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/src'
+make[9]: Nothing to be done for 'all-am'.
+make[9]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/src'
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/src'
+Making all in doc
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/doc'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/doc'
+Making all in po
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/po'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/po'
+Making all in testsuite
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/testsuite'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/testsuite'
+Making all in python
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/python'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3/python'
+make[8]: Entering directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3'
+true "AR_FLAGS=rc" "CC_FOR_BUILD=gcc -isystem /usr/include -m64" "CC_FOR_TARGET=/sources/gcc-build/./gcc/xgcc -B/sources/gcc-build/./gcc/" "CFLAGS=-g -O2  -m32" "CXXFLAGS=-g -O2 -D_GNU_SOURCE  -m32" "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/tools/bin/install -c" "INSTALL_DATA=/tools/bin/install -c -m 644" "INSTALL_PROGRAM=/tools/bin/install -c" "INSTALL_SCRIPT=/tools/bin/install -c" "LDFLAGS=-m32" "LIBCFLAGS=-g -O2  -m32" "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000 --split-size=5000000      " "SHELL=/bin/sh" "RUNTESTFLAGS=" "exec_prefix=/usr" "infodir=/usr/share/info" "libdir=/usr/lib64" "includedir=/usr/include" "prefix=/usr" "tooldir=/usr/x86_64-unknown-linux-gnu" "gxx_include_dir=/usr/include/c++/4.8.3" "AR=ar" "AS=/sources/gcc-build/./gcc/as" "LD=/sources/gcc-build/./gcc/collect-ld" "RANLIB=ranlib" "NM=/sources/gcc-build/./gcc/nm" "NM_FOR_BUILD=" "NM_FOR_TARGET=nm" "DESTDIR=" "WERROR=" DO=all multi-do # make
+make[8]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3'
+make[7]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3'
+make[6]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/32/libstdc++-v3'
+make[5]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3'
+make[4]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3'
+make[3]: Leaving directory '/sources/gcc-build/x86_64-unknown-linux-gnu/libstdc++-v3'
+make[2]: Target 'check-target' not remade because of errors.
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/plugin/plugin.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/simulate-thread/simulate-thread.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/special/mips-abi.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/special/special.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/tls/tls.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/tm/tm.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/pch/pch.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/torture/tls/tls.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/plugin/plugin.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/simulate-thread/simulate-thread.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/special/ecos.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/tls/tls.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/tm/tm.exp ...
+
+		=== gcc Summary ===
+
+# of expected passes		6980
+/sources/gcc-build/gcc/xgcc  version 4.8.3 (GCC) 
+
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/torture/stackalign/stackalign.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/tree-prof/tree-prof.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/vect/vect.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/tree-ssa/tree-ssa.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/tree-prof/tree-prof.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/g++.dg/vect/vect.exp ...
+
+		=== g++ Summary ===
+
+# of expected passes		9222
+# of expected failures		8
+# of unsupported tests		283
+/sources/gcc-build/gcc/testsuite/g++/../../xg++  version 4.8.3 (GCC) 
+
+
+		=== g++ Summary ===
+
+# of expected passes		3904
+# of expected failures		8
+# of unsupported tests		32
+/sources/gcc-build/gcc/testsuite/g++3/../../xg++  version 4.8.3 (GCC) 
+
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/dg.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/i386/stackalign/stackalign.exp ...
+
+		=== gcc Summary ===
+
+# of expected passes		2348
+# of unsupported tests		332
+/sources/gcc-build/gcc/xgcc  version 4.8.3 (GCC) 
+
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/vect/costmodel/i386/i386-costmodel-vect.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/vect/costmodel/ppc/ppc-costmodel-vect.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/vect/costmodel/spu/spu-costmodel-vect.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/vect/costmodel/x86_64/x86_64-costmodel-vect.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/vmx/vmx.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/vxworks/vxworks.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.dg/weak/weak.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.misc-tests/acker1.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.misc-tests/arm-isr.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.misc-tests/bprob.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.misc-tests/dectest.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.misc-tests/dhry.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.misc-tests/gcov.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.misc-tests/help.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.misc-tests/i386-prefetch.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.misc-tests/linkage.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.misc-tests/matrix1.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.misc-tests/mg-2.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.misc-tests/mg.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.misc-tests/options.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.misc-tests/sieve.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.misc-tests/sort2.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/aarch64/aapcs64/aapcs64.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/arm/aapcs/aapcs.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/arm/neon/neon.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/avr/torture/avr-torture.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/bfin/builtins/bfin-builtins.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/cris/torture/cris-torture.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/i386/math-torture/math-torture.exp ...
+
+		=== gcc Summary ===
+
+# of expected passes		8418
+/sources/gcc-build/gcc/xgcc  version 4.8.3 (GCC) 
+
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.c-torture/execute/builtins/builtins.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/mips/inter/mips16-inter.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/mips/mips-nonpic/mips-nonpic.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/sh/torture/sh-torture.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/spu/ea/ea.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/tic6x/builtins/c6x-builtins.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/x86_64/abi/abi-x86_64.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/x86_64/abi/avx/abi-avx.exp ...
+
+		=== gcc Summary ===
+
+# of expected passes		6502
+# of unsupported tests		8
+/sources/gcc-build/gcc/xgcc  version 4.8.3 (GCC) 
+
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/x86_64/abi/callabi/callabi.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.test-framework/test-framework.exp ...
+skipping test framework tests, CHECK_TEST_FRAMEWORK is not defined
+
+		=== gcc Summary ===
+
+# of expected passes		19061
+# of expected failures		58
+# of unsupported tests		299
+/sources/gcc-build/gcc/xgcc  version 4.8.3 (GCC) 
+
+
+		=== gcc Summary ===
+
+# of expected passes		7927
+# of expected failures		144
+# of unsupported tests		39
+/sources/gcc-build/gcc/xgcc  version 4.8.3 (GCC) 
+
+
+		=== g++ Summary ===
+
+# of expected passes		13680
+# of expected failures		42
+# of unsupported tests		47
+/sources/gcc-build/gcc/testsuite/g++1/../../xg++  version 4.8.3 (GCC) 
+
+
+		=== gcc Summary ===
+
+# of expected passes		7676
+# of unsupported tests		18
+/sources/gcc-build/gcc/xgcc  version 4.8.3 (GCC) 
+
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/ia64/ia64.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/m68k/m68k.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/microblaze/microblaze.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/mips/mips.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/powerpc/powerpc.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/rx/rx.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/s390/s390.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/sh/sh.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/sparc/sparc.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/spu/spu.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/tic6x/tic6x.exp ...
+Running /sources/gcc-4.8.3/gcc/testsuite/gcc.target/xstormy16/xstormy16.exp ...
+
+		=== gcc Summary ===
+
+# of expected passes		5100
+# of unsupported tests		182
+/sources/gcc-build/gcc/xgcc  version 4.8.3 (GCC) 
+
+
+		=== gcc Summary ===
+
+# of expected passes		20906
+# of expected failures		62
+# of unsupported tests		102
+/sources/gcc-build/gcc/xgcc  version 4.8.3 (GCC) 
+
+
+		=== gcc Summary ===
+
+# of expected passes		9306
+# of unsupported tests		338
+/sources/gcc-build/gcc/xgcc  version 4.8.3 (GCC) 
+
+make[4]: Leaving directory '/sources/gcc-build/gcc'
+
+		=== g++ Summary ===
+
+# of expected passes		27652
+# of expected failures		234
+# of unsupported tests		553
+/sources/gcc-build/gcc/testsuite/g++2/../../xg++  version 4.8.3 (GCC) 
+
+make[4]: Leaving directory '/sources/gcc-build/gcc'
+make[3]: Leaving directory '/sources/gcc-build/gcc'
+make[2]: Target 'check-host' not remade because of errors.
+make[2]: Leaving directory '/sources/gcc-build'
+Makefile:2168: recipe for target 'do-check' failed
+make[1]: *** [do-check] Error 2
+make[1]: Target 'check' not remade because of errors.
+make[1]: Leaving directory '/sources/gcc-build'
+cat <<'EOF' |
+LAST_UPDATED: Obtained from SVN: tags/gcc_4_8_3_release revision 210800
+
+Native configuration is x86_64-unknown-linux-gnu
+
+		=== g++ tests ===
+
+
+Running target unix
+
+		=== g++ Summary ===
+
+# of expected passes		54458
+# of expected failures		292
+# of unsupported tests		915
+/sources/gcc-build/gcc/testsuite/g++/../../xg++  version 4.8.3 (GCC) 
+
+		=== gcc tests ===
+
+
+Running target unix
+
+		=== gcc Summary ===
+
+# of expected passes		95008
+# of expected failures		264
+# of unsupported tests		1366
+/sources/gcc-build/gcc/xgcc  version 4.8.3 (GCC) 
+
+		=== libatomic tests ===
+
+
+Running target unix
+
+		=== libatomic Summary ===
+
+# of expected passes		54
+		=== libgomp tests ===
+
+
+Running target unix
+FAIL: libgomp.graphite/bounds.c scan-tree-dump-times graphite "0 loops carried no dependency" 1
+FAIL: libgomp.graphite/force-parallel-4.c execution test
+FAIL: libgomp.graphite/force-parallel-4.c scan-tree-dump-times graphite "2 loops carried no dependency" 1
+FAIL: libgomp.graphite/force-parallel-6.c scan-tree-dump-times graphite "1 loops carried no dependency" 1
+FAIL: libgomp.graphite/pr41118.c scan-tree-dump-times optimized "loopfn" 0
+
+		=== libgomp Summary ===
+
+# of expected passes		1361
+# of unexpected failures	5
+		=== libitm tests ===
+
+
+Running target unix
+
+		=== libitm Summary ===
+
+# of expected passes		26
+# of expected failures		3
+# of unsupported tests		1
+		=== libmudflap tests ===
+
+
+Running target unix
+FAIL: libmudflap.c++/pass41-frag.cxx ( -O) execution test
+FAIL: libmudflap.c++/pass41-frag.cxx (-O2) execution test
+FAIL: libmudflap.c++/pass41-frag.cxx (-O3) execution test
+
+		=== libmudflap Summary ===
+
+# of expected passes		1433
+# of unexpected failures	3
+		=== libstdc++ tests ===
+
+
+Running target unix
+
+		=== libstdc++ Summary ===
+
+# of expected passes		9273
+# of expected failures		45
+# of unsupported tests		221
+
+Compiler version: 4.8.3 (GCC) 
+Platform: x86_64-unknown-linux-gnu
+configure flags: --prefix=/usr --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-shared --enable-threads=posix --enable-__cxa_atexit --enable-c99 --enable-long-long --enable-clocale=gnu --enable-languages=c,c++ --disable-libstdcxx-pch --with-system-zlib --enable-checking=release --enable-libstdcxx-time
+EOF
+Mail -s "Results for 4.8.3 (GCC) testsuite on x86_64-unknown-linux-gnu" gcc-testresults@gcc.gnu.org &&
+mv /sources/gcc-build/./gcc/testsuite/g++/g++.sum /sources/gcc-build/./gcc/testsuite/g++/g++.sum.sent &&
+mv /sources/gcc-build/./gcc/testsuite/gcc/gcc.sum /sources/gcc-build/./gcc/testsuite/gcc/gcc.sum.sent &&
+mv /sources/gcc-build/./x86_64-unknown-linux-gnu/libatomic/testsuite/libatomic.sum /sources/gcc-build/./x86_64-unknown-linux-gnu/libatomic/testsuite/libatomic.sum.sent &&
+mv /sources/gcc-build/./x86_64-unknown-linux-gnu/libgomp/testsuite/libgomp.sum /sources/gcc-build/./x86_64-unknown-linux-gnu/libgomp/testsuite/libgomp.sum.sent &&
+mv /sources/gcc-build/./x86_64-unknown-linux-gnu/libitm/testsuite/libitm.sum /sources/gcc-build/./x86_64-unknown-linux-gnu/libitm/testsuite/libitm.sum.sent &&
+mv /sources/gcc-build/./x86_64-unknown-linux-gnu/libmudflap/testsuite/libmudflap.sum /sources/gcc-build/./x86_64-unknown-linux-gnu/libmudflap/testsuite/libmudflap.sum.sent &&
+mv /sources/gcc-build/./x86_64-unknown-linux-gnu/libstdc++-v3/testsuite/libstdc++.sum /sources/gcc-build/./x86_64-unknown-linux-gnu/libstdc++-v3/testsuite/libstdc++.sum.sent &&
+mv /sources/gcc-build/./gcc/testsuite/g++/g++.log /sources/gcc-build/./gcc/testsuite/g++/g++.log.sent &&
+mv /sources/gcc-build/./gcc/testsuite/gcc/gcc.log /sources/gcc-build/./gcc/testsuite/gcc/gcc.log.sent &&
+mv /sources/gcc-build/./x86_64-unknown-linux-gnu/libatomic/testsuite/libatomic.log /sources/gcc-build/./x86_64-unknown-linux-gnu/libatomic/testsuite/libatomic.log.sent &&
+mv /sources/gcc-build/./x86_64-unknown-linux-gnu/libgomp/testsuite/libgomp.log /sources/gcc-build/./x86_64-unknown-linux-gnu/libgomp/testsuite/libgomp.log.sent &&
+mv /sources/gcc-build/./x86_64-unknown-linux-gnu/libitm/testsuite/libitm.log /sources/gcc-build/./x86_64-unknown-linux-gnu/libitm/testsuite/libitm.log.sent &&
+mv /sources/gcc-build/./x86_64-unknown-linux-gnu/libmudflap/testsuite/libmudflap.log /sources/gcc-build/./x86_64-unknown-linux-gnu/libmudflap/testsuite/libmudflap.log.sent &&
+mv /sources/gcc-build/./x86_64-unknown-linux-gnu/libstdc++-v3/testsuite/libstdc++.log /sources/gcc-build/./x86_64-unknown-linux-gnu/libstdc++-v3/testsuite/libstdc++.log.sent &&
+true

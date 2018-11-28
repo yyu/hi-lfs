@@ -1,0 +1,18 @@
+Sun Jun 29 15:10:58 CDT 2014
+
+KB: 2059356	/mnt/clfs
+
+patching file Makefile
+patching file nvsetenv.8
+patching file nvsetenv.c
+patching file nvsetvol.8
+patching file nvsetvol.c
+patching file nwnvsetenv.c
+'nvsetenv' -> '/tools/sbin/nvsetenv'
+
+
+Totalseconds: 0
+
+
+KB: 2059544	/mnt/clfs
+

@@ -1,0 +1,255 @@
+Sun Aug 31 06:00:53 UTC 2014
+
+KB: 1677048	/
+
+checking for a BSD-compatible install... /tools/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /tools/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... gcc -isystem /usr/include
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc -isystem /usr/include accepts -g... yes
+checking for gcc -isystem /usr/include option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of gcc -isystem /usr/include... gcc3
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for cd... no
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /tools/bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc -isystem /usr/include... /tools/x86_64-unknown-linux-gnu/bin/ld
+checking if the linker (/tools/x86_64-unknown-linux-gnu/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /tools/bin/nm -B
+checking the name lister (/tools/bin/nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /tools/x86_64-unknown-linux-gnu/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /tools/bin/nm -B output from gcc -isystem /usr/include object... ok
+checking for sysroot... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... gcc -isystem /usr/include -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc -isystem /usr/include supports -fno-rtti -fno-exceptions... no
+checking for gcc -isystem /usr/include option to produce PIC... -fPIC -DPIC
+checking if gcc -isystem /usr/include PIC flag -fPIC -DPIC works... yes
+checking if gcc -isystem /usr/include static flag -static works... yes
+checking if gcc -isystem /usr/include supports -c -o file.o... yes
+checking if gcc -isystem /usr/include supports -c -o file.o... (cached) yes
+checking whether the gcc -isystem /usr/include linker (/tools/x86_64-unknown-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for texi2dvi... texi2dvi
+checking for C compiler vendor... gnu
+checking whether C compiler accepts -malign-double... yes
+checking whether C compiler accepts -fstrict-aliasing... yes
+checking whether C compiler accepts -ffast-math... yes
+checking for gcc architecture flag... 
+checking for x86 cpuid 0 output... d:756e6547:6c65746e:49656e69
+checking for x86 cpuid 1 output... 306a9:3100800:3d9ae3bf:bfebfbff
+checking whether C compiler accepts -march=pentium2... no
+checking whether C compiler accepts -mcpu=pentium2... no
+checking whether C compiler accepts -mpentium2... no
+checking whether C compiler accepts -march=pentiumpro... no
+checking whether C compiler accepts -mcpu=pentiumpro... no
+checking whether C compiler accepts -mpentiumpro... no
+checking for gcc architecture flag... unknown
+checking whether C compiler accepts -O3 -fomit-frame-pointer -malign-double -fstrict-aliasing -ffast-math... yes
+checking CFLAGS_WARN for maximum warnings... -Wall
+checking for an ANSI C-conforming const... yes
+checking for size_t... yes
+checking for ANSI C header files... (cached) yes
+checking for strtol... yes
+checking for getrusage... yes
+checking which isl to use... system
+checking which gmp to use... system
+checking gmp.h usability... yes
+checking gmp.h presence... yes
+checking for gmp.h... yes
+checking for __gmpz_init in -lgmp... yes
+checking whether mp_get_memory_functions is declared... yes
+checking which osl to use... no
+checking our pkgconfig libname... cloog-isl
+checking our pkgconfig version... 0.18.2
+checking our pkgconfig_libdir... ${libdir}/pkgconfig
+expanded our pkgconfig_libdir... /usr/lib/pkgconfig
+checking our pkgconfig_libfile... cloog-isl.pc
+checking our package / suffix... cloog-isl / 
+checking our pkgconfig description... cloog-isl Library
+checking our pkgconfig requires... 
+checking our pkgconfig ext libs... -lcloog-isl -lgmp
+checking our pkgconfig cppflags... -DCLOOG_INT_GMP=1
+checking our pkgconfig ldflags... -L/lib -Wl,-rpath-link,/usr/lib:/lib
+noninstalled pkgconfig -L /sources/cloog-0.18.2/.libs
+noninstalled pkgconfig -I /sources/cloog-0.18.2/./include
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating test/Makefile
+config.status: creating autoconf/Doxyfile
+config.status: creating doc/Makefile
+config.status: creating source/version.c
+config.status: creating include/cloog/version.h
+config.status: creating genversion.sh
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing cloog-isl.pc commands
+config.status: creating cloog-isl.pc.in
+config.status: creating cloog-isl.pc
+config.status: creating cloog-isl-uninstalled.pc
+config.status: creating cloog-isl-uninstalled.sh
+config.status: executing version.h commands
+config.status: executing doc/gitversion.texi commands
+             /*-----------------------------------------------*
+              *           CLooG configuration is OK           *
+              *-----------------------------------------------*/
+It appears that your system is OK to start CLooG compilation. You need
+now to type "make". After compilation, you should check CLooG by typing
+"make check". If no problem occur, you can type "make uninstall" if
+you are upgrading an old version. Lastly type "make install" to install
+CLooG on your system (log as root if necessary).
+make[1]: Entering directory '/sources/cloog-0.18.2'
+Making all in .
+make[2]: Entering directory '/sources/cloog-0.18.2'
+  CC     libcloog_isl_la-block.lo
+  CC     libcloog_isl_la-clast.lo
+  CC     libcloog_isl_la-matrix.lo
+  CC     libcloog_isl_la-state.lo
+  CC     libcloog_isl_la-input.lo
+  CC     libcloog_isl_la-int.lo
+  CC     libcloog_isl_la-loop.lo
+  CC     libcloog_isl_la-names.lo
+  CC     libcloog_isl_la-options.lo
+  CC     libcloog_isl_la-pprint.lo
+  CC     libcloog_isl_la-program.lo
+  CC     libcloog_isl_la-statement.lo
+  CC     libcloog_isl_la-stride.lo
+  CC     libcloog_isl_la-union_domain.lo
+  CC     libcloog_isl_la-version.lo
+  CC     libcloog_isl_la-domain.lo
+  CC     libcloog_isl_la-constraints.lo
+  CC     libcloog_isl_la-backend.lo
+  CCLD   libcloog-isl.la
+  CC     cloog.o
+  CCLD   cloog
+make[2]: Leaving directory '/sources/cloog-0.18.2'
+Making all in doc
+make[2]: Entering directory '/sources/cloog-0.18.2/doc'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/sources/cloog-0.18.2/doc'
+Making all in test
+make[2]: Entering directory '/sources/cloog-0.18.2/test'
+  CC     generate_test.o
+cd ..; make  libcloog-isl.la
+make[3]: Entering directory '/sources/cloog-0.18.2'
+make[3]: 'libcloog-isl.la' is up to date.
+make[3]: Leaving directory '/sources/cloog-0.18.2'
+  CCLD   generate_test
+make[2]: Leaving directory '/sources/cloog-0.18.2/test'
+make[1]: Leaving directory '/sources/cloog-0.18.2'
+make[1]: Entering directory '/sources/cloog-0.18.2'
+Making install in .
+make[2]: Entering directory '/sources/cloog-0.18.2'
+make[3]: Entering directory '/sources/cloog-0.18.2'
+test -z "/usr/lib" || /tools/bin/mkdir -p "/usr/lib"
+ /bin/sh ./libtool   --mode=install /tools/bin/install -c   libcloog-isl.la '/usr/lib'
+libtool: install: /tools/bin/install -c .libs/libcloog-isl.so.4.0.0 /usr/lib/libcloog-isl.so.4.0.0
+libtool: install: (cd /usr/lib && { ln -s -f libcloog-isl.so.4.0.0 libcloog-isl.so.4 || { rm -f libcloog-isl.so.4 && ln -s libcloog-isl.so.4.0.0 libcloog-isl.so.4; }; })
+libtool: install: (cd /usr/lib && { ln -s -f libcloog-isl.so.4.0.0 libcloog-isl.so || { rm -f libcloog-isl.so && ln -s libcloog-isl.so.4.0.0 libcloog-isl.so; }; })
+libtool: install: /tools/bin/install -c .libs/libcloog-isl.lai /usr/lib/libcloog-isl.la
+libtool: install: /tools/bin/install -c .libs/libcloog-isl.a /usr/lib/libcloog-isl.a
+libtool: install: chmod 644 /usr/lib/libcloog-isl.a
+libtool: install: ranlib /usr/lib/libcloog-isl.a
+libtool: finish: PATH="/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin:/usr/sbin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+test -z "/usr/bin" || /tools/bin/mkdir -p "/usr/bin"
+  /bin/sh ./libtool   --mode=install /tools/bin/install -c cloog '/usr/bin'
+libtool: install: /tools/bin/install -c .libs/cloog /usr/bin/cloog
+/tools/bin/install -c -m 644 cloog-isl.pc "/usr/lib/pkgconfig/cloog-isl.pc"
+test -z "/usr/include/cloog" || /tools/bin/mkdir -p "/usr/include/cloog"
+ /tools/bin/install -c -m 644 include/cloog/block.h include/cloog/clast.h include/cloog/cloog.h include/cloog/input.h include/cloog/int.h include/cloog/matrix.h include/cloog/state.h include/cloog/domain.h include/cloog/loop.h include/cloog/constraints.h include/cloog/names.h include/cloog/options.h include/cloog/pprint.h include/cloog/program.h include/cloog/statement.h include/cloog/stride.h include/cloog/union_domain.h include/cloog/version.h '/usr/include/cloog'
+test -z "/usr/include/cloog/isl" || /tools/bin/mkdir -p "/usr/include/cloog/isl"
+ /tools/bin/install -c -m 644 include/cloog/isl/backend.h include/cloog/isl/cloog.h include/cloog/isl/domain.h include/cloog/isl/constraintset.h '/usr/include/cloog/isl'
+test -z "/usr/include/cloog/matrix" || /tools/bin/mkdir -p "/usr/include/cloog/matrix"
+ /tools/bin/install -c -m 644 include/cloog/matrix/constraintset.h '/usr/include/cloog/matrix'
+make[3]: Leaving directory '/sources/cloog-0.18.2'
+make[2]: Leaving directory '/sources/cloog-0.18.2'
+Making install in doc
+make[2]: Entering directory '/sources/cloog-0.18.2/doc'
+make[3]: Entering directory '/sources/cloog-0.18.2/doc'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/sources/cloog-0.18.2/doc'
+make[2]: Leaving directory '/sources/cloog-0.18.2/doc'
+Making install in test
+make[2]: Entering directory '/sources/cloog-0.18.2/test'
+cd ..; make  libcloog-isl.la
+make[3]: Entering directory '/sources/cloog-0.18.2'
+make[3]: 'libcloog-isl.la' is up to date.
+make[3]: Leaving directory '/sources/cloog-0.18.2'
+make[3]: Entering directory '/sources/cloog-0.18.2/test'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/sources/cloog-0.18.2/test'
+make[2]: Leaving directory '/sources/cloog-0.18.2/test'
+make[1]: Leaving directory '/sources/cloog-0.18.2'
+
+
+Totalseconds: 16
+
+
+KB: 1693360	/
+

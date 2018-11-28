@@ -1,0 +1,95 @@
+Sat Jun 28 22:34:33 UTC 2014
+
+KB: 2407460	/
+
+make[1]: Entering directory '/sources/libcap-2.24'
+make -C libcap all
+make[2]: Entering directory '/sources/libcap-2.24/libcap'
+=> making cap_names.list.h from /sources/libcap-2.24/libcap/../libcap/include/uapi/linux/capability.h
+perl -e 'while ($l=<>) { if ($l =~ /^\#define[ \t](CAP[_A-Z]+)[ \t]+([0-9]+)\s+$/) { $tok=$1; $val=$2; $tok =~ tr/A-Z/a-z/; print "{\"$tok\",$val},\n"; } }' /sources/libcap-2.24/libcap/../libcap/include/uapi/linux/capability.h | fgrep -v 0x > cap_names.list.h
+sed -e 's,@prefix@,/usr,' \
+	-e 's,@exec_prefix@,,' \
+	-e 's,@libdir@,/lib64,' \
+	-e 's,@includedir@,/usr/include,' \
+	-e 's,@VERSION@,2.24,' \
+	-e 's,@deps@,-lattr,' \
+	libcap.pc.in >libcap.pc
+gcc -m64 -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -fPIC -I/sources/libcap-2.24/libcap/../libcap/include/uapi -I/sources/libcap-2.24/libcap/../libcap/include _makenames.c -o _makenames
+./_makenames > cap_names.h
+gcc -m64 -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -g  -fPIC -I/sources/libcap-2.24/libcap/../libcap/include/uapi -I/sources/libcap-2.24/libcap/../libcap/include -c cap_alloc.c -o cap_alloc.o
+gcc -m64 -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -g  -fPIC -I/sources/libcap-2.24/libcap/../libcap/include/uapi -I/sources/libcap-2.24/libcap/../libcap/include -c cap_proc.c -o cap_proc.o
+gcc -m64 -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -g  -fPIC -I/sources/libcap-2.24/libcap/../libcap/include/uapi -I/sources/libcap-2.24/libcap/../libcap/include -c cap_extint.c -o cap_extint.o
+gcc -m64 -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -g  -fPIC -I/sources/libcap-2.24/libcap/../libcap/include/uapi -I/sources/libcap-2.24/libcap/../libcap/include -c cap_flag.c -o cap_flag.o
+gcc -m64 -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -g  -fPIC -I/sources/libcap-2.24/libcap/../libcap/include/uapi -I/sources/libcap-2.24/libcap/../libcap/include  -c cap_text.c -o cap_text.o
+gcc -m64 -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -g  -fPIC -I/sources/libcap-2.24/libcap/../libcap/include/uapi -I/sources/libcap-2.24/libcap/../libcap/include -c cap_file.c -o cap_file.o
+gcc -m64 -Wl,-x -shared -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -g   -L/sources/libcap-2.24/libcap/../libcap -lattr -Wl,-soname,libcap.so.2 -o libcap.so.2.24 cap_alloc.o cap_proc.o cap_extint.o cap_flag.o cap_text.o cap_file.o
+ar rcs libcap.a cap_alloc.o cap_proc.o cap_extint.o cap_flag.o cap_text.o cap_file.o
+ranlib libcap.a
+ln -sf libcap.so.2.24 libcap.so.2
+ln -sf libcap.so.2 libcap.so
+make[2]: Leaving directory '/sources/libcap-2.24/libcap'
+make -C progs all
+make[2]: Entering directory '/sources/libcap-2.24/progs'
+gcc -m64 -fPIC -I/sources/libcap-2.24/progs/../libcap/include/uapi -I/sources/libcap-2.24/progs/../libcap/include -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -g  -c getpcaps.c -o getpcaps.o
+gcc -m64 -fPIC -I/sources/libcap-2.24/progs/../libcap/include/uapi -I/sources/libcap-2.24/progs/../libcap/include -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -g  -c capsh.c -o capsh.o
+gcc -m64 -fPIC -I/sources/libcap-2.24/progs/../libcap/include/uapi -I/sources/libcap-2.24/progs/../libcap/include -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -g  -c getcap.c -o getcap.o
+gcc -m64 -fPIC -I/sources/libcap-2.24/progs/../libcap/include/uapi -I/sources/libcap-2.24/progs/../libcap/include -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -g  -c setcap.c -o setcap.o
+gcc -m64 -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -g   -L/sources/libcap-2.24/progs/../libcap -o getpcaps getpcaps.o -L../libcap -lcap
+gcc -m64 -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -g   -L/sources/libcap-2.24/progs/../libcap -o getcap getcap.o -L../libcap -lcap
+gcc -m64 -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -g   -L/sources/libcap-2.24/progs/../libcap -o setcap setcap.o -L../libcap -lcap
+gcc -m64 -O2 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -g   -L/sources/libcap-2.24/progs/../libcap -o capsh capsh.o -L../libcap -lcap
+make[2]: Leaving directory '/sources/libcap-2.24/progs'
+make -C doc all
+make[2]: Entering directory '/sources/libcap-2.24/doc'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/sources/libcap-2.24/doc'
+make[1]: Leaving directory '/sources/libcap-2.24'
+make[1]: Entering directory '/sources/libcap-2.24'
+make -C libcap install
+make[2]: Entering directory '/sources/libcap-2.24/libcap'
+mkdir -p -m 0755 /usr/include/sys
+install -m 0644 include/sys/capability.h /usr/include/sys
+mkdir -p -m 0755 /lib64
+install -m 0644 libcap.a /lib64/libcap.a
+install -m 0644 libcap.so.2.24 /lib64/libcap.so.2.24
+ln -sf libcap.so.2.24 /lib64/libcap.so.2
+ln -sf libcap.so.2 /lib64/libcap.so
+/sbin/ldconfig
+mkdir -p -m 0755 /usr/lib64/pkgconfig
+install -m 0644 libcap.pc /usr/lib64/pkgconfig/libcap.pc
+make[2]: Leaving directory '/sources/libcap-2.24/libcap'
+make -C progs install
+make[2]: Entering directory '/sources/libcap-2.24/progs'
+mkdir -p -m 0755 /sbin
+for p in getpcaps capsh getcap setcap ; do \
+	install -m 0755 $p /sbin ; \
+done
+/sbin/setcap cap_setfcap=i /sbin/setcap
+make[2]: Leaving directory '/sources/libcap-2.24/progs'
+make -C doc install
+make[2]: Entering directory '/sources/libcap-2.24/doc'
+mkdir -p -m 755 /usr/share/man/man1 /usr/share/man/man3 /usr/share/man/man8
+for man in \
+	/usr/share/man/man1 capsh.1 \
+	/usr/share/man/man3 cap_init.3 cap_free.3 cap_dup.3 cap_clear.3 cap_clear_flag.3 cap_get_flag.3 cap_set_flag.3 cap_compare.3 cap_get_proc.3 cap_get_pid.3 cap_set_proc.3 cap_get_file.3 cap_get_fd.3 cap_set_file.3 cap_set_fd.3 cap_copy_ext.3 cap_size.3 cap_copy_int.3 cap_from_text.3 cap_to_text.3 cap_from_name.3 cap_to_name.3 capsetp.3 capgetp.3 libcap.3 cap_get_bound.3 cap_drop_bound.3 \
+	/usr/share/man/man8 getcap.8 setcap.8 \
+	; \
+do \
+	case $man in \
+	/*)	sub=$man ; continue ;; \
+	esac; \
+	install -m 644 $man $sub ; \
+done
+make[2]: Leaving directory '/sources/libcap-2.24/doc'
+make[1]: Leaving directory '/sources/libcap-2.24'
+mode of '/lib64/libcap.so.2.24' changed from 0644 (rw-r--r--) to 0755 (rwxr-xr-x)
+'/usr/lib64/libcap.so' -> '../../lib64/libcap.so.2'
+removed '/lib64/libcap.so'
+'/lib64/libcap.a' -> '/usr/lib64/libcap.a'
+
+
+Totalseconds: 0
+
+
+KB: 2408708	/
+

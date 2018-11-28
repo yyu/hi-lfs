@@ -1,0 +1,21 @@
+/usr/include/mpf2mpfr.h	6298	root:root	644	
+/usr/include/mpfr.h	51389	root:root	644	
+/usr/lib/libmpfr.a	2366756	root:root	644	
+/usr/lib/libmpfr.la	954	root:root	755	
+/usr/lib/libmpfr.so	16	root:root	777	libmpfr.so.4.1.2
+/usr/lib/libmpfr.so.4	16	root:root	777	libmpfr.so.4.1.2
+/usr/lib/libmpfr.so.4.1.2	1417480	root:root	755	
+/usr/share/doc/mpfr-3.1.2/AUTHORS	1149	root:root	644	
+/usr/share/doc/mpfr-3.1.2/BUGS	3351	root:root	644	
+/usr/share/doc/mpfr-3.1.2/COPYING	35147	root:root	644	
+/usr/share/doc/mpfr-3.1.2/COPYING.LESSER	7639	root:root	644	
+/usr/share/doc/mpfr-3.1.2/FAQ.html	18239	root:root	644	
+/usr/share/doc/mpfr-3.1.2/NEWS	16561	root:root	644	
+/usr/share/doc/mpfr-3.1.2/TODO	21164	root:root	644	
+/usr/share/doc/mpfr-3.1.2/examples/ReadMe	41	root:root	644	
+/usr/share/doc/mpfr-3.1.2/examples/divworst.c	3040	root:root	644	
+/usr/share/doc/mpfr-3.1.2/examples/rndo-add.c	2661	root:root	644	
+/usr/share/doc/mpfr-3.1.2/examples/sample.c	1719	root:root	644	
+/usr/share/doc/mpfr-3.1.2/examples/version.c	3677	root:root	644	
+/usr/share/info/dir	63874	root:root	644	
+/usr/share/info/mpfr.info	213817	root:root	644	

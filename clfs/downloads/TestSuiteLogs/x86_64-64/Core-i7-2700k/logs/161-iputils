@@ -1,0 +1,73 @@
+Sat Jun 14 16:31:03 CDT 2014
+
+KB: 2344388	/
+
+patching file Makefile
+patching file doc/arping.8
+patching file doc/clockdiff.8
+patching file doc/index.html
+patching file doc/iputils.html
+patching file doc/ninfod.8
+patching file doc/pg3.8
+patching file doc/ping.8
+patching file doc/ping.sgml
+patching file doc/r1064.html
+patching file doc/r1133.html
+patching file doc/r1277.html
+patching file doc/r3.html
+patching file doc/r466.html
+patching file doc/r625.html
+patching file doc/r720.html
+patching file doc/r819.html
+patching file doc/r926.html
+patching file doc/r991.html
+patching file doc/rarpd.8
+patching file doc/rdisc.8
+patching file doc/tftpd.8
+patching file doc/tracepath.8
+patching file doc/tracepath.sgml
+patching file doc/traceroute6.8
+patching file ninfod/ninfod.c
+patching file ping_common.c
+patching file rdisc.c
+patching file tracepath.c
+patching file tracepath6.c
+make[1]: Entering directory '/sources/iputils-s20121221'
+/bin/sh: git: command not found
+gcc -O3 -fno-strict-aliasing -Wstrict-prototypes -Wall -g -D_GNU_SOURCE    -c tracepath.c  -o tracepath.o
+gcc -O3 -fno-strict-aliasing -Wstrict-prototypes -Wall -g -D_GNU_SOURCE    -c ping.c -DCAPABILITIES   -o ping.o
+gcc -O3 -fno-strict-aliasing -Wstrict-prototypes -Wall -g -D_GNU_SOURCE    -c ping_common.c -DCAPABILITIES  -o ping_common.o
+gcc -O3 -fno-strict-aliasing -Wstrict-prototypes -Wall -g -D_GNU_SOURCE    -c clockdiff.c -DCAPABILITIES -o clockdiff.o
+gcc -O3 -fno-strict-aliasing -Wstrict-prototypes -Wall -g -D_GNU_SOURCE    -c rdisc.c  -o rdisc.o
+gcc -O3 -fno-strict-aliasing -Wstrict-prototypes -Wall -g -D_GNU_SOURCE    -c tracepath6.c  -o tracepath6.o
+gcc -O3 -fno-strict-aliasing -Wstrict-prototypes -Wall -g -D_GNU_SOURCE    -c traceroute6.c -DCAPABILITIES  -o traceroute6.o
+gcc   tracepath.o    -o tracepath
+gcc   tracepath6.o    -o tracepath6
+gcc   traceroute6.o -lcap    -o traceroute6
+gcc   clockdiff.o -lcap   -o clockdiff
+gcc   ping.o ping_common.o -lcap    -o ping
+gcc   rdisc.o    -o rdisc
+make[1]: Leaving directory '/sources/iputils-s20121221'
+'ping' -> '/bin/ping'
+'clockdiff' -> '/usr/bin/clockdiff'
+'rdisc' -> '/usr/bin/rdisc'
+'tracepath' -> '/usr/bin/tracepath'
+'tracepath6' -> '/usr/bin/tracepath6'
+'traceroute6' -> '/usr/bin/traceroute6'
+'doc/arping.8' -> '/usr/share/man/man8/arping.8'
+'doc/clockdiff.8' -> '/usr/share/man/man8/clockdiff.8'
+'doc/ninfod.8' -> '/usr/share/man/man8/ninfod.8'
+'doc/pg3.8' -> '/usr/share/man/man8/pg3.8'
+'doc/ping.8' -> '/usr/share/man/man8/ping.8'
+'doc/rarpd.8' -> '/usr/share/man/man8/rarpd.8'
+'doc/rdisc.8' -> '/usr/share/man/man8/rdisc.8'
+'doc/tftpd.8' -> '/usr/share/man/man8/tftpd.8'
+'doc/tracepath.8' -> '/usr/share/man/man8/tracepath.8'
+'doc/traceroute6.8' -> '/usr/share/man/man8/traceroute6.8'
+
+
+Totalseconds: 1
+
+
+KB: 2346960	/
+

@@ -1,0 +1,18 @@
+Fri Jun 13 02:02:01 UTC 2014
+
+KB: 1256136	/
+
+make[1]: Entering directory '/sources/man-pages-3.68'
+for i in man?; do \
+	install -d -m 755 /usr/share/man/"$i" || exit $?; \
+	install -m 644 "$i"/* /usr/share/man/"$i" || exit $?; \
+done; \
+
+make[1]: Leaving directory '/sources/man-pages-3.68'
+
+
+Totalseconds: 1
+
+
+KB: 1280464	/
+

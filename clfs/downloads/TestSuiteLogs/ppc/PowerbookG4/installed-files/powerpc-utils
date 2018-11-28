@@ -1,0 +1,4 @@
+/usr/sbin/nvsetenv	16560	root:root	755	
+/usr/sbin/nvsetvol	10009	root:root	755	
+/usr/share/man/man8/nvsetenv.8	3908	root:root	644	
+/usr/share/man/man8/nvsetvol.8	623	root:root	644	

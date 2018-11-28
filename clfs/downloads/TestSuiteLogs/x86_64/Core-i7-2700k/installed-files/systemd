@@ -1,0 +1,16 @@
+/lib/libnss_myhostname.so.2	459749	root:root	755	
+/usr/lib/libnss_myhostname.la	980	root:root	755	
+/usr/lib/libsystemd.la	968	root:root	755	
+/usr/lib/libsystemd.so	19	root:root	777	libsystemd.so.0.2.0
+/usr/lib/libsystemd.so.0	19	root:root	777	libsystemd.so.0.2.0
+/usr/lib/libsystemd.so.0.2.0	182385	root:root	755	
+/usr/lib/libudev.la	921	root:root	755	
+/usr/lib/libudev.so	16	root:root	777	libudev.so.1.4.1
+/usr/lib/libudev.so.1	16	root:root	777	libudev.so.1.4.1
+/usr/lib/libudev.so.1.4.1	76551	root:root	755	
+/usr/lib/pkgconfig/libsystemd-daemon.pc	715	root:root	644	
+/usr/lib/pkgconfig/libsystemd-id128.pc	556	root:root	644	
+/usr/lib/pkgconfig/libsystemd-journal.pc	580	root:root	644	
+/usr/lib/pkgconfig/libsystemd-login.pc	551	root:root	644	
+/usr/lib/pkgconfig/libsystemd.pc	524	root:root	644	
+/usr/lib/pkgconfig/libudev.pc	493	root:root	644	

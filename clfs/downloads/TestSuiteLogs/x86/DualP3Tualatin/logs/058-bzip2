@@ -1,0 +1,93 @@
+Thu Jun 12 20:06:31 CDT 2014
+
+KB: 1062172	/mnt/clfs
+
+'Makefile' -> 'Makefile.orig'
+make[1]: Entering directory '/mnt/clfs/sources/bzip2-1.0.6'
+i686-pc-linux-gnu-gcc -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c huffman.c
+
+If compilation produces errors, or a large number of warnings,
+please read README.COMPILATION.PROBLEMS -- you might be able to
+adjust the flags in this Makefile to improve matters.
+
+Also in README.COMPILATION.PROBLEMS are some hints that may help
+if your build produces an executable which is unable to correctly
+handle so-called 'large files' -- files of size 2GB or more.
+
+i686-pc-linux-gnu-gcc -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c crctable.c
+i686-pc-linux-gnu-gcc -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c blocksort.c
+i686-pc-linux-gnu-gcc -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c randtable.c
+i686-pc-linux-gnu-gcc -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c compress.c
+i686-pc-linux-gnu-gcc -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c decompress.c
+In function 'mainSort':
+blocksort.c:347:6: warning: inlining failed in call to 'mainGtU.part.0': call is unlikely and code size would grow [-Winline]
+ Bool mainGtU ( UInt32  i1, 
+      ^
+cc1: warning: called from here [-Winline]
+blocksort.c:347:6: warning: inlining failed in call to 'mainGtU.part.0': call is unlikely and code size would grow [-Winline]
+ Bool mainGtU ( UInt32  i1, 
+      ^
+cc1: warning: called from here [-Winline]
+blocksort.c:347:6: warning: inlining failed in call to 'mainGtU.part.0': call is unlikely and code size would grow [-Winline]
+ Bool mainGtU ( UInt32  i1, 
+      ^
+cc1: warning: called from here [-Winline]
+i686-pc-linux-gnu-gcc -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c bzlib.c
+i686-pc-linux-gnu-gcc -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c bzip2.c
+bzip2.c: In function 'testStream':
+bzip2.c:557:37: warning: variable 'nread' set but not used [-Wunused-but-set-variable]
+    Int32   bzerr, bzerr_dummy, ret, nread, streamNo, i;
+                                     ^
+i686-pc-linux-gnu-gcc -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c bzip2recover.c
+i686-pc-linux-gnu-gcc -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64  -o bzip2recover bzip2recover.o
+rm -f libbz2.a
+i686-pc-linux-gnu-ar cq libbz2.a blocksort.o huffman.o crctable.o randtable.o compress.o decompress.o bzlib.o
+i686-pc-linux-gnu-ranlib libbz2.a
+i686-pc-linux-gnu-gcc -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64  -o bzip2 bzip2.o -L. -lbz2
+make[1]: Leaving directory '/mnt/clfs/sources/bzip2-1.0.6'
+make[1]: Entering directory '/mnt/clfs/sources/bzip2-1.0.6'
+if ( test ! -d /tools/bin ) ; then mkdir -p /tools/bin ; fi
+if ( test ! -d /tools/lib ) ; then mkdir -p /tools/lib ; fi
+if ( test ! -d /tools/man ) ; then mkdir -p /tools/man ; fi
+if ( test ! -d /tools/man/man1 ) ; then mkdir -p /tools/man/man1 ; fi
+if ( test ! -d /tools/include ) ; then mkdir -p /tools/include ; fi
+cp -f bzip2 /tools/bin/bzip2
+cp -f bzip2 /tools/bin/bunzip2
+cp -f bzip2 /tools/bin/bzcat
+cp -f bzip2recover /tools/bin/bzip2recover
+chmod a+x /tools/bin/bzip2
+chmod a+x /tools/bin/bunzip2
+chmod a+x /tools/bin/bzcat
+chmod a+x /tools/bin/bzip2recover
+cp -f bzip2.1 /tools/man/man1
+chmod a+r /tools/man/man1/bzip2.1
+cp -f bzlib.h /tools/include
+chmod a+r /tools/include/bzlib.h
+cp -f libbz2.a /tools/lib
+chmod a+r /tools/lib/libbz2.a
+cp -f bzgrep /tools/bin/bzgrep
+ln -s -f /tools/bin/bzgrep /tools/bin/bzegrep
+ln -s -f /tools/bin/bzgrep /tools/bin/bzfgrep
+chmod a+x /tools/bin/bzgrep
+cp -f bzmore /tools/bin/bzmore
+ln -s -f /tools/bin/bzmore /tools/bin/bzless
+chmod a+x /tools/bin/bzmore
+cp -f bzdiff /tools/bin/bzdiff
+ln -s -f /tools/bin/bzdiff /tools/bin/bzcmp
+chmod a+x /tools/bin/bzdiff
+cp -f bzgrep.1 bzmore.1 bzdiff.1 /tools/man/man1
+chmod a+r /tools/man/man1/bzgrep.1
+chmod a+r /tools/man/man1/bzmore.1
+chmod a+r /tools/man/man1/bzdiff.1
+echo ".so man1/bzgrep.1" > /tools/man/man1/bzegrep.1
+echo ".so man1/bzgrep.1" > /tools/man/man1/bzfgrep.1
+echo ".so man1/bzmore.1" > /tools/man/man1/bzless.1
+echo ".so man1/bzdiff.1" > /tools/man/man1/bzcmp.1
+make[1]: Leaving directory '/mnt/clfs/sources/bzip2-1.0.6'
+
+
+Totalseconds: 10
+
+
+KB: 1066648	/mnt/clfs
+

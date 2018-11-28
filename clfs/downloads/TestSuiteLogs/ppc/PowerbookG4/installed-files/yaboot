@@ -1,0 +1,15 @@
+/etc/yaboot.conf	2933	root:root	644	
+/usr/lib/yaboot/addnote	5736	root:root	755	
+/usr/lib/yaboot/ofboot	11284	root:root	644	
+/usr/lib/yaboot/yaboot	227196	root:root	644	
+/usr/man/man5/yaboot.conf.5.gz	9295	root:root	644	
+/usr/man/man8/bootstrap.8.gz	5265	root:root	644	
+/usr/man/man8/mkofboot.8.gz	3063	root:root	644	
+/usr/man/man8/ofpath.8.gz	1401	root:root	644	
+/usr/man/man8/yaboot.8.gz	2332	root:root	644	
+/usr/man/man8/yabootconfig.8.gz	2356	root:root	644	
+/usr/man/man8/ybin.8.gz	3192	root:root	644	
+/usr/sbin/mkofboot	4	root:root	777	ybin
+/usr/sbin/ofpath	26593	root:root	755	
+/usr/sbin/yabootconfig	22791	root:root	755	
+/usr/sbin/ybin	54061	root:root	755	

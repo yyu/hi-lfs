@@ -1,0 +1,1928 @@
+Sun Aug 31 06:09:51 EDT 2014
+
+KB: 2353260	/
+
+patching file Makefile.am
+patching file Makefile.in
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for style of include used by make... GNU
+checking whether make supports nested variables... yes
+checking how to create a pax tar archive... gnutar
+checking dependency style of gcc... gcc3
+checking whether make supports nested variables... (cached) yes
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking whether NLS is requested... yes
+checking for intltool >= 0.40.0... 0.50.2 found
+checking for intltool-update... /usr/bin/intltool-update
+checking for intltool-merge... /usr/bin/intltool-merge
+checking for intltool-extract... /usr/bin/intltool-extract
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for perl... /usr/bin/perl
+checking for perl >= 5.8.1... 5.20.0
+checking for XML::Parser... ok
+checking whether ln -s works... yes
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking for grep that handles long lines and -e... (cached) /bin/grep
+checking for gawk... (cached) gawk
+checking for gcc option to accept ISO C99... -std=gnu99
+checking for m4... /usr/bin/m4
+checking for xsltproc... no
+checking for quotaon... /usr/sbin/quotaon
+checking for quotacheck... /usr/sbin/quotacheck
+checking for setcap... /sbin/setcap
+checking for kill... /bin/kill
+checking for kmod... /bin/kmod
+checking for kexec... /usr/sbin/kexec
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for gtk-doc... no
+configure: WARNING:
+  You will not be able to create source packages with 'make dist'
+  because gtk-doc >= 1.18 is not found.
+checking for gtkdoc-check... no
+checking for gtkdoc-check... no
+checking for gtkdoc-rebase... no
+checking for gtkdoc-mkpdf... no
+checking whether to build gtk-doc documentation... no
+checking for GTKDOC_DEPS... no
+checking for gobject-introspection... no
+checking for strings... strings
+checking for gperf... gperf
+checking if gcc -std=gnu99 supports flag -pipe in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wall in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wextra in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wno-inline in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wundef in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wformat=2 -Wformat-security -Wformat-nonliteral in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wlogical-op in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wsign-compare in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wmissing-include-dirs in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wold-style-definition in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wpointer-arith in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Winit-self in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wdeclaration-after-statement in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wfloat-equal in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wsuggest-attribute=noreturn in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wmissing-prototypes in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wstrict-prototypes in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wredundant-decls in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wmissing-declarations in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wmissing-noreturn in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wshadow in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wendif-labels in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wstrict-aliasing=2 in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wwrite-strings in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wno-long-long in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wno-overlength-strings in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wno-unused-parameter in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wno-missing-field-initializers in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wno-unused-result in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Werror=overflow in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wdate-time in envvar CFLAGS... no
+checking if gcc -std=gnu99 supports flag -Wnested-externs in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -ffast-math in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -fno-common in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -fdiagnostics-show-option in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -fdiagnostics-color in envvar CFLAGS... no
+checking if gcc -std=gnu99 supports flag -fno-strict-aliasing in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -fvisibility=hidden in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -ffunction-sections in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -fdata-sections in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -fstack-protector in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -fstack-protector-strong in envvar CFLAGS... no
+checking if gcc -std=gnu99 supports flag -fPIE in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag --param=ssp-buffer-size=4 in envvar CFLAGS... yes
+checking if gcc -std=gnu99 supports flag -flto in envvar CFLAGS... (cached) no
+checking if gcc -std=gnu99 supports flag -Wp,-D_FORTIFY_SOURCE=2 in envvar CPPFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wl,--as-needed in envvar LDFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wl,--no-undefined in envvar LDFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wl,--gc-sections in envvar LDFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wl,-z,relro in envvar LDFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wl,-z,now in envvar LDFLAGS... yes
+checking if gcc -std=gnu99 supports flag -pie in envvar LDFLAGS... yes
+checking if gcc -std=gnu99 supports flag -Wl,-fuse-ld=gold in envvar LDFLAGS... no
+checking size of pid_t... 4
+checking size of uid_t... 4
+checking size of gid_t... 4
+checking size of time_t... 8
+checking size of rlim_t... 8
+checking for python... no
+checking for python2... no
+checking for python3... no
+checking for python3.3... no
+checking for python3.2... no
+checking for python3.1... no
+checking for python3.0... no
+checking for python2.7... no
+checking for python2.6... no
+checking for python2.5... no
+checking for python2.4... no
+checking for python2.3... no
+checking for python2.2... no
+checking for python2.1... no
+checking for python2.0... no
+checking for library containing dlsym... -ldl
+checking sys/capability.h usability... yes
+checking sys/capability.h presence... yes
+checking for sys/capability.h... yes
+checking linux/btrfs.h usability... yes
+checking linux/btrfs.h presence... yes
+checking for linux/btrfs.h... yes
+checking for library containing clock_gettime... none required
+checking for library containing cap_init... -lcap
+checking for library containing mq_open... -lrt
+checking for fanotify_init... yes
+checking for fanotify_mark... yes
+checking for __secure_getenv... no
+checking for secure_getenv... yes
+checking whether gettid is declared... no
+checking whether pivot_root is declared... no
+checking whether name_to_handle_at is declared... yes
+checking whether setns is declared... yes
+checking whether LO_FLAGS_PARTSCAN is declared... yes
+checking for DBUS... no
+checking for KMOD... yes
+checking for BLKID... yes
+checking for SECCOMP... no
+checking for chkconfig... no
+checking for SELINUX... no
+checking for APPARMOR... no
+checking for XZ... yes
+checking security/pam_modules.h usability... no
+checking security/pam_modules.h presence... no
+checking for security/pam_modules.h... no
+checking security/pam_modutil.h usability... no
+checking security/pam_modutil.h presence... no
+checking for security/pam_modutil.h... no
+checking security/pam_ext.h usability... no
+checking security/pam_ext.h presence... no
+checking for security/pam_ext.h... no
+checking for pam_syslog in -lpam... no
+checking sys/acl.h usability... yes
+checking sys/acl.h presence... yes
+checking for sys/acl.h... yes
+checking acl/libacl.h usability... yes
+checking acl/libacl.h presence... yes
+checking for acl/libacl.h... yes
+checking for acl_get_file in -lacl... yes
+checking attr/xattr.h usability... yes
+checking attr/xattr.h presence... yes
+checking for attr/xattr.h... yes
+checking for fsetxattr in -lattr... yes
+checking for libgcrypt-config... no
+checking for LIBGCRYPT - version >= 1.4.5... no
+checking libaudit.h usability... no
+checking libaudit.h presence... no
+checking for libaudit.h... no
+checking for audit_open in -laudit... no
+checking for LIBCRYPTSETUP... no
+checking for QRENCODE... no
+checking for MICROHTTPD... no
+checking for GNUTLS... no
+checking for valgrind/memcheck.h... no
+checking for valgrind/valgrind.h... no
+checking for ANSI C header files... (cached) yes
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for inttypes.h... (cached) yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking nss.h usability... yes
+checking nss.h presence... yes
+checking for nss.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/auxv.h usability... yes
+checking sys/auxv.h presence... yes
+checking for sys/auxv.h... yes
+checking for an ANSI C-conforming const... yes
+checking for size_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking for sys/socket.h... (cached) yes
+checking types of arguments for select... int,fd_set *,struct timeval *
+checking for gethostbyaddr... yes
+checking for gethostbyname... yes
+checking for gettimeofday... yes
+checking for inet_ntoa... yes
+checking for memset... yes
+checking for select... yes
+checking for socket... yes
+checking for strcspn... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strncasecmp... yes
+checking for strcasecmp... yes
+checking for strspn... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating po/Makefile.in
+config.status: creating docs/libudev/Makefile
+config.status: creating docs/libudev/version.xml
+config.status: creating docs/gudev/Makefile
+config.status: creating docs/gudev/version.xml
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing po/stamp-it commands
+
+        systemd 213
+
+        libcryptsetup:           no
+        PAM:                     no
+        AUDIT:                   no
+        IMA:                     yes
+        AppArmor:                no
+        SELinux:                 no
+        SECCOMP:                 no
+        SMACK:                   yes
+        XZ:                      yes
+        ACL:                     yes
+        XATTR:                   yes
+        GCRYPT:                  no
+        QRENCODE:                no
+        MICROHTTPD:              no
+        CHKCONFIG:               no
+        GNUTLS:                  no
+        binfmt:                  yes
+        vconsole:                yes
+        readahead:               yes
+        bootchart:               yes
+        quotacheck:              yes
+        tmpfiles:                yes
+        randomseed:              yes
+        backlight:               yes
+        rfkill:                  yes
+        logind:                  yes
+        machined:                yes
+        hostnamed:               yes
+        timedated:               yes
+        timesyncd:               yes
+        default NTP servers:     time1.google.com time2.google.com time3.google.com time4.google.com
+        time epoch:              1401259728
+        localed:                 yes
+        networkd:                yes
+        resolved:                yes
+        default DNS servers:     8.8.8.8 8.8.4.4 2001:4860:4860::8888 2001:4860:4860::8844
+        coredump:                yes
+        polkit:                  yes
+        efi:                     yes
+        kmod:                    yes
+        blkid:                   yes
+        dbus:                    no
+        nss-myhostname:          yes
+        gudev:                   no
+        gintrospection:          no
+        multi-seat-x:            yes
+        kdbus:                   no
+        Python:                  no
+        Python Headers:          no
+        man pages:               yes
+        gtk-doc:                 no
+        test coverage:           no
+        Split /usr:              yes
+        SysV compatibility:      yes
+        compatibility libraries: no
+
+        prefix:                  /usr
+        rootprefix:              
+        sysconf dir:             /etc
+        datarootdir:             ${prefix}/share
+        includedir:              ${prefix}/include
+        include_prefix:          
+        lib dir:                 ${exec_prefix}/lib
+        rootlib dir:             /lib
+        SysV init scripts:       /etc/init.d
+        SysV rc?.d directories:  /etc/rc.d
+        Build Python:            :
+        Installation Python:     /usr/bin/python
+        sphinx binary:           
+        firmware path:           
+        PAM modules dir:         /lib/security
+        PAM configuration dir:   /etc/pam.d
+        D-Bus policy dir:        /etc/dbus-1/system.d
+        D-Bus session dir:       /usr/share/dbus-1/services
+        D-Bus system dir:        /usr/share/dbus-1/system-services
+        D-Bus interfaces dir:    /usr/share/dbus-1/interfaces
+        Bash completions dir:    ${datarootdir}/bash-completion/completions
+        Zsh completions dir:     ${datarootdir}/zsh/site-functions
+        Extra start script:      /etc/rc.local
+        Extra stop script:       /usr/sbin/halt.local
+        Debug shell:             /bin/sh @ /dev/tty9
+        Maximum System UID:      999
+        Maximum System GID:      999
+
+        CFLAGS:                   -pipe -Wall -Wextra -Wno-inline -Wundef -Wformat=2 -Wformat-security -Wformat-nonliteral -Wlogical-op -Wsign-compare -Wmissing-include-dirs -Wold-style-definition -Wpointer-arith -Winit-self -Wdeclaration-after-statement -Wfloat-equal -Wsuggest-attribute=noreturn -Wmissing-prototypes -Wstrict-prototypes -Wredundant-decls -Wmissing-declarations -Wmissing-noreturn -Wshadow -Wendif-labels -Wstrict-aliasing=2 -Wwrite-strings -Wno-long-long -Wno-overlength-strings -Wno-unused-parameter -Wno-missing-field-initializers -Wno-unused-result -Werror=overflow -Wnested-externs -ffast-math -fno-common -fdiagnostics-show-option -fno-strict-aliasing -fvisibility=hidden -ffunction-sections -fdata-sections -fstack-protector -fPIE --param=ssp-buffer-size=4   -g -O2
+        CPPFLAGS:                 -Wp,-D_FORTIFY_SOURCE=2   
+        LDFLAGS:                  -Wl,--as-needed -Wl,--no-undefined -Wl,--gc-sections -Wl,-z,relro -Wl,-z,now -pie   
+        PYTHON_CFLAGS:           
+        PYTHON_LIBS:             
+
+make[1]: Entering directory '/sources/systemd-213'
+  GEN      src/shared/errno-list.txt
+  GEN      src/shared/errno-from-name.gperf
+  GPERF    src/shared/errno-from-name.h
+  GEN      src/shared/errno-to-name.h
+  GEN      src/shared/af-list.txt
+  GEN      src/shared/af-from-name.gperf
+  GPERF    src/shared/af-from-name.h
+  GEN      src/shared/af-to-name.h
+  M4       src/libsystemd/libsystemd.sym
+  GEN      src/udev/keyboard-keys.txt
+  GEN      src/udev/keyboard-keys-from-name.gperf
+  GPERF    src/udev/keyboard-keys-from-name.h
+  GEN      src/udev/keyboard-keys-to-name.h
+  GPERF    src/udev/net/link-config-gperf.c
+make --no-print-directory all-recursive
+Making all in .
+  CC       src/libsystemd/sd-bus/libsystemd_la-sd-bus.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-control.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-error.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-internal.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-socket.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-kernel.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-container.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-message.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-creds.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-signature.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-type.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-match.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-bloom.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-introspect.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-objects.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-gvariant.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-convenience.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-track.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-util.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-slot.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-sd-memfd.lo
+  CC       src/libsystemd/sd-utf8/libsystemd_la-sd-utf8.lo
+  CC       src/libsystemd/sd-event/libsystemd_la-sd-event.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_la-sd-rtnl.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_la-rtnl-message.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_la-rtnl-types.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_la-rtnl-util.lo
+  CC       src/libsystemd/sd-id128/libsystemd_la-sd-id128.lo
+  CC       src/libsystemd/sd-daemon/libsystemd_la-sd-daemon.lo
+  CC       src/libsystemd/sd-login/libsystemd_la-sd-login.lo
+  CC       src/libsystemd/sd-resolve/libsystemd_la-sd-resolve.lo
+  CC       src/journal/libsystemd_la-sd-journal.lo
+  CC       src/journal/libsystemd_la-journal-file.lo
+  CC       src/journal/libsystemd_la-journal-vacuum.lo
+  CC       src/journal/libsystemd_la-journal-verify.lo
+  CC       src/journal/libsystemd_la-lookup3.lo
+  CC       src/journal/libsystemd_la-journal-send.lo
+  CC       src/journal/libsystemd_la-catalog.lo
+  CC       src/journal/libsystemd_la-mmap-cache.lo
+  CC       src/journal/libsystemd_la-compress.lo
+  GPERF    src/libsystemd/sd-bus/bus-error-mapping.c
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-error-mapping.lo
+  CC       src/shared/libsystemd_shared_la-device-nodes.lo
+  CC       src/shared/libsystemd_shared_la-util.lo
+  CC       src/shared/libsystemd_shared_la-virt.lo
+  CC       src/shared/libsystemd_shared_la-architecture.lo
+  CC       src/shared/libsystemd_shared_la-efivars.lo
+  CC       src/shared/libsystemd_shared_la-path-util.lo
+  CC       src/shared/libsystemd_shared_la-time-util.lo
+  CC       src/shared/libsystemd_shared_la-hashmap.lo
+  CC       src/shared/libsystemd_shared_la-siphash24.lo
+  CC       src/shared/libsystemd_shared_la-set.lo
+  CC       src/shared/libsystemd_shared_la-fdset.lo
+  CC       src/shared/libsystemd_shared_la-prioq.lo
+  CC       src/shared/libsystemd_shared_la-sleep-config.lo
+  CC       src/shared/libsystemd_shared_la-strv.lo
+  CC       src/shared/libsystemd_shared_la-env-util.lo
+  CC       src/shared/libsystemd_shared_la-strbuf.lo
+  CC       src/shared/libsystemd_shared_la-strxcpyx.lo
+  CC       src/shared/libsystemd_shared_la-conf-parser.lo
+  CC       src/shared/libsystemd_shared_la-log.lo
+  CC       src/shared/libsystemd_shared_la-ratelimit.lo
+  CC       src/shared/libsystemd_shared_la-exit-status.lo
+  CC       src/shared/libsystemd_shared_la-utf8.lo
+  CC       src/shared/libsystemd_shared_la-gunicode.lo
+  CC       src/shared/libsystemd_shared_la-pager.lo
+  CC       src/shared/libsystemd_shared_la-socket-util.lo
+  CC       src/shared/libsystemd_shared_la-conf-files.lo
+  CC       src/shared/libsystemd_shared_la-cgroup-util.lo
+  CC       src/shared/libsystemd_shared_la-cgroup-show.lo
+  CC       src/shared/libsystemd_shared_la-unit-name.lo
+  CC       src/shared/libsystemd_shared_la-utmp-wtmp.lo
+  CC       src/shared/libsystemd_shared_la-watchdog.lo
+  CC       src/shared/libsystemd_shared_la-spawn-ask-password-agent.lo
+  CC       src/shared/libsystemd_shared_la-replace-var.lo
+  CC       src/shared/libsystemd_shared_la-spawn-polkit-agent.lo
+  CC       src/shared/libsystemd_shared_la-clock-util.lo
+  CC       src/shared/libsystemd_shared_la-time-dst.lo
+  CC       src/shared/libsystemd_shared_la-calendarspec.lo
+  CC       src/shared/libsystemd_shared_la-fileio.lo
+  CC       src/shared/libsystemd_shared_la-MurmurHash2.lo
+  CC       src/shared/libsystemd_shared_la-acpi-fpdt.lo
+  CC       src/shared/libsystemd_shared_la-boot-timestamps.lo
+  CC       src/shared/libsystemd_shared_la-mkdir.lo
+  CC       src/shared/libsystemd_shared_la-smack-util.lo
+  CC       src/shared/libsystemd_shared_la-apparmor-util.lo
+  CC       src/shared/libsystemd_shared_la-ima-util.lo
+  CC       src/shared/libsystemd_shared_la-ptyfwd.lo
+  CC       src/shared/libsystemd_shared_la-errno-list.lo
+  CC       src/shared/libsystemd_shared_la-af-list.lo
+  CC       src/shared/libsystemd_shared_la-audit.lo
+  CC       src/shared/libsystemd_shared_la-xml.lo
+  CC       src/shared/libsystemd_shared_la-condition-util.lo
+  CC       src/shared/libsystemd_shared_la-bus-label.lo
+  CC       src/shared/libsystemd_shared_la-generator.lo
+  CC       src/shared/libsystemd_shared_la-clean-ipc.lo
+  CC       src/shared/libsystemd_shared_la-login-shared.lo
+  CC       src/shared/libsystemd_shared_la-ring.lo
+  CC       src/shared/libsystemd_shared_la-async.lo
+  CC       src/shared/libsystemd_shared_la-eventfd-util.lo
+  CCLD     libsystemd-shared.la
+  CCLD     libsystemd.la
+  CC       src/libudev/libudev_la-libudev.lo
+  CC       src/libudev/libudev_la-libudev-list.lo
+  CC       src/libudev/libudev_la-libudev-util.lo
+  CC       src/libudev/libudev_la-libudev-device.lo
+  CC       src/libudev/libudev_la-libudev-enumerate.lo
+  CC       src/libudev/libudev_la-libudev-monitor.lo
+  CC       src/libudev/libudev_la-libudev-queue.lo
+  CC       src/libudev/libudev_la-libudev-hwdb.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-sd-bus.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-control.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-error.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-internal.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-socket.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-kernel.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-container.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-message.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-creds.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-signature.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-type.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-match.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-bloom.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-introspect.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-objects.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-gvariant.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-convenience.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-track.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-util.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-slot.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-sd-memfd.lo
+  CC       src/libsystemd/sd-utf8/libsystemd_internal_la-sd-utf8.lo
+  CC       src/libsystemd/sd-event/libsystemd_internal_la-sd-event.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_internal_la-sd-rtnl.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_internal_la-rtnl-message.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_internal_la-rtnl-types.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_internal_la-rtnl-util.lo
+  CC       src/libsystemd/sd-id128/libsystemd_internal_la-sd-id128.lo
+  CC       src/libsystemd/sd-daemon/libsystemd_internal_la-sd-daemon.lo
+  CC       src/libsystemd/sd-login/libsystemd_internal_la-sd-login.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-error-mapping.lo
+  CCLD     libsystemd-internal.la
+  CCLD     libudev.la
+  CC       src/nss-myhostname/nss-myhostname.lo
+  CC       src/nss-myhostname/netlink.lo
+  CCLD     libnss_myhostname.la
+  CC       src/shared/install.lo
+  CC       src/shared/install-printf.lo
+  CC       src/shared/path-lookup.lo
+  CC       src/shared/specifier.lo
+  CCLD     libsystemd-units.la
+  CC       src/shared/libsystemd_label_la-socket-label.lo
+  CC       src/shared/libsystemd_label_la-label.lo
+  CC       src/shared/libsystemd_label_la-selinux-util.lo
+  CC       src/shared/libsystemd_label_la-mkdir-label.lo
+  CC       src/shared/libsystemd_label_la-ask-password-api.lo
+  CC       src/shared/libsystemd_label_la-fileio-label.lo
+  CC       src/shared/libsystemd_label_la-dev-setup.lo
+  CCLD     libsystemd-label.la
+  CC       src/shared/logs-show.lo
+  CCLD     libsystemd-logs.la
+  CC       src/shared/libsystemd_capability_la-capability.lo
+  CCLD     libsystemd-capability.la
+  CC       src/shared/libsystemd_acl_la-acl-util.lo
+  CCLD     libsystemd-acl.la
+  CC       src/core/libsystemd_core_la-unit.lo
+  CC       src/core/libsystemd_core_la-unit-printf.lo
+  CC       src/core/libsystemd_core_la-job.lo
+  CC       src/core/libsystemd_core_la-manager.lo
+  CC       src/core/libsystemd_core_la-transaction.lo
+  CC       src/core/libsystemd_core_la-load-fragment.lo
+  CC       src/core/libsystemd_core_la-service.lo
+  CC       src/core/libsystemd_core_la-socket.lo
+  CC       src/core/libsystemd_core_la-busname.lo
+  CC       src/core/libsystemd_core_la-target.lo
+  CC       src/core/libsystemd_core_la-snapshot.lo
+  CC       src/core/libsystemd_core_la-device.lo
+  CC       src/core/libsystemd_core_la-mount.lo
+  CC       src/core/libsystemd_core_la-automount.lo
+  CC       src/core/libsystemd_core_la-swap.lo
+  CC       src/core/libsystemd_core_la-timer.lo
+  CC       src/core/libsystemd_core_la-path.lo
+  CC       src/core/libsystemd_core_la-slice.lo
+  CC       src/core/libsystemd_core_la-scope.lo
+  CC       src/core/libsystemd_core_la-load-dropin.lo
+  CC       src/core/libsystemd_core_la-execute.lo
+  CC       src/core/libsystemd_core_la-kill.lo
+  CC       src/core/libsystemd_core_la-dbus.lo
+  CC       src/core/libsystemd_core_la-dbus-manager.lo
+  CC       src/core/libsystemd_core_la-dbus-unit.lo
+  CC       src/core/libsystemd_core_la-dbus-job.lo
+  CC       src/core/libsystemd_core_la-dbus-service.lo
+  CC       src/core/libsystemd_core_la-dbus-socket.lo
+  CC       src/core/libsystemd_core_la-dbus-busname.lo
+  CC       src/core/libsystemd_core_la-dbus-target.lo
+  CC       src/core/libsystemd_core_la-dbus-snapshot.lo
+  CC       src/core/libsystemd_core_la-dbus-device.lo
+  CC       src/core/libsystemd_core_la-dbus-mount.lo
+  CC       src/core/libsystemd_core_la-dbus-automount.lo
+  CC       src/core/libsystemd_core_la-dbus-swap.lo
+  CC       src/core/libsystemd_core_la-dbus-timer.lo
+  CC       src/core/libsystemd_core_la-dbus-path.lo
+  CC       src/core/libsystemd_core_la-dbus-slice.lo
+  CC       src/core/libsystemd_core_la-dbus-scope.lo
+  CC       src/core/libsystemd_core_la-dbus-execute.lo
+  CC       src/core/libsystemd_core_la-dbus-kill.lo
+  CC       src/core/libsystemd_core_la-dbus-cgroup.lo
+  CC       src/core/libsystemd_core_la-cgroup.lo
+  CC       src/core/libsystemd_core_la-selinux-access.lo
+  CC       src/core/libsystemd_core_la-selinux-setup.lo
+  CC       src/core/libsystemd_core_la-smack-setup.lo
+  CC       src/core/libsystemd_core_la-ima-setup.lo
+  CC       src/core/libsystemd_core_la-locale-setup.lo
+  CC       src/core/libsystemd_core_la-hostname-setup.lo
+  CC       src/core/libsystemd_core_la-machine-id-setup.lo
+  CC       src/core/libsystemd_core_la-mount-setup.lo
+  CC       src/core/libsystemd_core_la-loopback-setup.lo
+  CC       src/core/libsystemd_core_la-condition.lo
+  CC       src/core/libsystemd_core_la-namespace.lo
+  CC       src/core/libsystemd_core_la-switch-root.lo
+  CC       src/core/libsystemd_core_la-killall.lo
+  CC       src/core/libsystemd_core_la-audit-fd.lo
+  CC       src/core/libsystemd_core_la-show-status.lo
+  CC       src/core/libsystemd_core_la-kmod-setup.lo
+  M4       src/core/load-fragment-gperf.gperf
+  GPERF    src/core/load-fragment-gperf.c
+  CC       src/core/libsystemd_core_la-load-fragment-gperf.lo
+  GEN      src/core/load-fragment-gperf-nulstr.c
+  CC       src/core/libsystemd_core_la-load-fragment-gperf-nulstr.lo
+  CC       src/libudev/libudev_internal_la-libudev.lo
+  CC       src/libudev/libudev_internal_la-libudev-list.lo
+  CC       src/libudev/libudev_internal_la-libudev-util.lo
+  CC       src/libudev/libudev_internal_la-libudev-device.lo
+  CC       src/libudev/libudev_internal_la-libudev-enumerate.lo
+  CC       src/libudev/libudev_internal_la-libudev-monitor.lo
+  CC       src/libudev/libudev_internal_la-libudev-queue.lo
+  CC       src/libudev/libudev_internal_la-libudev-hwdb.lo
+  CC       src/libudev/libudev_internal_la-libudev-device-private.lo
+  CCLD     libudev-internal.la
+  CCLD     libsystemd-core.la
+  CC       src/libsystemd/sd-resolve/libsystemd_resolve_la-sd-resolve.lo
+  CCLD     libsystemd-resolve.la
+  CC       src/libsystemd/sd-bus/libsystemd_dump_la-bus-dump.lo
+  CCLD     libsystemd-dump.la
+  CC       src/network/libsystemd_network_la-sd-network.lo
+  CC       src/libsystemd-network/libsystemd_network_la-sd-dhcp-client.lo
+  CC       src/libsystemd-network/libsystemd_network_la-dhcp-network.lo
+  CC       src/libsystemd-network/libsystemd_network_la-dhcp-option.lo
+  CC       src/libsystemd-network/libsystemd_network_la-dhcp-packet.lo
+  CC       src/libsystemd-network/libsystemd_network_la-sd-dhcp-lease.lo
+  CC       src/libsystemd-network/libsystemd_network_la-sd-ipv4ll.lo
+  CC       src/libsystemd-network/libsystemd_network_la-ipv4ll-network.lo
+  CC       src/libsystemd-network/libsystemd_network_la-ipv4ll-packet.lo
+  CC       src/libsystemd-network/libsystemd_network_la-network-internal.lo
+  CCLD     libsystemd-network.la
+  CC       src/udev/libudev_core_la-udev-event.lo
+  CC       src/udev/libudev_core_la-udev-watch.lo
+  CC       src/udev/libudev_core_la-udev-node.lo
+  CC       src/udev/libudev_core_la-udev-rules.lo
+  CC       src/udev/libudev_core_la-udev-ctrl.lo
+  CC       src/udev/libudev_core_la-udev-builtin.lo
+  CC       src/udev/libudev_core_la-udev-builtin-btrfs.lo
+  CC       src/udev/libudev_core_la-udev-builtin-hwdb.lo
+  CC       src/udev/libudev_core_la-udev-builtin-input_id.lo
+  CC       src/udev/libudev_core_la-udev-builtin-keyboard.lo
+  CC       src/udev/libudev_core_la-udev-builtin-net_id.lo
+  CC       src/udev/libudev_core_la-udev-builtin-net_setup_link.lo
+  CC       src/udev/libudev_core_la-udev-builtin-path_id.lo
+  CC       src/udev/libudev_core_la-udev-builtin-usb_id.lo
+  CC       src/udev/net/libudev_core_la-link-config.lo
+  CC       src/udev/net/libudev_core_la-ethtool-util.lo
+  CC       src/udev/libudev_core_la-udev-builtin-kmod.lo
+  CC       src/udev/libudev_core_la-udev-builtin-blkid.lo
+  CC       src/udev/libudev_core_la-udev-builtin-uaccess.lo
+  CC       src/login/libudev_core_la-logind-acl.lo
+  CC       src/libsystemd/sd-login/libudev_core_la-sd-login.lo
+  CC       src/udev/net/libudev_core_la-link-config-gperf.lo
+  CCLD     libudev-core.la
+copying selected object files to avoid basename conflicts...
+  CC       src/journal/journald-kmsg.lo
+  CC       src/journal/journald-syslog.lo
+  CC       src/journal/journald-stream.lo
+  CC       src/journal/journald-server.lo
+  CC       src/journal/journald-console.lo
+  CC       src/journal/journald-wall.lo
+  CC       src/journal/journald-native.lo
+  CC       src/journal/journald-rate-limit.lo
+  GPERF    src/journal/journald-gperf.c
+  CC       src/journal/journald-gperf.lo
+  CC       src/journal/libsystemd_journal_internal_la-sd-journal.lo
+  CC       src/journal/libsystemd_journal_internal_la-journal-file.lo
+  CC       src/journal/libsystemd_journal_internal_la-journal-vacuum.lo
+  CC       src/journal/libsystemd_journal_internal_la-journal-verify.lo
+  CC       src/journal/libsystemd_journal_internal_la-lookup3.lo
+  CC       src/journal/libsystemd_journal_internal_la-journal-send.lo
+  CC       src/journal/libsystemd_journal_internal_la-catalog.lo
+  CC       src/journal/libsystemd_journal_internal_la-mmap-cache.lo
+  CC       src/journal/libsystemd_journal_internal_la-compress.lo
+  CCLD     libsystemd-journal-internal.la
+  CCLD     libsystemd-journal-core.la
+  CC       src/machine/machined-dbus.lo
+  CC       src/machine/machine.lo
+  CC       src/machine/machine-dbus.lo
+  CCLD     libsystemd-machine-core.la
+  CC       src/network/libsystemd_networkd_core_la-networkd-link.lo
+  CC       src/network/libsystemd_networkd_core_la-networkd-netdev.lo
+  CC       src/network/libsystemd_networkd_core_la-networkd-tunnel.lo
+  CC       src/network/libsystemd_networkd_core_la-networkd-network.lo
+  CC       src/network/libsystemd_networkd_core_la-networkd-address.lo
+  CC       src/network/libsystemd_networkd_core_la-networkd-route.lo
+  CC       src/network/libsystemd_networkd_core_la-networkd-manager.lo
+  GPERF    src/network/networkd-network-gperf.c
+  CC       src/network/libsystemd_networkd_core_la-networkd-network-gperf.lo
+  GPERF    src/network/networkd-netdev-gperf.c
+  CC       src/network/libsystemd_networkd_core_la-networkd-netdev-gperf.lo
+  CCLD     libsystemd-networkd-core.la
+copying selected object files to avoid basename conflicts...
+  CC       src/login/logind-core.lo
+  CC       src/login/logind-device.lo
+  CC       src/login/logind-button.lo
+  CC       src/login/logind-action.lo
+  CC       src/login/logind-seat.lo
+  CC       src/login/logind-session.lo
+  CC       src/login/logind-session-device.lo
+  CC       src/login/logind-user.lo
+  CC       src/login/logind-inhibit.lo
+  CC       src/login/logind-dbus.lo
+  CC       src/login/logind-session-dbus.lo
+  CC       src/login/logind-seat-dbus.lo
+  CC       src/login/logind-user-dbus.lo
+  CC       src/login/logind-acl.lo
+  CCLD     libsystemd-logind-core.la
+  CC       src/cgls/cgls.o
+  CCLD     systemd-cgls
+  CC       src/cgtop/cgtop.o
+  CCLD     systemd-cgtop
+  CC       src/nspawn/systemd_nspawn-nspawn.o
+  CC       src/core/systemd_nspawn-mount-setup.o
+  CC       src/core/systemd_nspawn-loopback-setup.o
+  CCLD     systemd-nspawn
+  CC       src/detect-virt/detect-virt.o
+  CCLD     systemd-detect-virt
+  CC       src/delta/delta.o
+  CCLD     systemd-delta
+  CC       src/analyze/analyze.o
+  CCLD     systemd-analyze
+  CC       src/run/run.o
+  CCLD     systemd-run
+  CC       src/boot/bootctl.o
+  CC       src/boot/boot-loader.o
+  CC       src/boot/boot-efi.o
+  CCLD     bootctl
+  CC       src/libsystemd/sd-bus/busctl-busctl.o
+  CCLD     busctl
+  CC       src/journal/cat.o
+  CCLD     systemd-cat
+  CC       src/journal/coredumpctl.o
+  CCLD     systemd-coredumpctl
+  CC       src/hostname/hostnamectl.o
+  CCLD     hostnamectl
+  CC       src/locale/localectl.o
+  CCLD     localectl
+  CC       src/timedate/timedatectl.o
+  CCLD     timedatectl
+  CC       src/test/test_engine-test-engine.o
+  CCLD     test-engine
+  CC       src/test/test_ns-test-ns.o
+  CCLD     test-ns
+  CC       src/test/test-loopback.o
+  CCLD     test-loopback
+  CC       src/test/test-hostname.o
+  CCLD     test-hostname
+  CC       src/test/test-daemon.o
+  CCLD     test-daemon
+  CC       src/test/test-cgroup.o
+  CCLD     test-cgroup
+  CC       src/test/test_cgroup_mask-test-cgroup-mask.o
+  CCLD     test-cgroup-mask
+  CC       src/test/test-install.o
+  CCLD     test-install
+  CC       src/test/test-watchdog.o
+  CCLD     test-watchdog
+  CC       src/test/test-log.o
+  CCLD     test-log
+  CC       src/test/test-ipcrm.o
+  CCLD     test-ipcrm
+  CC       src/test/test_rtnl_manual-test-rtnl-manual.o
+  CCLD     test-rtnl-manual
+  CC       src/test/test-boot-timestamps.o
+  CCLD     test-boot-timestamp
+  CC       src/test/test-libudev.o
+  CCLD     test-libudev
+  CC       src/test/test-udev.o
+  CCLD     test-udev
+  CC       src/journal/test-journal-enum.o
+  CCLD     test-journal-enum
+  CC       src/readahead/test-ssd.o
+  CC       src/readahead/readahead-common.o
+  CCLD     test-ssd
+  CC       src/libsystemd/sd-login/test-login.o
+  CCLD     test-login
+  CC       src/login/test-inhibit.o
+  CCLD     test-inhibit
+  CC       src/test/test_job_type-test-job-type.o
+  CCLD     test-job-type
+  CC       src/test/test-env-replace.o
+  CCLD     test-env-replace
+  CC       src/test/test-strbuf.o
+  CCLD     test-strbuf
+  CC       src/test/test-strv.o
+  CCLD     test-strv
+  CC       src/test/test-path-util.o
+  CCLD     test-path-util
+  CC       src/test/test-strxcpyx.o
+  CCLD     test-strxcpyx
+  CC       src/test/test_unit_name-test-unit-name.o
+  CCLD     test-unit-name
+  CC       src/test/test_unit_file-test-unit-file.o
+  CCLD     test-unit-file
+  CC       src/test/test-utf8.o
+  CCLD     test-utf8
+  CC       src/test/test-ellipsize.o
+  CCLD     test-ellipsize
+  CC       src/test/test-util.o
+  CCLD     test-util
+  CC       src/test/test-ring.o
+  CCLD     test-ring
+  CC       src/test/test-tmpfiles.o
+  CCLD     test-tmpfiles
+  CC       src/test/test-namespace.o
+  CCLD     test-namespace
+  CC       src/test/test-date.o
+  CCLD     test-date
+  CC       src/test/test-sleep.o
+  CCLD     test-sleep
+  CC       src/test/test-replace-var.o
+  CCLD     test-replace-var
+  CC       src/test/test_sched_prio-test-sched-prio.o
+  CCLD     test-sched-prio
+  CC       src/test/test-calendarspec.o
+  CCLD     test-calendarspec
+  CC       src/test/test-strip-tab-ansi.o
+  CCLD     test-strip-tab-ansi
+  CC       src/test/test-cgroup-util.o
+  CCLD     test-cgroup-util
+  CC       src/test/test-prioq.o
+  CCLD     test-prioq
+  CC       src/test/test-fileio.o
+  CCLD     test-fileio
+  CC       src/test/test-time.o
+  CCLD     test-time
+  CC       src/test/test-hashmap.o
+  CCLD     test-hashmap
+  CC       src/test/test-list.o
+  CCLD     test-list
+  CC       src/test/test_tables-test-tables.o
+  CCLD     test-tables
+  CC       src/test/test-device-nodes.o
+  CCLD     test-device-nodes
+  CC       src/test/test-xml.o
+  CCLD     test-xml
+  CC       src/test/test-architecture.o
+  CCLD     test-architecture
+  CC       src/libsystemd/sd-bus/test_bus_marshal-test-bus-marshal.o
+  CCLD     test-bus-marshal
+  CC       src/libsystemd/sd-bus/test-bus-signature.o
+  CCLD     test-bus-signature
+  CC       src/libsystemd/sd-bus/test_bus_chat-test-bus-chat.o
+  CCLD     test-bus-chat
+  CC       src/libsystemd/sd-bus/test_bus_cleanup-test-bus-cleanup.o
+  CCLD     test-bus-cleanup
+  CC       src/libsystemd/sd-bus/test_bus_server-test-bus-server.o
+  CCLD     test-bus-server
+  CC       src/libsystemd/sd-bus/test-bus-match.o
+  CCLD     test-bus-match
+  CC       src/libsystemd/sd-bus/test_bus_kernel-test-bus-kernel.o
+  CCLD     test-bus-kernel
+  CC       src/libsystemd/sd-bus/test-bus-kernel-bloom.o
+  CCLD     test-bus-kernel-bloom
+  CC       src/libsystemd/sd-bus/test-bus-kernel-benchmark.o
+  CCLD     test-bus-kernel-benchmark
+  CC       src/libsystemd/sd-bus/test-bus-memfd.o
+  CCLD     test-bus-memfd
+  CC       src/libsystemd/sd-bus/test_bus_zero_copy-test-bus-zero-copy.o
+  CCLD     test-bus-zero-copy
+  CC       src/libsystemd/sd-bus/test-bus-introspect.o
+  CCLD     test-bus-introspect
+  CC       src/libsystemd/sd-bus/test_bus_objects-test-bus-objects.o
+  CCLD     test-bus-objects
+  CC       src/libsystemd/sd-bus/test-bus-error.o
+  CCLD     test-bus-error
+  CC       src/libsystemd/sd-bus/test-bus-creds.o
+  CCLD     test-bus-creds
+  CC       src/libsystemd/sd-bus/test_bus_gvariant-test-bus-gvariant.o
+  CCLD     test-bus-gvariant
+  CC       src/libsystemd/sd-event/test-event.o
+  CCLD     test-event
+  CC       src/libsystemd/sd-rtnl/test-rtnl.o
+  CCLD     test-rtnl
+  CC       src/libsystemd/sd-resolve/test_resolve-test-resolve.o
+  CCLD     test-resolve
+  CC       src/libsystemd-network/test-dhcp-option.o
+  CCLD     test-dhcp-option
+  CC       src/libsystemd-network/test-dhcp-client.o
+  CCLD     test-dhcp-client
+  CC       src/libsystemd-network/test-ipv4ll.o
+  CCLD     test-ipv4ll
+  CC       src/test/test-id128.o
+  CCLD     test-id128
+  CC       src/journal/test-journal.o
+  CCLD     test-journal
+  CC       src/journal/test-journal-send.o
+  CCLD     test-journal-send
+  CC       src/journal/test-journal-syslog.o
+  CCLD     test-journal-syslog
+  CC       src/journal/test-journal-match.o
+  CCLD     test-journal-match
+  CC       src/journal/test-journal-stream.o
+  CCLD     test-journal-stream
+  CC       src/journal/test-journal-init.o
+  CCLD     test-journal-init
+  CC       src/journal/test-journal-verify.o
+  CCLD     test-journal-verify
+  CC       src/journal/test-journal-interleaving.o
+  CCLD     test-journal-interleaving
+  CC       src/journal/test-journal-flush.o
+  CCLD     test-journal-flush
+  CC       src/journal/test-mmap-cache.o
+  CCLD     test-mmap-cache
+  CC       src/journal/test_catalog-test-catalog.o
+  CCLD     test-catalog
+  CC       src/machine/test-machine-tables.o
+  CCLD     test-machine-tables
+  CC       src/network/test_network-test-network.o
+  CCLD     test-network
+  CC       src/login/test-login-tables.o
+  CCLD     test-login-tables
+  CC       src/login/test-login-shared.o
+  CCLD     test-login-shared
+  GEN      test-libsystemd-sym.c
+  CC       test-libsystemd-sym.o
+  CCLD     test-libsystemd-sym
+  CC       test_libudev_sym-test-libudev-sym.o
+  CCLD     test-libudev-sym
+  CC       src/systemctl/systemctl.o
+  CCLD     systemctl
+  CC       src/notify/notify.o
+  CC       src/readahead/sd-readahead.o
+  CCLD     systemd-notify
+  CC       src/ask-password/ask-password.o
+  CCLD     systemd-ask-password
+  CC       src/tty-ask-password-agent/tty-ask-password-agent.o
+  CCLD     systemd-tty-ask-password-agent
+  CC       src/machine-id-setup/machine-id-setup-main.o
+  CC       src/core/machine-id-setup.o
+  CCLD     systemd-machine-id-setup
+  CC       src/tmpfiles/tmpfiles.o
+  CCLD     systemd-tmpfiles
+  CC       src/udev/udevadm.o
+  CC       src/udev/udevadm-info.o
+  CC       src/udev/udevadm-control.o
+  CC       src/udev/udevadm-monitor.o
+  CC       src/udev/udevadm-hwdb.o
+  CC       src/udev/udevadm-settle.o
+  CC       src/udev/udevadm-trigger.o
+  CC       src/udev/udevadm-test.o
+  CC       src/udev/udevadm-test-builtin.o
+  CCLD     udevadm
+  CC       src/journal/journalctl-journalctl.o
+  CCLD     journalctl
+  CC       src/machine/machinectl.o
+  CCLD     machinectl
+  CC       src/login/loginctl.o
+  CC       src/login/sysfs-show.o
+  CCLD     loginctl
+  CC       src/login/inhibit.o
+  CCLD     systemd-inhibit
+  CC       src/core/systemd-main.o
+  CCLD     systemd
+  CC       src/cgroups-agent/cgroups-agent.o
+  CCLD     systemd-cgroups-agent
+  CC       src/initctl/initctl.o
+  CCLD     systemd-initctl
+  CC       src/update-utmp/systemd_update_utmp-update-utmp.o
+  CCLD     systemd-update-utmp
+  CC       src/shutdownd/shutdownd.o
+  CCLD     systemd-shutdownd
+  CC       src/core/umount.o
+  CC       src/core/shutdown.o
+  CC       src/core/mount-setup.o
+  CC       src/core/killall.o
+  CCLD     systemd-shutdown
+  CC       src/remount-fs/remount-fs.o
+  CCLD     systemd-remount-fs
+  CC       src/reply-password/reply-password.o
+  CCLD     systemd-reply-password
+  CC       src/fsck/fsck.o
+  CCLD     systemd-fsck
+  CC       src/ac-power/ac-power.o
+  CCLD     systemd-ac-power
+  CC       src/sysctl/sysctl.o
+  CCLD     systemd-sysctl
+  CC       src/sleep/sleep.o
+  CCLD     systemd-sleep
+  CC       src/bus-proxyd/bus-proxyd.o
+  CCLD     systemd-bus-proxyd
+  CC       src/socket-proxy/socket-proxyd.o
+  CCLD     systemd-socket-proxyd
+  CC       src/modules-load/systemd_modules_load-modules-load.o
+  CCLD     systemd-modules-load
+  CC       src/udev/udevd.o
+  CCLD     systemd-udevd
+  CC       src/activate/activate.o
+  CCLD     systemd-activate
+  CC       src/journal/journald.o
+  CCLD     systemd-journald
+  CC       src/journal/coredump.o
+  CCLD     systemd-coredump
+  CC       src/binfmt/binfmt.o
+  CCLD     systemd-binfmt
+  CC       src/vconsole/vconsole-setup.o
+  CCLD     systemd-vconsole-setup
+  CC       src/readahead/readahead.o
+  CC       src/readahead/readahead-collect.o
+  CC       src/readahead/readahead-replay.o
+  CC       src/readahead/readahead-analyze.o
+  CCLD     systemd-readahead
+  CC       src/bootchart/bootchart.o
+  CC       src/bootchart/store.o
+  CC       src/bootchart/svg.o
+  CCLD     systemd-bootchart
+  CC       src/quotacheck/quotacheck.o
+  CCLD     systemd-quotacheck
+  CC       src/random-seed/random-seed.o
+  CCLD     systemd-random-seed
+  CC       src/backlight/backlight.o
+  CCLD     systemd-backlight
+  CC       src/rfkill/rfkill.o
+  CCLD     systemd-rfkill
+  CC       src/hostname/hostnamed.o
+  CCLD     systemd-hostnamed
+  CC       src/locale/localed.o
+  CCLD     systemd-localed
+  CC       src/timedate/timedated.o
+  CCLD     systemd-timedated
+  CC       src/timesync/timesyncd.o
+  GPERF    src/timesync/timesyncd-gperf.c
+  CC       src/timesync/timesyncd-gperf.o
+  CCLD     systemd-timesyncd
+  CC       src/machine/machined.o
+  CCLD     systemd-machined
+  CC       src/resolve/systemd_resolved-resolved.o
+  CC       src/resolve/systemd_resolved-resolved-manager.o
+  GPERF    src/resolve/resolved-gperf.c
+  CC       src/resolve/systemd_resolved-resolved-gperf.o
+  CCLD     systemd-resolved
+  CC       src/network/networkd.o
+  CCLD     systemd-networkd
+  CC       src/network/systemd_networkd_wait_online-networkd-wait-online.o
+  CCLD     systemd-networkd-wait-online
+  CC       src/login/logind.o
+  GPERF    src/login/logind-gperf.c
+  CC       src/login/logind-gperf.o
+  CCLD     systemd-logind
+  CC       src/login/user-sessions.o
+  CCLD     systemd-user-sessions
+  CC       src/login/multi-seat-x.o
+  CCLD     systemd-multi-seat-x
+  CC       src/getty-generator/getty-generator.o
+  CCLD     systemd-getty-generator
+  CC       src/fstab-generator/fstab-generator.o
+  CCLD     systemd-fstab-generator
+  CC       src/system-update-generator/system-update-generator.o
+  CCLD     systemd-system-update-generator
+  CC       src/rc-local-generator/rc-local-generator.o
+  CCLD     systemd-rc-local-generator
+  CC       src/efi-boot-generator/efi-boot-generator.o
+  CCLD     systemd-efi-boot-generator
+  CC       src/gpt-auto-generator/systemd_gpt_auto_generator-gpt-auto-generator.o
+  CCLD     systemd-gpt-auto-generator
+  CC       src/udev/ata_id/ata_id.o
+  CCLD     ata_id
+  CC       src/udev/cdrom_id/cdrom_id.o
+  CCLD     cdrom_id
+  CC       src/udev/collect/collect.o
+  CCLD     collect
+  CC       src/udev/scsi_id/scsi_id.o
+  CC       src/udev/scsi_id/scsi_serial.o
+  CCLD     scsi_id
+  CC       src/udev/v4l_id/v4l_id.o
+  CCLD     v4l_id
+  CC       src/udev/accelerometer/accelerometer.o
+  CCLD     accelerometer
+  CC       src/udev/mtd_probe/mtd_probe.o
+  CC       src/udev/mtd_probe/probe_smartmedia.o
+  CCLD     mtd_probe
+  GEN      src/timesync/timesyncd.conf
+  GEN      src/resolve/resolved.conf
+  ITMRG  src/hostname/org.freedesktop.hostname1.policy
+  ITMRG  src/locale/org.freedesktop.locale1.policy
+  ITMRG  src/timedate/org.freedesktop.timedate1.policy
+  ITMRG  src/login/org.freedesktop.login1.policy
+  GEN      src/core/org.freedesktop.systemd1.policy.in
+  ITMRG  src/core/org.freedesktop.systemd1.policy
+  GEN      src/core/macros.systemd
+  M4       units/getty@.service
+  M4       units/serial-getty@.service
+  GEN      units/console-shell.service.m4
+  M4       units/console-shell.service
+  GEN      units/console-getty.service.m4
+  M4       units/console-getty.service
+  GEN      units/container-getty@.service.m4
+  M4       units/container-getty@.service
+  GEN      units/systemd-initctl.service
+  GEN      units/systemd-shutdownd.service
+  GEN      units/systemd-remount-fs.service
+  GEN      units/systemd-update-utmp.service
+  GEN      units/systemd-update-utmp-runlevel.service
+  GEN      units/systemd-ask-password-wall.service
+  GEN      units/systemd-ask-password-console.service
+  GEN      units/systemd-sysctl.service
+  GEN      units/rescue.service.m4
+  M4       units/rescue.service
+  GEN      units/user@.service
+  GEN      units/systemd-hibernate.service
+  GEN      units/systemd-hybrid-sleep.service
+  GEN      units/systemd-suspend.service
+  GEN      units/systemd-halt.service
+  GEN      units/systemd-poweroff.service
+  GEN      units/systemd-reboot.service
+  GEN      units/systemd-kexec.service
+  GEN      units/systemd-fsck@.service
+  GEN      units/systemd-fsck-root.service
+  GEN      units/systemd-udevd.service
+  GEN      units/systemd-udev-trigger.service
+  GEN      units/systemd-udev-settle.service
+  GEN      units/debug-shell.service
+  GEN      units/initrd-parse-etc.service
+  GEN      units/initrd-cleanup.service
+  GEN      units/initrd-udevadm-cleanup-db.service
+  GEN      units/initrd-switch-root.service
+  GEN      units/systemd-nspawn@.service
+  GEN      units/rc-local.service
+  GEN      units/halt-local.service
+  GEN      units/systemd-modules-load.service
+  GEN      units/kmod-static-nodes.service
+  GEN      units/systemd-tmpfiles-setup-dev.service
+  GEN      units/systemd-tmpfiles-setup.service
+  GEN      units/systemd-tmpfiles-clean.service
+  GEN      units/systemd-journald.service
+  GEN      units/systemd-journal-flush.service
+  GEN      units/systemd-binfmt.service
+  GEN      units/systemd-vconsole-setup.service
+  GEN      units/systemd-readahead-collect.service
+  GEN      units/systemd-readahead-replay.service
+  GEN      units/systemd-readahead-done.service
+  GEN      units/systemd-quotacheck.service
+  GEN      units/quotaon.service
+  GEN      units/systemd-random-seed.service
+  GEN      units/systemd-backlight@.service
+  GEN      units/systemd-rfkill@.service
+  GEN      units/systemd-hostnamed.service
+  GEN      units/systemd-localed.service
+  GEN      units/systemd-timedated.service
+  GEN      units/systemd-timesyncd.service
+  GEN      units/systemd-machined.service
+  GEN      units/systemd-resolved.service
+  GEN      units/systemd-networkd.service
+  GEN      units/systemd-networkd-wait-online.service
+  GEN      units/systemd-logind.service
+  GEN      units/systemd-user-sessions.service
+  GEN      rules/99-systemd.rules
+  GEN      src/login/71-seat.rules
+  GEN      src/login/73-seat-late.rules
+  GEN      units/user/systemd-exit.service
+  LN       docs/html/man
+  GEN      src/core/systemd.pc
+  GEN      src/libsystemd/libsystemd.pc
+  GEN      src/compat-libs/libsystemd-journal.pc
+  GEN      src/compat-libs/libsystemd-login.pc
+  GEN      src/compat-libs/libsystemd-id128.pc
+  GEN      src/compat-libs/libsystemd-daemon.pc
+  GEN      src/libudev/libudev.pc
+  GEN      src/udev/udev.pc
+  GEN      sysctl.d/50-coredump.conf
+  GEN      docs/sysvinit/README
+  GEN      docs/var-log/README
+Making all in po
+  MSGFMT el.gmo
+  MSGFMT fr.gmo
+  MSGFMT it.gmo
+  MSGFMT pl.gmo
+  MSGFMT ru.gmo
+make[1]: Leaving directory '/sources/systemd-213'
+make[1]: Entering directory '/sources/systemd-213'
+make --no-print-directory install-recursive
+Making install in .
+ /bin/mkdir -p '/usr/lib'
+ /bin/sh ./libtool   --mode=install /usr/bin/install -c   libsystemd.la libudev.la libnss_myhostname.la '/usr/lib'
+libtool: install: /usr/bin/install -c .libs/libsystemd.so.0.2.0 /usr/lib/libsystemd.so.0.2.0
+libtool: install: (cd /usr/lib && { ln -s -f libsystemd.so.0.2.0 libsystemd.so.0 || { rm -f libsystemd.so.0 && ln -s libsystemd.so.0.2.0 libsystemd.so.0; }; })
+libtool: install: (cd /usr/lib && { ln -s -f libsystemd.so.0.2.0 libsystemd.so || { rm -f libsystemd.so && ln -s libsystemd.so.0.2.0 libsystemd.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsystemd.lai /usr/lib/libsystemd.la
+libtool: install: /usr/bin/install -c .libs/libudev.so.1.4.1 /usr/lib/libudev.so.1.4.1
+libtool: install: (cd /usr/lib && { ln -s -f libudev.so.1.4.1 libudev.so.1 || { rm -f libudev.so.1 && ln -s libudev.so.1.4.1 libudev.so.1; }; })
+libtool: install: (cd /usr/lib && { ln -s -f libudev.so.1.4.1 libudev.so || { rm -f libudev.so && ln -s libudev.so.1.4.1 libudev.so; }; })
+libtool: install: /usr/bin/install -c .libs/libudev.lai /usr/lib/libudev.la
+libtool: install: /usr/bin/install -c .libs/libnss_myhostname.so.2 /usr/lib/libnss_myhostname.so.2
+libtool: install: /usr/bin/install -c .libs/libnss_myhostname.lai /usr/lib/libnss_myhostname.la
+libtool: finish: PATH="/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin:/usr/sbin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /bin/mkdir -p '/usr/bin'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c systemd-cgls systemd-cgtop systemd-nspawn systemd-detect-virt systemd-delta systemd-analyze systemd-run bootctl busctl systemd-cat systemd-coredumpctl hostnamectl localectl timedatectl '/usr/bin'
+libtool: install: /usr/bin/install -c systemd-cgls /usr/bin/systemd-cgls
+libtool: install: /usr/bin/install -c systemd-cgtop /usr/bin/systemd-cgtop
+libtool: install: /usr/bin/install -c systemd-nspawn /usr/bin/systemd-nspawn
+libtool: install: /usr/bin/install -c systemd-detect-virt /usr/bin/systemd-detect-virt
+libtool: install: /usr/bin/install -c systemd-delta /usr/bin/systemd-delta
+libtool: install: /usr/bin/install -c systemd-analyze /usr/bin/systemd-analyze
+libtool: install: /usr/bin/install -c systemd-run /usr/bin/systemd-run
+libtool: install: /usr/bin/install -c bootctl /usr/bin/bootctl
+libtool: install: /usr/bin/install -c busctl /usr/bin/busctl
+libtool: install: /usr/bin/install -c systemd-cat /usr/bin/systemd-cat
+libtool: install: /usr/bin/install -c systemd-coredumpctl /usr/bin/systemd-coredumpctl
+libtool: install: /usr/bin/install -c hostnamectl /usr/bin/hostnamectl
+libtool: install: /usr/bin/install -c localectl /usr/bin/localectl
+libtool: install: /usr/bin/install -c timedatectl /usr/bin/timedatectl
+ /bin/mkdir -p '/usr/bin'
+ /usr/bin/install -c src/kernel-install/kernel-install '/usr/bin'
+ /bin/mkdir -p '/lib/systemd'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c systemd systemd-cgroups-agent systemd-initctl systemd-update-utmp systemd-shutdownd systemd-shutdown systemd-remount-fs systemd-reply-password systemd-fsck systemd-ac-power systemd-sysctl systemd-sleep systemd-bus-proxyd systemd-socket-proxyd systemd-modules-load systemd-udevd systemd-activate systemd-journald systemd-coredump systemd-binfmt systemd-vconsole-setup systemd-readahead systemd-bootchart systemd-quotacheck systemd-random-seed systemd-backlight systemd-rfkill systemd-hostnamed systemd-localed systemd-timedated systemd-timesyncd systemd-machined systemd-resolved systemd-networkd systemd-networkd-wait-online systemd-logind systemd-user-sessions systemd-multi-seat-x '/lib/systemd'
+libtool: install: /usr/bin/install -c systemd /lib/systemd/systemd
+libtool: install: /usr/bin/install -c systemd-cgroups-agent /lib/systemd/systemd-cgroups-agent
+libtool: install: /usr/bin/install -c systemd-initctl /lib/systemd/systemd-initctl
+libtool: install: /usr/bin/install -c systemd-update-utmp /lib/systemd/systemd-update-utmp
+libtool: install: /usr/bin/install -c systemd-shutdownd /lib/systemd/systemd-shutdownd
+libtool: install: /usr/bin/install -c systemd-shutdown /lib/systemd/systemd-shutdown
+libtool: install: /usr/bin/install -c systemd-remount-fs /lib/systemd/systemd-remount-fs
+libtool: install: /usr/bin/install -c systemd-reply-password /lib/systemd/systemd-reply-password
+libtool: install: /usr/bin/install -c systemd-fsck /lib/systemd/systemd-fsck
+libtool: install: /usr/bin/install -c systemd-ac-power /lib/systemd/systemd-ac-power
+libtool: install: /usr/bin/install -c systemd-sysctl /lib/systemd/systemd-sysctl
+libtool: install: /usr/bin/install -c systemd-sleep /lib/systemd/systemd-sleep
+libtool: install: /usr/bin/install -c systemd-bus-proxyd /lib/systemd/systemd-bus-proxyd
+libtool: install: /usr/bin/install -c systemd-socket-proxyd /lib/systemd/systemd-socket-proxyd
+libtool: install: /usr/bin/install -c systemd-modules-load /lib/systemd/systemd-modules-load
+libtool: install: /usr/bin/install -c systemd-udevd /lib/systemd/systemd-udevd
+libtool: install: /usr/bin/install -c systemd-activate /lib/systemd/systemd-activate
+libtool: install: /usr/bin/install -c systemd-journald /lib/systemd/systemd-journald
+libtool: install: /usr/bin/install -c systemd-coredump /lib/systemd/systemd-coredump
+libtool: install: /usr/bin/install -c systemd-binfmt /lib/systemd/systemd-binfmt
+libtool: install: /usr/bin/install -c systemd-vconsole-setup /lib/systemd/systemd-vconsole-setup
+libtool: install: /usr/bin/install -c systemd-readahead /lib/systemd/systemd-readahead
+libtool: install: /usr/bin/install -c systemd-bootchart /lib/systemd/systemd-bootchart
+libtool: install: /usr/bin/install -c systemd-quotacheck /lib/systemd/systemd-quotacheck
+libtool: install: /usr/bin/install -c systemd-random-seed /lib/systemd/systemd-random-seed
+libtool: install: /usr/bin/install -c systemd-backlight /lib/systemd/systemd-backlight
+libtool: install: /usr/bin/install -c systemd-rfkill /lib/systemd/systemd-rfkill
+libtool: install: /usr/bin/install -c systemd-hostnamed /lib/systemd/systemd-hostnamed
+libtool: install: /usr/bin/install -c systemd-localed /lib/systemd/systemd-localed
+libtool: install: /usr/bin/install -c systemd-timedated /lib/systemd/systemd-timedated
+libtool: install: /usr/bin/install -c systemd-timesyncd /lib/systemd/systemd-timesyncd
+libtool: install: /usr/bin/install -c systemd-machined /lib/systemd/systemd-machined
+libtool: install: /usr/bin/install -c systemd-resolved /lib/systemd/systemd-resolved
+libtool: install: /usr/bin/install -c systemd-networkd /lib/systemd/systemd-networkd
+libtool: install: /usr/bin/install -c systemd-networkd-wait-online /lib/systemd/systemd-networkd-wait-online
+libtool: install: /usr/bin/install -c systemd-logind /lib/systemd/systemd-logind
+libtool: install: /usr/bin/install -c systemd-user-sessions /lib/systemd/systemd-user-sessions
+libtool: install: /usr/bin/install -c systemd-multi-seat-x /lib/systemd/systemd-multi-seat-x
+ /bin/mkdir -p '/lib/udev'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c ata_id cdrom_id collect scsi_id v4l_id accelerometer mtd_probe '/lib/udev'
+libtool: install: /usr/bin/install -c ata_id /lib/udev/ata_id
+libtool: install: /usr/bin/install -c cdrom_id /lib/udev/cdrom_id
+libtool: install: /usr/bin/install -c collect /lib/udev/collect
+libtool: install: /usr/bin/install -c scsi_id /lib/udev/scsi_id
+libtool: install: /usr/bin/install -c v4l_id /lib/udev/v4l_id
+libtool: install: /usr/bin/install -c accelerometer /lib/udev/accelerometer
+libtool: install: /usr/bin/install -c mtd_probe /lib/udev/mtd_probe
+make --no-print-directory install-exec-hook
+what="systemd-update-utmp-runlevel.service" && wants=runlevel1.target && dir=/lib/systemd/system && 	[ -z "$what" ] || ( dir=$dir/$wants.wants && /bin/mkdir -p -m 0755 $dir && cd $dir && rm -f $what && for i in $what; do ln -s ../$i . || exit $? ; done )
+what="systemd-update-utmp-runlevel.service" && wants=runlevel2.target && dir=/lib/systemd/system && 	[ -z "$what" ] || ( dir=$dir/$wants.wants && /bin/mkdir -p -m 0755 $dir && cd $dir && rm -f $what && for i in $what; do ln -s ../$i . || exit $? ; done )
+what="systemd-update-utmp-runlevel.service" && wants=runlevel3.target && dir=/lib/systemd/system && 	[ -z "$what" ] || ( dir=$dir/$wants.wants && /bin/mkdir -p -m 0755 $dir && cd $dir && rm -f $what && for i in $what; do ln -s ../$i . || exit $? ; done )
+what="systemd-update-utmp-runlevel.service" && wants=runlevel4.target && dir=/lib/systemd/system && 	[ -z "$what" ] || ( dir=$dir/$wants.wants && /bin/mkdir -p -m 0755 $dir && cd $dir && rm -f $what && for i in $what; do ln -s ../$i . || exit $? ; done )
+what="systemd-update-utmp-runlevel.service" && wants=runlevel5.target && dir=/lib/systemd/system && 	[ -z "$what" ] || ( dir=$dir/$wants.wants && /bin/mkdir -p -m 0755 $dir && cd $dir && rm -f $what && for i in $what; do ln -s ../$i . || exit $? ; done )
+what="" && wants=shutdown.target && dir=/lib/systemd/system && 	[ -z "$what" ] || ( dir=$dir/$wants.wants && /bin/mkdir -p -m 0755 $dir && cd $dir && rm -f $what && for i in $what; do ln -s ../$i . || exit $? ; done )
+what="systemd-remount-fs.service tmp.mount" && wants=local-fs.target && dir=/lib/systemd/system && 	[ -z "$what" ] || ( dir=$dir/$wants.wants && /bin/mkdir -p -m 0755 $dir && cd $dir && rm -f $what && for i in $what; do ln -s ../$i . || exit $? ; done )
+what="systemd-logind.service systemd-user-sessions.service getty.target systemd-ask-password-wall.path" && wants=multi-user.target && dir=/lib/systemd/system && 	[ -z "$what" ] || ( dir=$dir/$wants.wants && /bin/mkdir -p -m 0755 $dir && cd $dir && rm -f $what && for i in $what; do ln -s ../$i . || exit $? ; done )
+what="systemd-modules-load.service kmod-static-nodes.service systemd-tmpfiles-setup-dev.service systemd-tmpfiles-setup.service systemd-udevd.service systemd-udev-trigger.service systemd-journald.service systemd-journal-flush.service systemd-binfmt.service proc-sys-fs-binfmt_misc.automount systemd-vconsole-setup.service systemd-random-seed.service  systemd-update-utmp.service dev-hugepages.mount dev-mqueue.mount sys-kernel-config.mount sys-kernel-debug.mount sys-fs-fuse-connections.mount systemd-sysctl.service systemd-ask-password-console.path" && wants=sysinit.target && dir=/lib/systemd/system && 	[ -z "$what" ] || ( dir=$dir/$wants.wants && /bin/mkdir -p -m 0755 $dir && cd $dir && rm -f $what && for i in $what; do ln -s ../$i . || exit $? ; done )
+what="systemd-udevd-control.socket systemd-udevd-kernel.socket systemd-journald.socket systemd-initctl.socket systemd-shutdownd.socket" && wants=sockets.target && dir=/lib/systemd/system && 	[ -z "$what" ] || ( dir=$dir/$wants.wants && /bin/mkdir -p -m 0755 $dir && cd $dir && rm -f $what && for i in $what; do ln -s ../$i . || exit $? ; done )
+what="org.freedesktop.hostname1.busname  org.freedesktop.locale1.busname org.freedesktop.timedate1.busname org.freedesktop.machine1.busname org.freedesktop.login1.busname" && wants=busnames.target && dir=/lib/systemd/system && 	[ -z "$what" ] || ( dir=$dir/$wants.wants && /bin/mkdir -p -m 0755 $dir && cd $dir && rm -f $what && for i in $what; do ln -s ../$i . || exit $? ; done )
+what="systemd-tmpfiles-clean.timer" && wants=timers.target && dir=/lib/systemd/system && 	[ -z "$what" ] || ( dir=$dir/$wants.wants && /bin/mkdir -p -m 0755 $dir && cd $dir && rm -f $what && for i in $what; do ln -s ../$i . || exit $? ; done )
+what="" && wants=slices.target && dir=/lib/systemd/system && 	[ -z "$what" ] || ( dir=$dir/$wants.wants && /bin/mkdir -p -m 0755 $dir && cd $dir && rm -f $what && for i in $what; do ln -s ../$i . || exit $? ; done )
+what="" && wants=sockets.target && dir=/usr/lib/systemd/user && 	[ -z "$what" ] || ( dir=$dir/$wants.wants && /bin/mkdir -p -m 0755 $dir && cd $dir && rm -f $what && for i in $what; do ln -s ../$i . || exit $? ; done )
+what="" && wants=busnames.target && dir=/usr/lib/systemd/user && 	[ -z "$what" ] || ( dir=$dir/$wants.wants && /bin/mkdir -p -m 0755 $dir && cd $dir && rm -f $what && for i in $what; do ln -s ../$i . || exit $? ; done )
+/bin/mkdir -p /usr/lib/tmpfiles.d /etc/tmpfiles.d /etc/udev/rules.d /etc/udev/hwdb.d /usr/lib/binfmt.d /etc/binfmt.d /usr/lib/systemd/ntp-units.d /etc/systemd/ntp-units.d /var/lib/systemd /lib/systemd/system/runlevel1.target.wants /lib/systemd/system/runlevel2.target.wants /lib/systemd/system/runlevel3.target.wants /lib/systemd/system/runlevel4.target.wants /lib/systemd/system/runlevel5.target.wants /usr/lib/modules-load.d /etc/modules-load.d /usr/lib/systemd/network /etc/systemd/network /usr/lib/sysctl.d /etc/sysctl.d /usr/lib/kernel/install.d /etc/kernel/install.d /lib/systemd/system-shutdown /lib/systemd/system-sleep /lib/systemd/system-generators /usr/lib/systemd/user-generators /usr/lib/systemd/user /etc/systemd/system /etc/systemd/system/multi-user.target.wants /etc/systemd/system/getty.target.wants /etc/systemd/user /usr/share/dbus-1/services /etc/xdg/systemd
+set -- systemd-hostnamed.service dbus-org.freedesktop.hostname1.service systemd-localed.service dbus-org.freedesktop.locale1.service systemd-timedated.service dbus-org.freedesktop.timedate1.service systemd-machined.service dbus-org.freedesktop.machine1.service systemd-logind.service dbus-org.freedesktop.login1.service poweroff.target runlevel0.target rescue.target runlevel1.target multi-user.target runlevel2.target multi-user.target runlevel3.target multi-user.target runlevel4.target graphical.target runlevel5.target reboot.target runlevel6.target graphical.target default.target reboot.target ctrl-alt-del.target getty@.service autovt@.service && \
+	dir=/lib/systemd/system && 	while [ -n "$1" ]; do /bin/mkdir -p `dirname $dir/$2` && rm -f $dir/$2 && ln -s $1 $dir/$2 && shift 2 || exit $?; done
+set -- /lib/systemd/system/shutdown.target shutdown.target /lib/systemd/system/sockets.target sockets.target /lib/systemd/system/busnames.target busnames.target /lib/systemd/system/timers.target timers.target /lib/systemd/system/paths.target paths.target /lib/systemd/system/bluetooth.target bluetooth.target /lib/systemd/system/printer.target printer.target /lib/systemd/system/sound.target sound.target /lib/systemd/system/smartcard.target smartcard.target && \
+	dir=/usr/lib/systemd/user && 	while [ -n "$1" ]; do /bin/mkdir -p `dirname $dir/$2` && rm -f $dir/$2 && ln -s --relative $1 $dir/$2 && shift 2 || exit $?; done
+set -- /lib/systemd/system/systemd-resolved.service /etc/systemd/system/multi-user.target.wants/systemd-resolved.service /lib/systemd/system/systemd-networkd.service /etc/systemd/system/multi-user.target.wants/systemd-networkd.service /lib/systemd/system/systemd-networkd.service /etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service /lib/systemd/system/remote-fs.target /etc/systemd/system/multi-user.target.wants/remote-fs.target /lib/systemd/system/getty@.service /etc/systemd/system/getty.target.wants/getty@tty1.service /etc/systemd/user /etc/xdg/systemd/user /usr/share/dbus-1/system-services/org.freedesktop.systemd1.service /usr/share/dbus-1/services/org.freedesktop.systemd1.service && \
+	dir= && 	while [ -n "$1" ]; do /bin/mkdir -p `dirname $dir/$2` && rm -f $dir/$2 && ln -s --relative $1 $dir/$2 && shift 2 || exit $?; done
+  RM       bus-proxyd-install-hook
+  LN       bus-proxyd-install-hook
+libname=libsystemd.so && 	if test "/usr/lib" != "/lib"; then /bin/mkdir -p /lib && so_img_name=$(readlink /usr/lib/$libname) && rm -f /usr/lib/$libname && ln -s --relative -f /lib/$so_img_name /usr/lib/$libname && mv /usr/lib/$libname.* /lib; fi
+libname=libudev.so && 	if test "/usr/lib" != "/lib"; then /bin/mkdir -p /lib && so_img_name=$(readlink /usr/lib/$libname) && rm -f /usr/lib/$libname && ln -s --relative -f /lib/$so_img_name /usr/lib/$libname && mv /usr/lib/$libname.* /lib; fi
+/bin/mkdir -p /var/log/journal
+chown 0:0 /var/log/journal
+chmod 755 /var/log/journal
+setfacl -nm g:adm:rx,d:g:adm:rx /var/log/journal/
+setfacl -nm g:wheel:rx,d:g:wheel:rx /var/log/journal/
+ /bin/mkdir -p '/usr/share/bash-completion/completions'
+ /usr/bin/install -c -m 644 shell-completion/bash/busctl shell-completion/bash/journalctl shell-completion/bash/systemctl shell-completion/bash/systemd-analyze shell-completion/bash/systemd-cat shell-completion/bash/systemd-cgls shell-completion/bash/systemd-cgtop shell-completion/bash/systemd-delta shell-completion/bash/systemd-detect-virt shell-completion/bash/systemd-nspawn shell-completion/bash/systemd-run shell-completion/bash/udevadm shell-completion/bash/kernel-install shell-completion/bash/bootctl shell-completion/bash/systemd-coredumpctl shell-completion/bash/hostnamectl shell-completion/bash/localectl shell-completion/bash/timedatectl shell-completion/bash/machinectl shell-completion/bash/loginctl '/usr/share/bash-completion/completions'
+ /bin/mkdir -p '/usr/lib/systemd/catalog'
+ /usr/bin/install -c -m 644 catalog/systemd.fr.catalog catalog/systemd.ru.catalog catalog/systemd.it.catalog catalog/systemd.catalog '/usr/lib/systemd/catalog'
+ /bin/mkdir -p '/etc/dbus-1/system.d'
+ /usr/bin/install -c -m 644 src/core/org.freedesktop.systemd1.conf src/hostname/org.freedesktop.hostname1.conf src/locale/org.freedesktop.locale1.conf src/timedate/org.freedesktop.timedate1.conf src/machine/org.freedesktop.machine1.conf src/login/org.freedesktop.login1.conf '/etc/dbus-1/system.d'
+ /bin/mkdir -p '/usr/share/dbus-1/system-services'
+ /usr/bin/install -c -m 644 src/core/org.freedesktop.systemd1.service src/hostname/org.freedesktop.hostname1.service src/locale/org.freedesktop.locale1.service src/timedate/org.freedesktop.timedate1.service src/machine/org.freedesktop.machine1.service src/login/org.freedesktop.login1.service '/usr/share/dbus-1/system-services'
+ /bin/mkdir -p '/usr/share/doc/systemd-213'
+ /usr/bin/install -c -m 644 README NEWS LICENSE.LGPL2.1 LICENSE.GPL2 LICENSE.MIT DISTRO_PORTING src/libsystemd/sd-bus/PORTING-DBUS1 src/libsystemd/sd-bus/DIFFERENCES src/libsystemd/sd-bus/GVARIANT-SERIALIZATION src/systemd/sd-shutdown.h src/readahead/sd-readahead.c src/systemd/sd-readahead.h '/usr/share/doc/systemd-213'
+ /bin/mkdir -p '/usr/lib/kernel/install.d'
+ /usr/bin/install -c src/kernel-install/50-depmod.install src/kernel-install/90-loaderentry.install '/usr/lib/kernel/install.d'
+ /bin/mkdir -p '/lib/systemd/network'
+ /usr/bin/install -c -m 644 network/99-default.link network/80-container-host0.network network/80-container-ve.network '/lib/systemd/network'
+ /bin/mkdir -p '/usr/lib/systemd/ntp-units.d'
+ /usr/bin/install -c -m 644 src/timesync/90-systemd.list '/usr/lib/systemd/ntp-units.d'
+ /bin/mkdir -p '/usr/share/systemd'
+ /usr/bin/install -c -m 644 src/locale/kbd-model-map '/usr/share/systemd'
+ /bin/mkdir -p '/etc/systemd'
+ /usr/bin/install -c -m 644 src/core/system.conf src/core/user.conf src/journal/journald.conf src/bootchart/bootchart.conf src/login/logind.conf '/etc/systemd'
+ /bin/mkdir -p '/usr/lib/sysctl.d'
+ /usr/bin/install -c -m 644 sysctl.d/50-default.conf '/usr/lib/sysctl.d'
+ /bin/mkdir -p '/lib/systemd/system'
+ /usr/bin/install -c -m 644 units/graphical.target units/multi-user.target units/emergency.service units/emergency.target units/sysinit.target units/basic.target units/getty.target units/halt.target units/kexec.target units/local-fs.target units/local-fs-pre.target units/initrd.target units/initrd-fs.target units/initrd-root-fs.target units/remote-fs.target units/remote-fs-pre.target units/network.target units/network-online.target units/nss-lookup.target units/nss-user-lookup.target units/hibernate.target units/hybrid-sleep.target units/poweroff.target units/reboot.target units/rescue.target units/rpcbind.target units/time-sync.target units/shutdown.target units/final.target units/umount.target units/sigpwr.target units/sleep.target units/sockets.target units/busnames.target units/timers.target units/paths.target units/suspend.target units/swap.target units/slices.target units/system.slice '/lib/systemd/system'
+ /usr/bin/install -c -m 644 units/x-.slice units/systemd-initctl.socket units/systemd-shutdownd.socket units/syslog.socket units/dev-hugepages.mount units/dev-mqueue.mount units/sys-kernel-config.mount units/sys-kernel-debug.mount units/sys-fs-fuse-connections.mount units/tmp.mount units/printer.target units/sound.target units/bluetooth.target units/smartcard.target units/systemd-ask-password-wall.path units/systemd-ask-password-console.path units/systemd-udevd-control.socket units/systemd-udevd-kernel.socket units/system-update.target units/initrd-switch-root.target units/systemd-tmpfiles-clean.timer units/systemd-journald.socket units/proc-sys-fs-binfmt_misc.automount units/proc-sys-fs-binfmt_misc.mount units/systemd-readahead-drop.service units/systemd-readahead-done.timer units/org.freedesktop.hostname1.busname units/org.freedesktop.locale1.busname units/org.freedesktop.timedate1.busname units/machine.slice units/org.freedesktop.machine1.busname units/user.slice units/org.freedesktop.login1.busname '/lib/systemd/system'
+ /bin/mkdir -p '/usr/lib/tmpfiles.d'
+ /usr/bin/install -c -m 644 tmpfiles.d/systemd.conf tmpfiles.d/systemd-nologin.conf tmpfiles.d/tmp.conf tmpfiles.d/x11.conf tmpfiles.d/legacy.conf '/usr/lib/tmpfiles.d'
+ /bin/mkdir -p '/etc/udev'
+ /usr/bin/install -c -m 644 src/udev/udev.conf '/etc/udev'
+ /bin/mkdir -p '/lib/udev/hwdb.d'
+ /usr/bin/install -c -m 644 hwdb/20-pci-vendor-model.hwdb hwdb/20-pci-classes.hwdb hwdb/20-usb-vendor-model.hwdb hwdb/20-usb-classes.hwdb hwdb/20-sdio-vendor-model.hwdb hwdb/20-sdio-classes.hwdb hwdb/20-bluetooth-vendor-product.hwdb hwdb/20-acpi-vendor.hwdb hwdb/20-OUI.hwdb hwdb/20-net-ifname.hwdb hwdb/60-keyboard.hwdb '/lib/udev/hwdb.d'
+ /bin/mkdir -p '/lib/udev/rules.d'
+ /usr/bin/install -c -m 644 rules/42-usb-hid-pm.rules rules/50-udev-default.rules rules/60-drm.rules rules/60-keyboard.rules rules/60-persistent-storage-tape.rules rules/60-persistent-serial.rules rules/60-persistent-input.rules rules/60-persistent-alsa.rules rules/60-persistent-storage.rules rules/64-btrfs.rules rules/75-net-description.rules rules/75-tty-description.rules rules/78-sound-card.rules rules/80-net-setup-link.rules rules/95-udev-late.rules rules/80-drivers.rules rules/60-cdrom_id.rules rules/60-persistent-v4l.rules rules/61-accelerometer.rules rules/75-probe_mtd.rules src/login/70-uaccess.rules src/login/70-power-switch.rules '/lib/udev/rules.d'
+ /bin/mkdir -p '/usr/lib/systemd/user'
+ /usr/bin/install -c -m 644 units/user/basic.target units/user/default.target units/user/exit.target '/usr/lib/systemd/user'
+ /bin/mkdir -p '/usr/share/zsh/site-functions'
+ /usr/bin/install -c -m 644 shell-completion/zsh/_systemctl shell-completion/zsh/_journalctl shell-completion/zsh/_udevadm shell-completion/zsh/_kernel-install shell-completion/zsh/_systemd-nspawn shell-completion/zsh/_systemd-analyze shell-completion/zsh/_systemd-run shell-completion/zsh/_sd_hosts_or_user_at_host shell-completion/zsh/_systemd-delta shell-completion/zsh/_systemd shell-completion/zsh/_systemd-tmpfiles shell-completion/zsh/_bootctl shell-completion/zsh/_systemd-coredumpctl shell-completion/zsh/_hostnamectl shell-completion/zsh/_localectl shell-completion/zsh/_timedatectl shell-completion/zsh/_machinectl shell-completion/zsh/_sd_machines shell-completion/zsh/_loginctl shell-completion/zsh/_systemd-inhibit '/usr/share/zsh/site-functions'
+ /bin/mkdir -p '/usr/include'
+ /usr/bin/install -c -m 644 src/libudev/libudev.h '/usr/include'
+ /bin/mkdir -p '/usr/share/man/man1'
+ /usr/bin/install -c -m 644 man/busctl.1 man/journalctl.1 man/systemctl.1 man/systemd-analyze.1 man/systemd-ask-password.1 man/systemd-cat.1 man/systemd-cgls.1 man/systemd-cgtop.1 man/systemd-delta.1 man/systemd-detect-virt.1 man/systemd-inhibit.1 man/systemd-machine-id-setup.1 man/systemd-notify.1 man/systemd-nspawn.1 man/systemd-run.1 man/systemd-tty-ask-password-agent.1 man/systemd.1 man/systemd-bootchart.1 man/systemd-coredumpctl.1 man/bootctl.1 man/hostnamectl.1 man/localectl.1 man/loginctl.1 man/machinectl.1 man/timedatectl.1 man/init.1 '/usr/share/man/man1'
+ /bin/mkdir -p '/usr/share/man/man3'
+ /usr/bin/install -c -m 644 man/sd-daemon.3 man/sd-id128.3 man/sd-journal.3 man/sd_booted.3 man/sd_id128_get_machine.3 man/sd_id128_randomize.3 man/sd_id128_to_string.3 man/sd_is_fifo.3 man/sd_journal_add_match.3 man/sd_journal_get_catalog.3 man/sd_journal_get_cursor.3 man/sd_journal_get_cutoff_realtime_usec.3 man/sd_journal_get_data.3 man/sd_journal_get_fd.3 man/sd_journal_get_realtime_usec.3 man/sd_journal_get_usage.3 man/sd_journal_next.3 man/sd_journal_open.3 man/sd_journal_print.3 man/sd_journal_query_unique.3 man/sd_journal_seek_head.3 man/sd_journal_stream_fd.3 man/sd_listen_fds.3 man/sd_notify.3 man/sd_watchdog_enabled.3 man/sd-readahead.3 man/sd_readahead.3 man/SD_ALERT.3 man/SD_CRIT.3 man/SD_DEBUG.3 man/SD_EMERG.3 man/SD_ERR.3 man/SD_ID128_CONST_STR.3 man/SD_ID128_FORMAT_STR.3 man/SD_ID128_FORMAT_VAL.3 man/SD_ID128_MAKE.3 man/SD_INFO.3 man/SD_JOURNAL_APPEND.3 man/SD_JOURNAL_CURRENT_USER.3 man/SD_JOURNAL_FOREACH.3 '/usr/share/man/man3'
+ /usr/bin/install -c -m 644 man/SD_JOURNAL_FOREACH_BACKWARDS.3 man/SD_JOURNAL_FOREACH_DATA.3 man/SD_JOURNAL_FOREACH_UNIQUE.3 man/SD_JOURNAL_INVALIDATE.3 man/SD_JOURNAL_LOCAL_ONLY.3 man/SD_JOURNAL_NOP.3 man/SD_JOURNAL_RUNTIME_ONLY.3 man/SD_JOURNAL_SUPPRESS_LOCATION.3 man/SD_JOURNAL_SYSTEM.3 man/SD_LISTEN_FDS_START.3 man/SD_NOTICE.3 man/SD_WARNING.3 man/sd_id128_equal.3 man/sd_id128_from_string.3 man/sd_id128_get_boot.3 man/sd_id128_t.3 man/sd_is_mq.3 man/sd_is_socket.3 man/sd_is_socket_inet.3 man/sd_is_socket_unix.3 man/sd_is_special.3 man/sd_journal.3 man/sd_journal_add_conjunction.3 man/sd_journal_add_disjunction.3 man/sd_journal_close.3 man/sd_journal_enumerate_data.3 man/sd_journal_enumerate_unique.3 man/sd_journal_flush_matches.3 man/sd_journal_get_catalog_for_message_id.3 man/sd_journal_get_cutoff_monotonic_usec.3 man/sd_journal_get_data_threshold.3 man/sd_journal_get_events.3 man/sd_journal_get_monotonic_usec.3 man/sd_journal_get_timeout.3 man/sd_journal_next_skip.3 man/sd_journal_open_container.3 man/sd_journal_open_directory.3 man/sd_journal_open_files.3 man/sd_journal_perror.3 man/sd_journal_previous.3 '/usr/share/man/man3'
+ /usr/bin/install -c -m 644 man/sd_journal_previous_skip.3 man/sd_journal_printv.3 man/sd_journal_process.3 man/sd_journal_reliable_fd.3 man/sd_journal_restart_data.3 man/sd_journal_restart_unique.3 man/sd_journal_seek_cursor.3 man/sd_journal_seek_monotonic_usec.3 man/sd_journal_seek_realtime_usec.3 man/sd_journal_seek_tail.3 man/sd_journal_send.3 man/sd_journal_sendv.3 man/sd_journal_set_data_threshold.3 man/sd_journal_test_cursor.3 man/sd_journal_wait.3 man/sd_notifyf.3 '/usr/share/man/man3'
+ /bin/mkdir -p '/usr/share/man/man5'
+ /usr/bin/install -c -m 644 man/hostname.5 man/journald.conf.5 man/locale.conf.5 man/localtime.5 man/machine-id.5 man/machine-info.5 man/os-release.5 man/sysctl.d.5 man/systemd-sleep.conf.5 man/systemd-system.conf.5 man/systemd.automount.5 man/systemd.device.5 man/systemd.exec.5 man/systemd.kill.5 man/systemd.link.5 man/systemd.mount.5 man/systemd.path.5 man/systemd.preset.5 man/systemd.resource-control.5 man/systemd.scope.5 man/systemd.service.5 man/systemd.slice.5 man/systemd.snapshot.5 man/systemd.socket.5 man/systemd.swap.5 man/systemd.target.5 man/systemd.timer.5 man/systemd.unit.5 man/tmpfiles.d.5 man/binfmt.d.5 man/bootchart.conf.5 man/logind.conf.5 man/systemd.netdev.5 man/systemd.network.5 man/resolved.conf.5 man/vconsole.conf.5 man/modules-load.d.5 man/systemd-user.conf.5 '/usr/share/man/man5'
+ /bin/mkdir -p '/usr/share/man/man7'
+ /usr/bin/install -c -m 644 man/bootup.7 man/daemon.7 man/kernel-command-line.7 man/systemd.journal-fields.7 man/systemd.special.7 man/systemd.time.7 man/udev.7 '/usr/share/man/man7'
+ /bin/mkdir -p '/usr/share/man/man8'
+ /usr/bin/install -c -m 644 man/halt.8 man/kernel-install.8 man/runlevel.8 man/shutdown.8 man/systemd-activate.8 man/systemd-ask-password-console.service.8 man/systemd-efi-boot-generator.8 man/systemd-fsck@.service.8 man/systemd-fstab-generator.8 man/systemd-getty-generator.8 man/systemd-gpt-auto-generator.8 man/systemd-halt.service.8 man/systemd-initctl.service.8 man/systemd-journald.service.8 man/systemd-remount-fs.service.8 man/systemd-shutdownd.service.8 man/systemd-socket-proxyd.8 man/systemd-suspend.service.8 man/systemd-sysctl.service.8 man/systemd-system-update-generator.8 man/systemd-tmpfiles.8 man/systemd-udevd.service.8 man/systemd-update-utmp.service.8 man/telinit.8 man/udevadm.8 man/systemd-backlight@.service.8 man/systemd-binfmt.service.8 man/systemd-hostnamed.service.8 man/systemd-localed.service.8 man/systemd-logind.service.8 man/systemd-machined.service.8 man/systemd-networkd-wait-online.service.8 man/systemd-networkd.service.8 man/systemd-quotacheck.service.8 man/systemd-random-seed.service.8 man/systemd-readahead-replay.service.8 man/systemd-resolved.service.8 man/systemd-rfkill@.service.8 man/systemd-timedated.service.8 man/systemd-timesyncd.service.8 '/usr/share/man/man8'
+ /usr/bin/install -c -m 644 man/systemd-vconsole-setup.service.8 man/systemd-modules-load.service.8 man/nss-myhostname.8 man/poweroff.8 man/reboot.8 man/systemd-ask-password-console.path.8 man/systemd-ask-password-wall.path.8 man/systemd-ask-password-wall.service.8 man/systemd-fsck-root.service.8 man/systemd-fsck.8 man/systemd-hibernate.service.8 man/systemd-hybrid-sleep.service.8 man/systemd-initctl.8 man/systemd-initctl.socket.8 man/systemd-journald.8 man/systemd-journald.socket.8 man/systemd-kexec.service.8 man/systemd-poweroff.service.8 man/systemd-reboot.service.8 man/systemd-remount-fs.8 man/systemd-shutdown.8 man/systemd-shutdownd.8 man/systemd-shutdownd.socket.8 man/systemd-sleep.8 man/systemd-sysctl.8 man/systemd-tmpfiles-clean.service.8 man/systemd-tmpfiles-clean.timer.8 man/systemd-tmpfiles-setup-dev.service.8 man/systemd-tmpfiles-setup.service.8 man/systemd-udevd-control.socket.8 man/systemd-udevd-kernel.socket.8 man/systemd-udevd.8 man/systemd-update-utmp-runlevel.service.8 man/systemd-update-utmp.8 man/systemd-backlight.8 man/systemd-binfmt.8 man/systemd-hostnamed.8 man/systemd-localed.8 man/systemd-logind.8 man/systemd-machined.8 '/usr/share/man/man8'
+ /usr/bin/install -c -m 644 man/systemd-networkd-wait-online.8 man/systemd-networkd.8 man/systemd-quotacheck.8 man/systemd-random-seed.8 man/systemd-readahead-collect.service.8 man/systemd-readahead-done.service.8 man/systemd-readahead-done.timer.8 man/systemd-readahead.8 man/systemd-resolved.8 man/systemd-rfkill.8 man/systemd-timedated.8 man/systemd-timesyncd.8 man/systemd-vconsole-setup.8 man/systemd-modules-load.8 '/usr/share/man/man8'
+ /bin/mkdir -p '/etc/systemd'
+ /usr/bin/install -c -m 644 src/timesync/timesyncd.conf src/resolve/resolved.conf '/etc/systemd'
+ /bin/mkdir -p '/usr/share/polkit-1/actions'
+ /usr/bin/install -c -m 644 src/hostname/org.freedesktop.hostname1.policy src/locale/org.freedesktop.locale1.policy src/timedate/org.freedesktop.timedate1.policy src/login/org.freedesktop.login1.policy src/core/org.freedesktop.systemd1.policy '/usr/share/polkit-1/actions'
+ /bin/mkdir -p '/usr/lib/rpm/macros.d'
+ /usr/bin/install -c -m 644 src/core/macros.systemd '/usr/lib/rpm/macros.d'
+ /bin/mkdir -p '/lib/systemd/system'
+ /usr/bin/install -c -m 644 units/getty@.service units/serial-getty@.service units/console-shell.service units/console-getty.service units/container-getty@.service units/systemd-initctl.service units/systemd-shutdownd.service units/systemd-remount-fs.service units/systemd-update-utmp.service units/systemd-update-utmp-runlevel.service units/systemd-ask-password-wall.service units/systemd-ask-password-console.service units/systemd-sysctl.service units/emergency.service units/rescue.service units/user@.service units/systemd-hibernate.service units/systemd-hybrid-sleep.service units/systemd-suspend.service units/systemd-halt.service units/systemd-poweroff.service units/systemd-reboot.service units/systemd-kexec.service units/systemd-fsck@.service units/systemd-fsck-root.service units/systemd-udevd.service units/systemd-udev-trigger.service units/systemd-udev-settle.service units/debug-shell.service units/initrd-parse-etc.service units/initrd-cleanup.service units/initrd-udevadm-cleanup-db.service units/initrd-switch-root.service units/systemd-nspawn@.service units/rc-local.service units/halt-local.service units/systemd-modules-load.service units/kmod-static-nodes.service units/systemd-tmpfiles-setup-dev.service units/systemd-tmpfiles-setup.service '/lib/systemd/system'
+ /usr/bin/install -c -m 644 units/systemd-tmpfiles-clean.service units/systemd-journald.service units/systemd-journal-flush.service units/systemd-binfmt.service units/systemd-vconsole-setup.service units/systemd-readahead-collect.service units/systemd-readahead-replay.service units/systemd-readahead-done.service units/systemd-quotacheck.service units/quotaon.service units/systemd-random-seed.service units/systemd-backlight@.service units/systemd-rfkill@.service units/systemd-hostnamed.service units/systemd-localed.service units/systemd-timedated.service units/systemd-timesyncd.service units/systemd-machined.service units/systemd-resolved.service units/systemd-networkd.service units/systemd-networkd-wait-online.service units/systemd-logind.service units/systemd-user-sessions.service '/lib/systemd/system'
+ /bin/mkdir -p '/lib/udev/rules.d'
+ /usr/bin/install -c -m 644 rules/99-systemd.rules src/login/71-seat.rules src/login/73-seat-late.rules '/lib/udev/rules.d'
+ /bin/mkdir -p '/usr/lib/systemd/user'
+ /usr/bin/install -c -m 644 units/user/systemd-exit.service '/usr/lib/systemd/user'
+ /bin/mkdir -p '/usr/share/pkgconfig'
+ /usr/bin/install -c -m 644 src/core/systemd.pc '/usr/share/pkgconfig'
+ /bin/mkdir -p '/usr/lib/pkgconfig'
+ /usr/bin/install -c -m 644 src/libsystemd/libsystemd.pc src/compat-libs/libsystemd-journal.pc src/compat-libs/libsystemd-login.pc src/compat-libs/libsystemd-id128.pc src/compat-libs/libsystemd-daemon.pc src/libudev/libudev.pc '/usr/lib/pkgconfig'
+ /bin/mkdir -p '/usr/include/systemd'
+ /usr/bin/install -c -m 644 src/systemd/sd-login.h src/systemd/sd-id128.h src/systemd/sd-daemon.h src/systemd/sd-journal.h src/systemd/sd-messages.h src/systemd/_sd-common.h '/usr/include/systemd'
+ /bin/mkdir -p '/bin'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c systemctl systemd-notify systemd-ask-password systemd-tty-ask-password-agent systemd-machine-id-setup systemd-tmpfiles udevadm journalctl machinectl loginctl systemd-inhibit '/bin'
+libtool: install: /usr/bin/install -c systemctl /bin/systemctl
+libtool: install: /usr/bin/install -c systemd-notify /bin/systemd-notify
+libtool: install: /usr/bin/install -c systemd-ask-password /bin/systemd-ask-password
+libtool: install: /usr/bin/install -c systemd-tty-ask-password-agent /bin/systemd-tty-ask-password-agent
+libtool: install: /usr/bin/install -c systemd-machine-id-setup /bin/systemd-machine-id-setup
+libtool: install: /usr/bin/install -c systemd-tmpfiles /bin/systemd-tmpfiles
+libtool: install: /usr/bin/install -c udevadm /bin/udevadm
+libtool: install: /usr/bin/install -c journalctl /bin/journalctl
+libtool: install: /usr/bin/install -c machinectl /bin/machinectl
+libtool: install: /usr/bin/install -c loginctl /bin/loginctl
+libtool: install: /usr/bin/install -c systemd-inhibit /bin/systemd-inhibit
+ /bin/mkdir -p '/usr/share/pkgconfig'
+ /usr/bin/install -c -m 644 src/udev/udev.pc '/usr/share/pkgconfig'
+ /bin/mkdir -p '/usr/lib/sysctl.d'
+ /usr/bin/install -c -m 644 sysctl.d/50-coredump.conf '/usr/lib/sysctl.d'
+ /bin/mkdir -p '/lib/systemd/system-generators'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c systemd-getty-generator systemd-fstab-generator systemd-system-update-generator systemd-rc-local-generator systemd-efi-boot-generator systemd-gpt-auto-generator '/lib/systemd/system-generators'
+libtool: install: /usr/bin/install -c systemd-getty-generator /lib/systemd/system-generators/systemd-getty-generator
+libtool: install: /usr/bin/install -c systemd-fstab-generator /lib/systemd/system-generators/systemd-fstab-generator
+libtool: install: /usr/bin/install -c systemd-system-update-generator /lib/systemd/system-generators/systemd-system-update-generator
+libtool: install: /usr/bin/install -c systemd-rc-local-generator /lib/systemd/system-generators/systemd-rc-local-generator
+libtool: install: /usr/bin/install -c systemd-efi-boot-generator /lib/systemd/system-generators/systemd-efi-boot-generator
+libtool: install: /usr/bin/install -c systemd-gpt-auto-generator /lib/systemd/system-generators/systemd-gpt-auto-generator
+ /bin/mkdir -p '/etc/init.d'
+ /usr/bin/install -c -m 644 docs/sysvinit/README '/etc/init.d'
+ /bin/mkdir -p '/var/log'
+ /usr/bin/install -c -m 644 docs/var-log/README '/var/log'
+make --no-print-directory install-data-hook
+mv /lib/systemd/system/x-.slice //lib/systemd/system/-.slice
+test -n "" || /bin/udevadm hwdb --update
+test -n "" || /bin/journalctl --update-catalog
+Making install in po
+linguas="el fr it pl ru "; \
+for lang in $linguas; do \
+  dir=/usr/share/locale/$lang/LC_MESSAGES; \
+  /bin/sh /sources/systemd-213/build-aux/install-sh -d $dir; \
+  if test -r $lang.gmo; then \
+    /usr/bin/install -c -m 644 $lang.gmo $dir/systemd.mo; \
+    echo "installing $lang.gmo as $dir/systemd.mo"; \
+  else \
+    /usr/bin/install -c -m 644 ./$lang.gmo $dir/systemd.mo; \
+    echo "installing ./$lang.gmo as" \
+	 "$dir/systemd.mo"; \
+  fi; \
+  if test -r $lang.gmo.m; then \
+    /usr/bin/install -c -m 644 $lang.gmo.m $dir/systemd.mo.m; \
+    echo "installing $lang.gmo.m as $dir/systemd.mo.m"; \
+  else \
+    if test -r ./$lang.gmo.m ; then \
+      /usr/bin/install -c -m 644 ./$lang.gmo.m \
+	$dir/systemd.mo.m; \
+      echo "installing ./$lang.gmo.m as" \
+	   "$dir/systemd.mo.m"; \
+    else \
+      true; \
+    fi; \
+  fi; \
+done
+installing el.gmo as /usr/share/locale/el/LC_MESSAGES/systemd.mo
+installing fr.gmo as /usr/share/locale/fr/LC_MESSAGES/systemd.mo
+installing it.gmo as /usr/share/locale/it/LC_MESSAGES/systemd.mo
+installing pl.gmo as /usr/share/locale/pl/LC_MESSAGES/systemd.mo
+installing ru.gmo as /usr/share/locale/ru/LC_MESSAGES/systemd.mo
+make[1]: Leaving directory '/sources/systemd-213'
+'man/SD_ALERT.html' -> '/usr/share/doc/systemd-213/SD_ALERT.html'
+'man/SD_CRIT.html' -> '/usr/share/doc/systemd-213/SD_CRIT.html'
+'man/SD_DEBUG.html' -> '/usr/share/doc/systemd-213/SD_DEBUG.html'
+'man/SD_EMERG.html' -> '/usr/share/doc/systemd-213/SD_EMERG.html'
+'man/SD_ERR.html' -> '/usr/share/doc/systemd-213/SD_ERR.html'
+'man/SD_ID128_CONST_STR.html' -> '/usr/share/doc/systemd-213/SD_ID128_CONST_STR.html'
+'man/SD_ID128_FORMAT_STR.html' -> '/usr/share/doc/systemd-213/SD_ID128_FORMAT_STR.html'
+'man/SD_ID128_FORMAT_VAL.html' -> '/usr/share/doc/systemd-213/SD_ID128_FORMAT_VAL.html'
+'man/SD_ID128_MAKE.html' -> '/usr/share/doc/systemd-213/SD_ID128_MAKE.html'
+'man/SD_INFO.html' -> '/usr/share/doc/systemd-213/SD_INFO.html'
+'man/SD_JOURNAL_APPEND.html' -> '/usr/share/doc/systemd-213/SD_JOURNAL_APPEND.html'
+'man/SD_JOURNAL_CURRENT_USER.html' -> '/usr/share/doc/systemd-213/SD_JOURNAL_CURRENT_USER.html'
+'man/SD_JOURNAL_FOREACH.html' -> '/usr/share/doc/systemd-213/SD_JOURNAL_FOREACH.html'
+'man/SD_JOURNAL_FOREACH_BACKWARDS.html' -> '/usr/share/doc/systemd-213/SD_JOURNAL_FOREACH_BACKWARDS.html'
+'man/SD_JOURNAL_FOREACH_DATA.html' -> '/usr/share/doc/systemd-213/SD_JOURNAL_FOREACH_DATA.html'
+'man/SD_JOURNAL_FOREACH_UNIQUE.html' -> '/usr/share/doc/systemd-213/SD_JOURNAL_FOREACH_UNIQUE.html'
+'man/SD_JOURNAL_INVALIDATE.html' -> '/usr/share/doc/systemd-213/SD_JOURNAL_INVALIDATE.html'
+'man/SD_JOURNAL_LOCAL_ONLY.html' -> '/usr/share/doc/systemd-213/SD_JOURNAL_LOCAL_ONLY.html'
+'man/SD_JOURNAL_NOP.html' -> '/usr/share/doc/systemd-213/SD_JOURNAL_NOP.html'
+'man/SD_JOURNAL_RUNTIME_ONLY.html' -> '/usr/share/doc/systemd-213/SD_JOURNAL_RUNTIME_ONLY.html'
+'man/SD_JOURNAL_SUPPRESS_LOCATION.html' -> '/usr/share/doc/systemd-213/SD_JOURNAL_SUPPRESS_LOCATION.html'
+'man/SD_JOURNAL_SYSTEM.html' -> '/usr/share/doc/systemd-213/SD_JOURNAL_SYSTEM.html'
+'man/SD_LISTEN_FDS_START.html' -> '/usr/share/doc/systemd-213/SD_LISTEN_FDS_START.html'
+'man/SD_NOTICE.html' -> '/usr/share/doc/systemd-213/SD_NOTICE.html'
+'man/SD_WARNING.html' -> '/usr/share/doc/systemd-213/SD_WARNING.html'
+'man/binfmt.d.html' -> '/usr/share/doc/systemd-213/binfmt.d.html'
+'man/bootchart.conf.html' -> '/usr/share/doc/systemd-213/bootchart.conf.html'
+'man/bootctl.html' -> '/usr/share/doc/systemd-213/bootctl.html'
+'man/bootup.html' -> '/usr/share/doc/systemd-213/bootup.html'
+'man/busctl.html' -> '/usr/share/doc/systemd-213/busctl.html'
+'man/crypttab.html' -> '/usr/share/doc/systemd-213/crypttab.html'
+'man/daemon.html' -> '/usr/share/doc/systemd-213/daemon.html'
+'man/halt.html' -> '/usr/share/doc/systemd-213/halt.html'
+'man/hostname.html' -> '/usr/share/doc/systemd-213/hostname.html'
+'man/hostnamectl.html' -> '/usr/share/doc/systemd-213/hostnamectl.html'
+'man/index.html' -> '/usr/share/doc/systemd-213/index.html'
+'man/init.html' -> '/usr/share/doc/systemd-213/init.html'
+'man/journalctl.html' -> '/usr/share/doc/systemd-213/journalctl.html'
+'man/journald.conf.html' -> '/usr/share/doc/systemd-213/journald.conf.html'
+'man/kernel-command-line.html' -> '/usr/share/doc/systemd-213/kernel-command-line.html'
+'man/kernel-install.html' -> '/usr/share/doc/systemd-213/kernel-install.html'
+'man/locale.conf.html' -> '/usr/share/doc/systemd-213/locale.conf.html'
+'man/localectl.html' -> '/usr/share/doc/systemd-213/localectl.html'
+'man/localtime.html' -> '/usr/share/doc/systemd-213/localtime.html'
+'man/loginctl.html' -> '/usr/share/doc/systemd-213/loginctl.html'
+'man/logind.conf.html' -> '/usr/share/doc/systemd-213/logind.conf.html'
+'man/machine-id.html' -> '/usr/share/doc/systemd-213/machine-id.html'
+'man/machine-info.html' -> '/usr/share/doc/systemd-213/machine-info.html'
+'man/machinectl.html' -> '/usr/share/doc/systemd-213/machinectl.html'
+'man/modules-load.d.html' -> '/usr/share/doc/systemd-213/modules-load.d.html'
+'man/nss-myhostname.html' -> '/usr/share/doc/systemd-213/nss-myhostname.html'
+'man/os-release.html' -> '/usr/share/doc/systemd-213/os-release.html'
+'man/pam_systemd.html' -> '/usr/share/doc/systemd-213/pam_systemd.html'
+'man/poweroff.html' -> '/usr/share/doc/systemd-213/poweroff.html'
+'man/reboot.html' -> '/usr/share/doc/systemd-213/reboot.html'
+'man/resolved.conf.html' -> '/usr/share/doc/systemd-213/resolved.conf.html'
+'man/runlevel.html' -> '/usr/share/doc/systemd-213/runlevel.html'
+'man/sd-daemon.html' -> '/usr/share/doc/systemd-213/sd-daemon.html'
+'man/sd-id128.html' -> '/usr/share/doc/systemd-213/sd-id128.html'
+'man/sd-journal.html' -> '/usr/share/doc/systemd-213/sd-journal.html'
+'man/sd-login.html' -> '/usr/share/doc/systemd-213/sd-login.html'
+'man/sd-readahead.html' -> '/usr/share/doc/systemd-213/sd-readahead.html'
+'man/sd_booted.html' -> '/usr/share/doc/systemd-213/sd_booted.html'
+'man/sd_bus_creds_get_audit_login_uid.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_audit_login_uid.html'
+'man/sd_bus_creds_get_audit_session_id.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_audit_session_id.html'
+'man/sd_bus_creds_get_cgroup.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_cgroup.html'
+'man/sd_bus_creds_get_cmdline.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_cmdline.html'
+'man/sd_bus_creds_get_comm.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_comm.html'
+'man/sd_bus_creds_get_exe.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_exe.html'
+'man/sd_bus_creds_get_gid.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_gid.html'
+'man/sd_bus_creds_get_mask.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_mask.html'
+'man/sd_bus_creds_get_owner_uid.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_owner_uid.html'
+'man/sd_bus_creds_get_pid.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_pid.html'
+'man/sd_bus_creds_get_pid_starttime.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_pid_starttime.html'
+'man/sd_bus_creds_get_selinux_context.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_selinux_context.html'
+'man/sd_bus_creds_get_session.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_session.html'
+'man/sd_bus_creds_get_slice.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_slice.html'
+'man/sd_bus_creds_get_tid.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_tid.html'
+'man/sd_bus_creds_get_tid_comm.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_tid_comm.html'
+'man/sd_bus_creds_get_uid.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_uid.html'
+'man/sd_bus_creds_get_unique_name.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_unique_name.html'
+'man/sd_bus_creds_get_unit.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_unit.html'
+'man/sd_bus_creds_get_user_unit.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_user_unit.html'
+'man/sd_bus_creds_get_well_known_names.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_get_well_known_names.html'
+'man/sd_bus_creds_has_bounding_cap.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_has_bounding_cap.html'
+'man/sd_bus_creds_has_effective_cap.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_has_effective_cap.html'
+'man/sd_bus_creds_has_inheritable_cap.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_has_inheritable_cap.html'
+'man/sd_bus_creds_has_permitted_cap.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_has_permitted_cap.html'
+'man/sd_bus_creds_new_from_pid.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_new_from_pid.html'
+'man/sd_bus_creds_ref.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_ref.html'
+'man/sd_bus_creds_unref.html' -> '/usr/share/doc/systemd-213/sd_bus_creds_unref.html'
+'man/sd_bus_default_system.html' -> '/usr/share/doc/systemd-213/sd_bus_default_system.html'
+'man/sd_bus_default_user.html' -> '/usr/share/doc/systemd-213/sd_bus_default_user.html'
+'man/sd_bus_error.html' -> '/usr/share/doc/systemd-213/sd_bus_error.html'
+'man/sd_bus_error_copy.html' -> '/usr/share/doc/systemd-213/sd_bus_error_copy.html'
+'man/sd_bus_error_free.html' -> '/usr/share/doc/systemd-213/sd_bus_error_free.html'
+'man/sd_bus_error_get_errno.html' -> '/usr/share/doc/systemd-213/sd_bus_error_get_errno.html'
+'man/sd_bus_error_has_name.html' -> '/usr/share/doc/systemd-213/sd_bus_error_has_name.html'
+'man/sd_bus_error_is_set.html' -> '/usr/share/doc/systemd-213/sd_bus_error_is_set.html'
+'man/sd_bus_error_set.html' -> '/usr/share/doc/systemd-213/sd_bus_error_set.html'
+'man/sd_bus_error_set_const.html' -> '/usr/share/doc/systemd-213/sd_bus_error_set_const.html'
+'man/sd_bus_error_set_errno.html' -> '/usr/share/doc/systemd-213/sd_bus_error_set_errno.html'
+'man/sd_bus_error_set_errnof.html' -> '/usr/share/doc/systemd-213/sd_bus_error_set_errnof.html'
+'man/sd_bus_message_append.html' -> '/usr/share/doc/systemd-213/sd_bus_message_append.html'
+'man/sd_bus_message_append_array.html' -> '/usr/share/doc/systemd-213/sd_bus_message_append_array.html'
+'man/sd_bus_message_append_array_iovec.html' -> '/usr/share/doc/systemd-213/sd_bus_message_append_array_iovec.html'
+'man/sd_bus_message_append_array_memfd.html' -> '/usr/share/doc/systemd-213/sd_bus_message_append_array_memfd.html'
+'man/sd_bus_message_append_array_space.html' -> '/usr/share/doc/systemd-213/sd_bus_message_append_array_space.html'
+'man/sd_bus_message_append_basic.html' -> '/usr/share/doc/systemd-213/sd_bus_message_append_basic.html'
+'man/sd_bus_message_append_string_iovec.html' -> '/usr/share/doc/systemd-213/sd_bus_message_append_string_iovec.html'
+'man/sd_bus_message_append_string_memfd.html' -> '/usr/share/doc/systemd-213/sd_bus_message_append_string_memfd.html'
+'man/sd_bus_message_append_string_space.html' -> '/usr/share/doc/systemd-213/sd_bus_message_append_string_space.html'
+'man/sd_bus_message_append_strv.html' -> '/usr/share/doc/systemd-213/sd_bus_message_append_strv.html'
+'man/sd_bus_message_get_cookie.html' -> '/usr/share/doc/systemd-213/sd_bus_message_get_cookie.html'
+'man/sd_bus_message_get_monotonic_usec.html' -> '/usr/share/doc/systemd-213/sd_bus_message_get_monotonic_usec.html'
+'man/sd_bus_message_get_realtime_usec.html' -> '/usr/share/doc/systemd-213/sd_bus_message_get_realtime_usec.html'
+'man/sd_bus_message_get_reply_cookie.html' -> '/usr/share/doc/systemd-213/sd_bus_message_get_reply_cookie.html'
+'man/sd_bus_message_get_seqnum.html' -> '/usr/share/doc/systemd-213/sd_bus_message_get_seqnum.html'
+'man/sd_bus_negotiate_creds.html' -> '/usr/share/doc/systemd-213/sd_bus_negotiate_creds.html'
+'man/sd_bus_negotiate_fds.html' -> '/usr/share/doc/systemd-213/sd_bus_negotiate_fds.html'
+'man/sd_bus_negotiate_timestamps.html' -> '/usr/share/doc/systemd-213/sd_bus_negotiate_timestamps.html'
+'man/sd_bus_new.html' -> '/usr/share/doc/systemd-213/sd_bus_new.html'
+'man/sd_bus_open_system.html' -> '/usr/share/doc/systemd-213/sd_bus_open_system.html'
+'man/sd_bus_open_system_container.html' -> '/usr/share/doc/systemd-213/sd_bus_open_system_container.html'
+'man/sd_bus_open_system_remote.html' -> '/usr/share/doc/systemd-213/sd_bus_open_system_remote.html'
+'man/sd_bus_open_user.html' -> '/usr/share/doc/systemd-213/sd_bus_open_user.html'
+'man/sd_bus_path_decode.html' -> '/usr/share/doc/systemd-213/sd_bus_path_decode.html'
+'man/sd_bus_path_encode.html' -> '/usr/share/doc/systemd-213/sd_bus_path_encode.html'
+'man/sd_bus_ref.html' -> '/usr/share/doc/systemd-213/sd_bus_ref.html'
+'man/sd_bus_release_name.html' -> '/usr/share/doc/systemd-213/sd_bus_release_name.html'
+'man/sd_bus_request_name.html' -> '/usr/share/doc/systemd-213/sd_bus_request_name.html'
+'man/sd_bus_unref.html' -> '/usr/share/doc/systemd-213/sd_bus_unref.html'
+'man/sd_event_add_time.html' -> '/usr/share/doc/systemd-213/sd_event_add_time.html'
+'man/sd_event_default.html' -> '/usr/share/doc/systemd-213/sd_event_default.html'
+'man/sd_event_new.html' -> '/usr/share/doc/systemd-213/sd_event_new.html'
+'man/sd_event_ref.html' -> '/usr/share/doc/systemd-213/sd_event_ref.html'
+'man/sd_event_source_get_time.html' -> '/usr/share/doc/systemd-213/sd_event_source_get_time.html'
+'man/sd_event_source_get_time_accuracy.html' -> '/usr/share/doc/systemd-213/sd_event_source_get_time_accuracy.html'
+'man/sd_event_source_get_time_clock.html' -> '/usr/share/doc/systemd-213/sd_event_source_get_time_clock.html'
+'man/sd_event_source_set_time.html' -> '/usr/share/doc/systemd-213/sd_event_source_set_time.html'
+'man/sd_event_source_set_time_accuracy.html' -> '/usr/share/doc/systemd-213/sd_event_source_set_time_accuracy.html'
+'man/sd_event_unref.html' -> '/usr/share/doc/systemd-213/sd_event_unref.html'
+'man/sd_get_machine_names.html' -> '/usr/share/doc/systemd-213/sd_get_machine_names.html'
+'man/sd_get_seats.html' -> '/usr/share/doc/systemd-213/sd_get_seats.html'
+'man/sd_get_sessions.html' -> '/usr/share/doc/systemd-213/sd_get_sessions.html'
+'man/sd_get_uids.html' -> '/usr/share/doc/systemd-213/sd_get_uids.html'
+'man/sd_id128_equal.html' -> '/usr/share/doc/systemd-213/sd_id128_equal.html'
+'man/sd_id128_from_string.html' -> '/usr/share/doc/systemd-213/sd_id128_from_string.html'
+'man/sd_id128_get_boot.html' -> '/usr/share/doc/systemd-213/sd_id128_get_boot.html'
+'man/sd_id128_get_machine.html' -> '/usr/share/doc/systemd-213/sd_id128_get_machine.html'
+'man/sd_id128_randomize.html' -> '/usr/share/doc/systemd-213/sd_id128_randomize.html'
+'man/sd_id128_t.html' -> '/usr/share/doc/systemd-213/sd_id128_t.html'
+'man/sd_id128_to_string.html' -> '/usr/share/doc/systemd-213/sd_id128_to_string.html'
+'man/sd_is_fifo.html' -> '/usr/share/doc/systemd-213/sd_is_fifo.html'
+'man/sd_is_mq.html' -> '/usr/share/doc/systemd-213/sd_is_mq.html'
+'man/sd_is_socket.html' -> '/usr/share/doc/systemd-213/sd_is_socket.html'
+'man/sd_is_socket_inet.html' -> '/usr/share/doc/systemd-213/sd_is_socket_inet.html'
+'man/sd_is_socket_unix.html' -> '/usr/share/doc/systemd-213/sd_is_socket_unix.html'
+'man/sd_is_special.html' -> '/usr/share/doc/systemd-213/sd_is_special.html'
+'man/sd_journal.html' -> '/usr/share/doc/systemd-213/sd_journal.html'
+'man/sd_journal_add_conjunction.html' -> '/usr/share/doc/systemd-213/sd_journal_add_conjunction.html'
+'man/sd_journal_add_disjunction.html' -> '/usr/share/doc/systemd-213/sd_journal_add_disjunction.html'
+'man/sd_journal_add_match.html' -> '/usr/share/doc/systemd-213/sd_journal_add_match.html'
+'man/sd_journal_close.html' -> '/usr/share/doc/systemd-213/sd_journal_close.html'
+'man/sd_journal_enumerate_data.html' -> '/usr/share/doc/systemd-213/sd_journal_enumerate_data.html'
+'man/sd_journal_enumerate_unique.html' -> '/usr/share/doc/systemd-213/sd_journal_enumerate_unique.html'
+'man/sd_journal_flush_matches.html' -> '/usr/share/doc/systemd-213/sd_journal_flush_matches.html'
+'man/sd_journal_get_catalog.html' -> '/usr/share/doc/systemd-213/sd_journal_get_catalog.html'
+'man/sd_journal_get_catalog_for_message_id.html' -> '/usr/share/doc/systemd-213/sd_journal_get_catalog_for_message_id.html'
+'man/sd_journal_get_cursor.html' -> '/usr/share/doc/systemd-213/sd_journal_get_cursor.html'
+'man/sd_journal_get_cutoff_monotonic_usec.html' -> '/usr/share/doc/systemd-213/sd_journal_get_cutoff_monotonic_usec.html'
+'man/sd_journal_get_cutoff_realtime_usec.html' -> '/usr/share/doc/systemd-213/sd_journal_get_cutoff_realtime_usec.html'
+'man/sd_journal_get_data.html' -> '/usr/share/doc/systemd-213/sd_journal_get_data.html'
+'man/sd_journal_get_data_threshold.html' -> '/usr/share/doc/systemd-213/sd_journal_get_data_threshold.html'
+'man/sd_journal_get_events.html' -> '/usr/share/doc/systemd-213/sd_journal_get_events.html'
+'man/sd_journal_get_fd.html' -> '/usr/share/doc/systemd-213/sd_journal_get_fd.html'
+'man/sd_journal_get_monotonic_usec.html' -> '/usr/share/doc/systemd-213/sd_journal_get_monotonic_usec.html'
+'man/sd_journal_get_realtime_usec.html' -> '/usr/share/doc/systemd-213/sd_journal_get_realtime_usec.html'
+'man/sd_journal_get_timeout.html' -> '/usr/share/doc/systemd-213/sd_journal_get_timeout.html'
+'man/sd_journal_get_usage.html' -> '/usr/share/doc/systemd-213/sd_journal_get_usage.html'
+'man/sd_journal_next.html' -> '/usr/share/doc/systemd-213/sd_journal_next.html'
+'man/sd_journal_next_skip.html' -> '/usr/share/doc/systemd-213/sd_journal_next_skip.html'
+'man/sd_journal_open.html' -> '/usr/share/doc/systemd-213/sd_journal_open.html'
+'man/sd_journal_open_container.html' -> '/usr/share/doc/systemd-213/sd_journal_open_container.html'
+'man/sd_journal_open_directory.html' -> '/usr/share/doc/systemd-213/sd_journal_open_directory.html'
+'man/sd_journal_open_files.html' -> '/usr/share/doc/systemd-213/sd_journal_open_files.html'
+'man/sd_journal_perror.html' -> '/usr/share/doc/systemd-213/sd_journal_perror.html'
+'man/sd_journal_previous.html' -> '/usr/share/doc/systemd-213/sd_journal_previous.html'
+'man/sd_journal_previous_skip.html' -> '/usr/share/doc/systemd-213/sd_journal_previous_skip.html'
+'man/sd_journal_print.html' -> '/usr/share/doc/systemd-213/sd_journal_print.html'
+'man/sd_journal_printv.html' -> '/usr/share/doc/systemd-213/sd_journal_printv.html'
+'man/sd_journal_process.html' -> '/usr/share/doc/systemd-213/sd_journal_process.html'
+'man/sd_journal_query_unique.html' -> '/usr/share/doc/systemd-213/sd_journal_query_unique.html'
+'man/sd_journal_reliable_fd.html' -> '/usr/share/doc/systemd-213/sd_journal_reliable_fd.html'
+'man/sd_journal_restart_data.html' -> '/usr/share/doc/systemd-213/sd_journal_restart_data.html'
+'man/sd_journal_restart_unique.html' -> '/usr/share/doc/systemd-213/sd_journal_restart_unique.html'
+'man/sd_journal_seek_cursor.html' -> '/usr/share/doc/systemd-213/sd_journal_seek_cursor.html'
+'man/sd_journal_seek_head.html' -> '/usr/share/doc/systemd-213/sd_journal_seek_head.html'
+'man/sd_journal_seek_monotonic_usec.html' -> '/usr/share/doc/systemd-213/sd_journal_seek_monotonic_usec.html'
+'man/sd_journal_seek_realtime_usec.html' -> '/usr/share/doc/systemd-213/sd_journal_seek_realtime_usec.html'
+'man/sd_journal_seek_tail.html' -> '/usr/share/doc/systemd-213/sd_journal_seek_tail.html'
+'man/sd_journal_send.html' -> '/usr/share/doc/systemd-213/sd_journal_send.html'
+'man/sd_journal_sendv.html' -> '/usr/share/doc/systemd-213/sd_journal_sendv.html'
+'man/sd_journal_set_data_threshold.html' -> '/usr/share/doc/systemd-213/sd_journal_set_data_threshold.html'
+'man/sd_journal_stream_fd.html' -> '/usr/share/doc/systemd-213/sd_journal_stream_fd.html'
+'man/sd_journal_test_cursor.html' -> '/usr/share/doc/systemd-213/sd_journal_test_cursor.html'
+'man/sd_journal_wait.html' -> '/usr/share/doc/systemd-213/sd_journal_wait.html'
+'man/sd_listen_fds.html' -> '/usr/share/doc/systemd-213/sd_listen_fds.html'
+'man/sd_login_monitor.html' -> '/usr/share/doc/systemd-213/sd_login_monitor.html'
+'man/sd_login_monitor_flush.html' -> '/usr/share/doc/systemd-213/sd_login_monitor_flush.html'
+'man/sd_login_monitor_get_events.html' -> '/usr/share/doc/systemd-213/sd_login_monitor_get_events.html'
+'man/sd_login_monitor_get_fd.html' -> '/usr/share/doc/systemd-213/sd_login_monitor_get_fd.html'
+'man/sd_login_monitor_get_timeout.html' -> '/usr/share/doc/systemd-213/sd_login_monitor_get_timeout.html'
+'man/sd_login_monitor_new.html' -> '/usr/share/doc/systemd-213/sd_login_monitor_new.html'
+'man/sd_login_monitor_unref.html' -> '/usr/share/doc/systemd-213/sd_login_monitor_unref.html'
+'man/sd_notify.html' -> '/usr/share/doc/systemd-213/sd_notify.html'
+'man/sd_notifyf.html' -> '/usr/share/doc/systemd-213/sd_notifyf.html'
+'man/sd_peer_get_machine_name.html' -> '/usr/share/doc/systemd-213/sd_peer_get_machine_name.html'
+'man/sd_peer_get_owner_uid.html' -> '/usr/share/doc/systemd-213/sd_peer_get_owner_uid.html'
+'man/sd_peer_get_session.html' -> '/usr/share/doc/systemd-213/sd_peer_get_session.html'
+'man/sd_peer_get_slice.html' -> '/usr/share/doc/systemd-213/sd_peer_get_slice.html'
+'man/sd_peer_get_unit.html' -> '/usr/share/doc/systemd-213/sd_peer_get_unit.html'
+'man/sd_peer_get_user_unit.html' -> '/usr/share/doc/systemd-213/sd_peer_get_user_unit.html'
+'man/sd_pid_get_machine_name.html' -> '/usr/share/doc/systemd-213/sd_pid_get_machine_name.html'
+'man/sd_pid_get_owner_uid.html' -> '/usr/share/doc/systemd-213/sd_pid_get_owner_uid.html'
+'man/sd_pid_get_session.html' -> '/usr/share/doc/systemd-213/sd_pid_get_session.html'
+'man/sd_pid_get_slice.html' -> '/usr/share/doc/systemd-213/sd_pid_get_slice.html'
+'man/sd_pid_get_unit.html' -> '/usr/share/doc/systemd-213/sd_pid_get_unit.html'
+'man/sd_pid_get_user_unit.html' -> '/usr/share/doc/systemd-213/sd_pid_get_user_unit.html'
+'man/sd_readahead.html' -> '/usr/share/doc/systemd-213/sd_readahead.html'
+'man/sd_seat_can_graphical.html' -> '/usr/share/doc/systemd-213/sd_seat_can_graphical.html'
+'man/sd_seat_can_multi_session.html' -> '/usr/share/doc/systemd-213/sd_seat_can_multi_session.html'
+'man/sd_seat_can_tty.html' -> '/usr/share/doc/systemd-213/sd_seat_can_tty.html'
+'man/sd_seat_get_active.html' -> '/usr/share/doc/systemd-213/sd_seat_get_active.html'
+'man/sd_seat_get_sessions.html' -> '/usr/share/doc/systemd-213/sd_seat_get_sessions.html'
+'man/sd_session_get_class.html' -> '/usr/share/doc/systemd-213/sd_session_get_class.html'
+'man/sd_session_get_display.html' -> '/usr/share/doc/systemd-213/sd_session_get_display.html'
+'man/sd_session_get_remote_host.html' -> '/usr/share/doc/systemd-213/sd_session_get_remote_host.html'
+'man/sd_session_get_remote_user.html' -> '/usr/share/doc/systemd-213/sd_session_get_remote_user.html'
+'man/sd_session_get_seat.html' -> '/usr/share/doc/systemd-213/sd_session_get_seat.html'
+'man/sd_session_get_service.html' -> '/usr/share/doc/systemd-213/sd_session_get_service.html'
+'man/sd_session_get_state.html' -> '/usr/share/doc/systemd-213/sd_session_get_state.html'
+'man/sd_session_get_tty.html' -> '/usr/share/doc/systemd-213/sd_session_get_tty.html'
+'man/sd_session_get_type.html' -> '/usr/share/doc/systemd-213/sd_session_get_type.html'
+'man/sd_session_get_uid.html' -> '/usr/share/doc/systemd-213/sd_session_get_uid.html'
+'man/sd_session_get_vt.html' -> '/usr/share/doc/systemd-213/sd_session_get_vt.html'
+'man/sd_session_is_active.html' -> '/usr/share/doc/systemd-213/sd_session_is_active.html'
+'man/sd_session_is_remote.html' -> '/usr/share/doc/systemd-213/sd_session_is_remote.html'
+'man/sd_uid_get_display.html' -> '/usr/share/doc/systemd-213/sd_uid_get_display.html'
+'man/sd_uid_get_seats.html' -> '/usr/share/doc/systemd-213/sd_uid_get_seats.html'
+'man/sd_uid_get_sessions.html' -> '/usr/share/doc/systemd-213/sd_uid_get_sessions.html'
+'man/sd_uid_get_state.html' -> '/usr/share/doc/systemd-213/sd_uid_get_state.html'
+'man/sd_uid_is_on_seat.html' -> '/usr/share/doc/systemd-213/sd_uid_is_on_seat.html'
+'man/sd_watchdog_enabled.html' -> '/usr/share/doc/systemd-213/sd_watchdog_enabled.html'
+'man/shutdown.html' -> '/usr/share/doc/systemd-213/shutdown.html'
+'man/sysctl.d.html' -> '/usr/share/doc/systemd-213/sysctl.d.html'
+'man/systemctl.html' -> '/usr/share/doc/systemd-213/systemctl.html'
+'man/systemd-activate.html' -> '/usr/share/doc/systemd-213/systemd-activate.html'
+'man/systemd-analyze.html' -> '/usr/share/doc/systemd-213/systemd-analyze.html'
+'man/systemd-ask-password-console.path.html' -> '/usr/share/doc/systemd-213/systemd-ask-password-console.path.html'
+'man/systemd-ask-password-console.service.html' -> '/usr/share/doc/systemd-213/systemd-ask-password-console.service.html'
+'man/systemd-ask-password-wall.path.html' -> '/usr/share/doc/systemd-213/systemd-ask-password-wall.path.html'
+'man/systemd-ask-password-wall.service.html' -> '/usr/share/doc/systemd-213/systemd-ask-password-wall.service.html'
+'man/systemd-ask-password.html' -> '/usr/share/doc/systemd-213/systemd-ask-password.html'
+'man/systemd-backlight.html' -> '/usr/share/doc/systemd-213/systemd-backlight.html'
+'man/systemd-backlight@.service.html' -> '/usr/share/doc/systemd-213/systemd-backlight@.service.html'
+'man/systemd-binfmt.html' -> '/usr/share/doc/systemd-213/systemd-binfmt.html'
+'man/systemd-binfmt.service.html' -> '/usr/share/doc/systemd-213/systemd-binfmt.service.html'
+'man/systemd-bootchart.html' -> '/usr/share/doc/systemd-213/systemd-bootchart.html'
+'man/systemd-bus-proxyd.html' -> '/usr/share/doc/systemd-213/systemd-bus-proxyd.html'
+'man/systemd-bus-proxyd.socket.html' -> '/usr/share/doc/systemd-213/systemd-bus-proxyd.socket.html'
+'man/systemd-bus-proxyd@.service.html' -> '/usr/share/doc/systemd-213/systemd-bus-proxyd@.service.html'
+'man/systemd-cat.html' -> '/usr/share/doc/systemd-213/systemd-cat.html'
+'man/systemd-cgls.html' -> '/usr/share/doc/systemd-213/systemd-cgls.html'
+'man/systemd-cgtop.html' -> '/usr/share/doc/systemd-213/systemd-cgtop.html'
+'man/systemd-coredumpctl.html' -> '/usr/share/doc/systemd-213/systemd-coredumpctl.html'
+'man/systemd-cryptsetup-generator.html' -> '/usr/share/doc/systemd-213/systemd-cryptsetup-generator.html'
+'man/systemd-cryptsetup.html' -> '/usr/share/doc/systemd-213/systemd-cryptsetup.html'
+'man/systemd-cryptsetup@.service.html' -> '/usr/share/doc/systemd-213/systemd-cryptsetup@.service.html'
+'man/systemd-delta.html' -> '/usr/share/doc/systemd-213/systemd-delta.html'
+'man/systemd-detect-virt.html' -> '/usr/share/doc/systemd-213/systemd-detect-virt.html'
+'man/systemd-efi-boot-generator.html' -> '/usr/share/doc/systemd-213/systemd-efi-boot-generator.html'
+'man/systemd-fsck-root.service.html' -> '/usr/share/doc/systemd-213/systemd-fsck-root.service.html'
+'man/systemd-fsck.html' -> '/usr/share/doc/systemd-213/systemd-fsck.html'
+'man/systemd-fsck@.service.html' -> '/usr/share/doc/systemd-213/systemd-fsck@.service.html'
+'man/systemd-fstab-generator.html' -> '/usr/share/doc/systemd-213/systemd-fstab-generator.html'
+'man/systemd-getty-generator.html' -> '/usr/share/doc/systemd-213/systemd-getty-generator.html'
+'man/systemd-gpt-auto-generator.html' -> '/usr/share/doc/systemd-213/systemd-gpt-auto-generator.html'
+'man/systemd-halt.service.html' -> '/usr/share/doc/systemd-213/systemd-halt.service.html'
+'man/systemd-hibernate.service.html' -> '/usr/share/doc/systemd-213/systemd-hibernate.service.html'
+'man/systemd-hostnamed.html' -> '/usr/share/doc/systemd-213/systemd-hostnamed.html'
+'man/systemd-hostnamed.service.html' -> '/usr/share/doc/systemd-213/systemd-hostnamed.service.html'
+'man/systemd-hybrid-sleep.service.html' -> '/usr/share/doc/systemd-213/systemd-hybrid-sleep.service.html'
+'man/systemd-inhibit.html' -> '/usr/share/doc/systemd-213/systemd-inhibit.html'
+'man/systemd-initctl.html' -> '/usr/share/doc/systemd-213/systemd-initctl.html'
+'man/systemd-initctl.service.html' -> '/usr/share/doc/systemd-213/systemd-initctl.service.html'
+'man/systemd-initctl.socket.html' -> '/usr/share/doc/systemd-213/systemd-initctl.socket.html'
+'man/systemd-journal-gatewayd.html' -> '/usr/share/doc/systemd-213/systemd-journal-gatewayd.html'
+'man/systemd-journal-gatewayd.service.html' -> '/usr/share/doc/systemd-213/systemd-journal-gatewayd.service.html'
+'man/systemd-journal-gatewayd.socket.html' -> '/usr/share/doc/systemd-213/systemd-journal-gatewayd.socket.html'
+'man/systemd-journal-remote.html' -> '/usr/share/doc/systemd-213/systemd-journal-remote.html'
+'man/systemd-journald.html' -> '/usr/share/doc/systemd-213/systemd-journald.html'
+'man/systemd-journald.service.html' -> '/usr/share/doc/systemd-213/systemd-journald.service.html'
+'man/systemd-journald.socket.html' -> '/usr/share/doc/systemd-213/systemd-journald.socket.html'
+'man/systemd-kexec.service.html' -> '/usr/share/doc/systemd-213/systemd-kexec.service.html'
+'man/systemd-localed.html' -> '/usr/share/doc/systemd-213/systemd-localed.html'
+'man/systemd-localed.service.html' -> '/usr/share/doc/systemd-213/systemd-localed.service.html'
+'man/systemd-logind.html' -> '/usr/share/doc/systemd-213/systemd-logind.html'
+'man/systemd-logind.service.html' -> '/usr/share/doc/systemd-213/systemd-logind.service.html'
+'man/systemd-machine-id-setup.html' -> '/usr/share/doc/systemd-213/systemd-machine-id-setup.html'
+'man/systemd-machined.html' -> '/usr/share/doc/systemd-213/systemd-machined.html'
+'man/systemd-machined.service.html' -> '/usr/share/doc/systemd-213/systemd-machined.service.html'
+'man/systemd-modules-load.html' -> '/usr/share/doc/systemd-213/systemd-modules-load.html'
+'man/systemd-modules-load.service.html' -> '/usr/share/doc/systemd-213/systemd-modules-load.service.html'
+'man/systemd-networkd-wait-online.html' -> '/usr/share/doc/systemd-213/systemd-networkd-wait-online.html'
+'man/systemd-networkd-wait-online.service.html' -> '/usr/share/doc/systemd-213/systemd-networkd-wait-online.service.html'
+'man/systemd-networkd.html' -> '/usr/share/doc/systemd-213/systemd-networkd.html'
+'man/systemd-networkd.service.html' -> '/usr/share/doc/systemd-213/systemd-networkd.service.html'
+'man/systemd-notify.html' -> '/usr/share/doc/systemd-213/systemd-notify.html'
+'man/systemd-nspawn.html' -> '/usr/share/doc/systemd-213/systemd-nspawn.html'
+'man/systemd-poweroff.service.html' -> '/usr/share/doc/systemd-213/systemd-poweroff.service.html'
+'man/systemd-quotacheck.html' -> '/usr/share/doc/systemd-213/systemd-quotacheck.html'
+'man/systemd-quotacheck.service.html' -> '/usr/share/doc/systemd-213/systemd-quotacheck.service.html'
+'man/systemd-random-seed.html' -> '/usr/share/doc/systemd-213/systemd-random-seed.html'
+'man/systemd-random-seed.service.html' -> '/usr/share/doc/systemd-213/systemd-random-seed.service.html'
+'man/systemd-readahead-collect.service.html' -> '/usr/share/doc/systemd-213/systemd-readahead-collect.service.html'
+'man/systemd-readahead-done.service.html' -> '/usr/share/doc/systemd-213/systemd-readahead-done.service.html'
+'man/systemd-readahead-done.timer.html' -> '/usr/share/doc/systemd-213/systemd-readahead-done.timer.html'
+'man/systemd-readahead-replay.service.html' -> '/usr/share/doc/systemd-213/systemd-readahead-replay.service.html'
+'man/systemd-readahead.html' -> '/usr/share/doc/systemd-213/systemd-readahead.html'
+'man/systemd-reboot.service.html' -> '/usr/share/doc/systemd-213/systemd-reboot.service.html'
+'man/systemd-remount-fs.html' -> '/usr/share/doc/systemd-213/systemd-remount-fs.html'
+'man/systemd-remount-fs.service.html' -> '/usr/share/doc/systemd-213/systemd-remount-fs.service.html'
+'man/systemd-resolved.html' -> '/usr/share/doc/systemd-213/systemd-resolved.html'
+'man/systemd-resolved.service.html' -> '/usr/share/doc/systemd-213/systemd-resolved.service.html'
+'man/systemd-rfkill.html' -> '/usr/share/doc/systemd-213/systemd-rfkill.html'
+'man/systemd-rfkill@.service.html' -> '/usr/share/doc/systemd-213/systemd-rfkill@.service.html'
+'man/systemd-run.html' -> '/usr/share/doc/systemd-213/systemd-run.html'
+'man/systemd-shutdown.html' -> '/usr/share/doc/systemd-213/systemd-shutdown.html'
+'man/systemd-shutdownd.html' -> '/usr/share/doc/systemd-213/systemd-shutdownd.html'
+'man/systemd-shutdownd.service.html' -> '/usr/share/doc/systemd-213/systemd-shutdownd.service.html'
+'man/systemd-shutdownd.socket.html' -> '/usr/share/doc/systemd-213/systemd-shutdownd.socket.html'
+'man/systemd-sleep.conf.html' -> '/usr/share/doc/systemd-213/systemd-sleep.conf.html'
+'man/systemd-sleep.html' -> '/usr/share/doc/systemd-213/systemd-sleep.html'
+'man/systemd-socket-proxyd.html' -> '/usr/share/doc/systemd-213/systemd-socket-proxyd.html'
+'man/systemd-suspend.service.html' -> '/usr/share/doc/systemd-213/systemd-suspend.service.html'
+'man/systemd-sysctl.html' -> '/usr/share/doc/systemd-213/systemd-sysctl.html'
+'man/systemd-sysctl.service.html' -> '/usr/share/doc/systemd-213/systemd-sysctl.service.html'
+'man/systemd-system-update-generator.html' -> '/usr/share/doc/systemd-213/systemd-system-update-generator.html'
+'man/systemd-system.conf.html' -> '/usr/share/doc/systemd-213/systemd-system.conf.html'
+'man/systemd-timedated.html' -> '/usr/share/doc/systemd-213/systemd-timedated.html'
+'man/systemd-timedated.service.html' -> '/usr/share/doc/systemd-213/systemd-timedated.service.html'
+'man/systemd-timesyncd.html' -> '/usr/share/doc/systemd-213/systemd-timesyncd.html'
+'man/systemd-timesyncd.service.html' -> '/usr/share/doc/systemd-213/systemd-timesyncd.service.html'
+'man/systemd-tmpfiles-clean.service.html' -> '/usr/share/doc/systemd-213/systemd-tmpfiles-clean.service.html'
+'man/systemd-tmpfiles-clean.timer.html' -> '/usr/share/doc/systemd-213/systemd-tmpfiles-clean.timer.html'
+'man/systemd-tmpfiles-setup-dev.service.html' -> '/usr/share/doc/systemd-213/systemd-tmpfiles-setup-dev.service.html'
+'man/systemd-tmpfiles-setup.service.html' -> '/usr/share/doc/systemd-213/systemd-tmpfiles-setup.service.html'
+'man/systemd-tmpfiles.html' -> '/usr/share/doc/systemd-213/systemd-tmpfiles.html'
+'man/systemd-tty-ask-password-agent.html' -> '/usr/share/doc/systemd-213/systemd-tty-ask-password-agent.html'
+'man/systemd-udevd-control.socket.html' -> '/usr/share/doc/systemd-213/systemd-udevd-control.socket.html'
+'man/systemd-udevd-kernel.socket.html' -> '/usr/share/doc/systemd-213/systemd-udevd-kernel.socket.html'
+'man/systemd-udevd.html' -> '/usr/share/doc/systemd-213/systemd-udevd.html'
+'man/systemd-udevd.service.html' -> '/usr/share/doc/systemd-213/systemd-udevd.service.html'
+'man/systemd-update-utmp-runlevel.service.html' -> '/usr/share/doc/systemd-213/systemd-update-utmp-runlevel.service.html'
+'man/systemd-update-utmp.html' -> '/usr/share/doc/systemd-213/systemd-update-utmp.html'
+'man/systemd-update-utmp.service.html' -> '/usr/share/doc/systemd-213/systemd-update-utmp.service.html'
+'man/systemd-user-sessions.html' -> '/usr/share/doc/systemd-213/systemd-user-sessions.html'
+'man/systemd-user-sessions.service.html' -> '/usr/share/doc/systemd-213/systemd-user-sessions.service.html'
+'man/systemd-user.conf.html' -> '/usr/share/doc/systemd-213/systemd-user.conf.html'
+'man/systemd-vconsole-setup.html' -> '/usr/share/doc/systemd-213/systemd-vconsole-setup.html'
+'man/systemd-vconsole-setup.service.html' -> '/usr/share/doc/systemd-213/systemd-vconsole-setup.service.html'
+'man/systemd.automount.html' -> '/usr/share/doc/systemd-213/systemd.automount.html'
+'man/systemd.device.html' -> '/usr/share/doc/systemd-213/systemd.device.html'
+'man/systemd.directives.html' -> '/usr/share/doc/systemd-213/systemd.directives.html'
+'man/systemd.exec.html' -> '/usr/share/doc/systemd-213/systemd.exec.html'
+'man/systemd.html' -> '/usr/share/doc/systemd-213/systemd.html'
+'man/systemd.index.html' -> '/usr/share/doc/systemd-213/systemd.index.html'
+'man/systemd.journal-fields.html' -> '/usr/share/doc/systemd-213/systemd.journal-fields.html'
+'man/systemd.kill.html' -> '/usr/share/doc/systemd-213/systemd.kill.html'
+'man/systemd.link.html' -> '/usr/share/doc/systemd-213/systemd.link.html'
+'man/systemd.mount.html' -> '/usr/share/doc/systemd-213/systemd.mount.html'
+'man/systemd.netdev.html' -> '/usr/share/doc/systemd-213/systemd.netdev.html'
+'man/systemd.network.html' -> '/usr/share/doc/systemd-213/systemd.network.html'
+'man/systemd.path.html' -> '/usr/share/doc/systemd-213/systemd.path.html'
+'man/systemd.preset.html' -> '/usr/share/doc/systemd-213/systemd.preset.html'
+'man/systemd.resource-control.html' -> '/usr/share/doc/systemd-213/systemd.resource-control.html'
+'man/systemd.scope.html' -> '/usr/share/doc/systemd-213/systemd.scope.html'
+'man/systemd.service.html' -> '/usr/share/doc/systemd-213/systemd.service.html'
+'man/systemd.slice.html' -> '/usr/share/doc/systemd-213/systemd.slice.html'
+'man/systemd.snapshot.html' -> '/usr/share/doc/systemd-213/systemd.snapshot.html'
+'man/systemd.socket.html' -> '/usr/share/doc/systemd-213/systemd.socket.html'
+'man/systemd.special.html' -> '/usr/share/doc/systemd-213/systemd.special.html'
+'man/systemd.swap.html' -> '/usr/share/doc/systemd-213/systemd.swap.html'
+'man/systemd.target.html' -> '/usr/share/doc/systemd-213/systemd.target.html'
+'man/systemd.time.html' -> '/usr/share/doc/systemd-213/systemd.time.html'
+'man/systemd.timer.html' -> '/usr/share/doc/systemd-213/systemd.timer.html'
+'man/systemd.unit.html' -> '/usr/share/doc/systemd-213/systemd.unit.html'
+'man/telinit.html' -> '/usr/share/doc/systemd-213/telinit.html'
+'man/timedatectl.html' -> '/usr/share/doc/systemd-213/timedatectl.html'
+'man/tmpfiles.d.html' -> '/usr/share/doc/systemd-213/tmpfiles.d.html'
+'man/udev.html' -> '/usr/share/doc/systemd-213/udev.html'
+'man/udevadm.html' -> '/usr/share/doc/systemd-213/udevadm.html'
+'man/vconsole.conf.html' -> '/usr/share/doc/systemd-213/vconsole.conf.html'
+'/usr/lib/libnss_myhostname.so.2' -> '/lib/libnss_myhostname.so.2'
+removed '/usr/lib/rpm/macros.d/macros.systemd'
+removed directory: '/usr/lib/rpm/macros.d'
+removed directory: '/usr/lib/rpm'
+'/sbin/runlevel' -> '../bin/systemctl'
+'/sbin/reboot' -> '../bin/systemctl'
+'/sbin/shutdown' -> '../bin/systemctl'
+'/sbin/poweroff' -> '../bin/systemctl'
+'/sbin/halt' -> '../bin/systemctl'
+'/sbin/telinit' -> '../bin/systemctl'
+'/sbin/init' -> '../lib/systemd/systemd'
+Initializing machine ID from random generator.
+
+
+Totalseconds: 152
+
+
+KB: 2966956	/
+

@@ -1,0 +1,577 @@
+Sun Aug 31 08:12:50 UTC 2014
+
+KB: 2081864	/
+
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking how to print strings... printf
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for a sed that does not truncate output... /tools/bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking for gawk... gawk
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking for gmake... no
+checking for make... /tools/bin/make
+checking for tar... /tools/bin/tar
+checking for gzip... /tools/bin/gzip
+checking for makedepend... /bin/true
+checking for awk... /tools/bin/awk
+checking for sed... (cached) /tools/bin/sed
+checking for echo... /bin/echo
+checking for sort... /tools/bin/sort
+checking whether ln -s works... yes
+checking for msgfmt... /tools/bin/msgfmt
+checking for msgmerge... /tools/bin/msgmerge
+checking for xgettext... /tools/bin/xgettext
+checking for rpm... no
+checking for an ANSI C-conforming const... yes
+checking for mode_t... yes
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+configure: creating ./config.status
+config.status: creating include/builddefs
+config.status: creating include/config.h
+config.status: executing libtool commands
+make[1]: Entering directory '/sources/attr-2.4.47'
+/tools/bin/make include libmisc libattr attr getfattr setfattr examples test m4 man doc po debian package
+make[2]: Entering directory '/sources/attr-2.4.47'
+/tools/bin/make -C include
+make[3]: Entering directory '/sources/attr-2.4.47/include'
+ln -s . attr
+make[3]: Leaving directory '/sources/attr-2.4.47/include'
+/tools/bin/make -C libmisc
+make[3]: Entering directory '/sources/attr-2.4.47/libmisc'
+/bin/sh ../libtool --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64   -c quote.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c quote.c  -fPIC -DPIC -o .libs/quote.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c quote.c -o quote.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64   -c unquote.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c unquote.c  -fPIC -DPIC -o .libs/unquote.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c unquote.c -o unquote.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64   -c high_water_alloc.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c high_water_alloc.c  -fPIC -DPIC -o .libs/high_water_alloc.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c high_water_alloc.c -o high_water_alloc.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64   -c next_line.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c next_line.c  -fPIC -DPIC -o .libs/next_line.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c next_line.c -o next_line.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64   -c walk_tree.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c walk_tree.c  -fPIC -DPIC -o .libs/walk_tree.o
+walk_tree.c: In function 'walk_tree_rec':
+walk_tree.c:104:43: warning: suggest parentheses around '&&' within '||' [-Wparentheses]
+         if ((flags & WALK_TREE_RECURSIVE) &&
+                                           ^
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c walk_tree.c -o walk_tree.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=link gcc  -o libmisc.la quote.lo unquote.lo high_water_alloc.lo next_line.lo walk_tree.lo 
+libtool: link: ar cru .libs/libmisc.a .libs/quote.o .libs/unquote.o .libs/high_water_alloc.o .libs/next_line.o .libs/walk_tree.o 
+libtool: link: ranlib .libs/libmisc.a
+libtool: link: ( cd ".libs" && rm -f "libmisc.la" && ln -s "../libmisc.la" "libmisc.la" )
+make[3]: Leaving directory '/sources/attr-2.4.47/libmisc'
+/tools/bin/make -C libattr
+make[3]: Entering directory '/sources/attr-2.4.47/libattr'
+/bin/sh ../libtool --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h  -c libattr.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h -c libattr.c  -fPIC -DPIC -o .libs/libattr.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h -c libattr.c -o libattr.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h  -c attr_copy_fd.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h -c attr_copy_fd.c  -fPIC -DPIC -o .libs/attr_copy_fd.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h -c attr_copy_fd.c -o attr_copy_fd.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h  -c attr_copy_file.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h -c attr_copy_file.c  -fPIC -DPIC -o .libs/attr_copy_file.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h -c attr_copy_file.c -o attr_copy_file.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h  -c attr_copy_check.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h -c attr_copy_check.c  -fPIC -DPIC -o .libs/attr_copy_check.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h -c attr_copy_check.c -o attr_copy_check.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h  -c attr_copy_action.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h -c attr_copy_action.c  -fPIC -DPIC -o .libs/attr_copy_action.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h -c attr_copy_action.c -o attr_copy_action.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h  -c syscalls.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h -c syscalls.c  -fPIC -DPIC -o .libs/syscalls.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include libattr.h -c syscalls.c -o syscalls.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=link gcc -Wl,--version-script,../exports  -rpath /usr/lib -version-info 2:0:1 -o libattr.la libattr.lo attr_copy_fd.lo attr_copy_file.lo attr_copy_check.lo attr_copy_action.lo syscalls.lo 
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/libattr.o .libs/attr_copy_fd.o .libs/attr_copy_file.o .libs/attr_copy_check.o .libs/attr_copy_action.o .libs/syscalls.o    -Wl,--version-script -Wl,../exports   -Wl,-soname -Wl,libattr.so.1 -o .libs/libattr.so.1.1.0
+libtool: link: (cd ".libs" && rm -f "libattr.so.1" && ln -s "libattr.so.1.1.0" "libattr.so.1")
+libtool: link: (cd ".libs" && rm -f "libattr.so" && ln -s "libattr.so.1.1.0" "libattr.so")
+libtool: link: ar cru .libs/libattr.a  libattr.o attr_copy_fd.o attr_copy_file.o attr_copy_check.o attr_copy_action.o syscalls.o
+libtool: link: ranlib .libs/libattr.a
+libtool: link: ( cd ".libs" && rm -f "libattr.la" && ln -s "../libattr.la" "libattr.la" )
+make[3]: Leaving directory '/sources/attr-2.4.47/libattr'
+/tools/bin/make -C attr
+make[3]: Entering directory '/sources/attr-2.4.47/attr'
+gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o attr.o attr.c
+/bin/sh ../libtool --mode=link gcc -o attr    attr.o   ../libattr/libattr.la  
+libtool: link: gcc -o .libs/attr attr.o  ../libattr/.libs/libattr.so
+make[3]: Leaving directory '/sources/attr-2.4.47/attr'
+/tools/bin/make -C getfattr
+make[3]: Entering directory '/sources/attr-2.4.47/getfattr'
+gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o getfattr.o getfattr.c
+/bin/sh ../libtool --mode=link gcc -o getfattr    getfattr.o   ../libmisc/libmisc.la ../libattr/libattr.la  
+libtool: link: gcc -o .libs/getfattr getfattr.o  ../libmisc/.libs/libmisc.a ../libattr/.libs/libattr.so
+make[3]: Leaving directory '/sources/attr-2.4.47/getfattr'
+/tools/bin/make -C setfattr
+make[3]: Entering directory '/sources/attr-2.4.47/setfattr'
+gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.4.47\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"attr\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o setfattr.o setfattr.c
+/bin/sh ../libtool --mode=link gcc -o setfattr    setfattr.o   ../libmisc/libmisc.la ../libattr/libattr.la  
+libtool: link: gcc -o .libs/setfattr setfattr.o  ../libmisc/.libs/libmisc.a ../libattr/.libs/libattr.so
+make[3]: Leaving directory '/sources/attr-2.4.47/setfattr'
+/tools/bin/make -C examples
+make[3]: Entering directory '/sources/attr-2.4.47/examples'
+rm -f copyattr dep dep.bak *.[1-9].gz *.tmpo *.mo       
+make[3]: Leaving directory '/sources/attr-2.4.47/examples'
+/tools/bin/make -C test
+make[3]: Entering directory '/sources/attr-2.4.47/test'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/attr-2.4.47/test'
+/tools/bin/make -C m4
+make[3]: Entering directory '/sources/attr-2.4.47/m4'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/attr-2.4.47/m4'
+/tools/bin/make -C man
+make[3]: Entering directory '/sources/attr-2.4.47/man'
+/tools/bin/make -C man1
+make[4]: Entering directory '/sources/attr-2.4.47/man/man1'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/attr-2.4.47/man/man1'
+/tools/bin/make -C man2
+make[4]: Entering directory '/sources/attr-2.4.47/man/man2'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/attr-2.4.47/man/man2'
+/tools/bin/make -C man3
+make[4]: Entering directory '/sources/attr-2.4.47/man/man3'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/attr-2.4.47/man/man3'
+/tools/bin/make -C man5
+make[4]: Entering directory '/sources/attr-2.4.47/man/man5'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/attr-2.4.47/man/man5'
+make[3]: Leaving directory '/sources/attr-2.4.47/man'
+/tools/bin/make -C doc
+make[3]: Entering directory '/sources/attr-2.4.47/doc'
+/tools/bin/gzip --best -c < CHANGES > CHANGES.gz
+make[3]: Leaving directory '/sources/attr-2.4.47/doc'
+/tools/bin/make -C po
+make[3]: Entering directory '/sources/attr-2.4.47/po'
+/tools/bin/msgfmt -o cs.mo cs.po
+/tools/bin/msgfmt -o de.mo de.po
+/tools/bin/msgfmt -o es.mo es.po
+/tools/bin/msgfmt -o fr.mo fr.po
+/tools/bin/msgfmt -o gl.mo gl.po
+/tools/bin/msgfmt -o nl.mo nl.po
+/tools/bin/msgfmt -o pl.mo pl.po
+/tools/bin/msgfmt -o sv.mo sv.po
+make[3]: Leaving directory '/sources/attr-2.4.47/po'
+/tools/bin/make -C debian
+make[3]: Entering directory '/sources/attr-2.4.47/debian'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/attr-2.4.47/debian'
+/tools/bin/make -C package
+make[3]: Entering directory '/sources/attr-2.4.47/package'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/attr-2.4.47/package'
+make[2]: Leaving directory '/sources/attr-2.4.47'
+make[1]: Leaving directory '/sources/attr-2.4.47'
+make[1]: Entering directory '/sources/attr-2.4.47'
+/tools/bin/make include libmisc libattr attr getfattr setfattr examples test m4 man doc po debian package
+make[2]: Entering directory '/sources/attr-2.4.47'
+/tools/bin/make -C include
+make[3]: Entering directory '/sources/attr-2.4.47/include'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/attr-2.4.47/include'
+/tools/bin/make -C libmisc
+make[3]: Entering directory '/sources/attr-2.4.47/libmisc'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/attr-2.4.47/libmisc'
+/tools/bin/make -C libattr
+make[3]: Entering directory '/sources/attr-2.4.47/libattr'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/attr-2.4.47/libattr'
+/tools/bin/make -C attr
+make[3]: Entering directory '/sources/attr-2.4.47/attr'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/attr-2.4.47/attr'
+/tools/bin/make -C getfattr
+make[3]: Entering directory '/sources/attr-2.4.47/getfattr'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/attr-2.4.47/getfattr'
+/tools/bin/make -C setfattr
+make[3]: Entering directory '/sources/attr-2.4.47/setfattr'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/attr-2.4.47/setfattr'
+/tools/bin/make -C examples
+make[3]: Entering directory '/sources/attr-2.4.47/examples'
+rm -f copyattr dep dep.bak *.[1-9].gz *.tmpo *.mo       
+make[3]: Leaving directory '/sources/attr-2.4.47/examples'
+/tools/bin/make -C test
+make[3]: Entering directory '/sources/attr-2.4.47/test'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/attr-2.4.47/test'
+/tools/bin/make -C m4
+make[3]: Entering directory '/sources/attr-2.4.47/m4'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/attr-2.4.47/m4'
+/tools/bin/make -C man
+make[3]: Entering directory '/sources/attr-2.4.47/man'
+/tools/bin/make -C man1
+make[4]: Entering directory '/sources/attr-2.4.47/man/man1'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/attr-2.4.47/man/man1'
+/tools/bin/make -C man2
+make[4]: Entering directory '/sources/attr-2.4.47/man/man2'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/attr-2.4.47/man/man2'
+/tools/bin/make -C man3
+make[4]: Entering directory '/sources/attr-2.4.47/man/man3'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/attr-2.4.47/man/man3'
+/tools/bin/make -C man5
+make[4]: Entering directory '/sources/attr-2.4.47/man/man5'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/attr-2.4.47/man/man5'
+make[3]: Leaving directory '/sources/attr-2.4.47/man'
+/tools/bin/make -C doc
+make[3]: Entering directory '/sources/attr-2.4.47/doc'
+make[3]: 'default' is up to date.
+make[3]: Leaving directory '/sources/attr-2.4.47/doc'
+/tools/bin/make -C po
+make[3]: Entering directory '/sources/attr-2.4.47/po'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/attr-2.4.47/po'
+/tools/bin/make -C debian
+make[3]: Entering directory '/sources/attr-2.4.47/debian'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/attr-2.4.47/debian'
+/tools/bin/make -C package
+make[3]: Entering directory '/sources/attr-2.4.47/package'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/attr-2.4.47/package'
+make[2]: Leaving directory '/sources/attr-2.4.47'
+/tools/bin/make -C include install
+make[2]: Entering directory '/sources/attr-2.4.47/include'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/attr-2.4.47/include'
+/tools/bin/make -C libmisc install
+make[2]: Entering directory '/sources/attr-2.4.47/libmisc'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/attr-2.4.47/libmisc'
+/tools/bin/make -C libattr install
+make[2]: Entering directory '/sources/attr-2.4.47/libattr'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/attr-2.4.47/libattr'
+/tools/bin/make -C attr install
+make[2]: Entering directory '/sources/attr-2.4.47/attr'
+../include/install-sh -o root -g root -m 755 -d /usr/bin
+/bin/sh ../libtool --mode=install ../include/install-sh -o root -g root -m 755 attr /usr/bin
+libtool: install: warning: `../libattr/libattr.la' has not been installed in `/usr/lib'
+libtool: install: ../include/install-sh -o root -g root -m 755 .libs/attr /usr/bin/attr
+make[2]: Leaving directory '/sources/attr-2.4.47/attr'
+/tools/bin/make -C getfattr install
+make[2]: Entering directory '/sources/attr-2.4.47/getfattr'
+../include/install-sh -o root -g root -m 755 -d /usr/bin
+/bin/sh ../libtool --mode=install ../include/install-sh -o root -g root -m 755 getfattr /usr/bin
+libtool: install: warning: `../libattr/libattr.la' has not been installed in `/usr/lib'
+libtool: install: ../include/install-sh -o root -g root -m 755 .libs/getfattr /usr/bin/getfattr
+make[2]: Leaving directory '/sources/attr-2.4.47/getfattr'
+/tools/bin/make -C setfattr install
+make[2]: Entering directory '/sources/attr-2.4.47/setfattr'
+../include/install-sh -o root -g root -m 755 -d /usr/bin
+/bin/sh ../libtool --mode=install ../include/install-sh -o root -g root -m 755 setfattr /usr/bin
+libtool: install: warning: `../libattr/libattr.la' has not been installed in `/usr/lib'
+libtool: install: ../include/install-sh -o root -g root -m 755 .libs/setfattr /usr/bin/setfattr
+make[2]: Leaving directory '/sources/attr-2.4.47/setfattr'
+/tools/bin/make -C examples install
+make[2]: Entering directory '/sources/attr-2.4.47/examples'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/attr-2.4.47/examples'
+/tools/bin/make -C test install
+make[2]: Entering directory '/sources/attr-2.4.47/test'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/attr-2.4.47/test'
+/tools/bin/make -C m4 install
+make[2]: Entering directory '/sources/attr-2.4.47/m4'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/attr-2.4.47/m4'
+/tools/bin/make -C man install
+make[2]: Entering directory '/sources/attr-2.4.47/man'
+/tools/bin/make -C man1 install
+make[3]: Entering directory '/sources/attr-2.4.47/man/man1'
+../../include/install-sh -o root -g root -m 755 -d /usr/share/man/man1
+../../include/install-sh -o root -g root -m 644 attr.1 /usr/share/man/man1/attr.1
+../../include/install-sh -o root -g root -m 644 getfattr.1 /usr/share/man/man1/getfattr.1
+../../include/install-sh -o root -g root -m 644 setfattr.1 /usr/share/man/man1/setfattr.1
+make[3]: Leaving directory '/sources/attr-2.4.47/man/man1'
+/tools/bin/make -C man2 install
+make[3]: Entering directory '/sources/attr-2.4.47/man/man2'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/sources/attr-2.4.47/man/man2'
+/tools/bin/make -C man3 install
+make[3]: Entering directory '/sources/attr-2.4.47/man/man3'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/sources/attr-2.4.47/man/man3'
+/tools/bin/make -C man5 install
+make[3]: Entering directory '/sources/attr-2.4.47/man/man5'
+../../include/install-sh -o root -g root -m 755 -d /usr/share/man/man5
+../../include/install-sh -o root -g root -m 644 attr.5 /usr/share/man/man5/attr.5
+make[3]: Leaving directory '/sources/attr-2.4.47/man/man5'
+make[2]: Leaving directory '/sources/attr-2.4.47/man'
+/tools/bin/make -C doc install
+make[2]: Entering directory '/sources/attr-2.4.47/doc'
+../include/install-sh -o root -g root -m 755 -d /usr/share/doc/attr-2.4.47
+../include/install-sh -o root -g root -m 644 PORTING CHANGES.gz /usr/share/doc/attr-2.4.47
+../include/install-sh -o root -g root -m 644 COPYING /usr/share/doc/attr-2.4.47
+../include/install-sh -o root -g root -m 644 COPYING.LGPL /usr/share/doc/attr-2.4.47
+make[2]: Leaving directory '/sources/attr-2.4.47/doc'
+/tools/bin/make -C po install
+make[2]: Entering directory '/sources/attr-2.4.47/po'
+make[2]: Leaving directory '/sources/attr-2.4.47/po'
+/tools/bin/make -C debian install
+make[2]: Entering directory '/sources/attr-2.4.47/debian'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/attr-2.4.47/debian'
+/tools/bin/make -C package install
+make[2]: Entering directory '/sources/attr-2.4.47/package'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/attr-2.4.47/package'
+./include/install-sh -o root -g root -m 755 -d /usr/share/doc/attr-2.4.47
+./include/install-sh -o root -g root -m 644 README /usr/share/doc/attr-2.4.47
+/tools/bin/make -C include install-dev
+make[2]: Entering directory '/sources/attr-2.4.47/include'
+../include/install-sh -o root -g root -m 755 -d /usr/include/attr
+../include/install-sh -o root -g root -m 644 attributes.h xattr.h error_context.h libattr.h /usr/include/attr
+make[2]: Leaving directory '/sources/attr-2.4.47/include'
+/tools/bin/make -C libmisc install-dev
+make[2]: Entering directory '/sources/attr-2.4.47/libmisc'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/attr-2.4.47/libmisc'
+/tools/bin/make -C libattr install-dev
+make[2]: Entering directory '/sources/attr-2.4.47/libattr'
+cd ../libattr/.libs; ../../include/install-sh -o root -g root -m 755 -d /usr/lib; ../../include/install-sh -o root -g root -m 644 -T old_lib libattr.lai /usr/lib; ../../include/install-sh -o root -g root -m 644 libattr.lai /usr/lib/libattr.la ; ../../include/install-sh -o root -g root -m 755 -d /usr/lib; ../../include/install-sh -o root -g root -T so_base libattr.lai /usr/lib; if test "x/usr/lib" != "x/usr/lib" ; then ../../include/install-sh -o root -g root -S /usr/lib/libattr.a /usr/lib/libattr.a; ../../include/install-sh -o root -g root -S /usr/lib/libattr.la /usr/lib/libattr.la; ../../include/install-sh -o root -g root -S /usr/lib/libattr.so /usr/lib/libattr.so; fi
+make[2]: Leaving directory '/sources/attr-2.4.47/libattr'
+/tools/bin/make -C attr install-dev
+make[2]: Entering directory '/sources/attr-2.4.47/attr'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/attr-2.4.47/attr'
+/tools/bin/make -C getfattr install-dev
+make[2]: Entering directory '/sources/attr-2.4.47/getfattr'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/attr-2.4.47/getfattr'
+/tools/bin/make -C setfattr install-dev
+make[2]: Entering directory '/sources/attr-2.4.47/setfattr'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/attr-2.4.47/setfattr'
+/tools/bin/make -C examples install-dev
+make[2]: Entering directory '/sources/attr-2.4.47/examples'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/attr-2.4.47/examples'
+/tools/bin/make -C test install-dev
+make[2]: Entering directory '/sources/attr-2.4.47/test'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/attr-2.4.47/test'
+/tools/bin/make -C m4 install-dev
+make[2]: Entering directory '/sources/attr-2.4.47/m4'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/attr-2.4.47/m4'
+/tools/bin/make -C man install-dev
+make[2]: Entering directory '/sources/attr-2.4.47/man'
+/tools/bin/make -C man1 install-dev
+make[3]: Entering directory '/sources/attr-2.4.47/man/man1'
+make[3]: Nothing to be done for 'install-dev'.
+make[3]: Leaving directory '/sources/attr-2.4.47/man/man1'
+/tools/bin/make -C man2 install-dev
+make[3]: Entering directory '/sources/attr-2.4.47/man/man2'
+../../include/install-sh -o root -g root -m 755 -d /usr/share/man/man2
+../../include/install-sh -o root -g root -m 644 getxattr.2 /usr/share/man/man2/getxattr.2
+../../include/install-sh -o root -g root -S getxattr.2 /usr/share/man/man2/lgetxattr.2
+../../include/install-sh -o root -g root -S getxattr.2 /usr/share/man/man2/fgetxattr.2
+../../include/install-sh -o root -g root -m 644 listxattr.2 /usr/share/man/man2/listxattr.2
+../../include/install-sh -o root -g root -S listxattr.2 /usr/share/man/man2/llistxattr.2
+../../include/install-sh -o root -g root -S listxattr.2 /usr/share/man/man2/flistxattr.2
+../../include/install-sh -o root -g root -m 644 removexattr.2 /usr/share/man/man2/removexattr.2
+../../include/install-sh -o root -g root -S removexattr.2 /usr/share/man/man2/lremovexattr.2
+../../include/install-sh -o root -g root -S removexattr.2 /usr/share/man/man2/fremovexattr.2
+../../include/install-sh -o root -g root -m 644 setxattr.2 /usr/share/man/man2/setxattr.2
+../../include/install-sh -o root -g root -S setxattr.2 /usr/share/man/man2/lsetxattr.2
+../../include/install-sh -o root -g root -S setxattr.2 /usr/share/man/man2/fsetxattr.2
+make[3]: Leaving directory '/sources/attr-2.4.47/man/man2'
+/tools/bin/make -C man3 install-dev
+make[3]: Entering directory '/sources/attr-2.4.47/man/man3'
+../../include/install-sh -o root -g root -m 755 -d /usr/share/man/man3
+../../include/install-sh -o root -g root -m 644 attr_get.3 /usr/share/man/man3/attr_get.3
+../../include/install-sh -o root -g root -S attr_get.3 /usr/share/man/man3/attr_getf.3
+../../include/install-sh -o root -g root -m 644 attr_list.3 /usr/share/man/man3/attr_list.3
+../../include/install-sh -o root -g root -S attr_list.3 /usr/share/man/man3/attr_listf.3
+../../include/install-sh -o root -g root -m 644 attr_multi.3 /usr/share/man/man3/attr_multi.3
+../../include/install-sh -o root -g root -S attr_multi.3 /usr/share/man/man3/attr_multif.3
+../../include/install-sh -o root -g root -m 644 attr_remove.3 /usr/share/man/man3/attr_remove.3
+../../include/install-sh -o root -g root -S attr_remove.3 /usr/share/man/man3/attr_removef.3
+../../include/install-sh -o root -g root -m 644 attr_set.3 /usr/share/man/man3/attr_set.3
+../../include/install-sh -o root -g root -S attr_set.3 /usr/share/man/man3/attr_setf.3
+make[3]: Leaving directory '/sources/attr-2.4.47/man/man3'
+/tools/bin/make -C man5 install-dev
+make[3]: Entering directory '/sources/attr-2.4.47/man/man5'
+make[3]: Nothing to be done for 'install-dev'.
+make[3]: Leaving directory '/sources/attr-2.4.47/man/man5'
+make[2]: Leaving directory '/sources/attr-2.4.47/man'
+/tools/bin/make -C doc install-dev
+make[2]: Entering directory '/sources/attr-2.4.47/doc'
+make[2]: 'install-dev' is up to date.
+make[2]: Leaving directory '/sources/attr-2.4.47/doc'
+/tools/bin/make -C po install-dev
+make[2]: Entering directory '/sources/attr-2.4.47/po'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/attr-2.4.47/po'
+/tools/bin/make -C debian install-dev
+make[2]: Entering directory '/sources/attr-2.4.47/debian'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/attr-2.4.47/debian'
+/tools/bin/make -C package install-dev
+make[2]: Entering directory '/sources/attr-2.4.47/package'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/attr-2.4.47/package'
+/tools/bin/make -C include install-lib
+make[2]: Entering directory '/sources/attr-2.4.47/include'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/attr-2.4.47/include'
+/tools/bin/make -C libmisc install-lib
+make[2]: Entering directory '/sources/attr-2.4.47/libmisc'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/attr-2.4.47/libmisc'
+/tools/bin/make -C libattr install-lib
+make[2]: Entering directory '/sources/attr-2.4.47/libattr'
+cd ../libattr/.libs; ../../include/install-sh -o root -g root -m 755 -d /usr/lib; ../../include/install-sh -o root -g root -m 644 -T so_dot_version libattr.lai /usr/lib; ../../include/install-sh -o root -g root -T so_dot_current libattr.lai /usr/lib
+make[2]: Leaving directory '/sources/attr-2.4.47/libattr'
+/tools/bin/make -C attr install-lib
+make[2]: Entering directory '/sources/attr-2.4.47/attr'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/attr-2.4.47/attr'
+/tools/bin/make -C getfattr install-lib
+make[2]: Entering directory '/sources/attr-2.4.47/getfattr'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/attr-2.4.47/getfattr'
+/tools/bin/make -C setfattr install-lib
+make[2]: Entering directory '/sources/attr-2.4.47/setfattr'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/attr-2.4.47/setfattr'
+/tools/bin/make -C examples install-lib
+make[2]: Entering directory '/sources/attr-2.4.47/examples'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/attr-2.4.47/examples'
+/tools/bin/make -C test install-lib
+make[2]: Entering directory '/sources/attr-2.4.47/test'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/attr-2.4.47/test'
+/tools/bin/make -C m4 install-lib
+make[2]: Entering directory '/sources/attr-2.4.47/m4'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/attr-2.4.47/m4'
+/tools/bin/make -C man install-lib
+make[2]: Entering directory '/sources/attr-2.4.47/man'
+/tools/bin/make -C man1 install-lib
+make[3]: Entering directory '/sources/attr-2.4.47/man/man1'
+make[3]: Nothing to be done for 'install-lib'.
+make[3]: Leaving directory '/sources/attr-2.4.47/man/man1'
+/tools/bin/make -C man2 install-lib
+make[3]: Entering directory '/sources/attr-2.4.47/man/man2'
+make[3]: Nothing to be done for 'install-lib'.
+make[3]: Leaving directory '/sources/attr-2.4.47/man/man2'
+/tools/bin/make -C man3 install-lib
+make[3]: Entering directory '/sources/attr-2.4.47/man/man3'
+make[3]: Nothing to be done for 'install-lib'.
+make[3]: Leaving directory '/sources/attr-2.4.47/man/man3'
+/tools/bin/make -C man5 install-lib
+make[3]: Entering directory '/sources/attr-2.4.47/man/man5'
+make[3]: Nothing to be done for 'install-lib'.
+make[3]: Leaving directory '/sources/attr-2.4.47/man/man5'
+make[2]: Leaving directory '/sources/attr-2.4.47/man'
+/tools/bin/make -C doc install-lib
+make[2]: Entering directory '/sources/attr-2.4.47/doc'
+make[2]: 'install-lib' is up to date.
+make[2]: Leaving directory '/sources/attr-2.4.47/doc'
+/tools/bin/make -C po install-lib
+make[2]: Entering directory '/sources/attr-2.4.47/po'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/attr-2.4.47/po'
+/tools/bin/make -C debian install-lib
+make[2]: Entering directory '/sources/attr-2.4.47/debian'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/attr-2.4.47/debian'
+/tools/bin/make -C package install-lib
+make[2]: Entering directory '/sources/attr-2.4.47/package'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/attr-2.4.47/package'
+make[1]: Leaving directory '/sources/attr-2.4.47'
+'/usr/lib/libattr.so.1' -> '/lib/libattr.so.1'
+'/usr/lib/libattr.so.1.1.0' -> '/lib/libattr.so.1.1.0'
+'/usr/lib/libattr.so' -> '../../lib/libattr.so.1'
+mode of '/lib/libattr.so.1.1.0' changed from 0644 (rw-r--r--) to 0755 (rwxr-xr-x)
+
+
+Totalseconds: 5
+
+
+KB: 2080940	/
+

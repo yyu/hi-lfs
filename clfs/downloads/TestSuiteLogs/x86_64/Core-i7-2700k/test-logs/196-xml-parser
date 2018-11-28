@@ -1,0 +1,31 @@
+Sat Jun 28 18:56:03 CDT 2014
+make[1]: Entering directory '/sources/XML-Parser-2.42_01'
+make[2]: Entering directory '/sources/XML-Parser-2.42_01/Expat'
+Running Mkbootstrap for XML::Parser::Expat ()
+chmod 644 Expat.bs
+make[2]: Leaving directory '/sources/XML-Parser-2.42_01/Expat'
+PERL_DL_NONLAZY=1 /usr/bin/perl-32 "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+t/astress.t ....... ok
+t/cdata.t ......... ok
+t/decl.t .......... ok
+t/defaulted.t ..... ok
+t/encoding.t ...... ok
+Couldn't load LWP based external entity handler
+Switching to file-based external entity handler
+ (To avoid this message, use NoLWP option to XML::Parser)
+t/external_ent.t .. ok
+t/file.t .......... ok
+t/finish.t ........ ok
+t/namespaces.t .... ok
+Couldn't load LWP based external entity handler
+Switching to file-based external entity handler
+ (To avoid this message, use NoLWP option to XML::Parser)
+t/parament.t ...... ok
+t/partial.t ....... ok
+t/skip.t .......... ok
+t/stream.t ........ ok
+t/styles.t ........ ok
+All tests successful.
+Files=14, Tests=141,  1 wallclock secs ( 0.06 usr  0.02 sys +  0.36 cusr  0.02 csys =  0.46 CPU)
+Result: PASS
+make[1]: Leaving directory '/sources/XML-Parser-2.42_01'

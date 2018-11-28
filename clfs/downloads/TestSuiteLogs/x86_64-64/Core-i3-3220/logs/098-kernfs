@@ -1,0 +1,20 @@
+Sun Aug 31 01:13:44 EDT 2014
+
+KB: 6534380	/
+
+mkdir: created directory ‘/mnt/lfs/dev’
+mkdir: created directory ‘/mnt/lfs/proc’
+mkdir: created directory ‘/mnt/lfs/run’
+mkdir: created directory ‘/mnt/lfs/sys’
+mount: /dev bound on /mnt/lfs/dev.
+mount: devpts mounted on /mnt/lfs/dev/pts.
+mount: proc mounted on /mnt/lfs/proc.
+mount: tmpfs mounted on /mnt/lfs/run.
+mount: sysfs mounted on /mnt/lfs/sys.
+
+
+Totalseconds: 0
+
+
+KB: 1369124	/mnt/lfs
+

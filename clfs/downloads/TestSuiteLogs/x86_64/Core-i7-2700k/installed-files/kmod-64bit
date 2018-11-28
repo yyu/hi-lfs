@@ -1,0 +1,24 @@
+/bin/kmod	674303	root:root	755	
+/bin/lsmod	4	root:root	777	kmod
+/lib64/libkmod.so.2	16	root:root	777	libkmod.so.2.2.8
+/lib64/libkmod.so.2.2.8	425908	root:root	755	
+/sbin/depmod	11	root:root	777	../bin/kmod
+/sbin/insmod	11	root:root	777	../bin/kmod
+/sbin/modinfo	11	root:root	777	../bin/kmod
+/sbin/modprobe	11	root:root	777	../bin/kmod
+/sbin/rmmod	11	root:root	777	../bin/kmod
+/usr/include/libkmod.h	9446	root:root	644	
+/usr/lib64/libkmod.la	952	root:root	755	
+/usr/lib64/libkmod.so	28	root:root	777	../../lib64/libkmod.so.2.2.8
+/usr/lib64/pkgconfig/libkmod.pc	249	root:root	644	
+/usr/share/bash-completion/completions/kmod	3235	root:root	644	
+/usr/share/man/man5/depmod.d.5	3966	root:root	644	
+/usr/share/man/man5/modprobe.d.5	8058	root:root	644	
+/usr/share/man/man5/modules.dep.5	2451	root:root	644	
+/usr/share/man/man5/modules.dep.bin.5	18	root:root	644	
+/usr/share/man/man8/depmod.8	6407	root:root	644	
+/usr/share/man/man8/insmod.8	2148	root:root	644	
+/usr/share/man/man8/lsmod.8	1835	root:root	644	
+/usr/share/man/man8/modinfo.8	4004	root:root	644	
+/usr/share/man/man8/modprobe.8	10564	root:root	644	
+/usr/share/man/man8/rmmod.8	2646	root:root	644	

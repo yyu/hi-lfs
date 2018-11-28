@@ -1,0 +1,644 @@
+Sat Jun 28 18:57:06 CDT 2014
+
+KB: 2680936	/
+
+patching file Makefile.am
+patching file Makefile.in
+checking for gcc... gcc -m32
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc -m32 accepts -g... yes
+checking for gcc -m32 option to accept ISO C89... none needed
+checking whether gcc -m32 understands -c and -o together... yes
+checking how to run the C preprocessor... gcc -m32 -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for style of include used by make... GNU
+checking whether make supports nested variables... yes
+checking how to create a pax tar archive... gnutar
+checking dependency style of gcc -m32... gcc3
+checking whether make supports nested variables... (cached) yes
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc -m32... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 3458764513820540925
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc -m32 object... ok
+checking for sysroot... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc -m32 supports -fno-rtti -fno-exceptions... no
+checking for gcc -m32 option to produce PIC... -fPIC -DPIC
+checking if gcc -m32 PIC flag -fPIC -DPIC works... yes
+checking if gcc -m32 static flag -static works... yes
+checking if gcc -m32 supports -c -o file.o... yes
+checking if gcc -m32 supports -c -o file.o... (cached) yes
+checking whether the gcc -m32 linker (/usr/bin/ld -m elf_i386) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking whether NLS is requested... yes
+checking for intltool >= 0.40.0... 0.50.2 found
+checking for intltool-update... /usr/bin/intltool-update
+checking for intltool-merge... /usr/bin/intltool-merge
+checking for intltool-extract... /usr/bin/intltool-extract
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for perl... /usr/bin/perl
+checking for perl >= 5.8.1... 5.20.0
+checking for XML::Parser... ok
+checking whether ln -s works... yes
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking for grep that handles long lines and -e... (cached) /bin/grep
+checking for gawk... (cached) gawk
+checking for gcc -m32 option to accept ISO C99... -std=gnu99
+checking for m4... /usr/bin/m4
+checking for xsltproc... no
+checking for quotaon... /usr/sbin/quotaon
+checking for quotacheck... /usr/sbin/quotacheck
+checking for setcap... /sbin/setcap
+checking for kill... /bin/kill
+checking for kmod... /bin/kmod
+checking for kexec... /usr/sbin/kexec
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for gtk-doc... no
+configure: WARNING:
+  You will not be able to create source packages with 'make dist'
+  because gtk-doc >= 1.18 is not found.
+checking for gtkdoc-check... no
+checking for gtkdoc-check... no
+checking for gtkdoc-rebase... no
+checking for gtkdoc-mkpdf... no
+checking whether to build gtk-doc documentation... no
+checking for GTKDOC_DEPS... no
+checking for gobject-introspection... no
+checking for strings... strings
+checking for gperf... gperf
+checking if gcc -m32 -std=gnu99 supports flag -pipe in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wall in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wextra in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wno-inline in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wundef in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wformat=2 -Wformat-security -Wformat-nonliteral in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wlogical-op in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wsign-compare in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wmissing-include-dirs in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wold-style-definition in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wpointer-arith in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Winit-self in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wdeclaration-after-statement in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wfloat-equal in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wsuggest-attribute=noreturn in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wmissing-prototypes in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wstrict-prototypes in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wredundant-decls in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wmissing-declarations in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wmissing-noreturn in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wshadow in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wendif-labels in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wstrict-aliasing=2 in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wwrite-strings in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wno-long-long in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wno-overlength-strings in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wno-unused-parameter in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wno-missing-field-initializers in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wno-unused-result in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Werror=overflow in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wdate-time in envvar CFLAGS... no
+checking if gcc -m32 -std=gnu99 supports flag -Wnested-externs in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -ffast-math in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -fno-common in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -fdiagnostics-show-option in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -fdiagnostics-color in envvar CFLAGS... no
+checking if gcc -m32 -std=gnu99 supports flag -fno-strict-aliasing in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -fvisibility=hidden in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -ffunction-sections in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -fdata-sections in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -fstack-protector in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -fstack-protector-strong in envvar CFLAGS... no
+checking if gcc -m32 -std=gnu99 supports flag -fPIE in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag --param=ssp-buffer-size=4 in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -flto in envvar CFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wp,-D_FORTIFY_SOURCE=2 in envvar CPPFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wl,--as-needed in envvar LDFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wl,--no-undefined in envvar LDFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wl,--gc-sections in envvar LDFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wl,-z,relro in envvar LDFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wl,-z,now in envvar LDFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -pie in envvar LDFLAGS... yes
+checking if gcc -m32 -std=gnu99 supports flag -Wl,-fuse-ld=gold in envvar LDFLAGS... no
+checking size of pid_t... 4
+checking size of uid_t... 4
+checking size of gid_t... 4
+checking size of time_t... 4
+checking size of rlim_t... 8
+checking for python... no
+checking for python2... no
+checking for python3... no
+checking for python3.3... no
+checking for python3.2... no
+checking for python3.1... no
+checking for python3.0... no
+checking for python2.7... no
+checking for python2.6... no
+checking for python2.5... no
+checking for python2.4... no
+checking for python2.3... no
+checking for python2.2... no
+checking for python2.1... no
+checking for python2.0... no
+checking for library containing dlsym... -ldl
+checking sys/capability.h usability... yes
+checking sys/capability.h presence... yes
+checking for sys/capability.h... yes
+checking linux/btrfs.h usability... yes
+checking linux/btrfs.h presence... yes
+checking for linux/btrfs.h... yes
+checking for library containing clock_gettime... none required
+checking for library containing cap_init... -lcap
+checking for library containing mq_open... -lrt
+checking for fanotify_init... yes
+checking for fanotify_mark... yes
+checking for __secure_getenv... no
+checking for secure_getenv... yes
+checking whether gettid is declared... no
+checking whether pivot_root is declared... no
+checking whether name_to_handle_at is declared... yes
+checking whether setns is declared... yes
+checking whether LO_FLAGS_PARTSCAN is declared... yes
+checking for DBUS... no
+checking for KMOD... yes
+checking for BLKID... yes
+checking for SECCOMP... no
+checking for chkconfig... no
+checking for SELINUX... no
+checking for APPARMOR... no
+checking for XZ... yes
+checking security/pam_modules.h usability... no
+checking security/pam_modules.h presence... no
+checking for security/pam_modules.h... no
+checking security/pam_modutil.h usability... no
+checking security/pam_modutil.h presence... no
+checking for security/pam_modutil.h... no
+checking security/pam_ext.h usability... no
+checking security/pam_ext.h presence... no
+checking for security/pam_ext.h... no
+checking for pam_syslog in -lpam... no
+checking sys/acl.h usability... yes
+checking sys/acl.h presence... yes
+checking for sys/acl.h... yes
+checking acl/libacl.h usability... yes
+checking acl/libacl.h presence... yes
+checking for acl/libacl.h... yes
+checking for acl_get_file in -lacl... yes
+checking attr/xattr.h usability... yes
+checking attr/xattr.h presence... yes
+checking for attr/xattr.h... yes
+checking for fsetxattr in -lattr... yes
+checking for libgcrypt-config... no
+checking for LIBGCRYPT - version >= 1.4.5... no
+checking libaudit.h usability... no
+checking libaudit.h presence... no
+checking for libaudit.h... no
+checking for audit_open in -laudit... no
+checking for LIBCRYPTSETUP... no
+checking for QRENCODE... no
+checking for MICROHTTPD... no
+checking for GNUTLS... no
+checking for valgrind/memcheck.h... no
+checking for valgrind/valgrind.h... no
+checking for ANSI C header files... (cached) yes
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for inttypes.h... (cached) yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking nss.h usability... yes
+checking nss.h presence... yes
+checking for nss.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/auxv.h usability... yes
+checking sys/auxv.h presence... yes
+checking for sys/auxv.h... yes
+checking for an ANSI C-conforming const... yes
+checking for size_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking for sys/socket.h... (cached) yes
+checking types of arguments for select... int,fd_set *,struct timeval *
+checking for gethostbyaddr... yes
+checking for gethostbyname... yes
+checking for gettimeofday... yes
+checking for inet_ntoa... yes
+checking for memset... yes
+checking for select... yes
+checking for socket... yes
+checking for strcspn... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strncasecmp... yes
+checking for strcasecmp... yes
+checking for strspn... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating po/Makefile.in
+config.status: creating docs/libudev/Makefile
+config.status: creating docs/libudev/version.xml
+config.status: creating docs/gudev/Makefile
+config.status: creating docs/gudev/version.xml
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing po/stamp-it commands
+
+        systemd 213
+
+        libcryptsetup:           no
+        PAM:                     no
+        AUDIT:                   no
+        IMA:                     yes
+        AppArmor:                no
+        SELinux:                 no
+        SECCOMP:                 no
+        SMACK:                   yes
+        XZ:                      yes
+        ACL:                     yes
+        XATTR:                   yes
+        GCRYPT:                  no
+        QRENCODE:                no
+        MICROHTTPD:              no
+        CHKCONFIG:               no
+        GNUTLS:                  no
+        binfmt:                  yes
+        vconsole:                yes
+        readahead:               yes
+        bootchart:               yes
+        quotacheck:              yes
+        tmpfiles:                yes
+        randomseed:              yes
+        backlight:               yes
+        rfkill:                  yes
+        logind:                  yes
+        machined:                yes
+        hostnamed:               yes
+        timedated:               yes
+        timesyncd:               yes
+        default NTP servers:     time1.google.com time2.google.com time3.google.com time4.google.com
+        time epoch:              1401259728
+        localed:                 yes
+        networkd:                yes
+        resolved:                yes
+        default DNS servers:     8.8.8.8 8.8.4.4 2001:4860:4860::8888 2001:4860:4860::8844
+        coredump:                yes
+        polkit:                  yes
+        efi:                     yes
+        kmod:                    yes
+        blkid:                   yes
+        dbus:                    no
+        nss-myhostname:          yes
+        gudev:                   no
+        gintrospection:          no
+        multi-seat-x:            yes
+        kdbus:                   no
+        Python:                  no
+        Python Headers:          no
+        man pages:               yes
+        gtk-doc:                 no
+        test coverage:           no
+        Split /usr:              yes
+        SysV compatibility:      yes
+        compatibility libraries: no
+
+        prefix:                  /usr
+        rootprefix:              
+        sysconf dir:             /etc
+        datarootdir:             ${prefix}/share
+        includedir:              ${prefix}/include
+        include_prefix:          
+        lib dir:                 ${exec_prefix}/lib
+        rootlib dir:             /lib
+        SysV init scripts:       /etc/init.d
+        SysV rc?.d directories:  /etc/rc.d
+        Build Python:            :
+        Installation Python:     /usr/bin/python
+        sphinx binary:           
+        firmware path:           
+        PAM modules dir:         /lib/security
+        PAM configuration dir:   /etc/pam.d
+        D-Bus policy dir:        /etc/dbus-1/system.d
+        D-Bus session dir:       /usr/share/dbus-1/services
+        D-Bus system dir:        /usr/share/dbus-1/system-services
+        D-Bus interfaces dir:    /usr/share/dbus-1/interfaces
+        Bash completions dir:    ${datarootdir}/bash-completion/completions
+        Zsh completions dir:     ${datarootdir}/zsh/site-functions
+        Extra start script:      /etc/rc.local
+        Extra stop script:       /usr/sbin/halt.local
+        Debug shell:             /bin/sh @ /dev/tty9
+        Maximum System UID:      999
+        Maximum System GID:      999
+
+        CFLAGS:                   -pipe -Wall -Wextra -Wno-inline -Wundef -Wformat=2 -Wformat-security -Wformat-nonliteral -Wlogical-op -Wsign-compare -Wmissing-include-dirs -Wold-style-definition -Wpointer-arith -Winit-self -Wdeclaration-after-statement -Wfloat-equal -Wsuggest-attribute=noreturn -Wmissing-prototypes -Wstrict-prototypes -Wredundant-decls -Wmissing-declarations -Wmissing-noreturn -Wshadow -Wendif-labels -Wstrict-aliasing=2 -Wwrite-strings -Wno-long-long -Wno-overlength-strings -Wno-unused-parameter -Wno-missing-field-initializers -Wno-unused-result -Werror=overflow -Wnested-externs -ffast-math -fno-common -fdiagnostics-show-option -fno-strict-aliasing -fvisibility=hidden -ffunction-sections -fdata-sections -fstack-protector -fPIE --param=ssp-buffer-size=4 -flto   -g -O2
+        CPPFLAGS:                 -Wp,-D_FORTIFY_SOURCE=2   
+        LDFLAGS:                  -Wl,--as-needed -Wl,--no-undefined -Wl,--gc-sections -Wl,-z,relro -Wl,-z,now -pie   
+        PYTHON_CFLAGS:           
+        PYTHON_LIBS:             
+
+make[1]: Entering directory '/sources/systemd-213'
+  GEN      src/shared/af-list.txt
+  GEN      src/shared/errno-list.txt
+  M4       src/libsystemd/libsystemd.sym
+  GEN      src/shared/af-to-name.h
+  GEN      src/shared/af-from-name.gperf
+  GPERF    src/shared/af-from-name.h
+  GEN      src/shared/errno-from-name.gperf
+  GEN      src/shared/errno-to-name.h
+  GPERF    src/shared/errno-from-name.h
+make[1]: Leaving directory '/sources/systemd-213'
+make[1]: Entering directory '/sources/systemd-213'
+  GPERF    src/libsystemd/sd-bus/bus-error-mapping.c
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-sd-bus.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-control.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-error.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-internal.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-socket.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-kernel.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-creds.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-signature.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-message.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-container.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-type.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-objects.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-introspect.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-bloom.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-match.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-gvariant.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-convenience.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-track.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-slot.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-util.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-sd-memfd.lo
+  CC       src/libsystemd/sd-utf8/libsystemd_internal_la-sd-utf8.lo
+  CC       src/libsystemd/sd-event/libsystemd_internal_la-sd-event.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_internal_la-sd-rtnl.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_internal_la-rtnl-message.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_internal_la-rtnl-types.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_internal_la-rtnl-util.lo
+  CC       src/libsystemd/sd-id128/libsystemd_internal_la-sd-id128.lo
+  CC       src/libsystemd/sd-daemon/libsystemd_internal_la-sd-daemon.lo
+  CC       src/libsystemd/sd-login/libsystemd_internal_la-sd-login.lo
+  CC       src/libsystemd/sd-bus/libsystemd_internal_la-bus-error-mapping.lo
+  CC       src/shared/libsystemd_shared_la-device-nodes.lo
+  CC       src/shared/libsystemd_shared_la-util.lo
+  CC       src/shared/libsystemd_shared_la-virt.lo
+  CC       src/shared/libsystemd_shared_la-architecture.lo
+  CC       src/shared/libsystemd_shared_la-efivars.lo
+  CC       src/shared/libsystemd_shared_la-time-util.lo
+  CC       src/shared/libsystemd_shared_la-path-util.lo
+  CC       src/shared/libsystemd_shared_la-hashmap.lo
+  CC       src/shared/libsystemd_shared_la-siphash24.lo
+  CC       src/shared/libsystemd_shared_la-set.lo
+  CC       src/shared/libsystemd_shared_la-fdset.lo
+  CC       src/shared/libsystemd_shared_la-prioq.lo
+  CC       src/shared/libsystemd_shared_la-sleep-config.lo
+  CC       src/shared/libsystemd_shared_la-strv.lo
+  CC       src/shared/libsystemd_shared_la-env-util.lo
+  CC       src/shared/libsystemd_shared_la-strbuf.lo
+  CC       src/shared/libsystemd_shared_la-strxcpyx.lo
+  CC       src/shared/libsystemd_shared_la-conf-parser.lo
+  CC       src/shared/libsystemd_shared_la-log.lo
+  CC       src/shared/libsystemd_shared_la-ratelimit.lo
+  CC       src/shared/libsystemd_shared_la-exit-status.lo
+  CC       src/shared/libsystemd_shared_la-utf8.lo
+  CC       src/shared/libsystemd_shared_la-pager.lo
+  CC       src/shared/libsystemd_shared_la-gunicode.lo
+  CC       src/shared/libsystemd_shared_la-socket-util.lo
+  CC       src/shared/libsystemd_shared_la-conf-files.lo
+  CC       src/shared/libsystemd_shared_la-cgroup-util.lo
+  CC       src/shared/libsystemd_shared_la-cgroup-show.lo
+  CC       src/shared/libsystemd_shared_la-unit-name.lo
+  CC       src/shared/libsystemd_shared_la-utmp-wtmp.lo
+  CC       src/shared/libsystemd_shared_la-watchdog.lo
+  CC       src/shared/libsystemd_shared_la-spawn-ask-password-agent.lo
+  CC       src/shared/libsystemd_shared_la-replace-var.lo
+  CC       src/shared/libsystemd_shared_la-spawn-polkit-agent.lo
+  CC       src/shared/libsystemd_shared_la-clock-util.lo
+  CC       src/shared/libsystemd_shared_la-time-dst.lo
+  CC       src/shared/libsystemd_shared_la-calendarspec.lo
+  CC       src/shared/libsystemd_shared_la-fileio.lo
+  CC       src/shared/libsystemd_shared_la-MurmurHash2.lo
+  CC       src/shared/libsystemd_shared_la-acpi-fpdt.lo
+  CC       src/shared/libsystemd_shared_la-boot-timestamps.lo
+  CC       src/shared/libsystemd_shared_la-mkdir.lo
+  CC       src/shared/libsystemd_shared_la-smack-util.lo
+  CC       src/shared/libsystemd_shared_la-apparmor-util.lo
+  CC       src/shared/libsystemd_shared_la-ima-util.lo
+  CC       src/shared/libsystemd_shared_la-ptyfwd.lo
+  CC       src/shared/libsystemd_shared_la-errno-list.lo
+  CC       src/shared/libsystemd_shared_la-af-list.lo
+  CC       src/shared/libsystemd_shared_la-audit.lo
+  CC       src/shared/libsystemd_shared_la-xml.lo
+  CC       src/shared/libsystemd_shared_la-condition-util.lo
+  CC       src/shared/libsystemd_shared_la-bus-label.lo
+  CC       src/shared/libsystemd_shared_la-clean-ipc.lo
+  CC       src/shared/libsystemd_shared_la-generator.lo
+  CC       src/shared/libsystemd_shared_la-login-shared.lo
+  CC       src/shared/libsystemd_shared_la-ring.lo
+  CC       src/shared/libsystemd_shared_la-async.lo
+  CC       src/shared/libsystemd_shared_la-eventfd-util.lo
+  CCLD     libsystemd-internal.la
+  CC       src/libsystemd/sd-bus/libsystemd_la-sd-bus.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-control.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-error.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-internal.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-socket.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-kernel.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-container.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-message.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-creds.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-signature.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-type.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-match.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-bloom.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-introspect.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-objects.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-gvariant.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-convenience.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-track.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-util.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-slot.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-sd-memfd.lo
+  CC       src/libsystemd/sd-utf8/libsystemd_la-sd-utf8.lo
+  CC       src/libsystemd/sd-event/libsystemd_la-sd-event.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_la-sd-rtnl.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_la-rtnl-message.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_la-rtnl-types.lo
+  CC       src/libsystemd/sd-rtnl/libsystemd_la-rtnl-util.lo
+  CC       src/libsystemd/sd-id128/libsystemd_la-sd-id128.lo
+  CC       src/libsystemd/sd-daemon/libsystemd_la-sd-daemon.lo
+  CC       src/libsystemd/sd-login/libsystemd_la-sd-login.lo
+  CC       src/libsystemd/sd-resolve/libsystemd_la-sd-resolve.lo
+  CC       src/journal/libsystemd_la-sd-journal.lo
+  CC       src/journal/libsystemd_la-journal-file.lo
+  CC       src/journal/libsystemd_la-journal-vacuum.lo
+  CC       src/journal/libsystemd_la-journal-verify.lo
+  CC       src/journal/libsystemd_la-lookup3.lo
+  CC       src/journal/libsystemd_la-journal-send.lo
+  CC       src/journal/libsystemd_la-catalog.lo
+  CC       src/journal/libsystemd_la-mmap-cache.lo
+  CC       src/journal/libsystemd_la-compress.lo
+  CC       src/libsystemd/sd-bus/libsystemd_la-bus-error-mapping.lo
+  CCLD     libsystemd-shared.la
+  CC       src/libudev/libudev_la-libudev.lo
+  CC       src/libudev/libudev_la-libudev-list.lo
+  CC       src/libudev/libudev_la-libudev-util.lo
+  CC       src/libudev/libudev_la-libudev-device.lo
+  CC       src/libudev/libudev_la-libudev-enumerate.lo
+  CC       src/libudev/libudev_la-libudev-monitor.lo
+  CC       src/libudev/libudev_la-libudev-queue.lo
+  CC       src/libudev/libudev_la-libudev-hwdb.lo
+  CC       src/nss-myhostname/nss-myhostname.lo
+  CC       src/nss-myhostname/netlink.lo
+src/libudev/libudev-hwdb.c: In function 'udev_hwdb_new':
+src/libudev/libudev-hwdb.c:308:9: warning: format '%zu' expects argument of type 'size_t', but argument 7 has type '__off64_t' [-Wformat=]
+         udev_dbg(udev, "file size:        %8zu bytes\n", hwdb->st.st_size);
+         ^
+  CCLD     libnss_myhostname.la
+  CCLD     libsystemd.la
+  CCLD     libudev.la
+libsystemd_internal_la-bus-message.o (symbol from plugin): warning: memset used with constant zero length parameter; this could be due to transposed parameters
+src/libsystemd/sd-bus/.libs/libsystemd_la-bus-message.o (symbol from plugin): warning: memset used with constant zero length parameter; this could be due to transposed parameters
+libsystemd_internal_la-bus-message.o (symbol from plugin): warning: memset used with constant zero length parameter; this could be due to transposed parameters
+/usr/include/bits/poll2.h: In function 'bus_poll':
+/usr/include/bits/poll2.h:71:2: warning: call to '__ppoll_chk_warn' declared with attribute warning: ppoll called with fds buffer too small file nfds entries [enabled by default]
+  return __ppoll_chk (__fds, __nfds, __timeout, __ss, __bos (__fds));
+  ^
+make[1]: Leaving directory '/sources/systemd-213'
+make[1]: Entering directory '/sources/systemd-213'
+ /bin/mkdir -p '/usr/lib'
+ /bin/sh ./libtool   --mode=install /usr/bin/install -c   libsystemd.la libudev.la libnss_myhostname.la '/usr/lib'
+libtool: install: /usr/bin/install -c .libs/libsystemd.so.0.2.0 /usr/lib/libsystemd.so.0.2.0
+libtool: install: (cd /usr/lib && { ln -s -f libsystemd.so.0.2.0 libsystemd.so.0 || { rm -f libsystemd.so.0 && ln -s libsystemd.so.0.2.0 libsystemd.so.0; }; })
+libtool: install: (cd /usr/lib && { ln -s -f libsystemd.so.0.2.0 libsystemd.so || { rm -f libsystemd.so && ln -s libsystemd.so.0.2.0 libsystemd.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsystemd.lai /usr/lib/libsystemd.la
+libtool: install: /usr/bin/install -c .libs/libudev.so.1.4.1 /usr/lib/libudev.so.1.4.1
+libtool: install: (cd /usr/lib && { ln -s -f libudev.so.1.4.1 libudev.so.1 || { rm -f libudev.so.1 && ln -s libudev.so.1.4.1 libudev.so.1; }; })
+libtool: install: (cd /usr/lib && { ln -s -f libudev.so.1.4.1 libudev.so || { rm -f libudev.so && ln -s libudev.so.1.4.1 libudev.so; }; })
+libtool: install: /usr/bin/install -c .libs/libudev.lai /usr/lib/libudev.la
+libtool: install: /usr/bin/install -c .libs/libnss_myhostname.so.2 /usr/lib/libnss_myhostname.so.2
+libtool: install: /usr/bin/install -c .libs/libnss_myhostname.lai /usr/lib/libnss_myhostname.la
+libtool: finish: PATH="/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin:/usr/sbin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[1]: Leaving directory '/sources/systemd-213'
+make[1]: Entering directory '/sources/systemd-213'
+  GEN      src/libsystemd/libsystemd.pc
+  GEN      src/compat-libs/libsystemd-journal.pc
+  GEN      src/compat-libs/libsystemd-login.pc
+  GEN      src/compat-libs/libsystemd-id128.pc
+  GEN      src/compat-libs/libsystemd-daemon.pc
+  GEN      src/libudev/libudev.pc
+ /bin/mkdir -p '/usr/lib/pkgconfig'
+ /usr/bin/install -c -m 644 src/libsystemd/libsystemd.pc src/compat-libs/libsystemd-journal.pc src/compat-libs/libsystemd-login.pc src/compat-libs/libsystemd-id128.pc src/compat-libs/libsystemd-daemon.pc src/libudev/libudev.pc '/usr/lib/pkgconfig'
+make[1]: Leaving directory '/sources/systemd-213'
+'/usr/lib/libnss_myhostname.so.2' -> '/lib/libnss_myhostname.so.2'
+
+
+Totalseconds: 23
+
+
+KB: 2742924	/
+

@@ -1,0 +1,443 @@
+Sun Aug 31 08:12:57 UTC 2014
+make[1]: Entering directory '/sources/acl-2.2.52'
+/tools/bin/make include libmisc libacl getfacl setfacl chacl m4 man doc po test examples package debian
+make[2]: Entering directory '/sources/acl-2.2.52'
+/tools/bin/make -C include
+make[3]: Entering directory '/sources/acl-2.2.52/include'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/include'
+/tools/bin/make -C libmisc
+make[3]: Entering directory '/sources/acl-2.2.52/libmisc'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/libmisc'
+/tools/bin/make -C libacl
+make[3]: Entering directory '/sources/acl-2.2.52/libacl'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/libacl'
+/tools/bin/make -C getfacl
+make[3]: Entering directory '/sources/acl-2.2.52/getfacl'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/getfacl'
+/tools/bin/make -C setfacl
+make[3]: Entering directory '/sources/acl-2.2.52/setfacl'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/setfacl'
+/tools/bin/make -C chacl
+make[3]: Entering directory '/sources/acl-2.2.52/chacl'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/chacl'
+/tools/bin/make -C m4
+make[3]: Entering directory '/sources/acl-2.2.52/m4'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/m4'
+/tools/bin/make -C man
+make[3]: Entering directory '/sources/acl-2.2.52/man'
+/tools/bin/make -C man1
+make[4]: Entering directory '/sources/acl-2.2.52/man/man1'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/acl-2.2.52/man/man1'
+/tools/bin/make -C man3
+make[4]: Entering directory '/sources/acl-2.2.52/man/man3'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/acl-2.2.52/man/man3'
+/tools/bin/make -C man5
+make[4]: Entering directory '/sources/acl-2.2.52/man/man5'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/acl-2.2.52/man/man5'
+make[3]: Leaving directory '/sources/acl-2.2.52/man'
+/tools/bin/make -C doc
+make[3]: Entering directory '/sources/acl-2.2.52/doc'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/doc'
+/tools/bin/make -C po
+make[3]: Entering directory '/sources/acl-2.2.52/po'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/po'
+/tools/bin/make -C test
+make[3]: Entering directory '/sources/acl-2.2.52/test'
+rm -f  dep dep.bak *.[1-9].gz *.tmpo *.mo       
+make[3]: Leaving directory '/sources/acl-2.2.52/test'
+/tools/bin/make -C examples
+make[3]: Entering directory '/sources/acl-2.2.52/examples'
+rm -f get-acl set-acl copy-acl dep dep.bak *.[1-9].gz *.tmpo *.mo       
+make[3]: Leaving directory '/sources/acl-2.2.52/examples'
+/tools/bin/make -C package
+make[3]: Entering directory '/sources/acl-2.2.52/package'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/package'
+/tools/bin/make -C debian
+make[3]: Entering directory '/sources/acl-2.2.52/debian'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/debian'
+make[2]: Leaving directory '/sources/acl-2.2.52'
+/tools/bin/make -C test/ tests
+make[2]: Entering directory '/sources/acl-2.2.52/test'
+*** malformed-restore.test ***
+[4] $ cp malformed-restore-double-owner.acl tmp.acl -- ok
+[5] $ sed -i "s/USER/root/g" tmp.acl -- ok
+[6] $ sed -i "s/GROUP/root/g" tmp.acl -- ok
+[7] $ touch tmp -- ok
+[8] $ setfacl --restore tmp.acl -- ok
+[10] $ rm tmp.acl tmp -- ok
+[12] $ mkdir tmp -- ok
+[13] $ chmod 1777 tmp -- ok
+[14] $ getfacl tmp > tmp.acl -- ok
+[15] $ sed -i 's/--t/--x/g' tmp.acl -- ok
+[16] $ setfacl --restore tmp.acl -- ok
+[18] $ rmdir tmp -- ok
+[19] $ rm tmp.acl -- ok
+13 commands (13 passed, 0 failed)
+*** sbits-restore.test ***
+[3] $ umask 022 -- ok
+[4] $ mkdir d -- ok
+[5] $ touch d/g -- ok
+[6] $ touch d/u -- ok
+[7] $ chmod u+s d/u -- ok
+[8] $ chmod g+s d/g -- ok
+[9] $ chmod +t d -- ok
+[10] $ getfacl -R d > d.acl -- ok
+[11] $ rm -R d -- ok
+[12] $ mkdir d -- ok
+[13] $ touch d/g -- ok
+[14] $ touch d/u -- ok
+[15] $ setfacl --restore d.acl -- ok
+[16] $ ls -dl d | awk '{print $1}' -- ok
+[18] $ ls -dl d/u | awk '{print $1}' -- ok
+[20] $ ls -dl d/g | awk '{print $1}' -- ok
+[22] $ rm -Rf d -- ok
+17 commands (17 passed, 0 failed)
+*** utf8-filenames.test ***
+[8] $ export UPATH="官官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話官話話官話官話官話>官話官話話官話官" -- ok
+[9] $ mkdir -p $UPATH/$UPATH/$UPATH -- ok
+[10] $ touch $UPATH/$UPATH/$UPATH/$UPATH -- ok
+[11] $ getfacl $UPATH/$UPATH/$UPATH/$UPATH > utf8-filenames.acl -- ok
+[12] $ setfacl --restore=utf8-filenames.acl -- ok
+[13] $ rm -R $UPATH -- ok
+[14] $ rm utf8-filenames.acl -- ok
+7 commands (7 passed, 0 failed)
+*** setfacl-X.test ***
+[1] $ umask 022 -- ok
+[2] $ mkdir d -- ok
+[3] $ cd d -- ok
+[5] $ setfacl -dm u:bin:rwx . -- ok
+[7] $ touch f g -- ok
+[8] $ chmod ugo+x f -- ok
+[9] $ setfacl -m u:bin:rw,g::r g -- ok
+[10] $ setfacl -m u:root:rwX f g -- ok
+[11] $ getfacl --omit-header --no-effective f g -- ok
+[27] $ rm f g -- ok
+[28] $ touch f g -- ok
+[29] $ mkdir d e -- ok
+[30] $ setfacl -n -m u:root:rwX d f e g -- ok
+[31] $ getfacl --omit-header --no-effective d e f g -- ok
+[71] $ rm f g -- ok
+[72] $ rmdir d e -- ok
+[73] $ touch f g -- ok
+[74] $ mkdir d e -- ok
+[75] $ setfacl -n -m u:root:rwX f d g e -- ok
+[76] $ getfacl --omit-header --no-effective d e f g -- ok
+[116] $ rm f g -- ok
+[117] $ rmdir d e -- ok
+[118] $ cd .. -- ok
+[119] $ rm -rf d -- ok
+24 commands (24 passed, 0 failed)
+*** getfacl-noacl.test ***
+[4] $ mkdir test -- ok
+[5] $ cd test -- ok
+[6] $ umask 027 -- ok
+[7] $ touch x -- ok
+[8] $ getfacl --omit-header x -- ok
+[14] $ getfacl --omit-header --access x -- ok
+[20] $ getfacl --omit-header -d x -- ok
+[21] $ getfacl --omit-header -d . -- ok
+[22] $ getfacl --omit-header -d / -- ok
+[25] $ getfacl --skip-base x -- ok
+[26] $ getfacl --omit-header --all-effective x -- ok
+[32] $ getfacl --omit-header --no-effective x -- ok
+[38] $ mkdir d -- ok
+[39] $ touch d/y -- ok
+[40] $ ln -s d l -- ok
+[41] $ getfacl -dR . | grep file | sort -- ok
+[47] $ ln -s l ll -- ok
+[48] $ getfacl -dLR ll | grep file | sort -- ok
+[52] $ rm l ll x -- ok
+[53] $ rm -rf d -- ok
+[54] $ cd .. -- ok
+[55] $ rmdir test -- ok
+22 commands (22 passed, 0 failed)
+*** getfacl-recursive.test ***
+[3] $ umask 022 -- ok
+[4] $ mkdir -p 1/2/3 -- ok
+[5] $ mkdir 1/link -- ok
+[6] $ touch 1/link/file -- ok
+[7] $ ln -s `pwd`/1/link 1/2/link -- ok
+[8] $ getfacl -P -R 1/2 | ./sort-getfacl-output -- ok
+[24] $ getfacl -R 1/2 | ./sort-getfacl-output -- ok
+[40] $ getfacl -R -L 1/2 | ./sort-getfacl-output -- ok
+[70] $ getfacl -P -R 1 | ./sort-getfacl-output -- ok
+[107] $ getfacl -R 1 | ./sort-getfacl-output -- ok
+[144] $ getfacl -R -L 1 | ./sort-getfacl-output -- ok
+[195] $ rm -R 1/ -- ok
+12 commands (12 passed, 0 failed)
+*** cp.test ***
+[3] $ umask 022 -- ok
+[4] $ mkdir d -- ok
+[5] $ cd d -- ok
+[6] $ touch f -- ok
+[7] $ setfacl -m u:bin:rw f -- ok
+[8] $ ls -l f | awk -- '{ print $1 }' -- failed
+-rw-rw-r--                            != -rw-rw-r--+
+[11] $ cp f g -- ok
+[12] $ ls -l g | awk -- '{ print $1 }' -- ok
+[15] $ rm g -- ok
+[16] $ cp -p f g -- ok
+[17] $ ls -l f | awk -- '{ print $1 }' -- failed
+-rw-rw-r--                            != -rw-rw-r--+
+[20] $ mkdir h -- ok
+[21] $ echo blubb > h/x -- ok
+[22] $ cp -rp h i -- ok
+[23] $ cat i/x -- ok
+[26] $ rm -r i -- ok
+[27] $ setfacl -R -m u:bin:rwx h -- ok
+[28] $ getfacl --omit-header h/x -- ok
+[36] $ cp -rp h i -- ok
+[37] $ getfacl --omit-header i/x -- failed
+user::rw-                             == user::rw-
+group::rwx                            != user:bin:rwx
+other::r--                            != group::r--
+                                      != mask::rwx
+~                                     != other::r--
+~                                     != 
+[45] $ cd .. -- ok
+[46] $ rm -r d -- ok
+22 commands (19 passed, 3 failed)
+Makefile:39: recipe for target 'cp.test' failed
+make[2]: *** [cp.test] Error 3
+*** misc.test ***
+[6] $ rm -f f -- ok
+[7] $ umask 027 -- ok
+[8] $ touch f -- ok
+[11] $ setfacl -m u::r f -- ok
+[12] $ setfacl -m u::rw,u:bin:rw f -- ok
+[13] $ ls -dl f | awk '{print $1}' -- failed
+-rw-rw----                            != -rw-rw----+
+[16] $ getfacl --omit-header f -- ok
+[24] $ rm f -- ok
+[25] $ umask 022 -- ok
+[26] $ touch f -- ok
+[27] $ setfacl -m u:bin:rw f -- ok
+[28] $ ls -dl f | awk '{print $1}' -- failed
+-rw-rw-r--                            != -rw-rw-r--+
+[31] $ getfacl --omit-header f -- ok
+[39] $ rm f -- ok
+[40] $ umask 027 -- ok
+[41] $ mkdir d -- ok
+[42] $ setfacl -m u:bin:rwx d -- ok
+[43] $ ls -dl d | awk '{print $1}' -- failed
+drwxrwx---                            != drwxrwx---+
+[46] $ getfacl --omit-header d -- ok
+[54] $ rmdir d -- ok
+[55] $ umask 022 -- ok
+[56] $ mkdir d -- ok
+[57] $ setfacl -m u:bin:rwx d -- ok
+[58] $ ls -dl d | awk '{print $1}' -- failed
+drwxrwxr-x                            != drwxrwxr-x+
+[61] $ getfacl --omit-header d -- ok
+[69] $ rmdir d -- ok
+[74] $ umask 022 -- ok
+[75] $ touch f -- ok
+[76] $ setfacl -m u:bin:rw,u:daemon:r f -- ok
+[77] $ ls -dl f | awk '{print $1}' -- failed
+-rw-rw-r--                            != -rw-rw-r--+
+[80] $ getfacl --omit-header f -- ok
+[91] $ setfacl -m g:users:rw,g:daemon:r f -- failed
+setfacl: Option -m: Invalid argument near character 3 != ~
+[92] $ ls -dl f | awk '{print $1}' -- failed
+-rw-rw-r--                            != -rw-rw-r--+
+[95] $ getfacl --omit-header f -- failed
+user::rw-                             == user::rw-
+user:bin:rw-                          == user:bin:rw-
+user:daemon:r--                       == user:daemon:r--
+group::r--                            == group::r--
+mask::rw-                             != group:daemon:r--
+other::r--                            != group:users:rw-
+                                      != mask::rw-
+~                                     != other::r--
+~                                     != 
+[108] $ setfacl -x g:users f -- failed
+setfacl: Option -x: Invalid argument near character 3 != ~
+[109] $ ls -dl f | awk '{print $1}' -- failed
+-rw-rw-r--                            != -rw-rw-r--+
+[112] $ getfacl --omit-header f -- failed
+user::rw-                             == user::rw-
+user:bin:rw-                          == user:bin:rw-
+user:daemon:r--                       == user:daemon:r--
+group::r--                            == group::r--
+mask::rw-                             != group:daemon:r--
+other::r--                            != mask::rw-
+                                      != other::r--
+~                                     != 
+[124] $ setfacl -x u:daemon f -- ok
+[125] $ ls -dl f | awk '{print $1}' -- failed
+-rw-rw-r--                            != -rw-rw-r--+
+[128] $ getfacl --omit-header f -- failed
+user::rw-                             == user::rw-
+user:bin:rw-                          == user:bin:rw-
+group::r--                            == group::r--
+mask::rw-                             != group:daemon:r--
+other::r--                            != mask::rw-
+                                      != other::r--
+~                                     != 
+[137] $ rm f -- ok
+[141] $ umask 027 -- ok
+[142] $ mkdir d -- ok
+[143] $ setfacl -m u:bin:rwx,u:daemon:rw,d:u:bin:rwx,d:m:rx d -- ok
+[144] $ ls -dl d | awk '{print $1}' -- failed
+drwxrwx---                            != drwxrwx---+
+[147] $ getfacl --omit-header d -- ok
+[163] $ umask 027 -- ok
+[164] $ touch d/f -- ok
+[165] $ ls -dl d/f | awk '{print $1}' -- failed
+-rw-r-----                            != -rw-r-----+
+[168] $ getfacl --omit-header d/f -- ok
+[176] $ rm d/f -- ok
+[177] $ umask 022 -- ok
+[178] $ touch d/f -- ok
+[179] $ ls -dl d/f | awk '{print $1}' -- failed
+-rw-r-----                            != -rw-r-----+
+[182] $ getfacl --omit-header d/f -- ok
+[190] $ rm d/f -- ok
+[194] $ umask 000 -- ok
+[195] $ mkdir d/d -- ok
+[196] $ ls -dl d/d | awk '{print $1}' -- failed
+drwxr-x---                            != drwxr-x---+
+[199] $ getfacl --omit-header d/d -- ok
+[212] $ rmdir d/d -- ok
+[213] $ umask 022 -- ok
+[214] $ mkdir d/d -- ok
+[215] $ ls -dl d/d | awk '{print $1}' -- failed
+drwxr-x---                            != drwxr-x---+
+[218] $ getfacl --omit-header d/d -- ok
+[233] $ setfacl -nm u:daemon:rx,d:u:daemon:rx,g:users:rx,g:daemon:rwx d/d -- failed
+setfacl: Option -m: Invalid argument near character 29 != ~
+[234] $ ls -dl d/d | awk '{print $1}' -- failed
+drwxr-x---                            != drwxr-x---+
+[237] $ getfacl --omit-header d/d -- failed
+user::rwx                             == user::rwx
+user:bin:rwx	#effective:r-x           == user:bin:rwx	#effective:r-x
+group::r-x                            != user:daemon:r-x
+mask::r-x                             != group::r-x
+other::---                            != group:daemon:rwx	#effective:r-x
+default:user::rwx                     != group:users:r-x
+default:user:bin:rwx	#effective:r-x   != mask::r-x
+default:group::r-x                    != other::---
+default:mask::r-x                     != default:user::rwx
+default:other::---                    != default:user:bin:rwx	#effective:r-x
+                                      != default:user:daemon:r-x
+~                                     != default:group::r-x
+~                                     != default:mask::r-x
+~                                     != default:other::---
+~                                     != 
+[256] $ ln -s d d/l -- ok
+[257] $ ls -dl d/l | awk '{print $1}' -- ok
+[260] $ ls -dl -L d/l | awk '{print $1}' -- failed
+drwxr-x---                            != drwxr-x---+
+[263] $ getfacl --omit-header d/l -- failed
+user::rwx                             == user::rwx
+user:bin:rwx	#effective:r-x           == user:bin:rwx	#effective:r-x
+group::r-x                            != user:daemon:r-x
+mask::r-x                             != group::r-x
+other::---                            != group:daemon:rwx	#effective:r-x
+default:user::rwx                     != group:users:r-x
+default:user:bin:rwx	#effective:r-x   != mask::r-x
+default:group::r-x                    != other::---
+default:mask::r-x                     != default:user::rwx
+default:other::---                    != default:user:bin:rwx	#effective:r-x
+                                      != default:user:daemon:r-x
+~                                     != default:group::r-x
+~                                     != default:mask::r-x
+~                                     != default:other::---
+~                                     != 
+[280] $ rm d/l -- ok
+[284] $ setfacl -m g:daemon:rx,u:bin:rx d/d -- ok
+[285] $ ls -dl d/d | awk '{print $1}' -- failed
+drwxr-x---                            != drwxr-x---+
+[288] $ getfacl --omit-header d/d -- failed
+user::rwx                             == user::rwx
+user:bin:r-x                          == user:bin:r-x
+group::r-x                            != user:daemon:r-x
+group:daemon:r-x                      != group::r-x
+mask::r-x                             != group:daemon:r-x
+other::---                            != group:users:r-x
+default:user::rwx                     != mask::r-x
+default:user:bin:rwx	#effective:r-x   != other::---
+default:group::r-x                    != default:user::rwx
+default:mask::r-x                     != default:user:bin:rwx	#effective:r-x
+default:other::---                    != default:user:daemon:r-x
+                                      != default:group::r-x
+~                                     != default:mask::r-x
+~                                     != default:other::---
+~                                     != 
+[305] $ setfacl -m d:u:bin:rwx d/d -- ok
+[306] $ ls -dl d/d | awk '{print $1}' -- failed
+drwxr-x---                            != drwxr-x---+
+[309] $ getfacl --omit-header d/d -- failed
+user::rwx                             == user::rwx
+user:bin:r-x                          == user:bin:r-x
+group::r-x                            != user:daemon:r-x
+group:daemon:r-x                      != group::r-x
+mask::r-x                             != group:daemon:r-x
+other::---                            != group:users:r-x
+default:user::rwx                     != mask::r-x
+default:user:bin:rwx                  != other::---
+default:group::r-x                    != default:user::rwx
+default:mask::rwx                     != default:user:bin:rwx
+default:other::---                    != default:user:daemon:r-x
+                                      != default:group::r-x
+~                                     != default:mask::rwx
+~                                     != default:other::---
+~                                     != 
+[326] $ rmdir d/d -- ok
+[330] $ setfacl -k d -- ok
+[331] $ ls -dl d | awk '{print $1}' -- failed
+drwxrwx---                            != drwxrwx---+
+[334] $ getfacl --omit-header d -- ok
+[345] $ setfacl -b d -- ok
+[346] $ ls -dl d | awk '{print $1}' -- ok
+[349] $ getfacl --omit-header d -- ok
+[357] $ chmod 775 d -- ok
+[358] $ ls -dl d | awk '{print $1}' -- ok
+[361] $ getfacl --omit-header d -- ok
+[367] $ rmdir d -- ok
+[368] $ umask 002 -- ok
+[369] $ mkdir d -- ok
+[370] $ setfacl -m u:daemon:rwx,u:bin:rx,d:u:daemon:rwx,d:u:bin:rx d -- ok
+[371] $ ls -dl d | awk '{print $1}' -- failed
+drwxrwxr-x                            != drwxrwxr-x+
+[374] $ getfacl --omit-header d -- ok
+[389] $ chmod 750 d -- ok
+[390] $ ls -dl d | awk '{print $1}' -- failed
+drwxr-x---                            != drwxr-x---+
+[393] $ getfacl --omit-header d -- ok
+[408] $ chmod 750 d -- ok
+[409] $ ls -dl d | awk '{print $1}' -- failed
+drwxr-x---                            != drwxr-x---+
+[412] $ getfacl --omit-header d -- ok
+[427] $ rmdir d -- ok
+[431] $ mkdir d -- ok
+[432] $ ln -s d/a d/b -- ok
+[433] $ getfacl -R d -- ok
+[441] $ setfacl -R -m u:bin:rw d -- ok
+[442] $ getfacl -RL d -- ok
+[453] $ setfacl -RL -m u:bin:rw d -- ok
+[455] $ rm -R d -- ok
+[459] $ echo "# owner: root" > f -- ok
+[460] $ setfacl --restore=f 2>&1 -- ok
+111 commands (80 passed, 31 failed)
+Makefile:39: recipe for target 'misc.test' failed
+make[2]: *** [misc.test] Error 31
+make[2]: Target 'tests' not remade because of errors.
+make[2]: Leaving directory '/sources/acl-2.2.52/test'
+Makefile:115: recipe for target 'tests' failed
+make[1]: *** [tests] Error 2
+make[1]: Leaving directory '/sources/acl-2.2.52'

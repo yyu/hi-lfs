@@ -1,0 +1,19 @@
+Sat Jun 14 14:23:04 CDT 2014
+
+KB: 5682585	/
+
+mkdir: created directory `/mnt/clfs/dev'
+mkdir: created directory `/mnt/clfs/proc'
+mkdir: created directory `/mnt/clfs/sys'
+proc on /mnt/clfs/proc type proc (rw)
+sysfs on /mnt/clfs/sys type sysfs (rw)
+/dev on /mnt/clfs/dev type none (rw,bind)
+shm on /mnt/clfs/run/shm type tmpfs (rw)
+devpts on /mnt/clfs/dev/pts type devpts (rw,gid=5,mode=620)
+
+
+Totalseconds: 0
+
+
+KB: 1382356	/mnt/clfs
+

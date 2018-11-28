@@ -1,0 +1,68 @@
+Fri Jun 13 11:19:56 CDT 2014
+make[1]: Entering directory '/sources/kmod-17'
+Making check in .
+  GEN      rootfs
+make --no-print-directory testsuite/uname.la testsuite/path.la testsuite/init_module.la testsuite/delete_module.la testsuite/libtestsuite.la testsuite/test-init testsuite/test-testsuite testsuite/test-loaded testsuite/test-modinfo testsuite/test-util testsuite/test-new-module testsuite/test-modprobe testsuite/test-blacklist testsuite/test-dependencies testsuite/test-depmod
+  CC       testsuite/uname.lo
+  CC       testsuite/path.lo
+  CC       testsuite/init_module.lo
+  CC       testsuite/delete_module.lo
+  CC       testsuite/testsuite_libtestsuite_la-testsuite.lo
+  CC       testsuite/testsuite_test_init-test-init.o
+  CC       testsuite/testsuite_test_testsuite-test-testsuite.o
+  CC       testsuite/testsuite_test_loaded-test-loaded.o
+  CC       testsuite/testsuite_test_modinfo-test-modinfo.o
+  CC       testsuite/testsuite_test_util-test-util.o
+  CC       testsuite/testsuite_test_new_module-test-new-module.o
+  CC       testsuite/testsuite_test_blacklist-test-blacklist.o
+  CC       testsuite/testsuite_test_modprobe-test-modprobe.o
+  CC       testsuite/testsuite_test_dependencies-test-dependencies.o
+  CC       testsuite/testsuite_test_depmod-test-depmod.o
+  CCLD     testsuite/uname.la
+  CCLD     testsuite/path.la
+  CCLD     testsuite/init_module.la
+  CCLD     testsuite/delete_module.la
+  CCLD     testsuite/libtestsuite.la
+  CCLD     testsuite/test-init
+  CCLD     testsuite/test-loaded
+  CCLD     testsuite/test-testsuite
+  CCLD     testsuite/test-modinfo
+  CCLD     testsuite/test-util
+  CCLD     testsuite/test-new-module
+  CCLD     testsuite/test-modprobe
+  CCLD     testsuite/test-blacklist
+  CCLD     testsuite/test-dependencies
+  CCLD     testsuite/test-depmod
+make --no-print-directory check-TESTS
+PASS: testsuite/test-loaded
+PASS: testsuite/test-init
+PASS: testsuite/test-testsuite
+PASS: testsuite/test-modinfo
+PASS: testsuite/test-util
+PASS: testsuite/test-new-module
+PASS: testsuite/test-blacklist
+PASS: testsuite/test-dependencies
+PASS: testsuite/test-depmod
+PASS: testsuite/test-modprobe
+make --no-print-directory all-recursive
+Making all in .
+Making all in libkmod/docs
+make[7]: Nothing to be done for 'all'.
+Making all in man
+make[7]: Nothing to be done for 'all'.
+============================================================================
+Testsuite summary for kmod 17
+============================================================================
+# TOTAL: 10
+# PASS:  10
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+Making check in libkmod/docs
+make[2]: Nothing to be done for 'check'.
+Making check in man
+make[2]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/sources/kmod-17'

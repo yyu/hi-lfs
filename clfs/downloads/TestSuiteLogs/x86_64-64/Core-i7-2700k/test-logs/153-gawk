@@ -1,0 +1,439 @@
+Sat Jun 14 16:21:48 CDT 2014
+make[1]: Entering directory '/sources/gawk-4.1.1'
+Making check in .
+make[2]: Entering directory '/sources/gawk-4.1.1'
+make 'CFLAGS=-g -O2 -DNDEBUG' 'LDFLAGS=-export-dynamic' check-local
+make[3]: Entering directory '/sources/gawk-4.1.1'
+make[3]: Leaving directory '/sources/gawk-4.1.1'
+make[2]: Leaving directory '/sources/gawk-4.1.1'
+Making check in awklib
+Making check in doc
+make[2]: Entering directory '/sources/gawk-4.1.1/doc'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/sources/gawk-4.1.1/doc'
+Making check in po
+make[2]: Entering directory '/sources/gawk-4.1.1/po'
+make[2]: Leaving directory '/sources/gawk-4.1.1/po'
+Making check in extension
+make[2]: Entering directory '/sources/gawk-4.1.1/extension'
+make[3]: Entering directory '/sources/gawk-4.1.1/extension'
+make[3]: Leaving directory '/sources/gawk-4.1.1/extension'
+make[2]: Leaving directory '/sources/gawk-4.1.1/extension'
+Making check in test
+make[2]: Entering directory '/sources/gawk-4.1.1/test'
+
+addcomma
+Any output from "cmp" is bad news, although some differences
+anchgsub
+argarray
+arrayparm
+======== Starting basic tests ========
+in floating point values are probably benign -- in particular,
+arrayprm2
+some systems may omit a leading zero and the floating point
+
+Locale environment:
+	LC_ALL="C" LANG="C"
+
+arryref2
+precision may lead to slightly different output in a few cases.
+arryref3
+arryref4
+arrayref
+arryref5
+arrymem1
+arynasty
+arrayprm3
+aryprm1
+arynocls
+aryprm2
+aryprm3
+aryprm5
+aryprm4
+aryprm6
+aryprm8
+arysubnm
+asgext
+awkpath
+back89
+aryprm7
+badassign1
+backgsub
+clobber
+childin
+closebad
+compare
+compare2
+concat1
+clsflnam
+concat3
+concat4
+convfmt
+concat2
+delargv
+defref
+datanonl
+delarpm2
+delarprm
+delfunc
+dfamb1
+dfastress
+exit2
+dynlj
+eofsplit
+exitval2
+fcall_exit
+fcall_exit2
+exitval1
+fldchgnf
+fnamedat
+fldchg
+fnmisc
+fnarray2
+forref
+fordel
+fnarray
+fnaryscl
+forsimp
+fnasgnm
+fsbs
+fsrs
+fsspcoln
+funsemnl
+fstabplus
+funsmnam
+funstack
+getline2
+getline4
+getline5
+getline
+getnr2tb
+getline3
+getlnbuf
+getnr2tm
+gsubtest
+gsubasgn
+gsubtst2
+gsubtst3
+gsubtst5
+gsubtst4
+gsubtst6
+gsubtst7
+gsubtst8
+hex
+inputred
+hsprint
+intest
+iobug1
+intprec
+leadnl
+litoct
+longsub
+leaddig
+longwrds
+manglprm
+math
+membug1
+minusstr
+messages
+nasty
+mtchi18n
+mmap8k
+negexp
+nasty2
+nested
+nfldstr
+negrange
+nfloop
+nfneg
+nfset
+nlinstr
+nlfldsep
+noeffect
+nofmtch
+noloop2
+nlstrina
+nofile
+noloop1
+nonl
+noparms
+nulrsend
+nors
+numindex
+ofmt
+octsub
+ofmta
+ofmtbig
+ofs1
+ofmts
+numsubstr
+ofmtfidl
+onlynl
+opasnidx
+opasnslf
+paramdup
+paramres
+paramuninitglobal
+paramtyp
+parse1
+pcntplus
+parseme
+posix2008sub
+parsefld
+prdupval
+prec
+printf1
+prmarscl
+printf0
+prt1eval
+rand
+prtoeval
+prmreuse
+range1
+rebt8b1
+regeq
+redfilnm
+regexprange
+regrange
+reparse
+resplit
+reindops
+rri1
+rs
+rsnul1nl
+rsnulbig2
+rstest2
+rstest1
+rsnulbig
+rstest3
+rstest4
+rswhite
+scalar
+rstest5
+sclforin
+sclifin
+sortempty
+splitargv
+splitarr
+splitdef
+splitvar
+splitwht
+strcat1
+strnum1
+strtod
+subi18n
+subamp
+subslash
+subsepnm
+substr
+swaplns
+synerr2
+synerr1
+tradanch
+tweakfld
+uninit3
+uninit2
+uninit4
+uninit5
+uninitialized
+unterm
+uparrfs
+widesub
+wideidx2
+widesub2
+wideidx
+widesub3
+widesub4
+wjposer1
+zeroe0
+zeroflag
+zero2
+======== Done with basic tests ========
+getlnhd
+fflush
+localenl
+pid
+======== Starting Unix tests ========
+pipeio2
+pipeio1
+rtlen
+poundbang
+rtlen01
+space
+strftlng
+======== Done with Unix tests ========
+aadelete2
+aadelete1
+======== Starting gawk extension tests ========
+aarray1
+aasort
+aasorti
+argtest
+beginfile2
+beginfile1
+arraysort
+binmode1
+backw
+charasbytes
+colonwarn
+badargs
+clos1way
+devfd1
+delsub
+devfd
+exit
+dumpvars
+devfd2
+fpat1
+fieldwdth
+fpat3
+fsfwfs
+fpatnull
+funlen
+fpat2
+functab1
+functab2
+functab3
+fwtest2
+fwtest
+fwtest3
+gensub
+gnuops2
+getlndir
+gensub2
+gnuops3
+icasefs
+gnureops
+icasers
+id
+igncdym
+igncfs
+ignrcas2
+ignrcase
+incdupe
+incdupe2
+incdupe4
+incdupe3
+incdupe6
+incdupe5
+incdupe7
+include
+include2
+indirectcall
+lint
+lintold
+lintwarn
+manyfiles
+match1
+match2
+nastyparm
+mbstr1
+next
+match3
+nondec
+nondec2
+patsplit
+posix
+printfbad1
+printfbad3
+printfbad2
+procinfs
+profile3
+profile1
+profile4
+pty1
+profile2
+rebuf
+profile5
+regx8bit
+reginttrad
+reint
+rsstart1
+reint2
+rsstart2
+rsstart3
+rstest6
+shadow
+sortu
+split_after_fpat
+sortfor
+splitarg4
+strftime
+strtonum
+switch2
+symtab1
+symtab3
+symtab4
+symtab2
+symtab5
+symtab7
+symtab6
+symtab8
+symtab9
+======== Done with gawk extension tests ========
+======== Starting machine-specific tests ========
+double1
+double2
+intformat
+asort
+======== Starting tests that can vary based on character set or locale support ========
+asorti
+backbigs1
+backsmalls2
+backsmalls1
+fmttest
+fnparydl
+fnarydel
+lc_num1
+mbfw1
+jarebug
+======== Done with machine-specific tests ========
+mbprintf1
+mbprintf3
+mbprintf2
+mbprintf4
+rebt8b2
+rtlenmb
+sort1
+sprintfc
+======== Done with tests that can vary based on character set or locale support ========
+======== Starting shared library tests ========
+======== Done with shared library tests ========
+======== Done with MPFR tests ========
+======== Starting MPFR tests ========
+fmtspcl
+make[3]: Entering directory '/sources/gawk-4.1.1/test'
+mpfrnr
+mpfrnegzero
+mpfrieee
+mpfrrnd
+mpfrexprange
+mpfrsort
+mpfrbigint
+make[3]: Entering directory '/sources/gawk-4.1.1/test'
+fnmatch
+filefuncs
+fork2
+functab4
+fork
+inplace2
+inplace3
+fts
+inplace1
+ordchr
+ordchr2
+readfile
+readfile2
+readdir
+rwarray
+revout
+testext
+time
+revtwoway
+make[3]: Leaving directory '/sources/gawk-4.1.1/test'
+make[3]: Leaving directory '/sources/gawk-4.1.1/test'
+make[3]: Entering directory '/sources/gawk-4.1.1/test'
+ALL TESTS PASSED
+make[3]: Leaving directory '/sources/gawk-4.1.1/test'
+make[2]: Leaving directory '/sources/gawk-4.1.1/test'
+make[1]: Leaving directory '/sources/gawk-4.1.1'

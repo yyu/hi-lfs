@@ -1,0 +1,723 @@
+Sat Jun 28 18:20:05 UTC 2014
+
+KB: 2339584	/
+
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking how to print strings... printf
+checking for gcc... gcc -m32
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc -m32 accepts -g... yes
+checking for gcc -m32 option to accept ISO C89... none needed
+checking for a sed that does not truncate output... /tools/bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc -m32... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 3458764513820540925
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking for gawk... gawk
+checking command to parse /usr/bin/nm -B output from gcc -m32 object... ok
+checking for sysroot... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... gcc -m32 -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc -m32 supports -fno-rtti -fno-exceptions... no
+checking for gcc -m32 option to produce PIC... -fPIC -DPIC
+checking if gcc -m32 PIC flag -fPIC -DPIC works... yes
+checking if gcc -m32 static flag -static works... yes
+checking if gcc -m32 supports -c -o file.o... yes
+checking if gcc -m32 supports -c -o file.o... (cached) yes
+checking whether the gcc -m32 linker (/usr/bin/ld -m elf_i386) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for gcc... (cached) gcc -m32
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc -m32 accepts -g... (cached) yes
+checking for gcc -m32 option to accept ISO C89... (cached) none needed
+checking for gcc... (cached) gcc -m32
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc -m32 accepts -g... (cached) yes
+checking for gcc -m32 option to accept ISO C89... (cached) none needed
+./configure: line 11790: test: gcc: binary operator expected
+checking for gmake... no
+checking for make... /tools/bin/make
+checking for tar... /tools/bin/tar
+checking for gzip... /tools/bin/gzip
+checking for makedepend... /bin/true
+checking for awk... /tools/bin/awk
+checking for sed... (cached) /tools/bin/sed
+checking for echo... /bin/echo
+checking for sort... /tools/bin/sort
+checking whether ln -s works... yes
+checking for msgfmt... /tools/bin/msgfmt
+checking for msgmerge... /tools/bin/msgmerge
+checking for xgettext... /tools/bin/xgettext
+checking for rpm... no
+checking attr/xattr.h usability... yes
+checking attr/xattr.h presence... yes
+checking for attr/xattr.h... yes
+checking attr/error_context.h usability... yes
+checking attr/error_context.h presence... yes
+checking for attr/error_context.h... yes
+checking for getxattr in -lattr... yes
+checking whether __attribute__((visibility())) is supported... yes
+configure: creating ./config.status
+config.status: creating include/builddefs
+config.status: creating include/config.h
+config.status: executing libtool commands
+make[1]: Entering directory '/sources/acl-2.2.52'
+/tools/bin/make include libmisc libacl getfacl setfacl chacl m4 man doc po test examples package debian
+make[2]: Entering directory '/sources/acl-2.2.52'
+/tools/bin/make -C include
+/tools/bin/make -C libmisc
+/tools/bin/make -C m4
+/tools/bin/make -C man
+/tools/bin/make -C doc
+/tools/bin/make -C po
+/tools/bin/make -C test
+/tools/bin/make -C examples
+/tools/bin/make -C package
+/tools/bin/make -C debian
+make[3]: Entering directory '/sources/acl-2.2.52/include'
+make[3]: Entering directory '/sources/acl-2.2.52/libmisc'
+make[3]: Entering directory '/sources/acl-2.2.52/m4'
+make[3]: Entering directory '/sources/acl-2.2.52/man'
+make[3]: Entering directory '/sources/acl-2.2.52/doc'
+make[3]: Entering directory '/sources/acl-2.2.52/po'
+make[3]: Entering directory '/sources/acl-2.2.52/test'
+make[3]: Entering directory '/sources/acl-2.2.52/examples'
+make[3]: Entering directory '/sources/acl-2.2.52/debian'
+make[3]: Entering directory '/sources/acl-2.2.52/package'
+ln -s . sys
+ln -s . acl
+/tools/bin/make -C man1
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/m4'
+/tools/bin/make -C man3
+/tools/bin/gzip --best -c < CHANGES > CHANGES.gz
+/tools/bin/make -C man5
+rm -f get-acl set-acl copy-acl dep dep.bak *.[1-9].gz *.tmpo *.mo       
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64   -c quote.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64   -c unquote.c
+rm -f  dep dep.bak *.[1-9].gz *.tmpo *.mo       
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64   -c high_water_alloc.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64   -c next_line.c
+make[4]: Entering directory '/sources/acl-2.2.52/man/man3'
+make[4]: Entering directory '/sources/acl-2.2.52/man/man5'
+/tools/bin/msgfmt -o de.mo de.po
+make[4]: Entering directory '/sources/acl-2.2.52/man/man1'
+/tools/bin/msgfmt -o es.mo es.po
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/package'
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64   -c walk_tree.c
+make[3]: Leaving directory '/sources/acl-2.2.52/examples'
+/tools/bin/msgfmt -o fr.mo fr.po
+make[3]: Leaving directory '/sources/acl-2.2.52/test'
+/tools/bin/msgfmt -o gl.mo gl.po
+make[3]: Leaving directory '/sources/acl-2.2.52/include'
+make[3]: Leaving directory '/sources/acl-2.2.52/doc'
+/tools/bin/msgfmt -o pl.mo pl.po
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/debian'
+/tools/bin/msgfmt -o sv.mo sv.po
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/acl-2.2.52/man/man5'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/acl-2.2.52/man/man1'
+make[3]: Leaving directory '/sources/acl-2.2.52/po'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/acl-2.2.52/man/man3'
+make[3]: Leaving directory '/sources/acl-2.2.52/man'
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c next_line.c  -fPIC -DPIC -o .libs/next_line.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c quote.c  -fPIC -DPIC -o .libs/quote.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c unquote.c  -fPIC -DPIC -o .libs/unquote.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c walk_tree.c  -fPIC -DPIC -o .libs/walk_tree.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c high_water_alloc.c  -fPIC -DPIC -o .libs/high_water_alloc.o
+walk_tree.c: In function 'walk_tree_rec':
+walk_tree.c:104:43: warning: suggest parentheses around '&&' within '||' [-Wparentheses]
+         if ((flags & WALK_TREE_RECURSIVE) &&
+                                           ^
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c next_line.c -o next_line.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c quote.c -o quote.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c high_water_alloc.c -o high_water_alloc.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c unquote.c -o unquote.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c walk_tree.c -o walk_tree.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=link gcc -m32  -o libmisc.la quote.lo unquote.lo high_water_alloc.lo next_line.lo walk_tree.lo 
+libtool: link: ar cru .libs/libmisc.a .libs/quote.o .libs/unquote.o .libs/high_water_alloc.o .libs/next_line.o .libs/walk_tree.o 
+libtool: link: ranlib .libs/libmisc.a
+libtool: link: ( cd ".libs" && rm -f "libmisc.la" && ln -s "../libmisc.la" "libmisc.la" )
+make[3]: Leaving directory '/sources/acl-2.2.52/libmisc'
+/tools/bin/make -C libacl
+make[3]: Entering directory '/sources/acl-2.2.52/libacl'
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_add_perm.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_calc_mask.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_clear_perms.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_copy_entry.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_copy_ext.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_copy_int.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_create_entry.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_delete_def_file.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_delete_entry.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_delete_perm.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_dup.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_free.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_from_text.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_entry.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_fd.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_copy_ext.c  -fPIC -DPIC -o .libs/acl_copy_ext.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_create_entry.c  -fPIC -DPIC -o .libs/acl_create_entry.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_delete_perm.c  -fPIC -DPIC -o .libs/acl_delete_perm.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_copy_int.c  -fPIC -DPIC -o .libs/acl_copy_int.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_dup.c  -fPIC -DPIC -o .libs/acl_dup.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_entry.c  -fPIC -DPIC -o .libs/acl_get_entry.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_copy_entry.c  -fPIC -DPIC -o .libs/acl_copy_entry.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_add_perm.c  -fPIC -DPIC -o .libs/acl_add_perm.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_fd.c  -fPIC -DPIC -o .libs/acl_get_fd.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_delete_def_file.c  -fPIC -DPIC -o .libs/acl_delete_def_file.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_free.c  -fPIC -DPIC -o .libs/acl_free.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_clear_perms.c  -fPIC -DPIC -o .libs/acl_clear_perms.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_from_text.c  -fPIC -DPIC -o .libs/acl_from_text.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_delete_entry.c  -fPIC -DPIC -o .libs/acl_delete_entry.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_calc_mask.c  -fPIC -DPIC -o .libs/acl_calc_mask.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_delete_perm.c -o acl_delete_perm.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_entry.c -o acl_get_entry.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_copy_int.c -o acl_copy_int.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_create_entry.c -o acl_create_entry.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_delete_def_file.c -o acl_delete_def_file.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_dup.c -o acl_dup.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_copy_ext.c -o acl_copy_ext.o >/dev/null 2>&1
+In file included from libacl.h:20:0,
+                 from acl_from_text.c:25:
+acl_from_text.c: In function 'parse_acl_entry':
+libobj.h:43:11: warning: the address of 'entry_obj' will always evaluate as 'true' [-Waddress]
+  ((int_p) ? &(int_p)->i : NULL)
+           ^
+acl_from_text.c:300:30: note: in expansion of macro 'int2ext'
+  if (acl_copy_entry(entry_d, int2ext(&entry_obj)) != 0)
+                              ^
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_copy_entry.c -o acl_copy_entry.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_delete_entry.c -o acl_delete_entry.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_clear_perms.c -o acl_clear_perms.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_file.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_perm.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_add_perm.c -o acl_add_perm.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_calc_mask.c -o acl_calc_mask.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_free.c -o acl_free.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_permset.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_qualifier.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_tag_type.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_init.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_set_fd.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_set_file.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_fd.c -o acl_get_fd.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_set_permset.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_set_qualifier.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_perm.c  -fPIC -DPIC -o .libs/acl_get_perm.o
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_set_tag_type.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_to_text.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_qualifier.c  -fPIC -DPIC -o .libs/acl_get_qualifier.o
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_valid.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_fd.c  -fPIC -DPIC -o .libs/acl_set_fd.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_permset.c  -fPIC -DPIC -o .libs/acl_get_permset.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_file.c  -fPIC -DPIC -o .libs/acl_set_file.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_tag_type.c  -fPIC -DPIC -o .libs/acl_get_tag_type.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_tag_type.c  -fPIC -DPIC -o .libs/acl_set_tag_type.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_to_text.c  -fPIC -DPIC -o .libs/acl_to_text.o
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_size.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_perm.c -o acl_get_perm.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_qualifier.c  -fPIC -DPIC -o .libs/acl_set_qualifier.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_from_text.c -o acl_from_text.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_init.c  -fPIC -DPIC -o .libs/acl_init.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_permset.c  -fPIC -DPIC -o .libs/acl_set_permset.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_qualifier.c -o acl_get_qualifier.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_file.c  -fPIC -DPIC -o .libs/acl_get_file.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_fd.c -o acl_set_fd.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_tag_type.c -o acl_set_tag_type.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_qualifier.c -o acl_set_qualifier.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_permset.c -o acl_get_permset.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_to_text.c -o acl_to_text.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_to_any_text.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_file.c -o acl_set_file.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_tag_type.c -o acl_get_tag_type.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_entries.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_check.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_error.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_cmp.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_permset.c -o acl_set_permset.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_to_any_text.c  -fPIC -DPIC -o .libs/acl_to_any_text.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_init.c -o acl_init.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_extended_fd.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_extended_file.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_size.c  -fPIC -DPIC -o .libs/acl_size.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_file.c -o acl_get_file.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_equiv_mode.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_valid.c  -fPIC -DPIC -o .libs/acl_valid.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_error.c  -fPIC -DPIC -o .libs/acl_error.o
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_from_mode.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_extended_file_nofollow.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c __acl_extended_file.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_check.c  -fPIC -DPIC -o .libs/acl_check.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_to_any_text.c -o acl_to_any_text.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_entries.c  -fPIC -DPIC -o .libs/acl_entries.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_valid.c -o acl_valid.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_cmp.c  -fPIC -DPIC -o .libs/acl_cmp.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_extended_file.c  -fPIC -DPIC -o .libs/acl_extended_file.o
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c __acl_to_any_text.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_from_mode.c  -fPIC -DPIC -o .libs/acl_from_mode.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_size.c -o acl_size.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_extended_fd.c  -fPIC -DPIC -o .libs/acl_extended_fd.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_entries.c -o acl_entries.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_extended_file.c  -fPIC -DPIC -o .libs/__acl_extended_file.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_error.c -o acl_error.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_extended_file_nofollow.c  -fPIC -DPIC -o .libs/acl_extended_file_nofollow.o
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c __acl_to_xattr.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c __acl_from_xattr.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c __acl_reorder_obj_p.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c __libobj.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_equiv_mode.c  -fPIC -DPIC -o .libs/acl_equiv_mode.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_check.c -o acl_check.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_to_any_text.c  -fPIC -DPIC -o .libs/__acl_to_any_text.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_cmp.c -o acl_cmp.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_extended_file.c -o acl_extended_file.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c __apply_mask_to_mode.c
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c perm_copy_fd.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_from_mode.c -o acl_from_mode.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_extended_fd.c -o acl_extended_fd.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_extended_file.c -o __acl_extended_file.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_extended_file_nofollow.c -o acl_extended_file_nofollow.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c perm_copy_file.c
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_to_xattr.c  -fPIC -DPIC -o .libs/__acl_to_xattr.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_from_xattr.c  -fPIC -DPIC -o .libs/__acl_from_xattr.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __libobj.c  -fPIC -DPIC -o .libs/__libobj.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __apply_mask_to_mode.c  -fPIC -DPIC -o .libs/__apply_mask_to_mode.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_equiv_mode.c -o acl_equiv_mode.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c perm_copy_fd.c  -fPIC -DPIC -o .libs/perm_copy_fd.o
+__acl_from_xattr.c: In function '__acl_from_xattr':
+__acl_from_xattr.c:36:15: warning: variable 'error' set but not used [-Wunused-but-set-variable]
+  int entries, error;
+               ^
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_reorder_obj_p.c  -fPIC -DPIC -o .libs/__acl_reorder_obj_p.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c perm_copy_file.c  -fPIC -DPIC -o .libs/perm_copy_file.o
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __libobj.c -o __libobj.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __apply_mask_to_mode.c -o __apply_mask_to_mode.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_from_xattr.c -o __acl_from_xattr.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_to_xattr.c -o __acl_to_xattr.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_reorder_obj_p.c -o __acl_reorder_obj_p.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c perm_copy_fd.c -o perm_copy_fd.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_to_any_text.c -o __acl_to_any_text.o >/dev/null 2>&1
+libtool: compile:  gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c perm_copy_file.c -o perm_copy_file.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=link gcc -m32 -Wl,--version-script,../exports  -rpath /lib -version-info 2:0:1 -o libacl.la acl_add_perm.lo acl_calc_mask.lo acl_clear_perms.lo acl_copy_entry.lo acl_copy_ext.lo acl_copy_int.lo acl_create_entry.lo acl_delete_def_file.lo acl_delete_entry.lo acl_delete_perm.lo acl_dup.lo acl_free.lo acl_from_text.lo acl_get_entry.lo acl_get_fd.lo acl_get_file.lo acl_get_perm.lo acl_get_permset.lo acl_get_qualifier.lo acl_get_tag_type.lo acl_init.lo acl_set_fd.lo acl_set_file.lo acl_set_permset.lo acl_set_qualifier.lo acl_set_tag_type.lo acl_to_text.lo acl_valid.lo acl_size.lo acl_to_any_text.lo acl_entries.lo acl_check.lo acl_error.lo acl_cmp.lo acl_extended_fd.lo acl_extended_file.lo acl_equiv_mode.lo acl_from_mode.lo acl_extended_file_nofollow.lo __acl_extended_file.lo __acl_to_any_text.lo __acl_to_xattr.lo __acl_from_xattr.lo __acl_reorder_obj_p.lo __libobj.lo __apply_mask_to_mode.lo perm_copy_fd.lo perm_copy_file.lo -lattr ../libmisc/libmisc.la
+libtool: link: gcc -m32 -shared  -fPIC -DPIC  .libs/acl_add_perm.o .libs/acl_calc_mask.o .libs/acl_clear_perms.o .libs/acl_copy_entry.o .libs/acl_copy_ext.o .libs/acl_copy_int.o .libs/acl_create_entry.o .libs/acl_delete_def_file.o .libs/acl_delete_entry.o .libs/acl_delete_perm.o .libs/acl_dup.o .libs/acl_free.o .libs/acl_from_text.o .libs/acl_get_entry.o .libs/acl_get_fd.o .libs/acl_get_file.o .libs/acl_get_perm.o .libs/acl_get_permset.o .libs/acl_get_qualifier.o .libs/acl_get_tag_type.o .libs/acl_init.o .libs/acl_set_fd.o .libs/acl_set_file.o .libs/acl_set_permset.o .libs/acl_set_qualifier.o .libs/acl_set_tag_type.o .libs/acl_to_text.o .libs/acl_valid.o .libs/acl_size.o .libs/acl_to_any_text.o .libs/acl_entries.o .libs/acl_check.o .libs/acl_error.o .libs/acl_cmp.o .libs/acl_extended_fd.o .libs/acl_extended_file.o .libs/acl_equiv_mode.o .libs/acl_from_mode.o .libs/acl_extended_file_nofollow.o .libs/__acl_extended_file.o .libs/__acl_to_any_text.o .libs/__acl_to_xattr.o .libs/__acl_from_xattr.o .libs/__acl_reorder_obj_p.o .libs/__libobj.o .libs/__apply_mask_to_mode.o .libs/perm_copy_fd.o .libs/perm_copy_file.o  -Wl,--whole-archive ../libmisc/.libs/libmisc.a -Wl,--no-whole-archive  -lattr  -m32 -Wl,--version-script -Wl,../exports   -Wl,-soname -Wl,libacl.so.1 -o .libs/libacl.so.1.1.0
+libtool: link: (cd ".libs" && rm -f "libacl.so.1" && ln -s "libacl.so.1.1.0" "libacl.so.1")
+libtool: link: (cd ".libs" && rm -f "libacl.so" && ln -s "libacl.so.1.1.0" "libacl.so")
+libtool: link: (cd .libs/libacl.lax/libmisc.a && ar x "/sources/acl-2.2.52/libacl/../libmisc/.libs/libmisc.a")
+libtool: link: ar cru .libs/libacl.a  acl_add_perm.o acl_calc_mask.o acl_clear_perms.o acl_copy_entry.o acl_copy_ext.o acl_copy_int.o acl_create_entry.o acl_delete_def_file.o acl_delete_entry.o acl_delete_perm.o acl_dup.o acl_free.o acl_from_text.o acl_get_entry.o acl_get_fd.o acl_get_file.o acl_get_perm.o acl_get_permset.o acl_get_qualifier.o acl_get_tag_type.o acl_init.o acl_set_fd.o acl_set_file.o acl_set_permset.o acl_set_qualifier.o acl_set_tag_type.o acl_to_text.o acl_valid.o acl_size.o acl_to_any_text.o acl_entries.o acl_check.o acl_error.o acl_cmp.o acl_extended_fd.o acl_extended_file.o acl_equiv_mode.o acl_from_mode.o acl_extended_file_nofollow.o __acl_extended_file.o __acl_to_any_text.o __acl_to_xattr.o __acl_from_xattr.o __acl_reorder_obj_p.o __libobj.o __apply_mask_to_mode.o perm_copy_fd.o perm_copy_file.o  .libs/libacl.lax/libmisc.a/high_water_alloc.o .libs/libacl.lax/libmisc.a/next_line.o .libs/libacl.lax/libmisc.a/quote.o .libs/libacl.lax/libmisc.a/unquote.o .libs/libacl.lax/libmisc.a/walk_tree.o 
+libtool: link: ranlib .libs/libacl.a
+libtool: link: rm -fr .libs/libacl.lax
+libtool: link: ( cd ".libs" && rm -f "libacl.la" && ln -s "../libacl.la" "libacl.la" )
+make[3]: Leaving directory '/sources/acl-2.2.52/libacl'
+/tools/bin/make -C getfacl
+/tools/bin/make -C setfacl
+/tools/bin/make -C chacl
+make[3]: Entering directory '/sources/acl-2.2.52/getfacl'
+make[3]: Entering directory '/sources/acl-2.2.52/setfacl'
+make[3]: Entering directory '/sources/acl-2.2.52/chacl'
+gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o getfacl.o getfacl.c
+gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o setfacl.o setfacl.c
+gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o chacl.o chacl.c
+gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o user_group.o user_group.c
+gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o do_set.o do_set.c
+gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o sequence.o sequence.c
+gcc -m32 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.52\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o parse.o parse.c
+/bin/sh ../libtool --mode=link gcc -m32 -o chacl    chacl.o   ../libacl/libacl.la -lattr  
+/bin/sh ../libtool --mode=link gcc -m32 -o setfacl    setfacl.o do_set.o sequence.o parse.o   ../libmisc/libmisc.la ../libacl/libacl.la -lattr  
+libtool: link: gcc -m32 -o .libs/chacl chacl.o  ../libacl/.libs/libacl.so -lattr
+make[3]: Leaving directory '/sources/acl-2.2.52/chacl'
+/bin/sh ../libtool --mode=link gcc -m32 -o getfacl    getfacl.o user_group.o   ../libmisc/libmisc.la ../libacl/libacl.la -lattr  
+libtool: link: gcc -m32 -o .libs/setfacl setfacl.o do_set.o sequence.o parse.o  ../libmisc/.libs/libmisc.a ../libacl/.libs/libacl.so -lattr
+make[3]: Leaving directory '/sources/acl-2.2.52/setfacl'
+libtool: link: gcc -m32 -o .libs/getfacl getfacl.o user_group.o  ../libmisc/.libs/libmisc.a ../libacl/.libs/libacl.so -lattr
+make[3]: Leaving directory '/sources/acl-2.2.52/getfacl'
+make[2]: Leaving directory '/sources/acl-2.2.52'
+make[1]: Leaving directory '/sources/acl-2.2.52'
+make[1]: Entering directory '/sources/acl-2.2.52'
+/tools/bin/make include libmisc libacl getfacl setfacl chacl m4 man doc po test examples package debian
+make[2]: Entering directory '/sources/acl-2.2.52'
+/tools/bin/make -C include
+make[3]: Entering directory '/sources/acl-2.2.52/include'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/include'
+/tools/bin/make -C libmisc
+make[3]: Entering directory '/sources/acl-2.2.52/libmisc'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/libmisc'
+/tools/bin/make -C libacl
+make[3]: Entering directory '/sources/acl-2.2.52/libacl'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/libacl'
+/tools/bin/make -C getfacl
+make[3]: Entering directory '/sources/acl-2.2.52/getfacl'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/getfacl'
+/tools/bin/make -C setfacl
+make[3]: Entering directory '/sources/acl-2.2.52/setfacl'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/setfacl'
+/tools/bin/make -C chacl
+make[3]: Entering directory '/sources/acl-2.2.52/chacl'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/chacl'
+/tools/bin/make -C m4
+make[3]: Entering directory '/sources/acl-2.2.52/m4'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/m4'
+/tools/bin/make -C man
+make[3]: Entering directory '/sources/acl-2.2.52/man'
+/tools/bin/make -C man1
+make[4]: Entering directory '/sources/acl-2.2.52/man/man1'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/acl-2.2.52/man/man1'
+/tools/bin/make -C man3
+make[4]: Entering directory '/sources/acl-2.2.52/man/man3'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/acl-2.2.52/man/man3'
+/tools/bin/make -C man5
+make[4]: Entering directory '/sources/acl-2.2.52/man/man5'
+make[4]: Nothing to be done for 'default'.
+make[4]: Leaving directory '/sources/acl-2.2.52/man/man5'
+make[3]: Leaving directory '/sources/acl-2.2.52/man'
+/tools/bin/make -C doc
+make[3]: Entering directory '/sources/acl-2.2.52/doc'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/doc'
+/tools/bin/make -C po
+make[3]: Entering directory '/sources/acl-2.2.52/po'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/po'
+/tools/bin/make -C test
+make[3]: Entering directory '/sources/acl-2.2.52/test'
+rm -f  dep dep.bak *.[1-9].gz *.tmpo *.mo       
+make[3]: Leaving directory '/sources/acl-2.2.52/test'
+/tools/bin/make -C examples
+make[3]: Entering directory '/sources/acl-2.2.52/examples'
+rm -f get-acl set-acl copy-acl dep dep.bak *.[1-9].gz *.tmpo *.mo       
+make[3]: Leaving directory '/sources/acl-2.2.52/examples'
+/tools/bin/make -C package
+make[3]: Entering directory '/sources/acl-2.2.52/package'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/package'
+/tools/bin/make -C debian
+make[3]: Entering directory '/sources/acl-2.2.52/debian'
+make[3]: Nothing to be done for 'default'.
+make[3]: Leaving directory '/sources/acl-2.2.52/debian'
+make[2]: Leaving directory '/sources/acl-2.2.52'
+/tools/bin/make -C include install
+make[2]: Entering directory '/sources/acl-2.2.52/include'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/acl-2.2.52/include'
+/tools/bin/make -C libmisc install
+make[2]: Entering directory '/sources/acl-2.2.52/libmisc'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/acl-2.2.52/libmisc'
+/tools/bin/make -C libacl install
+make[2]: Entering directory '/sources/acl-2.2.52/libacl'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/acl-2.2.52/libacl'
+/tools/bin/make -C getfacl install
+make[2]: Entering directory '/sources/acl-2.2.52/getfacl'
+../include/install-sh -o root -g root -m 755 -d /usr/bin
+/bin/sh ../libtool --mode=install ../include/install-sh -o root -g root -m 755 getfacl /usr/bin
+libtool: install: warning: `../libacl/libacl.la' has not been installed in `/lib'
+libtool: install: ../include/install-sh -o root -g root -m 755 .libs/getfacl /usr/bin/getfacl
+make[2]: Leaving directory '/sources/acl-2.2.52/getfacl'
+/tools/bin/make -C setfacl install
+make[2]: Entering directory '/sources/acl-2.2.52/setfacl'
+../include/install-sh -o root -g root -m 755 -d /usr/bin
+/bin/sh ../libtool --mode=install ../include/install-sh -o root -g root -m 755 setfacl /usr/bin
+libtool: install: warning: `../libacl/libacl.la' has not been installed in `/lib'
+libtool: install: ../include/install-sh -o root -g root -m 755 .libs/setfacl /usr/bin/setfacl
+make[2]: Leaving directory '/sources/acl-2.2.52/setfacl'
+/tools/bin/make -C chacl install
+make[2]: Entering directory '/sources/acl-2.2.52/chacl'
+../include/install-sh -o root -g root -m 755 -d /usr/bin
+/bin/sh ../libtool --mode=install ../include/install-sh -o root -g root -m 755 chacl /usr/bin
+libtool: install: warning: `../libacl/libacl.la' has not been installed in `/lib'
+libtool: install: ../include/install-sh -o root -g root -m 755 .libs/chacl /usr/bin/chacl
+make[2]: Leaving directory '/sources/acl-2.2.52/chacl'
+/tools/bin/make -C m4 install
+make[2]: Entering directory '/sources/acl-2.2.52/m4'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/acl-2.2.52/m4'
+/tools/bin/make -C man install
+make[2]: Entering directory '/sources/acl-2.2.52/man'
+/tools/bin/make -C man1 install
+make[3]: Entering directory '/sources/acl-2.2.52/man/man1'
+../../include/install-sh -o root -g root -m 755 -d /usr/share/man/man1
+../../include/install-sh -o root -g root -m 644 chacl.1 /usr/share/man/man1/chacl.1
+../../include/install-sh -o root -g root -m 644 getfacl.1 /usr/share/man/man1/getfacl.1
+../../include/install-sh -o root -g root -m 644 setfacl.1 /usr/share/man/man1/setfacl.1
+make[3]: Leaving directory '/sources/acl-2.2.52/man/man1'
+/tools/bin/make -C man3 install
+make[3]: Entering directory '/sources/acl-2.2.52/man/man3'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/sources/acl-2.2.52/man/man3'
+/tools/bin/make -C man5 install
+make[3]: Entering directory '/sources/acl-2.2.52/man/man5'
+../../include/install-sh -o root -g root -m 755 -d /usr/share/man/man5
+../../include/install-sh -o root -g root -m 644 acl.5 /usr/share/man/man5/acl.5
+make[3]: Leaving directory '/sources/acl-2.2.52/man/man5'
+make[2]: Leaving directory '/sources/acl-2.2.52/man'
+/tools/bin/make -C doc install
+make[2]: Entering directory '/sources/acl-2.2.52/doc'
+../include/install-sh -o root -g root -m 755 -d /usr/share/doc/acl-2.2.52
+../include/install-sh -o root -g root -m 644 PORTING CHANGES.gz /usr/share/doc/acl-2.2.52
+../include/install-sh -o root -g root -m 644 COPYING COPYING.LGPL /usr/share/doc/acl-2.2.52
+make[2]: Leaving directory '/sources/acl-2.2.52/doc'
+/tools/bin/make -C po install
+make[2]: Entering directory '/sources/acl-2.2.52/po'
+make[2]: Leaving directory '/sources/acl-2.2.52/po'
+/tools/bin/make -C test install
+make[2]: Entering directory '/sources/acl-2.2.52/test'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/acl-2.2.52/test'
+/tools/bin/make -C examples install
+make[2]: Entering directory '/sources/acl-2.2.52/examples'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/acl-2.2.52/examples'
+/tools/bin/make -C package install
+make[2]: Entering directory '/sources/acl-2.2.52/package'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/acl-2.2.52/package'
+/tools/bin/make -C debian install
+make[2]: Entering directory '/sources/acl-2.2.52/debian'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/sources/acl-2.2.52/debian'
+./include/install-sh -o root -g root -m 755 -d /usr/share/doc/acl-2.2.52
+./include/install-sh -o root -g root -m 644 README /usr/share/doc/acl-2.2.52
+/tools/bin/make -C include install-dev
+make[2]: Entering directory '/sources/acl-2.2.52/include'
+../include/install-sh -o root -g root -m 755 -d /usr/include
+../include/install-sh -o root -g root -m 755 -d /usr/include/sys
+../include/install-sh -o root -g root -m 644 acl.h /usr/include/sys/acl.h
+../include/install-sh -o root -g root -m 755 -d /usr/include/acl
+../include/install-sh -o root -g root -m 644 libacl.h /usr/include/acl/libacl.h
+make[2]: Leaving directory '/sources/acl-2.2.52/include'
+/tools/bin/make -C libmisc install-dev
+make[2]: Entering directory '/sources/acl-2.2.52/libmisc'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/acl-2.2.52/libmisc'
+/tools/bin/make -C libacl install-dev
+make[2]: Entering directory '/sources/acl-2.2.52/libacl'
+cd ../libacl/.libs; ../../include/install-sh -o root -g root -m 755 -d /usr/lib; ../../include/install-sh -o root -g root -m 644 -T old_lib libacl.lai /usr/lib; ../../include/install-sh -o root -g root -m 644 libacl.lai /usr/lib/libacl.la ; ../../include/install-sh -o root -g root -m 755 -d /lib; ../../include/install-sh -o root -g root -T so_base libacl.lai /lib; if test "x/usr/lib" != "x/lib" ; then ../../include/install-sh -o root -g root -S /usr/lib/libacl.a /lib/libacl.a; ../../include/install-sh -o root -g root -S /usr/lib/libacl.la /lib/libacl.la; ../../include/install-sh -o root -g root -S /lib/libacl.so /usr/lib/libacl.so; fi
+make[2]: Leaving directory '/sources/acl-2.2.52/libacl'
+/tools/bin/make -C getfacl install-dev
+make[2]: Entering directory '/sources/acl-2.2.52/getfacl'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/acl-2.2.52/getfacl'
+/tools/bin/make -C setfacl install-dev
+make[2]: Entering directory '/sources/acl-2.2.52/setfacl'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/acl-2.2.52/setfacl'
+/tools/bin/make -C chacl install-dev
+make[2]: Entering directory '/sources/acl-2.2.52/chacl'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/acl-2.2.52/chacl'
+/tools/bin/make -C m4 install-dev
+make[2]: Entering directory '/sources/acl-2.2.52/m4'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/acl-2.2.52/m4'
+/tools/bin/make -C man install-dev
+make[2]: Entering directory '/sources/acl-2.2.52/man'
+/tools/bin/make -C man1 install-dev
+make[3]: Entering directory '/sources/acl-2.2.52/man/man1'
+make[3]: Nothing to be done for 'install-dev'.
+make[3]: Leaving directory '/sources/acl-2.2.52/man/man1'
+/tools/bin/make -C man3 install-dev
+make[3]: Entering directory '/sources/acl-2.2.52/man/man3'
+../../include/install-sh -o root -g root -m 755 -d /usr/share/man/man3
+../../include/install-sh -o root -g root -m 644 acl_add_perm.3 /usr/share/man/man3/acl_add_perm.3
+../../include/install-sh -o root -g root -m 644 acl_calc_mask.3 /usr/share/man/man3/acl_calc_mask.3
+../../include/install-sh -o root -g root -m 644 acl_check.3 /usr/share/man/man3/acl_check.3
+../../include/install-sh -o root -g root -m 644 acl_clear_perms.3 /usr/share/man/man3/acl_clear_perms.3
+../../include/install-sh -o root -g root -m 644 acl_cmp.3 /usr/share/man/man3/acl_cmp.3
+../../include/install-sh -o root -g root -m 644 acl_copy_entry.3 /usr/share/man/man3/acl_copy_entry.3
+../../include/install-sh -o root -g root -m 644 acl_copy_ext.3 /usr/share/man/man3/acl_copy_ext.3
+../../include/install-sh -o root -g root -m 644 acl_copy_int.3 /usr/share/man/man3/acl_copy_int.3
+../../include/install-sh -o root -g root -m 644 acl_create_entry.3 /usr/share/man/man3/acl_create_entry.3
+../../include/install-sh -o root -g root -m 644 acl_delete_def_file.3 /usr/share/man/man3/acl_delete_def_file.3
+../../include/install-sh -o root -g root -m 644 acl_delete_entry.3 /usr/share/man/man3/acl_delete_entry.3
+../../include/install-sh -o root -g root -m 644 acl_delete_perm.3 /usr/share/man/man3/acl_delete_perm.3
+../../include/install-sh -o root -g root -m 644 acl_dup.3 /usr/share/man/man3/acl_dup.3
+../../include/install-sh -o root -g root -m 644 acl_entries.3 /usr/share/man/man3/acl_entries.3
+../../include/install-sh -o root -g root -m 644 acl_equiv_mode.3 /usr/share/man/man3/acl_equiv_mode.3
+../../include/install-sh -o root -g root -m 644 acl_error.3 /usr/share/man/man3/acl_error.3
+../../include/install-sh -o root -g root -m 644 acl_extended_fd.3 /usr/share/man/man3/acl_extended_fd.3
+../../include/install-sh -o root -g root -m 644 acl_extended_file.3 /usr/share/man/man3/acl_extended_file.3
+../../include/install-sh -o root -g root -S acl_extended_file.3 /usr/share/man/man3/acl_extended_file_nofollow.3
+../../include/install-sh -o root -g root -m 644 acl_free.3 /usr/share/man/man3/acl_free.3
+../../include/install-sh -o root -g root -m 644 acl_from_mode.3 /usr/share/man/man3/acl_from_mode.3
+../../include/install-sh -o root -g root -m 644 acl_from_text.3 /usr/share/man/man3/acl_from_text.3
+../../include/install-sh -o root -g root -m 644 acl_get_entry.3 /usr/share/man/man3/acl_get_entry.3
+../../include/install-sh -o root -g root -m 644 acl_get_fd.3 /usr/share/man/man3/acl_get_fd.3
+../../include/install-sh -o root -g root -m 644 acl_get_file.3 /usr/share/man/man3/acl_get_file.3
+../../include/install-sh -o root -g root -m 644 acl_get_perm.3 /usr/share/man/man3/acl_get_perm.3
+../../include/install-sh -o root -g root -m 644 acl_get_permset.3 /usr/share/man/man3/acl_get_permset.3
+../../include/install-sh -o root -g root -m 644 acl_get_qualifier.3 /usr/share/man/man3/acl_get_qualifier.3
+../../include/install-sh -o root -g root -m 644 acl_get_tag_type.3 /usr/share/man/man3/acl_get_tag_type.3
+../../include/install-sh -o root -g root -m 644 acl_init.3 /usr/share/man/man3/acl_init.3
+../../include/install-sh -o root -g root -m 644 acl_set_fd.3 /usr/share/man/man3/acl_set_fd.3
+../../include/install-sh -o root -g root -m 644 acl_set_file.3 /usr/share/man/man3/acl_set_file.3
+../../include/install-sh -o root -g root -m 644 acl_set_permset.3 /usr/share/man/man3/acl_set_permset.3
+../../include/install-sh -o root -g root -m 644 acl_set_qualifier.3 /usr/share/man/man3/acl_set_qualifier.3
+../../include/install-sh -o root -g root -m 644 acl_set_tag_type.3 /usr/share/man/man3/acl_set_tag_type.3
+../../include/install-sh -o root -g root -m 644 acl_size.3 /usr/share/man/man3/acl_size.3
+../../include/install-sh -o root -g root -m 644 acl_to_any_text.3 /usr/share/man/man3/acl_to_any_text.3
+../../include/install-sh -o root -g root -m 644 acl_to_text.3 /usr/share/man/man3/acl_to_text.3
+../../include/install-sh -o root -g root -m 644 acl_valid.3 /usr/share/man/man3/acl_valid.3
+make[3]: Leaving directory '/sources/acl-2.2.52/man/man3'
+/tools/bin/make -C man5 install-dev
+make[3]: Entering directory '/sources/acl-2.2.52/man/man5'
+make[3]: Nothing to be done for 'install-dev'.
+make[3]: Leaving directory '/sources/acl-2.2.52/man/man5'
+make[2]: Leaving directory '/sources/acl-2.2.52/man'
+/tools/bin/make -C doc install-dev
+make[2]: Entering directory '/sources/acl-2.2.52/doc'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/acl-2.2.52/doc'
+/tools/bin/make -C po install-dev
+make[2]: Entering directory '/sources/acl-2.2.52/po'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/acl-2.2.52/po'
+/tools/bin/make -C test install-dev
+make[2]: Entering directory '/sources/acl-2.2.52/test'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/acl-2.2.52/test'
+/tools/bin/make -C examples install-dev
+make[2]: Entering directory '/sources/acl-2.2.52/examples'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/acl-2.2.52/examples'
+/tools/bin/make -C package install-dev
+make[2]: Entering directory '/sources/acl-2.2.52/package'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/acl-2.2.52/package'
+/tools/bin/make -C debian install-dev
+make[2]: Entering directory '/sources/acl-2.2.52/debian'
+make[2]: Nothing to be done for 'install-dev'.
+make[2]: Leaving directory '/sources/acl-2.2.52/debian'
+/tools/bin/make -C include install-lib
+make[2]: Entering directory '/sources/acl-2.2.52/include'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/acl-2.2.52/include'
+/tools/bin/make -C libmisc install-lib
+make[2]: Entering directory '/sources/acl-2.2.52/libmisc'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/acl-2.2.52/libmisc'
+/tools/bin/make -C libacl install-lib
+make[2]: Entering directory '/sources/acl-2.2.52/libacl'
+cd ../libacl/.libs; ../../include/install-sh -o root -g root -m 755 -d /lib; ../../include/install-sh -o root -g root -m 644 -T so_dot_version libacl.lai /lib; ../../include/install-sh -o root -g root -T so_dot_current libacl.lai /lib
+make[2]: Leaving directory '/sources/acl-2.2.52/libacl'
+/tools/bin/make -C getfacl install-lib
+make[2]: Entering directory '/sources/acl-2.2.52/getfacl'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/acl-2.2.52/getfacl'
+/tools/bin/make -C setfacl install-lib
+make[2]: Entering directory '/sources/acl-2.2.52/setfacl'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/acl-2.2.52/setfacl'
+/tools/bin/make -C chacl install-lib
+make[2]: Entering directory '/sources/acl-2.2.52/chacl'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/acl-2.2.52/chacl'
+/tools/bin/make -C m4 install-lib
+make[2]: Entering directory '/sources/acl-2.2.52/m4'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/acl-2.2.52/m4'
+/tools/bin/make -C man install-lib
+make[2]: Entering directory '/sources/acl-2.2.52/man'
+/tools/bin/make -C man1 install-lib
+make[3]: Entering directory '/sources/acl-2.2.52/man/man1'
+make[3]: Nothing to be done for 'install-lib'.
+make[3]: Leaving directory '/sources/acl-2.2.52/man/man1'
+/tools/bin/make -C man3 install-lib
+make[3]: Entering directory '/sources/acl-2.2.52/man/man3'
+make[3]: Nothing to be done for 'install-lib'.
+make[3]: Leaving directory '/sources/acl-2.2.52/man/man3'
+/tools/bin/make -C man5 install-lib
+make[3]: Entering directory '/sources/acl-2.2.52/man/man5'
+make[3]: Nothing to be done for 'install-lib'.
+make[3]: Leaving directory '/sources/acl-2.2.52/man/man5'
+make[2]: Leaving directory '/sources/acl-2.2.52/man'
+/tools/bin/make -C doc install-lib
+make[2]: Entering directory '/sources/acl-2.2.52/doc'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/acl-2.2.52/doc'
+/tools/bin/make -C po install-lib
+make[2]: Entering directory '/sources/acl-2.2.52/po'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/acl-2.2.52/po'
+/tools/bin/make -C test install-lib
+make[2]: Entering directory '/sources/acl-2.2.52/test'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/acl-2.2.52/test'
+/tools/bin/make -C examples install-lib
+make[2]: Entering directory '/sources/acl-2.2.52/examples'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/acl-2.2.52/examples'
+/tools/bin/make -C package install-lib
+make[2]: Entering directory '/sources/acl-2.2.52/package'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/acl-2.2.52/package'
+/tools/bin/make -C debian install-lib
+make[2]: Entering directory '/sources/acl-2.2.52/debian'
+make[2]: Nothing to be done for 'install-lib'.
+make[2]: Leaving directory '/sources/acl-2.2.52/debian'
+make[1]: Leaving directory '/sources/acl-2.2.52'
+'/usr/lib/libacl.so' -> '../../lib/libacl.so.1'
+removed '/lib/libacl.so'
+mode of '/lib/libacl.so.1.1.0' changed from 0644 (rw-r--r--) to 0755 (rwxr-xr-x)
+
+
+Totalseconds: 8
+
+
+KB: 2345480	/
+

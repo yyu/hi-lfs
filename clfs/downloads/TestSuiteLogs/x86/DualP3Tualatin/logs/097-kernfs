@@ -1,0 +1,19 @@
+Thu Jun 12 20:43:24 CDT 2014
+
+KB: 6559000	/
+
+mkdir: created directory '/mnt/clfs/dev'
+mkdir: created directory '/mnt/clfs/proc'
+mkdir: created directory '/mnt/clfs/sys'
+mount: proc mounted on /mnt/clfs/proc.
+mount: sysfs mounted on /mnt/clfs/sys.
+mount: /dev bound on /mnt/clfs/dev.
+mount: shm mounted on /mnt/clfs/dev/shm.
+mount: devpts mounted on /mnt/clfs/dev/pts.
+
+
+Totalseconds: 0
+
+
+KB: 1189340	/mnt/clfs
+

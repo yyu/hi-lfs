@@ -1,0 +1,4 @@
+/lib/libbz2.so.1.0	15	root:root	777	libbz2.so.1.0.6
+/lib/libbz2.so.1.0.6	185382	root:root	755	
+/usr/lib/libbz2.a	226082	root:root	644	
+/usr/lib/libbz2.so	23	root:root	777	../../lib/libbz2.so.1.0

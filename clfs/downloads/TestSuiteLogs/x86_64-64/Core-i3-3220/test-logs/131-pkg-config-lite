@@ -1,0 +1,40 @@
+Sun Aug 31 08:13:31 UTC 2014
+make[1]: Entering directory '/sources/pkg-config-lite-0.28-1'
+Making check in .
+make[2]: Entering directory '/sources/pkg-config-lite-0.28-1'
+make[2]: Leaving directory '/sources/pkg-config-lite-0.28-1'
+Making check in check
+make[2]: Entering directory '/sources/pkg-config-lite-0.28-1/check'
+make  check-TESTS
+make[3]: Entering directory '/sources/pkg-config-lite-0.28-1/check'
+PASS: check-cflags
+PASS: check-libs
+PASS: check-mixed-flags
+PASS: check-non-l-flags
+PASS: check-define-variable
+PASS: check-libs-private
+PASS: check-requires-private
+PASS: check-circular-requires
+PASS: check-includedir
+PASS: check-conflicts
+PASS: check-missing
+PASS: check-idirafter
+PASS: check-sort-order
+PASS: check-duplicate-flags
+PASS: check-whitespace
+PASS: check-cmd-options
+PASS: check-version
+PASS: check-requires-version
+PASS: check-print-options
+PASS: check-path
+PASS: check-sysroot
+PASS: check-uninstalled
+PASS: check-debug
+PASS: check-gtk
+PASS: check-tilde
+===================
+All 25 tests passed
+===================
+make[3]: Leaving directory '/sources/pkg-config-lite-0.28-1/check'
+make[2]: Leaving directory '/sources/pkg-config-lite-0.28-1/check'
+make[1]: Leaving directory '/sources/pkg-config-lite-0.28-1'

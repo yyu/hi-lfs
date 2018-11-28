@@ -1,0 +1,657 @@
+Mon Jun 30 01:52:56 UTC 2014
+make[2]: Entering directory '/sources/cloog-0.18.2'
+Making check in .
+make[3]: Entering directory '/sources/cloog-0.18.2'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/sources/cloog-0.18.2'
+Making check in doc
+make[3]: Entering directory '/sources/cloog-0.18.2/doc'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/sources/cloog-0.18.2/doc'
+Making check in test
+make[3]: Entering directory '/sources/cloog-0.18.2/test'
+cd ..; make  libcloog-isl.la
+make[4]: Entering directory '/sources/cloog-0.18.2'
+make[4]: 'libcloog-isl.la' is up to date.
+make[4]: Leaving directory '/sources/cloog-0.18.2'
+make  check_c.sh check_fortran.sh check_strided.sh check_openscop.sh check_special.sh
+make[4]: Entering directory '/sources/cloog-0.18.2/test'
+make[4]: Nothing to be done for 'check_c.sh'.
+make[4]: Nothing to be done for 'check_fortran.sh'.
+make[4]: Nothing to be done for 'check_strided.sh'.
+make[4]: Nothing to be done for 'check_openscop.sh'.
+make[4]: Nothing to be done for 'check_special.sh'.
+make[4]: Leaving directory '/sources/cloog-0.18.2/test'
+make  check-TESTS
+make[4]: Entering directory '/sources/cloog-0.18.2/test'
+             /*-----------------------------------------------*
+              *       Testing CLooG: C test set       
+              *-----------------------------------------------*/
+Check file ./infinite.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./infinite2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./infinite3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./infinite4.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./0D-1.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./0D-2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./0D-3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./1point-1.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./1point-2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./4-param.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./basic-bounds-1.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./basic-bounds-2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./basic-bounds-3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./basic-bounds-4.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./basic-bounds-5.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./basic-bounds-6.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./block.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./block2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./block3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./byu98-1-2-3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./cholesky.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./cholesky2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./christian.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./classen.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./classen2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./constant.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./constbound.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./darte.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./dealII.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./donotsimp.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./dot.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./dot2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./double.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./durbin_e_s.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./emploi.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./esced.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./ex1.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./forwardsub-1-1-2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./forwardsub-2-1-2-3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./forwardsub-3-1-2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./gauss.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./gesced.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./gesced2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./gesced3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./guide.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./iftest.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./iftest2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./largeur.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./levenshtein-1-2-3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./lex.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./lineality-1-2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./lineality-2-1-2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./logo.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./logopar.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./lu.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./lu2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./lub.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./lux.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./min-1-1.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./min-2-1.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./min-3-1.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./min-4-1.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./mode.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./multi-mm-1.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./no_lindep.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./orc.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./rectangle.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./singleton.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./square+triangle-1-1-2-3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./swim.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./test.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./thomasset.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./tiling.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./uday_scalars.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./union.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./vivien.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./vivien2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./walters.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./walters2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./walters3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./wavefront.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./yosr.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./yosr2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./non_optimal/nul_complex1.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./non_optimal/usvd_e_t.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./non_optimal/youcef.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/cholesky2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/fusion1.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/fusion2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/jacobi2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/jacobi3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/lim-lam1.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/lim-lam2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/lim-lam3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/lim-lam4.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/lim-lam5.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/lim-lam6.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/liu-zhuge1.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/loechner3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/loechner4.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/loechner5.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/mg-interp2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/mg-interp.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/mg-psinv.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/mg-resid.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/mg-rprj3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/pingali1.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/pingali2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/pingali3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/pingali4.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/pingali5.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/pingali6.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/QR.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/tang-xue1.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./reservoir/two.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./isl/mod.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./isl/mod2.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./isl/mod3.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./isl/mod4.cloog \c
+(no option), \c
+generating... \c
+PASS
+[CLooG] PASS: C passed :-) !
+PASS: check_c.sh
+             /*-----------------------------------------------*
+              *       Testing CLooG: FORTRAN test set       
+              *-----------------------------------------------*/
+Check file ./dartef.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./iftestf.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./levenshtein-1-2-3f.cloog \c
+(no option), \c
+generating... \c
+PASS
+Check file ./yosrf.cloog \c
+(no option), \c
+generating... \c
+PASS
+[CLooG] PASS: FORTRAN passed :-) !
+PASS: check_fortran.sh
+             /*-----------------------------------------------*
+              *       Testing CLooG: STRIDED test set       
+              *-----------------------------------------------*/
+Check file ./basic-bounds-2.cloog \c
+(options  -strides 1), \c
+generating... \c
+PASS
+Check file ./mod4.cloog \c
+(options  -strides 1), \c
+generating... \c
+PASS
+Check file ./nul_basic1.cloog \c
+(options  -strides 1), \c
+generating... \c
+PASS
+Check file ./nul_basic2.cloog \c
+(options  -strides 1), \c
+generating... \c
+PASS
+Check file ./nul_lcpc.cloog \c
+(options  -strides 1), \c
+generating... \c
+PASS
+Check file ./multi-stride.cloog \c
+(options  -strides 1), \c
+generating... \c
+PASS
+Check file ./multi-stride2.cloog \c
+(options  -strides 1), \c
+generating... \c
+PASS
+Check file ./stride3.cloog \c
+(options  -strides 1), \c
+generating... \c
+PASS
+Check file ./stride4.cloog \c
+(options  -strides 1), \c
+generating... \c
+PASS
+Check file ./reservoir/bastoul3.cloog \c
+(options  -strides 1), \c
+generating... \c
+PASS
+Check file ./reservoir/stride.cloog \c
+(options  -strides 1), \c
+generating... \c
+PASS
+Check file ./reservoir/stride2.cloog \c
+(options  -strides 1), \c
+generating... \c
+PASS
+Check file ./isl/mxm-shared.cloog \c
+(options  -strides 1), \c
+generating... \c
+PASS
+[CLooG] PASS: STRIDED passed :-) !
+PASS: check_strided.sh
+             /*-----------------------------------------------*
+              *       Testing CLooG: OPENSCOP test set       
+              *-----------------------------------------------*/
+[CLooG] PASS: OPENSCOP passed :-) !
+PASS: check_openscop.sh
+             /*-----------------------------------------------*
+              *       Testing CLooG: SPECIAL test set       
+              *-----------------------------------------------*/
+Check file ./isl/unroll.cloog \c
+(options -first-unroll 1 ), \c
+generating... \c
+PASS
+Check file ./isl/jacobi-shared.cloog \c
+(options -f 4 -l -1 -override -strides 1 -sh 1 ), \c
+generating... \c
+PASS
+Check file ./isl/unroll2.cloog \c
+(options -first-unroll 1 ), \c
+generating... \c
+PASS
+Check file ./backtrack.cloog \c
+(options -f 1 -backtrack ), \c
+generating... \c
+PASS
+Check file ./vasilache.cloog \c
+(options -f 8 -l 9 ), \c
+generating... \c
+PASS
+Check file ./merge.cloog \c
+(options -f -1 ), \c
+generating... \c
+PASS
+Check file ./equality.cloog \c
+(options -f -1 -l 2 -override ), \c
+generating... \c
+PASS
+Check file ./equality2.cloog \c
+(options -f -1 -l 4 -esp 1 -override ), \c
+generating... \c
+PASS
+Check file ./otl.cloog \c
+(options -block 1 -esp 0 -otl 0 ), \c
+generating... \c
+PASS
+Check file ./param-split.cloog \c
+(options -f -1 ), \c
+generating... \c
+PASS
+Check file ./pouchet.cloog \c
+(options -f 3 -l 7 ), \c
+generating... \c
+PASS
+Check file ./stride.cloog \c
+(options -f -1 -strides 1 ), \c
+generating... \c
+PASS
+Check file ./stride2.cloog \c
+(options -f -1 -strides 1 ), \c
+generating... \c
+PASS
+Check file ./sor1d.cloog \c
+(options -f -1 ), \c
+generating... \c
+PASS
+[CLooG] PASS: SPECIAL passed :-) !
+PASS: check_special.sh
+==================
+All 5 tests passed
+==================
+make[4]: Leaving directory '/sources/cloog-0.18.2/test'
+make[3]: Leaving directory '/sources/cloog-0.18.2/test'
+make[2]: Leaving directory '/sources/cloog-0.18.2'

@@ -1,0 +1,84 @@
+Sat Jun 28 18:35:24 CDT 2014
+
+KB: 2575560	/
+
+make[1]: Entering directory '/sources/bzip2-1.0.6'
+gcc -m32 -fpic -fPIC -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c blocksort.c
+gcc -m32 -fpic -fPIC -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c huffman.c
+gcc -m32 -fpic -fPIC -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c crctable.c
+gcc -m32 -fpic -fPIC -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c randtable.c
+gcc -m32 -fpic -fPIC -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c compress.c
+gcc -m32 -fpic -fPIC -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c decompress.c
+gcc -m32 -fpic -fPIC -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c bzlib.c
+In function 'mainSort':
+blocksort.c:347:6: warning: inlining failed in call to 'mainGtU.part.0': call is unlikely and code size would grow [-Winline]
+ Bool mainGtU ( UInt32  i1, 
+      ^
+cc1: warning: called from here [-Winline]
+blocksort.c:347:6: warning: inlining failed in call to 'mainGtU.part.0': call is unlikely and code size would grow [-Winline]
+ Bool mainGtU ( UInt32  i1, 
+      ^
+cc1: warning: called from here [-Winline]
+blocksort.c:347:6: warning: inlining failed in call to 'mainGtU.part.0': call is unlikely and code size would grow [-Winline]
+ Bool mainGtU ( UInt32  i1, 
+      ^
+cc1: warning: called from here [-Winline]
+gcc -m32 -shared -Wl,-soname -Wl,libbz2.so.1.0 -o libbz2.so.1.0.6 blocksort.o huffman.o crctable.o randtable.o compress.o decompress.o bzlib.o
+gcc -m32 -fpic -fPIC -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -o bzip2-shared bzip2.c libbz2.so.1.0.6
+bzip2.c: In function 'testStream':
+bzip2.c:557:37: warning: variable 'nread' set but not used [-Wunused-but-set-variable]
+    Int32   bzerr, bzerr_dummy, ret, nread, streamNo, i;
+                                     ^
+rm -f libbz2.so.1.0
+ln -s libbz2.so.1.0.6 libbz2.so.1.0
+make[1]: Leaving directory '/sources/bzip2-1.0.6'
+make[1]: Entering directory '/sources/bzip2-1.0.6'
+rm -f *.o libbz2.a bzip2 bzip2recover \
+sample1.rb2 sample2.rb2 sample3.rb2 \
+sample1.tst sample2.tst sample3.tst
+make[1]: Leaving directory '/sources/bzip2-1.0.6'
+make[1]: Entering directory '/sources/bzip2-1.0.6'
+gcc -m32 -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c huffman.c
+gcc -m32 -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c crctable.c
+
+If compilation produces errors, or a large number of warnings,
+please read README.COMPILATION.PROBLEMS -- you might be able to
+adjust the flags in this Makefile to improve matters.
+
+Also in README.COMPILATION.PROBLEMS are some hints that may help
+if your build produces an executable which is unable to correctly
+handle so-called 'large files' -- files of size 2GB or more.
+
+gcc -m32 -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c randtable.c
+gcc -m32 -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c blocksort.c
+gcc -m32 -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c compress.c
+gcc -m32 -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c decompress.c
+gcc -m32 -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c bzlib.c
+In function 'mainSort':
+blocksort.c:347:6: warning: inlining failed in call to 'mainGtU.part.0': call is unlikely and code size would grow [-Winline]
+ Bool mainGtU ( UInt32  i1, 
+      ^
+cc1: warning: called from here [-Winline]
+blocksort.c:347:6: warning: inlining failed in call to 'mainGtU.part.0': call is unlikely and code size would grow [-Winline]
+ Bool mainGtU ( UInt32  i1, 
+      ^
+cc1: warning: called from here [-Winline]
+blocksort.c:347:6: warning: inlining failed in call to 'mainGtU.part.0': call is unlikely and code size would grow [-Winline]
+ Bool mainGtU ( UInt32  i1, 
+      ^
+cc1: warning: called from here [-Winline]
+rm -f libbz2.a
+ar cq libbz2.a blocksort.o huffman.o crctable.o randtable.o compress.o decompress.o bzlib.o
+ranlib libbz2.a
+make[1]: Leaving directory '/sources/bzip2-1.0.6'
+'libbz2.a' -> '/usr/lib/libbz2.a'
+'libbz2.so.1.0' -> '/lib/libbz2.so.1.0'
+'libbz2.so.1.0.6' -> '/lib/libbz2.so.1.0.6'
+'/usr/lib/libbz2.so' -> '../../lib/libbz2.so.1.0'
+
+
+Totalseconds: 3
+
+
+KB: 2580176	/
+

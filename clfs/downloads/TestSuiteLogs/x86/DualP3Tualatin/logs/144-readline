@@ -1,0 +1,482 @@
+Fri Jun 13 08:26:01 CDT 2014
+
+KB: 1926564	/
+
+patching file display.c
+patching file patchlevel
+patching file readline.c
+patching file rltypedefs.h
+patching file util.c
+checking build system type... i686-pc-linux-gnu
+checking host system type... i686-pc-linux-gnu
+
+Beginning configuration for readline-6.3 for i686-pc-linux-gnu
+
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether gcc needs -traditional... no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for ar... ar
+checking for ranlib... ranlib
+checking for an ANSI C-conforming const... yes
+checking for function prototypes... yes
+checking whether char is unsigned... no
+checking for working volatile... yes
+checking return type of signal handlers... void
+checking for size_t... yes
+checking for ssize_t... yes
+checking for ANSI C header files... (cached) yes
+checking whether stat file-mode macros are broken... no
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for fcntl... yes
+checking for kill... yes
+checking for lstat... yes
+checking for memmove... yes
+checking for putenv... yes
+checking for select... yes
+checking for setenv... yes
+checking for setlocale... yes
+checking for strcasecmp... yes
+checking for strpbrk... yes
+checking for tcgetattr... yes
+checking for vsnprintf... yes
+checking for isascii... yes
+checking for isxdigit... yes
+checking for getpwent... yes
+checking for getpwnam... yes
+checking for getpwuid... yes
+checking for working strcoll... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for unistd.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking varargs.h usability... no
+checking varargs.h presence... no
+checking for varargs.h... no
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking stdbool.h usability... yes
+checking stdbool.h presence... yes
+checking for stdbool.h... yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking pwd.h usability... yes
+checking pwd.h presence... yes
+checking for pwd.h... yes
+checking for memory.h... (cached) yes
+checking termcap.h usability... yes
+checking termcap.h presence... yes
+checking for termcap.h... yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking termio.h usability... yes
+checking termio.h presence... yes
+checking for termio.h... yes
+checking sys/pte.h usability... no
+checking sys/pte.h presence... no
+checking for sys/pte.h... no
+checking sys/stream.h usability... no
+checking sys/stream.h presence... no
+checking for sys/stream.h... no
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking for sys/ptem.h... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking for type of signal functions... posix
+checking if signal handlers must be reinstalled when invoked... no
+checking for presence of POSIX-style sigsetjmp/siglongjmp... present
+checking for lstat... yes
+checking whether or not strcoll and strcmp differ... no
+checking whether the ctype macros accept non-ascii characters... yes
+checking whether getpw functions are declared in pwd.h... yes
+checking whether termios.h defines TIOCGWINSZ... no
+checking whether sys/ioctl.h defines TIOCGWINSZ... yes
+checking for sig_atomic_t in signal.h... yes
+checking whether signal handlers are of type void... yes
+checking for TIOCSTAT in sys/ioctl.h... no
+checking for FIONREAD in sys/ioctl.h... yes
+checking for speed_t in sys/types.h... no
+checking for struct winsize in sys/ioctl.h and termios.h... sys/ioctl.h
+checking for struct dirent.d_ino... yes
+checking for struct dirent.d_fileno... yes
+checking whether AUDIT_USER_TTY is declared... yes
+checking for tgetent... no
+checking for tgetent in -ltermcap... no
+checking for tgetent in -ltinfo... no
+checking for tgetent in -lcurses... yes
+checking which library has the termcap functions... using libcurses
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking for mbrlen... yes
+checking for mbscasecmp... no
+checking for mbscmp... no
+checking for mbsnrtowcs... yes
+checking for mbsrtowcs... yes
+checking for mbschr... no
+checking for wcrtomb... yes
+checking for wcscoll... yes
+checking for wcsdup... yes
+checking for wcwidth... yes
+checking for wctype... yes
+checking for wcswidth... yes
+checking whether mbrtowc and mbstate_t are properly declared... yes
+checking for iswlower... yes
+checking for iswupper... yes
+checking for towlower... yes
+checking for towupper... yes
+checking for iswctype... yes
+checking for nl_langinfo and CODESET... yes
+checking for wchar_t in wchar.h... yes
+checking for wctype_t in wctype.h... yes
+checking for wint_t in wctype.h... yes
+checking for wcwidth broken with unicode combining characters... 
+checking configuration for building shared libraries... supported
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating examples/Makefile
+config.status: creating shlib/Makefile
+config.status: creating config.h
+config.status: executing default commands
+make[1]: Entering directory '/sources/readline-6.3'
+rm -f readline.o
+rm -f vi_mode.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O readline.c
+rm -f funmap.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O vi_mode.c
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O funmap.c
+rm -f keymaps.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O keymaps.c
+rm -f parens.o
+rm -f search.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O parens.c
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O search.c
+rm -f rltty.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O rltty.c
+rm -f complete.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O complete.c
+rm -f bind.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O bind.c
+rm -f isearch.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O isearch.c
+rm -f display.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O display.c
+rm -f signals.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O signals.c
+rm -f util.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O util.c
+rm -f kill.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O kill.c
+rm -f undo.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O undo.c
+rm -f macro.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O macro.c
+rm -f input.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O input.c
+rm -f callback.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O callback.c
+rm -f terminal.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O terminal.c
+rm -f text.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O text.c
+rm -f nls.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O nls.c
+rm -f misc.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O misc.c
+rm -f history.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O history.c
+rm -f histexpand.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O histexpand.c
+rm -f histfile.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O histfile.c
+rm -f histsearch.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O histsearch.c
+rm -f shell.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O shell.c
+rm -f mbutil.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O mbutil.c
+rm -f tilde.o
+gcc -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O -DREADLINE_LIBRARY -c ./tilde.c
+rm -f colors.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O colors.c
+rm -f parse-colors.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O parse-colors.c
+rm -f xmalloc.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O xmalloc.c
+rm -f xfree.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O xfree.c
+rm -f compat.o
+gcc -c -DHAVE_CONFIG_H    -I. -I. -DRL_LIBRARY_VERSION='"6.3"' -g -O compat.c
+test -d shlib || mkdir shlib
+( cd shlib ; make -w -j --jobserver-fds=3,4 all )
+make[2]: Entering directory '/sources/readline-6.3/shlib'
+rm -f readline.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o readline.o ../readline.c 
+rm -f vi_mode.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o vi_mode.o ../vi_mode.c 
+rm -f libhistory.a
+ar cr libhistory.a history.o histexpand.o histfile.o histsearch.o shell.o mbutil.o xmalloc.o xfree.o
+test -n "ranlib" && ranlib libhistory.a
+rm -f funmap.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o funmap.o ../funmap.c 
+mv funmap.o funmap.so
+rm -f keymaps.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o keymaps.o ../keymaps.c 
+mv readline.o readline.so
+rm -f parens.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o parens.o ../parens.c 
+mv keymaps.o keymaps.so
+rm -f search.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o search.o ../search.c 
+mv parens.o parens.so
+rm -f rltty.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o rltty.o ../rltty.c 
+mv search.o search.so
+rm -f complete.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o complete.o ../complete.c 
+mv rltty.o rltty.so
+rm -f bind.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o bind.o ../bind.c 
+mv vi_mode.o vi_mode.so
+rm -f isearch.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o isearch.o ../isearch.c 
+mv complete.o complete.so
+rm -f display.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o display.o ../display.c 
+mv isearch.o isearch.so
+rm -f signals.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o signals.o ../signals.c 
+mv signals.o signals.so
+rm -f util.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o util.o ../util.c 
+mv bind.o bind.so
+rm -f kill.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o kill.o ../kill.c 
+mv util.o util.so
+rm -f undo.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o undo.o ../undo.c 
+mv undo.o undo.so
+rm -f macro.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o macro.o ../macro.c 
+mv kill.o kill.so
+rm -f input.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o input.o ../input.c 
+mv macro.o macro.so
+rm -f callback.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o callback.o ../callback.c 
+mv input.o input.so
+rm -f libreadline.a
+ar cr libreadline.a readline.o vi_mode.o funmap.o keymaps.o parens.o search.o rltty.o complete.o bind.o isearch.o display.o signals.o util.o kill.o undo.o macro.o input.o callback.o terminal.o text.o nls.o misc.o history.o histexpand.o histfile.o histsearch.o shell.o mbutil.o tilde.o colors.o parse-colors.o xmalloc.o xfree.o compat.o
+test -n "ranlib" && ranlib libreadline.a
+mv display.o display.so
+rm -f terminal.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o terminal.o ../terminal.c 
+rm -f text.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o text.o ../text.c 
+mv callback.o callback.so
+rm -f nls.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o nls.o ../nls.c 
+mv terminal.o terminal.so
+rm -f misc.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o misc.o ../misc.c 
+mv nls.o nls.so
+rm -f history.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o history.o ../history.c 
+mv misc.o misc.so
+rm -f histexpand.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o histexpand.o ../histexpand.c 
+mv text.o text.so
+rm -f histfile.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o histfile.o ../histfile.c 
+mv history.o history.so
+rm -f histsearch.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o histsearch.o ../histsearch.c 
+mv histsearch.o histsearch.so
+rm -f shell.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o shell.o ../shell.c 
+mv shell.o shell.so
+rm -f mbutil.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o mbutil.o ../mbutil.c 
+mv histfile.o histfile.so
+rm -f tilde.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -DREADLINE_LIBRARY -c -o tilde.o ../tilde.c
+mv tilde.o tilde.so
+rm -f colors.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o colors.o ../colors.c 
+mv mbutil.o mbutil.so
+rm -f parse-colors.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o parse-colors.o ../parse-colors.c 
+mv colors.o colors.so
+rm -f xmalloc.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o xmalloc.o ../xmalloc.c 
+mv xmalloc.o xmalloc.so
+rm -f xfree.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o xfree.o ../xfree.c 
+mv xfree.o xfree.so
+rm -f compat.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o compat.o ../compat.c 
+mv parse-colors.o parse-colors.so
+mv compat.o compat.so
+mv histexpand.o histexpand.so
+rm -f libreadline.so.6.3
+rm -f libhistory.so.6.3
+gcc -shared -Wl,-soname,libreadline.so.6.3 -Wl,-rpath,/lib -Wl,-soname,`basename libreadline.so.6.3 .3` -o libreadline.so.6.3 readline.so vi_mode.so funmap.so keymaps.so parens.so search.so rltty.so complete.so bind.so isearch.so display.so signals.so util.so kill.so undo.so macro.so input.so callback.so terminal.so text.so nls.so misc.so history.so histexpand.so histfile.so histsearch.so shell.so mbutil.so tilde.so colors.so parse-colors.so xmalloc.so xfree.so compat.so -lncurses
+gcc -shared -Wl,-soname,libhistory.so.6.3 -Wl,-rpath,/lib -Wl,-soname,`basename libhistory.so.6.3 .3` -o libhistory.so.6.3 history.so histexpand.so histfile.so histsearch.so shell.so mbutil.so xmalloc.so xfree.so -lncurses
+make[2]: Leaving directory '/sources/readline-6.3/shlib'
+make[1]: Leaving directory '/sources/readline-6.3'
+make[1]: Entering directory '/sources/readline-6.3'
+/bin/sh ./support/mkinstalldirs /usr/include \
+	/usr/include/readline /lib \
+	/usr/share/info /usr/share/man/man3 /usr/share/doc/readline-6.3
+mkdir -p -- /usr/include/readline /lib /usr/share/info /usr/share/man/man3 /usr/share/doc/readline-6.3
+for f in readline.h chardefs.h keymaps.h history.h tilde.h rlstdc.h rlconf.h rltypedefs.h; do \
+	/usr/bin/install -c -m 644 ./$f /usr/include/readline ; \
+done
+/usr/bin/install -c -m 644 ./CHANGES ./INSTALL ./README /usr/share/doc/readline-6.3
+( if test -d doc ; then \
+	cd doc && \
+	make -w infodir=/usr/share/info DESTDIR= install; \
+  fi )
+make[2]: Entering directory '/sources/readline-6.3/doc'
+/bin/sh ../support/mkdirs /usr/share/info /usr/share/man/man3
+if test -n "/usr/share/doc/readline-6.3" ; then \
+	/bin/sh ../support/mkdirs /usr/share/doc/readline-6.3 ; \
+fi
+if test -f readline.info; then \
+	/usr/bin/install -c -m 644 readline.info /usr/share/info/readline.info; \
+else \
+	/usr/bin/install -c -m 644 ./readline.info /usr/share/info/readline.info; \
+fi
+if test -f rluserman.info; then \
+	/usr/bin/install -c -m 644 rluserman.info /usr/share/info/rluserman.info; \
+else \
+	/usr/bin/install -c -m 644 ./rluserman.info /usr/share/info/rluserman.info; \
+fi
+if test -f history.info; then \
+	/usr/bin/install -c -m 644 history.info /usr/share/info/history.info; \
+else \
+	/usr/bin/install -c -m 644 ./history.info /usr/share/info/history.info; \
+fi
+if /bin/sh -c 'install-info --version' >/dev/null 2>&1; then \
+	install-info --dir-file=/usr/share/info/dir \
+		/usr/share/info/readline.info ; \
+	install-info --dir-file=/usr/share/info/dir \
+		/usr/share/info/history.info ; \
+	install-info --dir-file=/usr/share/info/dir \
+		/usr/share/info/rluserman.info ; \
+else true; fi
+/usr/bin/install -c -m 644 ./readline.3 /usr/share/man/man3/readline.3
+/usr/bin/install -c -m 644 ./history.3 /usr/share/man/man3/history.3
+if test -n "/usr/share/doc/readline-6.3" ; then \
+	if test -f readline.html; then \
+		/usr/bin/install -c -m 644 readline.html /usr/share/doc/readline-6.3/readline.html; \
+	else \
+		/usr/bin/install -c -m 644 ./readline.html /usr/share/doc/readline-6.3/readline.html; \
+	fi ; \
+	if test -f history.html; then \
+		/usr/bin/install -c -m 644 history.html /usr/share/doc/readline-6.3/history.html; \
+	else \
+		/usr/bin/install -c -m 644 ./history.html /usr/share/doc/readline-6.3/history.html; \
+	fi ; \
+	if test -f rluserman.html; then \
+		/usr/bin/install -c -m 644 rluserman.html /usr/share/doc/readline-6.3/rluserman.html; \
+	else \
+		/usr/bin/install -c -m 644 ./rluserman.html /usr/share/doc/readline-6.3/rluserman.html; \
+	fi ; \
+fi
+make[2]: Leaving directory '/sources/readline-6.3/doc'
+( cd examples ; make -w DESTDIR= install )
+make[2]: Entering directory '/sources/readline-6.3/examples'
+/bin/sh ../support/mkdirs /usr/share/readline
+mkdir /usr/share/readline
+make[2]: Leaving directory '/sources/readline-6.3/examples'
+mv /lib/libreadline.a /lib/libreadline.old
+mv: cannot stat '/lib/libreadline.a': No such file or directory
+Makefile:238: recipe for target 'install-static' failed
+make[1]: [install-static] Error 1 (ignored)
+/usr/bin/install -c -m 644 libreadline.a /lib/libreadline.a
+test -n "ranlib" && ranlib /lib/libreadline.a
+mv /lib/libhistory.a /lib/libhistory.old
+mv: cannot stat '/lib/libhistory.a': No such file or directory
+Makefile:238: recipe for target 'install-static' failed
+make[1]: [install-static] Error 1 (ignored)
+/usr/bin/install -c -m 644 libhistory.a /lib/libhistory.a
+test -n "ranlib" && ranlib /lib/libhistory.a
+test -d shlib || mkdir shlib
+( cd shlib ; make -w all )
+make[2]: Entering directory '/sources/readline-6.3/shlib'
+rm -f vi_mode.so
+gcc -c -DHAVE_CONFIG_H    -I. -I.. -I.. -DRL_LIBRARY_VERSION='"6.3"' -g -O -fPIC -o vi_mode.o ../vi_mode.c 
+mv vi_mode.o vi_mode.so
+rm -f libreadline.so.6.3
+gcc -shared -Wl,-soname,libreadline.so.6.3 -Wl,-rpath,/lib -Wl,-soname,`basename libreadline.so.6.3 .3` -o libreadline.so.6.3 readline.so vi_mode.so funmap.so keymaps.so parens.so search.so rltty.so complete.so bind.so isearch.so display.so signals.so util.so kill.so undo.so macro.so input.so callback.so terminal.so text.so nls.so misc.so history.so histexpand.so histfile.so histsearch.so shell.so mbutil.so tilde.so colors.so parse-colors.so xmalloc.so xfree.so compat.so -lncurses
+make[2]: Leaving directory '/sources/readline-6.3/shlib'
+( cd shlib ; make -w DESTDIR= install )
+make[2]: Entering directory '/sources/readline-6.3/shlib'
+/bin/sh ../support/mkdirs /lib
+/bin/sh ../support/mkdirs /usr/bin
+/bin/sh ../support/shlib-install -O linux-gnu -V pc -d /lib -b /usr/bin -i "/usr/bin/install -c -m 644" libhistory.so.6.3
+/bin/sh ../support/shlib-install -O linux-gnu -V pc -d /lib -b /usr/bin -i "/usr/bin/install -c -m 644" libreadline.so.6.3
+install: you may need to run ldconfig
+make[2]: Leaving directory '/sources/readline-6.3/shlib'
+make[1]: Leaving directory '/sources/readline-6.3'
+'/lib/libreadline.a' -> '/usr/lib/libreadline.a'
+'/lib/libhistory.a' -> '/usr/lib/libhistory.a'
+'/usr/lib/libreadline.so' -> '../../lib/libreadline.so.6'
+'/usr/lib/libhistory.so' -> '../../lib/libhistory.so.6'
+removed '/lib/libreadline.so'
+removed '/lib/libhistory.so'
+
+
+Totalseconds: 39
+
+
+KB: 1939532	/
+

@@ -1,0 +1,24 @@
+Fri Jun 13 01:43:37 UTC 2014
+
+KB: 1189632	/
+
+'/bin/bash' -> '/tools/bin/bash'
+'/bin/cat' -> '/tools/bin/cat'
+'/bin/echo' -> '/tools/bin/echo'
+'/bin/grep' -> '/tools/bin/grep'
+'/bin/pwd' -> '/tools/bin/pwd'
+'/bin/stty' -> '/tools/bin/stty'
+'/usr/bin/file' -> '/tools/bin/file'
+'/usr/lib/libgcc_s.so' -> '/tools/lib/libgcc_s.so'
+'/usr/lib/libgcc_s.so.1' -> '/tools/lib/libgcc_s.so.1'
+'/usr/lib/libstdc++.so.6' -> '/tools/lib/libstdc++.so.6'
+'/usr/lib/libstdc++.so' -> '/tools/lib/libstdc++.so'
+'/bin/sh' -> 'bash'
+'/etc/mtab' -> '/proc/self/mounts'
+
+
+Totalseconds: 0
+
+
+KB: 1189636	/
+

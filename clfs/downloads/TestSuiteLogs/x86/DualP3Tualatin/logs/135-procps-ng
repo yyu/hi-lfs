@@ -1,0 +1,509 @@
+Fri Jun 13 11:48:27 UTC 2014
+
+KB: 1821668	/
+
+checking for a BSD-compatible install... /tools/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /tools/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking how to create a pax tar archive... gnutar
+checking whether make supports nested variables... (cached) yes
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking for gawk... (cached) gawk
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking for gcc option to accept ISO C99... -std=gnu99
+checking for gcc -std=gnu99 option to accept ISO Standard C... (cached) -std=gnu99
+checking how to run the C preprocessor... gcc -E
+checking whether ln -s works... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for ranlib... ranlib
+checking whether sys/types.h defines makedev... yes
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking libintl.h usability... yes
+checking libintl.h presence... yes
+checking for libintl.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking for stdint.h... (cached) yes
+checking stdio_ext.h usability... yes
+checking stdio_ext.h presence... yes
+checking for stdio_ext.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking for unistd.h... (cached) yes
+checking utmp.h usability... yes
+checking utmp.h presence... yes
+checking for utmp.h... yes
+checking values.h usability... yes
+checking values.h presence... yes
+checking for values.h... yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking for uid_t in sys/types.h... yes
+checking for inline... inline
+checking for int32_t... yes
+checking for pid_t... yes
+checking for C/C++ restrict keyword... __restrict
+checking for size_t... yes
+checking for ssize_t... yes
+checking for struct stat.st_rdev... yes
+checking build system type... i686-pc-linux-gnu
+checking host system type... i686-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc -std=gnu99... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert i686-pc-linux-gnu file names to i686-pc-linux-gnu format... func_convert_file_noop
+checking how to convert i686-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... (cached) ranlib
+checking command to parse /usr/bin/nm -B output from gcc -std=gnu99 object... ok
+checking for sysroot... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc -std=gnu99 supports -fno-rtti -fno-exceptions... no
+checking for gcc -std=gnu99 option to produce PIC... -fPIC -DPIC
+checking if gcc -std=gnu99 PIC flag -fPIC -DPIC works... yes
+checking if gcc -std=gnu99 static flag -static works... yes
+checking if gcc -std=gnu99 supports -c -o file.o... yes
+checking if gcc -std=gnu99 supports -c -o file.o... (cached) yes
+checking whether the gcc -std=gnu99 linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for error_at_line... yes
+checking vfork.h usability... no
+checking vfork.h presence... no
+checking for vfork.h... no
+checking for fork... yes
+checking for vfork... yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking whether mbrtowc and mbstate_t are properly declared... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible realloc... yes
+checking for working strtod... yes
+checking whether NLS is requested... yes
+checking for msgfmt... /tools/bin/msgfmt
+checking for gmsgfmt... /tools/bin/msgfmt
+checking for xgettext... /tools/bin/xgettext
+checking for msgmerge... /tools/bin/msgmerge
+checking for ld used by GCC... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking whether NLS is requested... yes
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for error.h... yes
+checking for stdio_ext.h... (cached) yes
+checking whether program_invocation_name is defined... yes
+checking whether program_invocation_short_name is defined... yes
+checking for NCURSES... no
+checking for initscr in -lncurses... yes
+checking for curses.h... yes
+checking for ncurses.h... yes
+checking for term.h... yes
+checking for library containing dlopen... -ldl
+checking for __fpending... yes
+checking for alarm... yes
+checking for atexit... yes
+checking for dup2... yes
+checking for getpagesize... (cached) yes
+checking for gettimeofday... yes
+checking for iswprint... yes
+checking for memchr... yes
+checking for memmove... yes
+checking for memset... yes
+checking for munmap... yes
+checking for nl_langinfo... yes
+checking for putenv... yes
+checking for regcomp... yes
+checking for rpmatch... yes
+checking for select... yes
+checking for setlocale... yes
+checking for strcasecmp... yes
+checking for strchr... yes
+checking for strcspn... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strncasecmp... yes
+checking for strpbrk... yes
+checking for strrchr... yes
+checking for strspn... yes
+checking for strstr... yes
+checking for strtol... yes
+checking for strtoul... yes
+checking for strtoull... yes
+checking for strverscmp... yes
+checking for uname... yes
+checking for utmpname... yes
+checking for wcwidth... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating include/Makefile
+config.status: creating lib/Makefile
+config.status: creating po/Makefile.in
+config.status: creating proc/Makefile
+config.status: creating proc/libprocps.pc
+config.status: creating ps/Makefile
+config.status: creating testsuite/Makefile
+config.status: creating top/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing default-1 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+make[1]: Entering directory '/sources/procps-ng-3.3.9'
+touch ./.version
+echo 3.3.9 > .version-t && mv .version-t .version
+make  all-recursive
+make[2]: Entering directory '/sources/procps-ng-3.3.9'
+Making all in include
+make[3]: Entering directory '/sources/procps-ng-3.3.9/include'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/sources/procps-ng-3.3.9/include'
+Making all in lib
+make[3]: Entering directory '/sources/procps-ng-3.3.9/lib'
+  CC       strutils.o
+  CC       fileutils.o
+  CCLD     test_fileutils
+  CCLD     test_strutils
+make[3]: Leaving directory '/sources/procps-ng-3.3.9/lib'
+Making all in po
+make[3]: Entering directory '/sources/procps-ng-3.3.9/po'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/sources/procps-ng-3.3.9/po'
+Making all in proc
+make[3]: Entering directory '/sources/procps-ng-3.3.9/proc'
+  CC       escape.lo
+  CC       alloc.lo
+  CC       devname.lo
+  CC       ksym.lo
+  CC       pwcache.lo
+  CC       readproc.lo
+  CC       sig.lo
+  CC       slab.lo
+  CC       sysinfo.lo
+  CC       version.lo
+  CC       whattime.lo
+  CCLD     libprocps.la
+make[3]: Leaving directory '/sources/procps-ng-3.3.9/proc'
+Making all in ps
+make[3]: Entering directory '/sources/procps-ng-3.3.9/ps'
+  CC       help.o
+  CC       display.o
+  CC       global.o
+  CC       output.o
+  CC       parser.o
+  CC       select.o
+  CC       sortformat.o
+  CC       stacktrace.o
+  CC       fileutils.o
+  CCLD     pscommand
+make[3]: Leaving directory '/sources/procps-ng-3.3.9/ps'
+Making all in testsuite
+make[3]: Entering directory '/sources/procps-ng-3.3.9/testsuite'
+  CC       test-schedbatch.o
+  CCLD     test-schedbatch
+make[3]: Leaving directory '/sources/procps-ng-3.3.9/testsuite'
+Making all in top
+make[3]: Entering directory '/sources/procps-ng-3.3.9/top'
+  CC       top.o
+  CC       top_nls.o
+  CC       fileutils.o
+  CCLD     top
+make[3]: Leaving directory '/sources/procps-ng-3.3.9/top'
+make[3]: Entering directory '/sources/procps-ng-3.3.9'
+  CC       sysctl.o
+  CC       fileutils.o
+  CC       free.o
+  CC       strutils.o
+  CC       pgrep.o
+  CC       nsutils.o
+  CC       pmap.o
+pmap.c:135:1: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ static unsigned KLONG range_high = ~0ull;
+ ^
+  CC       pwdx.o
+  CC       tload.o
+  CC       uptime.o
+  CC       vmstat.o
+  CC       w.o
+  CC       pidof.o
+  CC       slabtop.o
+  CC       watch.o
+  CCLD     sysctl
+  CCLD     free
+  CCLD     pgrep
+  CCLD     pkill
+  CCLD     pmap
+  CCLD     pwdx
+  CCLD     tload
+  CCLD     uptime
+  CCLD     vmstat
+  CCLD     w
+  CCLD     pidof
+  CCLD     slabtop
+  CCLD     watch
+make[3]: Leaving directory '/sources/procps-ng-3.3.9'
+make[2]: Leaving directory '/sources/procps-ng-3.3.9'
+make[1]: Leaving directory '/sources/procps-ng-3.3.9'
+make[1]: Entering directory '/sources/procps-ng-3.3.9'
+make  install-recursive
+make[2]: Entering directory '/sources/procps-ng-3.3.9'
+Making install in include
+make[3]: Entering directory '/sources/procps-ng-3.3.9/include'
+make[4]: Entering directory '/sources/procps-ng-3.3.9/include'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/sources/procps-ng-3.3.9/include'
+make[3]: Leaving directory '/sources/procps-ng-3.3.9/include'
+Making install in lib
+make[3]: Entering directory '/sources/procps-ng-3.3.9/lib'
+make[4]: Entering directory '/sources/procps-ng-3.3.9/lib'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/sources/procps-ng-3.3.9/lib'
+make[3]: Leaving directory '/sources/procps-ng-3.3.9/lib'
+Making install in po
+make[3]: Entering directory '/sources/procps-ng-3.3.9/po'
+/bin/sh .././mkinstalldirs /usr/share
+if test "procps-ng" = "gettext-tools"; then \
+  /bin/sh .././mkinstalldirs /usr/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    /tools/bin/install -c -m 644 ./$file \
+		    /usr/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[3]: Leaving directory '/sources/procps-ng-3.3.9/po'
+Making install in proc
+make[3]: Entering directory '/sources/procps-ng-3.3.9/proc'
+make[4]: Entering directory '/sources/procps-ng-3.3.9/proc'
+ /tools/bin/mkdir -p '/usr/lib'
+ /bin/sh ../libtool   --mode=install /tools/bin/install -c   libprocps.la '/usr/lib'
+libtool: install: /tools/bin/install -c .libs/libprocps.so.3.0.0 /usr/lib/libprocps.so.3.0.0
+libtool: install: (cd /usr/lib && { ln -s -f libprocps.so.3.0.0 libprocps.so.3 || { rm -f libprocps.so.3 && ln -s libprocps.so.3.0.0 libprocps.so.3; }; })
+libtool: install: (cd /usr/lib && { ln -s -f libprocps.so.3.0.0 libprocps.so || { rm -f libprocps.so && ln -s libprocps.so.3.0.0 libprocps.so; }; })
+libtool: install: /tools/bin/install -c .libs/libprocps.lai /usr/lib/libprocps.la
+libtool: install: /tools/bin/install -c .libs/libprocps.a /usr/lib/libprocps.a
+libtool: install: chmod 644 /usr/lib/libprocps.a
+libtool: install: ranlib /usr/lib/libprocps.a
+libtool: finish: PATH="/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin:/usr/sbin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /tools/bin/mkdir -p '/usr/include/proc/'
+ /tools/bin/install -c -m 644 alloc.h devname.h escape.h procps.h pwcache.h readproc.h sig.h slab.h sysinfo.h version.h wchan.h whattime.h '/usr/include/proc/'
+ /tools/bin/mkdir -p '/usr/lib/pkgconfig'
+ /tools/bin/install -c -m 644 libprocps.pc '/usr/lib/pkgconfig'
+make[4]: Leaving directory '/sources/procps-ng-3.3.9/proc'
+make[3]: Leaving directory '/sources/procps-ng-3.3.9/proc'
+Making install in ps
+make[3]: Entering directory '/sources/procps-ng-3.3.9/ps'
+make[4]: Entering directory '/sources/procps-ng-3.3.9/ps'
+ /tools/bin/mkdir -p '/bin'
+  /bin/sh ../libtool   --mode=install /tools/bin/install -c pscommand '/bin/./ps'
+libtool: install: /tools/bin/install -c .libs/pscommand /bin/./ps
+ /tools/bin/mkdir -p '/usr/share/man/man1'
+ /tools/bin/install -c -m 644 ps.1 '/usr/share/man/man1'
+make[4]: Leaving directory '/sources/procps-ng-3.3.9/ps'
+make[3]: Leaving directory '/sources/procps-ng-3.3.9/ps'
+Making install in testsuite
+make[3]: Entering directory '/sources/procps-ng-3.3.9/testsuite'
+make[4]: Entering directory '/sources/procps-ng-3.3.9/testsuite'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/sources/procps-ng-3.3.9/testsuite'
+make[3]: Leaving directory '/sources/procps-ng-3.3.9/testsuite'
+Making install in top
+make[3]: Entering directory '/sources/procps-ng-3.3.9/top'
+make[4]: Entering directory '/sources/procps-ng-3.3.9/top'
+ /tools/bin/mkdir -p '/usr/bin'
+  /bin/sh ../libtool   --mode=install /tools/bin/install -c top '/usr/bin'
+libtool: install: /tools/bin/install -c .libs/top /usr/bin/top
+ /tools/bin/mkdir -p '/usr/share/doc/procps-ng-3.3.9'
+ /tools/bin/install -c -m 644 README.top '/usr/share/doc/procps-ng-3.3.9'
+ /tools/bin/mkdir -p '/usr/share/man/man1'
+ /tools/bin/install -c -m 644 top.1 '/usr/share/man/man1'
+make[4]: Leaving directory '/sources/procps-ng-3.3.9/top'
+make[3]: Leaving directory '/sources/procps-ng-3.3.9/top'
+make[3]: Entering directory '/sources/procps-ng-3.3.9'
+make[4]: Entering directory '/sources/procps-ng-3.3.9'
+ /tools/bin/mkdir -p '/sbin'
+  /bin/sh ./libtool   --mode=install /tools/bin/install -c sysctl '/sbin'
+libtool: install: /tools/bin/install -c .libs/sysctl /sbin/sysctl
+ /tools/bin/mkdir -p '/usr/bin'
+  /bin/sh ./libtool   --mode=install /tools/bin/install -c free pgrep pkill pmap pwdx tload uptime vmstat w pidof slabtop watch '/usr/bin'
+libtool: install: /tools/bin/install -c .libs/free /usr/bin/free
+libtool: install: /tools/bin/install -c .libs/pgrep /usr/bin/pgrep
+libtool: install: /tools/bin/install -c .libs/pkill /usr/bin/pkill
+libtool: install: /tools/bin/install -c .libs/pmap /usr/bin/pmap
+libtool: install: /tools/bin/install -c .libs/pwdx /usr/bin/pwdx
+libtool: install: /tools/bin/install -c .libs/tload /usr/bin/tload
+libtool: install: /tools/bin/install -c .libs/uptime /usr/bin/uptime
+libtool: install: /tools/bin/install -c .libs/vmstat /usr/bin/vmstat
+libtool: install: /tools/bin/install -c .libs/w /usr/bin/w
+libtool: install: /tools/bin/install -c .libs/pidof /usr/bin/pidof
+libtool: install: /tools/bin/install -c .libs/slabtop /usr/bin/slabtop
+libtool: install: /tools/bin/install -c .libs/watch /usr/bin/watch
+ /tools/bin/mkdir -p '/usr/share/doc/procps-ng-3.3.9'
+ /tools/bin/install -c -m 644 Documentation/BUGS Documentation/FAQ '/usr/share/doc/procps-ng-3.3.9'
+ /tools/bin/mkdir -p '/usr/share/man/man1'
+ /tools/bin/install -c -m 644 free.1 pgrep.1 pkill.1 pmap.1 pwdx.1 tload.1 uptime.1 w.1 pidof.1 slabtop.1 watch.1 '/usr/share/man/man1'
+ /tools/bin/mkdir -p '/usr/share/man/man5'
+ /tools/bin/install -c -m 644 sysctl.conf.5 '/usr/share/man/man5'
+ /tools/bin/mkdir -p '/usr/share/man/man8'
+ /tools/bin/install -c -m 644 sysctl.8 vmstat.8 '/usr/share/man/man8'
+make[4]: Leaving directory '/sources/procps-ng-3.3.9'
+make[3]: Leaving directory '/sources/procps-ng-3.3.9'
+make[2]: Leaving directory '/sources/procps-ng-3.3.9'
+make[1]: Leaving directory '/sources/procps-ng-3.3.9'
+'/usr/bin/pidof' -> '/bin/pidof'
+'/usr/lib/libprocps.so.3' -> '/lib/libprocps.so.3'
+'/usr/lib/libprocps.so.3.0.0' -> '/lib/libprocps.so.3.0.0'
+'/usr/lib/libprocps.so' -> '../../lib/libprocps.so.3.0.0'
+
+
+Totalseconds: 66
+
+
+KB: 1832728	/
+

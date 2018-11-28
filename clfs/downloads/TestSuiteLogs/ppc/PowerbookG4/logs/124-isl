@@ -1,0 +1,315 @@
+Mon Jun 30 01:41:26 UTC 2014
+
+KB: 2346472	/
+
+checking for a BSD-compatible install... /tools/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /tools/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... gcc -isystem /usr/include
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc -isystem /usr/include accepts -g... yes
+checking for gcc -isystem /usr/include option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of gcc -isystem /usr/include... gcc3
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking for C compiler vendor... gnu
+checking build system type... powerpc-unknown-linux-gnu
+checking host system type... powerpc-unknown-linux-gnu
+checking whether C compiler accepts -malign-double... no
+checking whether C compiler accepts -fstrict-aliasing... yes
+checking whether C compiler accepts -ffast-math... yes
+checking for gcc architecture flag... 
+checking whether C compiler accepts -march=7447A... no
+checking whether C compiler accepts -mcpu=7447A... no
+checking whether C compiler accepts -m7447A... no
+checking whether C compiler accepts -march=7450... no
+checking whether C compiler accepts -mcpu=7450... yes
+checking for gcc architecture flag... -mcpu=7450
+checking whether C compiler accepts -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -mcpu=7450... yes
+checking whether the compiler supports function __attribute__((__warn_unused_result__))... yes
+checking for __attribute__... yes
+checking how to print strings... printf
+checking for a sed that does not truncate output... /tools/bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc -isystem /usr/include... /tools/powerpc-unknown-linux-gnu/bin/ld
+checking if the linker (/tools/powerpc-unknown-linux-gnu/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /tools/bin/nm -B
+checking the name lister (/tools/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert powerpc-unknown-linux-gnu file names to powerpc-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert powerpc-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /tools/powerpc-unknown-linux-gnu/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /tools/bin/nm -B output from gcc -isystem /usr/include object... ok
+checking for sysroot... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... gcc -isystem /usr/include -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc -isystem /usr/include supports -fno-rtti -fno-exceptions... no
+checking for gcc -isystem /usr/include option to produce PIC... -fPIC -DPIC
+checking if gcc -isystem /usr/include PIC flag -fPIC -DPIC works... yes
+checking if gcc -isystem /usr/include static flag -static works... yes
+checking if gcc -isystem /usr/include supports -c -o file.o... yes
+checking if gcc -isystem /usr/include supports -c -o file.o... (cached) yes
+checking whether the gcc -isystem /usr/include linker (/tools/powerpc-unknown-linux-gnu/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /tools/powerpc-unknown-linux-gnu/bin/ld
+checking if the linker (/tools/powerpc-unknown-linux-gnu/bin/ld) is GNU ld... yes
+checking whether the g++ linker (/tools/powerpc-unknown-linux-gnu/bin/ld) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/tools/powerpc-unknown-linux-gnu/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for perl... perl
+checking for pdflatex... no
+checking for pod2html... pod2html
+checking for stdint types... stdint.h (shortcircuit)
+make use of stdint.h in include/isl/stdint.h (assuming C99 compatible system)
+checking which gmp to use... system
+checking gmp.h usability... yes
+checking gmp.h presence... yes
+checking for gmp.h... yes
+checking for main in -lgmp... yes
+checking whether mp_get_memory_functions is declared... yes
+checking whether ffs is declared... yes
+checking whether __builtin_ffs is declared... yes
+checking which piplib to use... no
+checking which clang to use... no
+checking for C compiler vendor... (cached) gnu
+checking our pkgconfig libname... isl
+checking our pkgconfig version... 0.12.2
+checking our pkgconfig_libdir... ${libdir}/pkgconfig
+expanded our pkgconfig_libdir... /usr/lib/pkgconfig
+checking our pkgconfig_libfile... isl.pc
+checking our package / suffix... isl / 
+checking our pkgconfig description... isl Library
+checking our pkgconfig requires... 
+checking our pkgconfig ext libs... -lisl -lgmp
+checking our pkgconfig cppflags... 
+checking our pkgconfig ldflags... 
+noninstalled pkgconfig -L /sources/isl-0.12.2/.libs
+noninstalled pkgconfig -I /sources/isl-0.12.2/./include
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating bound_test.sh
+config.status: creating codegen_test.sh
+config.status: creating pip_test.sh
+config.status: creating isl_config.h
+config.status: creating include/isl/config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing include/isl/stdint.h commands
+config.status: creating include/isl/stdint.h : _ISL_INCLUDE_ISL_STDINT_H
+config.status: executing isl.pc commands
+config.status: creating isl.pc.in
+config.status: creating isl.pc
+config.status: creating isl-uninstalled.pc
+config.status: creating isl-uninstalled.sh
+make[2]: Entering directory '/sources/isl-0.12.2'
+make  all-recursive
+make[3]: Entering directory '/sources/isl-0.12.2'
+Making all in .
+make[4]: Entering directory '/sources/isl-0.12.2'
+  CC     libisl_la-isl_lp_no_piplib.lo
+  CC     libisl_la-isl_map_no_piplib.lo
+  CC     libisl_la-isl_sample_no_piplib.lo
+  CC     libisl_la-isl_aff.lo
+  CC     libisl_la-isl_affine_hull.lo
+  CC     libisl_la-isl_arg.lo
+  CC     libisl_la-isl_ast.lo
+  CC     libisl_la-isl_ast_build.lo
+  CC     libisl_la-isl_ast_build_expr.lo
+  CC     libisl_la-isl_ast_codegen.lo
+  CC     libisl_la-isl_ast_graft.lo
+  CC     libisl_la-isl_band.lo
+  CC     libisl_la-basis_reduction_tab.lo
+  CC     libisl_la-isl_bernstein.lo
+  CC     libisl_la-isl_blk.lo
+  CC     libisl_la-isl_bound.lo
+  CC     libisl_la-isl_coalesce.lo
+  CC     libisl_la-isl_constraint.lo
+  CC     libisl_la-isl_convex_hull.lo
+  CC     libisl_la-isl_ctx.lo
+  CC     libisl_la-isl_deprecated.lo
+  CC     libisl_la-isl_dim.lo
+  CC     libisl_la-isl_dim_map.lo
+  CC     libisl_la-isl_equalities.lo
+  CC     libisl_la-isl_factorization.lo
+  CC     libisl_la-isl_farkas.lo
+  CC     libisl_la-isl_flow.lo
+  CC     libisl_la-isl_fold.lo
+  CC     libisl_la-isl_gmp.lo
+  CC     libisl_la-isl_hash.lo
+  CC     libisl_la-isl_hmap_map_basic_set.lo
+  CC     libisl_la-isl_ilp.lo
+  CC     libisl_la-isl_input.lo
+  CC     libisl_la-isl_local_space.lo
+  CC     libisl_la-isl_lp.lo
+  CC     libisl_la-isl_map.lo
+  CC     libisl_la-isl_map_simplify.lo
+  CC     libisl_la-isl_map_subtract.lo
+  CC     libisl_la-isl_mat.lo
+  CC     libisl_la-isl_morph.lo
+  CC     libisl_la-isl_id.lo
+  CC     libisl_la-isl_obj.lo
+  CC     libisl_la-isl_options.lo
+  CC     libisl_la-isl_output.lo
+  CC     libisl_la-isl_point.lo
+  CC     libisl_la-isl_polynomial.lo
+  CC     libisl_la-isl_printer.lo
+  CC     libisl_la-print.lo
+  CC     libisl_la-isl_range.lo
+  CC     libisl_la-isl_reordering.lo
+  CC     libisl_la-isl_sample.lo
+  CC     libisl_la-isl_scan.lo
+  CC     libisl_la-isl_schedule.lo
+  CC     libisl_la-isl_set_list.lo
+  CC     libisl_la-isl_sort.lo
+  CC     libisl_la-isl_space.lo
+  CC     libisl_la-isl_stream.lo
+  CC     libisl_la-isl_seq.lo
+  CC     libisl_la-isl_tab.lo
+  CC     libisl_la-isl_tab_pip.lo
+  CC     libisl_la-isl_tarjan.lo
+  CC     libisl_la-isl_transitive_closure.lo
+  CC     libisl_la-isl_union_map.lo
+  CC     libisl_la-isl_val.lo
+  CC     libisl_la-isl_val_gmp.lo
+  CC     libisl_la-isl_vec.lo
+  CC     libisl_la-isl_version.lo
+  CC     libisl_la-isl_vertices.lo
+  CCLD   libisl.la
+  CC     isl_test-isl_test.o
+  CCLD   isl_test
+  CC     isl_polyhedron_sample-polyhedron_sample.o
+  CCLD   isl_polyhedron_sample
+  CC     isl_pip-pip.o
+  CCLD   isl_pip
+  CC     isl_polyhedron_minimize-polyhedron_minimize.o
+  CCLD   isl_polyhedron_minimize
+  CC     isl_polytope_scan-polytope_scan.o
+  CCLD   isl_polytope_scan
+  CC     isl_polyhedron_detect_equalities-polyhedron_detect_equalities.o
+  CCLD   isl_polyhedron_detect_equalities
+  CC     isl_cat-cat.o
+  CCLD   isl_cat
+  CC     isl_closure-closure.o
+  CCLD   isl_closure
+  CC     isl_bound-bound.o
+  CCLD   isl_bound
+  CC     isl_codegen-codegen.o
+  CCLD   isl_codegen
+make[4]: Leaving directory '/sources/isl-0.12.2'
+Making all in doc
+make[4]: Entering directory '/sources/isl-0.12.2/doc'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/sources/isl-0.12.2/doc'
+make[3]: Leaving directory '/sources/isl-0.12.2'
+make[2]: Leaving directory '/sources/isl-0.12.2'
+make[2]: Entering directory '/sources/isl-0.12.2'
+Making install in .
+make[3]: Entering directory '/sources/isl-0.12.2'
+make[4]: Entering directory '/sources/isl-0.12.2'
+ /tools/bin/mkdir -p '/usr/lib'
+ /bin/sh ./libtool   --mode=install /tools/bin/install -c   libisl.la '/usr/lib'
+libtool: install: /tools/bin/install -c .libs/libisl.so.10.2.2 /usr/lib/libisl.so.10.2.2
+libtool: install: (cd /usr/lib && { ln -s -f libisl.so.10.2.2 libisl.so.10 || { rm -f libisl.so.10 && ln -s libisl.so.10.2.2 libisl.so.10; }; })
+libtool: install: (cd /usr/lib && { ln -s -f libisl.so.10.2.2 libisl.so || { rm -f libisl.so && ln -s libisl.so.10.2.2 libisl.so; }; })
+libtool: install: /tools/bin/install -c .libs/libisl.lai /usr/lib/libisl.la
+libtool: install: /tools/bin/install -c .libs/libisl.a /usr/lib/libisl.a
+libtool: install: chmod 644 /usr/lib/libisl.a
+libtool: install: ranlib /usr/lib/libisl.a
+libtool: finish: PATH="/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin:/tools/sbin:/usr/sbin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+/tools/bin/install -c -m 644 ./isl.py /usr/lib/libisl.so.10.2.2-gdb.py
+ /tools/bin/mkdir -p '/usr/include/isl'
+ /tools/bin/install -c -m 644 include/isl/config.h include/isl/stdint.h '/usr/include/isl'
+ /tools/bin/mkdir -p '/usr/lib/pkgconfig'
+ /tools/bin/install -c -m 644 isl.pc '/usr/lib/pkgconfig'
+ /tools/bin/mkdir -p '/usr/include/isl'
+ /tools/bin/install -c -m 644 include/isl/aff.h include/isl/aff_type.h include/isl/arg.h include/isl/ast.h include/isl/ast_build.h include/isl/band.h include/isl/blk.h include/isl/constraint.h include/isl/ctx.h include/isl/dim.h include/isl/flow.h include/isl/id.h include/isl/ilp.h include/isl/int.h include/isl/hash.h include/isl/list.h include/isl/local_space.h include/isl/lp.h include/isl/mat.h include/isl/map.h include/isl/map_type.h include/isl/multi.h include/isl/obj.h include/isl/options.h include/isl/point.h include/isl/polynomial.h include/isl/polynomial_type.h include/isl/printer.h include/isl/schedule.h include/isl/seq.h include/isl/set.h include/isl/set_type.h include/isl/space.h include/isl/stream.h include/isl/union_map.h include/isl/union_map_type.h include/isl/union_set.h include/isl/union_set_type.h include/isl/val.h include/isl/val_gmp.h '/usr/include/isl'
+ /tools/bin/install -c -m 644 include/isl/val_int.h include/isl/vec.h include/isl/version.h include/isl/vertices.h '/usr/include/isl'
+make[4]: Leaving directory '/sources/isl-0.12.2'
+make[3]: Leaving directory '/sources/isl-0.12.2'
+Making install in doc
+make[3]: Entering directory '/sources/isl-0.12.2/doc'
+make[4]: Entering directory '/sources/isl-0.12.2/doc'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/sources/isl-0.12.2/doc'
+make[3]: Leaving directory '/sources/isl-0.12.2/doc'
+make[2]: Leaving directory '/sources/isl-0.12.2'
+mkdir: created directory '/usr/share/gdb'
+mkdir: created directory '/usr/share/gdb/auto-load'
+mkdir: created directory '/usr/share/gdb/auto-load/usr'
+mkdir: created directory '/usr/share/gdb/auto-load/usr/lib'
+'/usr/lib/libisl.so.10.2.2-gdb.py' -> '/usr/share/gdb/auto-load/usr/lib/libisl.so.10.2.2-gdb.py'
+
+
+Totalseconds: 685
+
+
+KB: 2369600	/
+

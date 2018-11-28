@@ -1,0 +1,427 @@
+Sat Jun 14 20:35:07 UTC 2014
+make[1]: Entering directory '/sources/util-linux-2.24.2'
+make  check-recursive
+make[2]: Entering directory '/sources/util-linux-2.24.2'
+Making check in po
+make[3]: Entering directory '/sources/util-linux-2.24.2/po'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/sources/util-linux-2.24.2/po'
+make[3]: Entering directory '/sources/util-linux-2.24.2'
+make  test_at test_blkdev test_canonicalize test_colors test_fileutils test_ismounted test_mangle test_procutils test_randutils test_strutils test_tt test_ttyutils test_wholedisk test_cpuset test_sysfs test_loopdev test_pager test_uuid test_blkid_cache test_blkid_config test_blkid_dev test_blkid_devname test_blkid_devno test_blkid_evaluate test_blkid_read test_blkid_resolve test_blkid_save test_blkid_tag test_blkid_verify sample-mkfs sample-partitions sample-superblocks sample-topology test_mount_cache test_mount_context test_mount_lock test_mount_optstr test_mount_tab test_mount_tab_diff test_mount_tab_update test_mount_utils test_mount_version test_fdisk_ask test_fdisk_utils test_more test_consoles test_islocal test_logindefs test_fsck.cramfs test_byteswap test_md5 test_pathnames test_sysinfo
+make[4]: Entering directory '/sources/util-linux-2.24.2'
+  CC       lib/test_at-at.o
+  CC       lib/test_blkdev-blkdev.o
+  CC       lib/test_canonicalize-canonicalize.o
+  CC       lib/test_colors-colors.o
+  CC       lib/test_fileutils-fileutils.o
+  CC       lib/test_ismounted-ismounted.o
+  CC       lib/test_mangle-mangle.o
+  CC       lib/test_procutils-procutils.o
+  CC       lib/test_procutils-at.o
+  CC       lib/test_strutils-strutils.o
+  CC       lib/test_tt-tt.o
+  CC       lib/test_ttyutils-ttyutils.o
+  CC       lib/test_cpuset-cpuset.o
+  CC       lib/test_wholedisk-wholedisk.o
+  CC       lib/test_randutils-randutils.o
+  CC       lib/test_sysfs-sysfs.o
+  CC       lib/test_loopdev-loopdev.o
+  CC       lib/test_pager-pager.o
+  CC       libuuid/src/test_uuid-test_uuid.o
+  CC       libblkid/src/test_blkid_cache-cache.o
+  CC       libblkid/src/test_blkid_config-config.o
+  CC       libblkid/src/test_blkid_dev-dev.o
+  CC       libblkid/src/test_blkid_devname-devname.o
+  CC       libblkid/src/test_blkid_read-read.o
+  CC       libblkid/src/test_blkid_devno-devno.o
+  CC       libblkid/src/test_blkid_evaluate-evaluate.o
+  CC       libblkid/src/test_blkid_resolve-resolve.o
+  CC       libblkid/src/test_blkid_save-save.o
+  CC       libblkid/src/test_blkid_tag-tag.o
+  CC       libblkid/src/test_blkid_verify-verify.o
+  CC       libmount/src/test_mount_cache-cache.o
+  CC       libmount/src/test_mount_lock-lock.o
+  CC       libmount/src/test_mount_context-context.o
+  CC       libmount/src/test_mount_optstr-optstr.o
+  CC       libmount/src/test_mount_tab-tab.o
+  CC       libmount/src/test_mount_tab_diff-tab_diff.o
+  CC       libmount/src/test_mount_tab_update-tab_update.o
+  CC       libmount/src/test_mount_utils-utils.o
+  CC       libmount/src/test_mount_version-version.o
+  CC       libfdisk/src/test_fdisk_ask-ask.o
+  CC       libfdisk/src/test_fdisk_utils-utils.o
+  CC       text-utils/test_more-more.o
+  CC       login-utils/test_consoles-sulogin-consoles.o
+  CC       disk-utils/test_fsck_cramfs-fsck.cramfs.o
+  CC       login-utils/test_islocal-islocal.o
+  CC       login-utils/test_logindefs-logindefs.o
+  CC       disk-utils/test_fsck_cramfs-cramfs_common.o
+  CCLD     test_at
+  CCLD     test_canonicalize
+  CCLD     test_blkdev
+  CCLD     test_colors
+  CCLD     test_fileutils
+  CCLD     test_ismounted
+  CCLD     test_mangle
+  CCLD     test_procutils
+  CCLD     test_randutils
+  CCLD     test_tt
+  CCLD     test_strutils
+  CCLD     test_ttyutils
+  CCLD     test_wholedisk
+  CCLD     test_cpuset
+  CCLD     test_loopdev
+  CCLD     test_pager
+  CCLD     test_sysfs
+  CCLD     test_uuid
+  CCLD     test_blkid_config
+  CCLD     test_blkid_cache
+  CCLD     test_blkid_devname
+  CCLD     test_blkid_dev
+  CCLD     test_blkid_evaluate
+  CCLD     test_blkid_devno
+  CCLD     test_blkid_read
+  CCLD     test_blkid_resolve
+  CCLD     test_blkid_tag
+  CCLD     test_blkid_save
+  CC       libblkid/samples/sample_mkfs-mkfs.o
+  CCLD     test_blkid_verify
+  CC       libblkid/samples/sample_partitions-partitions.o
+  CC       libblkid/samples/sample_superblocks-superblocks.o
+  CC       libblkid/samples/sample_topology-topology.o
+  CCLD     test_mount_cache
+  CCLD     test_mount_context
+  CCLD     test_mount_lock
+  CCLD     test_mount_tab
+  CCLD     test_mount_optstr
+  CCLD     test_mount_tab_diff
+  CCLD     test_mount_utils
+  CCLD     test_mount_tab_update
+  CCLD     test_fdisk_ask
+  CCLD     test_fdisk_utils
+  CCLD     test_mount_version
+  CCLD     test_more
+  CCLD     test_consoles
+  CCLD     test_islocal
+  CCLD     test_logindefs
+  CCLD     test_fsck.cramfs
+  CC       tests/helpers/test_byteswap.o
+  CC       tests/helpers/test_pathnames.o
+  CC       tests/helpers/test_md5.o
+  CC       tests/helpers/test_sysinfo.o
+  CCLD     sample-mkfs
+  CCLD     sample-partitions
+  CCLD     sample-topology
+  CCLD     test_md5
+  CCLD     sample-superblocks
+  CCLD     test_byteswap
+  CCLD     test_sysinfo
+  CCLD     test_pathnames
+make[4]: Leaving directory '/sources/util-linux-2.24.2'
+make  check-TESTS check-local
+make[4]: Entering directory '/sources/util-linux-2.24.2'
+./tests/run.sh --srcdir=/sources/util-linux-2.24.2 --builddir=/sources/util-linux-2.24.2 --nonroot
+
+-------------------- util-linux regression tests --------------------
+
+                    For development purpose only.                    
+                 Don't execute on production system!                 
+
+       bitops: swap bytes                     ... OK
+        blkid: low-level superblocks probing  ...
+                : adaptec-raid                ... OK
+                : bcache-B                    ...make[5]: Entering directory '/sources/util-linux-2.24.2'
+ OK
+                : bcache-C                    ...make[6]: Entering directory '/sources/util-linux-2.24.2'
+make  all-recursive
+make[7]: Entering directory '/sources/util-linux-2.24.2'
+Making all in po
+make[8]: Entering directory '/sources/util-linux-2.24.2/po'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/sources/util-linux-2.24.2/po'
+ OK
+                : befs                        ... OK
+make[8]: Entering directory '/sources/util-linux-2.24.2'
+                : bfs                         ... OK
+                : cramfs                      ... OK
+make[8]: Leaving directory '/sources/util-linux-2.24.2'
+make[7]: Leaving directory '/sources/util-linux-2.24.2'
+make[6]: Leaving directory '/sources/util-linux-2.24.2'
+                : ddf-raid                    ...============================================================================
+Testsuite summary for util-linux 2.24.2
+============================================================================
+# TOTAL: 0
+# PASS:  0
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[5]: Leaving directory '/sources/util-linux-2.24.2'
+ OK
+                : exfat                       ... OK
+                : ext2                        ... OK
+                : ext3                        ... OK
+                : f2fs                        ... OK
+                : fat                         ... OK
+                : fat16_noheads               ... OK
+                : fat32_label_64MB            ... OK
+                : gfs2                        ... OK
+                : hfs                         ... OK
+                : hfsplus                     ... OK
+                : hpfs                        ... OK
+                : hpt37x-raid                 ... OK
+                : hpt45x-raid                 ... OK
+                : iso-joliet                  ... OK
+                : iso-rr-joliet               ... OK
+                : iso                         ... OK
+                : isw-raid                    ... OK
+                : jbd                         ... OK
+                : jfs                         ... OK
+                : jmicron-raid                ... OK
+                : lsi-raid                    ... OK
+                : lvm2                        ... OK
+                : mdraid                      ... OK
+                : minix-BE                    ... OK
+                : minix-LE                    ... OK
+                : netware                     ... OK
+                : nilfs2                      ... OK
+                : ntfs                        ... OK
+                : nvidia-raid                 ... OK
+                : ocfs2                       ... OK
+                : promise-raid                ... OK
+                : reiser3                     ... OK
+                : reiser4                     ... OK
+                : romfs                       ... OK
+                : silicon-raid                ... OK
+                : small-fat32                 ... OK
+                : swap0                       ... OK
+                : swap1                       ... OK
+                : tuxonice                    ... OK
+                : ubifs                       ... OK
+                : udf                         ... OK
+                : ufs                         ... OK
+                : via-raid                    ... OK
+                : vmfs                        ... OK
+                : vmfs_volume                 ... OK
+                : xfs-log                     ... OK
+                : xfs                         ... OK
+                : zfs                         ... OK
+           ... OK (all 55 sub-tests PASSED)
+        blkid: partitions probing             ...
+                : bsd                         ... OK
+                : dos+bsd                     ... OK
+                : gpt                         ... OK
+                : sgi                         ... OK
+                : sun                         ... OK
+           ... OK (all 5 sub-tests PASSED)
+        blkid: MD raid0 (whole-disks)         ... IGNORE (not root permissions)
+        blkid: MD raid1 (last partition)      ... IGNORE (not root permissions)
+        blkid: MD raid1 (whole-disks)         ... IGNORE (not root permissions)
+    build-sys: config                         ... IGNORE (optional)
+          cal: 1 month                        ... OK
+          cal: 3 months                       ... OK
+          cal: Year 1234567890123456789       ... OK
+          cal: color                          ... OK
+          cal: September 1752                 ... OK
+          cal: year                           ... OK
+          col: multibyte input                ... OK
+        colrm: basic check                    ... OK
+       column: fill row                       ... OK
+       column: multiple files                 ... OK
+       column: separator & table              ... OK
+       cramfs: mkfs doubles                   ... IGNORE (not root permissions)
+       cramfs: fsck endianness                ... IGNORE (not root permissions)
+       cramfs: mkfs checksums                 ... IGNORE (not root permissions)
+       cramfs: mkfs endianness                ... IGNORE (not root permissions)
+        dmesg: levels                         ... OK
+        dmesg: decode                         ... OK
+        dmesg: delta                          ... OK
+        dmesg: facilities                     ... OK
+        eject: umount                         ... IGNORE (not root permissions)
+        fdisk: align 512/4K                   ... IGNORE (not root permissions)
+        fdisk: align 512/4K +alignment_offset ... IGNORE (not root permissions)
+        fdisk: align 512/4K +MD               ... IGNORE (not root permissions)
+        fdisk: align 512/512                  ... IGNORE (not root permissions)
+        fdisk: align 512/512 +topology        ... IGNORE (not root permissions)
+        fdisk: nested BSD                     ... OK
+        fdisk: GPT                            ... OK
+        fdisk: MBR - id                       ... OK
+        fdisk: MBR - dos mode                 ... OK
+        fdisk: MBR - non-dos mode             ... OK
+        fdisk: MBR - sort                     ... OK
+        fdisk: invalid input tests            ... OK
+        fdisk: sunlabel tests                 ... OK
+         fsck: is mounted                     ... IGNORE (not root permissions)
+      hexdump: format-strings                 ... OK
+      hwclock: system to hw                   ... IGNORE (not root permissions)
+         ipcs: headers                        ... OK
+         ipcs: limits overflow                ... IGNORE (not root permissions)
+         ipcs: basic limits                   ... IGNORE (cannot find bc command)
+         ipcs: mk-rm-msg                      ... OK
+         ipcs: mk-rm-sem                      ... OK
+         ipcs: mk-rm-shm                      ... OK
+      isosize: print-size                     ... OK
+         last: last ipv6                      ... FAILED (last/ipv6)
+         last: last                           ... FAILED (last/last)
+     libmount: context                        ... IGNORE (not root permissions)
+     libmount: context-py                     ... IGNORE (pylibmount not compiled)
+     libmount: context (utab)                 ... IGNORE (not root permissions)
+     libmount: context-py (utab)              ... IGNORE (pylibmount not compiled)
+     libmount: lock                           ... OK
+     libmount: options string                 ...
+                : append                      ... OK
+                : append-value                ... OK
+                : prepend                     ... OK
+                : prepend-value               ... OK
+                : set-remove                  ... OK
+                : set-small                   ... OK
+                : set-large                   ... OK
+                : set-new                     ... OK
+                : set-new-end                 ... OK
+                : get                         ... OK
+                : get-value                   ... OK
+                : remove                      ... OK
+                : remove-quoted               ... OK
+                : remove-value                ... OK
+                : split                       ... OK
+                : flags                       ... OK
+                : apply-linux                 ... OK
+                : apply-user                  ... OK
+                : fix                         ... OK
+                : deduplicate                 ... OK
+           ... OK (all 20 sub-tests PASSED)
+     libmount: table diffs                    ...
+                : mount                       ... OK
+                : umount                      ... OK
+                : remount                     ... OK
+                : move                        ... OK
+           ... OK (all 4 sub-tests PASSED)
+     libmount: tab files                      ...
+                : parse-fstab                 ... OK
+                : parse-fstab-full            ... OK
+                : parse-mtab                  ... OK
+                : parse-fstab-broken          ... OK
+                : parse-mountinfo             ... OK
+                : copy                        ... OK
+                : find-source                 ... OK
+                : find-target                 ... OK
+                : find-target2                ... OK
+                : find-target3                ... OK
+                : find-pair                   ... OK
+           ... OK (all 11 sub-tests PASSED)
+     libmount: tab files-py                   ... IGNORE (pylibmount not compiled)
+     libmount: tags                           ... IGNORE (not root permissions)
+     libmount: tags-py                        ... IGNORE (pylibmount not compiled)
+     libmount: tab update                     ... IGNORE (not root permissions)
+     libmount: tab update-py                  ... IGNORE (pylibmount not compiled)
+     libmount: utils                          ...
+                : match-fstype                ... OK
+                : match-fstype-neg            ... OK
+                : match-fstype-neg2           ... OK
+                : match-options               ... OK
+                : match-options-list          ... OK
+                : match-options-neg           ... OK
+                : match-options-neg-list      ... OK
+                : match-options-neg-list2     ... OK
+                : starts-with                 ... OK
+                : ends-with                   ... OK
+                : mountpoint                  ... OK
+                : mountpoint-subdir           ... OK
+                : mountpoint-root             ... OK
+                : fs-root                     ... OK
+                : fs-root-subdir              ... OK
+                : fs-root-subdir2             ... OK
+                : kernel-cmdline              ... OK
+           ... OK (all 17 sub-tests PASSED)
+        login: islocal                        ... OK
+        login: defs                           ... OK
+         look: separator                      ... OK
+      losetup: losetup                        ... IGNORE (not root permissions)
+        lscpu:                                ...
+                : armv7                       ... OK
+                : ppc-qemu                    ... OK
+                : ppc64-POWER7-64cpu          ... OK
+                : ppc64-POWER7                ... OK
+                : s390-kvm                    ... OK
+                : s390-lpar                   ... OK
+                : s390-zvm                    ... OK
+                : x86_64-64cpu                ... OK
+                : x86_64-dell_e4310           ... OK
+           ... OK (all 9 sub-tests PASSED)
+          md5:                                ... OK
+        minix: mkfs checksums                 ... IGNORE (not root permissions)
+        minix: mkfs                           ... IGNORE (not root permissions)
+         misc: fallocate                      ... OK
+         misc: getopt                         ... OK
+         misc: ionice                         ... OK
+         misc: line                           ... IGNORE (line disabled)
+         misc: mcookie                        ...mcookie: cannot open /etc/services: No such file or directory
+ OK
+         misc: rev                            ... OK
+         misc: setarch                        ... OK
+         misc: setsid                         ... OK
+         misc: strtosize                      ... OK
+         misc: ul                             ... OK
+         misc: whereis                        ... OK
+         more: regexp                         ... OK
+         more: squeeze                        ... OK
+        mount: by devname                     ... IGNORE (not root permissions)
+        mount: broken fstab                   ... IGNORE (not root permissions)
+        mount: by devname (fstab)             ... IGNORE (not root permissions)
+        mount: by devname (fstab label)       ... IGNORE (not root permissions)
+        mount: by devname (fstab uuid)        ... IGNORE (not root permissions)
+        mount: by label (fstab)               ... IGNORE (not root permissions)
+        mount: by label (fstab devname)       ... IGNORE (not root permissions)
+        mount: by label (fstab uuid)          ... IGNORE (not root permissions)
+        mount: none                           ... IGNORE (not root permissions)
+        mount: by devname (fstab symlink)     ... IGNORE (not root permissions)
+        mount: by uuid (fstab)                ... IGNORE (not root permissions)
+        mount: by uuid (fstab devname)        ... IGNORE (not root permissions)
+        mount: by uuid (fstab label)          ... IGNORE (not root permissions)
+        mount: by label                       ... IGNORE (not root permissions)
+        mount: move                           ... IGNORE (not root permissions)
+        mount: non canonical path             ... IGNORE (not root permissions)
+        mount: basic paths                    ... IGNORE (not root permissions)
+        mount: regular file                   ... IGNORE (not root permissions)
+        mount: remount                        ... IGNORE (not root permissions)
+        mount: rlimit-fsize                   ... IGNORE (not root permissions)
+        mount: shared-subtree                 ... IGNORE (not root permissions)
+        mount: call mount.<type>              ... IGNORE (not root permissions)
+        mount: umount-all-targets             ... IGNORE (not root permissions)
+        mount: umount-recursive               ... IGNORE (not root permissions)
+        mount: by uuid                        ... IGNORE (not root permissions)
+        namei: basic functionality            ... OK
+        partx: partitions probing             ... IGNORE (not root permissions)
+        paths: built-in                       ... OK
+   schedutils: cpuset                         ... OK
+       script: race conditions                ... OK
+       swapon: by devname                     ... IGNORE (not root permissions)
+       swapon: fix page size                  ... IGNORE (not root permissions)
+       swapon: fix signature                  ... IGNORE (not root permissions)
+       swapon: by label                       ... IGNORE (not root permissions)
+       swapon: by uuid                        ... IGNORE (not root permissions)
+        tailf: simple                         ... OK
+     utmpdump: IPv6 to binary                 ... OK
+     utmpdump: IPv6 to text                   ... OK
+     utmpdump: to-binary                      ... OK
+     utmpdump: to-text                        ... OK
+ IGNORE (not root permissions)
+
+---------------------------------------------------------------------
+  2 tests of 128 FAILED
+---------------------------------------------------------------------
+Makefile:11090: recipe for target 'check-local-tests' failed
+make[4]: *** [check-local-tests] Error 1
+make[4]: Target 'check-local' not remade because of errors.
+make[4]: Leaving directory '/sources/util-linux-2.24.2'
+Makefile:10764: recipe for target 'check-am' failed
+make[3]: *** [check-am] Error 2
+make[3]: Leaving directory '/sources/util-linux-2.24.2'
+Makefile:10326: recipe for target 'check-recursive' failed
+make[2]: *** [check-recursive] Error 1
+make[2]: Leaving directory '/sources/util-linux-2.24.2'
+Makefile:10767: recipe for target 'check' failed
+make[1]: *** [check] Error 2
+make[1]: Leaving directory '/sources/util-linux-2.24.2'

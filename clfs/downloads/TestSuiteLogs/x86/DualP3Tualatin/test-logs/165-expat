@@ -1,0 +1,527 @@
+Fri Jun 13 11:18:47 CDT 2014
+make[1]: Entering directory '/sources/expat-2.1.0'
+gcc -std=gnu99 -I./lib -I. -g -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -fexceptions  -DHAVE_EXPAT_CONFIG_H -o tests/runtests.o -c tests/runtests.c
+gcc -std=gnu99 -I./lib -I. -g -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -fexceptions  -DHAVE_EXPAT_CONFIG_H -o tests/chardata.o -c tests/chardata.c
+gcc -std=gnu99 -I./lib -I. -g -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -fexceptions  -DHAVE_EXPAT_CONFIG_H -o tests/minicheck.o -c tests/minicheck.c
+g++ -I./lib -I. -g -O2 -Wall -fexceptions  -DHAVE_EXPAT_CONFIG_H -o tests/runtestspp.o -c tests/runtestspp.cpp
+In file included from tests/runtests.c:19:0,
+                 from tests/runtestspp.cpp:6:
+tests/runtests.c: In function 'void basic_setup()':
+tests/minicheck.h:34:59: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+ #define fail(msg)  _fail_unless(0, __FILE__, __LINE__, msg)
+                                                           ^
+tests/runtests.c:39:9: note: in expansion of macro 'fail'
+         fail("Parser not created.");
+         ^
+tests/runtests.c: In function 'void test_nul_byte()':
+tests/minicheck.h:34:59: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+ #define fail(msg)  _fail_unless(0, __FILE__, __LINE__, msg)
+                                                           ^
+tests/runtests.c:162:9: note: in expansion of macro 'fail'
+         fail("Parser did not report error on NUL-byte.");
+         ^
+In file included from tests/runtestspp.cpp:6:0:
+tests/runtests.c: In function 'void test_u0000_char()':
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:172:5: note: in expansion of macro 'expect_failure'
+     expect_failure("<doc>&#0;</doc>",
+     ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:172:5: note: in expansion of macro 'expect_failure'
+     expect_failure("<doc>&#0;</doc>",
+     ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:172:5: note: in expansion of macro 'expect_failure'
+     expect_failure("<doc>&#0;</doc>",
+     ^
+tests/runtests.c: In function 'void test_bom_utf8()':
+tests/runtests.c:181:18: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     char *text = "\357\273\277<e/>";
+                  ^
+tests/runtests.c: In function 'void test_danish_latin1()':
+tests/runtests.c:263:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<e>J\xF8rgen \xE6\xF8\xE5\xC6\xD8\xC5</e>";
+         ^
+tests/runtests.c:239:64: warning: deprecated conversion from string constant to 'XML_Char* {aka char*}' [-Wwrite-strings]
+         _run_character_check(text, expected, __FILE__, __LINE__)
+                                                                ^
+tests/runtests.c:264:5: note: in expansion of macro 'run_character_check'
+     run_character_check(text,
+     ^
+tests/runtests.c: In function 'void test_french_charref_hexidecimal()':
+tests/runtests.c:275:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<doc>&#xE9;&#xE8;&#xE0;&#xE7;&#xEA;&#xC8;</doc>";
+         ^
+tests/runtests.c:239:64: warning: deprecated conversion from string constant to 'XML_Char* {aka char*}' [-Wwrite-strings]
+         _run_character_check(text, expected, __FILE__, __LINE__)
+                                                                ^
+tests/runtests.c:276:5: note: in expansion of macro 'run_character_check'
+     run_character_check(text,
+     ^
+tests/runtests.c: In function 'void test_french_charref_decimal()':
+tests/runtests.c:285:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<doc>&#233;&#232;&#224;&#231;&#234;&#200;</doc>";
+         ^
+tests/runtests.c:239:64: warning: deprecated conversion from string constant to 'XML_Char* {aka char*}' [-Wwrite-strings]
+         _run_character_check(text, expected, __FILE__, __LINE__)
+                                                                ^
+tests/runtests.c:286:5: note: in expansion of macro 'run_character_check'
+     run_character_check(text,
+     ^
+tests/runtests.c: In function 'void test_french_latin1()':
+tests/runtests.c:295:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<doc>\xE9\xE8\xE0\xE7\xEa\xC8</doc>";
+         ^
+tests/runtests.c:239:64: warning: deprecated conversion from string constant to 'XML_Char* {aka char*}' [-Wwrite-strings]
+         _run_character_check(text, expected, __FILE__, __LINE__)
+                                                                ^
+tests/runtests.c:296:5: note: in expansion of macro 'run_character_check'
+     run_character_check(text,
+     ^
+tests/runtests.c: In function 'void test_french_utf8()':
+tests/runtests.c:305:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<doc>\xC3\xA9</doc>";
+         ^
+tests/runtests.c:239:64: warning: deprecated conversion from string constant to 'XML_Char* {aka char*}' [-Wwrite-strings]
+         _run_character_check(text, expected, __FILE__, __LINE__)
+                                                                ^
+tests/runtests.c:306:5: note: in expansion of macro 'run_character_check'
+     run_character_check(text, "\xC3\xA9");
+     ^
+tests/runtests.c: In function 'void test_utf8_false_rejection()':
+tests/runtests.c:317:18: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     char *text = "<doc>\xEF\xBA\xBF</doc>";
+                  ^
+tests/runtests.c:239:64: warning: deprecated conversion from string constant to 'XML_Char* {aka char*}' [-Wwrite-strings]
+         _run_character_check(text, expected, __FILE__, __LINE__)
+                                                                ^
+tests/runtests.c:318:5: note: in expansion of macro 'run_character_check'
+     run_character_check(text, "\xEF\xBA\xBF");
+     ^
+In file included from tests/runtests.c:19:0,
+                 from tests/runtestspp.cpp:6:
+tests/runtests.c: In function 'void test_utf16_le_epilog_newline()':
+tests/minicheck.h:34:59: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+ #define fail(msg)  _fail_unless(0, __FILE__, __LINE__, msg)
+                                                           ^
+tests/runtests.c:375:9: note: in expansion of macro 'fail'
+         fail("bad value of first_chunk_bytes");
+         ^
+In file included from tests/runtestspp.cpp:6:0:
+tests/runtests.c: In function 'void test_latin1_umlauts()':
+tests/runtests.c:395:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "  >\xE4 \xF6 \xFC &#228; &#246; &#252; &#x00E4; &#x0F6; &#xFC; ></e>";
+         ^
+tests/runtests.c:399:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "\xC3\xA4 \xC3\xB6 \xC3\xBC >";
+         ^
+tests/runtests.c: In function 'void test_line_number_after_parse()':
+tests/runtests.c:412:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "\n</tag>";
+         ^
+tests/runtests.c: In function 'void test_column_number_after_parse()':
+tests/runtests.c:430:18: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     char *text = "<tag></tag>";
+                  ^
+tests/runtests.c: In function 'void test_line_and_column_numbers_inside_handlers()':
+tests/runtests.c:485:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "</a>";
+         ^
+tests/runtests.c:496:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "</a> at col:0 line:8\n";
+         ^
+tests/runtests.c: In function 'void test_line_number_after_error()':
+tests/runtests.c:516:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "  </a>";  /* missing </b> */
+         ^
+In file included from tests/runtests.c:19:0,
+                 from tests/runtestspp.cpp:6:
+tests/minicheck.h:34:59: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+ #define fail(msg)  _fail_unless(0, __FILE__, __LINE__, msg)
+                                                           ^
+tests/runtests.c:519:9: note: in expansion of macro 'fail'
+         fail("Expected a parse error");
+         ^
+In file included from tests/runtestspp.cpp:6:0:
+tests/runtests.c: In function 'void test_column_number_after_error()':
+tests/runtests.c:536:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "  </a>";  /* missing </b> */
+         ^
+In file included from tests/runtests.c:19:0,
+                 from tests/runtestspp.cpp:6:
+tests/minicheck.h:34:59: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+ #define fail(msg)  _fail_unless(0, __FILE__, __LINE__, msg)
+                                                           ^
+tests/runtests.c:539:9: note: in expansion of macro 'fail'
+         fail("Expected a parse error");
+         ^
+In file included from tests/runtestspp.cpp:6:0:
+tests/runtests.c: In function 'void test_really_long_lines()':
+tests/runtests.c:580:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "</e>";
+         ^
+tests/runtests.c: In function 'void test_end_element_events()':
+tests/runtests.c:601:18: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     char *text = "<a><b><c/></b><d><f/></d></a>";
+                  ^
+tests/runtests.c:602:22: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     char *expected = "/c/b/f/d/a";
+                      ^
+tests/runtests.c: In function 'void test_attr_whitespace_normalization()':
+tests/runtests.c:717:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "</doc>";
+         ^
+tests/runtests.c: In function 'void test_xmldecl_misplaced()':
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:733:5: note: in expansion of macro 'expect_failure'
+     expect_failure("\n"
+     ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:733:5: note: in expansion of macro 'expect_failure'
+     expect_failure("\n"
+     ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:733:5: note: in expansion of macro 'expect_failure'
+     expect_failure("\n"
+     ^
+tests/runtests.c: In function 'void test_unknown_encoding_internal_entity()':
+tests/runtests.c:762:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<test a='&foo;'/>";
+         ^
+tests/runtests.c: In function 'int external_entity_loader_set_encoding(XML_Parser, const XML_Char*, const XML_Char*, const XML_Char*, const XML_Char*)':
+tests/runtests.c:783:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "\xC3\xA9";
+         ^
+In file included from tests/runtests.c:19:0,
+                 from tests/runtestspp.cpp:6:
+tests/minicheck.h:34:59: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+ #define fail(msg)  _fail_unless(0, __FILE__, __LINE__, msg)
+                                                           ^
+tests/runtests.c:788:9: note: in expansion of macro 'fail'
+         fail("Could not create external entity parser.");
+         ^
+tests/minicheck.h:34:59: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+ #define fail(msg)  _fail_unless(0, __FILE__, __LINE__, msg)
+                                                           ^
+tests/runtests.c:790:9: note: in expansion of macro 'fail'
+         fail("XML_SetEncoding() ignored for external entity");
+         ^
+In file included from tests/runtestspp.cpp:6:0:
+tests/runtests.c: In function 'void test_ext_entity_set_encoding()':
+tests/runtests.c:805:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<doc>&en;</doc>";
+         ^
+tests/runtests.c:239:64: warning: deprecated conversion from string constant to 'XML_Char* {aka char*}' [-Wwrite-strings]
+         _run_character_check(text, expected, __FILE__, __LINE__)
+                                                                ^
+tests/runtests.c:809:5: note: in expansion of macro 'run_character_check'
+     run_character_check(text, "\xC3\xA9");
+     ^
+tests/runtests.c: In function 'void test_wfc_undeclared_entity_unread_external_subset()':
+tests/runtests.c:819:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<doc>&entity;</doc>";
+         ^
+tests/runtests.c: In function 'void test_wfc_undeclared_entity_no_external_subset()':
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:830:5: note: in expansion of macro 'expect_failure'
+     expect_failure("<doc>&entity;</doc>",
+     ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:830:5: note: in expansion of macro 'expect_failure'
+     expect_failure("<doc>&entity;</doc>",
+     ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:830:5: note: in expansion of macro 'expect_failure'
+     expect_failure("<doc>&entity;</doc>",
+     ^
+tests/runtests.c: In function 'void test_wfc_undeclared_entity_standalone()':
+tests/runtests.c:843:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<doc>&entity;</doc>";
+         ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:845:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:845:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+In file included from tests/runtests.c:19:0,
+                 from tests/runtestspp.cpp:6:
+tests/runtests.c: In function 'int external_entity_loader(XML_Parser, const XML_Char*, const XML_Char*, const XML_Char*, const XML_Char*)':
+tests/minicheck.h:34:59: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+ #define fail(msg)  _fail_unless(0, __FILE__, __LINE__, msg)
+                                                           ^
+tests/runtests.c:863:9: note: in expansion of macro 'fail'
+         fail("Could not create external entity parser.");
+         ^
+In file included from tests/runtestspp.cpp:6:0:
+tests/runtests.c: In function 'void test_wfc_undeclared_entity_with_external_subset_standalone()':
+tests/runtests.c:879:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<doc>&entity;</doc>";
+         ^
+tests/runtests.c:881:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<!ELEMENT doc (#PCDATA)*>";
+         ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:886:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:886:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c: In function 'void test_wfc_undeclared_entity_with_external_subset()':
+tests/runtests.c:899:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<doc>&entity;</doc>";
+         ^
+tests/runtests.c:901:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<!ELEMENT doc (#PCDATA)*>";
+         ^
+tests/runtests.c: In function 'void test_wfc_no_recursive_entity_refs()':
+tests/runtests.c:917:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<doc>&entity;</doc>";
+         ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:919:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:919:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c: In function 'void test_dtd_default_handling()':
+tests/runtests.c:936:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "]><doc/>";
+         ^
+tests/runtests.c:239:64: warning: deprecated conversion from string constant to 'XML_Char* {aka char*}' [-Wwrite-strings]
+         _run_character_check(text, expected, __FILE__, __LINE__)
+                                                                ^
+tests/runtests.c:948:5: note: in expansion of macro 'run_character_check'
+     run_character_check(text, "\n\n\n\n\n\n\n<doc/>");
+     ^
+tests/runtests.c: In function 'void test_empty_ns_without_namespaces()':
+tests/runtests.c:963:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "</doc>";
+         ^
+tests/runtests.c: In function 'void test_ns_in_attribute_default_without_namespaces()':
+tests/runtests.c:981:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<e:element/>";
+         ^
+tests/runtests.c: At global scope:
+tests/runtests.c:1010:5: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     "</s>";
+     ^
+In file included from tests/runtests.c:19:0,
+                 from tests/runtestspp.cpp:6:
+tests/runtests.c: In function 'void namespace_setup()':
+tests/minicheck.h:34:59: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+ #define fail(msg)  _fail_unless(0, __FILE__, __LINE__, msg)
+                                                           ^
+tests/runtests.c:1074:9: note: in expansion of macro 'fail'
+         fail("Parser not created.");
+         ^
+In file included from tests/runtestspp.cpp:6:0:
+tests/runtests.c: In function 'void test_return_ns_triplet()':
+tests/runtests.c:1123:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "       xmlns:bar='http://expat.sf.net/'></foo:e>";
+         ^
+tests/runtests.c:1127:5: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     };
+     ^
+tests/runtests.c:1127:5: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+tests/runtests.c: In function 'void test_ns_tagname_overwrite()':
+tests/runtests.c:1180:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "</n:e>";
+         ^
+tests/runtests.c:1189:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "end http://xml.libexpat.org/ e\n";
+         ^
+tests/runtests.c: In function 'void test_ns_tagname_overwrite_triplet()':
+tests/runtests.c:1201:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "</n:e>";
+         ^
+tests/runtests.c:1210:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "end http://xml.libexpat.org/ e n\n";
+         ^
+In file included from tests/runtests.c:19:0,
+                 from tests/runtestspp.cpp:6:
+tests/runtests.c: In function 'void start_element_fail(void*, const XML_Char*, const XML_Char**)':
+tests/minicheck.h:34:59: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+ #define fail(msg)  _fail_unless(0, __FILE__, __LINE__, msg)
+                                                           ^
+tests/runtests.c:1223:5: note: in expansion of macro 'fail'
+     fail("should never reach start_element_fail()");
+     ^
+In file included from tests/runtestspp.cpp:6:0:
+tests/runtests.c: In function 'void test_start_ns_clears_start_element()':
+tests/runtests.c:1240:18: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     char *text = "<e xmlns='http://xml.libexpat.org/'></e>";
+                  ^
+tests/runtests.c: In function 'int external_entity_handler(XML_Parser, const XML_Char*, const XML_Char*, const XML_Char*, const XML_Char*)':
+tests/runtests.c:1263:14: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         text = ("<!ELEMENT doc (e+)>\n"
+              ^
+tests/runtests.c:1267:14: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         text = ("<?xml version='1.0' encoding='us-ascii'?>"
+              ^
+tests/runtests.c: In function 'void test_default_ns_from_ext_subset_and_ext_ge()':
+tests/runtests.c:1289:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "</doc>";
+         ^
+tests/runtests.c: In function 'void test_ns_prefix_with_empty_uri_1()':
+tests/runtests.c:1307:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "</doc>";
+         ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:1309:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:1309:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c: In function 'void test_ns_prefix_with_empty_uri_2()':
+tests/runtests.c:1321:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<docelem xmlns:pre=''/>";
+         ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:1323:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:1323:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c: In function 'void test_ns_prefix_with_empty_uri_3()':
+tests/runtests.c:1338:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<doc/>";
+         ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:1340:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:1340:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c: In function 'void test_ns_prefix_with_empty_uri_4()':
+tests/runtests.c:1355:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "<prefix:doc/>";
+         ^
+tests/runtests.c:1361:5: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     };
+     ^
+tests/runtests.c: In function 'void test_ns_default_with_empty_uri()':
+tests/runtests.c:1375:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "</doc>";
+         ^
+tests/runtests.c: In function 'void test_ns_duplicate_attrs_diff_prefixes()':
+tests/runtests.c:1387:9: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+         "     a:a='v' b:a='v' />";
+         ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:1388:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:1388:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c: In function 'void test_ns_unbound_prefix_on_attribute()':
+tests/runtests.c:1397:18: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     char *text = "<doc a:attr=''/>";
+                  ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:1398:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:1398:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c: In function 'void test_ns_unbound_prefix_on_element()':
+tests/runtests.c:1407:18: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     char *text = "<a:doc/>";
+                  ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:1408:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c:85:43: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+                         __FILE__, __LINE__)
+                                           ^
+tests/runtests.c:1408:5: note: in expansion of macro 'expect_failure'
+     expect_failure(text,
+     ^
+tests/runtests.c: In function 'Suite* make_suite()':
+tests/runtests.c:1417:36: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     Suite *s = suite_create("basic");
+                                    ^
+tests/runtests.c:1418:49: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     TCase *tc_basic = tcase_create("basic tests");
+                                                 ^
+tests/runtests.c:1419:56: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+     TCase *tc_namespace = tcase_create("XML namespaces");
+                                                        ^
+/bin/sh ./libtool --silent --mode=link gcc -std=gnu99 -I./lib -I. -g -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -fexceptions  -DHAVE_EXPAT_CONFIG_H  -o tests/runtests tests/runtests.o tests/chardata.o tests/minicheck.o libexpat.la
+/bin/sh ./libtool --silent --mode=link g++ -I./lib -I. -g -O2 -Wall -fexceptions  -DHAVE_EXPAT_CONFIG_H  -o tests/runtestspp tests/runtestspp.o tests/chardata.o tests/minicheck.o libexpat.la
+tests/runtests
+Expat version: expat_2.1.0
+100%: Checks: 50, Failed: 0
+tests/runtestspp
+Expat version: expat_2.1.0
+100%: Checks: 50, Failed: 0
+make[1]: Leaving directory '/sources/expat-2.1.0'

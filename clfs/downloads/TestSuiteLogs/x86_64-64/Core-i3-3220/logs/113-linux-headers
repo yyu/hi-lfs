@@ -1,0 +1,1410 @@
+Sun Aug 31 05:18:16 UTC 2014
+
+KB: 1435780	/
+
+patching file Documentation/ABI/testing/ima_policy
+patching file Documentation/DocBook/media/Makefile
+patching file Documentation/SubmittingPatches
+patching file Documentation/cpu-freq/intel-pstate.txt
+patching file Documentation/debugging-via-ohci1394.txt
+patching file Documentation/device-mapper/thin-provisioning.txt
+patching file Documentation/devicetree/bindings/dma/ti-edma.txt
+patching file Documentation/devicetree/bindings/spi/efm32-spi.txt
+patching file Documentation/i2c/busses/i2c-i801
+patching file Documentation/input/elantech.txt
+patching file Documentation/ja_JP/HOWTO
+patching file Documentation/ja_JP/stable_kernel_rules.txt
+patching file Documentation/sysctl/kernel.txt
+patching file Documentation/sysctl/vm.txt
+patching file Documentation/video4linux/gspca.txt
+patching file Documentation/vm/hwpoison.txt
+patching file Documentation/x86/x86_64/mm.txt
+patching file Documentation/zh_CN/HOWTO
+patching file Documentation/zh_CN/stable_kernel_rules.txt
+patching file Makefile
+patching file arch/arc/boot/dts/nsimosci.dts
+patching file arch/arc/configs/nsimosci_defconfig
+patching file arch/arc/include/uapi/asm/ptrace.h
+patching file arch/arc/kernel/entry.S
+patching file arch/arc/kernel/ptrace.c
+patching file arch/arc/plat-arcfpga/Kconfig
+patching file arch/arm/Kconfig
+patching file arch/arm/boot/dts/am335x-bone-common.dtsi
+patching file arch/arm/boot/dts/am335x-evm.dts
+patching file arch/arm/boot/dts/am335x-evmsk.dts
+patching file arch/arm/boot/dts/am335x-igep0033.dtsi
+patching file arch/arm/boot/dts/am33xx.dtsi
+patching file arch/arm/boot/dts/armada-370-xp.dtsi
+patching file arch/arm/boot/dts/armada-xp-db.dts
+patching file arch/arm/boot/dts/armada-xp-gp.dts
+patching file arch/arm/boot/dts/armada-xp-openblocks-ax3-4.dts
+patching file arch/arm/boot/dts/dra7-evm.dts
+patching file arch/arm/boot/dts/exynos5250-arndale.dts
+patching file arch/arm/boot/dts/exynos5420.dtsi
+patching file arch/arm/boot/dts/hi3620.dtsi
+patching file arch/arm/boot/dts/imx25.dtsi
+patching file arch/arm/boot/dts/imx27.dtsi
+patching file arch/arm/boot/dts/imx51.dtsi
+patching file arch/arm/boot/dts/imx53.dtsi
+patching file arch/arm/boot/dts/kirkwood-mv88f6281gtw-ge.dts
+patching file arch/arm/boot/dts/kirkwood-nsa310-common.dtsi
+patching file arch/arm/boot/dts/omap4.dtsi
+patching file arch/arm/boot/dts/omap5.dtsi
+patching file arch/arm/boot/dts/ste-ccu8540.dts
+patching file arch/arm/boot/dts/tegra124.dtsi
+patching file arch/arm/common/edma.c
+patching file arch/arm/crypto/aesbs-glue.c
+patching file arch/arm/include/asm/div64.h
+patching file arch/arm/include/asm/futex.h
+patching file arch/arm/include/asm/pgtable-2level.h
+patching file arch/arm/include/asm/uaccess.h
+patching file arch/arm/include/asm/unistd.h
+patching file arch/arm/kernel/crash_dump.c
+patching file arch/arm/kernel/entry-header.S
+patching file arch/arm/kernel/machine_kexec.c
+patching file arch/arm/kernel/stacktrace.c
+patching file arch/arm/kvm/mmu.c
+patching file arch/arm/mach-at91/sysirq_mask.c
+patching file arch/arm/mach-imx/devices/platform-ipu-core.c
+patching file arch/arm/mach-mvebu/mvebu-soc-id.c
+patching file arch/arm/mach-omap1/board-h2.c
+patching file arch/arm/mach-omap1/board-h3.c
+patching file arch/arm/mach-omap1/board-innovator.c
+patching file arch/arm/mach-omap1/board-osk.c
+patching file arch/arm/mach-omap2/board-flash.c
+patching file arch/arm/mach-omap2/cclock3xxx_data.c
+patching file arch/arm/mach-omap2/cpuidle44xx.c
+patching file arch/arm/mach-omap2/irq.c
+patching file arch/arm/mach-omap2/mux.c
+patching file arch/arm/mach-omap2/omap_hwmod.c
+patching file arch/arm/mach-omap2/omap_hwmod_3xxx_data.c
+patching file arch/arm/mach-omap2/omap_hwmod_54xx_data.c
+patching file arch/arm/mach-omap2/pm.h
+patching file arch/arm/mach-orion5x/common.h
+patching file arch/arm/mach-pxa/include/mach/hx4700.h
+patching file arch/arm/mm/Kconfig
+patching file arch/arm/mm/hugetlbpage.c
+patching file arch/arm/mm/idmap.c
+patching file arch/arm/mm/mmu.c
+patching file arch/arm/mm/proc-macros.S
+patching file arch/arm/mm/proc-v7-2level.S
+patching file arch/arm/mm/proc-v7-3level.S
+patching file arch/arm64/Kconfig
+patching file arch/arm64/include/asm/dma-mapping.h
+patching file arch/arm64/include/asm/memory.h
+patching file arch/arm64/include/asm/pgtable.h
+patching file arch/arm64/include/asm/unistd32.h
+patching file arch/arm64/kernel/entry.S
+patching file arch/arm64/kernel/irq.c
+patching file arch/arm64/kernel/ptrace.c
+patching file arch/arm64/mm/flush.c
+patching file arch/arm64/mm/hugetlbpage.c
+patching file arch/ia64/mm/hugetlbpage.c
+patching file arch/m68k/Kconfig
+patching file arch/metag/include/asm/barrier.h
+patching file arch/metag/include/asm/processor.h
+patching file arch/metag/mm/hugetlbpage.c
+patching file arch/mips/cavium-octeon/octeon-irq.c
+patching file arch/mips/include/asm/thread_info.h
+patching file arch/mips/kernel/irq-msc01.c
+patching file arch/mips/kernel/traps.c
+patching file arch/mips/kvm/kvm_mips.c
+patching file arch/mips/kvm/kvm_mips_emul.c
+patching file arch/mips/lantiq/dts/easy50712.dts
+patching file arch/mips/loongson/lemote-2f/clock.c
+patching file arch/mips/mm/hugetlbpage.c
+patching file arch/mips/power/hibernate.S
+patching file arch/mips/ralink/dts/mt7620a_eval.dts
+patching file arch/mips/ralink/dts/rt2880_eval.dts
+patching file arch/mips/ralink/dts/rt3052_eval.dts
+patching file arch/mips/ralink/dts/rt3883_eval.dts
+patching file arch/parisc/Kconfig
+patching file arch/parisc/include/asm/processor.h
+patching file arch/parisc/include/asm/shmparam.h
+patching file arch/parisc/include/uapi/asm/resource.h
+patching file arch/parisc/include/uapi/asm/signal.h
+patching file arch/parisc/kernel/cache.c
+patching file arch/parisc/kernel/hardware.c
+patching file arch/parisc/kernel/sys_parisc.c
+patching file arch/parisc/kernel/sys_parisc32.c
+patching file arch/parisc/kernel/syscall.S
+patching file arch/parisc/kernel/syscall_table.S
+patching file arch/parisc/kernel/traps.c
+patching file arch/parisc/mm/fault.c
+patching file arch/powerpc/Kconfig
+patching file arch/powerpc/Makefile
+patching file arch/powerpc/include/asm/compat.h
+patching file arch/powerpc/include/asm/perf_event_server.h
+patching file arch/powerpc/include/asm/ppc_asm.h
+patching file arch/powerpc/include/asm/reg.h
+patching file arch/powerpc/include/asm/switch_to.h
+patching file arch/powerpc/include/asm/systbl.h
+patching file arch/powerpc/include/uapi/asm/cputable.h
+patching file arch/powerpc/kernel/cputable.c
+patching file arch/powerpc/kernel/legacy_serial.c
+patching file arch/powerpc/kernel/machine_kexec_64.c
+patching file arch/powerpc/kernel/process.c
+patching file arch/powerpc/kernel/setup-common.c
+patching file arch/powerpc/kernel/signal_32.c
+patching file arch/powerpc/kernel/signal_64.c
+patching file arch/powerpc/kernel/time.c
+patching file arch/powerpc/kernel/tm.S
+patching file arch/powerpc/kvm/book3s_hv.c
+patching file arch/powerpc/lib/sstep.c
+patching file arch/powerpc/mm/hash_utils_64.c
+patching file arch/powerpc/mm/hugetlbpage.c
+patching file arch/powerpc/perf/core-book3s.c
+patching file arch/powerpc/perf/power8-pmu.c
+patching file arch/powerpc/platforms/powernv/eeh-ioda.c
+patching file arch/powerpc/platforms/pseries/eeh_pseries.c
+patching file arch/powerpc/platforms/pseries/hotplug-cpu.c
+patching file arch/s390/Kconfig
+patching file arch/s390/crypto/aes_s390.c
+patching file arch/s390/crypto/des_s390.c
+patching file arch/s390/include/asm/atomic.h
+patching file arch/s390/include/asm/bitops.h
+patching file arch/s390/include/asm/ccwdev.h
+patching file arch/s390/include/asm/lowcore.h
+patching file arch/s390/kernel/ptrace.c
+patching file arch/s390/kernel/time.c
+patching file arch/s390/kvm/kvm-s390.c
+patching file arch/s390/mm/hugetlbpage.c
+patching file arch/s390/net/bpf_jit_comp.c
+patching file arch/sh/kernel/dumpstack.c
+patching file arch/sh/mm/hugetlbpage.c
+patching file arch/sparc/Kconfig
+patching file arch/sparc/mm/hugetlbpage.c
+patching file arch/sparc/net/bpf_jit_comp.c
+patching file arch/tile/mm/hugetlbpage.c
+patching file arch/unicore32/mm/alignment.c
+patching file arch/x86/Kconfig
+patching file arch/x86/Makefile
+patching file arch/x86/boot/compressed/eboot.c
+patching file arch/x86/boot/compressed/head_32.S
+patching file arch/x86/boot/compressed/head_64.S
+patching file arch/x86/boot/header.S
+patching file arch/x86/boot/tools/build.c
+patching file arch/x86/crypto/ghash-clmulni-intel_asm.S
+patching file arch/x86/crypto/ghash-clmulni-intel_glue.c
+patching file arch/x86/crypto/sha512_ssse3_glue.c
+patching file arch/x86/include/asm/cpufeature.h
+patching file arch/x86/include/asm/efi.h
+patching file arch/x86/include/asm/espfix.h
+patching file arch/x86/include/asm/hugetlb.h
+patching file arch/x86/include/asm/irqflags.h
+patching file arch/x86/include/asm/kvm_host.h
+patching file arch/x86/include/asm/pgtable_64_types.h
+patching file arch/x86/include/asm/pgtable_types.h
+patching file arch/x86/include/asm/preempt.h
+patching file arch/x86/include/asm/ptrace.h
+patching file arch/x86/include/asm/setup.h
+patching file arch/x86/include/asm/xsave.h
+patching file arch/x86/kernel/Makefile
+patching file arch/x86/kernel/cpu/mshyperv.c
+patching file arch/x86/kernel/cpu/perf_event_intel.c
+patching file arch/x86/kernel/early-quirks.c
+patching file arch/x86/kernel/entry_32.S
+patching file arch/x86/kernel/entry_64.S
+patching file arch/x86/kernel/espfix_64.c
+patching file arch/x86/kernel/ftrace.c
+patching file arch/x86/kernel/ldt.c
+patching file arch/x86/kernel/paravirt_patch_64.c
+patching file arch/x86/kernel/smpboot.c
+patching file arch/x86/kernel/tsc.c
+patching file arch/x86/kvm/lapic.c
+patching file arch/x86/kvm/x86.c
+patching file arch/x86/lib/hash.c
+patching file arch/x86/mm/dump_pagetables.c
+patching file arch/x86/mm/hugetlbpage.c
+patching file arch/x86/mm/ioremap.c
+patching file arch/x86/mm/pageattr.c
+patching file arch/x86/net/bpf_jit_comp.c
+patching file arch/x86/platform/efi/efi.c
+patching file arch/x86/platform/efi/efi_32.c
+patching file arch/x86/platform/efi/efi_64.c
+patching file arch/x86/syscalls/syscall_64.tbl
+patching file arch/x86/xen/setup.c
+patching file arch/x86/xen/spinlock.c
+patching file arch/xtensa/kernel/vectors.S
+patching file arch/xtensa/kernel/vmlinux.lds.S
+patching file block/blk-cgroup.c
+patching file block/blk-cgroup.h
+patching file block/blk-core.c
+patching file block/blk-tag.c
+patching file block/compat_ioctl.c
+patching file crypto/af_alg.c
+patching file crypto/crypto_user.c
+patching file crypto/crypto_wq.c
+patching file drivers/acpi/Kconfig
+patching file drivers/acpi/Makefile
+patching file drivers/acpi/ac.c
+patching file drivers/acpi/acpi_platform.c
+patching file drivers/acpi/acpi_processor.c
+patching file drivers/acpi/acpica/acglobal.h
+patching file drivers/acpi/acpica/nsrepair.c
+patching file drivers/acpi/acpica/tbutils.c
+patching file drivers/acpi/acpica/utstring.c
+patching file drivers/acpi/battery.c
+patching file drivers/acpi/blacklist.c
+patching file drivers/acpi/bus.c
+patching file drivers/acpi/button.c
+patching file drivers/acpi/cm_sbs.c
+patching file drivers/acpi/ec.c
+patching file drivers/acpi/resource.c
+patching file drivers/acpi/utils.c
+patching file drivers/acpi/video.c
+patching file drivers/ata/ahci.c
+patching file drivers/ata/ahci.h
+patching file drivers/ata/libata-core.c
+patching file drivers/ata/pata_at91.c
+patching file drivers/base/dd.c
+patching file drivers/base/dma-contiguous.c
+patching file drivers/base/platform.c
+patching file drivers/base/power/opp.c
+patching file drivers/base/topology.c
+patching file drivers/block/floppy.c
+patching file drivers/block/mtip32xx/mtip32xx.c
+patching file drivers/block/mtip32xx/mtip32xx.h
+patching file drivers/block/rbd.c
+patching file drivers/block/virtio_blk.c
+patching file drivers/bluetooth/ath3k.c
+patching file drivers/bluetooth/btusb.c
+patching file drivers/bluetooth/hci_h5.c
+patching file drivers/bluetooth/hci_ldisc.c
+patching file drivers/bluetooth/hci_uart.h
+patching file drivers/bus/mvebu-mbus.c
+patching file drivers/char/applicom.c
+patching file drivers/char/i8k.c
+patching file drivers/char/ipmi/ipmi_bt_sm.c
+patching file drivers/char/ipmi/ipmi_kcs_sm.c
+patching file drivers/char/ipmi/ipmi_si_intf.c
+patching file drivers/char/tpm/tpm_ppi.c
+patching file drivers/clk/clk-s2mps11.c
+patching file drivers/clk/clk.c
+patching file drivers/clk/qcom/clk-rcg2.c
+patching file drivers/clk/qcom/mmcc-msm8960.c
+patching file drivers/clk/qcom/mmcc-msm8974.c
+patching file drivers/clk/spear/spear3xx_clock.c
+patching file drivers/clk/tegra/clk-pll.c
+patching file drivers/clk/tegra/clk-tegra124.c
+patching file drivers/clk/ti/clk-44xx.c
+patching file drivers/clk/ti/clk-54xx.c
+patching file drivers/clk/ti/clk-7xx.c
+patching file drivers/clk/versatile/clk-vexpress-osc.c
+patching file drivers/clocksource/exynos_mct.c
+patching file drivers/connector/cn_proc.c
+patching file drivers/cpufreq/Makefile
+patching file drivers/cpufreq/at32ap-cpufreq.c
+patching file drivers/cpufreq/cpufreq-cpu0.c
+patching file drivers/cpufreq/cpufreq.c
+patching file drivers/cpufreq/cpufreq_governor.c
+patching file drivers/cpufreq/intel_pstate.c
+patching file drivers/cpufreq/loongson2_cpufreq.c
+patching file drivers/cpufreq/unicore2-cpufreq.c
+patching file drivers/crypto/caam/error.c
+patching file drivers/crypto/caam/jr.c
+patching file drivers/dma/dmaengine.c
+patching file drivers/dma/dw/core.c
+patching file drivers/dma/edma.c
+patching file drivers/dma/mv_xor.c
+patching file drivers/extcon/extcon-max14577.c
+patching file drivers/extcon/extcon-max77693.c
+patching file drivers/extcon/extcon-max8997.c
+patching file drivers/firewire/core.h
+patching file drivers/firewire/ohci.c
+patching file drivers/firmware/efi/efi-pstore.c
+patching file drivers/firmware/efi/efi-stub-helper.c
+patching file drivers/gpio/gpio-mcp23s08.c
+patching file drivers/gpio/gpio-mxs.c
+patching file drivers/gpu/drm/armada/armada_crtc.c
+patching file drivers/gpu/drm/bochs/bochs.h
+patching file drivers/gpu/drm/bochs/bochs_drv.c
+patching file drivers/gpu/drm/cirrus/cirrus_drv.c
+patching file drivers/gpu/drm/cirrus/cirrus_mode.c
+patching file drivers/gpu/drm/i915/i915_drv.c
+patching file drivers/gpu/drm/i915/i915_drv.h
+patching file drivers/gpu/drm/i915/i915_gem.c
+patching file drivers/gpu/drm/i915/i915_gem_execbuffer.c
+patching file drivers/gpu/drm/i915/i915_gem_stolen.c
+patching file drivers/gpu/drm/i915/i915_irq.c
+patching file drivers/gpu/drm/i915/i915_reg.h
+patching file drivers/gpu/drm/i915/i915_trace.h
+patching file drivers/gpu/drm/i915/intel_crt.c
+patching file drivers/gpu/drm/i915/intel_display.c
+patching file drivers/gpu/drm/i915/intel_dp.c
+patching file drivers/gpu/drm/i915/intel_drv.h
+patching file drivers/gpu/drm/i915/intel_dsi.c
+patching file drivers/gpu/drm/i915/intel_dvo.c
+patching file drivers/gpu/drm/i915/intel_hdmi.c
+patching file drivers/gpu/drm/i915/intel_lvds.c
+patching file drivers/gpu/drm/i915/intel_panel.c
+patching file drivers/gpu/drm/i915/intel_pm.c
+patching file drivers/gpu/drm/i915/intel_sdvo.c
+patching file drivers/gpu/drm/i915/intel_tv.c
+patching file drivers/gpu/drm/i915/intel_uncore.c
+patching file drivers/gpu/drm/nouveau/core/engine/disp/nv04.c
+patching file drivers/gpu/drm/nouveau/core/engine/disp/nvd0.c
+patching file drivers/gpu/drm/nouveau/core/engine/graph/ctxnv108.c
+patching file drivers/gpu/drm/nouveau/core/subdev/mc/nv50.c
+patching file drivers/gpu/drm/nouveau/core/subdev/mc/nv98.c
+patching file drivers/gpu/drm/nouveau/core/subdev/mc/nvc0.c
+patching file drivers/gpu/drm/nouveau/core/subdev/therm/fan.c
+patching file drivers/gpu/drm/nouveau/nouveau_acpi.c
+patching file drivers/gpu/drm/nouveau/nouveau_display.c
+patching file drivers/gpu/drm/qxl/qxl_irq.c
+patching file drivers/gpu/drm/qxl/qxl_ttm.c
+patching file drivers/gpu/drm/radeon/atombios_crtc.c
+patching file drivers/gpu/drm/radeon/atombios_dp.c
+patching file drivers/gpu/drm/radeon/atombios_encoders.c
+patching file drivers/gpu/drm/radeon/ci_dpm.c
+patching file drivers/gpu/drm/radeon/cik.c
+patching file drivers/gpu/drm/radeon/cik_sdma.c
+patching file drivers/gpu/drm/radeon/cikd.h
+patching file drivers/gpu/drm/radeon/cypress_dpm.c
+patching file drivers/gpu/drm/radeon/dce6_afmt.c
+patching file drivers/gpu/drm/radeon/evergreen.c
+patching file drivers/gpu/drm/radeon/ni_dpm.c
+patching file drivers/gpu/drm/radeon/r600.c
+patching file drivers/gpu/drm/radeon/r600_dpm.c
+patching file drivers/gpu/drm/radeon/radeon.h
+patching file drivers/gpu/drm/radeon/radeon_asic.c
+patching file drivers/gpu/drm/radeon/radeon_atpx_handler.c
+patching file drivers/gpu/drm/radeon/radeon_bios.c
+patching file drivers/gpu/drm/radeon/radeon_connectors.c
+patching file drivers/gpu/drm/radeon/radeon_cs.c
+patching file drivers/gpu/drm/radeon/radeon_device.c
+patching file drivers/gpu/drm/radeon/radeon_display.c
+patching file drivers/gpu/drm/radeon/radeon_drv.c
+patching file drivers/gpu/drm/radeon/radeon_family.h
+patching file drivers/gpu/drm/radeon/radeon_kms.c
+patching file drivers/gpu/drm/radeon/radeon_object.c
+patching file drivers/gpu/drm/radeon/radeon_pm.c
+patching file drivers/gpu/drm/radeon/radeon_ring.c
+patching file drivers/gpu/drm/radeon/radeon_ucode.h
+patching file drivers/gpu/drm/radeon/radeon_uvd.c
+patching file drivers/gpu/drm/radeon/rs600.c
+patching file drivers/gpu/drm/radeon/rv770_dpm.c
+patching file drivers/gpu/drm/radeon/si.c
+patching file drivers/gpu/drm/radeon/sid.h
+patching file drivers/gpu/drm/radeon/uvd_v1_0.c
+patching file drivers/gpu/drm/vmwgfx/vmwgfx_context.c
+patching file drivers/gpu/drm/vmwgfx/vmwgfx_execbuf.c
+patching file drivers/gpu/drm/vmwgfx/vmwgfx_fb.c
+patching file drivers/gpu/host1x/hw/intr_hw.c
+patching file drivers/gpu/vga/vga_switcheroo.c
+patching file drivers/hid/hid-core.c
+patching file drivers/hid/hid-ids.h
+patching file drivers/hid/hid-microsoft.c
+patching file drivers/hid/usbhid/hid-quirks.c
+patching file drivers/hv/connection.c
+patching file drivers/hv/hv_balloon.c
+patching file drivers/hv/hv_kvp.c
+patching file drivers/hv/hv_util.c
+patching file drivers/hwmon/Kconfig
+patching file drivers/hwmon/adm1021.c
+patching file drivers/hwmon/adm1029.c
+patching file drivers/hwmon/adm1031.c
+patching file drivers/hwmon/adt7470.c
+patching file drivers/hwmon/amc6821.c
+patching file drivers/hwmon/coretemp.c
+patching file drivers/hwmon/da9052-hwmon.c
+patching file drivers/hwmon/da9055-hwmon.c
+patching file drivers/hwmon/emc1403.c
+patching file drivers/hwmon/emc2103.c
+patching file drivers/hwmon/ina2xx.c
+patching file drivers/hwmon/ntc_thermistor.c
+patching file drivers/hwmon/smsc47m192.c
+patching file drivers/i2c/busses/Kconfig
+patching file drivers/i2c/busses/i2c-designware-core.c
+patching file drivers/i2c/busses/i2c-i801.c
+patching file drivers/i2c/busses/i2c-rcar.c
+patching file drivers/i2c/busses/i2c-s3c2410.c
+patching file drivers/iio/accel/bma180.c
+patching file drivers/iio/adc/at91_adc.c
+patching file drivers/iio/adc/max1363.c
+patching file drivers/iio/adc/ti_am335x_adc.c
+patching file drivers/iio/imu/inv_mpu6050/inv_mpu_core.c
+patching file drivers/iio/industrialio-buffer.c
+patching file drivers/iio/industrialio-event.c
+patching file drivers/iio/inkern.c
+patching file drivers/iio/light/cm32181.c
+patching file drivers/iio/light/cm36651.c
+patching file drivers/iio/magnetometer/ak8975.c
+patching file drivers/iio/pressure/mpl3115.c
+patching file drivers/infiniband/core/cm.c
+patching file drivers/infiniband/core/cma.c
+patching file drivers/infiniband/core/user_mad.c
+patching file drivers/infiniband/hw/ehca/ehca_cq.c
+patching file drivers/infiniband/hw/ipath/ipath_diag.c
+patching file drivers/infiniband/hw/mlx5/cq.c
+patching file drivers/infiniband/hw/mlx5/srq.c
+patching file drivers/infiniband/hw/mlx5/user.h
+patching file drivers/infiniband/hw/mthca/mthca_provider.c
+patching file drivers/infiniband/hw/nes/nes_verbs.c
+patching file drivers/infiniband/hw/qib/qib_file_ops.c
+patching file drivers/infiniband/hw/qib/qib_init.c
+patching file drivers/infiniband/hw/qib/qib_mad.c
+patching file drivers/infiniband/ulp/isert/ib_isert.c
+patching file drivers/infiniband/ulp/isert/ib_isert.h
+patching file drivers/infiniband/ulp/srp/ib_srp.c
+patching file drivers/infiniband/ulp/srpt/ib_srpt.c
+patching file drivers/input/input.c
+patching file drivers/input/keyboard/atkbd.c
+patching file drivers/input/mouse/elantech.c
+patching file drivers/input/mouse/elantech.h
+patching file drivers/input/mouse/synaptics.c
+patching file drivers/input/serio/i8042-x86ia64io.h
+patching file drivers/input/serio/i8042.c
+patching file drivers/input/serio/serio.c
+patching file drivers/iommu/amd_iommu.c
+patching file drivers/iommu/intel-iommu.c
+patching file drivers/irqchip/irq-armada-370-xp.c
+patching file drivers/irqchip/irq-gic.c
+patching file drivers/irqchip/spear-shirq.c
+patching file drivers/isdn/isdnloop/isdnloop.c
+patching file drivers/leds/leds-pwm.c
+patching file drivers/md/dm-bufio.c
+patching file drivers/md/dm-cache-metadata.c
+patching file drivers/md/dm-cache-metadata.h
+patching file drivers/md/dm-cache-target.c
+patching file drivers/md/dm-crypt.c
+patching file drivers/md/dm-io.c
+patching file drivers/md/dm-thin-metadata.c
+patching file drivers/md/dm-thin.c
+patching file drivers/md/dm-verity.c
+patching file drivers/md/dm.c
+patching file drivers/md/md.c
+patching file drivers/md/persistent-data/dm-block-manager.c
+patching file drivers/md/persistent-data/dm-block-manager.h
+patching file drivers/md/persistent-data/dm-transaction-manager.c
+patching file drivers/md/persistent-data/dm-transaction-manager.h
+patching file drivers/md/raid1.c
+patching file drivers/md/raid10.c
+patching file drivers/media/dvb-core/dvb-usb-ids.h
+patching file drivers/media/dvb-frontends/m88rs2000.c
+patching file drivers/media/dvb-frontends/tda10071.c
+patching file drivers/media/i2c/ov7670.c
+patching file drivers/media/media-device.c
+patching file drivers/media/pci/ivtv/ivtv-alsa-pcm.c
+patching file drivers/media/pci/saa7134/saa7134-cards.c
+patching file drivers/media/pci/saa7134/saa7134-video.c
+patching file drivers/media/platform/omap3isp/isppreview.c
+patching file drivers/media/tuners/fc2580.c
+patching file drivers/media/tuners/fc2580_priv.h
+patching file drivers/media/usb/dvb-usb-v2/rtl28xxu.c
+patching file drivers/media/usb/em28xx/em28xx-audio.c
+patching file drivers/media/usb/em28xx/em28xx-dvb.c
+patching file drivers/media/usb/gspca/pac7302.c
+patching file drivers/media/usb/gspca/sn9c20x.c
+patching file drivers/media/usb/hdpvr/hdpvr-video.c
+patching file drivers/media/usb/stk1160/stk1160-core.c
+patching file drivers/media/usb/stk1160/stk1160.h
+patching file drivers/media/usb/uvc/uvc_video.c
+patching file drivers/media/v4l2-core/v4l2-compat-ioctl32.c
+patching file drivers/media/v4l2-core/v4l2-dv-timings.c
+patching file drivers/memory/mvebu-devbus.c
+patching file drivers/mfd/88pm800.c
+patching file drivers/mfd/88pm860x-core.c
+patching file drivers/mfd/kempld-core.c
+patching file drivers/mfd/max77686.c
+patching file drivers/mfd/max77693.c
+patching file drivers/mfd/max8925-i2c.c
+patching file drivers/mfd/max8997.c
+patching file drivers/mfd/max8998.c
+patching file drivers/mfd/sec-core.c
+patching file drivers/mfd/tps65910.c
+patching file drivers/mfd/twl-core.c
+patching file drivers/misc/mei/client.c
+patching file drivers/misc/mei/client.h
+patching file drivers/misc/mei/hw-me-regs.h
+patching file drivers/misc/mei/hw-me.c
+patching file drivers/misc/mei/interrupt.c
+patching file drivers/misc/mei/main.c
+patching file drivers/misc/mei/pci-me.c
+patching file drivers/mmc/host/rtsx_pci_sdmmc.c
+patching file drivers/mmc/host/sdhci-bcm-kona.c
+patching file drivers/mtd/devices/elm.c
+patching file drivers/mtd/nand/atmel_nand.c
+patching file drivers/mtd/nand/diskonchip.c
+patching file drivers/mtd/nand/fsl_elbc_nand.c
+patching file drivers/mtd/nand/nuc900_nand.c
+patching file drivers/mtd/nand/omap2.c
+patching file drivers/mtd/nand/pxa3xx_nand.c
+patching file drivers/mtd/sm_ftl.c
+patching file drivers/net/bonding/bond_main.c
+patching file drivers/net/bonding/bond_options.c
+patching file drivers/net/can/sja1000/peak_pci.c
+patching file drivers/net/can/slcan.c
+patching file drivers/net/ethernet/allwinner/sun4i-emac.c
+patching file drivers/net/ethernet/broadcom/bnx2x/bnx2x_cmn.c
+patching file drivers/net/ethernet/broadcom/tg3.c
+patching file drivers/net/ethernet/cadence/at91_ether.c
+patching file drivers/net/ethernet/emulex/benet/be_main.c
+patching file drivers/net/ethernet/intel/e1000e/ich8lan.c
+patching file drivers/net/ethernet/intel/e1000e/ich8lan.h
+patching file drivers/net/ethernet/intel/e1000e/netdev.c
+patching file drivers/net/ethernet/intel/i40e/i40e_virtchnl_pf.c
+patching file drivers/net/ethernet/intel/igb/e1000_82575.c
+patching file drivers/net/ethernet/intel/igb/e1000_defines.h
+patching file drivers/net/ethernet/intel/igb/e1000_hw.h
+patching file drivers/net/ethernet/intel/igb/e1000_i210.c
+patching file drivers/net/ethernet/intel/igb/e1000_i210.h
+patching file drivers/net/ethernet/intel/igb/e1000_regs.h
+patching file drivers/net/ethernet/intel/igb/igb_main.c
+patching file drivers/net/ethernet/marvell/mvneta.c
+patching file drivers/net/ethernet/mellanox/mlx4/en_cq.c
+patching file drivers/net/ethernet/mellanox/mlx4/en_netdev.c
+patching file drivers/net/ethernet/mellanox/mlx4/fw.c
+patching file drivers/net/ethernet/mellanox/mlx4/main.c
+patching file drivers/net/ethernet/mellanox/mlx4/mlx4.h
+patching file drivers/net/ethernet/mellanox/mlx4/mlx4_en.h
+patching file drivers/net/ethernet/qlogic/qlcnic/qlcnic_dcb.c
+patching file drivers/net/ethernet/renesas/sh_eth.c
+patching file drivers/net/ethernet/renesas/sh_eth.h
+patching file drivers/net/ethernet/sfc/ef10.c
+patching file drivers/net/ethernet/sfc/efx.c
+patching file drivers/net/ethernet/sfc/io.h
+patching file drivers/net/ethernet/sfc/nic.c
+patching file drivers/net/ethernet/sfc/tx.c
+patching file drivers/net/ethernet/sun/sunvnet.c
+patching file drivers/net/ethernet/ti/cpsw.c
+patching file drivers/net/macvlan.c
+patching file drivers/net/macvtap.c
+patching file drivers/net/phy/phy_device.c
+patching file drivers/net/ppp/pppoe.c
+patching file drivers/net/slip/slip.c
+patching file drivers/net/slip/slip.h
+patching file drivers/net/team/team.c
+patching file drivers/net/usb/cdc_mbim.c
+patching file drivers/net/usb/cdc_ncm.c
+patching file drivers/net/usb/huawei_cdc_ncm.c
+patching file drivers/net/usb/qmi_wwan.c
+patching file drivers/net/vxlan.c
+patching file drivers/net/wireless/ath/ath9k/xmit.c
+patching file drivers/net/wireless/b43/phy_n.c
+patching file drivers/net/wireless/b43/xmit.c
+patching file drivers/net/wireless/brcm80211/brcmfmac/sdio_chip.c
+patching file drivers/net/wireless/brcm80211/brcmsmac/mac80211_if.c
+patching file drivers/net/wireless/iwlwifi/dvm/main.c
+patching file drivers/net/wireless/iwlwifi/dvm/rxon.c
+patching file drivers/net/wireless/iwlwifi/iwl-7000.c
+patching file drivers/net/wireless/iwlwifi/mvm/bt-coex.c
+patching file drivers/net/wireless/iwlwifi/mvm/mac-ctxt.c
+patching file drivers/net/wireless/iwlwifi/mvm/mac80211.c
+patching file drivers/net/wireless/iwlwifi/mvm/rs.c
+patching file drivers/net/wireless/iwlwifi/mvm/rs.h
+patching file drivers/net/wireless/iwlwifi/mvm/sf.c
+patching file drivers/net/wireless/iwlwifi/pcie/drv.c
+patching file drivers/net/wireless/iwlwifi/pcie/trans.c
+patching file drivers/net/wireless/mwifiex/main.c
+patching file drivers/net/wireless/rt2x00/rt2500pci.c
+patching file drivers/net/wireless/rt2x00/rt2x00.h
+patching file drivers/net/wireless/rt2x00/rt2x00dev.c
+patching file drivers/net/wireless/rt2x00/rt2x00mac.c
+patching file drivers/net/wireless/rtlwifi/rtl8188ee/hw.c
+patching file drivers/net/wireless/rtlwifi/rtl8188ee/trx.c
+patching file drivers/net/wireless/rtlwifi/rtl8192cu/hw.c
+patching file drivers/net/wireless/rtlwifi/rtl8192se/hw.c
+patching file drivers/net/wireless/rtlwifi/rtl8192se/trx.c
+patching file drivers/net/wireless/rtlwifi/rtl8723ae/hw.c
+patching file drivers/net/wireless/ti/wl18xx/event.h
+patching file drivers/net/xen-netback/common.h
+patching file drivers/net/xen-netback/interface.c
+patching file drivers/net/xen-netback/netback.c
+patching file drivers/of/irq.c
+patching file drivers/of/platform.c
+patching file drivers/parport/Kconfig
+patching file drivers/pci/host/pci-imx6.c
+patching file drivers/pci/host/pci-mvebu.c
+patching file drivers/pci/host/pcie-designware.c
+patching file drivers/pci/hotplug/shpchp_ctrl.c
+patching file drivers/pci/msi.c
+patching file drivers/pci/pci.c
+patching file drivers/pci/quirks.c
+patching file drivers/phy/phy-core.c
+patching file drivers/phy/phy-exynos-mipi-video.c
+patching file drivers/pinctrl/pinctrl-as3722.c
+patching file drivers/platform/x86/thinkpad_acpi.c
+patching file drivers/pnp/pnpacpi/core.c
+patching file drivers/rapidio/devices/tsi721_dma.c
+patching file drivers/regulator/arizona-ldo1.c
+patching file drivers/rtc/rtc-at91rm9200.c
+patching file drivers/rtc/rtc-hym8563.c
+patching file drivers/rtc/rtc-puv3.c
+patching file drivers/s390/char/con3215.c
+patching file drivers/s390/char/con3270.c
+patching file drivers/s390/char/raw3270.c
+patching file drivers/s390/char/raw3270.h
+patching file drivers/s390/cio/chsc.c
+patching file drivers/s390/cio/device.c
+patching file drivers/scsi/arcmsr/arcmsr_hba.c
+patching file drivers/scsi/ibmvscsi/ibmvscsi.c
+patching file drivers/scsi/megaraid/megaraid_mm.c
+patching file drivers/scsi/mpt2sas/mpt2sas_scsih.c
+patching file drivers/scsi/qla2xxx/qla_os.c
+patching file drivers/scsi/scsi_error.c
+patching file drivers/scsi/scsi_lib.c
+patching file drivers/scsi/scsi_netlink.c
+patching file drivers/scsi/scsi_scan.c
+patching file drivers/scsi/scsi_sysfs.c
+patching file drivers/scsi/scsi_transport_sas.c
+patching file drivers/scsi/sd.c
+patching file drivers/scsi/sym53c8xx_2/sym_hipd.c
+patching file drivers/scsi/virtio_scsi.c
+patching file drivers/spi/spi-dw.c
+patching file drivers/spi/spi-efm32.c
+patching file drivers/spi/spi.c
+patching file drivers/staging/comedi/comedi_buf.c
+patching file drivers/staging/comedi/comedi_fops.c
+patching file drivers/staging/comedi/comedi_internal.h
+patching file drivers/staging/comedi/drivers/8255_pci.c
+patching file drivers/staging/comedi/drivers/ni_daq_700.c
+patching file drivers/staging/comedi/drivers/usbdux.c
+patching file drivers/staging/iio/adc/ad7291.c
+patching file drivers/staging/iio/adc/mxs-lradc.c
+patching file drivers/staging/iio/light/tsl2x7x_core.c
+patching file drivers/staging/media/bcm2048/radio-bcm2048.c
+patching file drivers/staging/media/omap4iss/Kconfig
+patching file drivers/staging/mt29f_spinand/mt29f_spinand.c
+patching file drivers/staging/rtl8188eu/core/rtw_recv.c
+patching file drivers/staging/rtl8188eu/core/rtw_wlan_util.c
+patching file drivers/staging/rtl8192e/rtllib_tx.c
+patching file drivers/staging/rtl8712/rtl871x_recv.c
+patching file drivers/staging/serqt_usb2/serqt_usb2.c
+patching file drivers/staging/speakup/main.c
+patching file drivers/staging/speakup/selection.c
+patching file drivers/staging/speakup/speakup.h
+patching file drivers/staging/tidspbridge/core/dsp-clock.c
+patching file drivers/staging/vt6655/bssdb.c
+patching file drivers/staging/vt6655/device_main.c
+patching file drivers/target/iscsi/iscsi_target.c
+patching file drivers/target/iscsi/iscsi_target_auth.c
+patching file drivers/target/iscsi/iscsi_target_core.h
+patching file drivers/target/iscsi/iscsi_target_login.c
+patching file drivers/target/iscsi/iscsi_target_tpg.c
+patching file drivers/target/iscsi/iscsi_target_util.c
+patching file drivers/target/target_core_alua.c
+patching file drivers/target/target_core_configfs.c
+patching file drivers/target/target_core_device.c
+patching file drivers/target/target_core_iblock.c
+patching file drivers/target/target_core_rd.c
+patching file drivers/target/target_core_sbc.c
+patching file drivers/target/target_core_spc.c
+patching file drivers/target/target_core_transport.c
+patching file drivers/target/tcm_fc/tfc_cmd.c
+patching file drivers/target/tcm_fc/tfc_sess.c
+patching file drivers/thermal/thermal_hwmon.c
+patching file drivers/tty/hvc/hvc_console.c
+patching file drivers/tty/ipwireless/tty.c
+patching file drivers/tty/n_tty.c
+patching file drivers/tty/serial/8250/8250_core.c
+patching file drivers/tty/serial/8250/8250_dma.c
+patching file drivers/tty/serial/altera_uart.c
+patching file drivers/tty/serial/amba-pl010.c
+patching file drivers/tty/serial/amba-pl011.c
+patching file drivers/tty/serial/atmel_serial.c
+patching file drivers/tty/serial/bcm63xx_uart.c
+patching file drivers/tty/serial/bfin_uart.c
+patching file drivers/tty/serial/dz.c
+patching file drivers/tty/serial/efm32-uart.c
+patching file drivers/tty/serial/fsl_lpuart.c
+patching file drivers/tty/serial/ip22zilog.c
+patching file drivers/tty/serial/m32r_sio.c
+patching file drivers/tty/serial/max310x.c
+patching file drivers/tty/serial/mcf.c
+patching file drivers/tty/serial/mfd.c
+patching file drivers/tty/serial/mpsc.c
+patching file drivers/tty/serial/msm_serial.c
+patching file drivers/tty/serial/mxs-auart.c
+patching file drivers/tty/serial/netx-serial.c
+patching file drivers/tty/serial/omap-serial.c
+patching file drivers/tty/serial/pmac_zilog.c
+patching file drivers/tty/serial/pnx8xxx_uart.c
+patching file drivers/tty/serial/pxa.c
+patching file drivers/tty/serial/sb1250-duart.c
+patching file drivers/tty/serial/sccnxp.c
+patching file drivers/tty/serial/serial_ks8695.c
+patching file drivers/tty/serial/serial_txx9.c
+patching file drivers/tty/serial/sirfsoc_uart.c
+patching file drivers/tty/serial/st-asc.c
+patching file drivers/tty/serial/sunsab.c
+patching file drivers/tty/serial/sunsu.c
+patching file drivers/tty/serial/sunzilog.c
+patching file drivers/tty/serial/ucc_uart.c
+patching file drivers/tty/serial/vr41xx_siu.c
+patching file drivers/tty/serial/zs.c
+patching file drivers/tty/tty_buffer.c
+patching file drivers/tty/tty_io.c
+patching file drivers/usb/chipidea/udc.c
+patching file drivers/usb/class/cdc-acm.c
+patching file drivers/usb/class/cdc-acm.h
+patching file drivers/usb/core/driver.c
+patching file drivers/usb/core/hcd-pci.c
+patching file drivers/usb/core/hub.c
+patching file drivers/usb/core/usb.h
+patching file drivers/usb/dwc3/core.h
+patching file drivers/usb/dwc3/gadget.c
+patching file drivers/usb/dwc3/gadget.h
+patching file drivers/usb/gadget/at91_udc.c
+patching file drivers/usb/gadget/atmel_usba_udc.c
+patching file drivers/usb/gadget/f_fs.c
+patching file drivers/usb/gadget/inode.c
+patching file drivers/usb/gadget/tcm_usb_gadget.c
+patching file drivers/usb/gadget/u_serial.c
+patching file drivers/usb/gadget/zero.c
+patching file drivers/usb/host/ehci-fsl.c
+patching file drivers/usb/host/ehci-tegra.c
+patching file drivers/usb/host/ohci-hub.c
+patching file drivers/usb/host/ohci-pci.c
+patching file drivers/usb/host/ohci.h
+patching file drivers/usb/host/pci-quirks.c
+patching file drivers/usb/host/xhci-mem.c
+patching file drivers/usb/host/xhci-pci.c
+patching file drivers/usb/host/xhci-ring.c
+patching file drivers/usb/host/xhci.c
+patching file drivers/usb/host/xhci.h
+patching file drivers/usb/misc/usbtest.c
+patching file drivers/usb/musb/musb_am335x.c
+patching file drivers/usb/musb/musb_core.c
+patching file drivers/usb/musb/musb_cppi41.c
+patching file drivers/usb/musb/omap2430.c
+patching file drivers/usb/musb/ux500.c
+patching file drivers/usb/phy/phy-am335x-control.c
+patching file drivers/usb/phy/phy-isp1301-omap.c
+patching file drivers/usb/phy/phy-ulpi.c
+patching file drivers/usb/serial/bus.c
+patching file drivers/usb/serial/cp210x.c
+patching file drivers/usb/serial/ftdi_sio.c
+patching file drivers/usb/serial/ftdi_sio_ids.h
+patching file drivers/usb/serial/io_ti.c
+patching file drivers/usb/serial/io_usbvend.h
+patching file drivers/usb/serial/option.c
+patching file drivers/usb/serial/pl2303.c
+patching file drivers/usb/serial/pl2303.h
+patching file drivers/usb/serial/qcserial.c
+patching file drivers/usb/serial/sierra.c
+patching file drivers/usb/serial/usb-serial.c
+patching file drivers/usb/serial/usb_wwan.c
+patching file drivers/usb/storage/shuttle_usbat.c
+patching file drivers/usb/storage/unusual_devs.h
+patching file drivers/video/atmel_lcdfb.c
+patching file drivers/video/aty/mach64_accel.c
+patching file drivers/video/aty/mach64_cursor.c
+patching file drivers/video/cfbcopyarea.c
+patching file drivers/video/fb-puv3.c
+patching file drivers/video/matrox/matroxfb_accel.c
+patching file drivers/video/matrox/matroxfb_base.h
+patching file drivers/video/tgafb.c
+patching file drivers/virtio/virtio_balloon.c
+patching file drivers/w1/w1_netlink.c
+patching file drivers/watchdog/ath79_wdt.c
+patching file drivers/watchdog/kempld_wdt.c
+patching file drivers/watchdog/sp805_wdt.c
+patching file drivers/xen/balloon.c
+patching file drivers/xen/events/events_fifo.c
+patching file fs/affs/super.c
+patching file fs/aio.c
+patching file fs/attr.c
+patching file fs/autofs4/root.c
+patching file fs/btrfs/backref.c
+patching file fs/btrfs/backref.h
+patching file fs/btrfs/ctree.h
+patching file fs/btrfs/disk-io.c
+patching file fs/btrfs/extent-tree.c
+patching file fs/btrfs/extent_io.c
+patching file fs/btrfs/free-space-cache.c
+patching file fs/btrfs/scrub.c
+patching file fs/btrfs/send.c
+patching file fs/btrfs/sysfs.c
+patching file fs/btrfs/transaction.c
+patching file fs/btrfs/volumes.c
+patching file fs/ceph/dir.c
+patching file fs/ceph/inode.c
+patching file fs/ceph/super.h
+patching file fs/cifs/cifs_unicode.c
+patching file fs/cifs/cifsfs.c
+patching file fs/cifs/cifsglob.h
+patching file fs/cifs/cifsproto.h
+patching file fs/cifs/file.c
+patching file fs/cifs/link.c
+patching file fs/cifs/misc.c
+patching file fs/cifs/smb1ops.c
+patching file fs/cifs/smb2misc.c
+patching file fs/cifs/smb2ops.c
+patching file fs/cifs/smb2pdu.c
+patching file fs/coredump.c
+patching file fs/dcache.c
+patching file fs/eventpoll.c
+patching file fs/exec.c
+patching file fs/ext4/ext4.h
+patching file fs/ext4/extents.c
+patching file fs/ext4/extents_status.c
+patching file fs/ext4/file.c
+patching file fs/ext4/ialloc.c
+patching file fs/ext4/indirect.c
+patching file fs/ext4/inode.c
+patching file fs/ext4/mballoc.c
+patching file fs/ext4/page-io.c
+patching file fs/ext4/super.c
+patching file fs/ext4/xattr.c
+patching file fs/file_table.c
+patching file fs/fs-writeback.c
+patching file fs/fuse/dir.c
+patching file fs/fuse/inode.c
+patching file fs/inode.c
+patching file fs/jbd2/transaction.c
+patching file fs/jffs2/compr_rtime.c
+patching file fs/jffs2/nodelist.h
+patching file fs/jffs2/nodemgmt.c
+patching file fs/kernfs/dir.c
+patching file fs/kernfs/file.c
+patching file fs/kernfs/inode.c
+patching file fs/lockd/svc.c
+patching file fs/locks.c
+patching file fs/namei.c
+patching file fs/namespace.c
+patching file fs/nfs/inode.c
+patching file fs/nfs/nfs3acl.c
+patching file fs/nfs/nfs3proc.c
+patching file fs/nfs/nfs4filelayout.c
+patching file fs/nfs/nfs4proc.c
+patching file fs/nfs/nfs4state.c
+patching file fs/nfs/super.c
+patching file fs/nfs/write.c
+patching file fs/nfsd/nfs4acl.c
+patching file fs/nfsd/nfs4callback.c
+patching file fs/nfsd/nfs4proc.c
+patching file fs/nfsd/nfs4state.c
+patching file fs/nfsd/nfs4xdr.c
+patching file fs/nfsd/nfsctl.c
+patching file fs/nfsd/nfsd.h
+patching file fs/nfsd/nfsxdr.c
+patching file fs/nfsd/vfs.c
+patching file fs/ocfs2/buffer_head_io.c
+patching file fs/ocfs2/dlm/dlmrecovery.c
+patching file fs/ocfs2/namei.c
+patching file fs/open.c
+patching file fs/pnode.c
+patching file fs/pnode.h
+patching file fs/posix_acl.c
+patching file fs/proc/task_mmu.c
+patching file fs/quota/dquot.c
+patching file fs/reiserfs/dir.c
+patching file fs/reiserfs/inode.c
+patching file fs/super.c
+patching file fs/sysfs/file.c
+patching file fs/ubifs/file.c
+patching file fs/ubifs/shrinker.c
+patching file fs/xfs/xfs_da_btree.c
+patching file fs/xfs/xfs_ioctl.c
+patching file fs/xfs/xfs_mount.c
+patching file include/asm-generic/pgtable.h
+patching file include/asm-generic/word-at-a-time.h
+patching file include/dt-bindings/clock/tegra124-car.h
+patching file include/dt-bindings/pinctrl/dra.h
+patching file include/linux/acpi.h
+patching file include/linux/backing-dev.h
+patching file include/linux/bio.h
+patching file include/linux/capability.h
+patching file include/linux/dmaengine.h
+patching file include/linux/ftrace.h
+patching file include/linux/futex.h
+patching file include/linux/hugetlb.h
+patching file include/linux/hyperv.h
+patching file include/linux/if_macvlan.h
+patching file include/linux/if_team.h
+patching file include/linux/if_vlan.h
+patching file include/linux/interrupt.h
+patching file include/linux/irq.h
+patching file include/linux/irqdesc.h
+patching file include/linux/libata.h
+patching file include/linux/mempolicy.h
+patching file include/linux/mmzone.h
+patching file include/linux/mount.h
+patching file include/linux/net.h
+patching file include/linux/netdevice.h
+patching file include/linux/netlink.h
+patching file include/linux/of_irq.h
+patching file include/linux/page-flags.h
+patching file include/linux/pageblock-flags.h
+patching file include/linux/percpu-refcount.h
+patching file include/linux/preempt.h
+patching file include/linux/printk.h
+patching file include/linux/ptrace.h
+patching file include/linux/ring_buffer.h
+patching file include/linux/rtnetlink.h
+patching file include/linux/sched.h
+patching file include/linux/serio.h
+patching file include/linux/sock_diag.h
+patching file include/linux/sunrpc/svcsock.h
+patching file include/linux/thread_info.h
+patching file include/linux/tty.h
+patching file include/net/af_vsock.h
+patching file include/net/cfg80211.h
+patching file include/net/inetpeer.h
+patching file include/net/ip6_route.h
+patching file include/net/netfilter/nf_conntrack_extend.h
+patching file include/net/netfilter/nf_tables_core.h
+patching file include/net/sctp/structs.h
+patching file include/net/sock.h
+patching file include/rdma/ib_cm.h
+patching file include/scsi/scsi_device.h
+patching file include/sound/core.h
+patching file include/target/iscsi/iscsi_transport.h
+patching file include/target/target_core_backend.h
+patching file include/trace/events/block.h
+patching file include/trace/events/module.h
+patching file include/trace/syscall.h
+patching file include/uapi/drm/tegra_drm.h
+patching file include/uapi/linux/input.h
+patching file include/uapi/linux/libc-compat.h
+patching file include/uapi/linux/usb/Kbuild
+patching file include/uapi/linux/usb/cdc-wdm.h
+patching file include/uapi/linux/usb/functionfs.h
+patching file include/uapi/linux/videodev2.h
+patching file include/uapi/linux/xattr.h
+patching file include/uapi/sound/compress_offload.h
+patching file init/Kconfig
+patching file init/main.c
+patching file kernel/Kconfig.locks
+patching file kernel/audit.c
+patching file kernel/auditsc.c
+patching file kernel/capability.c
+patching file kernel/cpu.c
+patching file kernel/cpuset.c
+patching file kernel/events/core.c
+patching file kernel/exit.c
+patching file kernel/fork.c
+patching file kernel/futex.c
+patching file kernel/hrtimer.c
+patching file kernel/irq/manage.c
+patching file kernel/irq/spurious.c
+patching file kernel/kexec.c
+patching file kernel/kthread.c
+patching file kernel/locking/rtmutex-debug.h
+patching file kernel/locking/rtmutex.c
+patching file kernel/locking/rtmutex.h
+patching file kernel/module.c
+patching file kernel/pid_namespace.c
+patching file kernel/power/process.c
+patching file kernel/printk/printk.c
+patching file kernel/sched/core.c
+patching file kernel/sched/cpudeadline.c
+patching file kernel/sched/cpupri.c
+patching file kernel/sched/cputime.c
+patching file kernel/sched/deadline.c
+patching file kernel/sched/debug.c
+patching file kernel/sched/rt.c
+patching file kernel/sysctl.c
+patching file kernel/time/alarmtimer.c
+patching file kernel/time/clockevents.c
+patching file kernel/time/sched_clock.c
+patching file kernel/time/tick-common.c
+patching file kernel/time/tick-sched.c
+patching file kernel/timer.c
+patching file kernel/trace/blktrace.c
+patching file kernel/trace/ftrace.c
+patching file kernel/trace/ring_buffer.c
+patching file kernel/trace/trace.c
+patching file kernel/trace/trace.h
+patching file kernel/trace/trace_clock.c
+patching file kernel/trace/trace_events.c
+patching file kernel/trace/trace_events_trigger.c
+patching file kernel/trace/trace_uprobe.c
+patching file kernel/tracepoint.c
+patching file kernel/user_namespace.c
+patching file kernel/watchdog.c
+patching file kernel/workqueue.c
+patching file lib/btree.c
+patching file lib/idr.c
+patching file lib/lz4/lz4_decompress.c
+patching file lib/lzo/lzo1x_decompress_safe.c
+patching file lib/nlattr.c
+patching file lib/percpu_counter.c
+patching file mm/Kconfig
+patching file mm/backing-dev.c
+patching file mm/compaction.c
+patching file mm/huge_memory.c
+patching file mm/hugetlb.c
+patching file mm/internal.h
+patching file mm/memcontrol.c
+patching file mm/memory-failure.c
+patching file mm/memory.c
+patching file mm/mempolicy.c
+patching file mm/mlock.c
+patching file mm/mremap.c
+patching file mm/page-writeback.c
+patching file mm/page_alloc.c
+patching file mm/percpu.c
+patching file mm/rmap.c
+patching file mm/shmem.c
+patching file mm/slab.c
+patching file mm/slab_common.c
+patching file mm/vmscan.c
+patching file net/8021q/vlan.c
+patching file net/8021q/vlan_core.c
+patching file net/8021q/vlan_dev.c
+patching file net/appletalk/ddp.c
+patching file net/batman-adv/bat_iv_ogm.c
+patching file net/batman-adv/distributed-arp-table.c
+patching file net/batman-adv/fragmentation.c
+patching file net/batman-adv/gateway_client.c
+patching file net/batman-adv/originator.c
+patching file net/bluetooth/6lowpan.c
+patching file net/bluetooth/hci_conn.c
+patching file net/bluetooth/hci_event.c
+patching file net/bluetooth/l2cap_core.c
+patching file net/bluetooth/l2cap_sock.c
+patching file net/bluetooth/mgmt.c
+patching file net/bridge/br_input.c
+patching file net/bridge/br_netlink.c
+patching file net/bridge/br_private.h
+patching file net/bridge/br_vlan.c
+patching file net/bridge/netfilter/ebtables.c
+patching file net/can/gw.c
+patching file net/ceph/crush/mapper.c
+patching file net/ceph/messenger.c
+patching file net/core/dev.c
+patching file net/core/dst.c
+patching file net/core/filter.c
+patching file net/core/neighbour.c
+patching file net/core/net_namespace.c
+patching file net/core/rtnetlink.c
+patching file net/core/skbuff.c
+patching file net/core/sock.c
+patching file net/core/sock_diag.c
+patching file net/core/utils.c
+patching file net/dcb/dcbnl.c
+patching file net/decnet/dn_dev.c
+patching file net/decnet/dn_fib.c
+patching file net/decnet/netfilter/dn_rtmsg.c
+patching file net/dns_resolver/dns_query.c
+patching file net/ipv4/af_inet.c
+patching file net/ipv4/datagram.c
+patching file net/ipv4/fib_semantics.c
+patching file net/ipv4/gre_offload.c
+patching file net/ipv4/icmp.c
+patching file net/ipv4/igmp.c
+patching file net/ipv4/ip_forward.c
+patching file net/ipv4/ip_gre.c
+patching file net/ipv4/ip_options.c
+patching file net/ipv4/ip_tunnel.c
+patching file net/ipv4/ip_vti.c
+patching file net/ipv4/ipip.c
+patching file net/ipv4/netfilter/arp_tables.c
+patching file net/ipv4/netfilter/ip_tables.c
+patching file net/ipv4/netfilter/nf_defrag_ipv4.c
+patching file net/ipv4/ping.c
+patching file net/ipv4/route.c
+patching file net/ipv4/tcp.c
+patching file net/ipv4/tcp_cubic.c
+patching file net/ipv4/tcp_input.c
+patching file net/ipv4/tcp_offload.c
+patching file net/ipv4/tcp_output.c
+patching file net/ipv4/udp.c
+patching file net/ipv6/icmp.c
+patching file net/ipv6/ip6_fib.c
+patching file net/ipv6/ip6_gre.c
+patching file net/ipv6/ip6_offload.c
+patching file net/ipv6/ip6_output.c
+patching file net/ipv6/ip6_tunnel.c
+patching file net/ipv6/mcast.c
+patching file net/ipv6/netfilter.c
+patching file net/ipv6/netfilter/ip6_tables.c
+patching file net/ipv6/output_core.c
+patching file net/ipv6/ping.c
+patching file net/ipv6/route.c
+patching file net/ipv6/sit.c
+patching file net/ipv6/tcpv6_offload.c
+patching file net/ipv6/udp.c
+patching file net/iucv/af_iucv.c
+patching file net/l2tp/l2tp_ppp.c
+patching file net/mac80211/debugfs_netdev.c
+patching file net/mac80211/ibss.c
+patching file net/mac80211/ieee80211_i.h
+patching file net/mac80211/iface.c
+patching file net/mac80211/main.c
+patching file net/mac80211/mlme.c
+patching file net/mac80211/offchannel.c
+patching file net/mac80211/pm.c
+patching file net/mac80211/sta_info.c
+patching file net/mac80211/tx.c
+patching file net/mac80211/util.c
+patching file net/netfilter/ipvs/ip_vs_core.c
+patching file net/netfilter/nf_nat_core.c
+patching file net/netfilter/nf_tables_api.c
+patching file net/netfilter/nf_tables_core.c
+patching file net/netfilter/nfnetlink.c
+patching file net/netfilter/nft_cmp.c
+patching file net/netlink/af_netlink.c
+patching file net/netlink/genetlink.c
+patching file net/packet/diag.c
+patching file net/phonet/pn_netlink.c
+patching file net/rds/iw.c
+patching file net/sched/act_api.c
+patching file net/sched/cls_api.c
+patching file net/sched/cls_tcindex.c
+patching file net/sched/sch_api.c
+patching file net/sched/sch_hhf.c
+patching file net/sctp/associola.c
+patching file net/sctp/auth.c
+patching file net/sctp/endpointola.c
+patching file net/sctp/protocol.c
+patching file net/sctp/sm_make_chunk.c
+patching file net/sctp/sm_sideeffect.c
+patching file net/sctp/sm_statefuns.c
+patching file net/sctp/socket.c
+patching file net/sctp/sysctl.c
+patching file net/sctp/ulpevent.c
+patching file net/sunrpc/clnt.c
+patching file net/sunrpc/svc_xprt.c
+patching file net/sunrpc/svcsock.c
+patching file net/tipc/bcast.c
+patching file net/tipc/netlink.c
+patching file net/vmw_vsock/af_vsock.c
+patching file net/wireless/nl80211.c
+patching file net/wireless/reg.c
+patching file net/wireless/scan.c
+patching file net/wireless/sme.c
+patching file net/wireless/trace.h
+patching file net/xfrm/xfrm_user.c
+patching file scripts/package/builddeb
+patching file scripts/recordmcount.h
+patching file security/device_cgroup.c
+patching file security/integrity/evm/evm_main.c
+patching file security/integrity/ima/ima.h
+patching file security/integrity/ima/ima_api.c
+patching file security/integrity/ima/ima_crypto.c
+patching file security/integrity/ima/ima_fs.c
+patching file security/integrity/ima/ima_main.c
+patching file security/integrity/ima/ima_policy.c
+patching file security/integrity/ima/ima_template_lib.c
+patching file security/integrity/integrity.h
+patching file security/selinux/hooks.c
+patching file sound/core/control.c
+patching file sound/core/init.c
+patching file sound/pci/hda/hda_intel.c
+patching file sound/pci/hda/patch_analog.c
+patching file sound/pci/hda/patch_hdmi.c
+patching file sound/pci/hda/patch_realtek.c
+patching file sound/pci/ice1712/ice1712.c
+patching file sound/soc/codecs/cs42l51.c
+patching file sound/soc/codecs/cs42l52.c
+patching file sound/soc/codecs/cs42l73.c
+patching file sound/soc/codecs/max98090.c
+patching file sound/soc/codecs/tlv320aic3x.c
+patching file sound/soc/codecs/wm8962.c
+patching file sound/soc/codecs/wm8962.h
+patching file sound/soc/soc-dapm.c
+patching file sound/soc/soc-pcm.c
+patching file sound/usb/card.c
+patching file sound/usb/card.h
+patching file sound/usb/endpoint.c
+patching file sound/usb/endpoint.h
+patching file sound/usb/pcm.c
+patching file tools/lib/traceevent/event-parse.c
+patching file tools/usb/ffs-test.c
+patching file tools/virtio/virtio_test.c
+patching file virt/kvm/arm/vgic.c
+patching file virt/kvm/async_pf.c
+patching file virt/kvm/ioapic.c
+make[1]: Entering directory '/sources/linux-3.14'
+make[1]: Leaving directory '/sources/linux-3.14'
+make[1]: Entering directory '/sources/linux-3.14'
+  CHK     include/generated/uapi/linux/version.h
+  UPD     include/generated/uapi/linux/version.h
+  HOSTCC  scripts/basic/fixdep
+  WRAP    arch/x86/include/generated/asm/clkdev.h
+  SYSHDR  arch/x86/syscalls/../include/generated/uapi/asm/unistd_32.h
+  SYSHDR  arch/x86/syscalls/../include/generated/uapi/asm/unistd_64.h
+  SYSHDR  arch/x86/syscalls/../include/generated/uapi/asm/unistd_x32.h
+  SYSTBL  arch/x86/syscalls/../include/generated/asm/syscalls_32.h
+  HOSTCC  arch/x86/tools/relocs_32.o
+  HOSTCC  arch/x86/tools/relocs_64.o
+  HOSTCC  arch/x86/tools/relocs_common.o
+  HOSTLD  arch/x86/tools/relocs
+  HOSTCC  scripts/unifdef
+  INSTALL include/asm-generic (35 files)
+  INSTALL include/drm (18 files)
+  INSTALL include/linux/byteorder (2 files)
+  INSTALL include/linux/caif (2 files)
+  INSTALL include/linux/can (5 files)
+  INSTALL include/linux/dvb (8 files)
+  INSTALL include/linux/hdlc (1 file)
+  INSTALL include/linux/hsi (1 file)
+  INSTALL include/linux/isdn (1 file)
+  INSTALL include/linux/mmc (1 file)
+  INSTALL include/linux/netfilter/ipset (4 files)
+  INSTALL include/linux/netfilter (85 files)
+  INSTALL include/linux/netfilter_arp (2 files)
+  INSTALL include/linux/netfilter_bridge (18 files)
+  INSTALL include/linux/netfilter_ipv4 (10 files)
+  INSTALL include/linux/netfilter_ipv6 (12 files)
+  INSTALL include/linux/nfsd (5 files)
+  INSTALL include/linux/raid (2 files)
+  INSTALL include/linux/spi (1 file)
+  INSTALL include/linux/sunrpc (1 file)
+  INSTALL include/linux/tc_act (8 files)
+  INSTALL include/linux/tc_ematch (4 files)
+  INSTALL include/linux/usb (11 files)
+  INSTALL include/linux/wimax (1 file)
+  INSTALL include/linux (392 files)
+  INSTALL include/mtd (5 files)
+  INSTALL include/rdma (6 files)
+  INSTALL include/scsi/fc (4 files)
+  INSTALL include/scsi (3 files)
+  INSTALL include/sound (11 files)
+  INSTALL include/video (3 files)
+  INSTALL include/xen (4 files)
+  INSTALL include/uapi (0 file)
+  INSTALL include/asm (64 files)
+  CHECK   include/asm-generic (35 files)
+  CHECK   include/drm (18 files)
+  CHECK   include/linux/byteorder (2 files)
+  CHECK   include/linux/caif (2 files)
+  CHECK   include/linux/can (5 files)
+  CHECK   include/linux/dvb (8 files)
+  CHECK   include/linux/hdlc (1 files)
+  CHECK   include/linux/hsi (1 files)
+  CHECK   include/linux/isdn (1 files)
+  CHECK   include/linux/mmc (1 files)
+  CHECK   include/linux/netfilter/ipset (4 files)
+  CHECK   include/linux/netfilter (85 files)
+  CHECK   include/linux/netfilter_arp (2 files)
+  CHECK   include/linux/netfilter_bridge (18 files)
+  CHECK   include/linux/netfilter_ipv4 (10 files)
+  CHECK   include/linux/netfilter_ipv6 (12 files)
+  CHECK   include/linux/nfsd (5 files)
+  CHECK   include/linux/raid (2 files)
+  CHECK   include/linux/spi (1 files)
+  CHECK   include/linux/sunrpc (1 files)
+  CHECK   include/linux/tc_act (8 files)
+  CHECK   include/linux/tc_ematch (4 files)
+  CHECK   include/linux/usb (11 files)
+  CHECK   include/linux/wimax (1 files)
+  CHECK   include/linux (392 files)
+/sources/linux-3.14/usr/include/linux/kexec.h:50: userspace cannot reference function or variable defined in the kernel
+  CHECK   include/mtd (5 files)
+  CHECK   include/rdma (6 files)
+  CHECK   include/scsi/fc (4 files)
+  CHECK   include/scsi (3 files)
+  CHECK   include/sound (11 files)
+  CHECK   include/video (3 files)
+  CHECK   include/xen (4 files)
+  CHECK   include/uapi (0 files)
+  CHECK   include/asm (64 files)
+make[1]: Leaving directory '/sources/linux-3.14'
+make[1]: Entering directory '/sources/linux-3.14'
+  CHK     include/generated/uapi/linux/version.h
+make[2]: Nothing to be done for 'all'.
+make[2]: Nothing to be done for 'relocs'.
+  INSTALL include/asm-generic (35 files)
+  INSTALL include/drm (18 files)
+  INSTALL include/linux/byteorder (2 files)
+  INSTALL include/linux/caif (2 files)
+  INSTALL include/linux/can (5 files)
+  INSTALL include/linux/dvb (8 files)
+  INSTALL include/linux/hdlc (1 file)
+  INSTALL include/linux/hsi (1 file)
+  INSTALL include/linux/isdn (1 file)
+  INSTALL include/linux/mmc (1 file)
+  INSTALL include/linux/netfilter/ipset (4 files)
+  INSTALL include/linux/netfilter (85 files)
+  INSTALL include/linux/netfilter_arp (2 files)
+  INSTALL include/linux/netfilter_bridge (18 files)
+  INSTALL include/linux/netfilter_ipv4 (10 files)
+  INSTALL include/linux/netfilter_ipv6 (12 files)
+  INSTALL include/linux/nfsd (5 files)
+  INSTALL include/linux/raid (2 files)
+  INSTALL include/linux/spi (1 file)
+  INSTALL include/linux/sunrpc (1 file)
+  INSTALL include/linux/tc_act (8 files)
+  INSTALL include/linux/tc_ematch (4 files)
+  INSTALL include/linux/usb (11 files)
+  INSTALL include/linux/wimax (1 file)
+  INSTALL include/linux (392 files)
+  INSTALL include/mtd (5 files)
+  INSTALL include/rdma (6 files)
+  INSTALL include/scsi/fc (4 files)
+  INSTALL include/scsi (3 files)
+  INSTALL include/sound (11 files)
+  INSTALL include/video (3 files)
+  INSTALL include/xen (4 files)
+  INSTALL include/uapi (0 file)
+  INSTALL include/asm (64 files)
+make[1]: Leaving directory '/sources/linux-3.14'
+removed '/usr/include/xen/..install.cmd'
+removed '/usr/include/xen/.install'
+removed '/usr/include/linux/netfilter_arp/..install.cmd'
+removed '/usr/include/linux/netfilter_arp/.install'
+removed '/usr/include/linux/mmc/..install.cmd'
+removed '/usr/include/linux/mmc/.install'
+removed '/usr/include/linux/can/..install.cmd'
+removed '/usr/include/linux/can/.install'
+removed '/usr/include/linux/..install.cmd'
+removed '/usr/include/linux/caif/..install.cmd'
+removed '/usr/include/linux/caif/.install'
+removed '/usr/include/linux/byteorder/..install.cmd'
+removed '/usr/include/linux/byteorder/.install'
+removed '/usr/include/linux/hdlc/..install.cmd'
+removed '/usr/include/linux/hdlc/.install'
+removed '/usr/include/linux/netfilter_bridge/..install.cmd'
+removed '/usr/include/linux/netfilter_bridge/.install'
+removed '/usr/include/linux/netfilter_ipv4/..install.cmd'
+removed '/usr/include/linux/netfilter_ipv4/.install'
+removed '/usr/include/linux/nfsd/..install.cmd'
+removed '/usr/include/linux/nfsd/.install'
+removed '/usr/include/linux/.install'
+removed '/usr/include/linux/isdn/..install.cmd'
+removed '/usr/include/linux/isdn/.install'
+removed '/usr/include/linux/sunrpc/..install.cmd'
+removed '/usr/include/linux/sunrpc/.install'
+removed '/usr/include/linux/usb/..install.cmd'
+removed '/usr/include/linux/usb/.install'
+removed '/usr/include/linux/raid/..install.cmd'
+removed '/usr/include/linux/raid/.install'
+removed '/usr/include/linux/netfilter_ipv6/..install.cmd'
+removed '/usr/include/linux/netfilter_ipv6/.install'
+removed '/usr/include/linux/spi/..install.cmd'
+removed '/usr/include/linux/spi/.install'
+removed '/usr/include/linux/wimax/..install.cmd'
+removed '/usr/include/linux/wimax/.install'
+removed '/usr/include/linux/dvb/..install.cmd'
+removed '/usr/include/linux/dvb/.install'
+removed '/usr/include/linux/netfilter/ipset/..install.cmd'
+removed '/usr/include/linux/netfilter/ipset/.install'
+removed '/usr/include/linux/netfilter/..install.cmd'
+removed '/usr/include/linux/netfilter/.install'
+removed '/usr/include/linux/tc_act/..install.cmd'
+removed '/usr/include/linux/tc_act/.install'
+removed '/usr/include/linux/tc_ematch/..install.cmd'
+removed '/usr/include/linux/tc_ematch/.install'
+removed '/usr/include/linux/hsi/..install.cmd'
+removed '/usr/include/linux/hsi/.install'
+removed '/usr/include/rdma/..install.cmd'
+removed '/usr/include/rdma/.install'
+removed '/usr/include/scsi/..install.cmd'
+removed '/usr/include/scsi/.install'
+removed '/usr/include/scsi/fc/..install.cmd'
+removed '/usr/include/scsi/fc/.install'
+removed '/usr/include/video/..install.cmd'
+removed '/usr/include/video/.install'
+removed '/usr/include/drm/..install.cmd'
+removed '/usr/include/drm/.install'
+removed '/usr/include/asm-generic/..install.cmd'
+removed '/usr/include/asm-generic/.install'
+removed '/usr/include/mtd/..install.cmd'
+removed '/usr/include/mtd/.install'
+removed '/usr/include/asm/..install.cmd'
+removed '/usr/include/asm/.install'
+removed '/usr/include/sound/..install.cmd'
+removed '/usr/include/sound/.install'
+removed '/usr/include/uapi/..install.cmd'
+removed '/usr/include/uapi/.install'
+
+
+Totalseconds: 10
+
+
+KB: 2076956	/
+

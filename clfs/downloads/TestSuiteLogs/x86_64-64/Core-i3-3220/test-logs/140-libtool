@@ -1,0 +1,328 @@
+Sun Aug 31 04:28:09 EDT 2014
+make[1]: Entering directory '/sources/libtool-2.4.2'
+make  check-recursive
+make[2]: Entering directory '/sources/libtool-2.4.2'
+rm -f tests/defs.tmp tests/defs; \
+sed -e 's,@aclocal_DATA\@,m4/argz.m4 m4/libtool.m4 m4/ltdl.m4 m4/ltoptions.m4 m4/ltsugar.m4 m4/ltversion.m4 m4/lt~obsolete.m4,g' -e 's,@aclocaldir\@,/usr/share/aclocal,g' -e 's,@datadir\@,/usr/share,g' -e 's,@EGREP\@,/bin/grep -E,g' -e 's,@FGREP\@,/bin/grep -F,g' -e 's,@GREP\@,/bin/grep,g' -e 's,@host_triplet\@,x86_64-unknown-linux-gnu,g' -e 's,@LN_S\@,ln -s,g' -e "s,@pkgconfig_files\@,config/compile config/config.guess config/config.sub config/depcomp config/install-sh config/missing config/ltmain.sh,g" -e 's,@pkgdatadir\@,/usr/share/libtool,g' -e "s,@pkgltdl_files\@,libltdl/COPYING.LIB libltdl/README libltdl/Makefile.inc libltdl/Makefile.am libltdl/configure.ac libltdl/aclocal.m4 libltdl/Makefile.in libltdl/config-h.in libltdl/configure libltdl/argz_.h libltdl/argz.c libltdl/loaders/dld_link.c libltdl/loaders/dlopen.c libltdl/loaders/dyld.c libltdl/loaders/load_add_on.c libltdl/loaders/loadlibrary.c libltdl/loaders/shl_load.c libltdl/lt__dirent.c libltdl/lt__strl.c libltdl/libltdl/lt__alloc.h libltdl/libltdl/lt__dirent.h libltdl/libltdl/lt__glibc.h libltdl/libltdl/lt__private.h libltdl/libltdl/lt__strl.h libltdl/libltdl/lt_dlloader.h libltdl/libltdl/lt_error.h libltdl/libltdl/lt_system.h libltdl/libltdl/slist.h libltdl/loaders/preopen.c libltdl/lt__alloc.c libltdl/lt_dlloader.c libltdl/lt_error.c libltdl/ltdl.c libltdl/ltdl.h libltdl/slist.c,g" -e 's,@prefix\@,/usr,g' -e 's,@SED\@,/bin/sed,g' ./tests/defs.in > tests/defs.tmp; \
+mv -f tests/defs.tmp tests/defs
+make[3]: Entering directory '/sources/libtool-2.4.2'
+make  check-TESTS check-local
+make[4]: Entering directory '/sources/libtool-2.4.2'
+make[5]: Entering directory '/sources/libtool-2.4.2'
+PASS: tests/link.test
+PASS: tests/link-2.test
+PASS: tests/nomode.test
+PASS: tests/objectlist.test
+PASS: tests/quote.test
+PASS: tests/sh.test
+PASS: tests/suffix.test
+SKIP: tests/tagtrace.test
+PASS: tests/cdemo-static.test
+PASS: tests/cdemo-static-make.test
+PASS: tests/cdemo-static-exec.test
+PASS: tests/demo-static.test
+PASS: tests/demo-static-make.test
+PASS: tests/demo-static-exec.test
+PASS: tests/demo-static-inst.test
+PASS: tests/demo-static-unst.test
+PASS: tests/depdemo-static.test
+PASS: tests/depdemo-static-make.test
+PASS: tests/depdemo-static-exec.test
+PASS: tests/depdemo-static-inst.test
+PASS: tests/depdemo-static-unst.test
+PASS: tests/mdemo-static.test
+PASS: tests/mdemo-static-make.test
+PASS: tests/mdemo-static-exec.test
+PASS: tests/mdemo-static-inst.test
+PASS: tests/mdemo-static-unst.test
+PASS: tests/cdemo-conf.test
+PASS: tests/cdemo-make.test
+PASS: tests/cdemo-exec.test
+PASS: tests/demo-conf.test
+PASS: tests/demo-make.test
+PASS: tests/demo-exec.test
+PASS: tests/demo-inst.test
+PASS: tests/demo-unst.test
+PASS: tests/demo-deplibs.test
+PASS: tests/depdemo-conf.test
+PASS: tests/depdemo-make.test
+PASS: tests/depdemo-exec.test
+PASS: tests/depdemo-inst.test
+PASS: tests/depdemo-unst.test
+PASS: tests/mdemo-conf.test
+PASS: tests/mdemo-make.test
+PASS: tests/mdemo-exec.test
+PASS: tests/mdemo-inst.test
+PASS: tests/mdemo-unst.test
+PASS: tests/mdemo-dryrun.test
+PASS: tests/mdemo2-conf.test
+PASS: tests/mdemo2-make.test
+PASS: tests/mdemo2-exec.test
+PASS: tests/pdemo-conf.test
+PASS: tests/pdemo-make.test
+PASS: tests/pdemo-exec.test
+PASS: tests/pdemo-inst.test
+PASS: tests/demo-nofast.test
+PASS: tests/demo-nofast-make.test
+PASS: tests/demo-nofast-exec.test
+PASS: tests/demo-nofast-inst.test
+PASS: tests/demo-nofast-unst.test
+PASS: tests/depdemo-nofast.test
+PASS: tests/depdemo-nofast-make.test
+PASS: tests/depdemo-nofast-exec.test
+PASS: tests/depdemo-nofast-inst.test
+PASS: tests/depdemo-nofast-unst.test
+PASS: tests/demo-pic.test
+PASS: tests/demo-pic-make.test
+PASS: tests/demo-pic-exec.test
+SKIP: tests/demo-nopic.test
+PASS: tests/demo-nopic-make.test
+PASS: tests/demo-nopic-exec.test
+PASS: tests/cdemo-shared.test
+PASS: tests/cdemo-shared-make.test
+PASS: tests/cdemo-shared-exec.test
+PASS: tests/mdemo-shared.test
+PASS: tests/mdemo-shared-make.test
+PASS: tests/mdemo-shared-exec.test
+PASS: tests/mdemo-shared-inst.test
+PASS: tests/mdemo-shared-unst.test
+PASS: tests/cdemo-undef.test
+PASS: tests/cdemo-undef-make.test
+PASS: tests/cdemo-undef-exec.test
+PASS: tests/tagdemo-static.test
+PASS: tests/tagdemo-static-make.test
+PASS: tests/tagdemo-static-exec.test
+PASS: tests/tagdemo-conf.test
+PASS: tests/tagdemo-make.test
+PASS: tests/tagdemo-exec.test
+PASS: tests/tagdemo-shared.test
+PASS: tests/tagdemo-shared-make.test
+PASS: tests/tagdemo-shared-exec.test
+PASS: tests/tagdemo-undef.test
+PASS: tests/tagdemo-undef-make.test
+PASS: tests/tagdemo-undef-exec.test
+PASS: tests/demo-shared.test
+PASS: tests/demo-shared-make.test
+PASS: tests/demo-shared-exec.test
+PASS: tests/demo-shared-inst.test
+PASS: tests/demo-hardcode.test
+PASS: tests/demo-relink.test
+PASS: tests/demo-noinst-link.test
+PASS: tests/demo-shared-unst.test
+PASS: tests/depdemo-shared.test
+PASS: tests/depdemo-shared-make.test
+PASS: tests/depdemo-shared-exec.test
+PASS: tests/depdemo-shared-inst.test
+PASS: tests/depdemo-relink.test
+PASS: tests/depdemo-shared-unst.test
+======================
+All 104 tests passed
+(2 tests were not run)
+======================
+make[5]: Leaving directory '/sources/libtool-2.4.2'
+abs_srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd . && pwd`; cd tests; \
+CONFIG_SHELL="/bin/sh" /bin/sh $abs_srcdir/tests/testsuite \
+  MAKE="make" CC="gcc" CFLAGS="-g -O2" CPP="gcc -E" CPPFLAGS="" LD="/usr/bin/ld -m elf_x86_64" LDFLAGS="" LIBS="-ldl " LN_S="ln -s" NM="/usr/bin/nm -B" RANLIB="ranlib" AR="ar" M4SH="autom4te --language=m4sh" SED="/bin/sed" STRIP="strip" lt_INSTALL="/usr/bin/install -c" MANIFEST_TOOL=":" OBJEXT="o" EXEEXT="" SHELL="/bin/sh" CONFIG_SHELL="/bin/sh" CXX="g++" CXXFLAGS="-g -O2" CXXCPP="g++ -E" F77="" FFLAGS="" FC="" FCFLAGS="" GCJ="" GCJFLAGS="-g -O2" lt_cv_to_host_file_cmd="func_convert_file_noop" lt_cv_to_tool_file_cmd="func_convert_file_noop" _lt_pkgdatadir="/sources/libtool-2.4.2" LIBTOOLIZE="/sources/libtool-2.4.2/libtoolize" LIBTOOL="/sources/libtool-2.4.2/libtool" tst_aclocaldir="/sources/libtool-2.4.2/libltdl/m4" 
+## ----------------------------- ##
+## GNU Libtool 2.4.2 test suite. ##
+## ----------------------------- ##
+
+Shell option parser generator.
+
+  1: short option splitting                          skipped (getopt-m4sh.at:91)
+  2: enhanced shell short option splitting           skipped (getopt-m4sh.at:107)
+  3: long option splitting                           skipped (getopt-m4sh.at:125)
+  4: XSI long option splitting                       skipped (getopt-m4sh.at:141)
+  5: option appending                                skipped (getopt-m4sh.at:161)
+  6: enhanced shell option appending                 skipped (getopt-m4sh.at:180)
+
+Libtoolize operation.
+
+  7: libtoolize macro installation                   ok
+  8: libtoolize macro directory mismatch error       ok
+  9: libtoolize macro serial update                  ok
+ 10: libtoolize config files serial update           ok
+ 11: diagnose missing LT_CONFIG_LTDL_DIR             ok
+ 12: copy ltdl.m4 with shared macro directory        ok
+ 13: correctly parse LTDL_INIT from configure.ac     ok
+ 14: diagnose missing LTDL_INIT invocation           ok
+ 15: upgrading verbatim style aclocal.m4             expected failure (libtoolize.at:601)
+ 16: verbatim aclocal.m4 w/o AC_CONFIG_MACRO_DIR     expected failure (libtoolize.at:692)
+ 17: nonrecursive ltdl with AC_CONFIG_MACRO_DIR      ok
+ 18: subproject ltdl with non-shared directories     ok
+ 19: LIBTOOLIZE_OPTIONS                              ok
+ 20: cleanup old installation                        ok
+
+Testing libtool functions.
+
+ 21: standard command line options                   ok
+ 22: mode short-hands                                ok
+ 23: debug tracing                                   ok
+ 24: duplicate members in archive tests              ok
+ 25: duplicate convenience archive names             ok
+ 26: preserve duplicate convenience deps             expected failure (duplicate_deps.at:72)
+ 27: passing CC flags through libtool                ok
+ 28: passing CXX flags through libtool               ok
+ 29: passing F77 flags through libtool               skipped (flags.at:24)
+ 30: passing FC flags through libtool                skipped (flags.at:24)
+ 31: passing GCJ flags through libtool               skipped (flags.at:24)
+ 32: inherited_linker_flags                          ok
+ 33: C convenience archives                          ok
+ 34: C++ convenience archives                        ok
+ 35: F77 convenience archives                        skipped (convenience.at:111)
+ 36: FC convenience archives                         skipped (convenience.at:171)
+ 37: Java convenience archives                       skipped (convenience.at:231)
+ 38: Link order test                                 ok
+ 39: Link order of deplibs                           ok
+ 40: Failure tests                                   ok
+ 41: shlibpath_overrides_runpath                     ok
+ 42: Runpath in libtool library files                ok
+ 43: static linking flags for programs               ok
+ 44: ccache -all-static                              ok
+ 45: Export test                                     ok
+ 46: sys_lib_search_path                             ok
+ 47: sys_lib_search_path on w32                      skipped (search-path.at:83)
+ 48: indirect convenience                            ok
+ 49: indirect uninstalled                            ok
+ 50: static library contains static library          expected failure (archive-in-archive.at:56)
+ 51: both of -o prog and -o prog$EXEEXT work         skipped (exeext.at:29)
+ 52: execute mode                                    ok
+ 53: bindir basic lib test                           ok
+ 54: bindir install tests                            ok
+ 55: cwrapper for uninstalled executables            ok
+ 56: cwrapper string length                          skipped (cwrapper.at:190)
+ 57: cwrapper and installed shared libraries         ok
+ 58: deplib in subdir                                ok
+ 59: inferred tag                                    ok
+ 60: CXX inferred tag                                ok
+ 61: F77 inferred tag                                skipped (infer-tag.at:56)
+ 62: FC inferred tag                                 skipped (infer-tag.at:70)
+ 63: GCJ inferred tag                                skipped (infer-tag.at:84)
+ 64: localized compiler messages                     skipped (localization.at:60)
+ 65: nocase library search                           skipped (nocase.at:31)
+ 66: Install tests                                   ok
+ 67: versioning                                      ok
+
+DESTDIR tests
+
+ 68: Simple DESTDIR install                          ok
+ 69: DESTDIR with in-package deplibs                 ok
+
+Support for older m4 interface.
+
+ 70: AM_PROG_LIBTOOL                                 expected failure (old-m4-iface.at:90)
+ 71: AC_WITH_LTDL                                    expected failure (old-m4-iface.at:160)
+
+Libtool subdir-objects support.
+
+ 72: C subdir-objects                                expected failure (am-subdir.at:78)
+ 73: C++ subdir-objects                              expected failure (am-subdir.at:146)
+
+Libltdl functionality.
+
+ 74: lt_dlexit unloading libs                        ok
+ 75: lt_dlopenadvise library loading                 ok
+ 76: lt_dlopen error messages                        expected failure (lt_dlopen.at:101)
+ 77: lt_dlopen archive                               ok
+ 78: lt_dlopenext error messages                     ok
+ 79: libdir of installed modules                     ok
+ 80: ltdl API                                        skipped (ltdl-api.at:31)
+ 81: dlloader API                                    ok
+ 82: loadlibrary error messages                      skipped (loadlibrary.at:250)
+ 83: syntax of .la files                             expected failure (lalib-syntax.at:133)
+ 84: resident modules                                ok
+ 85: SList functionality                             ok
+ 86: enforced lib prefix                             ok
+
+Standalone Libltdl.
+
+ 87: compiling softlinked libltdl                    ok
+ 88: compiling copied libltdl                        ok
+ 89: installable libltdl                             ok
+ 90: linking libltdl without autotools               ok
+
+Subproject Libltdl.
+
+ 91: compiling softlinked libltdl                    expected failure (subproject.at:61)
+ 92: compiling copied libltdl                        expected failure (subproject.at:77)
+ 93: installable libltdl                             expected failure (subproject.at:95)
+ 94: linking libltdl without autotools               ok
+
+Nonrecursive Automake Libltdl.
+
+ 95: compiling softlinked libltdl                    expected failure (nonrecursive.at:90)
+ 96: compiling copied libltdl                        expected failure (nonrecursive.at:114)
+ 97: installable libltdl                             expected failure (nonrecursive.at:140)
+
+Recursive Automake Libltdl.
+
+ 98: compiling softlinked libltdl                    expected failure (recursive.at:68)
+ 99: compiling copied libltdl                        expected failure (recursive.at:88)
+100: installable libltdl                             expected failure (recursive.at:110)
+
+C++ template tests.
+
+101: simple template test                            ok
+102: template test with subdirs                      ok
+
+Constructors.
+
+103: C++ static constructors                         ok
+104: C++ exception handling                          ok
+
+libtool script generation.
+
+105: config.status                                   expected failure (early-libtool.at:109)
+106: config.lt                                       expected failure (early-libtool.at:216)
+107: test --with-pic                                 skipped (with-pic.at:28)
+
+Libtool usage in GCC
+
+108: AC_NO_EXECUTABLES                               expected failure (no-executables.at:75)
+
+Detecting identical deplibs.
+
+109: build tree relpaths                             expected failure (deplibs-ident.at:68)
+
+configure interface to libltdl.
+
+110: installable libltdl                             expected failure (configure-iface.at:144)
+111: --with-ltdl-include/lib                         expected failure (configure-iface.at:227)
+112: --with-included-ltdl                            expected failure (configure-iface.at:282)
+113: convenience libltdl                             expected failure (configure-iface.at:321)
+
+Libtool stress test.
+
+114: Link option thorough search test                ok
+115: Run tests with low max_cmd_len                  ok
+116: override pic_flag at configure time             skipped (pic_flag.at:47)
+
+Mac OS X tests
+
+117: darwin fat compile                              skipped (darwin.at:42)
+118: darwin concurrent library extraction            ok
+119: darwin gdb debug information                    skipped (darwin.at:154)
+120: darwin ld warnings changing configure results   expected failure (darwin.at:225)
+121: darwin can lt_dlopen .dylib and .so files       skipped (darwin.at:249)
+
+Windows tests.
+
+122: dumpbin -symbols section hiding                 skipped (dumpbin-symbols.at:42)
+123: deplibs without file command                    ok
+
+sysroot tests
+
+124: -L=.../lib -l                                   skipped (sysroot.at:203)
+125: -L SYSROOT/.../lib -l                           skipped (sysroot.at:204)
+126: SYSROOT/.../*.la                                skipped (sysroot.at:205)
+
+## ------------- ##
+## Test results. ##
+## ------------- ##
+
+95 tests behaved as expected.
+31 tests were skipped.
+make[4]: Leaving directory '/sources/libtool-2.4.2'
+make[3]: Leaving directory '/sources/libtool-2.4.2'
+make[2]: Leaving directory '/sources/libtool-2.4.2'
+make[1]: Leaving directory '/sources/libtool-2.4.2'

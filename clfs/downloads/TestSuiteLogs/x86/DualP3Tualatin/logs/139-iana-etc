@@ -1,0 +1,27 @@
+Fri Jun 13 07:16:10 CDT 2014
+
+KB: 1859620	/
+
+patching file port-numbers.iana
+patching file protocol-numbers.iana
+patching file protocols.gawk
+patching file services.gawk
+make[1]: Entering directory '/sources/iana-etc-2.30'
+ln -f -s protocol-numbers.iana protocol-numbers
+ln -f -s port-numbers.iana port-numbers
+gawk -f services.gawk -v strip=no port-numbers > services
+gawk --re-interval -f protocols.gawk -v strip=no \
+    protocol-numbers > protocols
+make[1]: Leaving directory '/sources/iana-etc-2.30'
+make[1]: Entering directory '/sources/iana-etc-2.30'
+install -d /etc
+install -m 644 protocols /etc
+install -m 644 services /etc
+make[1]: Leaving directory '/sources/iana-etc-2.30'
+
+
+Totalseconds: 1
+
+
+KB: 1864292	/
+

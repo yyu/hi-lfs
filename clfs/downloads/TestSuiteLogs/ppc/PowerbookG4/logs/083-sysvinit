@@ -1,0 +1,76 @@
+Sun Jun 29 15:05:25 CDT 2014
+
+KB: 2035420	/mnt/clfs
+
+patching file src/Makefile
+patching file src/paths.h
+make[1]: Entering directory '/mnt/clfs/sources/sysvinit-2.88dsf/src'
+rm -f *.o *.bak
+rm -f  init halt shutdown runlevel killall5 fstab-decode bootlogd 
+make[1]: Leaving directory '/mnt/clfs/sources/sysvinit-2.88dsf/src'
+make[1]: Entering directory '/mnt/clfs/sources/sysvinit-2.88dsf/src'
+powerpc-unknown-linux-gnu-gcc -ansi -O2 -fomit-frame-pointer -W -Wall -D_GNU_SOURCE   -c -o init.o init.c
+powerpc-unknown-linux-gnu-gcc -ansi -O2 -fomit-frame-pointer -W -Wall -D_GNU_SOURCE -DINIT_MAIN -c -o init_utmp.o utmp.c
+powerpc-unknown-linux-gnu-gcc -ansi -O2 -fomit-frame-pointer -W -Wall -D_GNU_SOURCE   -c -o halt.o halt.c
+powerpc-unknown-linux-gnu-gcc -ansi -O2 -fomit-frame-pointer -W -Wall -D_GNU_SOURCE   -c -o ifdown.o ifdown.c
+powerpc-unknown-linux-gnu-gcc -ansi -O2 -fomit-frame-pointer -W -Wall -D_GNU_SOURCE   -c -o hddown.o hddown.c
+powerpc-unknown-linux-gnu-gcc -ansi -O2 -fomit-frame-pointer -W -Wall -D_GNU_SOURCE   -c -o utmp.o utmp.c
+powerpc-unknown-linux-gnu-gcc -ansi -O2 -fomit-frame-pointer -W -Wall -D_GNU_SOURCE   -c -o shutdown.o shutdown.c
+powerpc-unknown-linux-gnu-gcc -ansi -O2 -fomit-frame-pointer -W -Wall -D_GNU_SOURCE   -c -o dowall.o dowall.c
+powerpc-unknown-linux-gnu-gcc -ansi -O2 -fomit-frame-pointer -W -Wall -D_GNU_SOURCE   -c -o runlevel.o runlevel.c
+powerpc-unknown-linux-gnu-gcc -ansi -O2 -fomit-frame-pointer -W -Wall -D_GNU_SOURCE    killall5.c   -o killall5
+powerpc-unknown-linux-gnu-gcc -ansi -O2 -fomit-frame-pointer -W -Wall -D_GNU_SOURCE    fstab-decode.c   -o fstab-decode
+shutdown.c: In function 'main':
+shutdown.c:485:10: warning: variable 'realuid' set but not used [-Wunused-but-set-variable]
+  uid_t   realuid;
+          ^
+powerpc-unknown-linux-gnu-gcc -ansi -O2 -fomit-frame-pointer -W -Wall -D_GNU_SOURCE   -c -o bootlogd.o bootlogd.c
+powerpc-unknown-linux-gnu-gcc   halt.o ifdown.o hddown.o utmp.o reboot.h   -o halt
+powerpc-unknown-linux-gnu-gcc   runlevel.o   -o runlevel
+powerpc-unknown-linux-gnu-gcc   shutdown.o dowall.o utmp.o reboot.h   -o shutdown
+powerpc-unknown-linux-gnu-gcc   bootlogd.o  -lutil -o bootlogd
+powerpc-unknown-linux-gnu-gcc   init.o init_utmp.o    -o init
+make[1]: Leaving directory '/mnt/clfs/sources/sysvinit-2.88dsf/src'
+make[1]: Entering directory '/mnt/clfs/sources/sysvinit-2.88dsf/src'
+install -m 755 -d /tools/bin/ /tools/sbin/
+install -m 755 -d /tools/usr/bin/
+for i in ; do \
+		install -m 755 $i /tools/bin/ ; \
+	done
+for i in init halt shutdown runlevel killall5 fstab-decode bootlogd; do \
+		install -m 755 $i /tools/sbin/ ; \
+	done
+for i in ; do \
+		install -m 755 $i /tools/usr/bin/ ; \
+	done
+# install -m 755 -d /tools/etc/
+# install -m 755 initscript.sample /tools/etc/
+ln -sf halt /tools/sbin/reboot
+ln -sf halt /tools/sbin/poweroff
+ln -sf init /tools/sbin/telinit
+ln -sf /sbin/killall5 /tools/bin/pidof
+if [ ! -f /tools/usr/bin/lastb ]; then \
+		ln -sf last /tools/usr/bin/lastb; \
+	fi
+install -m 755 -d /tools/usr/include/
+install -m 644 initreq.h /tools/usr/include/
+install -m 755 -d /tools/usr/share/man/man1/
+install -m 755 -d /tools/usr/share/man/man5/
+install -m 755 -d /tools/usr/share/man/man8/
+for i in ; do \
+		install -m 644 ../man/$i /tools/usr/share/man/man1/; \
+	done
+for i in initscript.5 inittab.5; do \
+		install -m 644 ../man/$i /tools/usr/share/man/man5/; \
+	done
+for i in halt.8 init.8 killall5.8 pidof.8 poweroff.8 reboot.8 runlevel.8 shutdown.8 telinit.8 fstab-decode.8 bootlogd.8; do \
+		install -m 644 ../man/$i /tools/usr/share/man/man8/; \
+	done
+make[1]: Leaving directory '/mnt/clfs/sources/sysvinit-2.88dsf/src'
+
+
+Totalseconds: 0
+
+
+KB: 2036496	/mnt/clfs
+

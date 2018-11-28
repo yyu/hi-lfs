@@ -1,0 +1,340 @@
+Sat Jun 28 11:44:27 CDT 2014
+
+KB: 1476268	/mnt/clfs
+
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for x86_64-unknown-linux-gnu-strip... x86_64-unknown-linux-gnu-strip
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for x86_64-unknown-linux-gnu-gcc... x86_64-unknown-linux-gnu-gcc -m64
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether x86_64-unknown-linux-gnu-gcc -m64 accepts -g... yes
+checking for x86_64-unknown-linux-gnu-gcc -m64 option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of x86_64-unknown-linux-gnu-gcc -m64... gcc3
+checking for x86_64-unknown-linux-gnu-ranlib... x86_64-unknown-linux-gnu-ranlib
+checking how to run the C preprocessor... x86_64-unknown-linux-gnu-gcc -m64 -E
+checking for ar... x86_64-unknown-linux-gnu-ar
+checking for perl... perl
+checking build system type... x86_64-cross-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for library containing strerror... none required
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for ld used by GCC... x86_64-unknown-linux-gnu-ld
+checking if the linker (x86_64-unknown-linux-gnu-ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for library containing getpwnam... none required
+checking for ANSI C header files... (cached) yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether stat file-mode macros are broken... no
+checking whether time.h and sys/time.h may both be included... yes
+checking for stdlib.h... (cached) yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking for unistd.h... (cached) yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/timeb.h usability... yes
+checking sys/timeb.h presence... yes
+checking for sys/timeb.h... yes
+checking whether x86_64-unknown-linux-gnu-gcc -m64 and cc understand -c and -o together... yes
+checking for an ANSI C-conforming const... yes
+checking return type of signal handlers... void
+checking for uid_t in sys/types.h... yes
+checking for pid_t... yes
+checking for uintmax_t... yes
+checking for nanoseconds field of struct stat... st_mtim.tv_nsec
+checking whether to use high resolution file timestamps... yes
+checking for library containing clock_gettime... none required
+checking whether system uses MSDOS-style paths... no
+checking for standard gettimeofday... no (cross-compiling)
+checking for strdup... yes
+checking for strndup... yes
+checking for mkstemp... yes
+checking for mktemp... yes
+checking for fdopen... yes
+checking for fileno... yes
+checking for dup... yes
+checking for dup2... yes
+checking for getcwd... yes
+checking for realpath... yes
+checking for sigsetmask... yes
+checking for sigaction... yes
+checking for getgroups... yes
+checking for seteuid... yes
+checking for setegid... yes
+checking for setlinebuf... yes
+checking for setreuid... yes
+checking for setregid... yes
+checking for getrlimit... yes
+checking for setrlimit... yes
+checking for setvbuf... yes
+checking for pipe... yes
+checking for strerror... yes
+checking for strsignal... yes
+checking for lstat... yes
+checking for readlink... yes
+checking for atexit... yes
+checking whether bsd_signal is declared... yes
+checking for strcasecmp... yes
+checking for strncasecmp... yes
+checking for strcmpi... no
+checking for strncmpi... no
+checking for stricmp... no
+checking for strnicmp... no
+checking for working strcoll... no
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking whether closedir returns void... yes
+checking for x86_64-unknown-linux-gnu-pkg-config... /cross-tools/bin/x86_64-unknown-linux-gnu-pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for GUILE... no
+checking for GUILE... no
+checking for getloadavg... yes
+checking for pstat_getdynamic... no
+checking for kstat_open in -lkstat... no
+checking for getloadavg... yes
+checking whether getloadavg requires setgid... no
+checking whether sys_siglist is declared... yes
+checking whether _sys_siglist is declared... yes
+checking whether __sys_siglist is declared... no
+checking for sys/wait.h... yes
+checking for waitpid... yes
+checking for wait3... yes
+checking for union wait... no
+checking for SA_RESTART... yes
+checking whether dlopen is declared... yes
+checking whether dlsym is declared... yes
+checking whether dlerror is declared... yes
+checking for library containing dlopen... -ldl
+checking If the linker accepts -Wl,--export-dynamic... yes
+checking for location of SCCS get command... get
+checking if system libc has GNU glob... yes
+checking if malloc debugging is wanted... no
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating glob/Makefile
+config.status: creating po/Makefile.in
+config.status: creating config/Makefile
+config.status: creating doc/Makefile
+config.status: creating w32/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: creating build.sh
+make[1]: Entering directory `/mnt/clfs/sources/make-4.0'
+make  all-recursive
+make[2]: Entering directory `/mnt/clfs/sources/make-4.0'
+Making all in glob
+make[3]: Entering directory `/mnt/clfs/sources/make-4.0/glob'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/mnt/clfs/sources/make-4.0/glob'
+Making all in config
+make[3]: Entering directory `/mnt/clfs/sources/make-4.0/config'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/mnt/clfs/sources/make-4.0/config'
+Making all in po
+make[3]: Entering directory `/mnt/clfs/sources/make-4.0/po'
+make[3]: Leaving directory `/mnt/clfs/sources/make-4.0/po'
+Making all in doc
+make[3]: Entering directory `/mnt/clfs/sources/make-4.0/doc'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/mnt/clfs/sources/make-4.0/doc'
+make[3]: Entering directory `/mnt/clfs/sources/make-4.0'
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT ar.o -MD -MP -MF .deps/ar.Tpo -c -o ar.o ar.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT arscan.o -MD -MP -MF .deps/arscan.Tpo -c -o arscan.o arscan.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT commands.o -MD -MP -MF .deps/commands.Tpo -c -o commands.o commands.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT default.o -MD -MP -MF .deps/default.Tpo -c -o default.o default.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT dir.o -MD -MP -MF .deps/dir.Tpo -c -o dir.o dir.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT expand.o -MD -MP -MF .deps/expand.Tpo -c -o expand.o expand.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT file.o -MD -MP -MF .deps/file.Tpo -c -o file.o file.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT function.o -MD -MP -MF .deps/function.Tpo -c -o function.o function.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT getopt.o -MD -MP -MF .deps/getopt.Tpo -c -o getopt.o getopt.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT getopt1.o -MD -MP -MF .deps/getopt1.Tpo -c -o getopt1.o getopt1.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT implicit.o -MD -MP -MF .deps/implicit.Tpo -c -o implicit.o implicit.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT job.o -MD -MP -MF .deps/job.Tpo -c -o job.o job.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT load.o -MD -MP -MF .deps/load.Tpo -c -o load.o load.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT loadapi.o -MD -MP -MF .deps/loadapi.Tpo -c -o loadapi.o loadapi.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT main.o -MD -MP -MF .deps/main.Tpo -c -o main.o main.c
+mv -f .deps/getopt.Tpo .deps/getopt.Po
+mv -f .deps/getopt1.Tpo .deps/getopt1.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT misc.o -MD -MP -MF .deps/misc.Tpo -c -o misc.o misc.c
+mv -f .deps/ar.Tpo .deps/ar.Po
+mv -f .deps/arscan.Tpo .deps/arscan.Po
+mv -f .deps/default.Tpo .deps/default.Po
+mv -f .deps/loadapi.Tpo .deps/loadapi.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT output.o -MD -MP -MF .deps/output.Tpo -c -o output.o output.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT read.o -MD -MP -MF .deps/read.Tpo -c -o read.o read.c
+mv -f .deps/load.Tpo .deps/load.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT remake.o -MD -MP -MF .deps/remake.Tpo -c -o remake.o remake.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT rule.o -MD -MP -MF .deps/rule.Tpo -c -o rule.o rule.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT signame.o -MD -MP -MF .deps/signame.Tpo -c -o signame.o signame.c
+mv -f .deps/expand.Tpo .deps/expand.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT strcache.o -MD -MP -MF .deps/strcache.Tpo -c -o strcache.o strcache.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT variable.o -MD -MP -MF .deps/variable.Tpo -c -o variable.o variable.c
+mv -f .deps/commands.Tpo .deps/commands.Po
+mv -f .deps/output.Tpo .deps/output.Po
+mv -f .deps/dir.Tpo .deps/dir.Po
+mv -f .deps/file.Tpo .deps/file.Po
+mv -f .deps/signame.Tpo .deps/signame.Po
+mv -f .deps/misc.Tpo .deps/misc.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT version.o -MD -MP -MF .deps/version.Tpo -c -o version.o version.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT vpath.o -MD -MP -MF .deps/vpath.Tpo -c -o vpath.o vpath.c
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT hash.o -MD -MP -MF .deps/hash.Tpo -c -o hash.o hash.c
+mv -f .deps/rule.Tpo .deps/rule.Po
+mv -f .deps/implicit.Tpo .deps/implicit.Po
+mv -f .deps/strcache.Tpo .deps/strcache.Po
+mv -f .deps/version.Tpo .deps/version.Po
+mv -f .deps/job.Tpo .deps/job.Po
+x86_64-unknown-linux-gnu-gcc -m64 -DLOCALEDIR=\"/tools/share/locale\" -DLIBDIR=\"/tools/lib\" -DINCLUDEDIR=\"/tools/include\" -DHAVE_CONFIG_H -I.      -g -O2 -MT remote-stub.o -MD -MP -MF .deps/remote-stub.Tpo -c -o remote-stub.o remote-stub.c
+mv -f .deps/remote-stub.Tpo .deps/remote-stub.Po
+mv -f .deps/hash.Tpo .deps/hash.Po
+mv -f .deps/vpath.Tpo .deps/vpath.Po
+mv -f .deps/main.Tpo .deps/main.Po
+mv -f .deps/variable.Tpo .deps/variable.Po
+mv -f .deps/function.Tpo .deps/function.Po
+mv -f .deps/remake.Tpo .deps/remake.Po
+mv -f .deps/read.Tpo .deps/read.Po
+x86_64-unknown-linux-gnu-gcc -m64  -g -O2 -Wl,--export-dynamic  -o make ar.o arscan.o commands.o default.o dir.o expand.o file.o function.o getopt.o getopt1.o implicit.o job.o load.o loadapi.o main.o misc.o output.o read.o remake.o rule.o signame.o strcache.o variable.o version.o vpath.o hash.o remote-stub.o     -ldl 
+make[3]: Leaving directory `/mnt/clfs/sources/make-4.0'
+make[2]: Leaving directory `/mnt/clfs/sources/make-4.0'
+make[1]: Leaving directory `/mnt/clfs/sources/make-4.0'
+make[1]: Entering directory `/mnt/clfs/sources/make-4.0'
+Making install in glob
+make[2]: Entering directory `/mnt/clfs/sources/make-4.0/glob'
+make[3]: Entering directory `/mnt/clfs/sources/make-4.0/glob'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/mnt/clfs/sources/make-4.0/glob'
+make[2]: Leaving directory `/mnt/clfs/sources/make-4.0/glob'
+Making install in config
+make[2]: Entering directory `/mnt/clfs/sources/make-4.0/config'
+make[3]: Entering directory `/mnt/clfs/sources/make-4.0/config'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/mnt/clfs/sources/make-4.0/config'
+make[2]: Leaving directory `/mnt/clfs/sources/make-4.0/config'
+Making install in po
+make[2]: Entering directory `/mnt/clfs/sources/make-4.0/po'
+installing be.gmo as /tools/share/locale/be/LC_MESSAGES/make.mo
+installing cs.gmo as /tools/share/locale/cs/LC_MESSAGES/make.mo
+installing da.gmo as /tools/share/locale/da/LC_MESSAGES/make.mo
+installing de.gmo as /tools/share/locale/de/LC_MESSAGES/make.mo
+installing es.gmo as /tools/share/locale/es/LC_MESSAGES/make.mo
+installing fi.gmo as /tools/share/locale/fi/LC_MESSAGES/make.mo
+installing fr.gmo as /tools/share/locale/fr/LC_MESSAGES/make.mo
+installing ga.gmo as /tools/share/locale/ga/LC_MESSAGES/make.mo
+installing gl.gmo as /tools/share/locale/gl/LC_MESSAGES/make.mo
+installing he.gmo as /tools/share/locale/he/LC_MESSAGES/make.mo
+installing hr.gmo as /tools/share/locale/hr/LC_MESSAGES/make.mo
+installing id.gmo as /tools/share/locale/id/LC_MESSAGES/make.mo
+installing it.gmo as /tools/share/locale/it/LC_MESSAGES/make.mo
+installing ja.gmo as /tools/share/locale/ja/LC_MESSAGES/make.mo
+installing ko.gmo as /tools/share/locale/ko/LC_MESSAGES/make.mo
+installing lt.gmo as /tools/share/locale/lt/LC_MESSAGES/make.mo
+installing nl.gmo as /tools/share/locale/nl/LC_MESSAGES/make.mo
+installing pl.gmo as /tools/share/locale/pl/LC_MESSAGES/make.mo
+installing pt_BR.gmo as /tools/share/locale/pt_BR/LC_MESSAGES/make.mo
+installing ru.gmo as /tools/share/locale/ru/LC_MESSAGES/make.mo
+installing sv.gmo as /tools/share/locale/sv/LC_MESSAGES/make.mo
+installing tr.gmo as /tools/share/locale/tr/LC_MESSAGES/make.mo
+installing uk.gmo as /tools/share/locale/uk/LC_MESSAGES/make.mo
+installing vi.gmo as /tools/share/locale/vi/LC_MESSAGES/make.mo
+installing zh_CN.gmo as /tools/share/locale/zh_CN/LC_MESSAGES/make.mo
+if test "make" = "gettext-tools"; then \
+	  /bin/mkdir -p /tools/share/gettext/po; \
+	  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+	    /usr/bin/install -c -m 644 ./$file \
+			    /tools/share/gettext/po/$file; \
+	  done; \
+	  for file in Makevars; do \
+	    rm -f /tools/share/gettext/po/$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+make[2]: Leaving directory `/mnt/clfs/sources/make-4.0/po'
+Making install in doc
+make[2]: Entering directory `/mnt/clfs/sources/make-4.0/doc'
+make[3]: Entering directory `/mnt/clfs/sources/make-4.0/doc'
+make[3]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/tools/share/info'
+ /usr/bin/install -c -m 644 ./make.info ./make.info-1 ./make.info-2 '/tools/share/info'
+ install-info --info-dir='/tools/share/info' '/tools/share/info/make.info'
+This is not dpkg install-info anymore, but GNU install-info
+See the man page for ginstall-info for command line arguments
+make[3]: Leaving directory `/mnt/clfs/sources/make-4.0/doc'
+make[2]: Leaving directory `/mnt/clfs/sources/make-4.0/doc'
+make[2]: Entering directory `/mnt/clfs/sources/make-4.0'
+make[3]: Entering directory `/mnt/clfs/sources/make-4.0'
+ /bin/mkdir -p '/tools/bin'
+  /usr/bin/install -c make '/tools/bin'
+ /bin/mkdir -p '/tools/include'
+ /usr/bin/install -c -m 644 gnumake.h '/tools/include'
+ /bin/mkdir -p '/tools/share/man/man1'
+ /usr/bin/install -c -m 644 make.1 '/tools/share/man/man1'
+make[3]: Leaving directory `/mnt/clfs/sources/make-4.0'
+make[2]: Leaving directory `/mnt/clfs/sources/make-4.0'
+make[1]: Leaving directory `/mnt/clfs/sources/make-4.0'
+
+
+Totalseconds: 8
+
+
+KB: 1488416	/mnt/clfs
+

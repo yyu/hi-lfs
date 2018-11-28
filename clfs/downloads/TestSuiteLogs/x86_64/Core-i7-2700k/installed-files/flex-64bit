@@ -1,0 +1,49 @@
+/usr/bin/flex	666859	root:root	755	
+/usr/bin/flex++	4	root:root	777	flex
+/usr/bin/lex	79	root:root	755	
+/usr/include/FlexLexer.h	6217	root:root	644	
+/usr/lib64/libfl.a	6532	root:root	644	
+/usr/lib64/libfl.la	925	root:root	755	
+/usr/lib64/libfl.so	14	root:root	777	libfl.so.2.0.0
+/usr/lib64/libfl.so.2	14	root:root	777	libfl.so.2.0.0
+/usr/lib64/libfl.so.2.0.0	8615	root:root	755	
+/usr/lib64/libfl_pic.a	6532	root:root	644	
+/usr/lib64/libfl_pic.la	953	root:root	755	
+/usr/lib64/libfl_pic.so	18	root:root	777	libfl_pic.so.2.0.0
+/usr/lib64/libfl_pic.so.2	18	root:root	777	libfl_pic.so.2.0.0
+/usr/lib64/libfl_pic.so.2.0.0	8615	root:root	755	
+/usr/share/doc/flex-2.5.39/AUTHORS	624	root:root	644	
+/usr/share/doc/flex-2.5.39/COPYING	1855	root:root	644	
+/usr/share/doc/flex-2.5.39/NEWS	15856	root:root	644	
+/usr/share/doc/flex-2.5.39/ONEWS	46318	root:root	644	
+/usr/share/doc/flex-2.5.39/README	3674	root:root	644	
+/usr/share/doc/flex-2.5.39/TODO	1539	root:root	644	
+/usr/share/doc/flex-2.5.39/flex.pdf	553361	root:root	644	
+/usr/share/info/dir	64067	root:root	644	
+/usr/share/info/flex.info	10415	root:root	644	
+/usr/share/info/flex.info-1	288420	root:root	644	
+/usr/share/info/flex.info-2	52182	root:root	644	
+/usr/share/locale/ca/LC_MESSAGES/flex.mo	22812	root:root	644	
+/usr/share/locale/da/LC_MESSAGES/flex.mo	20439	root:root	644	
+/usr/share/locale/de/LC_MESSAGES/flex.mo	22489	root:root	644	
+/usr/share/locale/en@boldquot/LC_MESSAGES/flex.mo	20846	root:root	644	
+/usr/share/locale/en@quot/LC_MESSAGES/flex.mo	20746	root:root	644	
+/usr/share/locale/eo/LC_MESSAGES/flex.mo	21307	root:root	644	
+/usr/share/locale/es/LC_MESSAGES/flex.mo	12837	root:root	644	
+/usr/share/locale/fi/LC_MESSAGES/flex.mo	22521	root:root	644	
+/usr/share/locale/fr/LC_MESSAGES/flex.mo	22862	root:root	644	
+/usr/share/locale/ga/LC_MESSAGES/flex.mo	21372	root:root	644	
+/usr/share/locale/hr/LC_MESSAGES/flex.mo	3452	root:root	644	
+/usr/share/locale/ko/LC_MESSAGES/flex.mo	10358	root:root	644	
+/usr/share/locale/nl/LC_MESSAGES/flex.mo	21936	root:root	644	
+/usr/share/locale/pl/LC_MESSAGES/flex.mo	21748	root:root	644	
+/usr/share/locale/pt_BR/LC_MESSAGES/flex.mo	22391	root:root	644	
+/usr/share/locale/ro/LC_MESSAGES/flex.mo	20688	root:root	644	
+/usr/share/locale/ru/LC_MESSAGES/flex.mo	28728	root:root	644	
+/usr/share/locale/sr/LC_MESSAGES/flex.mo	27696	root:root	644	
+/usr/share/locale/sv/LC_MESSAGES/flex.mo	20279	root:root	644	
+/usr/share/locale/tr/LC_MESSAGES/flex.mo	20716	root:root	644	
+/usr/share/locale/vi/LC_MESSAGES/flex.mo	24368	root:root	644	
+/usr/share/locale/zh_CN/LC_MESSAGES/flex.mo	3972	root:root	644	
+/usr/share/locale/zh_TW/LC_MESSAGES/flex.mo	20665	root:root	644	
+/usr/share/man/man1/flex.1	3739	root:root	644	

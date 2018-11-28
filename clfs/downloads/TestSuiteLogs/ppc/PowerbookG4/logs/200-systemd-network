@@ -1,0 +1,15 @@
+Mon Jun 30 21:31:48 CDT 2014
+
+KB: 3076864	/
+
+'/etc/resolv.conf' -> '/run/systemd/network/resolv.conf'
+useradd: group '1000' does not exist
+useradd: the GROUP= configuration in /etc/default/useradd will be ignored
+ln -s '/lib/systemd/system/systemd-timesyncd.service' '/etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service'
+
+
+Totalseconds: 1
+
+
+KB: 3076872	/
+

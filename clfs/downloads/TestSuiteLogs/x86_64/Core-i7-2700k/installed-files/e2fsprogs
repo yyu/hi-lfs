@@ -1,0 +1,49 @@
+/etc/ld.so.cache	15230	root:root	644	
+/lib/libcom_err.so.2	17	root:root	777	libcom_err.so.2.1
+/lib/libcom_err.so.2.1	30316	root:root	755	
+/lib/libe2p.so.2	13	root:root	777	libe2p.so.2.3
+/lib/libe2p.so.2.3	91216	root:root	755	
+/lib/libext2fs.so.2	16	root:root	777	libext2fs.so.2.4
+/lib/libext2fs.so.2.4	1136374	root:root	755	
+/lib/libss.so.2	12	root:root	777	libss.so.2.0
+/lib/libss.so.2.0	78452	root:root	755	
+/usr/bin/compile_et	1467	root:root	755	
+/usr/bin/mk_cmds	1304	root:root	755	
+/usr/include/com_err.h	2118	root:root	644	
+/usr/include/e2p/e2p.h	2641	root:root	644	
+/usr/include/et/com_err.h	2118	root:root	644	
+/usr/include/ext2fs/bitops.h	20524	root:root	644	
+/usr/include/ext2fs/ext2_err.h	10335	root:root	644	
+/usr/include/ext2fs/ext2_ext_attr.h	2553	root:root	644	
+/usr/include/ext2fs/ext2_fs.h	31763	root:root	644	
+/usr/include/ext2fs/ext2_io.h	4712	root:root	644	
+/usr/include/ext2fs/ext2_types.h	3009	root:root	644	
+/usr/include/ext2fs/ext2fs.h	57569	root:root	644	
+/usr/include/ext2fs/ext3_extents.h	3871	root:root	644	
+/usr/include/ext2fs/qcow2.h	2560	root:root	644	
+/usr/include/ext2fs/tdb.h	8792	root:root	644	
+/usr/include/quota/mkquota.h	2023	root:root	644	
+/usr/include/ss/ss.h	3166	root:root	644	
+/usr/include/ss/ss_err.h	1193	root:root	644	
+/usr/lib/libcom_err.a	39972	root:root	444	
+/usr/lib/libcom_err.so	20	root:root	777	/lib/libcom_err.so.2
+/usr/lib/libe2p.a	149020	root:root	444	
+/usr/lib/libe2p.so	16	root:root	777	/lib/libe2p.so.2
+/usr/lib/libext2fs.a	1727878	root:root	444	
+/usr/lib/libext2fs.so	19	root:root	777	/lib/libext2fs.so.2
+/usr/lib/libquota.a	165202	root:root	444	
+/usr/lib/libss.a	125048	root:root	444	
+/usr/lib/libss.so	15	root:root	777	/lib/libss.so.2
+/usr/lib/pkgconfig/com_err.pc	271	root:root	644	
+/usr/lib/pkgconfig/e2p.pc	249	root:root	644	
+/usr/lib/pkgconfig/ext2fs.pc	247	root:root	644	
+/usr/lib/pkgconfig/quota.pc	238	root:root	644	
+/usr/lib/pkgconfig/ss.pc	273	root:root	644	
+/usr/share/et/et_c.awk	6485	root:root	644	
+/usr/share/et/et_h.awk	4539	root:root	644	
+/usr/share/man/man1/compile_et.1	2237	root:root	644	
+/usr/share/man/man1/mk_cmds.1	1112	root:root	644	
+/usr/share/man/man3/com_err.3	2372	root:root	644	
+/usr/share/ss/ct_c.awk	1551	root:root	644	
+/usr/share/ss/ct_c.sed	2289	root:root	644	
+/var/cache/ldconfig/aux-cache	7093	root:root	600	

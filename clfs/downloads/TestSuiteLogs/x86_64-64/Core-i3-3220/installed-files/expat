@@ -1,0 +1,14 @@
+/usr/bin/xmlwf	83082	root:root	755	
+/usr/include/expat.h	41752	root:root	644	
+/usr/include/expat_external.h	3364	root:root	644	
+/usr/lib/libexpat.a	822104	root:root	644	
+/usr/lib/libexpat.la	936	root:root	755	
+/usr/lib/libexpat.so	17	root:root	777	libexpat.so.1.6.0
+/usr/lib/libexpat.so.1	17	root:root	777	libexpat.so.1.6.0
+/usr/lib/libexpat.so.1.6.0	525761	root:root	755	
+/usr/lib/pkgconfig/expat.pc	226	root:root	644	
+/usr/share/doc/expat-2.1.0/expat.png	1027	root:root	644	
+/usr/share/doc/expat-2.1.0/reference.html	94947	root:root	644	
+/usr/share/doc/expat-2.1.0/style.css	1340	root:root	644	
+/usr/share/doc/expat-2.1.0/valid-xhtml10.png	2368	root:root	644	
+/usr/share/man/man1/xmlwf.1	7895	root:root	644	

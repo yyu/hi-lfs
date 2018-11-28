@@ -1,0 +1,20 @@
+Sat Jun 28 18:19:42 UTC 2014
+
+KB: 2343724	/
+
+mode of 'test-32' changed from 0644 (rw-r--r--) to 0755 (rwxr-xr-x)
+mode of 'test-64' changed from 0644 (rw-r--r--) to 0755 (rwxr-xr-x)
+'test' -> '/usr/bin/multiarch_wrapper'
+32bit Version
+64bit Version
+removed 'multiarch_wrapper.c'
+removed 'test'
+removed 'test-32'
+removed 'test-64'
+
+
+Totalseconds: 0
+
+
+KB: 2343736	/
+

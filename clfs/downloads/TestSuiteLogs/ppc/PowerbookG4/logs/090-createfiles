@@ -1,0 +1,29 @@
+Sun Jun 29 15:11:00 CDT 2014
+
+KB: 2060024	/mnt/clfs
+
+‘/mnt/clfs/bin/bash’ -> ‘/tools/bin/bash’
+‘/mnt/clfs/bin/cat’ -> ‘/tools/bin/cat’
+‘/mnt/clfs/bin/echo’ -> ‘/tools/bin/echo’
+‘/mnt/clfs/bin/grep’ -> ‘/tools/bin/grep’
+‘/mnt/clfs/bin/login’ -> ‘/tools/bin/login’
+‘/mnt/clfs/bin/pwd’ -> ‘/tools/bin/pwd’
+‘/mnt/clfs/bin/stty’ -> ‘/tools/bin/stty’
+‘/mnt/clfs/usr/bin/file’ -> ‘/tools/bin/file’
+‘/mnt/clfs/usr/lib/libgcc_s.so’ -> ‘/tools/lib/libgcc_s.so’
+‘/mnt/clfs/usr/lib/libgcc_s.so.1’ -> ‘/tools/lib/libgcc_s.so.1’
+‘/mnt/clfs/usr/lib/libstdc++.so.6’ -> ‘/tools/lib/libstdc++.so.6’
+‘/mnt/clfs/usr/lib/libstdc++.so’ -> ‘/tools/lib/libstdc++.so’
+‘/mnt/clfs/bin/sh’ -> ‘bash’
+‘/mnt/clfs/sbin/init’ -> ‘/tools/sbin/init’
+‘/mnt/clfs/etc/login.access’ -> ‘/tools/etc/login.access’
+‘/mnt/clfs/etc/login.defs’ -> ‘/tools/etc/login.defs’
+‘/mnt/clfs/etc/limits’ -> ‘/tools/etc/limits’
+‘/mnt/clfs/etc/mtab’ -> ‘/proc/self/mounts’
+
+
+Totalseconds: 0
+
+
+KB: 2060028	/mnt/clfs
+

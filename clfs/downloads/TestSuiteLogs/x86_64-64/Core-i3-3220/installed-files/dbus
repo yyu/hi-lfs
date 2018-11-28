@@ -1,0 +1,43 @@
+/etc/dbus-1/session.conf	2771	root:root	644	
+/etc/dbus-1/system.conf	2995	root:root	644	
+/lib/libdbus-1.so.3	18	root:root	777	libdbus-1.so.3.8.6
+/lib/libdbus-1.so.3.8.6	1202432	root:root	755	
+/lib/systemd/system/dbus.service	366	root:root	644	
+/lib/systemd/system/dbus.socket	106	root:root	644	
+/lib/systemd/system/dbus.target.wants/dbus.socket	14	root:root	777	../dbus.socket
+/lib/systemd/system/multi-user.target.wants/dbus.service	15	root:root	777	../dbus.service
+/lib/systemd/system/sockets.target.wants/dbus.socket	14	root:root	777	../dbus.socket
+/usr/bin/dbus-cleanup-sockets	30563	root:root	755	
+/usr/bin/dbus-daemon	1865334	root:root	755	
+/usr/bin/dbus-launch	57200	root:root	755	
+/usr/bin/dbus-monitor	49620	root:root	755	
+/usr/bin/dbus-run-session	29405	root:root	755	
+/usr/bin/dbus-send	61879	root:root	755	
+/usr/bin/dbus-uuidgen	20063	root:root	755	
+/usr/include/dbus-1.0/dbus/dbus-address.h	2135	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus-bus.h	3472	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus-connection.h	26029	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus-errors.h	2886	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus-macros.h	5175	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus-memory.h	1975	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus-message.h	13018	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus-misc.h	1744	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus-pending-call.h	3124	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus-protocol.h	23182	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus-server.h	4794	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus-shared.h	5135	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus-signature.h	3049	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus-syntax.h	2359	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus-threads.h	8507	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus-types.h	4145	root:root	644	
+/usr/include/dbus-1.0/dbus/dbus.h	3955	root:root	644	
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper	1294829	root:messagebus	4750	
+/usr/lib/dbus-1.0/include/dbus/dbus-arch-deps.h	2046	root:root	644	
+/usr/lib/libdbus-1.a	2265702	root:root	644	
+/usr/lib/libdbus-1.la	953	root:root	755	
+/usr/lib/libdbus-1.so	28	root:root	777	../../lib/libdbus-1.so.3.8.6
+/usr/lib/pkgconfig/dbus-1.pc	529	root:root	644	
+/usr/share/doc/dbus-1.8.6/diagram.png	78762	root:root	644	
+/usr/share/doc/dbus-1.8.6/diagram.svg	33892	root:root	644	
+/usr/share/doc/dbus-1.8.6/system-activation.txt	3145	root:root	644	
+/var/lib/dbus/machine-id	15	root:root	777	/etc/machine-id
