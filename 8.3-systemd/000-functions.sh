@@ -3418,7 +3418,7 @@ _lfs_basic_system_install_libtool() {
     To do this, append TESTSUITEFLAGS=-j<N> to the line below.
     For instance, using -j4 can reduce the test time by over 60 percent.
     '
-    make check TESTSUITEFLAGS=-j4
+    make check TESTSUITEFLAGS=-j64
     ________________________________________NOTE________________________________________ '
     Five tests are known to fail in the LFS build environment due to a circular dependency,
     but all tests pass if rechecked after automake is installed.
@@ -3720,7 +3720,7 @@ _lfs_basic_system_install_autoconf() {
     For full test coverage, Autoconf can be re-tested after Automake has been installed.
     In addition, two tests fail due to changes in libtool-2.4.3 and later.
     '
-    make check TESTSUITEFLAGS=-j4
+    make check TESTSUITEFLAGS=-j64
     ________________________________________NOTE________________________________________ '
     several tests are skipped that use Automake.
     For full test coverage, Autoconf can be re-tested after Automake has been installed.' '
@@ -3754,7 +3754,7 @@ _lfs_basic_system_install_automake() {
     ________________________________________________________________________________ '
     # make check
     '
-    make -j4 check
+    make -j64 check
     ________________________________________________________________________________ '
     # make install
     '
@@ -5872,7 +5872,7 @@ _lfs_make_lfs_bootable_create_etc_fstab() {
 EOF
 }
 
-_lfs_kernel_build() {
+_lfs_kernel_build_config() {
     ________________________________________________________________________________ '
     8.3. Linux-4.18.5 (4.4-66 (typically~6) SBU; 960-4250 (typically~1100) MB)
 
@@ -5947,6 +5947,24 @@ _lfs_kernel_build() {
        [*]   EFI stub support  [CONFIG_EFI_STUB]
     '
     make menuconfig
+}
+
+_lfs_kernel_build_config_check() {
+    ________________________________________________________________________________ "
+    grep --color -E '(CONFIG_SYSFS_DEPRECATED|CONFIG_SYSFS_DEPRECATED_V2|CONFIG_AUDIT|CONFIG_UEVENT_HELPER|CONFIG_FW_LOADER_USER_HELPER)\>' .config
+    these should be disabled:"
+    grep --color -E '(CONFIG_SYSFS_DEPRECATED|CONFIG_SYSFS_DEPRECATED_V2|CONFIG_AUDIT|CONFIG_UEVENT_HELPER|CONFIG_FW_LOADER_USER_HELPER)\>' .config
+    ________________________________________________________________________________ "
+    grep --color -E '(CONFIG_SYSFS_DEPRECATED|CONFIG_SYSFS_DEPRECATED_V2|CONFIG_AUDIT|CONFIG_UEVENT_HELPER|CONFIG_FW_LOADER_USER_HELPER)' .config
+    disabled:"
+    grep --color -E '(CONFIG_SYSFS_DEPRECATED|CONFIG_SYSFS_DEPRECATED_V2|CONFIG_AUDIT|CONFIG_UEVENT_HELPER|CONFIG_FW_LOADER_USER_HELPER)' .config
+    ________________________________________________________________________________ "
+    grep --color -E '(CONFIG_FHANDLE|CONFIG_CGROUPS|CONFIG_SECCOMP|CONFIG_IPV6|CONFIG_DEVTMPFS|CONFIG_DMIID|CONFIG_INOTIFY_USER|CONFIG_AUTOFS4_FS|CONFIG_TMPFS_POSIX_ACL|CONFIG_TMPFS_XATTR|CONFIG_UNWINDER_FRAME_POINTER)\>' .config
+    these should be enabled:"
+    grep --color -E '(CONFIG_FHANDLE|CONFIG_CGROUPS|CONFIG_SECCOMP|CONFIG_IPV6|CONFIG_DEVTMPFS|CONFIG_DMIID|CONFIG_INOTIFY_USER|CONFIG_AUTOFS4_FS|CONFIG_TMPFS_POSIX_ACL|CONFIG_TMPFS_XATTR|CONFIG_UNWINDER_FRAME_POINTER)\>' .config
+}
+
+_lfs_kernel_build() {
     make
     make modules_install
 }
