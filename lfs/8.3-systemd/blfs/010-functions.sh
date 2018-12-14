@@ -600,3 +600,49 @@ _blfs_install_cracklib() {
 
     pause_and_run make test
 }
+
+_blfs_install_cryptsetup() {
+    # skipped
+    # http://www.linuxfromscratch.org/blfs/view/stable-systemd/postlfs/cryptsetup.html
+    echo
+}
+
+_blfs_install_json_c() {
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run wget https://s3.amazonaws.com/json-c_releases/releases/json-c-0.13.1.tar.gz
+    pause_and_run tar xf json-c-0.13.1.tar.gz
+    pause_and_run cd json-c-0.13.1
+    pause_and_run ./configure --prefix=/usr --disable-static
+    pause_and_run make
+    pause_and_run make install
+    popd
+}
+
+_blfs_extract_filename() {
+    echo $1 | sed -e 's/.*\///g'
+}
+
+_blfs_folder_name() {
+    echo $tarball | sed -e 's/\.tar\.[gxb]z2\?//g'
+}
+
+_blfs_download_extract_and_enter() {
+    download_url=$1
+    tarball=$(_blfs_extract_filename $download_url)
+    folder=$(_blfs_folder_name $tarball)
+
+    pause_and_run wget $download_url
+    pause_and_run tar xf $tarball
+    pause_and_run cd $folder
+}
+
+_blfs_install_popt() {
+    download_url=ftp://anduin.linuxfromscratch.org/BLFS/popt/popt-1.16.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $download_url
+    pause_and_run ./configure --prefix=/usr --disable-static
+    pause_and_run make
+    pause_and_run make install
+    pause_and_run popd
+}
