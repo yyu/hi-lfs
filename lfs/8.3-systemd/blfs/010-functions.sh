@@ -46,7 +46,8 @@
 #                          [v] Cable Connected
 #---------------------------------------------------------------------------------------------------
 
-#export LFS_LOG=/home/ubuntu/lfs.log
+export LFS_LOG=/var/log/lfs.log
+export BLFS_LOG=/var/log/blfs.log
 
 ################################################################################
 
@@ -108,6 +109,10 @@ pause_and_run() {
     echo -e "\033[1;42m"$@"\033[0m"
     read
     $@
+}
+
+_log_() {
+    $@ 2>&1 | tee -a $BLFS_LOG
 }
 
 ################################################################################
@@ -643,6 +648,60 @@ _blfs_install_popt() {
     pause_and_run _blfs_download_extract_and_enter $download_url
     pause_and_run ./configure --prefix=/usr --disable-static
     pause_and_run make
+
+    # skipped:
+    # doxygen
+
+    # skipped:
+    # make check
+
     pause_and_run make install
+
+    # skipped:
+    # install -v -m755 -d /usr/share/doc/popt-1.16 &&
+    # install -v -m644 doxygen/html/* /usr/share/doc/popt-1.16
+
     pause_and_run popd
+}
+
+_blfs_install_libuv_() {
+    url=https://dist.libuv.org/dist/v1.22.0/libuv-v1.22.0.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run sh autogen.sh
+    pause_and_run ./configure --prefix=/usr --disable-static
+    pause_and_run make
+    pause_and_run make check
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_libuv() {
+    _log_ _blfs_install_libuv_
+}
+
+_blfs_install_cmake_() {
+    url=https://cmake.org/files/v3.12/cmake-3.12.1.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run sed -i '/"lib64"/s/64//' Modules/GNUInstallDirs.cmake
+    pause_and_run ./bootstrap --prefix=/usr        \
+                              --system-libs        \
+                              --mandir=/share/man  \
+                              --no-system-jsoncpp  \
+                              --no-system-librhash \
+                              --docdir=/share/doc/cmake-3.12.1
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_cmake() {
+    _log_ _blfs_install_cmake_
 }
