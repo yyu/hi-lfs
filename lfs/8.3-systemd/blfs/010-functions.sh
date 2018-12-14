@@ -908,6 +908,60 @@ _blfs_install_doxygen_() {
     pause_and_run popd
 }
 
+_blfs_install_berkeleydb_() {
+    url=http://anduin.linuxfromscratch.org/BLFS/bdb/db-5.3.28.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run sed -i 's/\(__atomic_compare_exchange\)/\1_db/' src/dbinc/atomic.h
+    pause_and_run cd build_unix
+    pause_and_run ../dist/configure --prefix=/usr      \
+                                    --enable-compat185 \
+                                    --enable-dbm       \
+                                    --disable-static   \
+                                    --enable-cxx
+    pause_and_run make
+    pause_and_run make docdir=/usr/share/doc/db-5.3.28 install
+    pause_and_run chown -v -R root:root                        \
+                        /usr/bin/db_*                          \
+                        /usr/include/db{,_185,_cxx}.h          \
+                        /usr/lib/libdb*.{so,la}                \
+                        /usr/share/doc/db-5.3.28
+
+    pause_and_run popd
+}
+
+_blfs_install_cyrus_sasl_() {
+    url=https://www.cyrusimap.org/releases/cyrus-sasl-2.1.26.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+
+    pause_and_run wget http://www.linuxfromscratch.org/patches/blfs/8.3/cyrus-sasl-2.1.26-fixes-3.patch
+    pause_and_run wget http://www.linuxfromscratch.org/patches/blfs/8.3/cyrus-sasl-2.1.26-openssl-1.1.0-1.patch
+
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run patch -Np1 -i ../cyrus-sasl-2.1.26-fixes-3.patch
+    pause_and_run patch -Np1 -i ../cyrus-sasl-2.1.26-openssl-1.1.0-1.patch
+    pause_and_run autoreconf -fi
+
+    pause_and_run ./configure --prefix=/usr        \
+                              --sysconfdir=/etc    \
+                              --enable-auth-sasldb \
+                              --with-dbpath=/var/lib/sasl/sasldb2 \
+                              --with-saslauthd=/var/run/saslauthd
+    pause_and_run make -j1
+
+    pause_and_run make install
+    pause_and_run install -v -dm755 /usr/share/doc/cyrus-sasl-2.1.26
+    pause_and_run install -v -m644  doc/{*.{html,txt,fig},ONEWS,TODO} \
+                          saslauthd/LDAP_SASLAUTHD /usr/share/doc/cyrus-sasl-2.1.26
+    pause_and_run install -v -dm700 /var/lib/sasl
+
+    pause_and_run popd
+}
+
 _blfs_install___() {
     url=
 
@@ -967,4 +1021,12 @@ _blfs_install_libxml() {
 
 _blfs_install_doxygen() {
     _log_ _blfs_install_doxygen_
+}
+
+_blfs_install_berkeleydb() {
+    _log_ _blfs_install_berkeleydb_
+}
+
+_blfs_install_cyrus_sasl() {
+    _log_ _blfs_install_cyrus_sasl_
 }
