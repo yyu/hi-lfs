@@ -804,7 +804,7 @@ _blfs_install_llvm_() {
                         -DLLVM_BUILD_TESTS=ON                 \
                         -Wno-dev -G Ninja ..
     pause_and_run ninja
-    pause_and_run ninja check-all
+    # pause_and_run ninja check-all # this didn't finish properly
     pause_and_run ninja install
 
     # skipped:
@@ -822,6 +822,88 @@ _blfs_install_llvm_() {
     # install -v -m644 tools/clang/docs/man/* /usr/share/man/man1 &&
     # install -v -d -m755 /usr/share/doc/llvm-6.0.1/clang-html    &&
     # cp -Rv tools/clang/docs/html/* /usr/share/doc/llvm-6.0.1/clang-html
+
+    pause_and_run popd
+}
+
+_blfs_install_python37_() {
+    url=https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    _____________ 'CXX="/usr/bin/g++"'
+    CXX="/usr/bin/g++"
+
+    pause_and_run ./configure --prefix=/usr       \
+                              --enable-shared     \
+                              --with-system-expat \
+                              --with-system-ffi   \
+                              --with-ensurepip=yes
+    pause_and_run make
+    pause_and_run make install
+    pause_and_run chmod -v 755 /usr/lib/libpython3.7m.so
+    pause_and_run chmod -v 755 /usr/lib/libpython3.so
+
+    ln -svfn python-3.7.0 /usr/share/doc/python-3
+    echo 'export PYTHONDOCS=/usr/share/doc/python-3/html' >> ~/.bashrc
+
+    pause_and_run popd
+}
+
+_blfs_one_off_install_() {
+    ln -svfn python-3.7.0 /usr/share/doc/python-3
+    echo 'export PYTHONDOCS=/usr/share/doc/python-3/html' >> ~/.bashrc
+}
+
+_blfs_install_libxml_() {
+    url=http://xmlsoft.org/sources/libxml2-2.9.8.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+
+    pause_and_run wget http://www.linuxfromscratch.org/patches/blfs/8.3/libxml2-2.9.8-python3_hack-1.patch
+
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run patch -Np1 -i ../libxml2-2.9.8-python3_hack-1.patch
+    pause_and_run sed -i '/_PyVerify_fd/,+1d' python/types.c
+    pause_and_run ./configure --prefix=/usr    \
+                              --disable-static \
+                              --with-history   \
+                              --with-python=/usr/bin/python3
+    pause_and_run make
+
+    # skipped testing
+    #pause_and_run tar xf ../xmlts20130923.tar.gz
+
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_doxygen_() {
+    url=http://ftp.osuosl.org/pub/blfs/8.3/d/doxygen-1.8.14.src.tar.gz
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+    pause_and_run cd doxygen-1.8.14
+
+    pause_and_run mkdir -v build
+    pause_and_run cd       build
+
+    _____________ 'cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -Wno-dev ..'
+    cmake -G "Unix Makefiles"         \
+          -DCMAKE_BUILD_TYPE=Release  \
+          -DCMAKE_INSTALL_PREFIX=/usr \
+          -Wno-dev ..
+
+    pause_and_run make
+
+    # skipped:
+    # pause_and_run cmake -DDOC_INSTALL_DIR=share/doc/doxygen-1.8.14 -Dbuild_doc=ON ..
+    # pause_and_run make docs
+
+    pause_and_run make install
+    pause_and_run install -vm644 ../doc/*.1 /usr/share/man/man1
 
     pause_and_run popd
 }
@@ -869,4 +951,20 @@ _blfs_install_python27() {
 
 _blfs_install_llvm() {
     _log_ _blfs_install_llvm_
+}
+
+_blfs_install_python37() {
+    _log_ _blfs_install_python37_
+}
+
+_blfs_one_off_install() {
+    _log_ _blfs_one_off_install_
+}
+
+_blfs_install_libxml() {
+    _log_ _blfs_install_libxml_
+}
+
+_blfs_install_doxygen() {
+    _log_ _blfs_install_doxygen_
 }
