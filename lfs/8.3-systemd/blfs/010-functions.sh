@@ -95,12 +95,37 @@ ________________________________________IMPORTANT_______________________________
     ________________________________________HIGHLIGHT________________________________________ 31 Important "$1" "$2"
 }
 
+################################################################################
+
+_____________() {
+    echo -e "\033[1;46m"$@"\033[0m"
+}
+
+pause_and_run() {
+    echo -e "\033[1;42m"$@"\033[0m"
+    read
+    $@
+}
+
+################################################################################
+
+_blfs_refresh_the_functions() {
+    functionsfile=010-functions.sh
+
+    cd /sources/downloads
+    rm -v $functionsfile
+    wget 192.168.10.144:8000/$functionsfile  # because python3 -m http.server
+    . $functionsfile
+    cd -
+}
+
 _blfs_console_fonts() {
     tar xf terminus-font-4.46.tar.gz
     cd terminus-font-4.46
     make psf
     install -v -m644 ter-v14n.psf /usr/share/consolefonts
     echo -e "done \033[32minstall -v -m644 ter-v14n.psf /usr/share/consolefonts\033[0m"
+    echo -e "now you can do \033[36msetfont /usr/share/consolefonts/ter-v14n.psf\033[0m"
 }
 
 _blfs_install_make-ca() {
@@ -126,4 +151,55 @@ _blfs_install_wget() {
         make
         make install        
     fi
+}
+
+_blfs_install_pciutils() {
+    cd /sources/downloads/blfs
+    wget https://www.kernel.org/pub/software/utils/pciutils/pciutils-3.6.2.tar.xz
+    tar xf pciutils-3.6.2.tar.xz
+    cd pciutils-3.6.2
+
+    make PREFIX=/usr                \
+         SHAREDIR=/usr/share/hwdata \
+         SHARED=yes
+
+    make PREFIX=/usr                \
+         SHAREDIR=/usr/share/hwdata \
+         SHARED=yes                 \
+         install install-lib
+
+    chmod -v 755 /usr/lib/libpci.so
+
+    cat > /lib/systemd/system/update-pciids.service << "EOF"
+[Unit]
+Description=Update pci.ids file
+Documentation=man:update-pciids(8)
+DefaultDependencies=no
+After=local-fs.target
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/sbin/update-pciids
+EOF
+
+    cat > /lib/systemd/system/update-pciids.timer << "EOF"
+[Unit]
+Description=Update pci.ids file weekly
+
+[Timer]
+OnCalendar=Sun 02:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+EOF
+
+    systemctl enable update-pciids.timer    
+}
+
+_blfs_test() {
+    _____________ "a bc"
+    pause_and_run echo ab c
 }
