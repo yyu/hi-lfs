@@ -679,10 +679,6 @@ _blfs_install_libuv_() {
     pause_and_run popd
 }
 
-_blfs_install_libuv() {
-    _log_ _blfs_install_libuv_
-}
-
 _blfs_install_cmake_() {
     url=https://cmake.org/files/v3.12/cmake-3.12.1.tar.gz
 
@@ -702,6 +698,175 @@ _blfs_install_cmake_() {
     pause_and_run popd
 }
 
+_blfs_install_libarchive_() {
+    url=http://www.libarchive.org/downloads/libarchive-3.3.2.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr --disable-static
+    pause_and_run make
+    pause_and_run make check
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_valgrind_() {
+    url=https://sourceware.org/ftp/valgrind/valgrind-3.13.0.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run sed -i '1904s/4/5/' coregrind/m_syswrap/syswrap-linux.c
+
+    pause_and_run sed -i 's|/doc/valgrind||' docs/Makefile.in
+
+    pause_and_run ./configure --prefix=/usr \
+                              --datadir=/usr/share/doc/valgrind-3.13.0
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_which_() {
+    url=https://ftp.gnu.org/gnu/which/which-2.21.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_python27_() {
+    url=https://www.python.org/ftp/python/2.7.15/Python-2.7.15.tar.xz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr       \
+                              --enable-shared     \
+                              --with-system-expat \
+                              --with-system-ffi   \
+                              --with-ensurepip=yes \
+                              --enable-unicode=ucs4
+    pause_and_run make
+    pause_and_run make install
+    pause_and_run chmod -v 755 /usr/lib/libpython2.7.so.1.0
+
+    # skipped:
+    # pause_and_run install -v -dm755 /usr/share/doc/python-2.7.15
+    # pause_and_run tar --strip-components=1                     \
+    #                   --no-same-owner                          \
+    #                   --directory /usr/share/doc/python-2.7.15 \
+    #                   -xvf ../python-2.7.15-docs-html.tar.bz2
+    #
+    # pause_and_run find /usr/share/doc/python-2.7.15 -type d -exec chmod 0755 {} \;
+    # pause_and_run find /usr/share/doc/python-2.7.15 -type f -exec chmod 0644 {} \;
+
+    # pause_and_run echo 'export PYTHONDOCS=/usr/share/doc/python-2.7.15' >> ~/.bashrc
+
+    pause_and_run popd
+}
+
+_blfs_install_llvm_() {
+    pause_and_run wget http://llvm.org/releases/6.0.1/cfe-6.0.1.src.tar.xz
+    pause_and_run wget http://llvm.org/releases/6.0.1/compiler-rt-6.0.1.src.tar.xz
+
+    url=http://llvm.org/releases/6.0.1/llvm-6.0.1.src.tar.xz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run tar -xf ../cfe-6.0.1.src.tar.xz -C tools
+    pause_and_run tar -xf ../compiler-rt-6.0.1.src.tar.xz -C projects
+
+    pause_and_run mv tools/cfe-6.0.1.src tools/clang
+    pause_and_run mv projects/compiler-rt-6.0.1.src projects/compiler-rt
+
+    pause_and_run mkdir -v build
+    pause_and_run cd       build
+
+    _____________ 'CC=gcc CXX=g++'
+    CC=gcc
+    CXX=g++
+    pause_and_run cmake -DCMAKE_INSTALL_PREFIX=/usr           \
+                        -DLLVM_ENABLE_FFI=ON                  \
+                        -DCMAKE_BUILD_TYPE=Release            \
+                        -DLLVM_BUILD_LLVM_DYLIB=ON            \
+                        -DLLVM_LINK_LLVM_DYLIB=ON             \
+                        -DLLVM_TARGETS_TO_BUILD="host;AMDGPU" \
+                        -DLLVM_BUILD_TESTS=ON                 \
+                        -Wno-dev -G Ninja ..
+    pause_and_run ninja
+    pause_and_run ninja check-all
+    pause_and_run ninja install
+
+    # skipped:
+    # rm -rf ./*
+    # cmake -DLLVM_ENABLE_SPHINX=ON         \
+    #       -DSPHINX_WARNINGS_AS_ERRORS=OFF \
+    #       -Wno-dev ..                     &&
+    # make docs-llvm-html  docs-llvm-man
+    # make docs-clang-html docs-clang-man
+    #
+    # install -v -m644 docs/man/* /usr/share/man/man1             &&
+    # install -v -d -m755 /usr/share/doc/llvm-6.0.1/llvm-html     &&
+    # cp -Rv docs/html/* /usr/share/doc/llvm-6.0.1/llvm-html
+    # 
+    # install -v -m644 tools/clang/docs/man/* /usr/share/man/man1 &&
+    # install -v -d -m755 /usr/share/doc/llvm-6.0.1/clang-html    &&
+    # cp -Rv tools/clang/docs/html/* /usr/share/doc/llvm-6.0.1/clang-html
+
+    pause_and_run popd
+}
+
+_blfs_install___() {
+    url=
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run 
+    pause_and_run 
+    pause_and_run ./configure --prefix=/usr
+    pause_and_run make
+    pause_and_run make install
+    pause_and_run 
+    pause_and_run 
+
+    pause_and_run popd
+}
+
+_blfs_install_libuv() {
+    _log_ _blfs_install_libuv_
+}
+
 _blfs_install_cmake() {
     _log_ _blfs_install_cmake_
+}
+
+_blfs_install_libarchive() {
+    _log_ _blfs_install_libarchive_
+}
+
+_blfs_install_valgrind() {
+    _log_ _blfs_install_valgrind_
+}
+
+_blfs_install_which() {
+    _log_ _blfs_install_which_
+}
+
+_blfs_install_python27() {
+    _log_ _blfs_install_python27_
+}
+
+_blfs_install_llvm() {
+    _log_ _blfs_install_llvm_
 }
