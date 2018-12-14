@@ -50,7 +50,7 @@
 
 ################################################################################
 
-_lfs_sleep() {
+_blfs_sleep() {
     sleep 3
 }
 
@@ -58,7 +58,7 @@ ________________________________________________________________________________
     echo -e "\033[1;3;32m"'________________________________________________________________________________' | tee -a $LFS_LOG
     echo -e "$1" | tee -a $LFS_LOG
     echo -e '................................................................................'"\033[0m" | tee -a $LFS_LOG
-    _lfs_sleep
+    _blfs_sleep
 }
 
 ________________________________________there_should_have________________________________________() {
@@ -67,7 +67,7 @@ ________________________________________there_should_have_______________________
     echo -e "\033[0;3;35m$3" | tee -a $LFS_LOG
     echo -e "\033[0;1;35m$4" | tee -a $LFS_LOG
     echo -e "\033[0m" | tee -a $LFS_LOG
-    _lfs_sleep
+    _blfs_sleep
 }
 
 ________________________________________TEXT________________________________________() {
@@ -84,7 +84,7 @@ ________________________________________HIGHLIGHT_______________________________
     shift 3
     echo -e "\033[0;1;${color}m$@" | tee -a $LFS_LOG
     echo -e "\033[0m" | tee -a $LFS_LOG
-    _lfs_sleep
+    _blfs_sleep
 }
 
 ________________________________________NOTE________________________________________() {
@@ -95,3 +95,35 @@ ________________________________________IMPORTANT_______________________________
     ________________________________________HIGHLIGHT________________________________________ 31 Important "$1" "$2"
 }
 
+_blfs_console_fonts() {
+    tar xf terminus-font-4.46.tar.gz
+    cd terminus-font-4.46
+    make psf
+    install -v -m644 ter-v14n.psf /usr/share/consolefonts
+    echo -e "done \033[32minstall -v -m644 ter-v14n.psf /usr/share/consolefonts\033[0m"
+}
+
+_blfs_install_make-ca() {
+    # http://www.linuxfromscratch.org/blfs/view/stable-systemd/postlfs/make-ca.html
+    # http://www.cacert.org/certs/root.crt
+    # http://www.cacert.org/certs/class3.crt
+    install -vdm755 /etc/ssl/local
+    openssl x509 -in root.crt -text -fingerprint -setalias "CAcert Class 1 root" \
+            -addtrust serverAuth -addtrust emailProtection -addtrust codeSigning \
+            > /etc/ssl/local/CAcert_Class_1_root.pem
+    openssl x509 -in class3.crt -text -fingerprint -setalias "CAcert Class 3 root" \
+            -addtrust serverAuth -addtrust emailProtection -addtrust codeSigning \
+            > /etc/ssl/local/CAcert_Class_3_root.pem
+    make install
+    /usr/sbin/make-ca -g
+}
+
+_blfs_install_wget() {
+    echo -e "\033[35mhas \033[0;31mmake-ca \033[0;35mbeen installed? (y/n) "
+    read ans
+    if [ x"$ans" == xy ]; then
+        ./configure --prefix=/usr --sysconfdir=/etc --with-ssl=openssl
+        make
+        make install        
+    fi
+}
