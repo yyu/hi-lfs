@@ -851,11 +851,6 @@ _blfs_install_python37_() {
     pause_and_run popd
 }
 
-_blfs_one_off_install_() {
-    ln -svfn python-3.7.0 /usr/share/doc/python-3
-    echo 'export PYTHONDOCS=/usr/share/doc/python-3/html' >> ~/.bashrc
-}
-
 _blfs_install_libxml_() {
     url=http://xmlsoft.org/sources/libxml2-2.9.8.tar.gz
 
@@ -1328,8 +1323,6 @@ _blfs_install_gnutls_() {
                               --with-default-trust-store-pkcs11="pkcs11:"
     pause_and_run make
     pause_and_run make install
-    pause_and_run 
-    pause_and_run 
 
     pause_and_run popd
 }
@@ -1347,6 +1340,202 @@ _blfs_install_gpgme_() {
     pause_and_run popd
 }
 
+_blfs_install_haveged_() {
+    url=https://downloads.sourceforge.net/haveged/haveged-1.9.2.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr
+    pause_and_run make
+    pause_and_run make install
+    pause_and_run mkdir -pv    /usr/share/doc/haveged-1.9.2
+    pause_and_run cp -v README /usr/share/doc/haveged-1.9.2
+
+    pause_and_run popd
+}
+
+_blfs_install_systemd_units_() {
+    url=http://ftp.osuosl.org/pub/blfs/8.3/b/blfs-systemd-units-20180105.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pwd
+
+    _____________ 'make install-<systemd-unit>'
+
+    # pause_and_run make install-haveged
+    pause_and_run make install-iptables
+
+    pause_and_run popd
+}
+
+_blfs_install_iptables_() {
+    url=http://www.netfilter.org/projects/iptables/files/iptables-1.8.0.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run sed -i -e '/libebt_/s/^/#/' \
+                         -e '/libarpt_/s/^/#/' extensions/GNUmakefile.in
+    pause_and_run ./configure --prefix=/usr      \
+                              --sbindir=/sbin    \
+                              --disable-nftables \
+                              --enable-libipq    \
+                              --with-xtlibdir=/lib/xtables
+    pause_and_run make
+    pause_and_run make install
+    pause_and_run ln -sfv ../../sbin/xtables-legacy-multi /usr/bin/iptables-xml
+
+    for file in ip4tc ip6tc ipq iptc xtables
+    do
+      pause_and_run mv -v /usr/lib/lib${file}.so.* /lib
+      pause_and_run ln -sfv ../../lib/$(readlink /usr/lib/lib${file}.so) /usr/lib/lib${file}.so
+    done
+
+    pause_and_run cd ../blfs-systemd-units-20180105
+    pause_and_run make install-iptables
+
+    pause_and_run popd
+}
+
+_blfs_setup_network_firewall() {
+    _____________ ''
+    _____________ 'skipped'
+    _____________ ''
+    _____________ 'http://www.linuxfromscratch.org/blfs/view/stable-systemd/postlfs/firewall.html'
+    _____________ ''
+}
+
+_blfs_install_linux_pam_() {
+    url=http://linux-pam.org/library/Linux-PAM-1.3.0.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+
+    pause_and_run wget http://linux-pam.org/documentation/Linux-PAM-1.2.0-docs.tar.bz2
+
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run tar -xf ../Linux-PAM-1.2.0-docs.tar.bz2 --strip-components=1
+
+    pause_and_run ./configure --prefix=/usr                    \
+                              --sysconfdir=/etc                \
+                              --libdir=/usr/lib                \
+                              --disable-regenerate-docu        \
+                              --enable-securedir=/lib/security \
+                              --docdir=/usr/share/doc/Linux-PAM-1.3.0
+    pause_and_run make
+
+    install -v -m755 -d /etc/pam.d
+
+    cat > /etc/pam.d/other << "EOF"
+auth     required       pam_deny.so
+account  required       pam_deny.so
+password required       pam_deny.so
+session  required       pam_deny.so
+EOF
+
+    pause_and_run make check
+
+    ________________________________________IMPORTANT________________________________________ "
+    Ensure there are no errors produced by the tests
+    before continuing the installation.
+
+    \033[1m$BLFS_LOG
+    "
+
+    _____________ 'run _blfs_install_linux_pam_continued once done'
+}
+
+_blfs_install_linux_pam_continued_() {
+    pause_and_run pushd /sources/downloads/blfs/Linux-PAM-1.3.0
+
+#    #pause_and_run rm -fv /etc/pam.d/*
+#    pause_and_run mv -v /etc/pam.d/* /tmp/
+#
+#    pause_and_run make install
+#    pause_and_run chmod -v 4755 /sbin/unix_chkpwd
+#
+#    for file in pam pam_misc pamc
+#    do
+#      pause_and_run mv -v /usr/lib/lib${file}.so.* /lib
+#      pause_and_run ln -sfv ../../lib/$(readlink /usr/lib/lib${file}.so) /usr/lib/lib${file}.so
+#    done
+
+    pause_and_run install -vdm755 /etc/pam.d
+    _____________ '/etc/pam.d/system-account'
+    cat > /etc/pam.d/system-account << "EOF"
+# Begin /etc/pam.d/system-account
+
+account   required    pam_unix.so
+
+# End /etc/pam.d/system-account
+EOF
+
+    _____________ '/etc/pam.d/system-auth'
+    cat > /etc/pam.d/system-auth << "EOF"
+# Begin /etc/pam.d/system-auth
+
+auth      required    pam_unix.so
+
+# End /etc/pam.d/system-auth
+EOF
+
+    _____________ '/etc/pam.d/system-session'
+    cat > /etc/pam.d/system-session << "EOF"
+# Begin /etc/pam.d/system-session
+
+session   required    pam_unix.so
+
+# End /etc/pam.d/system-session
+EOF
+
+    _____________ '/etc/pam.d/system-password'
+    cat > /etc/pam.d/system-password << "EOF"
+# Begin /etc/pam.d/system-password
+
+# check new passwords for strength (man pam_cracklib)
+password  required    pam_cracklib.so   type=Linux retry=3 difok=5 \
+                                        difignore=23 minlen=9 dcredit=1 \
+                                        ucredit=1 lcredit=1 ocredit=1 \
+                                        dictpath=/lib/cracklib/pw_dict
+# use sha512 hash for encryption, use shadow, and use the
+# authentication token (chosen password) set by pam_cracklib
+# above (or any previous modules)
+password  required    pam_unix.so       sha512 shadow use_authtok
+
+# End /etc/pam.d/system-password
+EOF
+
+    _____________ '/etc/pam.d/other'
+    cat > /etc/pam.d/other << "EOF"
+# Begin /etc/pam.d/other
+
+auth        required        pam_warn.so
+auth        required        pam_deny.so
+account     required        pam_warn.so
+account     required        pam_deny.so
+password    required        pam_warn.so
+password    required        pam_deny.so
+session     required        pam_warn.so
+session     required        pam_deny.so
+
+# End /etc/pam.d/other
+EOF
+
+    pause_and_run popd
+
+    ________________________________________NOTE________________________________________ '
+    The PAM man page (man pam) provides a good starting point for descriptions
+    of fields and allowable entries. The Linux-PAM System Administrators Guide
+    http://www.linux-pam.org/Linux-PAM-html/Linux-PAM_SAG.html
+    is recommended for additional information.
+
+    see http://www.linuxfromscratch.org/blfs/view/stable-systemd/postlfs/linux-pam.html
+    '
+}
+
 _blfs_install___() {
     url=
 
@@ -1362,6 +1551,10 @@ _blfs_install___() {
     pause_and_run 
 
     pause_and_run popd
+}
+
+_blfs_one_off_install_() {
+    echo
 }
 
 _blfs_install_libuv() {
@@ -1502,4 +1695,24 @@ _blfs_install_gnutls() {
 
 _blfs_install_gpgme() {
     _log_ _blfs_install_gpgme_
+}
+
+_blfs_install_haveged() {
+    _log_ _blfs_install_haveged_
+}
+
+_blfs_install_systemd_units() {
+    _log_ _blfs_install_systemd_units_
+}
+
+_blfs_install_iptables() {
+    _log_ _blfs_install_iptables_
+}
+
+_blfs_install_linux_pam() {
+    _log_ _blfs_install_linux_pam_
+}
+
+_blfs_install_linux_pam_continued() {
+    _log_ _blfs_install_linux_pam_continued_
 }
