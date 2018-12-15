@@ -962,7 +962,7 @@ _blfs_install_cyrus_sasl_() {
     pause_and_run popd
 }
 
-_blfs_kernel_build_config_() {
+_blfs_kernel_build_config_for_lvm2_() {
     pause_and_run pushd /sources/downloads/blfs
     pause_and_run cd linux-4.18.5
     pause_and_run make mrproper
@@ -1097,6 +1097,142 @@ _blfs_install_libgcrypt_() {
     pause_and_run popd
 }
 
+_blfs_install_cryptsetup_() {
+    url=https://www.kernel.org/pub/linux/utils/cryptsetup/v2.0/cryptsetup-2.0.4.tar.xz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr \
+                              --with-crypto_backend=openssl
+    pause_and_run make
+
+    # skipped
+    # pause_and_run make check
+
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_kernel_build_config_() {
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run cd linux-4.18.5
+    pause_and_run make mrproper
+    pause_and_run cp -v /boot/config-4.18.5 .config
+    _____________ 'now do\033[0m \033[0;1;35mmake menuconfig'
+}
+
+_blfs_kernel_build_config_for_cryptsetup_() {
+    echo -e '\033[1;33m
+Device Drivers  --->          
+  [*] Multiple devices driver support (RAID and LVM) ---> [CONFIG_MD]
+       <*/M> Device mapper support           [CONFIG_BLK_DEV_DM]
+       <*/M> Crypt target support            [CONFIG_DM_CRYPT]
+
+Cryptographic API  --->                       
+  <*/M> XTS support                          [CONFIG_CRYPTO_XTS]
+  <*/M> SHA224 and SHA256 digest algorithm   [CONFIG_CRYPTO_SHA256]
+  <*/M> AES cipher algorithms                [CONFIG_CRYPTO_AES]
+  <*/M> AES cipher algorithms (x86_64)       [CONFIG_CRYPTO_AES_X86_64] 
+  <*/M> User-space interface for symmetric key cipher algorithms
+                                      [CONFIG_CRYPTO_USER_API_SKCIPHER]
+  For tests:
+  <*/M> Twofish cipher algorithm      [CONFIG_CRYPTO_TWOFISH]
+\033[0m'
+
+    _blfs_kernel_build_config_
+}
+
+_blfs_kernel_build_config_check_for_cryptsetup_() {
+    pause_and_run diff --color /boot/config-4.18.5 .config
+    pause_and_run grep --color -E '(CONFIG_MD|CONFIG_BLK_DEV_DM|CONFIG_DM_CRYPT|CONFIG_CRYPTO_XTS|CONFIG_CRYPTO_SHA256|CONFIG_CRYPTO_AES|CONFIG_CRYPTO_AES_X86_64|CONFIG_CRYPTO_USER_API_SKCIPHER|CONFIG_CRYPTO_TWOFISH)\>' .config
+}
+
+_blfs_install_libassuan_() {
+    url=https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-2.5.1.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_libksba_() {
+    url=https://www.gnupg.org/ftp/gcrypt/libksba/libksba-1.3.5.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_npth_() {
+    url=https://www.gnupg.org/ftp/gcrypt/npth/npth-1.6.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_pinentry_() {
+    url=https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr --enable-pinentry-tty
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_gnupg_() {
+    url=https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.9.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    _____________ 'sed -e '/noinst_SCRIPTS = gpg-zip/c sbin_SCRIPTS += gpg-zip' -i tools/Makefile.in'
+    sed -e '/noinst_SCRIPTS = gpg-zip/c sbin_SCRIPTS += gpg-zip' -i tools/Makefile.in
+
+    pause_and_run ./configure --prefix=/usr            \
+                              --enable-symcryptrun     \
+                              --docdir=/usr/share/doc/gnupg-2.2.9
+    pause_and_run make
+
+    pause_and_run makeinfo --html --no-split -o doc/gnupg_nochunks.html doc/gnupg.texi
+    pause_and_run makeinfo --plaintext       -o doc/gnupg.txt           doc/gnupg.texi
+    #make -C doc pdf ps html
+    pause_and_run make install
+
+    pause_and_run install -v -m755 -d /usr/share/doc/gnupg-2.2.9/html
+    pause_and_run install -v -m644    doc/gnupg_nochunks.html \
+                        /usr/share/doc/gnupg-2.2.9/html/gnupg.html
+    pause_and_run install -v -m644    doc/*.texi doc/gnupg.txt \
+                        /usr/share/doc/gnupg-2.2.9
+    # install -v -m644 doc/gnupg.html/* \
+    #                  /usr/share/doc/gnupg-2.2.9/html
+    # install -v -m644 doc/gnupg.{pdf,dvi,ps} \
+    #                  /usr/share/doc/gnupg-2.2.9
+
+    pause_and_run popd
+}
+
 _blfs_install___() {
     url=
 
@@ -1166,8 +1302,8 @@ _blfs_install_cyrus_sasl() {
     _log_ _blfs_install_cyrus_sasl_
 }
 
-_blfs_kernel_build_config() {
-    _log_ _blfs_kernel_build_config_
+_blfs_kernel_build_config_for_lvm2() {
+    _log_ _blfs_kernel_build_config_for_lvm2_
 }
 
 _blfs_kernel_build_config_check() {
@@ -1192,4 +1328,36 @@ _blfs_install_libgpg_error() {
 
 _blfs_install_libgcrypt() {
     _log_ _blfs_install_libgcrypt_
+}
+
+_blfs_install_cryptsetup() {
+    _log_ _blfs_install_cryptsetup_
+}
+
+_blfs_kernel_build_config_for_cryptsetup() {
+    _log_ _blfs_kernel_build_config_for_cryptsetup_
+}
+
+_blfs_kernel_build_config_check_for_cryptsetup() {
+    _log_ _blfs_kernel_build_config_check_for_cryptsetup_
+}
+
+_blfs_install_libassuan() {
+    _log_ _blfs_install_libassuan_
+}
+
+_blfs_install_libksba() {
+    _log_ _blfs_install_libksba_
+}
+
+_blfs_install_npth() {
+    _log_ _blfs_install_npth_
+}
+
+_blfs_install_pinentry() {
+    _log_ _blfs_install_pinentry_
+}
+
+_blfs_install_gnupg() {
+    _log_ _blfs_install_gnupg_
 }
