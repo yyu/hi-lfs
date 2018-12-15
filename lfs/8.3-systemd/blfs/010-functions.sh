@@ -1451,17 +1451,17 @@ EOF
 _blfs_install_linux_pam_continued_() {
     pause_and_run pushd /sources/downloads/blfs/Linux-PAM-1.3.0
 
-#    #pause_and_run rm -fv /etc/pam.d/*
-#    pause_and_run mv -v /etc/pam.d/* /tmp/
-#
-#    pause_and_run make install
-#    pause_and_run chmod -v 4755 /sbin/unix_chkpwd
-#
-#    for file in pam pam_misc pamc
-#    do
-#      pause_and_run mv -v /usr/lib/lib${file}.so.* /lib
-#      pause_and_run ln -sfv ../../lib/$(readlink /usr/lib/lib${file}.so) /usr/lib/lib${file}.so
-#    done
+    #pause_and_run rm -fv /etc/pam.d/*
+    pause_and_run mv -v /etc/pam.d/* /tmp/
+
+    pause_and_run make install
+    pause_and_run chmod -v 4755 /sbin/unix_chkpwd
+
+    for file in pam pam_misc pamc
+    do
+      pause_and_run mv -v /usr/lib/lib${file}.so.* /lib
+      pause_and_run ln -sfv ../../lib/$(readlink /usr/lib/lib${file}.so) /usr/lib/lib${file}.so
+    done
 
     pause_and_run install -vdm755 /etc/pam.d
     _____________ '/etc/pam.d/system-account'
@@ -1533,6 +1533,13 @@ EOF
     is recommended for additional information.
 
     see http://www.linuxfromscratch.org/blfs/view/stable-systemd/postlfs/linux-pam.html
+    '
+    ________________________________________IMPORTANT________________________________________ '
+    \033[0;1;33mnow reinstall the \033[0;1;31m
+        Shadow-4.6
+    \033[0;1;33mand \033[0;1;31m
+        Systemd-239
+    \033[0;1;33mpackages.\033[0m
     '
 }
 
@@ -1891,11 +1898,116 @@ _blfs_install_openssh_() {
     pause_and_run chmod 644 /etc/pam.d/sshd
     echo "UsePAM yes" >> /etc/ssh/sshd_config
     '
+    sed 's@d/login@d/sshd@g' /etc/pam.d/login > /etc/pam.d/sshd
+    pause_and_run chmod 644 /etc/pam.d/sshd
+    echo "UsePAM yes" >> /etc/ssh/sshd_config
 
     pause_and_run cd ../blfs-systemd-units-20180105
     pause_and_run make install-sshd
 
     pause_and_run popd
+}
+
+_blfs_install_systemd_239_part1of2_() {
+    url=https://github.com/systemd/systemd/archive/v239/systemd-239.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+
+    pause_and_run wget http://www.linuxfromscratch.org/patches/blfs/8.3/systemd-239-glibc_statx_fix-1.patch
+
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run patch -Np1 -i ../systemd-239-glibc_statx_fix-1.patch
+
+    _____________ "sed -i 's/GROUP="render", //' rules/50-udev-default.rules.in"
+    sed -i 's/GROUP="render", //' rules/50-udev-default.rules.in
+
+    pause_and_run mkdir build
+    pause_and_run cd    build
+
+    ________________________________________________________________________________ "
+    meson --prefix=/usr         \\
+          --sysconfdir=/etc     \\
+          --localstatedir=/var  \\
+          -Dblkid=true          \\
+          -Dbuildtype=release   \\
+          -Ddefault-dnssec=no   \\
+          -Dfirstboot=false     \\
+          -Dinstall-tests=false \\
+          -Dldconfig=false      \\
+          -Drootprefix=         \\
+          -Drootlibdir=/lib     \\
+          -Dsplit-usr=true      \\
+          -Dsysusers=false      \\
+          -Db_lto=false         \\
+          ..
+    "
+    meson --prefix=/usr         \
+          --sysconfdir=/etc     \
+          --localstatedir=/var  \
+          -Dblkid=true          \
+          -Dbuildtype=release   \
+          -Ddefault-dnssec=no   \
+          -Dfirstboot=false     \
+          -Dinstall-tests=false \
+          -Dldconfig=false      \
+          -Drootprefix=         \
+          -Drootlibdir=/lib     \
+          -Dsplit-usr=true      \
+          -Dsysusers=false      \
+          -Db_lto=false         \
+          ..
+
+    pause_and_run ninja
+    pause_and_run ninja test
+
+    echo -e "\n\033[1;33mnow do \033[0;1;31msystemctl start rescue.target\033[0m\n"
+}
+
+_blfs_install_systemd_239_part2of2_() {
+    #systemctl start rescue.target
+    echo -e "\n\033[1;33mshould have been from \033[0;1;31msystemctl start rescue.target\033[0m\n"
+
+    pause_and_run pushd /sources/downloads/blfs/systemd-239/build
+
+    pause_and_run ninja install
+
+    pause_and_run rm -rfv /usr/lib/rpm
+
+    cat >> /etc/pam.d/system-session << "EOF"
+# Begin Systemd addition
+    
+session   required    pam_loginuid.so
+session   optional    pam_systemd.so
+
+# End Systemd addition
+EOF
+
+    cat > /etc/pam.d/systemd-user << "EOF"
+# Begin /etc/pam.d/systemd-user
+
+account  required pam_access.so
+account  include  system-account
+
+session  required pam_env.so
+session  required pam_limits.so
+session  include  system-session
+
+auth     required pam_deny.so
+password required pam_deny.so
+
+# End /etc/pam.d/systemd-user
+EOF
+
+    ________________________________________HIGHLIGHT________________________________________ '
+    \033[0;1;33mnow do\033[0;1;31m
+    systemctl daemon-reload
+    systemctl start multi-user.target
+    \033[0m'
+    ________________________________________IMPORTANT________________________________________ '
+    If upgrading from a previous version of systemd and an initrd is used for system boot,
+    you should generate a new initrd before rebooting the system.
+    '
 }
 
 _blfs_install___() {
@@ -1918,15 +2030,13 @@ _blfs_install___() {
 _blfs_one_off_install_() {
     echo
     ________________________________________________________________________________ '
-    cd nspr                                                     &&
-    sed -ri s#^(RELEASE_BINS =).*#\1# pr/src/misc/Makefile.in &&
-    sed -i s#$(LIBRARY) ##            config/rules.mk
-
-    ./configure --prefix=/usr \
-                --with-mozilla \
-                --with-pthreads \
-                $([ $(uname -m) = x86_64 ] && echo --enable-64bit) &&
+    sed 's@d/login@d/sshd@g' /etc/pam.d/login > /etc/pam.d/sshd
+    chmod 644 /etc/pam.d/sshd
+    echo "UsePAM yes" >> /etc/ssh/sshd_config
     '
+    sed 's@d/login@d/sshd@g' /etc/pam.d/login > /etc/pam.d/sshd
+    chmod 644 /etc/pam.d/sshd
+    echo "UsePAM yes" >> /etc/ssh/sshd_config
 }
 
 _blfs_install_libuv() {
@@ -2111,4 +2221,12 @@ _blfs_install_nspr() {
 
 _blfs_install_openssh() {
     _log_ _blfs_install_openssh_
+}
+
+_blfs_install_systemd_239_part1of2() {
+    _log_ _blfs_install_systemd_239_part1of2_
+}
+
+_blfs_install_systemd_239_part2of2() {
+    _log_ _blfs_install_systemd_239_part2of2_
 }
