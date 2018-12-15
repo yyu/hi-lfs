@@ -1233,6 +1233,120 @@ _blfs_install_gnupg_() {
     pause_and_run popd
 }
 
+_blfs_install_nettle_() {
+    url=https://ftp.gnu.org/gnu/nettle/nettle-3.4.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr --disable-static
+    pause_and_run make
+
+    pause_and_run make install
+    pause_and_run chmod   -v   755 /usr/lib/lib{hogweed,nettle}.so
+    pause_and_run install -v -m755 -d /usr/share/doc/nettle-3.4
+    pause_and_run install -v -m644 nettle.html /usr/share/doc/nettle-3.4
+
+    pause_and_run popd
+}
+
+_blfs_install_libunistring_() {
+    url=https://ftp.gnu.org/gnu/libunistring/libunistring-0.9.10.tar.xz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr    \
+                              --disable-static \
+                              --docdir=/usr/share/doc/libunistring-0.9.10
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_six_() {
+    url=https://pypi.io/packages/source/s/six/six-1.11.0.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run python2 setup.py build
+    pause_and_run python2 setup.py install --optimize=1
+    pause_and_run python3 setup.py build
+    pause_and_run python3 setup.py install --optimize=1
+
+    pause_and_run popd
+}
+
+_blfs_install_libtasn1_() {
+    url=https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.13.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr --disable-static
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_p11_kit_() {
+    url=https://github.com/p11-glue/p11-kit/releases/download/0.23.13/p11-kit-0.23.13.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr     \
+                              --sysconfdir=/etc \
+                              --with-trust-paths=/etc/pki/anchors
+    pause_and_run make
+    pause_and_run make install
+
+    _____________ 'if [ -e /usr/lib/libnssckbi.so ]; then
+      readlink /usr/lib/libnssckbi.so ||
+      rm -v /usr/lib/libnssckbi.so    &&
+      ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so
+    fi'
+    if [ -e /usr/lib/libnssckbi.so ]; then
+      readlink /usr/lib/libnssckbi.so ||
+      rm -v /usr/lib/libnssckbi.so    &&
+      ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so
+    fi
+
+    pause_and_run popd
+}
+
+_blfs_install_gnutls_() {
+    url=https://www.gnupg.org/ftp/gcrypt/gnutls/v3.5/gnutls-3.5.19.tar.xz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr \
+                              --with-default-trust-store-pkcs11="pkcs11:"
+    pause_and_run make
+    pause_and_run make install
+    pause_and_run 
+    pause_and_run 
+
+    pause_and_run popd
+}
+
+_blfs_install_gpgme_() {
+    url=https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.11.1.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr --disable-gpg-test
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
 _blfs_install___() {
     url=
 
@@ -1360,4 +1474,32 @@ _blfs_install_pinentry() {
 
 _blfs_install_gnupg() {
     _log_ _blfs_install_gnupg_
+}
+
+_blfs_install_nettle() {
+    _log_ _blfs_install_nettle_
+}
+
+_blfs_install_libunistring() {
+    _log_ _blfs_install_libunistring_
+}
+
+_blfs_install_six() {
+    _log_ _blfs_install_six_
+}
+
+_blfs_install_libtasn1() {
+    _log_ _blfs_install_libtasn1_
+}
+
+_blfs_install_p11_kit() {
+    _log_ _blfs_install_p11_kit_
+}
+
+_blfs_install_gnutls() {
+    _log_ _blfs_install_gnutls_
+}
+
+_blfs_install_gpgme() {
+    _log_ _blfs_install_gpgme_
 }
