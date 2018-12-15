@@ -2010,6 +2010,144 @@ EOF
     '
 }
 
+_blfs_install_unzip_() {
+    url=https://downloads.sourceforge.net/infozip/unzip60.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run make -f unix/Makefile generic
+    pause_and_run make prefix=/usr MANDIR=/usr/share/man/man1 -f unix/Makefile install
+
+    pause_and_run popd
+}
+
+_blfs_install_libedit_() {
+    url=http://thrysoee.dk/editline/libedit-20181209-3.1.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_sqlite_() {
+    url=https://sqlite.org/2018/sqlite-autoconf-3240000.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    ________________________________________________________________________________ '
+    ./configure --prefix=/usr     \\
+                --disable-static  \\
+                --enable-fts5     \\
+                CFLAGS="-g -O2                    \\
+                -DSQLITE_ENABLE_FTS4=1            \\
+                -DSQLITE_ENABLE_COLUMN_METADATA=1 \\
+                -DSQLITE_ENABLE_UNLOCK_NOTIFY=1   \\
+                -DSQLITE_ENABLE_DBSTAT_VTAB=1     \\
+                -DSQLITE_SECURE_DELETE=1          \\
+                -DSQLITE_ENABLE_FTS3_TOKENIZER=1"
+    '
+    ./configure --prefix=/usr     \
+                --disable-static  \
+                --enable-fts5     \
+                CFLAGS="-g -O2                    \
+                -DSQLITE_ENABLE_FTS4=1            \
+                -DSQLITE_ENABLE_COLUMN_METADATA=1 \
+                -DSQLITE_ENABLE_UNLOCK_NOTIFY=1   \
+                -DSQLITE_ENABLE_DBSTAT_VTAB=1     \
+                -DSQLITE_SECURE_DELETE=1          \
+                -DSQLITE_ENABLE_FTS3_TOKENIZER=1"
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_nss_() {
+    url=https://archive.mozilla.org/pub/security/nss/releases/NSS_3_38_RTM/src/nss-3.38.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+
+    pause_and_run wget http://www.linuxfromscratch.org/patches/blfs/8.3/nss-3.38-standalone-1.patch
+
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run patch -Np1 -i ../nss-3.38-standalone-1.patch
+    pause_and_run cd nss
+    ________________________________________________________________________________ '
+    make -j1 BUILD_OPT=1                  \\
+      NSPR_INCLUDE_DIR=/usr/include/nspr  \\
+      USE_SYSTEM_ZLIB=1                   \\
+      ZLIB_LIBS=-lz                       \\
+      NSS_ENABLE_WERROR=0                 \\
+      $([ $(uname -m) = x86_64 ] && echo USE_64=1) \\
+      $([ -f /usr/include/sqlite3.h ] && echo NSS_USE_SYSTEM_SQLITE=1)
+    '
+    make -j1 BUILD_OPT=1                  \
+      NSPR_INCLUDE_DIR=/usr/include/nspr  \
+      USE_SYSTEM_ZLIB=1                   \
+      ZLIB_LIBS=-lz                       \
+      NSS_ENABLE_WERROR=0                 \
+      $([ $(uname -m) = x86_64 ] && echo USE_64=1) \
+      $([ -f /usr/include/sqlite3.h ] && echo NSS_USE_SYSTEM_SQLITE=1)
+
+
+    pause_and_run cd ../dist
+    pause_and_run install -v -m755 Linux*/lib/*.so              /usr/lib
+    pause_and_run install -v -m644 Linux*/lib/{*.chk,libcrmf.a} /usr/lib
+
+    pause_and_run install -v -m755 -d                           /usr/include/nss
+    pause_and_run cp -v -RL {public,private}/nss/*              /usr/include/nss
+    pause_and_run chmod -v 644                                  /usr/include/nss/*
+
+    pause_and_run install -v -m755 Linux*/bin/{certutil,nss-config,pk12util} /usr/bin
+
+    pause_and_run install -v -m644 Linux*/lib/pkgconfig/nss.pc  /usr/lib/pkgconfig
+
+    ________________________________________________________________________________ '
+    if [ -e /usr/lib/libp11-kit.so ]; then
+      readlink /usr/lib/libnssckbi.so ||
+      rm -v /usr/lib/libnssckbi.so    &&
+      ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so
+    fi
+    '
+    if [ -e /usr/lib/libp11-kit.so ]; then
+      readlink /usr/lib/libnssckbi.so ||
+      rm -v /usr/lib/libnssckbi.so    &&
+      ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so
+    fi
+
+    pause_and_run popd
+}
+
+_blfs_install_liboauth_() {
+    url=https://downloads.sourceforge.net/liboauth/liboauth-1.0.3.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+
+    pause_and_run wget http://www.linuxfromscratch.org/patches/blfs/8.3/liboauth-1.0.3-openssl-1.1.0-2.patch
+
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run patch -Np1 -i ../liboauth-1.0.3-openssl-1.1.0-2.patch
+
+    pause_and_run ./configure --prefix=/usr --disable-static
+    pause_and_run make
+    pause_and_run make dox
+    pause_and_run make check
+    pause_and_run make install
+    pause_and_run install -v -dm755 /usr/share/doc/liboauth-1.0.3
+    pause_and_run cp -rv doc/html/* /usr/share/doc/liboauth-1.0.3
+
+    pause_and_run popd
+}
+
 _blfs_install___() {
     url=
 
@@ -2229,4 +2367,24 @@ _blfs_install_systemd_239_part1of2() {
 
 _blfs_install_systemd_239_part2of2() {
     _log_ _blfs_install_systemd_239_part2of2_
+}
+
+_blfs_install_liboauth() {
+    _log_ _blfs_install_liboauth_
+}
+
+_blfs_install_unzip() {
+    _log_ _blfs_install_unzip_
+}
+
+_blfs_install_libedit() {
+    _log_ _blfs_install_libedit_
+}
+
+_blfs_install_sqlite() {
+    _log_ _blfs_install_sqlite_
+}
+
+_blfs_install_nss() {
+    _log_ _blfs_install_nss_
 }
