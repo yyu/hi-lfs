@@ -1536,6 +1536,175 @@ EOF
     '
 }
 
+_blfs_install_shadow_() {
+    url=https://github.com/shadow-maint/shadow/releases/download/4.6/shadow-4.6.tar.xz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    _____________ "sed -i 's/groups\$(EXEEXT) //' src/Makefile.in"
+                   sed -i 's/groups$(EXEEXT) //' src/Makefile.in
+
+    _____________ "find man -name Makefile.in -exec sed -i 's/groups\.1 / /'   {} \;"
+                   find man -name Makefile.in -exec sed -i 's/groups\.1 / /'   {} \;
+    _____________ "find man -name Makefile.in -exec sed -i 's/getspnam\.3 / /' {} \;"
+                   find man -name Makefile.in -exec sed -i 's/getspnam\.3 / /' {} \;
+    _____________ "find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;"
+                   find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;
+
+    _____________ "sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \ "
+    _____________ "       -e 's@/var/spool/mail@/var/mail@' etc/login.defs"
+                   sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \
+                          -e 's@/var/spool/mail@/var/mail@' etc/login.defs
+
+    _____________ "sed -i 's/1000/999/' etc/useradd"
+                   sed -i 's/1000/999/' etc/useradd
+
+    pause_and_run ./configure --sysconfdir=/etc --with-group-name-max-length=32
+    pause_and_run make
+
+    pause_and_run make install
+    pause_and_run mv -v /usr/bin/passwd /bin
+
+    pause_and_run sed -i 's/yes/no/' /etc/default/useradd
+
+    pause_and_run install -v -m644 /etc/login.defs /etc/login.defs.orig
+
+    for FUNCTION in FAIL_DELAY               \
+                    FAILLOG_ENAB             \
+                    LASTLOG_ENAB             \
+                    MAIL_CHECK_ENAB          \
+                    OBSCURE_CHECKS_ENAB      \
+                    PORTTIME_CHECKS_ENAB     \
+                    QUOTAS_ENAB              \
+                    CONSOLE MOTD_FILE        \
+                    FTMP_FILE NOLOGINS_FILE  \
+                    ENV_HZ PASS_MIN_LEN      \
+                    SU_WHEEL_ONLY            \
+                    CRACKLIB_DICTPATH        \
+                    PASS_CHANGE_TRIES        \
+                    PASS_ALWAYS_WARN         \
+                    CHFN_AUTH ENCRYPT_METHOD \
+                    ENVIRON_FILE
+    do
+        _____________ 'sed -i "s/^'${FUNCTION}'/# &/" /etc/login.defs'
+        sed -i "s/^${FUNCTION}/# &/" /etc/login.defs
+    done
+
+    cat > /etc/pam.d/login << "EOF"
+# Begin /etc/pam.d/login
+
+# Set failure delay before next prompt to 3 seconds
+auth      optional    pam_faildelay.so  delay=3000000
+
+# Check to make sure that the user is allowed to login
+auth      requisite   pam_nologin.so
+
+# Check to make sure that root is allowed to login
+# Disabled by default. You will need to create /etc/securetty
+# file for this module to function. See man 5 securetty.
+#auth      required    pam_securetty.so
+
+# Additional group memberships - disabled by default
+#auth      optional    pam_group.so
+
+# include the default auth settings
+auth      include     system-auth
+
+# check access for the user
+account   required    pam_access.so
+
+# include the default account settings
+account   include     system-account
+
+# Set default environment variables for the user
+session   required    pam_env.so
+
+# Set resource limits for the user
+session   required    pam_limits.so
+
+# Display date of last login - Disabled by default
+#session   optional    pam_lastlog.so
+
+# Display the message of the day - Disabled by default
+#session   optional    pam_motd.so
+
+# Check user's mail - Disabled by default
+#session   optional    pam_mail.so      standard quiet
+
+# include the default session and password settings
+session   include     system-session
+password  include     system-password
+
+# End /etc/pam.d/login
+EOF
+
+    cat > /etc/pam.d/passwd << "EOF"
+# Begin /etc/pam.d/passwd
+
+password  include     system-password
+
+# End /etc/pam.d/passwd
+EOF
+
+    cat > /etc/pam.d/su << "EOF"
+# Begin /etc/pam.d/su
+
+# always allow root
+auth      sufficient  pam_rootok.so
+auth      include     system-auth
+
+# include the default account settings
+account   include     system-account
+
+# Set default environment variables for the service user
+session   required    pam_env.so
+
+# include system session defaults
+session   include     system-session
+
+# End /etc/pam.d/su
+EOF
+
+    cat > /etc/pam.d/chage << "EOF"
+# Begin /etc/pam.d/chage
+
+# always allow root
+auth      sufficient  pam_rootok.so
+
+# include system defaults for auth account and session
+auth      include     system-auth
+account   include     system-account
+session   include     system-session
+
+# Always permit for authentication updates
+password  required    pam_permit.so
+
+# End /etc/pam.d/chage
+EOF
+
+    for PROGRAM in chfn chgpasswd chpasswd chsh groupadd groupdel \
+                   groupmems groupmod newusers useradd userdel usermod
+    do
+        pause_and_run install -v -m644 /etc/pam.d/chage /etc/pam.d/${PROGRAM}
+        pause_and_run sed -i "s/chage/$PROGRAM/" /etc/pam.d/${PROGRAM}
+    done
+
+
+    rm -f /run/nologin
+
+    ________________________________________IMPORTANT________________________________________ '
+    At this point, you should do a simple test to see if Shadow is working as expected. Open another terminal and log in as a user, then su to root. If you do not see any errors, then all is well and you should proceed with the rest of the configuration. If you did receive errors, stop now and double check the above configuration files manually. You can also run the test suite from the Linux-PAM package to assist you in determining the problem. If you cannot find and fix the error, you should recompile Shadow adding the --without-libpam switch to the configure command in the above instructions (also move the /etc/login.defs.orig backup file to /etc/login.defs). If you fail to do this and the errors remain, you will be unable to log into your system.'
+
+    _____________ '[ -f /etc/login.access ] && mv -v /etc/login.access{,.NOUSE}'
+    [ -f /etc/login.access ] && mv -v /etc/login.access{,.NOUSE}
+
+    _____________ '[ -f /etc/limits ] && mv -v /etc/limits{,.NOUSE}'
+    [ -f /etc/limits ] && mv -v /etc/limits{,.NOUSE}
+
+    pause_and_run popd
+}
+
 _blfs_install___() {
     url=
 
@@ -1715,4 +1884,8 @@ _blfs_install_linux_pam() {
 
 _blfs_install_linux_pam_continued() {
     _log_ _blfs_install_linux_pam_continued_
+}
+
+_blfs_install_shadow() {
+    _log_ _blfs_install_shadow_
 }
