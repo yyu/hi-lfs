@@ -1705,6 +1705,199 @@ EOF
     pause_and_run popd
 }
 
+_blfs_install_sudo_() {
+    #url=http://www.sudo.ws/dist/sudo-1.8.23.tar.gz
+
+    #pause_and_run pushd /sources/downloads/blfs
+    #pause_and_run _blfs_download_extract_and_enter $url
+
+    ________________________________________________________________________________ '
+    ./configure --prefix=/usr              \
+                --libexecdir=/usr/lib      \
+                --with-secure-path         \
+                --with-all-insults         \
+                --with-env-editor          \
+                --docdir=/usr/share/doc/sudo-1.8.23 \
+                --with-passprompt="[sudo] password for %p: "
+    '
+    ./configure --prefix=/usr              \
+                --libexecdir=/usr/lib      \
+                --with-secure-path         \
+                --with-all-insults         \
+                --with-env-editor          \
+                --docdir=/usr/share/doc/sudo-1.8.23 \
+                --with-passprompt="[sudo] password for %p: "
+    pause_and_run make
+    
+    pause_and_run make install
+    pause_and_run ln -sfv libsudo_util.so.0.0.0 /usr/lib/sudo/libsudo_util.so.0
+
+    cat > /etc/pam.d/sudo << "EOF"
+# Begin /etc/pam.d/sudo
+
+# include the default auth settings
+auth      include     system-auth
+
+# include the default account settings
+account   include     system-account
+
+# Set default environment variables for the service user
+session   required    pam_env.so
+
+# include system session defaults
+session   include     system-session
+
+# End /etc/pam.d/sudo
+EOF
+
+    pause_and_run chmod 644 /etc/pam.d/sudo
+
+    pause_and_run popd
+
+    echo -e "\033[35mnow use \033[31mvisudo\033[0;35m to modify \033[31m/etc/sudoers\033[0m"
+
+    ________________________________________NOTE________________________________________ '
+# User alias specification
+User_Alias  ADMIN = yyu
+
+# Allow people in group ADMIN to run all commands without a password
+ADMIN       ALL = NOPASSWD: ALL
+'
+}
+
+_blfs_install_pcre_() {
+    url=https://ftp.pcre.org/pub/pcre/pcre-8.42.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr                     \
+                              --docdir=/usr/share/doc/pcre-8.42 \
+                              --enable-unicode-properties       \
+                              --enable-pcre16                   \
+                              --enable-pcre32                   \
+                              --enable-pcregrep-libz            \
+                              --enable-pcregrep-libbz2          \
+                              --enable-pcretest-libreadline     \
+                              --disable-static
+    pause_and_run make
+    pause_and_run make install
+    pause_and_run mv -v /usr/lib/libpcre.so.* /lib
+    pause_and_run ln -sfv ../../lib/$(readlink /usr/lib/libpcre.so) /usr/lib/libpcre.so
+
+    pause_and_run popd
+}
+
+_blfs_install_glib_() {
+    url=http://ftp.gnome.org/pub/gnome/sources/glib/2.56/glib-2.56.1.tar.xz
+
+    pause_and_run pushd /sources/downloads/blfs
+
+    pause_and_run wget http://www.linuxfromscratch.org/patches/blfs/8.3/glib-2.56.1-skip_warnings-1.patch
+
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run patch -Np1 -i ../glib-2.56.1-skip_warnings-1.patch
+    pause_and_run ./configure --prefix=/usr      \
+                              --with-pcre=system \
+                              --with-python=/usr/bin/python3
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_nspr_() {
+    url=https://archive.mozilla.org/pub/nspr/releases/v4.19/src/nspr-4.19.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    ________________________________________________________________________________ '
+    cd nspr                                                     &&
+    sed -ri s#^(RELEASE_BINS =).*#\1# pr/src/misc/Makefile.in &&
+    sed -i s#$(LIBRARY) ##            config/rules.mk
+
+    ./configure --prefix=/usr \
+                --with-mozilla \
+                --with-pthreads \
+                $([ $(uname -m) = x86_64 ] && echo --enable-64bit) &&
+    '
+    cd nspr                                                     &&
+    sed -ri 's#^(RELEASE_BINS =).*#\1#' pr/src/misc/Makefile.in &&
+    sed -i 's#$(LIBRARY) ##'            config/rules.mk
+
+    ./configure --prefix=/usr \
+                --with-mozilla \
+                --with-pthreads \
+                $([ $(uname -m) = x86_64 ] && echo --enable-64bit) &&
+
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_openssh_() {
+    url=http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-7.7p1.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+
+    pause_and_run wget http://www.linuxfromscratch.org/patches/blfs/8.3/openssh-7.7p1-openssl-1.1.0-1.patch
+
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run install  -v -m700 -d /var/lib/sshd
+    pause_and_run chown    -v root:sys /var/lib/sshd
+
+    pause_and_run groupadd -g 50 sshd
+    ________________________________________________________________________________ "
+    useradd  -c 'sshd PrivSep' \
+             -d /var/lib/sshd  \
+             -g sshd           \
+             -s /bin/false     \
+             -u 50 sshd
+    "
+    useradd  -c 'sshd PrivSep' \
+             -d /var/lib/sshd  \
+             -g sshd           \
+             -s /bin/false     \
+             -u 50 sshd
+
+    pause_and_run patch -Np1 -i ../openssh-7.7p1-openssl-1.1.0-1.patch
+
+    pause_and_run ./configure --prefix=/usr                     \
+                              --sysconfdir=/etc/ssh             \
+                              --with-md5-passwords              \
+                              --with-privsep-path=/var/lib/sshd
+    pause_and_run make
+
+    pause_and_run make install
+    pause_and_run install -v -m755    contrib/ssh-copy-id /usr/bin
+
+    pause_and_run install -v -m644    contrib/ssh-copy-id.1 \
+                                      /usr/share/man/man1
+    pause_and_run install -v -m755 -d /usr/share/doc/openssh-7.7p1
+    pause_and_run install -v -m644    INSTALL LICENCE OVERVIEW README* \
+                                      /usr/share/doc/openssh-7.7p1
+
+    ________________________________________________________________________________ '
+    echo "PermitRootLogin no" >> /etc/ssh/sshd_config
+    pause_and_run ssh-keygen
+    ssh-copy-id -i ~/.ssh/id_rsa.pub REMOTE_USERNAME@REMOTE_HOSTNAME
+    echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
+    echo "ChallengeResponseAuthentication no" >> /etc/ssh/sshd_config
+    sed 's@d/login@d/sshd@g' /etc/pam.d/login > /etc/pam.d/sshd
+    pause_and_run chmod 644 /etc/pam.d/sshd
+    echo "UsePAM yes" >> /etc/ssh/sshd_config
+    '
+
+    pause_and_run cd ../blfs-systemd-units-20180105
+    pause_and_run make install-sshd
+
+    pause_and_run popd
+}
+
 _blfs_install___() {
     url=
 
@@ -1724,6 +1917,16 @@ _blfs_install___() {
 
 _blfs_one_off_install_() {
     echo
+    ________________________________________________________________________________ '
+    cd nspr                                                     &&
+    sed -ri s#^(RELEASE_BINS =).*#\1# pr/src/misc/Makefile.in &&
+    sed -i s#$(LIBRARY) ##            config/rules.mk
+
+    ./configure --prefix=/usr \
+                --with-mozilla \
+                --with-pthreads \
+                $([ $(uname -m) = x86_64 ] && echo --enable-64bit) &&
+    '
 }
 
 _blfs_install_libuv() {
@@ -1888,4 +2091,24 @@ _blfs_install_linux_pam_continued() {
 
 _blfs_install_shadow() {
     _log_ _blfs_install_shadow_
+}
+
+_blfs_install_sudo() {
+    _log_ _blfs_install_sudo_
+}
+
+_blfs_install_pcre() {
+    _log_ _blfs_install_pcre_
+}
+
+_blfs_install_glib() {
+    _log_ _blfs_install_glib_
+}
+
+_blfs_install_nspr() {
+    _log_ _blfs_install_nspr_
+}
+
+_blfs_install_openssh() {
+    _log_ _blfs_install_openssh_
 }
