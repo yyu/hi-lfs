@@ -2148,6 +2148,239 @@ _blfs_install_liboauth_() {
     pause_and_run popd
 }
 
+#_blfs_install_mit_kerberos_v5_() {
+#    url=https://kerberos.org/dist/krb5/1.16/krb5-1.16.1.tar.gz
+#
+#    pause_and_run pushd /sources/downloads/blfs
+#    pause_and_run _blfs_download_extract_and_enter $url
+#
+#    cd src
+#     
+#    ________________________________________________________________________________ "
+#    sed -i -e 's@\^u}@^u cols 300}@' tests/dejagnu/config/default.exp
+#    sed -i -e '/eq 0/{N;s/12 //}'    plugins/kdb/db2/libdb2/test/run.test
+#    "
+#    sed -i -e 's@\^u}@^u cols 300}@' tests/dejagnu/config/default.exp
+#    sed -i -e '/eq 0/{N;s/12 //}'    plugins/kdb/db2/libdb2/test/run.test
+#
+#    pause_and_run ./configure --prefix=/usr            \
+#                              --sysconfdir=/etc        \
+#                              --localstatedir=/var/lib \
+#                              --with-system-et         \
+#                              --with-system-ss         \
+#                              --with-system-verto=no   \
+#                              --enable-dns-for-realm
+#    pause_and_run make
+#    pause_and_run make install
+#
+#    ________________________________________________________________________________ '
+#    for f in gssapi_krb5 gssrpc k5crypto kadm5clnt kadm5srv \
+#             kdb5 kdb_ldap krad krb5 krb5support verto ; do
+#        find /usr/lib -type f -name "lib$f*.so*" -exec chmod -v 755 {} \;    
+#    done
+#    '
+#    for f in gssapi_krb5 gssrpc k5crypto kadm5clnt kadm5srv \
+#             kdb5 kdb_ldap krad krb5 krb5support verto ; do
+#        find /usr/lib -type f -name "lib$f*.so*" -exec chmod -v 755 {} \;    
+#    done
+#
+#    pause_and_run mv -v /usr/lib/libkrb5.so.3*        /lib
+#    pause_and_run mv -v /usr/lib/libk5crypto.so.3*    /lib
+#    pause_and_run mv -v /usr/lib/libkrb5support.so.0* /lib
+#
+#    pause_and_run ln -v -sf ../../lib/libkrb5.so.3.3        /usr/lib/libkrb5.so
+#    pause_and_run ln -v -sf ../../lib/libk5crypto.so.3.1    /usr/lib/libk5crypto.so
+#    pause_and_run ln -v -sf ../../lib/libkrb5support.so.0.1 /usr/lib/libkrb5support.so
+#
+#    pause_and_run mv -v /usr/bin/ksu /bin
+#    pause_and_run chmod -v 755 /bin/ksu
+#
+#    pause_and_run install -v -dm755 /usr/share/doc/krb5-1.16.1
+#    pause_and_run cp -vfr ../doc/*  /usr/share/doc/krb5-1.16.1
+#
+#
+#cat > /etc/krb5.conf << "EOF"
+## Begin /etc/krb5.conf
+#
+#[libdefaults]
+#    default_realm = <EXAMPLE.ORG>
+#    encrypt = true
+#
+#[realms]
+#    <EXAMPLE.ORG> = {
+#        kdc = <belgarath.example.org>
+#        admin_server = <belgarath.example.org>
+#        dict_file = /usr/share/dict/words
+#    }
+#
+#[domain_realm]
+#    .<example.org> = <EXAMPLE.ORG>
+#
+#[logging]
+#    kdc = SYSLOG:INFO:AUTH
+#    admin_server = SYSLOG:INFO:AUTH
+#    default = SYSLOG:DEBUG:DAEMON
+#
+## End /etc/krb5.conf
+#EOF
+#
+#
+#
+#
+#
+#    pause_and_run popd
+#}
+
+_blfs_install_libtirpc_() {
+    url=https://downloads.sourceforge.net/libtirpc/libtirpc-1.0.3.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr       \
+                              --sysconfdir=/etc   \
+                              --disable-static    \
+                              --disable-gssapi
+    pause_and_run make
+    pause_and_run make install
+    pause_and_run mv -v /usr/lib/libtirpc.so.* /lib
+    pause_and_run ln -sfv ../../lib/libtirpc.so.3.0.0 /usr/lib/libtirpc.so
+
+    pause_and_run popd
+}
+
+_blfs_install_rpcsvc_proto_() {
+    url=https://github.com/thkukuk/rpcsvc-proto/releases/download/v1.4/rpcsvc-proto-1.4.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run autoreconf -fi
+    pause_and_run ./configure --sysconfdir=/etc
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_libnsl_() {
+    url=https://github.com/thkukuk/libnsl/archive/v1.2.0/libnsl-1.2.0.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run autoreconf -fi
+    pause_and_run ./configure --sysconfdir=/etc
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run mv /usr/lib/libnsl.so.2* /lib
+    pause_and_run ln -sfv ../../lib/libnsl.so.2.0.0 /usr/lib/libnsl.so
+
+    pause_and_run popd
+}
+
+_blfs_install_postfix_() {
+    url=ftp://ftp.porcupine.org/mirrors/postfix-release/official/postfix-3.3.1.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run groupadd -g 32 postfix
+    pause_and_run groupadd -g 33 postdrop
+    pause_and_run useradd -c "PostfixDaemonUser" -d /var/spool/postfix -g postfix -s /bin/false -u 32 postfix
+    pause_and_run chown -v postfix:postfix /var/mail
+ 
+    _____________ "sed -i 's/DB_VERSION_MAJOR == 6 .*||/DB_VERSION_MAJOR > 4 ||/' src/util/dict_db.c"
+    sed -i 's/DB_VERSION_MAJOR == 6 .*||/DB_VERSION_MAJOR > 4 ||/' src/util/dict_db.c
+
+    ________________________________________________________________________________ '
+    make CCARGS="-DUSE_TLS -I/usr/include/openssl/                     \
+                 -DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I/usr/include/sasl" \
+         AUXLIBS="-lssl -lcrypto -lsasl2"                              \
+         makefiles
+    '
+    make CCARGS="-DUSE_TLS -I/usr/include/openssl/                     \
+                 -DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I/usr/include/sasl" \
+         AUXLIBS="-lssl -lcrypto -lsasl2"                              \
+         makefiles
+    pause_and_run make
+
+    pause_and_run sh postfix-install -non-interactive \
+       daemon_directory=/usr/lib/postfix \
+       manpage_directory=/usr/share/man \
+       html_directory=/usr/share/doc/postfix-3.3.1/html \
+       readme_directory=/usr/share/doc/postfix-3.3.1/readme
+
+    cat >> /etc/aliases << "EOF"
+# Begin /etc/aliases
+
+MAILER-DAEMON:    postmaster
+postmaster:       root
+
+root:             yyu
+# End /etc/aliases
+EOF
+
+    pause_and_run /usr/sbin/postfix check
+    echo '/usr/sbin/postfix check => '$?
+    pause_and_run /usr/sbin/postfix start
+
+    pause_and_run cd ../blfs-systemd-units-20180105
+    pause_and_run make install-postfix
+
+    pause_and_run popd
+}
+
+#_blfs_install_tripwire_() {
+#    url=https://github.com/Tripwire/tripwire-open-source/releases/download/2.4.3.7/tripwire-open-source-2.4.3.7.tar.gz
+#
+#    pause_and_run pushd /sources/downloads/blfs
+#    pause_and_run _blfs_download_extract_and_enter $url
+#
+#
+#    ________________________________________________________________________________ "
+#    sed -e '/^CLOBBER/s/false/true/'         \
+#        -e 's|TWDB=\"${prefix}|TWDB=\"/var|'   \
+#        -e '/TWMAN/ s|${prefix}|/usr/share|' \
+#        -e '/TWDOCS/s|${prefix}/doc/tripwire|/usr/share/doc/tripwire-2.4.3.7|' \
+#        -i installer/install.cfg
+#    find . -name Makefile.am | xargs                           \
+#        sed -i 's/^[[:alpha:]_]*_HEADERS.*=/noinst_HEADERS =/'
+#    sed '/dist/d' -i man/man?/Makefile.am
+#    "
+#    sed -e '/^CLOBBER/s/false/true/'         \
+#        -e 's|TWDB="${prefix}|TWDB="/var|'   \
+#        -e '/TWMAN/ s|${prefix}|/usr/share|' \
+#        -e '/TWDOCS/s|${prefix}/doc/tripwire|/usr/share/doc/tripwire-2.4.3.7|' \
+#        -i installer/install.cfg
+#    find . -name Makefile.am | xargs                           \
+#        sed -i 's/^[[:alpha:]_]*_HEADERS.*=/noinst_HEADERS =/'
+#    sed '/dist/d' -i man/man?/Makefile.am
+#
+#    pause_and_run autoreconf -fi
+#    pause_and_run ./configure --prefix=/usr --sysconfdir=/etc/tripwire
+#    pause_and_run make
+#
+#    pause_and_run make install
+#    pause_and_run cp -v policy/*.txt /usr/share/doc/tripwire-2.4.3.7
+#
+#    pause_and_run popd
+#}
+
+_blfs_install_volume_key_() {
+    url=https://releases.pagure.org/volume_key/volume_key-0.3.11.tar.xz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
 _blfs_install___() {
     url=
 
@@ -2387,4 +2620,32 @@ _blfs_install_sqlite() {
 
 _blfs_install_nss() {
     _log_ _blfs_install_nss_
+}
+
+_blfs_install_tripwire() {
+    _log_ _blfs_install_tripwire_
+}
+
+_blfs_install_mit_kerberos_v5() {
+    _log_ _blfs_install_mit_kerberos_v5_
+}
+
+_blfs_install_libtirpc() {
+    _log_ _blfs_install_libtirpc_
+}
+
+_blfs_install_rpcsvc_proto() {
+    _log_ _blfs_install_rpcsvc_proto_
+}
+
+_blfs_install_libnsl() {
+    _log_ _blfs_install_libnsl_
+}
+
+_blfs_install_postfix() {
+    _log_ _blfs_install_postfix_
+}
+
+_blfs_install_volume_key() {
+    _log_ _blfs_install_volume_key_
 }
