@@ -962,6 +962,141 @@ _blfs_install_cyrus_sasl_() {
     pause_and_run popd
 }
 
+_blfs_kernel_build_config_() {
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run cd linux-4.18.5
+    pause_and_run make mrproper
+    pause_and_run cp -v /boot/config-4.18.5 .config
+    echo -e '\033[1;33m
+Device Drivers --->
+  [*] Multiple devices driver support (RAID and LVM) ---> [CONFIG_MD]
+    <*/M>   Device mapper support        [CONFIG_BLK_DEV_DM]
+    <*/M/ >   Crypt target support       [CONFIG_DM_CRYPT]
+    <*/M/ >   Snapshot target            [CONFIG_DM_SNAPSHOT]
+    <*/M/ >   Thin provisioning target   [CONFIG_DM_THIN_PROVISIONING]
+    <*/M/ >   Mirror target              [CONFIG_DM_MIRROR]
+Kernel hacking --->
+  [*] Magic SysRq key                    [CONFIG_MAGIC_SYSRQ]
+    \033[0m'
+    _____________ 'now do\033[0m \033[0;1;35mmake menuconfig'
+}
+
+_blfs_kernel_build_config_check_() {
+    pause_and_run grep --color -E '(CONFIG_MD|CONFIG_BLK_DEV_DM|CONFIG_DM_CRYPT|CONFIG_DM_SNAPSHOT|CONFIG_DM_THIN_PROVISIONING|CONFIG_DM_MIRROR|CONFIG_MAGIC_SYSRQ)\>' .config
+    pause_and_run diff --color /boot/config-4.18.5 .config
+}
+
+_blfs_kernel_build_() {
+    pause_and_run make
+    pause_and_run make modules_install
+}
+
+_blfs_kernel_post_build_() {
+    pause_and_run cp -iv arch/x86/boot/bzImage /boot/vmlinuz-4.18.5-lfs-8.3-systemd
+    pause_and_run cp -iv System.map /boot/System.map-4.18.5
+    pause_and_run cp -iv .config /boot/config-4.18.5
+    pause_and_run install -d /usr/share/doc/linux-4.18.5
+    pause_and_run cp -r Documentation/* /usr/share/doc/linux-4.18.5
+}
+
+# _blfs_configure_linux_module_load_order() {
+#     install -v -m755 -d /etc/modprobe.d
+#     cat > /etc/modprobe.d/usb.conf << "EOF"
+# # Begin /etc/modprobe.d/usb.conf
+# 
+# install ohci_hcd /sbin/modprobe ehci_hcd ; /sbin/modprobe -i ohci_hcd ; true
+# install uhci_hcd /sbin/modprobe ehci_hcd ; /sbin/modprobe -i uhci_hcd ; true
+# 
+# # End /etc/modprobe.d/usb.conf
+# EOF
+# }
+
+_blfs_install_lvm2_() {
+    url=https://sourceware.org/ftp/lvm2/releases/LVM2.2.02.177.tgz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run wget $url
+    pause_and_run tar xf LVM2.2.02.177.tgz
+    pause_and_run cd LVM2.2.02.177
+
+    _____________ 'SAVEPATH=$PATH'
+                   SAVEPATH=$PATH
+    _____________ 'PATH=$PATH:/sbin:/usr/sbin'
+                   PATH=$PATH:/sbin:/usr/sbin
+    pause_and_run ./configure --prefix=/usr       \
+                              --exec-prefix=      \
+                              --with-confdir=/etc \
+                              --enable-applib     \
+                              --enable-cmdlib     \
+                              --enable-pkgconfig  \
+                              --enable-udev_sync
+    pause_and_run make
+    _____________ 'PATH=$SAVEPATH'
+                   PATH=$SAVEPATH
+    _____________ 'unset SAVEPATH'
+                   unset SAVEPATH
+
+    pause_and_run make -C tools install_dmsetup_dynamic
+    pause_and_run make -C udev  install
+    pause_and_run make -C libdm install
+
+    # skipped
+    # pause_and_run make -C test help
+    # pause_and_run make check_local
+
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_libgpg_error_() {
+    url=https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.32.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr
+    pause_and_run make
+    pause_and_run make install
+    pause_and_run install -v -m644 -D README /usr/share/doc/libgpg-error-1.32/README
+
+    pause_and_run popd
+}
+
+_blfs_install_libgcrypt_() {
+    url=https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.8.3.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr
+    pause_and_run make
+
+    # skipped
+    # make -C doc pdf ps html
+    # makeinfo --html --no-split -o doc/gcrypt_nochunks.html doc/gcrypt.texi
+    # makeinfo --plaintext       -o doc/gcrypt.txt           doc/gcrypt.texi
+
+    # skipped
+    # make check
+
+    pause_and_run make install
+    pause_and_run install -v -dm755   /usr/share/doc/libgcrypt-1.8.3
+    pause_and_run install -v -m644    README doc/{README.apichanges,fips*,libgcrypt*} \
+                                      /usr/share/doc/libgcrypt-1.8.3
+
+    # skipped
+    # install -v -dm755   /usr/share/doc/libgcrypt-1.8.3/html
+    # install -v -m644 doc/gcrypt.html/* \
+    #                     /usr/share/doc/libgcrypt-1.8.3/html
+    # install -v -m644 doc/gcrypt_nochunks.html \
+    #                     /usr/share/doc/libgcrypt-1.8.3
+    # install -v -m644 doc/gcrypt.{pdf,ps,dvi,txt,texi} \
+    #                     /usr/share/doc/libgcrypt-1.8.3
+
+    pause_and_run popd
+}
+
 _blfs_install___() {
     url=
 
@@ -1029,4 +1164,32 @@ _blfs_install_berkeleydb() {
 
 _blfs_install_cyrus_sasl() {
     _log_ _blfs_install_cyrus_sasl_
+}
+
+_blfs_kernel_build_config() {
+    _log_ _blfs_kernel_build_config_
+}
+
+_blfs_kernel_build_config_check() {
+    _log_ _blfs_kernel_build_config_check_
+}
+
+_blfs_kernel_build() {
+    _log_ _blfs_kernel_build_
+}
+
+_blfs_kernel_post_build() {
+    _log_ _blfs_kernel_post_build_
+}
+
+_blfs_install_lvm2() {
+    _log_ _blfs_install_lvm2_
+}
+
+_blfs_install_libgpg_error() {
+    _log_ _blfs_install_libgpg_error_
+}
+
+_blfs_install_libgcrypt() {
+    _log_ _blfs_install_libgcrypt_
 }
