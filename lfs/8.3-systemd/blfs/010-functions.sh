@@ -2381,6 +2381,146 @@ _blfs_install_volume_key_() {
     pause_and_run popd
 }
 
+_blfs_install_links_() {
+    url=http://links.twibright.com/download/links-2.16.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr --mandir=/usr/share/man
+    pause_and_run make
+    pause_and_run make install
+    pause_and_run install -v -d -m755 /usr/share/doc/links-2.16
+    pause_and_run install -v -m644 doc/links_cal/* KEYS BRAILLE_HOWTO /usr/share/doc/links-2.16
+
+    pause_and_run popd
+}
+
+_blfs_install_sharutils_() {
+    url=https://ftp.gnu.org/gnu/sharutils/sharutils-4.15.2.tar.xz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' lib/*.c
+    echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h
+
+    pause_and_run ./configure --prefix=/usr
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_zip_() {
+    url=https://downloads.sourceforge.net/infozip/zip30.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run make -f unix/Makefile generic_gcc
+    pause_and_run make prefix=/usr MANDIR=/usr/share/man/man1 -f unix/Makefile install
+
+    pause_and_run popd
+}
+
+_blfs_install_lynx_() {
+    url=https://invisible-mirror.net/archives/lynx/tarballs/lynx2.8.9rel.1.tar.bz2
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr          \
+                              --sysconfdir=/etc/lynx \
+                              --datadir=/usr/share/doc/lynx-2.8.9rel.1 \
+                              --with-zlib            \
+                              --with-bzlib           \
+                              --with-ssl             \
+                              --with-screen=ncursesw \
+                              --enable-locale-charset
+    pause_and_run make
+    pause_and_run make install-full
+    pause_and_run chgrp -v -R root /usr/share/doc/lynx-2.8.9rel.1/lynx_doc
+
+    ________________________________________________________________________________ "
+    sed -e '/#LOCALE/     a LOCALE_CHARSET:TRUE'     \\
+        -i /etc/lynx/lynx.cfg
+    sed -e '/#DEFAULT_ED/ a DEFAULT_EDITOR:vi'       \\
+        -i /etc/lynx/lynx.cfg
+    sed -e '/#PERSIST/    a PERSISTENT_COOKIES:TRUE' \\
+        -i /etc/lynx/lynx.cfg
+    "
+    sed -e '/#LOCALE/     a LOCALE_CHARSET:TRUE'     \
+        -i /etc/lynx/lynx.cfg
+    sed -e '/#DEFAULT_ED/ a DEFAULT_EDITOR:vi'       \
+        -i /etc/lynx/lynx.cfg
+    sed -e '/#PERSIST/    a PERSISTENT_COOKIES:TRUE' \
+        -i /etc/lynx/lynx.cfg
+
+    pause_and_run popd
+}
+
+_blfs_install_libatomic_ops_() {
+    url=https://github.com/ivmai/libatomic_ops/releases/download/v7.6.6/libatomic_ops-7.6.6.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr    \
+                              --enable-shared  \
+                              --disable-static \
+                              --docdir=/usr/share/doc/libatomic_ops-7.6.6
+    pause_and_run make
+    pause_and_run make install
+
+    pause_and_run popd
+}
+
+_blfs_install_gc_() {
+    url=http://www.hboehm.info/gc/gc_source/gc-7.6.4.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run ./configure --prefix=/usr      \
+                              --enable-cplusplus \
+                              --disable-static   \
+                              --docdir=/usr/share/doc/gc-7.6.4
+    pause_and_run make
+    pause_and_run make install
+    pause_and_run install -v -m644 doc/gc.man /usr/share/man/man3/gc_malloc.3
+
+    pause_and_run popd
+}
+
+_blfs_install_w3m_() {
+    url=https://downloads.sourceforge.net/w3m/w3m-0.5.3.tar.gz
+
+    pause_and_run pushd /sources/downloads/blfs
+    pause_and_run _blfs_download_extract_and_enter $url
+
+    pause_and_run patch -Np1 -i ../w3m-0.5.3-bdwgc72-1.patch
+
+    ________________________________________________________________________________ "
+    sed -i 's/file_handle/file_foo/' istream.{c,h}
+    sed -i 's#gdk-pixbuf-xlib-2.0#& x11#' configure
+    sed -i '/USE_EGD/s/define/undef/' config.h.in
+    "
+    sed -i 's/file_handle/file_foo/' istream.{c,h}
+    sed -i 's#gdk-pixbuf-xlib-2.0#& x11#' configure
+    sed -i '/USE_EGD/s/define/undef/' config.h.in
+
+    pause_and_run ./configure --prefix=/usr --sysconfdir=/etc
+    pause_and_run make
+    pause_and_run make install
+    pause_and_run install -v -m644 -D doc/keymap.default /etc/w3m/keymap
+    pause_and_run install -v -m644    doc/menu.default /etc/w3m/menu
+    pause_and_run install -v -m755 -d /usr/share/doc/w3m-0.5.3
+    pause_and_run install -v -m644    doc/{HISTORY,READ*,keymap.*,menu.*,*.html} /usr/share/doc/w3m-0.5.3
+
+    pause_and_run popd
+}
+
 _blfs_install___() {
     url=
 
@@ -2648,4 +2788,32 @@ _blfs_install_postfix() {
 
 _blfs_install_volume_key() {
     _log_ _blfs_install_volume_key_
+}
+
+_blfs_install_links() {
+    _log_ _blfs_install_links_
+}
+
+_blfs_install_sharutils() {
+    _log_ _blfs_install_sharutils_
+}
+
+_blfs_install_zip() {
+    _log_ _blfs_install_zip_
+}
+
+_blfs_install_lynx() {
+    _log_ _blfs_install_lynx_
+}
+
+_blfs_install_libatomic_ops() {
+    _log_ _blfs_install_libatomic_ops_
+}
+
+_blfs_install_gc() {
+    _log_ _blfs_install_gc_
+}
+
+_blfs_install_w3m() {
+    _log_ _blfs_install_w3m_
 }
