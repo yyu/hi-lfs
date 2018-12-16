@@ -950,7 +950,7 @@ _kernel_build_2() {
 
 _kernel_build_3() {
     make &&
-    make modules_install
+    sudo make modules_install
 }
 
 _kernel_build_4() {
