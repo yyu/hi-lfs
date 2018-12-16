@@ -151,6 +151,117 @@ _x_install_libxcb_() {
     popd; _blfs_cleanup $url; set +x; set +v; set +e
 }
 
+_x_install_libpng_() {
+    set -e; set -v; set -x; url=https://downloads.sourceforge.net/libpng/libpng-1.6.35.tar.xz
+    pushd $WD
+    wget https://downloads.sourceforge.net/sourceforge/libpng-apng/libpng-1.6.35-apng.patch.gz
+    _blfs_download_extract_and_enter $url
+
+    gzip -cd ../libpng-1.6.35-apng.patch.gz | patch -p1
+
+    LIBS=-lpthread ./configure --prefix=/usr --disable-static &&
+    make
+
+    make check
+
+    sudo make install &&
+    sudo mkdir -v /usr/share/doc/libpng-1.6.35 &&
+    sudo cp -v README libpng-manual.txt /usr/share/doc/libpng-1.6.35
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_FreeType_() {
+    set -e; set -v; set -x; url=https://downloads.sourceforge.net/freetype/freetype-2.9.1.tar.bz2
+    pushd $WD
+    wget https://downloads.sourceforge.net/freetype/freetype-doc-2.9.1.tar.bz2
+    _blfs_download_extract_and_enter $url
+
+    tar -xf ../freetype-doc-2.9.1.tar.bz2 --strip-components=2 -C docs
+    sed -ri "s:.*(AUX_MODULES.*valid):\1:" modules.cfg &&
+
+    sed -r "s:.*(#.*SUBPIXEL_RENDERING) .*:\1:" \
+        -i include/freetype/config/ftoption.h  &&
+
+    ./configure --prefix=/usr --enable-freetype-config --disable-static &&
+    make
+
+    sudo make install &&
+    sudo cp builds/unix/freetype-config /usr/bin
+    sudo install -v -m755 -d /usr/share/doc/freetype-2.9.1 &&
+    sudo cp -v -R docs/*     /usr/share/doc/freetype-2.9.1
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_ICU_() {
+    set -e; set -v; set -x; url=http://download.icu-project.org/files/icu4c/62.1/icu4c-62_1-src.tgz
+    pushd $WD
+    wget $url
+    tar xf icu4c-62_1-src.tgz
+    cd icu
+
+    cd source                                    &&
+    ./configure --prefix=/usr                    &&
+    make
+
+    make check
+    sudo make install
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_HarfBuzz_() {
+    set -e; set -v; set -x; url=https://www.freedesktop.org/software/harfbuzz/release/harfbuzz-1.8.8.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure --prefix=/usr --with-gobject &&
+    make
+    make check
+    sudo make install
+
+    hb-view --output-file=hello.png /usr/share/fonts/dejavu/DejaVuSans.ttf "Hello World."
+
+    sleep 5
+
+    _x_install_FreeType
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_Fontconfig_() {
+    set -e; set -v; set -x; url=https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.13.0.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    rm -f src/fcobjshash.h
+    ./configure --prefix=/usr        \
+                --sysconfdir=/etc    \
+                --localstatedir=/var \
+                --disable-docs       \
+                --docdir=/usr/share/doc/fontconfig-2.13.0 &&
+    make
+    
+    make check
+
+    sudo make install
+
+    sudo install -v -dm755 \
+            /usr/share/{man/man{1,3,5},doc/fontconfig-2.13.0/fontconfig-devel} &&
+    sudo install -v -m644 fc-*/*.1         /usr/share/man/man1 &&
+    sudo install -v -m644 doc/*.3          /usr/share/man/man3 &&
+    sudo install -v -m644 doc/fonts-conf.5 /usr/share/man/man5 &&
+    sudo install -v -m644 doc/fontconfig-devel/* \
+                                      /usr/share/doc/fontconfig-2.13.0/fontconfig-devel &&
+    sudo install -v -m644 doc/*.{pdf,sgml,txt,html} \
+                                      /usr/share/doc/fontconfig-2.13.0
+
+    fc-list
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
 _x_install___() {
     set -e; set -v; set -x; url=
     pushd $WD
@@ -197,5 +308,26 @@ _x_install_xcb_proto() {
 
 _x_install_libxcb() {
     _x_wrap_  _x_install_libxcb_ && $WRAPPER
+}
+
+_x_install_libpng() {
+    _x_wrap_  _x_install_libpng_ && $WRAPPER
+}
+
+_x_install_FreeType() {
+    _x_wrap_  _x_install_FreeType_ && $WRAPPER
+}
+
+_x_install_HarfBuzz() {
+    _x_wrap_  _x_install_HarfBuzz_ && $WRAPPER
+}
+
+_x_install_ICU() {
+    _x_wrap_  _x_install_ICU_ && $WRAPPER
+    icuinfo
+}
+
+_x_install_Fontconfig() {
+    _x_wrap_  _x_install_Fontconfig_ && $WRAPPER
 }
 
