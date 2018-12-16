@@ -808,6 +808,10 @@ _x_install_Xorg_Server_() {
     popd; _blfs_cleanup $url; set +x; set +v; set +e
 }
 
+_x_install_libva_rebuild_() {
+    _x_install_libva
+}
+
 _x_install___() {
     set -e; set -v; set -x; url=
     pushd $WD
@@ -982,5 +986,9 @@ _x_install_libepoxy() {
 
 _x_install_Xorg_Server() {
     _x_wrap_  _x_install_Xorg_Server_ && $WRAPPER
+}
+
+_x_install_libva_rebuild() {
+    _x_wrap_  _x_install_libva_rebuild_ && $WRAPPER
 }
 
