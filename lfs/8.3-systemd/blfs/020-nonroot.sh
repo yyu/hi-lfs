@@ -5,7 +5,7 @@ export PS4="\033[1;33m++++++++++\033[0m"
 export WD=/home/yyu/xc
 export SELF=020-nonroot.sh
 export WRAPPER=$WD/wrapper
-export BLFS_LOG=/var/log/blfs.Xorg.log
+export X_LOG=/var/log/blfs.Xorg.log
 
 export XORG_PREFIX="/usr"
 export XORG_CONFIG="--prefix=$XORG_PREFIX --sysconfdir=/etc --localstatedir=/var --disable-static"
@@ -45,6 +45,14 @@ _blfs_download_extract_and_enter() {
     wget $download_url
     tar xf $tarball
     cd $folder
+}
+
+_blfs_cleanup() {
+    download_url=$1
+    tarball=$(_blfs_extract_filename $download_url)
+    folder=$(_blfs_folder_name $tarball)
+
+    rm -rf $folder $tarball
 }
 
 _x_setup_xorg_build_env_() {
@@ -89,25 +97,76 @@ _x_install_xorgproto_() {
     popd
 }
 
-_x_install___() {
-    url=
-
+_x_install_libXau_() {
+    set -e; set -v; set -x
+    url=https://www.x.org/pub/individual/lib/libXau-1.0.8.tar.bz2
     pushd $WD
     _blfs_download_extract_and_enter $url
 
     ./configure $XORG_CONFIG
-    #make
+    make
     sudo make install
 
-    popd
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_libXdmcp_() {
+    set -e; set -v; set -x; url=https://www.x.org/pub/individual/lib/libXdmcp-1.1.2.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure $XORG_CONFIG
+    make
+    sudo make install
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_xcb_proto_() {
+    set -e; set -v; set -x; url=https://xcb.freedesktop.org/dist/xcb-proto-1.13.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure $XORG_CONFIG
+    make check
+    sudo make install
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_libxcb_() {
+    set -e; set -v; set -x; url=https://xcb.freedesktop.org/dist/libxcb-1.13.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    sed -i "s/pthread-stubs//" configure &&
+    ./configure $XORG_CONFIG      \
+                --without-doxygen \
+                --docdir='${datadir}'/doc/libxcb-1.13 &&
+    make
+
+    make check
+    sudo make install
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install___() {
+    set -e; set -v; set -x; url=
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure $XORG_CONFIG
+    make
+    sudo make install
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
 }
 
 _x_wrap_() {
     cat > $WRAPPER << EOF
-set -e; set -v; set -x
 . $WD/$SELF
-$@ 2>&1 | tee -a $BLFS_LOG
-set +x; set +v; set +e
+$@ 2>&1 | tee -a $X_LOG
 EOF
     chmod +x $WRAPPER
 }
@@ -122,5 +181,21 @@ _x_install_util_macros() {
 
 _x_install_xorgproto() {
     _x_wrap_  _x_install_xorgproto_ && $WRAPPER
+}
+
+_x_install_libXau() {
+    _x_wrap_  _x_install_libXau_ && $WRAPPER
+}
+
+_x_install_libXdmcp() {
+    _x_wrap_  _x_install_libXdmcp_ && $WRAPPER
+}
+
+_x_install_xcb_proto() {
+    _x_wrap_  _x_install_xcb_proto_ && $WRAPPER
+}
+
+_x_install_libxcb() {
+    _x_wrap_  _x_install_libxcb_ && $WRAPPER
 }
 
