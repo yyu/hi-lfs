@@ -812,6 +812,86 @@ _x_install_libva_rebuild_() {
     _x_install_libva
 }
 
+_x_install_twm_() {
+    set -e; set -v; set -x; url=https://www.x.org/pub/individual/app/twm-1.0.10.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    sed -i -e '/^rcdir =/s,^\(rcdir = \).*,\1/etc/X11/app-defaults,' src/Makefile.in &&
+    ./configure $XORG_CONFIG &&
+    make
+    sudo make install
+
+    echo -e "\033[1;32m**************************************************\033[0m"
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_xterm_() {
+    set -e; set -v; set -x;
+    pushd $WD
+    wget http://invisible-mirror.net/archives/xterm/xterm-335.tgz
+    tar xf xterm-335.tgz
+    cd xterm-335
+
+    sed -i '/v0/{n;s/new:/new:kb=^?:/}' termcap &&
+    printf '\tkbs=\\177,\n' >> terminfo &&
+
+    TERMINFO=/usr/share/terminfo \
+    ./configure $XORG_CONFIG     \
+        --with-app-defaults=/etc/X11/app-defaults &&
+
+    make
+    sudo make install    &&
+    sudo make install-ti &&
+
+    sudo mkdir -pv /usr/share/applications &&
+    sudo cp -v *.desktop /usr/share/applications/
+
+    cat >> XTerm << "EOF"
+*VT100*locale: true
+*VT100*faceName: Monospace
+*VT100*faceSize: 10
+*backarrowKeyIsErase: true
+*ptyInitialErase: true
+EOF
+
+    sudo cp XTerm /etc/X11/app-defaults/XTerm
+
+    echo -e "\033[1;32m**************************************************\033[0m"
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_xclock_() {
+    set -e; set -v; set -x; url=https://www.x.org/pub/individual/app/xclock-1.0.7.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure $XORG_CONFIG
+    make
+    sudo make install
+
+    echo -e "\033[1;32m**************************************************\033[0m"
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_xinit_() {
+    set -e; set -v; set -x; url=https://www.x.org/pub/individual/app/xinit-1.4.0.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure $XORG_CONFIG --with-xinitdir=/etc/X11/app-defaults &&
+    make
+    sudo make install
+    sudo ldconfig
+
+    echo -e "\033[1;32m**************************************************\033[0m"
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
 _x_install___() {
     set -e; set -v; set -x; url=
     pushd $WD
@@ -990,5 +1070,21 @@ _x_install_Xorg_Server() {
 
 _x_install_libva_rebuild() {
     _x_wrap_  _x_install_libva_rebuild_ && $WRAPPER
+}
+
+_x_install_twm() {
+    _x_wrap_  _x_install_twm_ && $WRAPPER
+}
+
+_x_install_xterm() {
+    _x_wrap_  _x_install_xterm_ && $WRAPPER
+}
+
+_x_install_xclock() {
+    _x_wrap_  _x_install_xclock_ && $WRAPPER
+}
+
+_x_install_xinit() {
+    _x_wrap_  _x_install_xinit_ && $WRAPPER
 }
 
