@@ -343,6 +343,79 @@ EOF
     set +x; set +v; set +e
 }
 
+_x_install_xcb_util_() {
+    set -e; set -v; set -x; url=https://xcb.freedesktop.org/dist/xcb-util-0.4.0.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure $XORG_CONFIG
+    make
+    sudo make install
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_xcb_util_image_() {
+    set -e; set -v; set -x; url=https://xcb.freedesktop.org/dist/xcb-util-image-0.4.0.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure $XORG_CONFIG
+    make
+    LD_LIBRARY_PATH=$XORG_PREFIX/lib make check
+    sudo make install
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_xcb_util_keysyms_() {
+    set -e; set -v; set -x; url=https://xcb.freedesktop.org/dist/xcb-util-keysyms-0.4.0.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure $XORG_CONFIG
+    make
+    sudo make install
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_xcb_util_renderutil_() {
+    set -e; set -v; set -x; url=https://xcb.freedesktop.org/dist/xcb-util-renderutil-0.3.9.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure $XORG_CONFIG
+    make
+    sudo make install
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_xcb_util_wm_() {
+    set -e; set -v; set -x; url=https://xcb.freedesktop.org/dist/xcb-util-wm-0.4.1.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure $XORG_CONFIG
+    make
+    sudo make install
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_xcb_util_cursor_() {
+    set -e; set -v; set -x; url=https://xcb.freedesktop.org/dist/xcb-util-cursor-0.1.3.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure $XORG_CONFIG
+    make
+    sudo make install
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
 _x_install___() {
     set -e; set -v; set -x; url=
     pushd $WD
@@ -414,5 +487,29 @@ _x_install_Fontconfig() {
 
 _x_install_Xorg_libraries() {
     _x_wrap_  _x_install_Xorg_libraries_ && $WRAPPER
+}
+
+_x_install_xcb_util() {
+    _x_wrap_  _x_install_xcb_util_ && $WRAPPER
+}
+
+_x_install_xcb_util_image() {
+    _x_wrap_  _x_install_xcb_util_image_ && $WRAPPER
+}
+
+_x_install_xcb_util_keysyms() {
+    _x_wrap_  _x_install_xcb_util_keysyms_ && $WRAPPER
+}
+
+_x_install_xcb_util_renderutil() {
+    _x_wrap_  _x_install_xcb_util_renderutil_ && $WRAPPER
+}
+
+_x_install_xcb_util_wm() {
+    _x_wrap_  _x_install_xcb_util_wm_ && $WRAPPER
+}
+
+_x_install_xcb_util_cursor() {
+    _x_wrap_  _x_install_xcb_util_cursor_ && $WRAPPER
 }
 
