@@ -892,6 +892,20 @@ _x_install_xinit_() {
     popd; _blfs_cleanup $url; set +x; set +v; set +e
 }
 
+_x_install_libevdev_() {
+    set -e; set -v; set -x; url=https://www.freedesktop.org/software/libevdev/libevdev-1.5.9.tar.xz
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure $XORG_CONFIG
+    make
+    sudo make install
+
+    echo -e "\033[1;32m**************************************************\033[0m"
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
 _x_install___() {
     set -e; set -v; set -x; url=
     pushd $WD
@@ -913,6 +927,39 @@ _x_wrap_() {
 $@ 2>&1 | tee -a $X_LOG
 EOF
     chmod +x $WRAPPER
+}
+
+_kernel_build() {
+    _____________ 'steps:'
+    _____________ '_kernel_build_1'
+    _____________ '_kernel_build_2'
+    _____________ '_kernel_build_3'
+    _____________ '_kernel_build_4'
+}
+
+_kernel_build_1() {
+    cd $WD/linux-4.18.5
+    make mrproper &&
+    cp -v /boot/config-4.18.5 .config
+}
+
+_kernel_build_2() {
+    _____________ 'make menuconfig'
+    make menuconfig
+}
+
+_kernel_build_3() {
+    make &&
+    make modules_install
+}
+
+_kernel_build_4() {
+    sudo cp -v arch/x86/boot/bzImage /boot/vmlinuz-4.18.5-lfs-8.3-systemd
+    sudo cp -v System.map /boot/System.map-4.18.5
+    sudo cp -v .config /boot/config-4.18.5
+    sudo install -d /usr/share/doc/linux-4.18.5
+    sudo cp -r Documentation/* /usr/share/doc/linux-4.18.5
+    cd -
 }
 
 _x_setup_xorg_build_env() {
@@ -1086,5 +1133,9 @@ _x_install_xclock() {
 
 _x_install_xinit() {
     _x_wrap_  _x_install_xinit_ && $WRAPPER
+}
+
+_x_install_libevdev() {
+    _x_wrap_  _x_install_libevdev_ && $WRAPPER
 }
 
