@@ -906,6 +906,124 @@ _x_install_libevdev_() {
     popd; _blfs_cleanup $url; set +x; set +v; set +e
 }
 
+_x_install_mtdev_() {
+    set -e; set -v; set -x; url=http://bitmath.org/code/mtdev/mtdev-1.1.5.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure --prefix=/usr --disable-static &&
+    make
+    sudo make install
+
+    echo -e "\033[1;32m**************************************************\033[0m"
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_xorg_evdev_() {
+    set -e; set -v; set -x; url=https://www.x.org/pub/individual/driver/xf86-input-evdev-2.10.6.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure $XORG_CONFIG
+    make
+    sudo make install
+
+    echo -e "\033[1;32m**************************************************\033[0m"
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_libinput_() {
+    set -e; set -v; set -x; url=https://www.freedesktop.org/software/libinput/libinput-1.11.3.tar.xz
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    mkdir build &&
+    cd    build &&
+
+    meson --prefix=$XORG_PREFIX \
+          -Dudev-dir=/lib/udev  \
+          -Ddebug-gui=false     \
+          -Dtests=false         \
+          -Ddocumentation=false \
+          -Dlibwacom=false      \
+          ..                    &&
+    ninja
+
+    sudo ninja install
+    sudo install -v -dm755 /usr/share/doc/libinput-1.11.3
+    #sudo cp -rv html/*     /usr/share/doc/libinput-1.11.3
+
+    echo -e "\033[1;32m**************************************************\033[0m"
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_xorg_libinput_() {
+    set -e; set -v; set -x; url=https://www.x.org/pub/individual/driver/xf86-input-libinput-0.28.0.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure $XORG_CONFIG
+    make
+    make check
+    sudo make install
+
+    echo -e "\033[1;32m**************************************************\033[0m"
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_xorg_fbdev_() {
+    set -e; set -v; set -x; url=https://www.x.org/pub/individual/driver/xf86-video-fbdev-0.5.0.tar.bz2
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    ./configure $XORG_CONFIG
+    make
+    sudo make install
+
+    echo -e "\033[1;32m**************************************************\033[0m"
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_xorg_intel_driver_() {
+    echo -e "\033[31mdon't install me under virtualbox\033[0m"
+
+    #    set -e; set -v; set -x; url=http://anduin.linuxfromscratch.org/BLFS/xf86-video-intel/xf86-video-intel-20180223.tar.xz
+    #    pushd $WD
+    #    _blfs_download_extract_and_enter $url
+    #
+    #    ./autogen.sh $XORG_CONFIG     \
+    #                --enable-kms-only \
+    #                --enable-uxa      \
+    #                --mandir=/usr/share/man &&
+    #    make
+    #
+    #    sudo make install &&
+    #
+    #    sudo mv -v /usr/share/man/man4/intel-virtual-output.4 \
+    #               /usr/share/man/man1/intel-virtual-output.1 &&
+    #
+    #    sudo sed -i '/\.TH/s/4/1/' /usr/share/man/man1/intel-virtual-output.1
+    #
+    #    cat | sudo tee -a /etc/X11/xorg.conf.d/20-intel.conf << "EOF"
+    #Section   "Device"
+    #        Identifier "Intel Graphics"
+    #        Driver     "intel"
+    #        #Option     "DRI" "2"            # DRI3 is default
+    #        #Option     "AccelMethod"  "sna" # default
+    #        #Option     "AccelMethod"  "uxa" # fallback
+    #EndSection
+    #EOF
+    #
+    #    echo -e "\033[1;32m**************************************************\033[0m"
+    #
+    #    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
 _x_install___() {
     set -e; set -v; set -x; url=
     pushd $WD
@@ -1137,5 +1255,29 @@ _x_install_xinit() {
 
 _x_install_libevdev() {
     _x_wrap_  _x_install_libevdev_ && $WRAPPER
+}
+
+_x_install_mtdev() {
+    _x_wrap_  _x_install_mtdev_ && $WRAPPER
+}
+
+_x_install_xorg_evdev() {
+    _x_wrap_  _x_install_xorg_evdev_ && $WRAPPER
+}
+
+_x_install_libinput() {
+    _x_wrap_  _x_install_libinput_ && $WRAPPER
+}
+
+_x_install_xorg_libinput() {
+    _x_wrap_  _x_install_xorg_libinput_ && $WRAPPER
+}
+
+_x_install_xorg_fbdev() {
+    _x_wrap_  _x_install_xorg_fbdev_ && $WRAPPER
+}
+
+_x_install_xorg_intel_driver() {
+    _x_wrap_  _x_install_xorg_intel_driver_ && $WRAPPER
 }
 
