@@ -242,7 +242,7 @@ _x_install_Fontconfig_() {
                 --disable-docs       \
                 --docdir=/usr/share/doc/fontconfig-2.13.0 &&
     make
-    
+
     make check
 
     sudo make install
@@ -489,7 +489,7 @@ _x_install_libva_() {
     popd
 
     sleep 10
-    
+
     url=https://github.com/intel/intel-vaapi-driver/releases/download/2.2.0/intel-vaapi-driver-2.2.0.tar.bz2
     pushd $WD
     _blfs_download_extract_and_enter $url
@@ -1024,6 +1024,67 @@ _x_install_xorg_intel_driver_() {
     #    popd; _blfs_cleanup $url; set +x; set +v; set +e
 }
 
+_x_install_Error_() {
+    set -e; set -v; set -x; url=https://www.cpan.org/authors/id/S/SH/SHLOMIF/Error-0.17026.tar.gz
+    pushd $WD
+    _blfs_download_extract_and_enter $url
+
+    perl Makefile.PL &&
+    make &&
+    make test
+
+    #PERL_USE_UNSAFE_INC=1 &&
+    #sudo make install UNINST=1
+
+    sudo make install
+
+    echo -e "\033[1;32m**************************************************\033[0m"
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
+_x_install_git_() {
+    set -e; set -v; set -x; url=https://www.kernel.org/pub/software/scm/git/git-2.18.0.tar.xz
+    pushd $WD
+    wget https://www.kernel.org/pub/software/scm/git/git-manpages-2.18.0.tar.xz
+    wget https://www.kernel.org/pub/software/scm/git/git-htmldocs-2.18.0.tar.xz
+    _blfs_download_extract_and_enter $url
+
+    ./configure --prefix=/usr --with-gitconfig=/etc/gitconfig &&
+    make
+    make test
+    sudo make install
+
+    sudo tar -xf ../git-manpages-2.18.0.tar.xz \
+             -C /usr/share/man --no-same-owner --no-overwrite-dir
+
+    sudo mkdir -vp   /usr/share/doc/git-2.18.0 &&
+    sudo tar   -xf   ../git-htmldocs-2.18.0.tar.xz \
+               -C    /usr/share/doc/git-2.18.0 --no-same-owner --no-overwrite-dir &&
+
+    sudo find        /usr/share/doc/git-2.18.0 -type d -exec chmod 755 {} \; &&
+    sudo find        /usr/share/doc/git-2.18.0 -type f -exec chmod 644 {} \;
+
+    sudo mkdir -vp /usr/share/doc/git-2.18.0/man-pages/{html,text}         &&
+    sudo mv        /usr/share/doc/git-2.18.0/{git*.txt,man-pages/text}     &&
+    sudo mv        /usr/share/doc/git-2.18.0/{git*.,index.,man-pages/}html &&
+
+    sudo mkdir -vp /usr/share/doc/git-2.18.0/technical/{html,text}         &&
+    sudo mv        /usr/share/doc/git-2.18.0/technical/{*.txt,text}        &&
+    sudo mv        /usr/share/doc/git-2.18.0/technical/{*.,}html           &&
+
+    sudo mkdir -vp /usr/share/doc/git-2.18.0/howto/{html,text}             &&
+    sudo mv        /usr/share/doc/git-2.18.0/howto/{*.txt,text}            &&
+    sudo mv        /usr/share/doc/git-2.18.0/howto/{*.,}html               &&
+
+    sudo sed -i '/^<a href=/s|howto/|&html/|' /usr/share/doc/git-2.18.0/howto-index.html &&
+    sudo sed -i '/^\* link:/s|howto/|&html/|' /usr/share/doc/git-2.18.0/howto-index.txt
+
+    echo -e "\033[1;32m**************************************************\033[0m"
+
+    popd; _blfs_cleanup $url; set +x; set +v; set +e
+}
+
 _x_install___() {
     set -e; set -v; set -x; url=
     pushd $WD
@@ -1279,5 +1340,13 @@ _x_install_xorg_fbdev() {
 
 _x_install_xorg_intel_driver() {
     _x_wrap_  _x_install_xorg_intel_driver_ && $WRAPPER
+}
+
+_x_install_Error() {
+    _x_wrap_  _x_install_Error_ && $WRAPPER
+}
+
+_x_install_git() {
+    _x_wrap_  _x_install_git_ && $WRAPPER
 }
 
