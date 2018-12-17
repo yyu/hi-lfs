@@ -1909,7 +1909,9 @@ _x_install_gst_plugins_base_() {
                 --with-package-name="GStreamer Base Plugins 1.14.2 BLFS" \
                 --with-package-origin="http://www.linuxfromscratch.org/blfs/view/svn/" &&
     make
+    set +e
     make check
+    set -e
     sudo make install
 
     echo -e "\033[1;32m**************************************************\033[0m"
@@ -1917,200 +1919,200 @@ _x_install_gst_plugins_base_() {
     popd; _blfs_cleanup $url; set +x; set +v; set +e
 }
 
-# _x_install_qt5_() {
-#     set -e; set -v; set -x; url=https://download.qt.io/archive/qt/5.11/5.11.1/single/qt-everywhere-src-5.11.1.tar.xz
-#     pushd $WD
-#     wget http://www.linuxfromscratch.org/patches/blfs/8.3/qt-5.11.1-glibc228-1.patch
-#     _blfs_download_extract_and_enter $url
-# 
-#     export QT5PREFIX=/opt/qt5
-#     mkdir /opt/qt-5.11.1
-#     ln -sfnv qt-5.11.1 /opt/qt5
-#     patch -Np1 -i ../qt-5.11.1-glibc228-1.patch
-#     ./configure -prefix $QT5PREFIX                          \
-#                 -sysconfdir /etc/xdg                        \
-#                 -confirm-license                            \
-#                 -opensource                                 \
-#                 -dbus-linked                                \
-#                 -openssl-linked                             \
-#                 -system-harfbuzz                            \
-#                 -system-sqlite                              \
-#                 -nomake examples                            \
-#                 -no-rpath                                   \
-#                 -skip qtwebengine                           &&
-#     make
-# 
-#     make install
-# 
-#     find $QT5PREFIX/ -name \*.prl \
-#        -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
-#     QT5BINDIR=$QT5PREFIX/bin
-# 
-#     install -v -dm755 /usr/share/pixmaps/                  &&
-# 
-#     install -v -Dm644 qttools/src/assistant/assistant/images/assistant-128.png \
-#                       /usr/share/pixmaps/assistant-qt5.png &&
-# 
-#     install -v -Dm644 qttools/src/designer/src/designer/images/designer.png \
-#                       /usr/share/pixmaps/designer-qt5.png  &&
-# 
-#     install -v -Dm644 qttools/src/linguist/linguist/images/icons/linguist-128-32.png \
-#                       /usr/share/pixmaps/linguist-qt5.png  &&
-# 
-#     install -v -Dm644 qttools/src/qdbus/qdbusviewer/images/qdbusviewer-128.png \
-#                       /usr/share/pixmaps/qdbusviewer-qt5.png &&
-# 
-#     install -dm755 /usr/share/applications &&
-# 
-#     cat > /usr/share/applications/assistant-qt5.desktop << EOF
-# [Desktop Entry]
-# Name=Qt5 Assistant
-# Comment=Shows Qt5 documentation and examples
-# Exec=$QT5BINDIR/assistant
-# Icon=assistant-qt5.png
-# Terminal=false
-# Encoding=UTF-8
-# Type=Application
-# Categories=Qt;Development;Documentation;
-# EOF
-# 
-#     cat > /usr/share/applications/designer-qt5.desktop << EOF
-# [Desktop Entry]
-# Name=Qt5 Designer
-# GenericName=Interface Designer
-# Comment=Design GUIs for Qt5 applications
-# Exec=$QT5BINDIR/designer
-# Icon=designer-qt5.png
-# MimeType=application/x-designer;
-# Terminal=false
-# Encoding=UTF-8
-# Type=Application
-# Categories=Qt;Development;
-# EOF
-# 
-#     cat > /usr/share/applications/linguist-qt5.desktop << EOF
-# [Desktop Entry]
-# Name=Qt5 Linguist
-# Comment=Add translations to Qt5 applications
-# Exec=$QT5BINDIR/linguist
-# Icon=linguist-qt5.png
-# MimeType=text/vnd.trolltech.linguist;application/x-linguist;
-# Terminal=false
-# Encoding=UTF-8
-# Type=Application
-# Categories=Qt;Development;
-# EOF
-# 
-#     cat > /usr/share/applications/qdbusviewer-qt5.desktop << EOF
-# [Desktop Entry]
-# Name=Qt5 QDbusViewer
-# GenericName=D-Bus Debugger
-# Comment=Debug D-Bus applications
-# Exec=$QT5BINDIR/qdbusviewer
-# Icon=qdbusviewer-qt5.png
-# Terminal=false
-# Encoding=UTF-8
-# Type=Application
-# Categories=Qt;Development;Debugger;
-# EOF
-# 
-#     QT5BINDIR=$QT5PREFIX/bin
-# 
-#     install -v -dm755 /usr/share/pixmaps/                  &&
-# 
-#     install -v -Dm644 qttools/src/assistant/assistant/images/assistant-128.png \
-#                       /usr/share/pixmaps/assistant-qt5.png &&
-# 
-#     install -v -Dm644 qttools/src/designer/src/designer/images/designer.png \
-#                       /usr/share/pixmaps/designer-qt5.png  &&
-# 
-#     install -v -Dm644 qttools/src/linguist/linguist/images/icons/linguist-128-32.png \
-#                       /usr/share/pixmaps/linguist-qt5.png  &&
-# 
-#     install -v -Dm644 qttools/src/qdbus/qdbusviewer/images/qdbusviewer-128.png \
-#                       /usr/share/pixmaps/qdbusviewer-qt5.png &&
-# 
-#     install -dm755 /usr/share/applications &&
-# 
-#     cat > /usr/share/applications/assistant-qt5.desktop << EOF
-# [Desktop Entry]
-# Name=Qt5 Assistant
-# Comment=Shows Qt5 documentation and examples
-# Exec=$QT5BINDIR/assistant
-# Icon=assistant-qt5.png
-# Terminal=false
-# Encoding=UTF-8
-# Type=Application
-# Categories=Qt;Development;Documentation;
-# EOF
-# 
-#     cat > /usr/share/applications/designer-qt5.desktop << EOF
-# [Desktop Entry]
-# Name=Qt5 Designer
-# GenericName=Interface Designer
-# Comment=Design GUIs for Qt5 applications
-# Exec=$QT5BINDIR/designer
-# Icon=designer-qt5.png
-# MimeType=application/x-designer;
-# Terminal=false
-# Encoding=UTF-8
-# Type=Application
-# Categories=Qt;Development;
-# EOF
-# 
-#     cat > /usr/share/applications/linguist-qt5.desktop << EOF
-# [Desktop Entry]
-# Name=Qt5 Linguist
-# Comment=Add translations to Qt5 applications
-# Exec=$QT5BINDIR/linguist
-# Icon=linguist-qt5.png
-# MimeType=text/vnd.trolltech.linguist;application/x-linguist;
-# Terminal=false
-# Encoding=UTF-8
-# Type=Application
-# Categories=Qt;Development;
-# EOF
-# 
-#     cat > /usr/share/applications/qdbusviewer-qt5.desktop << EOF
-# [Desktop Entry]
-# Name=Qt5 QDbusViewer
-# GenericName=D-Bus Debugger
-# Comment=Debug D-Bus applications
-# Exec=$QT5BINDIR/qdbusviewer
-# Icon=qdbusviewer-qt5.png
-# Terminal=false
-# Encoding=UTF-8
-# Type=Application
-# Categories=Qt;Development;Debugger;
-# EOF
-# 
-#     cat >> /etc/ld.so.conf << EOF
-# # Begin Qt addition
-# 
-# /opt/qt5/lib
-# 
-# # End Qt addition
-# EOF
-# 
-#     ldconfig
-# 
-#     cat > /etc/profile.d/qt5.sh << "EOF"
-# # Begin /etc/profile.d/qt5.sh
-# 
-# QT5DIR=/opt/qt5
-# 
-# pathappend $QT5DIR/bin           PATH
-# pathappend $QT5DIR/lib/pkgconfig PKG_CONFIG_PATH
-# 
-# export QT5DIR
-# 
-# # End /etc/profile.d/qt5.sh
-# EOF
-# 
-#     echo -e "\033[1;32m**************************************************\033[0m"
-# 
-#     popd; set +x; set +v; set +e
-# }
+_x_install_qt5_() {
+    set -e; set -v; set -x; url=https://download.qt.io/archive/qt/5.11/5.11.1/single/qt-everywhere-src-5.11.1.tar.xz
+    pushd $WD
+    wget http://www.linuxfromscratch.org/patches/blfs/8.3/qt-5.11.1-glibc228-1.patch
+    _blfs_download_extract_and_enter $url
+
+    export QT5PREFIX=/opt/qt5
+    mkdir /opt/qt-5.11.1
+    ln -sfnv qt-5.11.1 /opt/qt5
+    patch -Np1 -i ../qt-5.11.1-glibc228-1.patch
+    ./configure -prefix $QT5PREFIX                          \
+                -sysconfdir /etc/xdg                        \
+                -confirm-license                            \
+                -opensource                                 \
+                -dbus-linked                                \
+                -openssl-linked                             \
+                -system-harfbuzz                            \
+                -system-sqlite                              \
+                -nomake examples                            \
+                -no-rpath                                   \
+                -skip qtwebengine                           &&
+    make
+
+    make install
+
+    find $QT5PREFIX/ -name \*.prl \
+       -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+    QT5BINDIR=$QT5PREFIX/bin
+
+    install -v -dm755 /usr/share/pixmaps/                  &&
+
+    install -v -Dm644 qttools/src/assistant/assistant/images/assistant-128.png \
+                      /usr/share/pixmaps/assistant-qt5.png &&
+
+    install -v -Dm644 qttools/src/designer/src/designer/images/designer.png \
+                      /usr/share/pixmaps/designer-qt5.png  &&
+
+    install -v -Dm644 qttools/src/linguist/linguist/images/icons/linguist-128-32.png \
+                      /usr/share/pixmaps/linguist-qt5.png  &&
+
+    install -v -Dm644 qttools/src/qdbus/qdbusviewer/images/qdbusviewer-128.png \
+                      /usr/share/pixmaps/qdbusviewer-qt5.png &&
+
+    install -dm755 /usr/share/applications &&
+
+    cat > /usr/share/applications/assistant-qt5.desktop << EOF
+[Desktop Entry]
+Name=Qt5 Assistant
+Comment=Shows Qt5 documentation and examples
+Exec=$QT5BINDIR/assistant
+Icon=assistant-qt5.png
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Development;Documentation;
+EOF
+
+    cat > /usr/share/applications/designer-qt5.desktop << EOF
+[Desktop Entry]
+Name=Qt5 Designer
+GenericName=Interface Designer
+Comment=Design GUIs for Qt5 applications
+Exec=$QT5BINDIR/designer
+Icon=designer-qt5.png
+MimeType=application/x-designer;
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Development;
+EOF
+
+    cat > /usr/share/applications/linguist-qt5.desktop << EOF
+[Desktop Entry]
+Name=Qt5 Linguist
+Comment=Add translations to Qt5 applications
+Exec=$QT5BINDIR/linguist
+Icon=linguist-qt5.png
+MimeType=text/vnd.trolltech.linguist;application/x-linguist;
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Development;
+EOF
+
+    cat > /usr/share/applications/qdbusviewer-qt5.desktop << EOF
+[Desktop Entry]
+Name=Qt5 QDbusViewer
+GenericName=D-Bus Debugger
+Comment=Debug D-Bus applications
+Exec=$QT5BINDIR/qdbusviewer
+Icon=qdbusviewer-qt5.png
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Development;Debugger;
+EOF
+
+    QT5BINDIR=$QT5PREFIX/bin
+
+    install -v -dm755 /usr/share/pixmaps/                  &&
+
+    install -v -Dm644 qttools/src/assistant/assistant/images/assistant-128.png \
+                      /usr/share/pixmaps/assistant-qt5.png &&
+
+    install -v -Dm644 qttools/src/designer/src/designer/images/designer.png \
+                      /usr/share/pixmaps/designer-qt5.png  &&
+
+    install -v -Dm644 qttools/src/linguist/linguist/images/icons/linguist-128-32.png \
+                      /usr/share/pixmaps/linguist-qt5.png  &&
+
+    install -v -Dm644 qttools/src/qdbus/qdbusviewer/images/qdbusviewer-128.png \
+                      /usr/share/pixmaps/qdbusviewer-qt5.png &&
+
+    install -dm755 /usr/share/applications &&
+
+    cat > /usr/share/applications/assistant-qt5.desktop << EOF
+[Desktop Entry]
+Name=Qt5 Assistant
+Comment=Shows Qt5 documentation and examples
+Exec=$QT5BINDIR/assistant
+Icon=assistant-qt5.png
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Development;Documentation;
+EOF
+
+    cat > /usr/share/applications/designer-qt5.desktop << EOF
+[Desktop Entry]
+Name=Qt5 Designer
+GenericName=Interface Designer
+Comment=Design GUIs for Qt5 applications
+Exec=$QT5BINDIR/designer
+Icon=designer-qt5.png
+MimeType=application/x-designer;
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Development;
+EOF
+
+    cat > /usr/share/applications/linguist-qt5.desktop << EOF
+[Desktop Entry]
+Name=Qt5 Linguist
+Comment=Add translations to Qt5 applications
+Exec=$QT5BINDIR/linguist
+Icon=linguist-qt5.png
+MimeType=text/vnd.trolltech.linguist;application/x-linguist;
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Development;
+EOF
+
+    cat > /usr/share/applications/qdbusviewer-qt5.desktop << EOF
+[Desktop Entry]
+Name=Qt5 QDbusViewer
+GenericName=D-Bus Debugger
+Comment=Debug D-Bus applications
+Exec=$QT5BINDIR/qdbusviewer
+Icon=qdbusviewer-qt5.png
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Development;Debugger;
+EOF
+
+    cat >> /etc/ld.so.conf << EOF
+# Begin Qt addition
+
+/opt/qt5/lib
+
+# End Qt addition
+EOF
+
+    ldconfig
+
+    cat > /etc/profile.d/qt5.sh << "EOF"
+# Begin /etc/profile.d/qt5.sh
+
+QT5DIR=/opt/qt5
+
+pathappend $QT5DIR/bin           PATH
+pathappend $QT5DIR/lib/pkgconfig PKG_CONFIG_PATH
+
+export QT5DIR
+
+# End /etc/profile.d/qt5.sh
+EOF
+
+    echo -e "\033[1;32m**************************************************\033[0m"
+
+    popd; set +x; set +v; set +e
+}
 
 _x_install___() {
     set -e; set -v; set -x; url=
