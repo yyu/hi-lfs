@@ -1,0 +1,71 @@
+#!/bin/bash
+
+_echo() {
+    echo -en "\033["$@"\033[0m"
+}
+
+#set -e
+#set -x
+
+f=$1
+
+doing='yes'
+
+dev_nrs=`fdisk -l $f | grep "^$f.*Linux$" | awk '
+    {
+        match($1, /(.*img)(.*)/, a)
+        print a[2]
+    }
+'`
+
+_echo 31m $dev_nrs
+
+for i in $dev_nrs; do
+    dev_name=$f$i
+    loop_dev=/dev/loop10$i
+    mnt_point=/mnt$loop_dev
+
+    _echo 32m "\n" $dev_name ' '
+    _echo 33m $loop_dev ' '
+    _echo 34m $mnt_point "\n"
+
+    mount | grep $mnt_point
+    if [ $? -eq 0 ]; then
+        _echo 31m will umount $mnt_point "\n"
+        sudo umount $mnt_point
+        doing='no'
+    fi
+
+    sudo losetup -l | grep $loop_dev
+    if [ $? -eq 0 ]; then
+        _echo 31m will detach $loop_dev "\n"
+        sudo losetup -d $loop_dev
+        doing='no'
+    fi
+
+    if [ $doing != 'yes' ]; then
+        continue
+    fi
+
+    cmd=`fdisk -l $f | grep $dev_name | awk '
+        {
+            match($1, /(.*img)(.*)/, a)
+            print "sudo losetup -o "(512 * $2)" --sizelimit "(512 * $4)
+        }
+    '`" $loop_dev $f"
+
+    _echo 32m $cmd "\n"
+    $cmd
+
+    sudo mkdir -p $mnt_point
+    sudo mount $loop_dev $mnt_point
+done
+
+echo
+sudo losetup -l
+echo
+mount | grep loop
+echo
+
+#set +x
+#set +e
