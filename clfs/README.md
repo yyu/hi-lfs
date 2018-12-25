@@ -3,6 +3,7 @@
 * http://trac.clfs.org/
 * http://trac.clfs.org/wiki/download
 * `git clone git://git.clfs.org/cross-lfs.git`
+* [Read Online](http://www.clfs.org/view/CLFS-3.0.0-SYSTEMD/)
 * [Patches](http://patches.clfs.org/3.0.0/SYSTEMD)
 * [Packages](http://clfs.org/files/packages/3.0.0/SYSTEMD)
 * [Test Suite Logs](http://clfs.org/testsuite-logs/3.0.0/SYSTEMD)
